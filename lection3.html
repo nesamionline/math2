@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лекция 1: Числа</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: 200px auto;
+            gap: 20px;
+        }
+        
+        .skew-menu {
+            background-color: #f2f2f2; /* Цвет фона для меню */
+            padding: 10px;
+        }
+
+        .lecture-content {
+            background-color: #e6e6e6; /* Цвет фона для контента лекции */
+            padding: 20px;
+        }
+
+        h1, h2, p {
+          margin-bottom: 15px;  
+      }
+
+      a.back, a.next{
+         text-decoration:none; 
+         color:#333; 
+     }
+     body {
+            background-image: url(images/7.avif);
+            background-attachment: fixed;
+            -moz-background-size: 100%;
+            -webkit-background-size: 100%;
+            -o-background-size: 100%;
+            background-size: 100%;
+        }
+        h1{
+        color: rgb(0, 0, 0) !important; 
+        font-family: courier !important; 
+         text-align: center !important;
+  }
+        p {
+         color: rgb(0, 0, 0);
+         font-family: 'Times New Roman', Times, serif;
+         font-size: 150%;
+         text-align: right; 
+        }
+        h2{
+        color: dark !important; 
+        font-family: Georgia, 'Times New Roman', Times, serif !important; 
+         text-align: center !important;
+  }
+        p {
+         color: rgb(0, 0, 0); 
+         font-family: 'Times New Roman', Times, serif;
+         font-size: 150%; 
+         text-align: center;
+        }
+        a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.back {
+    background-color: #ddd;
+    color: rgb(0, 0, 0);
+}
+
+.next {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.round {
+    border-radius: 50%;
+}
+@radius: 7px;
+@skew: 25deg;
+@main-color: tomato;
+
+body{
+  font-family:Helvetica Neue, Helvetica, sans-serif;
+  background:@main-color;
+}
+
+.skew-menu{
+  text-align:center;
+  margin-top:3em;
+  padding: 10px;
+    max-height: 1200px; /* Устанавливаем максимальную высоту */
+    max-width: 700px;
+    width: 200px;
+    overflow-y: auto; /* Добавляем вертикальную прокрутку при необходимости */
+}
+
+.skew-menu ul{
+  display:inline-block;
+  margin:0;
+  padding:0;
+  list-style:none;
+  transform:skew(-@skew);
+  width: 250px;
+}
+
+.skew-menu ul li{
+  background:#fff;
+  float:left;
+  border-right:1px solid #eee;
+  box-shadow:0 1px 1px rgba(0,0,0,0.1);
+  text-transform:uppercase;
+  color:#555;
+  font-weight:bolder;
+  transition:all 0.3s linear;
+  display: block;
+  text-align: center;
+  width: 200px;
+  max-width: 200px;
+  &:first-child
+  {
+
+    border-radius:@radius 0 0 @radius;
+  }
+  
+  &:last-child{
+    border-right:none;
+    border-radius:0 @radius @radius 0;
+  }
+  
+  &:hover{
+    background:#eee;
+    color:@main-color;
+  }
+  
+  a{
+    display:block;
+    padding:1em 2em;
+    color:inherit;
+    text-decoration:none;
+    transform:skew(@skew);
+  }
+}
+.navless{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: lighter;
+    font-size: 20px;
+}
+.menu{
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+    </style>
+
+</head>
+
+<body>
+
+<nav class="skew-menu">
+    <ul>
+      <li><a href="lection1.html">Лекция 1</a></li>
+      <li><a href="lection2.html">Лекция 2</a></li>
+      <li><a href="lection3.html">Лекция 3</a></li>
+      <li><a href="lection4.html">Лекция 4</a></li>
+      <li><a href="lection5.html">Лекция 5</a></li>
+      <li><a href="lection6.html">Лекция 6</a></li>
+      <li><a href="lection7.html">Лекция 7</a></li>
+      <li><a href="lection8.html">Лекция 8</a></li>
+      <li><a href="lection9.html">Лекция 9</a></li>
+      <li><a href="lection10.html">Лекция 10</a></li>
+      <li><a href="lection11.html">Лекция 11</a></li>
+      <li><a href="lection12.html">Лекция 12</a></li>
+      <li><a href="lection13.html">Лекция 13</a></li>
+      <li><a href="lection14.html">Лекция 14</a></li>
+      <li><a href="lection15.html">Лекция 15</a></li>
+      <li><a href="lection16.html">Лекция 16</a></li>
+      <li><a href="lection17.html">Лекция 17</a></li>
+      <li><a href="lection18.html">Лекция 18</a></li>
+      <li><a href="lection19.html">Лекция 19</a></li>
+      <li><a href="lection20.html">Лекция 20</a></li>
+      <li><a href="lection21.html">Лекция 21</a></li>
+      <li><a href="lection22.html">Лекция 22</a></li>
+      <li><a href="lection23.html">Лекция 23</a></li>
+      <li><a href="lection24.html">Лекция 24</a></li>
+      <li><a href="lection25.html">Лекция 25</a></li>
+      <li><a href="lection26.html">Лекция 26</a></li>
+      <li><a href="lection27.html">Лекция 27</a></li>
+      <li><a href="lection28.html">Лекция 28</a></li>
+      <li><a href="lection29.html">Лекция 29</a></li>
+      <li><a href="lection30.html">Лекция 30</a></li>
+    </ul>
+</nav>
+
+<div class="lecture-content">
+    <h1>Лекция 3: Законы математики</h1>
+    <p>В нашей жизни есть законы, которые надо соблюдать. Соблюдение законов гарантирует стабильность и гармоничное развитие. Несоблюдение же законов приводит к печальным последствиям.</p>
+    <p>У математики есть свои законы, которые тоже следует соблюдать. Несоблюдение законов математики приводит в лучшем случае к тому, что оценка учащегося снижается, а в худшем случае &#8212; к тому что падают самолёты, зависают компьютеры, улетают крыши домов от сильного ветра, снижается качество связи и тому подобные нехорошие явления.</p>
+    <p>Законы математики состоят из простых свойств. Эти свойства нам знакомы со школы. Но не мешает вспомнить их ещё раз, а лучше всего записать или выучить наизусть.</p>
+    <p>В данном уроке мы рассмотрим лишь малую часть законов математики. Их нам будет достаточно для дальнейшего изучения математики.</p>
+    </b></p>
+    <ul class="navless">
+    <li><a href="#yak1">Переместительный закон сложения</a></li>
+    <li><a href="#yak2">Сочетательный закон сложения</a></li>
+    <li><a href="#yak3">Переместительный закон умножения</a></li>
+    <li><a href="#sochetatelnyj_zakon_umnozheniya">Сочетательный закон умножения</a></li>
+    <li><a href="#yak5">Распределительный закон умножения</a></li>
+    <li><a href="#yak6">Задания для самостоятельного решения</a></li>
+    </ul>
+    </nav>
+    <h2 id="yak1" style="text-align: center;">Переместительный закон сложения</h2>
+    <p>Переместительный закон сложения говорит о том, что от перестановки мест слагаемых сумма не изменяется. Действительно, прибавьте пятерку к двойке &#8212; получите семёрку. И наоборот, прибавьте двойку к пятерке &#8212; опять получите семёрку:</p>
+    <p style="text-align: center;"><span style="color: #000000;">5 + 2 = 7</span></p>
+    <p style="text-align: center;"><span style="color: #000000;">2 + 5 = 7</span></p>
+    <p>Если на одну чашу весов положить пакет, в котором 10 килограмм яблок, и на другую чашу так же положить пакет, в котором 10 килограмм яблок, то весы выровнятся, и не важно что яблоки в пакетах лежат вразброс.</p>
+    <p>Если мы возьмём пакет с весов и перемешаем яблоки находящиеся в нём, словно шары в лотерейном мешке, пакет всё так же будет весить 10 килограмм. От перестановки мест слагаемых сумма не изменится. Слагаемые в данном случае это яблоки, а сумма это итоговый вес.</p>
+    <p>Таким образом,  между выражениями <span style="color: #000000;">5 + 2</span> и <span style="color: #000000;">2 + 5</span> можно поставить знак равенства. Это будет означать, что их сумма равна:</p>
+    <p style="text-align: center;"><span style="color: #000000;">5 + 2 = 2 + 5</span></p>
+    <p style="text-align: center;"><span style="color: #000000;">7 = 7</span></p>
+    <p>Полагаем что вы изучили один из предыдущих уроков, который назывался выражения, поэтому мы без тени смущения запишем переместительный закон сложения с помощью переменных:</p>
+    <p style="text-align: center;"><span style="color: #000000;"><em>a + b = b + a</em></span></p>
+    <p style="text-align: left;">Записанный переместительный закон сложения будет работать для любых чисел. Например, возьмём любых два числа. Пусть <span style="color: #000000;"><em>а </em>= 2, <em>b </em>= 3</span>. Мы присвоили переменным <span style="color: #000000;"><em>a</em></span> и <span style="color: #000000;"><em>b</em></span> значения <span style="color: #000000;">2</span> и <span style="color: #000000;">3</span> соответственно. Эти значения отправятся в главное выражение <span style="color: #000000;"><em>a + b = b + a</em></span> и подставятся куда нужно. Число <span style="color: #000000;">2</span> подставится вместо <span style="color: #000000;"><em>а</em></span>, число <span style="color: #000000;">3</span> место <em><span style="color: #000000;">b</span></em></p>
+    <p><img decoding="async" class="wp-image-6476 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2015/11/peremestitelnyj-zakon-slozheniya-v-kartinke.png" alt="переместительный закон сложения в картинке" width="529" height="495" srcset="https://spacemath.xyz/wp-content/uploads/2015/11/peremestitelnyj-zakon-slozheniya-v-kartinke.png 529w, https://spacemath.xyz/wp-content/uploads/2015/11/peremestitelnyj-zakon-slozheniya-v-kartinke-300x281.png 300w" sizes="(max-width: 529px) 100vw, 529px" /></p>
+    <hr />
+    <h2 id="yak2" style="text-align: center;"><strong>Сочетательный закон сложения</strong></h2>
+    <p style="text-align: left;">Сочетательный закон сложения говорит о том, что результат сложения нескольких слагаемых не зависит от порядка действий. Этот закон позволяет группировать слагаемые для удобства их вычислений.</p>
+    <p style="text-align: left;">Рассмотрим сумму из трёх слагаемых:</p>
+    <p style="text-align: center;"><span style="color: #000000;">2 + 3 + 5</span></p>
+    <p>Чтобы вычислить данное выражение, можно сначала сложить числа 2 и 3 и полученный результат сложить с числом 5. Для удобства сумму чисел 2 и 3 можно заключить в скобки, указывая тем самым, что эта сумма будет вычислена в первую очередь:</p>
+    <p style="text-align: center;"><span style="color: #000000;">2 + 3 + 5 = <strong>(2 + 3)</strong> + 5 = <strong>5</strong> + 5 = 10</span></p>
+    <p>Либо можно сложить числа 3 и 5, затем полученный результат сложить с числом 2</p>
+    <p style="text-align: center;"><span style="color: #000000;">2 + 3 + 5 = 2 + <strong>(3 + 5)</strong> = 2 + <strong>8</strong> = 10</span></p>
+    <p>Видно, что в обоих случаях получается один и тот же результат.</p>
+    <p>Таким образом, между выражениями <span style="color: #000000;"><strong>(2 + 3)</strong> + 5</span> и <span style="color: #000000;">2 + <strong>(3 + 5)</strong></span> можно поставить знак равенства, поскольку они равны одному и тому же значению:</p>
+    <p style="text-align: center;"><span style="color: #000000;"><strong>(2 + 3)</strong> + 5 <strong>=</strong> 2 + <strong>(3 + 5)</strong></span></p>
+    <p style="text-align: center;"><span style="color: #000000;">10 = 10</span></p>
+    <p>Запишем сочетательный закон сложения с помощью переменных:</p>
+    <p style="text-align: center;"><em><span style="color: #000000;">(a + b) + c = a + (b + c)</span></em></p>
+    <hr />
+    <h2 id="yak3" style="text-align: center;">Переместительный закон умножения</h2>
+    <p style="text-align: left;">Переместительный закон умножения говорит о том, что если <em>множимое</em> и <em>множитель</em> поменять местами, то <em>произведение</em> не изменится. Давайте проверим так ли это. Умножим пятерку на двойку, а затем наоборот двойку на пятерку.</p>
+    <p style="text-align: center;"><span style="color: #000000;">5 × 2 = 10</span></p>
+    <p style="text-align: center;"><span style="color: #000000;">2 × 5 = 10</span></p>
+    <p>В обоих случаях получается один и тот же результат, поэтому между выражениями <span style="color: #000000;">5 × 2</span> и <span style="color: #000000;">2 × 5</span> можно поставить знак равенства, поскольку они равны одному и тому же значению:</p>
+    <p style="text-align: center;"><span style="color: #000000;">5 × 2 <strong>=</strong> 2 × 5</span></p>
+    <p style="text-align: center;"><span style="color: #000000;">10 = 10</span></p>
+    <p style="text-align: left;">Запишем переместительный закон умножения с помощью переменных:</p>
+    <p style="text-align: center;"><em><span style="color: #000000;">a × b = b × a</span></em></p>
+    <p style="text-align: left;">Для записи законов в качестве переменных необязательно использовать именно буквы <span style="color: #000000;"><em>a</em></span> и <span style="color: #000000;"><em>b</em></span>. Можно использовать любые другие буквы, например <span style="color: #000000;"><em>c</em></span> и <span style="color: #000000;"><em>d</em></span> или <span style="color: #000000;"><em>x</em></span> и <span style="color: #000000;"><em>y</em></span>. Тот же переместительный закон умножения можно записать следующим образом:</p>
+    <p style="text-align: center;"><em><span style="color: #000000;">x × y = y × x</span></em></p>
+    <hr />
+    <h2 id="sochetatelnyj_zakon_umnozheniya" style="text-align: center;">Сочетательный закон умножения</h2>
+    <p>Сочетательный закон умножения говорит о том, что если выражение состоит из нескольких сомножителей, то произведение не будет зависеть от порядка действий.</p>
+    <p>Рассмотрим следующее выражение:</p>
+    <p style="text-align: center;"><span style="color: #000000;">2 × 3 × 4</span></p>
+    <p>Данное выражение можно вычислять в любом порядке. Сначала можно перемножить числа 2 и 3, и полученный результат умножить на 4:</p>
+    <p><img decoding="async" class="size-full wp-image-6711 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2015/11/2-na-3-na-4-pervyj-variant-resheniya.png" alt="2 на 3 на 4 первый вариант решения" width="288" height="215" /></p>
+    <p>Либо сначала можно перемножить числа 3 и 4, и полученный результат перемножить с числом 2</p>
+    <p><img decoding="async" class="size-full wp-image-6712 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2015/11/2-na-3-na-4-pervyj-vtoroj-resheniya.png" alt="2 на 3 на 4 первый второй решения" width="288" height="215" /></p>
+    <p>Таким образом, между выражениями <span style="color: #000000;">(2 × 3) × 4</span> и <span style="color: #000000;">2 × (3 × 4) </span>можно поставить знак равенства, поскольку они равны одному и тому же значению:</p>
+    <p style="text-align: center;"><img loading="lazy" decoding="async" class="alignnone size-full wp-image-6713" src="https://spacemath.xyz/wp-content/uploads/2015/11/2-na-3-na-4-pervyj-itog.png" alt="2 на 3 на 4 первый итог" width="271" height="110" /></p>
+    <p style="text-align: left;">Запишем сочетательный закон умножения с помощью переменных:</p>
+    <p style="text-align: center;"><span style="color: #000000;"><em>a × b × с = (a × b) × с = a × (b × с)</em></span></p>
+    <hr />
+    <p><strong>Пример 2</strong>. Найти значение выражения <span style="color: #000000;">1 × 2 × 3 × 4</span></p>
+    <p>Данное выражение можно вычислять в любом порядке. Вычислим его слева направо в порядке следования действий:</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-6714 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2015/11/1-na-2-na-3-na-4-itog.png" alt="1 на 2 на 3 на 4 итог" width="233" height="212" /></p>
+    <hr />
+    <h2 id="yak5" style="text-align: center;"><strong>Распределительный закон умножения</strong></h2>
+    <p>Распределительный закон умножения позволяет умножить сумму на число или число на сумму.</p>
+    <p>Рассмотрим следующее выражение:</p>
+    <p style="text-align: center;"><span style="color: #000000;">(3 + 5) × 2</span></p>
+    <p>Мы знаем, что сначала надо выполнить действие в скобках. Выполняем:</p>
+    <p style="text-align: center;"><span style="color: #000000;">(3 + 5) = 8</span></p>
+    <p>В главном выражении <span style="color: #000000;">(3 + 5) × 2</span> выражение в скобках заменим на полученную восьмёрку:</p>
+    <p style="text-align: center;"><span style="color: #000000;"><strong>8</strong> × 2 = 16</span></p>
+    <p>Получили ответ 16. Этот же пример можно решить с помощью распределительного закона умножения. Для этого каждое слагаемое, которое в скобках, нужно умножить на 2, затем сложить полученные результаты:</p>
+    <p style="text-align: center;"><img loading="lazy" decoding="async" class="size-full wp-image-6482 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2015/11/raspredelitelnyj-zakon-umnozheniya-v-kartinke.png" alt="распределительный закон умножения в картинке" width="659" height="221" srcset="https://spacemath.xyz/wp-content/uploads/2015/11/raspredelitelnyj-zakon-umnozheniya-v-kartinke.png 659w, https://spacemath.xyz/wp-content/uploads/2015/11/raspredelitelnyj-zakon-umnozheniya-v-kartinke-300x101.png 300w" sizes="(max-width: 659px) 100vw, 659px" /></p>
+    <p style="text-align: left;">Мы рассмотрели распределительный закон умножения слишком развёрнуто и подробно. В школе этот пример записали бы очень коротко. К такой записи тоже надо привыкать. Выглядит она следующим образом:</p>
+    <p style="text-align: center;"><span style="color: #000000;">(3 + 5) × 2 = 3 × 2 + 5 × 2 = 6 + 10 = 16</span></p>
+    <p>Или ещё короче:</p>
+    <p style="text-align: center;"><span style="color: #000000;">(3 + 5) × 2 = 6 + 10 = 16</span></p>
+    <p style="text-align: left;">Теперь запишем распределительный закон умножения с помощью переменных:</p>
+    <p style="text-align: center;"><span style="color: #000000;"><em>(a + b) × c = a × c + b × c</em></span></p>
+    <p style="text-align: left;">Давайте внимательно посмотрим на начало этого распределительного закона умножения. Начало у него выглядит так: <span style="color: #000000;"><em>(a + b) × c. </em></span></p>
+    <p style="text-align: left;">Если рассматривать выражение в скобках <span style="color: #000000;"><em>(a + b), </em></span>как единое целое, то это будет множимое, а переменная <span style="color: #000000;"><em>с</em></span> будет множителем, поскольку соединены они знаком умножения ×</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-8459 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2015/11/a-plus-b-na-c-risunok.png" alt="a plus b na c рисунок" width="431" height="132" srcset="https://spacemath.xyz/wp-content/uploads/2015/11/a-plus-b-na-c-risunok.png 431w, https://spacemath.xyz/wp-content/uploads/2015/11/a-plus-b-na-c-risunok-300x92.png 300w" sizes="(max-width: 431px) 100vw, 431px" /></p>
+    <p>Из <a href="#yak3">переместительного закона умножения</a> мы узнали, что если множимое и множитель поменять местами, то произведение не изменится.</p>
+    <p style="text-align: left;">Если множимое<span style="color: #000000;"> <em>(a + b)</em></span> и множитель <span style="color: #000000;"><em><span style="color: #000000;">c</span> </em></span>поменять местами, то получим выражение <span style="color: #000000;"><em>c × (a + b)</em></span>. Тогда получится, что мы умножаем переменную <span style="color: #000000;"><em>c</em></span> на сумму <span style="color: #000000;"><em>(a + b)</em></span>. Для выполнения такого умножения, опять же применяется распределительный закон умножения. В данном случае переменную <span style="color: #000000;"><em>c</em></span> нужно умножить на каждое слагаемое в скобках:</p>
+    <p style="text-align: center;"><span style="color: #000000;"><em>c × (a + b) = c × a + c × b</em></span></p>
+    <hr />
+    <p><strong>Пример 2</strong>. Найти значение выражения <span style="color: #000000;">5 × (3 + 2)</span></p>
+    <p>Умножим число 5 на каждое слагаемое в скобках и полученные результаты сложим:</p>
+    <p style="text-align: center;"><span style="color: #000000;">5 × (3 + 2) = 5 × 3 + 5 × 2 = 15 + 10 = 25</span></p>
+    <hr />
+    <p style="text-align: left;"><strong>Пример 3</strong>. Найти значение выражения <span style="color: #000000;">6 × (5 + 2)</span></p>
+    <p>Умножим число 6 на каждое слагаемое в скобках и полученные результаты сложим:</p>
+    <p style="text-align: center;"><span style="color: #000000;">6 × (5 + 2) = 6 × 5 + 6 × 2 = 30 + 12 = 42</span></p>
+    <p>Если в скобках располагается не сумма, а разность, то сначала нужно умножить множимое на каждое число, которое в скобках. Затем из полученного первого числа вычесть второе число. В принципе, ничего нового.</p>
+    <p><strong>Пример 4</strong>. Найти значение выражения <span style="color: #000000;">5 × (6 − 2)</span></p>
+    <p>Умножим 5 на каждое число в скобках. Затем из полученного первого числа вычтем второе число:</p>
+    <p style="text-align: center;"><span style="color: #000000;">5 × (6 − 2) = 5 × 6 − 5 × 2 = 30 − 10 = 20</span></p>
+    <hr />
+    <p><strong>Пример 5</strong>. Найти значение выражения <span style="color: #000000;">7 × (3 − 2)</span></p>
+    <p>Умножим 7 на каждое число в скобках. Затем из полученного первого числа вычтем второе число:</p>
+    <p style="text-align: center;"><span style="color: #000000;">7 × (3 − 2) = 7 × 3 − 7 × 2 = 21 − 14 = 7</span></p>
+
+    <h3>Хотите перейти на следующий урок?</h3>
+    <a href="lection1.html" class="back">Вернуться ‹‹</a>
+    <a href="lection3.html" class="next">Вперёд »</a>
+    
+    <script type="text/javascript">
+    
+    var menuItems = document.querySelectorAll('.skew-menu ul li');
+    
+    for (var i = 0; i < menuItems.length; i++) {
+       menuItems[i].addEventListener('click', function() {
+           // Действия при выборе определенной лекции
+       });
+    }
+    
+    menuItems[0].classList.add("active"); // Предположим, что первый пункт активен
+    
+    document.querySelector('.back').setAttribute("href", "lection2.html");
+    document.querySelector('.next').setAttribute("href", "lection4.html");
+    
+    </script>
+    </body>
+    </html>

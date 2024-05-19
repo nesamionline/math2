@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лекция 1: Числа</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: 200px auto;
+            gap: 20px;
+        }
+        
+        .skew-menu {
+            background-color: #f2f2f2; /* Цвет фона для меню */
+            padding: 10px;
+        }
+
+        .lecture-content {
+            background-color: #e6e6e6; /* Цвет фона для контента лекции */
+            padding: 20px;
+        }
+
+        h1, h2, p {
+          margin-bottom: 15px;  
+      }
+
+      a.back, a.next{
+         text-decoration:none; 
+         color:#333; 
+     }
+     body {
+            background-image: url(images/7.avif);
+            background-attachment: fixed;
+            -moz-background-size: 100%;
+            -webkit-background-size: 100%;
+            -o-background-size: 100%;
+            background-size: 100%;
+        }
+        h1{
+        color: rgb(0, 0, 0) !important; 
+        font-family: courier !important; 
+         text-align: center !important;
+  }
+        p {
+         color: rgb(0, 0, 0);
+         font-family: 'Times New Roman', Times, serif;
+         font-size: 150%;
+         text-align: right; 
+        }
+        h2{
+        color: dark !important; 
+        font-family: Georgia, 'Times New Roman', Times, serif !important; 
+         text-align: center !important;
+  }
+        p {
+         color: rgb(0, 0, 0); 
+         font-family: 'Times New Roman', Times, serif;
+         font-size: 150%; 
+         text-align: center;
+        }
+        a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.back {
+    background-color: #ddd;
+    color: rgb(0, 0, 0);
+}
+
+.next {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.round {
+    border-radius: 50%;
+}
+@radius: 7px;
+@skew: 25deg;
+@main-color: tomato;
+
+body{
+  font-family:Helvetica Neue, Helvetica, sans-serif;
+  background:@main-color;
+}
+
+.skew-menu{
+  text-align:center;
+  margin-top:3em;
+  padding: 10px;
+    max-height: 1200px; /* Устанавливаем максимальную высоту */
+    max-width: 700px;
+    width: 200px;
+    overflow-y: auto; /* Добавляем вертикальную прокрутку при необходимости */
+}
+
+.skew-menu ul{
+  display:inline-block;
+  margin:0;
+  padding:0;
+  list-style:none;
+  transform:skew(-@skew);
+  width: 250px;
+}
+
+.skew-menu ul li{
+  background:#fff;
+  float:left;
+  border-right:1px solid #eee;
+  box-shadow:0 1px 1px rgba(0,0,0,0.1);
+  text-transform:uppercase;
+  color:#555;
+  font-weight:bolder;
+  transition:all 0.3s linear;
+  display: block;
+  text-align: center;
+  width: 200px;
+  max-width: 200px;
+  &:first-child
+  {
+
+    border-radius:@radius 0 0 @radius;
+  }
+  
+  &:last-child{
+    border-right:none;
+    border-radius:0 @radius @radius 0;
+  }
+  
+  &:hover{
+    background:#eee;
+    color:@main-color;
+  }
+  
+  a{
+    display:block;
+    padding:1em 2em;
+    color:inherit;
+    text-decoration:none;
+    transform:skew(@skew);
+  }
+}
+.navless{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: lighter;
+    font-size: 20px;
+}
+.menu{
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+    </style>
+
+</head>
+
+<body>
+
+<nav class="skew-menu">
+    <ul>
+      <li><a href="lection1.html">Лекция 1</a></li>
+      <li><a href="lection2.html">Лекция 2</a></li>
+      <li><a href="lection3.html">Лекция 3</a></li>
+      <li><a href="lection4.html">Лекция 4</a></li>
+      <li><a href="lection5.html">Лекция 5</a></li>
+      <li><a href="lection6.html">Лекция 6</a></li>
+      <li><a href="lection7.html">Лекция 7</a></li>
+      <li><a href="lection8.html">Лекция 8</a></li>
+      <li><a href="lection9.html">Лекция 9</a></li>
+      <li><a href="lection10.html">Лекция 10</a></li>
+      <li><a href="lection11.html">Лекция 11</a></li>
+      <li><a href="lection12.html">Лекция 12</a></li>
+      <li><a href="lection13.html">Лекция 13</a></li>
+      <li><a href="lection14.html">Лекция 14</a></li>
+      <li><a href="lection15.html">Лекция 15</a></li>
+      <li><a href="lection16.html">Лекция 16</a></li>
+      <li><a href="lection17.html">Лекция 17</a></li>
+      <li><a href="lection18.html">Лекция 18</a></li>
+      <li><a href="lection19.html">Лекция 19</a></li>
+      <li><a href="lection20.html">Лекция 20</a></li>
+      <li><a href="lection21.html">Лекция 21</a></li>
+      <li><a href="lection22.html">Лекция 22</a></li>
+      <li><a href="lection23.html">Лекция 23</a></li>
+      <li><a href="lection24.html">Лекция 24</a></li>
+      <li><a href="lection25.html">Лекция 25</a></li>
+      <li><a href="lection26.html">Лекция 26</a></li>
+      <li><a href="lection27.html">Лекция 27</a></li>
+      <li><a href="lection28.html">Лекция 28</a></li>
+      <li><a href="lection29.html">Лекция 29</a></li>
+      <li><a href="lection30.html">Лекция 30</a></li>
+    </ul>
+</nav>
+
+<div class="lecture-content">
+    <h1>Лекция 5: Соотношения</h1>
+    <h2 id="yak1" style="text-align: center;">Что такое отношение?</h2>
+    <p>Отношение, как было сказано ранее, записывается в виде <span style="color: #000000;"><em>a : b</em></span>. Также его можно записать в виде дроби <img decoding="async" class="alignnone size-full wp-image-2488" src="https://spacemath.xyz/wp-content/uploads/2016/11/a-razdelit-b" alt="a разделить на b" width="12" height="36" />. А мы знаем, что такая запись в математике означает деление. Тогда результатом выполнения отношения будет частное чисел <em>a</em> и <em>b</em>.</p>
+    <p class="regulations">Отношением в математике называют частное двух чисел.</p>
+    <p>Отношение позволяет узнать сколько количества одной сущности приходится на единицу другой.  Вернемся к отношению четырех яблок к двум грушам <span style="color: #000000;">(4 : 2)</span>. Это отношение позволит нам узнать, сколько яблок приходится на единицу груши. Под единицей подразумевается одна груша. Сначала запишем отношение <span style="color: #000000;">4 : 2</span> в виде дроби:</p>
+    <p><img decoding="async" class="size-full wp-image-2274 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/Chetire-vtorih" alt="Четыре вторых" width="12" height="43" /></p>
+    <p>Данное отношение представляет собой деление числа 4 на число 2. Если выполнить это деление, мы получим ответ на вопрос сколько яблок приходится на единицу груши</p>
+    <p><img decoding="async" class="size-full wp-image-4686 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/chetyre-na-dva-budet-dva.png" alt="четыре на два будет два" width="48" height="46" /></p>
+    <p>Получили 2. Значит четыре яблока и две груши <span style="color: #000000;">(4 : 2)</span> соотносятся (взаимосвязаны друг с другом) так, что на одну грушу приходится два яблока</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-4687 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/dva-yabloka-k-dvum-grusham.png" alt="два яблока к двум грушам" width="658" height="558" srcset="https://spacemath.xyz/wp-content/uploads/2016/10/dva-yabloka-k-dvum-grusham.png 658w, https://spacemath.xyz/wp-content/uploads/2016/10/dva-yabloka-k-dvum-grusham-300x254.png 300w" sizes="(max-width: 658px) 100vw, 658px" /></p>
+    <p>На рисунке показано, как четыре яблока и две груши соотносятся между собой. Видно, что на каждую грушу приходятся два яблока.</p>
+    <p>Отношение <img loading="lazy" decoding="async" class="alignnone size-full wp-image-2274" src="https://spacemath.xyz/wp-content/uploads/2016/10/Chetire-vtorih" alt="Четыре вторых" width="12" height="43" /> можно перевернуть, записав как <img loading="lazy" decoding="async" class="alignnone size-full wp-image-2796" src="https://spacemath.xyz/wp-content/uploads/2016/11/dve-chetvyortyh" alt="две четвёртых" width="12" height="43" />. Тогда у нас получится соотношение двух груш и четырех яблок или «отношение двух груш к четырем яблокам». Это отношение покажет, сколько груш приходится на единицу яблока. Под единицей яблока подразумевается одно яблоко.</p>
+    <p>Чтобы найти значение дроби <img loading="lazy" decoding="async" class="alignnone size-full wp-image-2796" src="https://spacemath.xyz/wp-content/uploads/2016/11/dve-chetvyortyh" alt="две четвёртых" width="12" height="43" /> нужно вспомнить, как делить меньшее число на большее</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-4326 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/03/dva-razdelit-na-chetyre-ravno-pyat-desyatyh-reshenie-ugolkom.png" alt="два разделить на четыре равно пять десятых решение уголком" width="98" height="150" /></p>
+    <p>Получили 0,5.  Переведём эту десятичную дробь в обыкновенную:</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-4689 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/nol-tselyh-pyat-desyatyh-perevod-v-obyknovennuyu-drob.png" alt="ноль целых пять десятых перевод в обыкновенную дробь" width="70" height="46" /></p>
+    <p>Сократим полученную обыкновенную дробь на 5</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-4690 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/sokrashhenie-drobi-pyat-desyatyh.png" alt="сокращение дроби пять десятых" width="88" height="46" /></p>
+    <p>Получили ответ <img loading="lazy" decoding="async" class="alignnone size-full wp-image-2948" src="https://spacemath.xyz/wp-content/uploads/2016/11/odna-vtoraya.png" alt="одна вторая" width="12" height="43" /> (половину груши). Значит две груши и четыре яблока <span style="color: #000000;">(2 : 4)</span> соотносятся (взаимосвязаны друг с другом) так, что на одно яблоко приходится половина груши</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-4691 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/dve-grushi-k-chetyrem-yablokam.png" alt="две груши к четырем яблокам" width="656" height="479" srcset="https://spacemath.xyz/wp-content/uploads/2016/10/dve-grushi-k-chetyrem-yablokam.png 656w, https://spacemath.xyz/wp-content/uploads/2016/10/dve-grushi-k-chetyrem-yablokam-300x219.png 300w" sizes="(max-width: 656px) 100vw, 656px" /></p>
+    <p>На рисунке показано, как две груши и четыре яблока соотносятся между собой. Видно, что на каждое яблоко приходится половинка груши.</p>
+    <p>Числа, из которых составлено отношение, называют <strong>членами отношения</strong>. Например, в отношении <span style="color: #000000;">4 : 2</span> членами являются числа 4 и 2.</p>
+    <p>Рассмотрим другие примеры соотношений. Для приготовления чего-либо составляется рецепт. Рецепт строят из соотношений между продуктами. Например, для приготовления овсяной каши обычно требуется стакан хлопьев на два стакана молока или воды. Получается соотношение <span style="color: #000000;">1 : 2</span> (&#171;один к двум&#187; или &#171;один стакан хлопьев на два стакана молока&#187;).</p>
+    <p>Преобразуем соотношение <span style="color: #000000;">1 : 2</span> в дробь, получим <img loading="lazy" decoding="async" class="alignnone size-full wp-image-2948" src="https://spacemath.xyz/wp-content/uploads/2016/11/odna-vtoraya.png" alt="одна вторая" width="12" height="43" />. Вычислив эту дробь, получим <span style="color: #000000;">0,5</span>. Значит один стакан хлопьев и два стакана молока соотносятся (взаимосвязаны друг с другом) так, что на один стакан молока приходится половина стакана хлопьев.</p>
+    <p>Если перевернуть соотношение <span style="color: #000000;">1 : 2</span> то получится соотношение <span style="color: #000000;">2 : 1</span> (&#171;два к одному&#187; или &#171;два стакана молока на один стакан хлопьев&#187;). Преобразуем соотношение 2 : 1 в дробь, получим <img loading="lazy" decoding="async" class="alignnone size-full wp-image-2919" src="https://spacemath.xyz/wp-content/uploads/2016/07/dve-pervyh.png" alt="две первых" width="12" height="43" />. Вычислив эту дробь, получим 2. Значит два стакана молока и один стакан хлопьев соотносятся (взаимосвязаны друг с другом) так, что на один стакан хлопьев приходятся два стакана молока.</p>
+    <hr />
+    <p><strong>Пример 2.</strong> В классе 15 школьников. Из них 5 – это мальчики, 10 – девочки. Можно записать соотношение девочек и мальчиков <span style="color: #000000;">10 : 5</span> и преобразовать это соотношение в дробь <img loading="lazy" decoding="async" class="alignnone size-full wp-image-4694" src="https://spacemath.xyz/wp-content/uploads/2016/10/desyat-pyatyh.png" alt="десять пятых" width="23" height="48" />. Вычислив эту дробь получим 2. То есть девочки и мальчики соотносятся между собой так, что на каждого мальчика приходятся две девочки</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-4695 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/otnoshenie-devochek-k-malchikam-desyat-k-pyati.png" alt="отношение девочек к мальчикам десять к пяти" width="452" height="472" /></p>
+    <p>На рисунке показано, как десять девочек и пять мальчиков соотносятся между собой. Видно, что на каждого мальчика приходятся две девочки.</p>
+    <p>Соотношение не всегда можно обращать в дробь и находить частное. В некоторых случаях это будет нелогично.</p>
+    <p>Так, если перевернуть отношение  <img loading="lazy" decoding="async" class="alignnone size-full wp-image-4694" src="https://spacemath.xyz/wp-content/uploads/2016/10/desyat-pyatyh.png" alt="десять пятых" width="23" height="48" /> получится <img loading="lazy" decoding="async" class="alignnone size-full wp-image-4696" src="https://spacemath.xyz/wp-content/uploads/2016/10/pyat-desyatyh.png" alt="пять десятых" width="23" height="48" /> , а это уже отношение мальчиков к девочкам. Если вычислить эту дробь получается 0,5. Получается, что пять мальчиков относятся к десяти девочкам так, что на каждую девочку приходится половина мальчика. Математически это конечно верно, но с точки зрения реальности не совсем разумно, ибо мальчик это живой человек и его нельзя просто так взять и разделить, как грушу или яблоко.</p>
+    <p>Умение построить правильное отношение &#8212; важный навык при решении задач. Так в физике, отношение пройденного расстояния ко времени есть скорость движения.</p>
+    <p>Расстояние обозначается через переменную <span style="color: #000000;"><em>S</em></span>, время &#8212; через переменную <span style="color: #000000;"><em>t</em></span>, скорость &#8212; через переменную <span style="color: #000000;"><em>v</em></span>. Тогда фраза <em>&#171;отношение пройденного пути ко времени есть скорость движения&#187;</em> будет описываться следующим выражением:</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-6620 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/formula-otnoshenie-projdennogo-puti-ko-vremeni-est-skorost-dvizheniya.png" alt="формула отношение пройденного пути ко времени есть скорость движения" width="91" height="64" /></p>
+    <p>Предположим, что автомобиль проехал 100 километров за 2 часа. Тогда отношение пройденных ста километров к двум часам будет скоростью движения автомобиля:</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-6621 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/formula-otnosheniesta-kilometrov-k-dvum-chasam-est-50-kilometrov.png" alt="формула отношениеста километров к двум часам есть 50 километров" width="132" height="63" /></p>
+    <p>Скоростью принято называть расстояние, пройденное телом за единицу времени. Под единицей времени подразумевается 1 час, 1 минута или 1 секунда. А отношение, как было сказано ранее, позволяет узнать сколько количества одной сущности приходится на единицу другой. В нашем примере отношение ста километров к двум часам показывает сколько километров приходится на один час движения. Видим, что на каждый час движения приходятся 50 километров</p>
+    <p><img loading="lazy" decoding="async" class="wp-image-6647 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/rasstoyanie-100-km-dva-chasa-dvizheniya-skorost-50-km-na-chas-risunok.png" alt="расстояние 100 км два часа движения скорость 50 км на час рисунок" width="659" height="215" srcset="https://spacemath.xyz/wp-content/uploads/2016/10/rasstoyanie-100-km-dva-chasa-dvizheniya-skorost-50-km-na-chas-risunok.png 659w, https://spacemath.xyz/wp-content/uploads/2016/10/rasstoyanie-100-km-dva-chasa-dvizheniya-skorost-50-km-na-chas-risunok-300x98.png 300w" sizes="(max-width: 659px) 100vw, 659px" /></p>
+    <p>Поэтому скорость измеряется в <em><span style="color: #000000;">км/ч, м/мин, м/с</span></em>. Символ дроби <span style="color: #000000;">( / )</span> указывает на отношение расстояния ко времени: <span style="color: #000000;"><em>километров в час</em></span>, <em><span style="color: #000000;">метров в минуту</span></em> и <span style="color: #000000;"><em>метров в секунду</em></span> соответственно.</p>
+    <hr />
+    <p><strong>Пример 2</strong>. Отношение стоимости товара к его количеству есть цена одной единицы товара</p>
+    <p><img loading="lazy" decoding="async" class="wp-image-6630 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/risunok-tekstovaya-formula-otnoshenie-stoimosti-tovara-k-ego-kolichestvu.png" alt="рисунок текстовая формула отношение стоимости товара к его количеству" width="435" height="53" srcset="https://spacemath.xyz/wp-content/uploads/2016/10/risunok-tekstovaya-formula-otnoshenie-stoimosti-tovara-k-ego-kolichestvu.png 435w, https://spacemath.xyz/wp-content/uploads/2016/10/risunok-tekstovaya-formula-otnoshenie-stoimosti-tovara-k-ego-kolichestvu-300x37.png 300w" sizes="(max-width: 435px) 100vw, 435px" /></p>
+    <p>Если мы взяли в магазине 5 шоколадных батончиков и их общая стоимость составила 100 рублей, то мы можем определить цену одного батончика. Для этого нужно найти отношение ста рублей к количеству батончиков. Тогда получим, что на один батончик приходятся 20 рублей</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-6631 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/otshenie-sta-rublej-k-pyati-rublyam-est-dvadtsat-rublej.png" alt="" width="142" height="63" /></p>
+    <hr />
+    <h2 id="yak2" style="text-align: center;">Сравнение величин</h2>
+    <p>Ранее мы узнали, что отношение между величинами разной природы образуют новую величину. Так, отношение пройденного расстояния ко времени есть скорость движения. Отношение стоимости товара к его количеству есть цена одной единицы товара.</p>
+    <p>Но отношение можно использовать и для сравнения величин. Результат выполнения такого отношения есть число, показывающее во сколько раз первая величина больше второй или какую часть первая величина составляет от второй.</p>
+    <p><span style="color: #333399;"><strong>Чтобы узнать во сколько раз первая величина больше второй, в числитель отношения нужно записать большую величину, а в знаменатель меньшую величину.</strong></span></p>
+    <p><span style="color: #333399;"><strong>Чтобы узнать какую часть первая величина составляет от второй, в числитель отношения нужно записать меньшую величину, а в знаменатель большую величину.</strong></span></p>
+    <p>Рассмотрим числа 20 и 2. Давайте узнаем во сколько раз число 20 больше числа 2. Для этого находим отношение числа 20 к числу 2. В числителе отношения записываем число 20, а в знаменателе &#8212; число 2</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-2258 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/otnoshenie-dvadtsati-k-dvum" alt="otnoshenie-dvadtsati-k-dvum" width="33" height="66" /></p>
+    <p>Значение данного отношения равно десяти</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-2259 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/otnoshenie-dvadtsati-k-dvum-est-desyat" alt="отношение двадцати к двум есть десять" width="108" height="66" /></p>
+    <p>Отношение числа 20 к числу 2 есть число 10. Это число показывает во сколько раз число 20 больше числа 2. Значит число 20 больше числа 2 в десять раз.</p>
+    <hr />
+    <p><strong>Пример 2. </strong>В классе 15 школьников. 5 из них это мальчики, 10 – девочки. Определить во сколько раз девочек больше мальчиков.</p>
+    <p>Записываем отношение девочек к мальчикам. В числителе отношения записываем количество девочек, в знаменатель отношения &#8212; количество мальчиков:</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-4694 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/desyat-pyatyh.png" alt="десять пятых" width="23" height="48" /></p>
+    <p>Значение данного отношения равно 2. Значит в классе из 15 человек девочек в два раза больше мальчиков.</p>
+    <p>Здесь уже не стоит вопрос о том, сколько девочек приходятся на одного мальчика. В данном случае отношение <img loading="lazy" decoding="async" class="alignnone size-full wp-image-4694" src="https://spacemath.xyz/wp-content/uploads/2016/10/desyat-pyatyh.png" alt="десять пятых" width="23" height="48" /> используется для сравнения  количества девочек с количеством мальчиков.</p>
+    <hr />
+    <p><strong>Пример 3</strong>. Какую часть число 2 составляет от числа 20.</p>
+    <p>Находим отношение числа 2 к числу 20. В числителе отношения записываем число 2, а в знаменателе &#8212; число 20</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-2261 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/otnoshenie-dvuh-k-dvadtsati" alt="отношение двух к двадцати" width="36" height="66" /></p>
+    <p>Чтобы найти значение данного отношения, как делить меньшее число на большее</a></p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-2262 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/delenie-chisla-dva-na-chislo-dvadtsat-ugolkom" alt="деление числа два на число двадцать уголком" width="85" height="145" /></p>
+    <p>Значение отношения числа 2 к числу 20 есть число 0,1</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-2263 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/otnoshenie-chisla-dva-k-chislu-dvadtsat-ravno-odna-desyataya" alt="отношение числа два к числу двадцать равно одна десятая" width="114" height="66" /></p>
+    <p>В данном случае десятичную дробь 0,1 можно перевести в обыкновенную. Такой ответ будет проще для восприятия:</p>
+    <p><img loading="lazy" decoding="async" class="wp-image-4727 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/odna-desyataya-perevod-v-obyknovennuyu-drob.png" alt="одна десятая перевод в обыкновенную дробь" width="110" height="66" /></p>
+    <p>Значит число 2 от числа 20 составляет одну десятую часть.</p>
+    <p>Можно сделать проверку. Для этого найдём <img loading="lazy" decoding="async" class="alignnone size-full wp-image-2266" src="https://spacemath.xyz/wp-content/uploads/2016/10/odna-desyataya" alt="одна десятая" width="20" height="43" /> от числа 20. Если мы всё сделали правильно, то должны получить число 2</p>
+    <p style="text-align: center;"><span style="color: #000000;">20 : 10 = 2</span></p>
+    <p style="text-align: center;"><span style="color: #000000;">2 × 1 = 2</span></p>
+    <p>Получили число 2. Значит одна десятая часть от числа 20 есть число 2. Отсюда делаем вывод, что задача решена верно.</p>
+    <hr />
+    <p><strong>Пример 4.</strong> В классе 15 человек. 5 из них это мальчики, 10 – девочки. Определить какую часть от общего количества школьников составляют мальчики.</p>
+    <p>Записываем отношение мальчиков к общему количеству школьников. В числителе отношения записываем пять мальчиков, в знаменателе &#8212; общее количество школьников. Общее количество школьников это 5 мальчиков плюс 10 девочек, поэтому в знаменателе отношения записываем число 15</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-4706 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/otnoshenie-pyati-k-pyatnadtsati.png" alt="отношение пяти к пятнадцати" width="31" height="65" /></p>
+    <p>Чтобы найти значение данного отношения, нужно вспомнить, как делить меньшее число на большее. В данном случае число 5 нужно разделить на число 15</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-4707 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/pyat-razdelit-na-pyatnadtsat-poluchaetsya-beskonechnaya-drob.png" alt="пять разделить на пятнадцать получается бесконечная дробь" width="179" height="329" srcset="https://spacemath.xyz/wp-content/uploads/2016/10/pyat-razdelit-na-pyatnadtsat-poluchaetsya-beskonechnaya-drob.png 179w, https://spacemath.xyz/wp-content/uploads/2016/10/pyat-razdelit-na-pyatnadtsat-poluchaetsya-beskonechnaya-drob-163x300.png 163w" sizes="(max-width: 179px) 100vw, 179px" /></p>
+    <p>При делении 5 на 15 получается периодическая дробь. Переведём эту дробь в обыкновенную</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-4708 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/nol-tselyh-tri-v-periode-est-tri-devyatyh.png" alt="ноль целых три в периоде есть три девятых" width="118" height="66" /></p>
+    <p>Сократим полученную дробь на 3</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-4709 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/sokrashhenie-drobi-tri-devyatyh.png" alt="сокращение дроби три девятых" width="123" height="49" /></p>
+    <p>Получили окончательный ответ <img loading="lazy" decoding="async" class="alignnone size-full wp-image-3018" src="https://spacemath.xyz/wp-content/uploads/2016/12/odna-tretya.png" alt="одна третья" width="12" height="43" />. Значит мальчики составляют одну треть от всего класса</p>
+    <p><img loading="lazy" decoding="async" class="wp-image-8819 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/tret-pyatnadtsati-shkolnikov-eto-pyat-malchikov.png" alt="треть пятнадцати школьников это пять мальчиков" width="659" height="218" srcset="https://spacemath.xyz/wp-content/uploads/2016/10/tret-pyatnadtsati-shkolnikov-eto-pyat-malchikov.png 659w, https://spacemath.xyz/wp-content/uploads/2016/10/tret-pyatnadtsati-shkolnikov-eto-pyat-malchikov-300x99.png 300w" sizes="(max-width: 659px) 100vw, 659px" /></p>
+    <p>На рисунке видно, что в классе из 15 школьников треть класса составляют 5 мальчиков.</p>
+    <p>Если для проверки найти <img loading="lazy" decoding="async" class="alignnone size-full wp-image-3018" src="https://spacemath.xyz/wp-content/uploads/2016/12/odna-tretya.png" alt="одна третья" width="12" height="43" /> от 15 школьников, то мы получим 5 мальчиков</p>
+    <p style="text-align: center;"><span style="color: #000000;">15 : 3 = 5</span></p>
+    <p style="text-align: center;"><span style="color: #000000;">5 × 1 = 5</span></p>
+    <hr />
+    <p><strong>Пример 5.</strong> Во сколько раз число 35 больше числа 5 ?</p>
+    <p>Записываем отношение числа 35 к числу 5. В числитель отношения нужно записать число 35, в знаменатель &#8212; число 5, но не наоборот</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-4704 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/otnoshenie-tridtsati-pyati-k-pyati" alt="отношение тридцати пяти к пяти" width="34" height="66" /></p>
+    <p>Значение данного отношения равно 7. Значит число 35 в семь раз больше числа 5.</p>
+    <hr />
+    <p><strong>Пример 6.</strong> В классе 15 человек. 5 из них это мальчики, 10 – девочки. Определить какую часть от общего количества составляют девочки.</p>
+    <p>Записываем отношение девочек к общему количеству школьников. В числителе отношения записываем десять девочек, в знаменателе &#8212; общее количество школьников. Общее количество школьников это 5 мальчиков плюс 10 девочек, поэтому в знаменателе отношения записываем число 15</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-4712 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/otnoshenie-desyati-k-pyatnadtsati.png" alt="отношение десяти к пятнадцати" width="31" height="66" /></p>
+    <p>Чтобы найти значение данного отношения, нужно вспомнить, как делить меньшее число на большее. В данном случае, число 10 нужно разделить на число 15</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-4714 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/desyat-razdelit-na-pyatnadtsat-poluchaetsya-beskonechnaya-drob.png" alt="десять разделить на пятнадцать получается бесконечная дробь" width="203" height="329" srcset="https://spacemath.xyz/wp-content/uploads/2016/10/desyat-razdelit-na-pyatnadtsat-poluchaetsya-beskonechnaya-drob.png 203w, https://spacemath.xyz/wp-content/uploads/2016/10/desyat-razdelit-na-pyatnadtsat-poluchaetsya-beskonechnaya-drob-185x300.png 185w" sizes="(max-width: 203px) 100vw, 203px" /></p>
+    <p>При делении 10 на 15 получается периодическая дробь. Переведём эту дробь в обыкновенную</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-4716 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/nol-tselyh-shest-v-periode-est-shest-devyatyh.png" alt="ноль целых шесть в периоде есть шесть девятых" width="120" height="66" /></p>
+    <p>Сократим полученную дробь на 3</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-4717 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/sokrashhenie-drobi-shesti-devyatyh.png" alt="сокращение дроби шести девятых" width="131" height="49" /></p>
+    <p>Получили окончательный ответ <img loading="lazy" decoding="async" class="alignnone size-full wp-image-2804" src="https://spacemath.xyz/wp-content/uploads/2016/11/dve-tretih" alt="две третьих" width="13" height="43" />. Значит девочки составляют две трети от всего класса</p>
+    <p><img loading="lazy" decoding="async" class="wp-image-8821 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/dve-treti-pyatnadtsati-shkolnikov-eto-desyat-devochek.png" alt="две трети пятнадцати школьников это десять девочек" width="659" height="219" srcset="https://spacemath.xyz/wp-content/uploads/2016/10/dve-treti-pyatnadtsati-shkolnikov-eto-desyat-devochek.png 659w, https://spacemath.xyz/wp-content/uploads/2016/10/dve-treti-pyatnadtsati-shkolnikov-eto-desyat-devochek-300x100.png 300w" sizes="(max-width: 659px) 100vw, 659px" /></p>
+    <p>На рисунке видно, что в классе из 15 школьников две трети класса составляют 10 девочек.</p>
+    <p>Если для проверки найти <img loading="lazy" decoding="async" class="alignnone size-full wp-image-2804" src="https://spacemath.xyz/wp-content/uploads/2016/11/dve-tretih" alt="две третьих" width="13" height="43" /> от 15 школьников, то получим 10 девочек</p>
+    <p style="text-align: center;"><span style="color: #000000;">15 : 3 = 5</span></p>
+    <p style="text-align: center;"><span style="color: #000000;">5 × 2 = 10</span></p>
+    <hr />
+    <p><strong>Пример 7.</strong> Какую часть 10 см составляют от 25 см</p>
+    <p>Записываем отношение десяти сантиметров к двадцати пяти сантиметрам. В числителе отношения записываем 10 см, в знаменателе &#8212; 25 см</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-4722 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/otnoshenie-desyati-k-dvadtsati-pyati.png" alt="отношение десяти к двадцати пяти" width="35" height="66" /></p>
+    <p>Чтобы найти значение данного отношения, нужно вспомнить, как делить меньшее число на большее. В данном случае число 10 нужно разделить на число 25</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-4723 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/desyat-razdelit-na-dvadtsat-poluchaetsya-chetyre-desyatyh.png" alt="десять разделить на двадцать получается четыре десятых" width="109" height="145" /></p>
+    <p>Переведём полученную десятичную дробь в обыкновенную</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-4724 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/chetyre-desyatyh-perevod-v-obyknovennuyu-drob.png" alt="четыре десятых перевод в обыкновенную дробь" width="79" height="49" /></p>
+    <p>Сократим полученную дробь на 2</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-4726 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/sokrashhenie-drob-chetyre-desyatyh.png" alt="сокращение дробь четыре десятых" width="151" height="51" srcset="https://spacemath.xyz/wp-content/uploads/2016/10/sokrashhenie-drob-chetyre-desyatyh.png 151w, https://spacemath.xyz/wp-content/uploads/2016/10/sokrashhenie-drob-chetyre-desyatyh-150x51.png 150w" sizes="(max-width: 151px) 100vw, 151px" /></p>
+    <p>Получили окончательный ответ <img loading="lazy" decoding="async" class="alignnone size-full wp-image-4312" src="https://spacemath.xyz/wp-content/uploads/2017/02/dve-pyatyh.png" alt="две пятых" width="10" height="43" />. Значит 10 см составляют  <img loading="lazy" decoding="async" class="alignnone size-full wp-image-4312" src="https://spacemath.xyz/wp-content/uploads/2017/02/dve-pyatyh.png" alt="две пятых" width="10" height="43" />  от 25 см.</p>
+    <hr />
+    <p><strong>Пример 8.</strong> Во сколько раз 25 см больше 10 см</p>
+    <p>Записываем отношение двадцати пяти сантиметров к десяти сантиметрам. В числителе отношения записываем 25 см, в знаменателе &#8212; 10 см</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-4728 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/otnoshenie-dvadtsati-santmetrov-k-deayati-santimetram.png" alt="" width="35" height="66" /></p>
+    <p>Найдём значение данного отношения</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-4729 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/dvadtsat-pyat-razdelit-na-desyat-budet-dve-tselyh-pyat-desyatyh.png" alt="двадцать пять разделить на десять будет две целых пять десятых" width="108" height="147" /></p>
+    <p>Получили ответ 2,5. Значит 25 см больше 10 см в 2,5 раза (в два с половиной раза)</p>
+    <hr />
+    <p><strong>Важное замечание.</strong> При нахождении отношения одноименных физических величин эти величины обязательно должны быть выражены в одной единице измерения, в противном случае ответ будет неверным.</p>
+    <p>Например, если мы имеем дело с двумя длинами и хотим узнать во сколько раз первая длина больше второй или какую часть первая длина составляет от второй, то обе длины сначала нужно выразить в одной единице измерения.</p>
+    <p><strong>Пример 9.</strong> Во сколько раз 150 см больше 1 метра?</p>
+    <p>Сначала сделаем так, чтобы обе длины были выражены в одной единице измерения. Для этого переведем 1 метр в сантиметры. Один метр это сто сантиметров</p>
+    <p style="text-align: center;"><strong>1 м = 100 см</strong></p>
+    <p>Теперь находим отношение ста пятидесяти сантиметров к ста сантиметрам. В числителе отношения записываем 150 сантиметров, в знаменателе &#8212; 100 сантиметров</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-4732 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/otnoshenie-150-k-100.png" alt="отношение 150 к 100" width="45" height="62" /></p>
+    <p>Найдём значение данного отношения</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-4734 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/sto-pyatdesyat-razdelit-na-sto-budet-odna-tselaya-pyat-desyatyh.png" alt="сто пятьдесят разделить на сто будет одна целая пять десятых" width="140" height="147" /></p>
+    <p>Получили ответ 1,5. Значит 150 см больше 100 см в 1,5 раза (в полтора раза).</p>
+    <p>А если бы не стали переводить метры в сантиметры и сразу попытались найти отношение 150 см к одному метру, то у нас получилось бы следующее:</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-4735 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/otnoshenie-150-k-1-est-150.png" alt="отношение 150 к 1 есть 150" width="99" height="49" /></p>
+    <p>Получилось бы, что 150 см больше одного метра в сто пятьдесят раз, а это неверно. Поэтому обязательно нужно обращать внимание на единицы измерения физических величин, которые участвуют в отношении. Если эти величины выражены в разных единицах измерения, то для нахождения отношения этих величин, нужно перейти к одной единице измерения.</p>
+    <hr />
+    <p><strong>Пример 10.</strong> В прошлом месяце зарплата человека составляла 25000 рублей, а в текущем месяце зарплата выросла до 27000 рублей. Определить во сколько раз выросла зарплата</p>
+    <p>Записываем отношение двадцати семи тысяч к двадцати пяти тысячам. В числителе отношения записываем 27000, в знаменателе &#8212; 25000</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-4737 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/otnoshenie-27000-k-25000.png" alt="отношение 27000 к 25000" width="79" height="62" /></p>
+    <p>Найдём значение данного отношения</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-4738 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/27000-razdelit-na-25000-ravno-odna-tselaya-8-sotyh.png" alt="27000 разделить на 25000 равно одна целая 8 сотых" width="226" height="218" /></p>
+    <p>Получили ответ 1,08. Значит зарплата выросла в 1,08 раза. В будущем, когда мы познакомимся с процентами, такие показатели как зарплата будем выражать в процентах.</p>
+    <hr />
+    <p><strong>Пример 11</strong>. Ширина многоквартирного дома 80 метров, а высота 16 метров. Во сколько раз ширина дома больше его высоты?</p>
+    <p>Записываем отношение ширины дома к его высоте:</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-6652 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/otnoshenie-80-k-16.png" alt="отношение 80 к 16" width="23" height="52" /></p>
+    <p>Значение данного отношения равно 5. Значит ширина дома в пять раз больше его высоты.</p>
+    <hr />
+    <h2 id="yak3" style="text-align: center;">Свойство отношения</h2>
+    <p class="regulations">Отношение не изменится если его члены умножить или разделить на одно и тоже число.</p>
+    <p>Это одно из важнейших свойств отношения следует из свойства частного. Мы знаем, что если делимое и делитель умножить или разделить на одно и то же число, то частное не изменится. А поскольку отношение является ничем иным как делением, то свойство частного работает и для него.</p>
+    <p>Вернемся к отношению девочек к мальчикам <span style="color: #000000;">(10 : 5)</span>. Данное отношение показало, что на каждого мальчика приходится две девочки. Проверим, как работает свойство отношения, а именно попробуем умножить или разделить его члены на одно и то же число.</p>
+    <p>В нашем примере удобнее разделить члены отношения <img loading="lazy" decoding="async" class="alignnone size-full wp-image-4694" src="https://spacemath.xyz/wp-content/uploads/2016/10/desyat-pyatyh.png" alt="десять пятых" width="23" height="48" /> на их наибольший общий делитель (НОД).</p>
+    <p>НОД членов 10 и 5 это число 5. Поэтому можно разделить члены отношения <img loading="lazy" decoding="async" class="alignnone size-full wp-image-4694" src="https://spacemath.xyz/wp-content/uploads/2016/10/desyat-pyatyh.png" alt="десять пятых" width="23" height="48" /> на число 5</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-4700 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/desyat-na-dva-sokratili-poluchili-dve-pervyh.png" alt="десять на два сократили получили две первых" width="131" height="46" /></p>
+    <p>Получили новое отношение <img loading="lazy" decoding="async" class="alignnone size-full wp-image-2919" src="https://spacemath.xyz/wp-content/uploads/2016/07/dve-pervyh.png" alt="две первых" width="12" height="43" />. Это есть отношение два к одному (2:1). Данное отношение, как и прошлое отношение <span style="color: #000000;">10:5</span> показывает, что на одного мальчика приходятся две девочки.</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-4701 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/dva-k-odnomu-dve-devochki-na-malchika.png" alt="два к одному две девочки на мальчика" width="398" height="346" srcset="https://spacemath.xyz/wp-content/uploads/2016/10/dva-k-odnomu-dve-devochki-na-malchika.png 398w, https://spacemath.xyz/wp-content/uploads/2016/10/dva-k-odnomu-dve-devochki-na-malchika-300x261.png 300w" sizes="(max-width: 398px) 100vw, 398px" /></p>
+    <p>На рисунке показано отношение <span style="color: #000000;">2 : 1</span> (два к одному). Как и в прошлом отношении <span style="color: #000000;">10 : 5</span> на одного мальчика приходятся две девочки. Другими словами, отношение не изменилось.</p>
+    <p><strong>Пример 2</strong>. В одном классе 10 девочек и 5 мальчиков. В другом классе 20 девочек и 10 мальчиков. Во сколько раз в первом классе девочек больше мальчиков? Во сколько раз во втором классе девочек больше мальчиков?</p>
+    <p>В обоих классах девочек  в два раза больше мальчиков, поскольку отношения  <img loading="lazy" decoding="async" class="alignnone size-full wp-image-6655" src="https://spacemath.xyz/wp-content/uploads/2016/10/desyat-pyatyh-drob.png" alt="десять пятых дробь" width="20" height="45" />  и  <img loading="lazy" decoding="async" class="alignnone size-full wp-image-6654" src="https://spacemath.xyz/wp-content/uploads/2016/10/dvadtsat-desyatyh.png" alt="двадцать десятых" width="22" height="45" />  равны одному и тому же числу.</p>
+    <p>Свойство отношения позволяет строить различные модели, которые имеют схожие параметры с реальным объектом. Предположим, что многоквартирный дом имеет ширину 30 метров и высоту 10 метров.</p>
+    <p><img loading="lazy" decoding="async" class="wp-image-6658 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/risunok-mnogokvartirnyj-dom-sootnoshenie-30-na-10.png" alt="рисунок многоквартирный дом соотношение 30 на 10" width="639" height="233" srcset="https://spacemath.xyz/wp-content/uploads/2016/10/risunok-mnogokvartirnyj-dom-sootnoshenie-30-na-10.png 639w, https://spacemath.xyz/wp-content/uploads/2016/10/risunok-mnogokvartirnyj-dom-sootnoshenie-30-na-10-300x109.png 300w" sizes="(max-width: 639px) 100vw, 639px" /></p>
+    <p>Чтобы нарисовать на бумаге похожий дом, нужно рисовать его в таком же отношении <span style="color: #000000;">30 : 10</span>.</p>
+    <p>Разделим оба члена этого отношения на число 10. Тогда получим отношение <span style="color: #000000;">3 : 1</span>. Это отношение равно 3, как и предыдущее отношение равно 3</p>
+    <p><img loading="lazy" decoding="async" class="wp-image-6659 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/3-na-1-ravno-3-i-30-na-10-ravno-3.png" alt="3 на 1 равно 3 и 30 на 10 равно 3" width="271" height="79" /></p>
+    <p>Переведем метры в сантиметры. 3 метра это 300 сантиметров, а 1 метр это 100 сантиметров</p>
+    <p style="text-align: center;"><strong>3 м = 300 см</strong></p>
+    <p style="text-align: center;"><strong>1  м = 100 см</strong></p>
+    <p>Имеем отношение 300 см : 100 см. Разделим члены этого отношения на 100. Получим отношение 3 см : 1 см. Теперь можно нарисовать дом с шириной 3 см и высотой 1 см</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-6657 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/risunok-mnogokvartirnyj-dom-sootnoshenie-3-sm-k-1-sm.png" alt="рисунок многоквартирный дом соотношение 3 см к 1 см" width="263" height="96" /></p>
+    <p>Конечно нарисованный дом намного меньше реального дома, но неизменным осталось отношение ширины и высоты. Это позволило нам нарисовать дом, максимально похожий на реальный</p>
+    <p><img loading="lazy" decoding="async" class="alignnone size-full wp-image-6660" src="https://spacemath.xyz/wp-content/uploads/2016/10/risunok-mnogokvartirnyj-dom-dva-sootnosheniya.png" alt="" width="639" height="377" srcset="https://spacemath.xyz/wp-content/uploads/2016/10/risunok-mnogokvartirnyj-dom-dva-sootnosheniya.png 639w, https://spacemath.xyz/wp-content/uploads/2016/10/risunok-mnogokvartirnyj-dom-dva-sootnosheniya-300x177.png 300w" sizes="(max-width: 639px) 100vw, 639px" /></p>
+    <p>Отношение можно понимать и другим образом. Изначально было сказано, что у реального дома ширина составляет 30 метров, а высота 10 метров. Итого получается 30+10, то есть 40 метров.</p>
+    <p>Эти 40 метров можно понимать, как 40 частей. Отношение 30 : 10 говорит о том, что 30 частей приходится на ширину, а 10 частей на высоту.</p>
+    <p>Далее члены отношения 30 : 10 были разделены на 10. В результате получилось отношение 3 : 1. Это отношение можно понимать, как 4 части, три из которых приходится на ширину, одна &#8212; на высоту. В этом случае обычно требуется узнать сколько конкретно метров приходится на ширину и высоту.</p>
+    <p>Другими словами, нужно узнать сколько метров приходится на 3 части и сколько метров приходится на 1 часть. Сначала надо узнать сколько метров приходится на одну часть. Для этого общие 40 метров нужно разделить на 4, поскольку в отношении 3 : 1 всего четыре части</p>
+    <p style="text-align: center;"><span style="color: #000000;">40 м : 4 = 10 м</span></p>
+    <p>Далее с помощью умножения определяют сколько метров приходятся на ширину и высоту. Члены, которые даны в отношении используют в качестве сомножителя.</p>
+    <p>Определим сколько метров приходится на ширину:</p>
+    <p style="text-align: center;"><span style="color: #000000;">10 м × 3 = 30 м</span></p>
+    <p>Определим сколько метров приходится на высоту:</p>
+    <p style="text-align: center;"><span style="color: #000000;">10 м × 1 = 10 м</span></p>
+    <hr />
+    <h2 id="yak4" style="text-align: center;">Несколько членов отношения</h2>
+    <p>Если в отношении дано несколько членов, то их можно понимать как части от чего-либо.</p>
+    <p><strong>Пример 1</strong>. Куплено 18 яблок. Эти яблоки разделили между мамой, папой и дочкой в отношении <span style="color: #000000;">2 : 1 : 3</span>. Сколько яблок получил каждый?</p>
+    <p>Отношение <span style="color: #000000;">2 : 1 : 3</span> говорит о том, что мама получила 2 части, папа &#8212; 1 часть, дочка &#8212; 3 части. Другими словами, каждый член отношения <span style="color: #000000;">2 : 1 : 3</span> это определенная часть от 18 яблок:</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-6664 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/otnoshenie-2-1-3-risunok.png" alt="отношение 2 1 3 рисунок" width="434" height="120" srcset="https://spacemath.xyz/wp-content/uploads/2016/10/otnoshenie-2-1-3-risunok.png 434w, https://spacemath.xyz/wp-content/uploads/2016/10/otnoshenie-2-1-3-risunok-300x83.png 300w" sizes="(max-width: 434px) 100vw, 434px" /></p>
+    <p>Если сложить члены отношения <span style="color: #000000;">2 : 1 : 3</span>, то можно узнать сколько всего частей имеется:</p>
+    <p style="text-align: center;"><span style="color: #000000;">2 + 1 + 3 = 6 (частей)</span></p>
+    <p>Узнаем сколько яблок приходится на одну часть. Для этого 18 яблок разделим на 6</p>
+    <p style="text-align: center;"><span style="color: #000000;">18 : 6 = 3 (яблока на одну часть)</span></p>
+    <p>Теперь определим сколько яблок получил каждый. Умножая три яблока на каждый член отношения <span style="color: #000000;">2 : 1 : 3</span>, можно определить сколько яблок получила мама, сколько получил папа и сколько получила дочка.</p>
+    <p>Узнаем сколько яблок получила мама:</p>
+    <p style="text-align: center;"><span style="color: #000000;">3 × 2 = 6 (яблок)</span></p>
+    <p>Узнаем сколько яблок получил папа:</p>
+    <p style="text-align: center;"><span style="color: #000000;">3 × 1 = 3 (яблока)</span></p>
+    <p>Узнаем сколько яблок получила дочка:</p>
+    <p style="text-align: center;"><span style="color: #000000;">3 × 3 = 9 (яблок)</span></p>
+
+    <h3>Хотите перейти на следующий урок?</h3>
+    <a href="lection1.html" class="back">Вернуться ‹‹</a>
+    <a href="lection3.html" class="next">Вперёд »</a>
+    
+    <script type="text/javascript">
+    
+    var menuItems = document.querySelectorAll('.skew-menu ul li');
+    
+    for (var i = 0; i < menuItems.length; i++) {
+       menuItems[i].addEventListener('click', function() {
+           // Действия при выборе определенной лекции
+       });
+    }
+    
+    menuItems[0].classList.add("active"); // Предположим, что первый пункт активен
+    
+    document.querySelector('.back').setAttribute("href", "lection2.html");
+    document.querySelector('.next').setAttribute("href", "lection4.html");
+    
+    </script>
+    </body>
+    </html>

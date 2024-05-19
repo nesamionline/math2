@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лекция 1: Числа</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: 200px auto;
+            gap: 20px;
+        }
+        
+        .skew-menu {
+            background-color: #f2f2f2; /* Цвет фона для меню */
+            padding: 10px;
+        }
+
+        .lecture-content {
+            background-color: #e6e6e6; /* Цвет фона для контента лекции */
+            padding: 20px;
+        }
+
+        h1, h2, p {
+          margin-bottom: 15px;  
+      }
+
+      a.back, a.next{
+         text-decoration:none; 
+         color:#333; 
+     }
+     body {
+            background-image: url(images/7.avif);
+            background-attachment: fixed;
+            -moz-background-size: 100%;
+            -webkit-background-size: 100%;
+            -o-background-size: 100%;
+            background-size: 100%;
+        }
+        h1{
+        color: rgb(0, 0, 0) !important; 
+        font-family: courier !important; 
+         text-align: center !important;
+  }
+        p {
+         color: rgb(0, 0, 0);
+         font-family: 'Times New Roman', Times, serif;
+         font-size: 150%;
+         text-align: right; 
+        }
+        h2{
+        color: dark !important; 
+        font-family: Georgia, 'Times New Roman', Times, serif !important; 
+         text-align: center !important;
+  }
+        p {
+         color: rgb(0, 0, 0); 
+         font-family: 'Times New Roman', Times, serif;
+         font-size: 150%; 
+         text-align: center;
+        }
+        a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.back {
+    background-color: #ddd;
+    color: rgb(0, 0, 0);
+}
+
+.next {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.round {
+    border-radius: 50%;
+}
+@radius: 7px;
+@skew: 25deg;
+@main-color: tomato;
+
+body{
+  font-family:Helvetica Neue, Helvetica, sans-serif;
+  background:@main-color;
+}
+
+.skew-menu{
+  text-align:center;
+  margin-top:3em;
+  padding: 10px;
+    max-height: 400px; /* Устанавливаем максимальную высоту */
+    overflow-y: auto; /* Добавляем вертикальную прокрутку при необходимости */
+}
+
+.skew-menu ul{
+  display:inline-block;
+  margin:0;
+  padding:0;
+  list-style:none;
+  transform:skew(-@skew);
+}
+
+.skew-menu ul li{
+  background:#fff;
+  float:left;
+  border-right:1px solid #eee;
+  box-shadow:0 1px 1px rgba(0,0,0,0.1);
+  text-transform:uppercase;
+  color:#555;
+  font-weight:bolder;
+  transition:all 0.3s linear;
+  &:first-child
+  {
+
+    border-radius:@radius 0 0 @radius;
+  }
+  
+  &:last-child{
+    border-right:none;
+    border-radius:0 @radius @radius 0;
+  }
+  
+  &:hover{
+    background:#eee;
+    color:@main-color;
+  }
+  
+  a{
+    display:block;
+    padding:1em 2em;
+    color:inherit;
+    text-decoration:none;
+    transform:skew(@skew);
+  }
+}
+    </style>
+</head>
+
+<body>
+
+<nav class="skew-menu">
+    <ul>
+      <li><a href="#">Лекция 1</a></li>
+      <li><a href="#">Лекция 1</a></li>
+      <li><a href="#">Лекция 1</a></li>
+      <li><a href="#">Лекция 1</a></li>
+      <li><a href="#">Лекция 1</a></li>
+      <li><a href="#">Лекция 1</a></li>
+      <li><a href="#">Лекция 1</a></li>
+      <li><a href="#">Лекция 1</a></li>
+      <li><a href="#">Лекция 1</a></li>
+      <li><a href="#">Лекция 1</a></li>
+      <li><a href="#">Лекция 1</a></li>
+      <li><a href="#">Лекция 1</a></li>
+      <li><a href="#">Лекция 1</a></li>
+      <li><a href="#">Лекция 1</a></li>
+      <li><a href="#">Лекция 1</a></li>
+      <li><a href="#">Лекция 1</a></li>
+      <li><a href="#">Лекция 1</a></li>
+      <li><a href="#">Лекция 1</a></li>
+      <li><a href="#">Лекция 1</a></li>
+      <li><a href="#">Лекция 1</a></li>
+      <li><a href="#">Лекция 1</a></li>
+      <li><a href="#">Лекция 1</a></li>
+      <li><a href="#">Лекция 1</a></li>
+      <li><a href="#">Лекция 1</a></li>
+      <li><a href="#">Лекция 1</a></li>
+      <li><a href="#">Лекция 1</a></li>
+      <li><a href="#">Лекция 1</a></li>
+      <li><a href="#">Лекция 1</a></li>
+      <li><a href="#">Лекция 1</a></li>
+      <li><a href="#">Лекция 1</a></li>
+      <li><a href="#">Лекция 1</a></li>
+      <!-- Добавьте остальные ссылки на другие лекции -->
+    </ul>
+</nav>
+
+<div class="lecture-content">
+
+<h1>Лекция 1: Числа</h1>
+
+<p>Число – это некоторая сущность, обозначающая количество каких-нибудь предметов. Примеры:</p>
+
+<p>Один предмет изображали как |<br/>
+Два предмета как ||<br/>
+Три предмета как |||</p>
+
+<p>Сегодня в математике числа обозначаются с помощью цифр.</p>
+
+<p>На этом всё. Вводный урок по числам завершен.</p>
+
+
+<h2>Хотите перейти на следующий урок?</h2>
+<a href="#" class="back">Вернуться ‹‹</a>&nbsp;&nbsp;<a href="#" class="next">Вперёд »</a>
+
+
+<script type="text/javascript">
+
+var menuItems = document.querySelectorAll('.skew-menu ul li');
+
+for (var i = 0; i < menuItems.length; i++) {
+   menuItems[i].addEventListener('click', function() {
+       // Действия при выборе определенной лекции
+   });
+}
+
+menuItems[0].classList.add("active"); // Предположим, что первый пункт активен
+
+document.querySelector('.back').setAttribute("href", "index.html");
+document.querySelector('.next').setAttribute("href", "lection2.html");
+
+</script>
+</body>
+</html>

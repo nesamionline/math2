@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Лекция 1: Числа</title>
+    <link rel="stylesheet" href="styles.css">
+    <style type="text/css">
+        body {
+            background-image: url(images/7.avif);
+            background-attachment: fixed;
+            -moz-background-size: 100%;
+            -webkit-background-size: 100%;
+            -o-background-size: 100%;
+            background-size: 100%;
+        }
+        h1{
+        color: rgb(0, 0, 0) !important; 
+        font-family: courier !important; 
+         text-align: center !important;
+  }
+        p {
+         color: rgb(0, 0, 0);
+         font-family: 'Times New Roman', Times, serif;
+         font-size: 150%;
+         text-align: right; 
+        }
+        h2{
+        color: dark !important; 
+        font-family: Georgia, 'Times New Roman', Times, serif !important; 
+         text-align: center !important;
+  }
+        p {
+         color: rgb(0, 0, 0); 
+         font-family: 'Times New Roman', Times, serif;
+         font-size: 150%; 
+         text-align: center;
+        }
+        a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.back {
+    background-color: #ddd;
+    color: rgb(0, 0, 0);
+}
+
+.next {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.round {
+    border-radius: 50%;
+}
+@radius: 7px;
+@skew: 25deg;
+@main-color: tomato;
+
+body{
+  font-family:Helvetica Neue, Helvetica, sans-serif;
+  background:@main-color;
+}
+
+.skew-menu{
+  text-align:center;
+  margin-top:3em;
+}
+
+.skew-menu ul{
+  display:inline-block;
+  margin:0;
+  padding:0;
+  list-style:none;
+  transform:skew(-@skew);
+}
+
+.skew-menu ul li{
+  background:#fff;
+  float:left;
+  border-right:1px solid #eee;
+  box-shadow:0 1px 1px rgba(0,0,0,0.1);
+  text-transform:uppercase;
+  color:#555;
+  font-weight:bolder;
+  transition:all 0.3s linear;
+  
+  &:first-child{
+    border-radius:@radius 0 0 @radius;
+  }
+  
+  &:last-child{
+    border-right:none;
+    border-radius:0 @radius @radius 0;
+  }
+  
+  &:hover{
+    background:#eee;
+    color:@main-color;
+  }
+  
+  a{
+    display:block;
+    padding:1em 2em;
+    color:inherit;
+    text-decoration:none;
+    transform:skew(@skew);
+  }
+}
+       </style>
+</head>
+<body>
+    <nav class="skew-menu">
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="contact.html">Контакты</a></li>
+          <li><a href="administration.html">Обратная связь</a></li>
+          <li><a href="info.html">О нас</a></li>
+        </ul>
+      </nav>
+    <h1>Лекция 1: Числа</h1>
+    <p>Число – это некоторая сущность, обозначающая количество каких-нибудь предметов. Примеры: два яблока, пять ложек, десять книг, сто рублей, семь тюльпанов. Каждый день мы обращаемся к числам, порой даже не замечая этого.</p>
+
+    <p>Первое время, когда люди обучались грамоте и расчетам, число предметов изображали с помощью палочек:</p>
+
+    <p>Один предмет изображали как |</p>
+
+    <p>Два предмета как | |</p>
+
+    <p>Три предмета как | | |</p>
+
+    <p>Затем люди поняли, что большое число предметов палочками не изобразить и заменили эти палочки цифрами.</p>
+
+    <p>Сегодня в математике числа обозначаются с помощью цифр. Это цифры 0, 1, 2, 3, 4, 5, 6, 7, 8, 9. Цифры отпугивают большинство школьников и студентов, поскольку ассоциируются с математикой и «страшными формулами». На самом деле ничего страшного нет. Цифры это просто набор символов, которые предназначены для обозначения чисел, проще говоря, для обозначения количества предметов.</p>
+
+    <p>На этом всё. Вводный урок по числам завершен. В будущем мы изучим его намного лучше, а пока рассмотренного в данном уроке будет достаточно.</p>
+<h2>Хотите перейти на следующий урок?</h2>
+<a href="index.html" class="back">Вернуться ‹‹</a>
+<a href="lection2.html" class="next">Вперёд »</a>
+</body>
+</html>
