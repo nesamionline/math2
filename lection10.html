@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лекция 1: Числа</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: 200px auto;
+            gap: 20px;
+        }
+        
+        .skew-menu {
+            background-color: #f2f2f2;
+            padding: 10px;
+        }
+
+        .lecture-content {
+            background-color: #e6e6e6;
+            padding: 20px;
+        }
+
+        h1, h2, p {
+          margin-bottom: 15px;  
+      }
+
+      a.back, a.next{
+         text-decoration:none; 
+         color:#333; 
+     }
+     body {
+            background-image: url(images/7.avif);
+            background-attachment: fixed;
+            -moz-background-size: 100%;
+            -webkit-background-size: 100%;
+            -o-background-size: 100%;
+            background-size: 100%;
+        }
+        h1{
+        color: rgb(0, 0, 0) !important; 
+        font-family: courier !important; 
+         text-align: center !important;
+  }
+        p {
+         color: rgb(0, 0, 0);
+         font-family: 'Times New Roman', Times, serif;
+         font-size: 150%;
+         text-align: right; 
+        }
+        h2{
+        color: dark !important; 
+        font-family: Georgia, 'Times New Roman', Times, serif !important; 
+         text-align: center !important;
+  }
+        p {
+         color: rgb(0, 0, 0); 
+         font-family: 'Times New Roman', Times, serif;
+         font-size: 150%; 
+         text-align: center;
+        }
+        a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.back {
+    background-color: #ddd;
+    color: rgb(0, 0, 0);
+}
+
+.next {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.round {
+    border-radius: 50%;
+}
+@radius: 7px;
+@skew: 25deg;
+@main-color: tomato;
+
+body{
+  font-family:Helvetica Neue, Helvetica, sans-serif;
+  background:@main-color;
+}
+
+.skew-menu{
+  text-align:center;
+  margin-top:3em;
+  padding: 10px;
+    max-height: 1200px;
+    max-width: 700px;
+    width: 200px;
+    overflow-y: auto;
+}
+
+.skew-menu ul{
+  display:inline-block;
+  margin:0;
+  padding:0;
+  list-style:none;
+  transform:skew(-@skew);
+  width: 250px;
+}
+
+.skew-menu ul li{
+  background:#fff;
+  float:left;
+  border-right:1px solid #eee;
+  box-shadow:0 1px 1px rgba(0,0,0,0.1);
+  text-transform:uppercase;
+  color:#555;
+  font-weight:bolder;
+  transition:all 0.3s linear;
+  display: block;
+  text-align: center;
+  width: 200px;
+  max-width: 200px;
+  border-radius: 10px;
+  &:first-child
+  {
+
+    border-radius:@radius 0 0 @radius;
+  }
+  
+  &:last-child{
+    border-right:none;
+    border-radius:0 @radius @radius 0;
+  }
+  
+  &:hover{
+    background:#eee;
+    color:@main-color;
+  }
+  
+  a{
+    display:block;
+    padding:1em 2em;
+    color:inherit;
+    text-decoration:none;
+    transform:skew(@skew);
+  }
+}
+.navless{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: lighter;
+    font-size: 20px;
+}
+.menu{
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+.active a {
+  color: #007bff; /* Выделите цвет текста */
+}
+    </style>
+
+</head>
+
+<body>
+
+<nav class="skew-menu">
+    <ul>
+      <li><a href="lection1.html">Лекция 1</a></li>
+      <li><a href="lection2.html">Лекция 2</a></li>
+      <li><a href="lection3.html">Лекция 3</a></li>
+      <li><a href="lection4.html">Лекция 4</a></li>
+      <li><a href="lection5.html">Лекция 5</a></li>
+      <li><a href="lection6.html">Лекция 6</a></li>
+      <li><a href="lection7.html">Лекция 7</a></li>
+      <li><a href="lection8.html">Лекция 8</a></li>
+      <li><a href="lection9.html">Лекция 9</a></li>
+\      <li class="active"><a href="lection10.html">Лекция 10</a></li>
+      <li><a href="lection11.html">Лекция 11</a></li>
+      <li><a href="lection12.html">Лекция 12</a></li>
+      <li><a href="lection13.html">Лекция 13</a></li>
+      <li><a href="lection14.html">Лекция 14</a></li>
+      <li><a href="lection15.html">Лекция 15</a></li>
+      <li><a href="lection16.html">Лекция 16</a></li>
+      <li><a href="lection17.html">Лекция 17</a></li>
+      <li><a href="lection18.html">Лекция 18</a></li>
+      <li><a href="lection19.html">Лекция 19</a></li>
+      <li><a href="lection20.html">Лекция 20</a></li>
+      <li><a href="lection21.html">Лекция 21</a></li>
+      <li><a href="lection22.html">Лекция 22</a></li>
+      <li><a href="lection23.html">Лекция 23</a></li>
+      <li><a href="lection24.html">Лекция 24</a></li>
+      <li><a href="lection25.html">Лекция 25</a></li>
+      <li><a href="lection26.html">Лекция 26</a></li>
+      <li><a href="lection27.html">Лекция 27</a></li>
+      <li><a href="lection28.html">Лекция 28</a></li>
+      <li><a href="lection29.html">Лекция 29</a></li>
+      <li><a href="lection30.html">Лекция 30</a></li>
+    </ul>
+</nav>
+
+<div class="lecture-content">
+  <h1 class="entry-title">Перевод единиц</h1>      
+
+      
+</header><!-- .entry-header -->
+
+<div class="entry-content">
+  <p>В этом уроке мы научимся переводить физические величины из одной единицы измерения в другую.</p>
+<nav id="menu"><b>Содержание урока</b></p>
+<ul class="navless">
+<li><a href="#yak1">Перевод единиц измерения длины</a></li>
+<li><a href="#yak2">Перевод единиц измерения массы</a></li>
+<li><a href="#yak3">Перевод единиц измерения времени</a></li>
+</ul>
+</nav>
+<h2 id="yak1" style="text-align: center;">Перевод единиц измерения длины</h2>
+</ul>
+<p>Любая величина, которая характеризует длину, может быть переведена из одной единицы измерения в другую.</p>
+<p>Кроме того, при решении задач по физике, обязательно нужно соблюдать требования международной системы СИ. То есть если длина дана не в метрах, а в другой единице измерения, то её обязательно нужно перевести в метры, поскольку метр является единицей измерения длины в системе СИ.</p>
+<p>Чтобы переводить длину из одной единицы измерения в другую, нужно знать из чего состоит та или иная единица измерения. То есть нужно знать, что к примеру один сантиметр состоит из десяти миллиметров или один километр состоит из тысячи метров.</p>
+<p>Покажем на простом примере, как можно рассуждать при переводе длины из одной единицы измерения в другую. Предположим, что имеется 2 метра и нужно перевести их в сантиметры.</p>
+<p>Сначала нужно узнать сколько сантиметров содержится в одном метре. В одном метре содержится сто сантиметров:</p>
+<p style="text-align: center;"><span style="color: #000000;">1 м = 100 см</span></p>
+<p>Если в 1 метре содержится 100 сантиметров, то сколько сантиметров будет содержаться в двух метрах? Ответ напрашивается сам &#8212; 200 см. А эти 200 см получаются, если 2 умножить на 100.</p>
+<p>Значит, чтобы перевести 2 метра в сантиметры, нужно 2 умножить на 100</p>
+<p style="text-align: center;"><span style="color: #000000;">2 × 100 = 200 см</span></p>
+<p>Теперь попробуем перевести те же 2 метра в километры. Сначала надо узнать сколько метров содержится в одном километре. В одном километре содержится тысяча метров:</p>
+<p style="text-align: center;"><span style="color: #000000;">1 км = 1000 м</span></p>
+<p>Если один километр содержит 1000 метров, то километр который содержит только 2 метра будет намного меньше. Чтобы его получить нужно 2  разделить на 1000</p>
+<p style="text-align: center;"><span style="color: #000000;">2 : 1000 = 0,002 км</span></p>
+<p style="text-align: left;">Поначалу бывает трудно запомнить, какое действие применять для перевода единиц &#8212; умножение или деление. Поэтому на первых порах удобно пользоваться следующей схемой:</p>
+<p style="text-align: left;"><img decoding="async" class="size-full wp-image-2085 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/09/2222.png" alt="2222" width="217" height="230" /></p>
+<p>Суть данной схемы заключается в том, что при переходе из старшей единицы измерения в младшую применяется умножение. И наоборот, при переходе из младшей единицы измерения в более старшую применяется деление.</p>
+<p>Стрелки, которые направлены вниз и вверх указывают на то, что осуществляется переход из старшей единицы измерения в младшую и переход из младшей единицы измерения в более старшую соответственно. В конце стрелки указывается какую операцию применить: умножение или деление.</p>
+<p>Например, переведём 3000 метров в километры, пользуясь данной схемой.</p>
+<p>Итак, мы должны перейти из метров в километры. Другими словами, перейти из младшей единицы измерения в более старшую (километр старше метра). Смотрим на схему и видим, что стрелка указывающая переход из младших единиц в более старшие, направлена вверх и в конце стрелки указано, что мы должны применить деление:</p>
+<p style="text-align: left;"><img decoding="async" class="size-full wp-image-2085 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/09/2222.png" alt="2222" width="217" height="230" /></p>
+<p>Теперь нужно узнать, сколько метров содержится в одном километре. В одном километре содержится 1000 метров. А чтобы узнать, сколько километров составляют 3000 таких метров, нужно 3000 разделить на 1000</p>
+<p style="text-align: center;"><span style="color: #000000;">3000 : 1000 = 3 км</span></p>
+<p style="text-align: center;">Значит, при переводе 3000 метров в километры, получим 3 километра.</p>
+<p style="text-align: left;">Попробуем перевести те же 3000 метров в дециметры. Здесь мы должны перейти из старших единиц в младшие (дециметр младше метра). Смотрим на схему и видим, что стрелка указывающая переход из старших единиц в младшие, направлена вниз и в конце стрелки указано, что мы должны применить умножение:</p>
+<p style="text-align: left;"><img decoding="async" class="size-full wp-image-2085 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/09/2222.png" alt="2222" width="217" height="230" /></p>
+<p style="text-align: left;">Теперь нужно узнать, сколько дециметров в одном метре. В одном метре 10 дециметров.</p>
+<p style="text-align: center;"><span style="color: #000000;">1 м = 10 дм</span></p>
+<p style="text-align: left;">А чтобы узнать сколько таких дециметров в трёх тысячах метрах, нужно 3000 умножить на 10</p>
+<p style="text-align: center;"><span style="color: #000000;">3000 × 10 = 30 000 дм</span></p>
+<p style="text-align: center;">Значит при переводе 3000 метров в дециметры, получим 30000 дециметров.</p>
+<hr />
+<h2 id="yak2" style="text-align: center;">Перевод единиц измерения массы</h2>
+<p>Любая величина, которая характеризует массу, может быть переведена из одной единицы измерения в другую.</p>
+<p>Кроме того, при решении задач по физике, обязательно нужно соблюдать требования международной системы СИ. То есть если масса дана не в килограммах, а в другой единице измерения, то её обязательно нужно перевести в килограммы, поскольку килограмм является единицей измерения массы в системе СИ.</p>
+<p>Чтобы переводить массу из одной единицы измерения в другую, нужно знать из чего состоит та или иная единица измерения. То есть нужно знать, что к примеру один килограмм состоит из тысячи граммов или один центнер состоит из ста килограммов.</p>
+<p>Покажем на простом примере, как можно рассуждать при переводе массы из одной единицы измерения в другую. Предположим, что имеется 3 килограмма и нужно перевести их в граммы.</p>
+<p>Сначала нужно узнать сколько граммов содержится в одном килограмме. В одном килограмме содержится тысяча граммов:</p>
+<p style="text-align: center;"><span style="color: #000000;">1 кг = 1000 г</span></p>
+<p>Если в 1 килограмме 1000 граммов, то сколько граммов будут содержаться в трёх таких килограммах? Ответ напрашивается сам &#8212; 3000 граммов. А эти 3000 граммов получаются путем умножения 3 на 1000. Значит, чтобы перевести 3 килограмма в граммы, нужно 3 умножить на 1000</p>
+<p style="text-align: center;"><span style="color: #000000;">3 × 1000 = 3000 г</span></p>
+<p>Теперь попробуем перевести те же 3 килограмма в тонны. Сначала нужно узнать сколько килограммов содержатся в одной тонне. В одной тонне содержится тысяча килограмм:</p>
+<p style="text-align: center;"><span style="color: #000000;">1 т = 1000 кг</span></p>
+<p>Если одна тонна содержит 1000 килограмм, то тонна которая содержит только 3 килограмма будет намного меньше. Чтобы её получить нужно 3 разделить на 1000</p>
+<p style="text-align: center;"><span style="color: #000000;">3 : 1000 = 0,003 т</span></p>
+<p style="text-align: left;">Как и в случае с переводом единиц измерения длины, на первых порах удобно пользоваться следующей схемой:</p>
+<p style="text-align: left;"><img decoding="async" class="size-full wp-image-2087 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/09/2223.png" alt="2223" width="217" height="230" /></p>
+<p style="text-align: left;">Данная схема позволит быстро сориентироваться какое действие выполнить для перевода единиц &#8212; умножение или деление.</p>
+<p>Например, переведём 5000 килограмм в тонны, пользуясь данной схемой.</p>
+<p>Итак, мы должны перейти из килограммов в тонны. Другими словами, перейти из младшей единицы измерения в более старшую (тонна старше килограмма). Смотрим на схему и видим, что стрелка указывающая переход из младших единиц в более старшие, направлена вверх и в конце стрелки указано, что мы должны применить деление:</p>
+<p style="text-align: left;"><img decoding="async" class="size-full wp-image-2087 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/09/2223.png" alt="2223" width="217" height="230" /></p>
+<p>Теперь нужно узнать сколько килограмм содержатся в одной тонне. В одной тонне содержится 1000 килограмм. А чтобы узнать, сколько тонн составляет 5000 килограмм, нужно 5000 разделить на 1000</p>
+<p style="text-align: center;"><span style="color: #000000;">5000 : 1000 = 5 т</span></p>
+<p style="text-align: left;">Значит, при переводе 5000 килограмм в тонны, получается 5 тонн.</p>
+<p style="text-align: left;">Попробуем перевести 6 килограммов в граммы. В данном случае мы переходим из старшей единицы измерения в младшую. Поэтому будем применять умножение.</p>
+<p style="text-align: left;">Сначала надо узнать сколько граммов содержится в одном килограмме. В одном килограмме содержится тысяча граммов:</p>
+<p style="text-align: center;"><span style="color: #000000;">1 кг = 1000 г</span></p>
+<p style="text-align: left;">Если в 1 килограмме 1000 граммов, то в шести таких килограммах будет в шесть раз больше граммов. Значит 6 нужно умножить на 1000</p>
+<p style="text-align: center;"><span style="color: #000000;">6 × 1000 = 6000 г</span></p>
+<p style="text-align: center;">Значит, при переводе 6 килограммов в граммы, получим 6000 грамм.</p>
+<hr />
+<h2 id="yak3" style="text-align: center;">Перевод единиц измерения времени</h2>
+<p>Любая величина, которая характеризует время, может быть переведена из одной единицы измерения в другую.</p>
+<p>Кроме того, при решении задач по физике, обязательно нужно соблюдать требования международной системы СИ. То есть если время дано не в секундах, а в другой единице измерения, то его обязательно нужно перевести в секунды, поскольку секунда является единицей измерения времени в системе СИ.</p>
+<p>Чтобы переводить время из одной единицы измерения в другую, нужно знать из чего состоит та или иная единица измерения времени. То есть нужно знать, что к примеру один час состоит из шестидесяти минут или одна минута состоит из шестидесяти секунд и т.д.</p>
+<p>Покажем на простом примере, как можно рассуждать при переводе времени из одной единицы измерения в другую. Предположим, что требуется перевести 2 минуты в секунды.</p>
+<p>Сначала надо узнать сколько секунд содержится в одной минуте. В одной минуте содержатся шестьдесят секунд:</p>
+<p style="text-align: center;"><span style="color: #000000;">1 мин = 60 с</span></p>
+<p>Если в 1 минуте 60 секунд, то сколько секунд будет в двух таких минутах? Ответ напрашивается сам &#8212; 120 секунд. А эти 120 секунд получаются путём умножения 2 на 60. Значит, чтобы перевести 2 минуты в секунды, нужно 2 умножить на 60</p>
+<p style="text-align: center;"><span style="color: #000000;">2 × 60 = 120 с</span></p>
+<p>Теперь попробуем перевести те же 2 минуты в часы. Поскольку мы переводим минуты в часы, то сначала надо узнать сколько минут содержится в одном часе. В одном часе содержится шестьдесят минут:</p>
+<p style="text-align: center;">1 ч = 60 м</p>
+<p>Если один час содержит 60 минут, то час который содержит только 2 минуты будет намного меньше. Чтобы его получить нужно 2 минуты разделить на 60</p>
+<p><img decoding="async" class="size-full wp-image-2239 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/24411.png" alt="24411" width="207" height="303" srcset="https://spacemath.xyz/wp-content/uploads/2016/10/24411.png 207w, https://spacemath.xyz/wp-content/uploads/2016/10/24411-205x300.png 205w" sizes="(max-width: 207px) 100vw, 207px" /></p>
+<p>При делении 2 на 60 получается периодическая дробь 0,0 (3). Эту дробь можно округлить до разряда сотых. Тогда получим ответ 0,03</p>
+<p style="text-align: center;">2 : 60= 0,03 ч</p>
+<p style="text-align: left;">При переводе единиц измерения времени также применима схема, подсказывающая что применять &#8212; умножение или деление:</p>
+<p style="text-align: left;"><img loading="lazy" decoding="async" class="size-full wp-image-2090 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/09/2224.png" alt="2224" width="217" height="230" /></p>
+<p>Например, переведём 25 минут в часы, пользуясь данной схемой.</p>
+<p>Итак, мы должны перейти из минут в часы. Другими словами, перейти из младшей единицы измерения в более старшую (часы старше минут). Смотрим на схему и видим, что стрелка указывающая переход из младших единиц в более старшие, направлена вверх и в конце стрелки указано, что мы должны применить деление:</p>
+<p style="text-align: left;"><img loading="lazy" decoding="async" class="size-full wp-image-2090 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/09/2224.png" alt="2224" width="217" height="230" /></p>
+<p>Теперь нужно узнать, сколько минут содержится в одном часе. В одном часе содержится 60 минут. А час, который содержит только  25 минут будет намного меньше. Чтобы его найти, нужно 25 разделить на 60</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-2242 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/10/24412.png" alt="24412" width="243" height="369" srcset="https://spacemath.xyz/wp-content/uploads/2016/10/24412.png 243w, https://spacemath.xyz/wp-content/uploads/2016/10/24412-198x300.png 198w" sizes="(max-width: 243px) 100vw, 243px" /></p>
+<p style="text-align: left;">При делении 25 на 60 получается периодическая дробь 0,41 (6). Эту дробь можно округлить до разряда сотых. Тогда получим ответ 0,42</p>
+<p style="text-align: center;"><span style="color: #000000;">25 : 60 = 0,42 ч</span></p>
+
+<div class="entry-content">
+
+
+    <h3>Хотите перейти на следующий урок?</h3>
+    <a href="lection1.html" class="back">Вернуться ‹‹</a>
+    <a href="lection3.html" class="next">Вперёд »</a>
+    
+    <script type="text/javascript">
+    
+    var menuItems = document.querySelectorAll('.skew-menu ul li');
+    
+    for (var i = 0; i < menuItems.length; i++) {
+       menuItems[i].addEventListener('click', function() {
+       });
+    }
+    document.querySelectorAll('.skew-menu li').forEach(item => {
+    item.addEventListener('mouseover', () => {
+        item.style.transition = 'transform 0.3s';
+        item.style.transform = 'scale(1.2)';
+    });
+
+    item.addEventListener('mouseout', () => {
+        if (!item.classList.contains("clicked")) { // Проверяем, не была ли ячейка уже уменьшена при клике
+            item.style.transition = 'transform 0.3s';
+            item.style.transform = 'scale(1)';
+        }
+    });
+
+     document.addEventListener("click", function(event) { 
+         if (!event.target.closest(".skew-menu li")) return;
+
+         const clickedItem= event.target.closest(".skew-menu li");
+
+         document.querySelectorAll('.skew-menu li').forEach(otherItem => { 
+             otherItem.classList.remove("clicked");
+             otherItem.removeEventListener("transitionend", removeTransition);
+          });
+          
+          function removeTransition() { this.classList.remove("clicked"); }
+
+          const clickedClassList= clickedItem.classList;
+          clickedClassList.add("clicked");
+
+          setTimeout(() =>{
+              clickedClassList.remove("clicked")
+           },300)
+
+           function toggleTransform(){
+               let scaleValue= window.getComputedStyle(clickedItem).getPropertyValue('transform');
+
+               if(scaleValue==='none'){
+                   clickedItem.setAttribute(
+                       "style",
+                       "transition: all .5s ease-in-out; transform: scale(.8);"
+                     );
+                 }else{
+                     clickedItem.removeAttribute("style");
+                  }
+            }
+
+            toggleTransform();
+      });
+});
+let currentLesson = document.querySelector('.active a');
+currentLesson.style.color = '#007bff';
+    
+    menuItems[0].classList.add("active");
+    
+    document.querySelector('.back').setAttribute("href", "lection9.html");
+    document.querySelector('.next').setAttribute("href", "lection10.html");
+    
+    </script>
+    </body>
+    </html>

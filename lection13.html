@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лекция 13: Раскрытие скобок</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: 200px auto;
+            gap: 20px;
+        }
+        
+        .skew-menu {
+            background-color: #f2f2f2; /* Цвет фона для меню */
+            padding: 10px;
+        }
+
+        .lecture-content {
+            background-color: #e6e6e6; /* Цвет фона для контента лекции */
+            padding: 20px;
+        }
+
+        h1, h2, p {
+          margin-bottom: 15px;  
+      }
+
+      a.back, a.next{
+         text-decoration:none; 
+         color:#333; 
+     }
+     body {
+            background-image: url(images/7.avif);
+            background-attachment: fixed;
+            -moz-background-size: 100%;
+            -webkit-background-size: 100%;
+            -o-background-size: 100%;
+            background-size: 100%;
+        }
+        h1{
+        color: rgb(0, 0, 0) !important; 
+        font-family: courier !important; 
+         text-align: center !important;
+  }
+        p {
+         color: rgb(0, 0, 0);
+         font-family: 'Times New Roman', Times, serif;
+         font-size: 150%;
+         text-align: right; 
+        }
+        h2{
+        color: dark !important; 
+        font-family: Georgia, 'Times New Roman', Times, serif !important; 
+         text-align: center !important;
+  }
+        p {
+         color: rgb(0, 0, 0); 
+         font-family: 'Times New Roman', Times, serif;
+         font-size: 150%; 
+         text-align: center;
+        }
+        a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.back {
+    background-color: #ddd;
+    color: rgb(0, 0, 0);
+}
+
+.next {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.round {
+    border-radius: 50%;
+}
+@radius: 7px;
+@skew: 25deg;
+@main-color: tomato;
+
+body{
+  font-family:Helvetica Neue, Helvetica, sans-serif;
+  background:@main-color;
+}
+
+.skew-menu{
+  text-align:center;
+  margin-top:3em;
+  padding: 10px;
+    max-height: 2000px; /* Устанавливаем максимальную высоту */
+    max-width: 700px;
+    width: 200px;
+    overflow-y: auto; /* Добавляем вертикальную прокрутку при необходимости */
+}
+
+.skew-menu ul{
+  display:inline-block;
+  margin:0;
+  padding:0;
+  list-style:none;
+  transform:skew(-@skew);
+  width: 250px;
+  border-radius: 10px;
+}
+
+.skew-menu ul li{
+  background:#fff;
+  float:left;
+  border-right:1px solid #eee;
+  box-shadow:0 1px 1px rgba(0,0,0,0.1);
+  text-transform:uppercase;
+  color:#555;
+  font-weight:bolder;
+  transition:all 0.3s linear;
+  display: block;
+  text-align: center;
+  width: 200px;
+  max-width: 200px;
+  &:first-child
+  {
+
+    border-radius:@radius 0 0 @radius;
+  }
+  
+  &:last-child{
+    border-right:none;
+    border-radius:0 @radius @radius 0;
+  }
+  
+  &:hover{
+    background:#eee;
+    color:@main-color;
+  }
+  
+  a{
+    display:block;
+    padding:1em 2em;
+    color:inherit;
+    text-decoration:none;
+    transform:skew(@skew);
+  }
+}
+.active a {
+  color: #007bff; /* Выделите цвет текста */
+}
+.navless{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: lighter;
+    font-size: 20px;
+}
+.nav menu{
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+      .menu b{
+        text-align: center;
+      }
+    </style>
+</head>
+
+<body>
+
+<nav class="skew-menu">
+    <ul>
+      <li class="active"><a href="lection1.html">Лекция 1</a></li>
+      <li class="active"><a href="lection2.html">Лекция 2</a></li>
+      <li class="active"><a href="lection3.html">Лекция 3</a></li>
+      <li class="active"><a href="lection4.html">Лекция 4</a></li>
+      <li class="active"><a href="lection5.html">Лекция 5</a></li>
+      <li class="active"><a href="lection6.html">Лекция 6</a></li>
+      <li class="active"><a href="lection7.html">Лекция 7</a></li>
+      <li class="active"><a href="lection8.html">Лекция 8</a></li>
+      <li class="active"><a href="lection9.html">Лекция 9</a></li>
+      <li class="active"><a href="lection10.html">Лекция 10</a></li>
+      <li class="active"><a href="lection11.html">Лекция 11</a></li>
+      <li class="active"><a href="lection12.html">Лекция 12</a></li>
+      <li class="active"><a href="lection13.html">Лекция 13</a></li>
+      <li class="active"><a href="lection14.html">Лекция 14</a></li>
+      <li class="active"><a href="lection15.html">Лекция 15</a></li>
+      <li class="active"><a href="lection16.html">Лекция 16</a></li>
+      <li class="active"><a href="lection17.html">Лекция 17</a></li>
+      <li class="active"><a href="lection18.html">Лекция 18</a></li>
+      <li class="active"><a href="lection19.html">Лекция 19</a></li>
+      <li class="active"><a href="lection20.html">Лекция 20</a></li>
+      <li class="active"><a href="lection21.html">Лекция 21</a></li>
+      <li class="active"><a href="lection22.html">Лекция 22</a></li>
+      <li class="active"><a href="lection23.html">Лекция 23</a></li>
+      <li class="active"><a href="lection24.html">Лекция 24</a></li>
+      <li class="active"><a href="lection25.html">Лекция 25</a></li>
+      <li class="active"><a href="lection26.html">Лекция 26</a></li>
+      <li class="active"><a href="lection27.html">Лекция 27</a></li>
+      <li class="active"><a href="lection28.html">Лекция 28</a></li>
+      <li class="active"><a href="lection29.html">Лекция 29</a></li>
+      <li class="active"><a href="lection30.html">Лекция 30</a></li>
+    </ul>
+</nav>
+
+<div class="lecture-content">
+  <h1 class="entry-title">Лекция 13: Раскрытие скобок</h1>      
+
+      
+</header><!-- .entry-header -->
+
+<div class="entry-content">
+  <p>Продолжаем изучать основы алгебры. В данном уроке мы научимся раскрывать скобки в выражениях. Раскрыть скобки означает избавить выражение от этих скобок.</p>
+<p>Чтобы раскрывать скобки, нужно выучить наизусть два правила. При регулярных занятиях раскрывать скобки можно с закрытыми глазами, и про те правила которые требовалось заучивать наизусть, можно благополучно забыть.</p>
+<nav id="menu"><b>Содержание урока</b></p>
+<ul class="navless">
+<li><a href="#yak1">Первое правило раскрытия скобок</a></li>
+<li><a href="#second_rule">Второе правило раскрытия скобок</a></li>
+<li><a href="#yak3">Механизм раскрытия скобок</a></li>
+<li><a href="#yak4">Задания для самостоятельного решения</a></li>
+</ul>
+</nav>
+<h2 id="yak1" style="text-align: center;">Первое правило раскрытия скобок</h2>
+<p>Рассмотрим следующее выражение:</p>
+<p style="text-align: center;"><span style="color: #000000;">8 + (−9 + 3)</span></p>
+<p>Значение данного выражения равно <em>2</em>. Раскроем скобки в данном выражении. Раскрыть скобки означает избавиться от них, не влияя на значение выражения. То есть после избавления от скобок значение выражения <span style="color: #000000;">8 + (−9 + 3)</span> по прежнему должно быть равно двум.</p>
+<p>Первое правило раскрытия скобок выглядит следующим образом:</p>
+<p class="regulations">При раскрытии скобок, если перед скобками стоит плюс, то этот плюс опускается вместе со скобками.</p>
+<p>Итак, мы видим что в выражении <span style="color: #000000;">8 + (−9 + 3)</span> перед скобками стоит плюс. Этот плюс нужно опустить вместе со скобками. Иными словами, скобки исчезнут вместе с плюсом, который перед ними стоял. А то, что было в скобках запишется без изменений:</p>
+<p><img decoding="async" class="size-full wp-image-4306 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/02/vosem-plyus-v-skobkah-minus-devyat-plyus-tri-opuskaem-skobki.png" alt="восемь плюс в скобках минус девять плюс три опускаем скобки" width="426" height="320" srcset="https://spacemath.xyz/wp-content/uploads/2017/02/vosem-plyus-v-skobkah-minus-devyat-plyus-tri-opuskaem-skobki.png 426w, https://spacemath.xyz/wp-content/uploads/2017/02/vosem-plyus-v-skobkah-minus-devyat-plyus-tri-opuskaem-skobki-300x225.png 300w" sizes="(max-width: 426px) 100vw, 426px" /></p>
+<p>Мы получили выражение без скобок <span style="color: #000000;">8−9+3</span>. Данное выражение равно 2, как и предыдущее выражение со скобками было равно 2.</p>
+<p style="text-align: center;"><span style="color: #000000;">8 + (−9 + 3) = 2</span></p>
+<p style="text-align: center;"><span style="color: #000000;">8 − 9 + 3 = 2</span></p>
+<p>Таким образом, между выражениями <span style="color: #000000;">8+(−9+3) </span>и<span style="color: #000000;"> 8−9+3</span> можно поставить знак равенства, поскольку они равны одному и тому же значению:</p>
+<p style="text-align: center;"><span style="color: #000000;">8 + (−9 + 3) = 8 − 9 + 3</span></p>
+<p style="text-align: center;"><span style="color: #000000;">2 = 2</span></p>
+<hr />
+<p><strong>Пример 2.</strong> Раскрыть скобки в выражении <span style="color: #000000;">3 + (−1 − 4)</span></p>
+<p>Перед скобками стоит плюс, значит этот плюс опускается вместе со скобками. То, что было в скобках останется без изменений:</p>
+<p style="text-align: center;"><span style="color: #000000;">3 + (−1 − 4) = 3 − 1 − 4</span></p>
+<hr />
+<p><strong>Пример 3.</strong> Раскрыть скобки в выражении <span style="color: #000000;">2 + (−1)</span></p>
+<p>Перед скобками стоит плюс, значит этот плюс опускается вместе со скобками. То, что было в скобках останется без изменений:</p>
+<p style="text-align: center;"><span style="color: #000000;">2 + (−1) = 2 − 1</span></p>
+<p style="text-align: left;">В данном примере раскрытие скобок стало своего рода обратной операцией замене вычитания сложением. Как это понимать?</p>
+<p style="text-align: left;">В выражении <span style="color: #000000;">2 − 1</span> происходит вычитание, но его можно заменить сложением. Тогда получится выражение <span style="color: #000000;">2 + (−1)</span>. Но если в выражении <span style="color: #000000;">2 + (−1)</span> раскрыть скобки, то получится изначальное <span style="color: #000000;">2 − 1</span>.</p>
+<p style="text-align: left;">Поэтому первое правило раскрытия скобок можно использовать для упрощения выражений после каких-нибудь преобразований. То есть избавить его от скобок и сделать проще.</p>
+<p style="text-align: left;">Например, упростим выражение <span style="color: #000000;">2<em>a </em>+ <em>a</em>− 5<em>b </em>+ <em>b</em></span>.</p>
+<p style="text-align: left;">Чтобы упростить данное выражение, можно привести подобные слагаемые. Напомним, что для приведения подобных слагаемых, нужно сложить коэффициенты подобных слагаемых и результат умножить на общую буквенную часть:</p>
+<p style="text-align: center;"><img decoding="async" class="alignnone size-full wp-image-4559" src="https://spacemath.xyz/wp-content/uploads/2017/03/uproshhenie-2a-a-5b-b.png" alt="упрощение 2a a -5b +b" width="655" height="23" srcset="https://spacemath.xyz/wp-content/uploads/2017/03/uproshhenie-2a-a-5b-b.png 655w, https://spacemath.xyz/wp-content/uploads/2017/03/uproshhenie-2a-a-5b-b-300x11.png 300w" sizes="(max-width: 655px) 100vw, 655px" /></p>
+<p style="text-align: left;">Получили выражение <span style="color: #000000;">3<em>a </em>+ (−4<em>b</em>)</span>. В этом выражении раскроем скобки. Перед скобками стоит плюс, поэтому используем первое правило раскрытия скобок, то есть опускаем скобки вместе с плюсом, который стоит перед этими скобками:</p>
+<p style="text-align: center;"><span style="color: #000000;">3</span><em><span style="color: #000000;">a + (−</span></em><span style="color: #000000;">4</span><em><span style="color: #000000;">b) = </span></em><span style="color: #000000;">3</span><em><span style="color: #000000;">a − </span></em><span style="color: #000000;">4</span><em><span style="color: #000000;">b</span></em></p>
+<p style="text-align: left;">Таким образом, выражение <span style="color: #000000;">2<em>a+a−</em>5<em>b+b</em></span> упрощается до <span style="color: #000000;">3<em>a−</em>4<em>b</em></span>.</p>
+<p>Раскрыв одни скобки, по пути могут встретиться другие. К ним применяем те же правила, что и к первым. Например, раскроем скобки в следующем выражении:</p>
+<p style="text-align: center;"><span style="color: #000000;">2 + (−3 + 1) + 3 + (−6)</span></p>
+<p>Здесь два места, где нужно раскрыть скобки. В данном случае применимо первое правило раскрытия скобок, а именно опускание скобок вместе с плюсом, который стоит перед этими скобками:</p>
+<p style="text-align: center;"><span style="color: #000000;">2 + (−3 + 1) + 3 + (−6) = 2 − 3 + 1 + 3 − 6</span></p>
+<hr />
+<p><strong>Пример 3.</strong> Раскрыть скобки в выражении <span style="color: #000000;">6+(−3)+(−2)</span></p>
+<p>В обоих местах, где имеются скобки, перед ними стоит плюс. Здесь опять же применяется первое правило раскрытия скобок:</p>
+<p style="text-align: center;"><span style="color: #000000;">6 + (−3) + (−2) = 6 − 3 − 2</span></p>
+<hr />
+<p>Иногда первое слагаемое в скобках записано без знака. Например, в выражении <span style="color: #000000;">1+(2+3−4)</span> первое слагаемое в скобках <em>2</em> записано без знака. Возникает вопрос, а какой знак будет стоять перед двойкой после того, как скобки и плюс, стоящий перед скобками опустятся? Ответ напрашивается сам &#8212; перед двойкой будет стоять плюс.</p>
+<p>На самом деле даже будучи в скобках перед двойкой стоит плюс, но мы его не видим по причине того, что его не записывают. Мы уже говорили, что полная запись положительных чисел выглядит как <span style="color: #000000;">+1, +2, +3</span><em>.</em> Но плюсы по традиции не записывают, поэтому мы и видим привычные для нас положительные числа <span style="color: #000000;">1, 2, 3</span>.</p>
+<p>Поэтому, чтобы раскрыть скобки в выражении <span style="color: #000000;">1+(2+3−4)</span>, нужно как обычно опустить скобки вместе с плюсом, стоящим перед этими скобками, но первое слагаемое которое было в скобках записать со знаком плюс:</p>
+<p style="text-align: center;"><span style="color: #000000;">1 + (2 + 3 − 4) = 1 + 2 + 3 − 4</span></p>
+<hr />
+<p><strong>Пример 4.</strong> Раскрыть скобки в выражении <span style="color: #000000;">−5 + (2 − 3)</span></p>
+<p>Перед скобками стоит плюс, поэтому применяем первое правило раскрытия скобок, а именно опускаем скобки вместе с плюсом, который стоит перед этими скобками. Но первое слагаемое, которое в скобках записываем со знаком плюс:</p>
+<p style="text-align: center;"><span style="color: #000000;">−5 + (2 − 3) = −5 + 2 − 3</span></p>
+<hr />
+<p><strong>Пример 5.</strong> Раскрыть скобки в выражении <span style="color: #000000;">(−5)</span></p>
+<p>Перед скобками стоит плюс, но он не записан по причине того, что до него не было других чисел или выражений. Наша задача убрать скобки, применив первое правило раскрытия скобок, а именно опустить скобки вместе с этим плюсом (даже если он невидим)</p>
+<p style="text-align: center;"><span style="color: #000000;">(−5) = −5</span></p>
+<hr />
+<p><strong>Пример 6.</strong> Раскрыть скобки в выражении <span style="color: #000000;">2<em>a + (−</em>6<em>a + b)</em></span></p>
+<p>Перед скобками стоит плюс, значит этот плюс опускается вместе со скобками. То, что было в скобках запишется без изменений:</p>
+<p style="text-align: center;"><span style="color: #000000;">2</span><em><span style="color: #000000;">a + (−</span></em><span style="color: #000000;">6</span><em><span style="color: #000000;">a + b) = </span></em><span style="color: #000000;">2</span><em><span style="color: #000000;">a −</span></em><span style="color: #000000;">6</span><em><span style="color: #000000;">a + b</span></em></p>
+<hr />
+<p><strong>Пример 7.</strong> Раскрыть скобки в выражении <span style="color: #000000;">5<em>a</em> + (−7<em>b</em> + 6<em>c</em>) + 3<em>a</em> + (−2<em>d</em>)</span></p>
+<p>В данном выражении имеется два места, где нужно раскрыть скобки. В обоих участках перед скобками стоит плюс, значит этот плюс опускается вместе со скобками. То, что было в скобках запишется без изменений:</p>
+<p style="text-align: center;"><span style="color: #000000;">5<em>a</em> + (−7<em>b</em> + 6<em>c</em>) + 3<em>a</em> + (−2<em>d</em>) = 5<em>a</em> −7<em>b</em> + 6<em>c</em> + 3<em>a</em> − 2<em>d</em></span></p>
+<hr />
+<h2 id="second_rule" style="text-align: center;">Второе правило раскрытия скобок</h2>
+<p>Теперь рассмотрим второе правило раскрытия скобок. Оно применяется тогда, когда перед скобками стоит минус.</p>
+<p class="regulations">Если перед скобками стоит минус, то этот минус опускается вместе со скобками, но слагаемые, которые были в скобках, меняют свой знак на противоположный.</p>
+<p>Например, раскроем скобки в следующем выражении</p>
+<p style="text-align: center;"><span style="color: #000000;">5 − (−2 − 3)</span></p>
+<p>Видим, что перед скобками стоит минус. Значит нужно применить второе правило раскрытия, а именно опустить скобки вместе с минусом, стоящим перед этими скобками. При этом слагаемые, которые были в скобках, поменяют свой знак на противоположный:</p>
+<p><img decoding="async" class="size-full wp-image-4307 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/02/pyat-minus-v-skobkah-minus-dva-minus-tri-opuskaem-skobki.png" alt="пять минус в скобках минус два минус три опускаем скобки" width="552" height="320" srcset="https://spacemath.xyz/wp-content/uploads/2017/02/pyat-minus-v-skobkah-minus-dva-minus-tri-opuskaem-skobki.png 552w, https://spacemath.xyz/wp-content/uploads/2017/02/pyat-minus-v-skobkah-minus-dva-minus-tri-opuskaem-skobki-300x174.png 300w" sizes="(max-width: 552px) 100vw, 552px" /></p>
+<p>Мы получили выражение без скобок <span style="color: #000000;">5 + 2 + 3</span>. Данное выражение равно 10, как и предыдущее выражение со скобками было равно 10.</p>
+<p style="text-align: center;"><span style="color: #000000;">5 − (−2 − 3) = 10</span></p>
+<p style="text-align: center;"><span style="color: #000000;">5 + 2 + 3 = 10</span></p>
+<p>Таким образом, между выражениями <span style="color: #000000;"><em>5−(−2−3)</em></span> и <span style="color: #000000;"><em>5+2+3</em></span> можно поставить знак равенства, поскольку они равны одному и тому же значению:</p>
+<p style="text-align: center;"><span style="color: #000000;">5 − (−2 − 3) = 5 + 2 + 3</span></p>
+<p style="text-align: center;"><span style="color: #000000;">10 = 10</span></p>
+<hr />
+<p><strong>Пример 2.</strong> Раскрыть скобки в выражении <span style="color: #000000;">6 − (−2 − 5)</span></p>
+<p>Перед скобками стоит минус, поэтому применяем второе правило раскрытия скобок, а именно опускаем скобки вместе с минусом, который стоит перед этими скобками. При этом слагаемые, которые были в скобках, записываем с противоположными знаками:</p>
+<p style="text-align: center;"><span style="color: #000000;">6 − (−2 − 5) = 6 + 2 + 5</span></p>
+<hr />
+<p><strong>Пример 3.</strong> Раскрыть скобки в выражении <span style="color: #000000;">2 − (7 + 3)</span></p>
+<p>Перед скобками стоит минус, поэтому применяем второе правило раскрытия скобок:</p>
+<p style="text-align: center;"><span style="color: #000000;">2 − (7 + 3) = 2 − 7 − 3</span></p>
+<hr />
+<p><strong>Пример 4.</strong> Раскрыть скобки в выражении <span style="color: #000000;">−(−3 + 4)</span></p>
+<p>Перед скобками стоит минус, поэтому применяем второе правило раскрытия скобок:</p>
+<p style="text-align: center;"><span style="color: #000000;">−(−3 + 4)</span> = <span style="color: #000000;">3 − 4</span></p>
+<hr />
+<p><strong>Пример 5.</strong> Раскрыть скобки в выражении <span style="color: #000000;">−(−8 − 2) + 16 + (−9 − 2)</span></p>
+<p>Здесь два места, где нужно раскрыть скобки. В первом случае нужно применить второе правило раскрытия скобок, а когда очередь доходит до выражения <span style="color: #000000;">+(−9 − 2) </span>нужно применить первое правило:</p>
+<p style="text-align: center;"><span style="color: #000000;">−(−8 − 2) + 16 + (−9 − 2)</span> = <span style="color: #000000;">8 + 2 + 16 − 9 − 2</span></p>
+<hr />
+<p><strong>Пример 6.</strong> Раскрыть скобки в выражении <span style="color: #000000;"><em>−(−a − 1) </em></span></p>
+<p>Перед скобками стоит минус, поэтому применяем второе правило раскрытия скобок:</p>
+<p style="text-align: center;"><span style="color: #000000;"><em>−(−a − 1) = a + 1</em></span></p>
+<hr />
+<p><strong>Пример 7.</strong> Раскрыть скобки в выражении <span style="color: #000000;"><em>−(4a + 3) </em></span></p>
+<p>Перед скобками стоит минус, поэтому применяем второе правило раскрытия скобок:</p>
+<p style="text-align: center;"><span style="color: #000000;"><em>−(4a + 3) </em></span>= <span style="color: #000000;"><em>−4a − 3</em></span></p>
+<hr />
+<p><strong>Пример 8.</strong> Раскрыть скобки в выражении <em>a </em><span style="color: #000000;"><em>− (4b + 3) + 15 </em></span></p>
+<p>Перед скобками стоит минус, поэтому применяем второе правило раскрытия скобок:</p>
+<p style="text-align: center;"><span style="color: #000000;"><em>a − (4b + 3) + 15 </em>= <em>a </em><em>− 4b − 3 + 15</em></span></p>
+<hr />
+<p><strong>Пример 9.</strong> Раскрыть скобки в выражении <span style="color: #000000;"><em>2a </em><em><span style="color: #000000;">+ (3b − b) − (3c + 5)</span><br />
+</em></span></p>
+<p>Здесь два места, где нужно раскрыть скобки. В первом случае нужно применить первое правило раскрытия скобок, а когда очередь доходит до выражения <span style="color: #000000;"><em>−(3c+5) </em></span>нужно применить второе правило:</p>
+<p style="text-align: center;"><span style="color: #000000;"><em>2a + (3b − b) − (3c + 5) </em>= <em>2a + 3b − b − 3c − 5</em></span></p>
+<hr />
+<p><strong>Пример 10.</strong> Раскрыть скобки в выражении <span style="color: #000000;"><em>−a </em><em><span style="color: #000000;">− (−4a) + (−6b) − (−8c + 15)</span><br />
+</em></span></p>
+<p>Здесь три места, где нужно раскрыть скобки. Вначале нужно применить второе правило раскрытия скобок, затем первое, а затем опять второе:</p>
+<p style="text-align: center;"><span style="color: #000000;"><em>−a − (−4a) + (−6b) − (−8c + 15) </em>= <em>−a + </em><em>4a − 6b + 8c − 15</em></span></p>
+<hr />
+<h2 id="yak3" style="text-align: center;">Механизм раскрытия скобок</h2>
+<p style="text-align: left;">Правила раскрытия скобок, которые мы сейчас рассмотрели, основаны на распределительном законе умножения:</p>
+<p style="text-align: center;"><span style="color: #000000;"><em>a(b + c) = ab + ac</em></span></p>
+<p style="text-align: left;">На самом деле <em>раскрытием скобок</em> называют ту процедуру, когда общий множитель умножают на каждое слагаемое в скобках. В результате такого умножения скобки исчезают. Например, раскроем скобки в выражении <span style="color: #000000;"><em>3×(4+5)</em></span></p>
+<p style="text-align: center;"><span style="color: #000000;">3 × (4 + 5) = 3 × 4 + 3 × 5</span></p>
+<p style="text-align: left;">Поэтому, если нужно умножить число на выражение в скобках (или выражение в скобках умножить на число) надо говорить <em>раскроем скобки</em>.</p>
+<p style="text-align: left;">Но как связан распределительный закон умножения с правилами раскрытия скобок, которые мы рассматривали ранее?</p>
+<p style="text-align: left;">Дело в том, что перед любыми скобками стоит общий множитель. В примере <span style="color: #000000;">3 × (4 + 5) </span>общий множитель это <span style="color: #000000;">3</span>. А в примере <span style="color: #000000;"><em>a(b + c)</em></span> общий множитель это переменная <em><span style="color: #000000;">a</span>.</em></p>
+<p style="text-align: left;">Если перед скобками нет чисел или переменных, то общим множителем является <span style="color: #000000;">1</span> или <span style="color: #000000;">−1</span>, в зависимости от того, какой знак стоит перед скобками. Если перед скобками стоит плюс, значит общим множителем является <span style="color: #000000;">1</span>. Если перед скобками стоит минус, значит общим множителем является <span style="color: #000000;">−1</span>.</p>
+<p style="text-align: left;">К примеру, раскроем скобки в выражении <span style="color: #000000;">−(3<em>b </em>− 1)</span>. Перед скобками стоит минус, поэтому нужно воспользоваться вторым правилом раскрытия скобок, то есть опустить скобки вместе с минусом, стоящим перед скобками. А выражение, которое было в скобках, записать с противоположными знаками:</p>
+<p style="text-align: center;"><span style="color: #000000;">−(3<em>b</em> − 1) = −3<em>b</em> + 1</span></p>
+<p style="text-align: left;">Мы раскрыли скобки, воспользовавшись правилом раскрытия скобок. Но эти же скобки можно раскрыть, воспользовавшись распределительным законом умножения. Для этого сначала записываем перед скобками общий множитель 1, который не был записан:</p>
+<p style="text-align: center;"><span style="color: #0000ff;">−1</span><span style="color: #000000;">(3<em>b</em> −1)</span></p>
+<p style="text-align: left;">Минус, который раньше стоял перед скобками относился к этой единице. Теперь можно раскрыть скобки, применяя распределительный закон умножения. Для этого общий множитель <span style="color: #0000ff;">−1</span> нужно умножить на каждое слагаемое в скобках и полученные результаты сложить.</p>
+<p style="text-align: left;">Для удобства заменим разность, находящуюся в скобках на сумму:</p>
+<p style="text-align: center;"><span style="color: #0000ff;">−1</span><span style="color: #000000;">(3<em>b</em> −1)</span> = <span style="color: #0000ff;">−1</span><span style="color: #000000;">( 3<em>b</em> + (−1) )</span></p>
+<p style="text-align: left;">Далее умножаем общий множитель <span style="color: #0000ff;">−1</span> на каждое слагаемое в скобках:</p>
+<p style="text-align: center;"><span style="color: #0000ff;">−1</span><span style="color: #000000;">(3<em>b</em> −1) =</span> <span style="color: #0000ff;">−1</span><span style="color: #000000;">(3<em>b</em> + (−1)) =</span> <span style="color: #0000ff;">−1 </span><span style="color: #000000;">× 3<em>b</em> +</span> <span style="color: #0000ff;">(−1) </span><span style="color: #000000;">× (−1) = −3<em>b</em> + 1</span></p>
+<p style="text-align: left;">Как и в прошлый раз мы получили выражение <span style="color: #000000;">−3<em>b </em>+ 1</span>. Каждый согласится с тем, что в этот раз затрачено больше времени на решение столь простейшего примера. Поэтому разумнее пользоваться готовыми правилами раскрытия скобок, которые мы рассматривали в данном уроке:</p>
+<p style="text-align: center;"><span style="color: #000000;">−(3<em>b</em> − 1) = −3<em>b</em> + 1</span></p>
+<p style="text-align: left;">Но не мешает знать, как эти правила работают.</p>
+<hr />
+<p style="text-align: left;">В данном уроке мы научились ещё одному тождественному преобразованию. Вместе с раскрытием скобок, <a href="https://spacemath.xyz/vynesenie-obshhego-mnozhitelya-za-skobki/" target="_blank" rel="noopener noreferrer">вынесением общего за скобки</a> и <a href="https://spacemath.xyz/bukvennye-vyrazheniya/" target="_blank" rel="noopener noreferrer">приведением подобных слагаемых</a> можно немного расширить круг решаемых задач. Например:</p>
+<p style="text-align: left;">Раскрыть скобки и привести подобные слагаемые в следующем выражении:</p>
+<p style="text-align: left;"><img loading="lazy" decoding="async" class="size-full wp-image-4608 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/03/minus-4-na-2b-plyus-1-minus-2b-plyus-3.png" alt="минус 4 на 2b плюс 1 минус 2b плюс 3" width="161" height="19" srcset="https://spacemath.xyz/wp-content/uploads/2017/03/minus-4-na-2b-plyus-1-minus-2b-plyus-3.png 161w, https://spacemath.xyz/wp-content/uploads/2017/03/minus-4-na-2b-plyus-1-minus-2b-plyus-3-150x19.png 150w" sizes="(max-width: 161px) 100vw, 161px" /></p>
+<p style="text-align: left;">Здесь нужно выполнить два действия &#8212; сначала раскрыть скобки, а потом привести подобные слагаемые. Итак, по порядку:</p>
+<p style="text-align: left;"><strong>1) Раскрываем скобки:</strong></p>
+<p style="text-align: left;"><img loading="lazy" decoding="async" class="size-full wp-image-4609 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/03/minus-4-na-2b-plyus-1-minus-2b-plyus-3-shag-1.png" alt="минус 4 на 2b плюс 1 минус 2b плюс 3 шаг 1" width="313" height="19" srcset="https://spacemath.xyz/wp-content/uploads/2017/03/minus-4-na-2b-plyus-1-minus-2b-plyus-3-shag-1.png 313w, https://spacemath.xyz/wp-content/uploads/2017/03/minus-4-na-2b-plyus-1-minus-2b-plyus-3-shag-1-300x18.png 300w" sizes="(max-width: 313px) 100vw, 313px" /></p>
+<p style="text-align: left;"><strong>2) Приводим подобные слагаемые:</strong></p>
+<p style="text-align: left;"><img loading="lazy" decoding="async" class="wp-image-4612 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/03/minus-4-na-2b-plyus-1-minus-2b-plyus-3-shag-2.png" alt="минус 4 на 2b плюс 1 минус 2b плюс 3 шаг 2" width="535" height="53" srcset="https://spacemath.xyz/wp-content/uploads/2017/03/minus-4-na-2b-plyus-1-minus-2b-plyus-3-shag-2.png 535w, https://spacemath.xyz/wp-content/uploads/2017/03/minus-4-na-2b-plyus-1-minus-2b-plyus-3-shag-2-300x30.png 300w" sizes="(max-width: 535px) 100vw, 535px" /></p>
+<p style="text-align: left;">В получившемся выражении <em><span style="color: #000000;">−10b+(−1)</span></em> можно раскрыть скобки:</p>
+<p style="text-align: left;"><img loading="lazy" decoding="async" class="size-full wp-image-4611 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/03/minus-4-na-2b-plyus-1-minus-2b-plyus-3-shag-3.png" alt="минус 4 на 2b плюс 1 минус 2b плюс 3 шаг 3" width="535" height="52" srcset="https://spacemath.xyz/wp-content/uploads/2017/03/minus-4-na-2b-plyus-1-minus-2b-plyus-3-shag-3.png 535w, https://spacemath.xyz/wp-content/uploads/2017/03/minus-4-na-2b-plyus-1-minus-2b-plyus-3-shag-3-300x29.png 300w" sizes="(max-width: 535px) 100vw, 535px" /></p>
+<hr />
+<p style="text-align: left;"><strong>Пример 2.</strong> Раскрыть скобки и привести подобные слагаемые в следующем выражении:</p>
+<p style="text-align: left;"><img loading="lazy" decoding="async" class="size-full wp-image-4613 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/03/5-na-ednitsa-minus-2a-minus-3-na-a-minus-1.png" alt="5 на едница минус 2a минус 3 на a минус 1" width="161" height="19" srcset="https://spacemath.xyz/wp-content/uploads/2017/03/5-na-ednitsa-minus-2a-minus-3-na-a-minus-1.png 161w, https://spacemath.xyz/wp-content/uploads/2017/03/5-na-ednitsa-minus-2a-minus-3-na-a-minus-1-150x19.png 150w" sizes="(max-width: 161px) 100vw, 161px" /></p>
+<p style="text-align: left;"><strong>1) Раскроем скобки:</strong></p>
+<p style="text-align: left;"><img loading="lazy" decoding="async" class="size-full wp-image-4614 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/03/5-na-ednitsa-minus-2a-minus-3-na-a-minus-1-shag-1.png" alt="5 на едница минус 2a минус 3 на a минус 1 шаг 1" width="309" height="19" srcset="https://spacemath.xyz/wp-content/uploads/2017/03/5-na-ednitsa-minus-2a-minus-3-na-a-minus-1-shag-1.png 309w, https://spacemath.xyz/wp-content/uploads/2017/03/5-na-ednitsa-minus-2a-minus-3-na-a-minus-1-shag-1-300x18.png 300w" sizes="(max-width: 309px) 100vw, 309px" /></p>
+<p style="text-align: left;"><strong>2) Приведем подобные слагаемые.</strong> В этот раз для экономии времени и места, не будем записывать, как коэффициенты умножаются на общую буквенную часть</p>
+<p style="text-align: left;"><img loading="lazy" decoding="async" class="alignnone size-full wp-image-4615" src="https://spacemath.xyz/wp-content/uploads/2017/03/5-na-ednitsa-minus-2a-minus-3-na-a-minus-1-shag-2.png" alt="5 на едница минус 2a минус 3 на a минус 1 шаг 2" width="636" height="26" srcset="https://spacemath.xyz/wp-content/uploads/2017/03/5-na-ednitsa-minus-2a-minus-3-na-a-minus-1-shag-2.png 636w, https://spacemath.xyz/wp-content/uploads/2017/03/5-na-ednitsa-minus-2a-minus-3-na-a-minus-1-shag-2-300x12.png 300w" sizes="(max-width: 636px) 100vw, 636px" /></p>
+<hr />
+<p style="text-align: left;"><strong>Пример 3.</strong> Упростить выражение <span style="color: #000000;"><em>8m+3m</em></span> и найти его значение при <span style="color: #000000;"><em>m=−4</em></span></p>
+<p style="text-align: left;">1) Сначала упростим выражение. Чтобы упростить выражение <span style="color: #000000;"><em>8m+3m</em></span>, можно вынести в нём общий множитель <span style="color: #000000;"><em>m</em></span> за скобки:</p>
+<p style="text-align: center;"><span style="color: #000000;">8<em>m</em> + 3<em>m</em> = <em>m</em>(8 + 3)</span></p>
+<p style="text-align: left;">2) Находим значение выражения <span style="color: #000000;"><em>m</em>(8 + 3)</span> при <span style="color: #000000;"><em>m </em>= −4</span>. Для этого в выражение <span style="color: #000000;"><em>m</em>(8 + 3)</span> вместо переменной <span style="color: #000000;"><em>m</em></span> подставляем число <span style="color: #000000;">−4</span></p>
+<p style="text-align: center;"><span style="color: #000000;"><em>m</em> (8 + 3) = −4 (8 + 3) = −4 × 8 + (−4) × 3 = −32 + (−12) = −44</span></p>
+    <h3>Хотите перейти на следующий урок?</h3>
+<a href="lection1.html" class="back">Вернуться ‹‹</a>
+<a href="lection3.html" class="next">Вперёд »</a>
+
+<script type="text/javascript">
+
+var menuItems = document.querySelectorAll('.skew-menu ul li');
+
+for (var i = 0; i < menuItems.length; i++) {
+   menuItems[i].addEventListener('click', function() {
+       // Действия при выборе определенной лекции
+   });
+}
+document.querySelectorAll('.skew-menu li').forEach(item => {
+    item.addEventListener('mouseover', () => {
+        item.style.transition = 'transform 0.3s';
+        item.style.transform = 'scale(1.2)';
+    });
+
+    item.addEventListener('mouseout', () => {
+        if (!item.classList.contains("clicked")) { // Проверяем, не была ли ячейка уже уменьшена при клике
+            item.style.transition = 'transform 0.3s';
+            item.style.transform = 'scale(1)';
+        }
+    });
+
+     document.addEventListener("click", function(event) { 
+         if (!event.target.closest(".skew-menu li")) return;
+
+         const clickedItem= event.target.closest(".skew-menu li");
+
+         document.querySelectorAll('.skew-menu li').forEach(otherItem => { 
+             otherItem.classList.remove("clicked");
+             otherItem.removeEventListener("transitionend", removeTransition);
+          });
+          
+          function removeTransition() { this.classList.remove("clicked"); }
+
+          const clickedClassList= clickedItem.classList;
+          clickedClassList.add("clicked");
+
+          setTimeout(() =>{
+              clickedClassList.remove("clicked")
+           },300)
+
+           function toggleTransform(){
+               let scaleValue= window.getComputedStyle(clickedItem).getPropertyValue('transform');
+
+               if(scaleValue==='none'){
+                   clickedItem.setAttribute(
+                       "style",
+                       "transition: all .5s ease-in-out; transform: scale(.8);"
+                     );
+                 }else{
+                     clickedItem.removeAttribute("style");
+                  }
+            }
+
+            toggleTransform();
+      });
+});
+let currentLesson = document.querySelector('.active a');
+currentLesson.style.color = '#007bff';
+
+menuItems[0].classList.add("active");
+
+document.querySelector('.back').setAttribute("href", "lection12.html");
+document.querySelector('.next').setAttribute("href", "lection14.html");
+
+</script>
+</body>
+</html>
