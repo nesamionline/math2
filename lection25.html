@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лекция 25: Степень с натуральным показателем</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: 200px auto;
+            gap: 20px;
+        }
+        
+        .skew-menu {
+            background-color: #f2f2f2; /* Цвет фона для меню */
+            padding: 10px;
+        }
+
+        .lecture-content {
+            background-color: #e6e6e6; /* Цвет фона для контента лекции */
+            padding: 20px;
+        }
+
+        h1, h2, p {
+          margin-bottom: 15px;  
+      }
+
+      a.back, a.next{
+         text-decoration:none; 
+         color:#333; 
+     }
+     body {
+            background-image: url(images/7.avif);
+            background-attachment: fixed;
+            -moz-background-size: 100%;
+            -webkit-background-size: 100%;
+            -o-background-size: 100%;
+            background-size: 100%;
+        }
+        h1{
+        color: rgb(0, 0, 0) !important; 
+        font-family: courier !important; 
+         text-align: center !important;
+  }
+        p {
+         color: rgb(0, 0, 0);
+         font-family: 'Times New Roman', Times, serif;
+         font-size: 150%;
+         text-align: right; 
+        }
+        h2{
+        color: dark !important; 
+        font-family: Georgia, 'Times New Roman', Times, serif !important; 
+         text-align: center !important;
+  }
+        p {
+         color: rgb(0, 0, 0); 
+         font-family: 'Times New Roman', Times, serif;
+         font-size: 150%; 
+         text-align: center;
+        }
+        a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.back {
+    background-color: #ddd;
+    color: rgb(0, 0, 0);
+}
+
+.next {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.round {
+    border-radius: 50%;
+}
+@radius: 7px;
+@skew: 25deg;
+@main-color: tomato;
+
+body{
+  font-family:Helvetica Neue, Helvetica, sans-serif;
+  background:@main-color;
+}
+
+.skew-menu{
+  text-align:center;
+  margin-top:3em;
+  padding: 10px;
+    max-height: 2000px; /* Устанавливаем максимальную высоту */
+    max-width: 700px;
+    width: 200px;
+    overflow-y: auto; /* Добавляем вертикальную прокрутку при необходимости */
+}
+
+.skew-menu ul{
+  display:inline-block;
+  margin:0;
+  padding:0;
+  list-style:none;
+  transform:skew(-@skew);
+  width: 250px;
+  border-radius: 10px;
+}
+
+.skew-menu ul li{
+  background:#fff;
+  float:left;
+  border-right:1px solid #eee;
+  box-shadow:0 1px 1px rgba(0,0,0,0.1);
+  text-transform:uppercase;
+  color:#555;
+  font-weight:bolder;
+  transition:all 0.3s linear;
+  display: block;
+  text-align: center;
+  width: 200px;
+  max-width: 200px;
+  &:first-child
+  {
+
+    border-radius:@radius 0 0 @radius;
+  }
+  
+  &:last-child{
+    border-right:none;
+    border-radius:0 @radius @radius 0;
+  }
+  
+  &:hover{
+    background:#eee;
+    color:@main-color;
+  }
+  
+  a{
+    display:block;
+    padding:1em 2em;
+    color:inherit;
+    text-decoration:none;
+    transform:skew(@skew);
+  }
+}
+.active a {
+  color: #007bff; /* Выделите цвет текста */
+}
+.navless{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: lighter;
+    font-size: 20px;
+}
+.nav menu{
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+      .menu b{
+        text-align: center;
+      }
+    </style>
+</head>
+
+<body>
+
+<nav class="skew-menu">
+    <ul>
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="lection1.html">Лекция 1</a></li>
+      <li><a href="lection2.html">Лекция 2</a></li>
+      <li><a href="lection3.html">Лекция 3</a></li>
+      <li><a href="lection4.html">Лекция 4</a></li>
+      <li><a href="lection5.html">Лекция 5</a></li>
+      <li><a href="lection6.html">Лекция 6</a></li>
+      <li><a href="lection7.html">Лекция 7</a></li>
+      <li><a href="lection8.html">Лекция 8</a></li>
+      <li><a href="lection9.html">Лекция 9</a></li>
+      <li><a href="lection10.html">Лекция 10</a></li>
+      <li><a href="lection11.html">Лекция 11</a></li>
+      <li><a href="lection12.html">Лекция 12</a></li>
+      <li><a href="lection13.html">Лекция 13</a></li>
+      <li><a href="lection14.html">Лекция 14</a></li>
+      <li><a href="lection15.html">Лекция 15</a></li>
+      <li><a href="lection16.html">Лекция 16</a></li>
+      <li><a href="lection17.html">Лекция 17</a></li>
+      <li><a href="lection18.html">Лекция 18</a></li>
+      <li><a href="lection19.html">Лекция 19</a></li>
+      <li><a href="lection20.html">Лекция 20</a></li>
+      <li><a href="lection21.html">Лекция 21</a></li>
+      <li><a href="lection22.html">Лекция 22</a></li>
+      <li><a href="lection23.html">Лекция 23</a></li>
+      <li><a href="lection24.html">Лекция 24</a></li>
+      <li class="active"><a href="lection25.html">Лекция 25</a></li>
+      <li><a href="lection26.html">Лекция 26</a></li>
+      <li><a href="lection27.html">Лекция 27</a></li>
+      <li><a href="lection28.html">Лекция 28</a></li>
+      <li><a href="lection29.html">Лекция 29</a></li>
+      <li><a href="lection30.html">Лекция 30</a></li>
+    </ul>
+</nav>
+
+<div class="lecture-content">
+  <h1 class="entry-title">Лекция 25: Степень с натуральным показателем</h1>      
+
+      
+</header><!-- .entry-header -->
+
+<div class="entry-content">
+</nav>
+<nav id="menu"><b>Содержание урока</b></p>
+<ul class="navless">
+<li><a href="#yak1">Что такое степень?</a></li>
+<li><a href="#yak2">Возведение в степень числа 10</a></li>
+<li><a href="#yak3">Представление чисел 10, 100, 1000 в виде степени с основанием 10</a></li>
+<li><a href="#vozvedenie_v_stepen_otricatelnogo_chisla">Возведение в степень отрицательного числа</a></li>
+<li><a href="#yak5">Нахождение значений выражений</a></li>
+<li><a href="#yak6">Тождественные преобразования степеней</a>
+<ul>
+<li><a href="#umnojenie_stepenei">Умножение степеней</a></li>
+<li><a href="#vozvedenie_v_stepen_proizvedeniya">Возведение в степень произведения</a></li>
+<li><a href="#vozvedenie_stepeni_v_stepen">Возведение степени в степень</a></li>
+<li><a href="#delenie_stepenei">Деление степеней</a></li>
+<li><a href="#yak11">Возведение в степень обыкновенных дробей</a></li>
+<li><a href="#yak12">Возведение в степень десятичных дробей</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+<h2 id="yak1" style="text-align: center;">Что такое степень?</h2>
+<p><strong>Степенью</strong> называют произведение из нескольких одинаковых множителей. Например:</p>
+<p style="text-align: center;"><span style="color: #000000;">2 × 2 × 2</span></p>
+<p>Значение данного выражения равно 8</p>
+<p style="text-align: center;"><span style="color: #000000;">2 × 2 × 2 = 8</span></p>
+<p>Левую часть этого равенства<span style="color: #000000;"> </span>можно сделать короче – сначала записать повторяющийся множитель и указать над ним сколько раз он повторяется. Повторяющийся множитель в данном случае это 2. Повторяется он три раза. Поэтому над двойкой записываем тройку:</p>
+<p style="text-align: center;"><span style="color: #000000;">2<sup>3</sup> = 8</span></p>
+<p>Это выражение читается так: &#171;<span style="color: #000000;"><em>два в третьей степени равно восемь&#187; </em></span>или &#171;<span style="color: #000000;"><em>третья степень числа 2 равна 8».</em></span></p>
+<p>Короткую форму записи перемножения одинаковых множителей используют чаще. Поэтому надо помнить, что если над каким-то числом надписано другое число, то это есть перемножение нескольких одинаковых множителей.</p>
+<p>Например, если дано выражение <span style="color: #000000;">5<sup>3</sup></span>, то следует иметь ввиду, что это выражение равносильно записи <span style="color: #000000;">5 × 5 × 5</span>.</p>
+<p>Число, которое повторяется называют <strong>основанием степени</strong>. В выражении <span style="color: #000000;">5<sup>3 </sup></span>основанием степени является число <span style="color: #000000;">5</span>.</p>
+<p>А число, которое надписано над числом 5 называют <strong>показателем степени</strong>. В выражении <span style="color: #000000;">5<sup>3 </sup></span>показателем степени является число 3. Показатель степени показывает сколько раз повторяется основание степени. В нашем случае основание 5 повторяется три раза</p>
+<p><img decoding="async" class="wp-image-8857 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/09/pyat-v-kube-rasshifrovka.png" alt="пять в кубе расшифровка" width="212" height="103" /></p>
+<p>Саму операцию перемножения одинаковых множителей называют <strong>возведением в степень</strong>.</p>
+<p>Например, если нужно найти произведение из четырёх одинаковых множителей, каждый из которых равен 2, то говорят, что число 2<strong> возводится в четвёртую степень</strong>:</p>
+<p><img decoding="async" class="size-full wp-image-8858 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/09/2-v-4-ravno-16.png" alt="2 в 4 равно 16" width="361" height="103" srcset="https://spacemath.xyz/wp-content/uploads/2018/09/2-v-4-ravno-16.png 361w, https://spacemath.xyz/wp-content/uploads/2018/09/2-v-4-ravno-16-300x86.png 300w" sizes="(max-width: 361px) 100vw, 361px" /></p>
+<p>Видим, что число 2 в четвёртой степени есть число 16.</p>
+<p>Отметим, что в данном уроке мы рассматриваем <strong>степени с натуральным показателем</strong>. Это вид степени, показателем которой является натуральное число. Напомним, что натуральными называют целые числа, которые больше нуля. Например, 1, 2, 3 и так далее.</p>
+<p>Вообще, определение степени с натуральным показателем выглядит следующим образом:</p>
+<p><strong>Степень числа <em>a</em> с натуральным показателем <em>n</em> &#8212; это выражение вида <em>a<sup>n</sup></em>, которое равно произведению <em>n</em> множителей, каждый из которых равен <em>a</em></strong></p>
+<p><img decoding="async" class="size-full wp-image-8861 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/09/proizvedenie-n-mnozhitelej.png" alt="произведение n множителей" width="177" height="66" /></p>
+<p style="text-align: left;"><strong>Примеры:</strong></p>
+<p><img loading="lazy" decoding="async" class="wp-image-8863 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/09/proizvedenie-n-mnozhitelej-2.png" alt="произведение n множителей 2" width="165" height="346" srcset="https://spacemath.xyz/wp-content/uploads/2018/09/proizvedenie-n-mnozhitelej-2.png 165w, https://spacemath.xyz/wp-content/uploads/2018/09/proizvedenie-n-mnozhitelej-2-143x300.png 143w" sizes="(max-width: 165px) 100vw, 165px" /></p>
+<p>Следует быть внимательным при возведении числа в степень. Часто по невнимательности человек умножает основание степени на показатель.</p>
+<p>Например, число 5 во второй степени есть произведение двух множителей каждый из которых равен 5. Это произведение равно 25</p>
+<p><img loading="lazy" decoding="async" class="wp-image-8882 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/5-v-2-ravno-25.png" alt="5 в 2 равно 25" width="228" height="35" /></p>
+<p>Теперь представим, что мы по невнимательности умножили основание 5 на показатель 2</p>
+<p><img loading="lazy" decoding="async" class="wp-image-8883 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/5-v-2-ne-ravno-10.png" alt="5 в 2 не равно 10" width="228" height="35" /></p>
+<p>Получилась ошибка, поскольку число 5 во второй степени не равно 10.</p>
+<p>Дополнительно следует упомянуть, что степень числа с показателем 1, есть само это число:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-4778 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/05/a-v-stepeni-edinitsa-est-a.png" alt="a в степени единица есть a" width="59" height="23" /></p>
+<p>Например, число 5 в первой степени есть само число 5</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-4779 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/05/pyat-v-pervoj-stepeni-est-pyat.png" alt="пять в первой степени есть пять" width="52" height="22" /></p>
+<p>Соответственно, если у числа отсутствует показатель, то надо считать, что показатель равен единице.</p>
+<p>Например, числа <span style="color: #000000;">1, 2, 3</span> даны без показателя, поэтому их показатели будут равны единице. Каждое из этих чисел можно записать с показателем 1</p>
+<p><img loading="lazy" decoding="async" class="wp-image-9754 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/02/chisla-1-2-3-s-pokazatelyami-1.png" alt="числа 1 2 3 с показателями 1" width="66" height="101" /></p>
+<p>А если возвести 0 в какую-нибудь степень, то получится 0. Действительно, сколько бы раз ничего не умножалось на само себя получится ничего. Примеры:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-9776 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/02/0-v-1-0-v-2-0-v-3.png" alt="0 в 1 0 в 2 0 в 3" width="147" height="88" /></p>
+<p>А выражение 0<sup>0 </sup> не имеет смысла. Но в некоторых разделах математики, в частности анализе и теории множеств, выражение 0<sup>0</sup> может иметь смысл.</p>
+<p>Для тренировки решим несколько примеров на возведение чисел в степени.</p>
+<p><strong>Пример 1.</strong> Возвести число 3 во вторую степень.</p>
+<p>Число 3 во второй степени это произведение двух множителей, каждый из которых равен 3</p>
+<p style="text-align: center;"><span style="color: #000000;">3<sup>2</sup> = 3 × 3 = 9</span></p>
+<hr />
+<p><strong>Пример 2.</strong> Возвести число 2 в четвертую степень.</p>
+<p>Число 2 в четвертой степени это произведение четырёх множителей, каждый из которых равен 2</p>
+<p style="text-align: center;"><span style="color: #000000;">2<sup>4</sup> =2 × 2 × 2 × 2 = 16</span></p>
+<hr />
+<p><strong>Пример 3.</strong> Возвести число 2 в третью степень.</p>
+<p>Число 2 в третьей степени это произведение трёх множителей, каждый из которых равен 2</p>
+<p style="text-align: center;"><span style="color: #000000;">2<sup>3</sup> =2 × 2 × 2 = 8</span></p>
+<hr />
+<h2 id="yak2" style="text-align: center;">Возведение в степень числа 10</h2>
+<p>Чтобы возвести в степень число 10, достаточно дописать после единицы количество нулей, равное показателю степени.</p>
+<p>Например, возведем число 10 во вторую степень. Сначала запишем само число 10 и в качестве показателя укажем число 2</p>
+<p style="text-align: center;"><span style="color: #000000;">10<sup>2</sup></span></p>
+<p>Теперь ставим знак равенства, записываем единицу и после этой единицы записываем два нуля, поскольку количество нулей должно быть равно показателю степени</p>
+<p style="text-align: center;"><span style="color: #000000;">10<sup>2</sup> = 100</span></p>
+<p>Значит, число 10 во второй степени это число 100. Связано это с тем, что число 10 во второй степени это произведение двух множителей, каждый из которых равен 10</p>
+<p style="text-align: center;"><span style="color: #000000;">10<sup>2</sup> = 10 × 10 = 100</span></p>
+<hr />
+<p><strong>Пример 2</strong>. Возведём число 10 в третью степень.</p>
+<p>В данном случае после единицы будут стоять три нуля:</p>
+<p style="text-align: center;"><span style="color: #000000;">10<sup>3</sup> = 1000</span></p>
+<hr />
+<p><strong>Пример 3</strong>. Возведем число 10 в четвёртую степень.</p>
+<p>В данном случае после единицы будут стоять четыре нуля:</p>
+<p style="text-align: center;"><span style="color: #000000;">10<sup>4</sup> = 10000</span></p>
+<hr />
+<p><strong>Пример 4</strong>. Возведем число 10 в первую степень.</p>
+<p>В данном случае после единицы будет стоять один нуль:</p>
+<p style="text-align: center;"><span style="color: #000000;">10<sup>1</sup> = 10</span></p>
+<hr />
+<h2 id="yak3" style="text-align: center;">Представление чисел 10, 100, 1000 в виде степени с основанием 10</h2>
+<p>Чтобы представить числа 10, 100, 1000 и 10000 в виде степени с основанием 10, нужно записать основание 10, и в качестве показателя указать число, равное количеству нулей исходного числа.</p>
+<p>Представим число 10 в виде степени с основанием 10. Видим, что в нём один нуль. Значит, число 10 в виде степени с основанием 10 будет представлено как <span style="color: #000000;">10<sup>1</sup></span></p>
+<p style="text-align: center;"><span style="color: #000000;">10 = 10<sup>1</sup></span></p>
+<hr />
+<p><strong>Пример 2</strong>. Представим число 100 в виде степени основанием 10. Видим, что число 100 содержит два нуля. Значит, число 100 в виде степени с основанием 10 будет представлено как <span style="color: #000000;">10<sup>2</sup></span></p>
+<p style="text-align: center;"><span style="color: #000000;">100 = 10<sup>2</sup></span></p>
+<hr />
+<p><strong>Пример 3</strong>. Представим число 1 000 в виде степени с основанием 10.</p>
+<p style="text-align: center;"><span style="color: #000000;">1 000 = 10<sup>3</sup></span></p>
+<hr />
+<p><strong>Пример 4</strong>. Представим число 10 000 в виде степени с основанием 10.</p>
+<p style="text-align: center;"><span style="color: #000000;">10 000 = 10<sup>4</sup></span></p>
+<hr />
+<h2 id="vozvedenie_v_stepen_otricatelnogo_chisla" style="text-align: center;">Возведение в степень отрицательного числа</h2>
+<p>При возведении в степень отрицательного числа, его обязательно нужно заключить в скобки.</p>
+<p>Например, возведём отрицательное число <span style="color: #000000;">−2</span> во вторую степень. Число <span style="color: #000000;">−2</span> во второй степени это произведение двух множителей, каждый из которых равен <span style="color: #000000;">(−2)</span></p>
+<p style="text-align: center;"><span style="color: #000000;">(−2)<sup>2</sup> = (−2) × (−2) = 4</span></p>
+<p>Если бы мы не заключили в скобки число <span style="color: #000000;">−2</span>, то получилось бы что мы вычисляем выражение <span style="color: #000000;">−2<sup>2</sup></span>, которое <strong>не равно</strong> <span style="color: #000000;">4</span>. Выражение <span style="color: #000000;">−2²</span> будет равно <span style="color: #000000;">−4</span>. Чтобы понять почему, коснёмся некоторых моментов.</p>
+<p>Когда мы ставим перед положительным числом минус, мы тем самым выполняем <strong>операцию взятия противоположного значения</strong>.</p>
+<p>Допустим, дано число 2, и нужно найти его противоположное число. Мы знаем, что противоположное числу 2 это число −2. Иными словами, чтобы найти противоположное число для 2, достаточно поставить минус перед этим числом. Вставка минуса перед числом уже считается в математике полноценной операцией. Эту операцию, как было указано выше, называют операцией взятия противоположного значения.</p>
+<p>В случае с выражением <span style="color: #000000;">−2<sup>2</sup></span> происходит две операции: операция взятия противоположного значения и возведение в степень. Возведение в степень является более приоритетной операцией, чем взятие противоположного значения.</p>
+<p>Поэтому выражение <span style="color: #000000;">−2<sup>2</sup></span> вычисляется в два этапа. Сначала выполняется операция возведения в степень. В данном случае во вторую степень было возведено положительное число 2</p>
+<p>Затем выполнилось взятие противоположного значения. Это противоположное значение было найдено для значения 4. А противоположное значение для 4 это −4</p>
+<p style="text-align: center;"><span style="color: #000000;">−2<sup>2 </sup> = −4</span></p>
+<p>Скобки же имеют самый высокий приоритет выполнения. Поэтому в случае вычисления выражения <span style="color: #000000;">(−2)<sup>2</sup></span> сначала выполняется взятие противоположного значения, а затем во вторую степень возводится отрицательное число −2. В результате получается положительный ответ 4, поскольку произведение отрицательных чисел есть положительное число.</p>
+<p><strong>Пример 2</strong>. Возвести число <span style="color: #000000;">−2</span> в третью степень.</p>
+<p>Число <span style="color: #000000;">−2</span> в третьей степени это произведение трёх множителей, каждый из которых равен <span style="color: #000000;">(−2)</span></p>
+<p style="text-align: center;"><span style="color: #000000;">(−2)<sup>3</sup> = (−2) × (−2) × (−2) = −8</span></p>
+<hr />
+<p><strong>Пример 3</strong>. Возвести число <span style="color: #000000;">−2</span> в четвёртую степень.</p>
+<p>Число <span style="color: #000000;">−2</span> в четвёртой степени это произведение четырёх множителей, каждый из которых равен <span style="color: #000000;">(−2)</span></p>
+<p style="text-align: center;"><span style="color: #000000;">(−2)<sup>4</sup> = (−2) × (−2) × (−2) × (−2) = 16</span></p>
+<p>Легко заметить, что при возведении в степень отрицательного числа может получиться либо положительный ответ либо отрицательный. Знак ответа зависит от показателя исходной степени.</p>
+<p>Если показатель степени чётный, то ответ будет положительным. Если показатель степени нечётный, ответ будет отрицательным. Покажем это на примере числа <span style="color: #000000;">−3</span></p>
+<p><img loading="lazy" decoding="async" class="wp-image-8894 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/3-v-raznyh-stepenyah.png" alt="-3 в разных степенях" width="339" height="125" srcset="https://spacemath.xyz/wp-content/uploads/2018/10/3-v-raznyh-stepenyah.png 339w, https://spacemath.xyz/wp-content/uploads/2018/10/3-v-raznyh-stepenyah-300x111.png 300w" sizes="(max-width: 339px) 100vw, 339px" /></p>
+<p>В первом и в третьем случае показатель был <strong>нечётным</strong> числом, поэтому ответ стал <strong>отрицательным</strong>.</p>
+<p>Во втором и в четвёртом случае показатель был <strong>чётным</strong> числом, поэтому ответ стал <strong>положительным</strong>.</p>
+<hr />
+<p><strong>Пример 7.</strong> Возвести число <span style="color: #000000;">−5</span> в третью степень.</p>
+<p>Число −5 в третьей степени это произведение трёх множителей каждый из которых равен −5. Показатель 3 является нечётным числом, поэтому мы заранее можем сказать, что ответ будет отрицательным:</p>
+<p style="text-align: center;"><span style="color: #000000;">(−5)<sup>3</sup> = (−5) × (−5) × (−5) = −125</span></p>
+<hr />
+<p><strong>Пример 8.</strong> Возвести число −4 в четвёртую степень.</p>
+<p>Число −4 в четвёртой степени это произведение четырёх множителей, каждый из которых равен −4. При этом показатель 4 является чётным, поэтому мы заранее можем сказать, что ответ будет положительным:</p>
+<p style="text-align: center;"><span style="color: #000000;">(−4)<sup>4</sup> = (−4) × (−4) × (−4) × (−4) = 256</span></p>
+<hr />
+<h2 id="yak5" style="text-align: center;">Нахождение значений выражений</h2>
+<p>При нахождении значений выражений, не содержащих скобки, возведение в степень будет выполняться в первую очередь, далее умножение и деление в порядке их следования, а затем сложение и вычитание в порядке их следования.</p>
+<p><strong>Пример 1</strong>. Найти значение выражения <span style="color: #000000;">2 + 5<sup>2</sup></span></p>
+<p>Сначала выполняется возведение в степень. В данном случае во вторую степень возводится число 5 &#8212; получается 25. Затем этот результат складывается с числом 2</p>
+<p style="text-align: center;"><span style="color: #000000;">2 + 5<sup>2</sup> = 2 + 25 = 27</span></p>
+<hr />
+<p><strong>Пример 10</strong>. Найти значение выражения <span style="color: #000000;">−6<sup>2</sup> × (−12)</span></p>
+<p>Сначала выполняется возведение в степень. Заметим, что число −6 не взято в скобки, поэтому во вторую степень будет возведено число 6, затем перед результатом будет поставлен минус:</p>
+<p style="text-align: center;"><span style="color: #000000;">−6<sup>2</sup> × (−12) = −36 × (−12)</span></p>
+<p>Завершаем пример, умножив <span style="color: #000000;">−36</span> на <span style="color: #000000;">(−12)</span></p>
+<p style="text-align: center;"><span style="color: #000000;">−6<sup>2</sup> × (−12) = −36 × (−12) = 432</span></p>
+<hr />
+<p><strong>Пример 11</strong>. Найти значение выражения <span style="color: #000000;">−3 × 2<sup>2</sup></span></p>
+<p>Сначала выполняется возведение в степень. Затем полученный результат перемножается с числом −3</p>
+<p style="text-align: center;"><span style="color: #000000;">−3 × 2<sup>2</sup> = −3 × 4 = −12</span></p>
+<p>Если выражение содержит скобки, то сначала нужно выполнить действия в этих скобках, далее возведение в степень, затем умножение и деление, а затем сложение и вычитание.</p>
+<hr />
+<p><strong>Пример 12</strong>. Найти значение выражения <span style="color: #000000;">(3<sup>2</sup> + 1 × 3) − 15 + 5</span></p>
+<p>Сначала выполняем действия в скобках. Внутри скобок применяем ранее изученные правила, а именно сначала возводим во вторую степень число 3, затем выполняем умножение <span style="color: #000000;">1 × 3</span>, затем складываем результаты возведения в степень числа 3 и умножения <span style="color: #000000;">1 × 3</span>. Далее выполняется вычитание и сложение в порядке их следования. Расставим такой порядок выполнения действия над исходным выражением:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8906 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/3-v-2-na-1-na-3-15-na-5-shag-1.png" alt="3 в 2 на 1 на 3 - 15 на 5 шаг 1" width="286" height="56" /></p>
+<p style="text-align: center;"><span style="color: #000000;">(3<sup>2</sup> + 1 × 3) − 15 + 5 = 12 − 15 + 5 = 2</span></p>
+<hr />
+<p><strong>Пример 13</strong>. Найти значение выражения <span style="color: #000000;">2 × 5<sup>3</sup> + 5 × 2<sup>3</sup></span></p>
+<p>Сначала возведем числа в степени, затем выполним умножение и сложим полученные результаты:</p>
+<p style="text-align: center;"><span style="color: #000000;">2 × 5<sup>3</sup> + 5 × 2<sup>3</sup> = 2 × 125 + 5 × 8 = 250 + 40 = 290</span></p>
+<hr />
+<h2 id="yak6" style="text-align: center;">Тождественные преобразования степеней</h2>
+<p>Над степенями можно выполнять различные тождественные преобразования, тем самым упрощая их.</p>
+<p>Допустим, потребовалось вычислить выражение <span style="color: #000000;">(2<sup>3</sup>)<sup>2</sup></span>. В данном примере два в третьей степени возводится во вторую степень. Иными словами, степень возводится в другую степень.</p>
+<p><span style="color: #000000;">(2<sup>3</sup>)<sup>2</sup> </span>это произведение двух степеней, каждая из которых равна<span style="color: #000000;"> 2<sup>3</sup></span></p>
+<p style="text-align: center;"><img loading="lazy" decoding="async" class="alignnone size-full wp-image-8931" src="https://spacemath.xyz/wp-content/uploads/2018/10/2-v-3-na-2-v-3.png" alt="2 в 3 на 2 в 3" width="66" height="23" /></p>
+<p>При этом каждая из этих степеней является произведением трёх множителей, каждый из которых равен 2</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8925 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/2-v-3-v-2-shag-1.png" alt="2 в 3 в 2 шаг 1" width="238" height="80" /></p>
+<p>Получили произведение <span style="color: #000000;">2 × 2 × 2 × 2 × 2 × 2</span>, которое равно 64. Значит значение выражения <span style="color: #000000;">(2<sup>3</sup>)<sup>2</sup></span> или равно<span style="color: #000000;"> 64</span></p>
+<p style="text-align: center;"><img loading="lazy" decoding="async" class="alignnone size-full wp-image-8927" src="https://spacemath.xyz/wp-content/uploads/2018/10/2-v-3-v-2-shag-3.png" alt="2 в 3 в 2 шаг 3" width="402" height="28" srcset="https://spacemath.xyz/wp-content/uploads/2018/10/2-v-3-v-2-shag-3.png 402w, https://spacemath.xyz/wp-content/uploads/2018/10/2-v-3-v-2-shag-3-300x21.png 300w" sizes="(max-width: 402px) 100vw, 402px" /></p>
+<p>Этот пример можно значительно упростить. Для этого показатели выражения <span style="color: #000000;">(2<sup>3</sup>)<sup>2</sup></span> можно перемножить и записать это произведение над основанием <span style="color: #000000;">2</span></p>
+<p><img loading="lazy" decoding="async" class="wp-image-8933 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/2-v-3-v-2-shag-2.png" alt="2 в 3 в 2 шаг 2" width="160" height="28" /></p>
+<p>Получили <span style="color: #000000;">2<sup>6</sup></span>. Два в шестой степени это произведение шести множителей, каждый из которых равен 2. Это произведение равно 64</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8932 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/2-v-3-v-2-shag-4.png" alt="2 в 3 в 2 шаг 4" width="209" height="28" /></p>
+<p>Данное свойство работает по причине того, что <span style="color: #000000;">2<sup>3</sup></span> это произведение <span style="color: #000000;">2 × 2 × 2</span>, которое в свою очередь повторяется два раза. Тогда получается, что основание <span style="color: #000000;">2</span> повторяется шесть раз. Отсюда можно записать, что <span style="color: #000000;">2 × 2 × 2 × 2 × 2 × 2</span> это <span style="color: #000000;">2<sup>6</sup></span></p>
+<p>Вообще, для любого основания <span style="color: #000000;"><em>a</em></span> с показателями <span style="color: #000000;"><em>m</em></span> и <span style="color: #000000;"><em>n</em></span>, выполняется следующее равенство:</p>
+<p style="text-align: center;"><span style="font-style: normal; font-variant: normal; font-stretch: normal; font-size: 26px; line-height: normal; font-family: times; color: #000000;">(<em>a<sup>n</sup></em>)<em><sup>m</sup> = a<sup>n × m</sup></em></span></p>
+<p>Это тождественное преобразование называют <strong>возведением степени в степень</strong>. Его можно прочитать так: <span style="color: #000000;"><em>&#171;При возведении степени в степень основание оставляют без изменений, а показатели перемножают&#187;</em></span>.</p>
+<p>После перемножения показателей, получится другая степень, значение которой можно найти.</p>
+<p><strong>Пример 2</strong>. Найти значение выражения <span style="color: #000000;">(3<sup>2</sup>)<sup>2</sup></span></p>
+<p>В данном примере основанием является 3, а числа 2 и 2 являются показателями. Воспользуемся правилом возведения степени в степень. Основание оставим без изменений, а показатели перемножим:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8934 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/3-v-2-v-2-shag-1.png" alt="" width="156" height="28" srcset="https://spacemath.xyz/wp-content/uploads/2018/10/3-v-2-v-2-shag-1.png 156w, https://spacemath.xyz/wp-content/uploads/2018/10/3-v-2-v-2-shag-1-150x28.png 150w" sizes="(max-width: 156px) 100vw, 156px" /></p>
+<p>Получили <span style="color: #000000;">3<sup>4</sup></span>. А число <span style="color: #000000;">3</span> в четвёртой степени есть <span style="color: #000000;">81</span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8940 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/3-v-2-v-2-shag-2.png" alt="3 в 2 в 2 шаг 2" width="203" height="28" /></p>
+<p>Рассмотрим остальные преобразования.</p>
+<h2 id="umnojenie_stepenei" style="text-align: center;">Умножение степеней</h2>
+<p>Чтобы перемножить степени, нужно по отдельности вычислить каждую степень, и полученные результаты перемножить.</p>
+<p>Например, умножим <span style="color: #000000;">2<sup>2</sup></span> на <span style="color: #000000;">3<sup>3</sup></span>.</p>
+<p><span style="color: #000000;">2<sup>2</sup></span> это число <span style="color: #000000;">4</span>, а <span style="color: #000000;">3<sup>3</sup></span> это число <span style="color: #000000;">27</span>. Перемножаем числа <span style="color: #000000;">4</span> и <span style="color: #000000;">27</span>, получаем <span style="color: #000000;">108</span></p>
+<p style="text-align: center;"><span style="color: #000000;">2<sup>2</sup> × 3<sup>3</sup> = 4 × 27 = 108</span></p>
+<p>В этом примере основания степеней были разными. В случае, если основания будут одинаковыми, то можно записать одно основание, а в качестве показателя записать сумму показателей исходных степеней.</p>
+<p>Например, умножим <span style="color: #000000;">2<sup>2</sup></span> на <span style="color: #000000;">2<sup>3</sup></span></p>
+<p>В данном примере основания у степеней одинаковые. В этом случае можно записать одно основание <span style="color: #000000;">2</span> и в качестве показателя записать сумму показателей степеней <span style="color: #000000;">2<sup>2</sup></span> и <span style="color: #000000;">2<sup>3</sup>. </span>Иными словами,<span style="color: #000000;"> о</span>снование оставить без изменений, а показатели исходных степеней сложить. Выглядеть это будет так:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8942 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/2-v-2-na-2-v-3-shag-1.png" alt="2 в 2 на 2 в 3 шаг 1" width="152" height="21" srcset="https://spacemath.xyz/wp-content/uploads/2018/10/2-v-2-na-2-v-3-shag-1.png 152w, https://spacemath.xyz/wp-content/uploads/2018/10/2-v-2-na-2-v-3-shag-1-150x21.png 150w" sizes="(max-width: 152px) 100vw, 152px" /></p>
+<p>Получили <span style="color: #000000;">2<sup>5</sup></span>. Число <span style="color: #000000;">2</span> в пятой степени есть <span style="color: #000000;">32</span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8944 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/2-v-2-na-2-v-3-shag-2.png" alt="2 в 2 на 2 в 3 шаг 2" width="196" height="21" /></p>
+<p>Данное свойство работает по причине того, что <span style="color: #000000;">2<sup>2</sup></span> это произведение <span style="color: #000000;">2 × 2</span>, а <span style="color: #000000;">2<sup>3</sup></span> это произведение <span style="color: #000000;">2 × 2 × 2</span>. Тогда получается произведение из пяти одинаковых множителей, каждый из которых равен <span style="color: #000000;">2</span>. Это произведение представимо в виде <span style="color: #000000;">2<sup>5</sup></span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8945 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/2-v-2-na-2-v-3-shag-3.png" alt="2 в 2 на 2 в 3 шаг 3" width="300" height="58" /></p>
+<p>Вообще, для любого <span style="color: #000000;"><em>a</em></span> и показателей <span style="color: #000000;"><em>m</em></span> и <span style="color: #000000;"><em>n</em></span> выполняется следующее равенство:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-8947 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/a-v-m-na-a-v-n.png" alt="a v m na a v n" width="143" height="20" /></p>
+<p>Это тождественное преобразование носит название <strong>основного свойства степени</strong>. Его можно прочитать так: &#171;<span style="color: #000000;"><em>П</em><em>ри перемножении степеней с одинаковыми основаниями, основание оставляют без изменений, а показатели складывают&#187;</em></span>.</p>
+<p>Отметим, что данное преобразование можно применять при любом количестве степеней. Главное, чтобы основание было одинаковым.</p>
+<p>Например, найдем значение выражения <span style="color: #000000;">2<sup>1</sup> × 2<sup>2</sup> × 2<sup>3</sup></span>. Основание <span style="color: #000000;">2</span> оставим без изменений, а показатели сложим:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8948 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/2-v-1-na-2-v-2-na-2-v-3.png" alt="2 в 1 на 2 в 2 на 2 в 3" width="262" height="20" /></p>
+<p>В некоторых задачах достаточным бывает выполнить соответствующее преобразование, не вычисляя итоговую степень. Это конечно же очень удобно, поскольку вычислять большие степени не так-то просто.</p>
+<p><strong>Пример 1</strong>. Представить в виде степени выражение <span style="color: #000000;">5<sup>8</sup> × 25</span></p>
+<p>В данной задаче нужно сделать так, чтобы вместо выражения <span style="color: #000000;">5<sup>8</sup> × 25</span> получилась одна степень.</p>
+<p>Число <span style="color: #000000;">25</span> можно представить в виде <span style="color: #000000;">5<sup>2</sup></span>. Тогда получим следующее выражение:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8953 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/5-v-8-na-25-shag-3.png" alt="5 в 8 на 25 шаг 3" width="55" height="20" /></p>
+<p>В этом выражении можно применить основное свойство степени &#8212; основание <span style="color: #000000;">5</span> оставить без изменений, а показатели 8 и 2 сложить:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8954 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/5-v-8-na-25-shag-4.png" alt="5 в 8 на 25 шаг 4" width="153" height="20" srcset="https://spacemath.xyz/wp-content/uploads/2018/10/5-v-8-na-25-shag-4.png 153w, https://spacemath.xyz/wp-content/uploads/2018/10/5-v-8-na-25-shag-4-150x20.png 150w" sizes="(max-width: 153px) 100vw, 153px" /></p>
+<p>Задачу можно считать решённой, поскольку мы представили выражение <span style="color: #000000;">5<sup>8</sup> × 25</span> в виде одной степени, а именно в виде степени <span style="color: #000000;">5<sup>10</sup></span>.</p>
+<p>Запишем решение покороче:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8956 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/5-v-8-na-25-shag-5.png" alt="5 в 8 на 25 шаг 5" width="175" height="20" /></p>
+<hr />
+<p><strong>Пример 2</strong>. Представить в виде степени выражение <span style="color: #000000;">2<sup>9</sup> × 32</span></p>
+<p>Число <span style="color: #000000;">32</span> можно представить в виде <span style="color: #000000;">2<sup>5</sup></span>. Тогда получим выражение <span style="color: #000000;">2<sup>9</sup></span> × <span style="color: #000000;">2<sup>5</sup></span>. Далее можно применить основание свойство степени &#8212; основание 2 оставить без изменений, а показатели 9 и 5 сложить. В результате получится следующее решение:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8960 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/2-v-9-na-32-reshenie.png" alt="2 в 9 на 32 решение" width="187" height="20" /></p>
+<hr />
+<p><strong>Пример 3</strong>. Вычислите произведение <span style="color: #000000;">3 × 3</span>, используя основное свойство степени.</p>
+<p>Все хорошо знают, что три умножить на три равно девять, но задача требует в ходе решения воспользоваться основным свойством степени. Как это сделать?</p>
+<p>Вспоминаем, что если число дано без показателя, то показатель нужно считать равным единице. Стало быть сомножители <span style="color: #000000;">3</span> и <span style="color: #000000;">3</span> можно записать в виде <span style="color: #000000;">3<sup>1</sup></span> и <span style="color: #000000;">3<sup>1</sup></span></p>
+<p style="text-align: center;"><span style="color: #000000;">3<sup>1</sup> × 3<sup>1</sup></span></p>
+<p>Теперь воспользуемся основным свойством степени. Основание <span style="color: #000000;">3</span> оставляем без изменений, а показатели <span style="color: #000000;">1</span> и <span style="color: #000000;">1</span> складываем:</p>
+<p style="text-align: center;"><span style="color: #000000;">3<sup>1</sup> × 3<sup>1</sup> = 3<sup>2</sup></span></p>
+<p>Далее вычисляем значение выражения. Число <span style="color: #000000;">3</span> во второй степени равно числу 9</p>
+<p style="text-align: center;"><span style="color: #000000;">3<sup>1</sup> × 3<sup>1</sup> = 3<sup>2</sup> = 9</span></p>
+<hr />
+<p><strong>Пример 4</strong>. Вычислите произведение <span style="color: #000000;">2 × 2 × 3<sup>2</sup> × 3<sup>3</sup></span>, используя основное свойство степени.</p>
+<p>Произведение <span style="color: #000000;">2 × 2 </span>заменим на <span style="color: #000000;">2<sup>1</sup> × 2<sup>1</sup>, </span>затем на <span style="color: #000000;">2<sup>1 + 1</sup></span>, а затем на <span style="color: #000000;">2<sup>2</sup></span>. Произведение <span style="color: #000000;">3<sup>2</sup> × 3<sup>3</sup></span> заменим на <span style="color: #000000;">3<sup>2 + 3</sup></span>, а затем на <span style="color: #000000;">3<sup>5</sup></span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8987 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/2-2-3-3-na-2-i-3-shag-2.png" alt="2 2 3 3 на 2 и 3 шаг 2" width="434" height="21" srcset="https://spacemath.xyz/wp-content/uploads/2018/10/2-2-3-3-na-2-i-3-shag-2.png 434w, https://spacemath.xyz/wp-content/uploads/2018/10/2-2-3-3-na-2-i-3-shag-2-300x15.png 300w" sizes="(max-width: 434px) 100vw, 434px" /></p>
+<p>Далее вычисляем значение каждой степени и находим произведение:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8986 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/2-2-3-3-na-2-i-3-reshenie.png" alt="2 2 3 3 на 2 и 3 решение" width="572" height="21" srcset="https://spacemath.xyz/wp-content/uploads/2018/10/2-2-3-3-na-2-i-3-reshenie.png 572w, https://spacemath.xyz/wp-content/uploads/2018/10/2-2-3-3-na-2-i-3-reshenie-300x11.png 300w" sizes="(max-width: 572px) 100vw, 572px" /></p>
+<hr />
+<p><strong>Пример 5</strong>. Выполнить умножение <span style="color: #000000;"><em>x × x</em></span></p>
+<p>Это два одинаковых буквенных сомножителя с показателями 1. Для наглядности запишем эти показатели. Далее основание <span style="color: #000000;"><em>x</em></span> оставим без изменений, а показатели сложим:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9004 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/xx-reshenie.png" alt="xx решение" width="216" height="21" /></p>
+<p>Находясь у доски, не следует записывать перемножение степеней с одинаковыми основаниями так подробно, как это сделано здесь. Такие вычисления нужно выполнять в уме. Подробная запись скорее всего будет раздражать учителя и он снизит за это оценку. Здесь же подробная запись дана, чтобы материал был максимально доступным для понимания.</p>
+<p>Решение данного примера желательно записать так:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9005 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/xx-reshenie-podrobno.png" alt="xx решение подробно" width="86" height="21" /></p>
+<hr />
+<p><strong>Пример 6</strong>. Выполнить умножение <span style="color: #000000;"><em>x</em><sup>2</sup><em> × x</em></span></p>
+<p>Показатель второго сомножителя равен единице. Для наглядности запишем его. Далее основание оставим без изменений, а показатели сложим:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9006 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/x-v-2-na-x-reshenie.png" alt="x v 2 na x решение" width="225" height="21" /></p>
+<hr />
+<p><strong>Пример 7</strong>. Выполнить умножение <span style="color: #000000;"><em>y</em><sup>3</sup><em>y</em><sup>2</sup><em>y</em></span></p>
+<p>Показатель третьего сомножителя равен единице. Для наглядности запишем его. Далее основание оставим без изменений, а показатели сложим:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9007 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/y-v-3-y-v-3-y-reshenie.png" alt="y v 3 y v 3 y решение" width="321" height="24" srcset="https://spacemath.xyz/wp-content/uploads/2018/10/y-v-3-y-v-3-y-reshenie.png 321w, https://spacemath.xyz/wp-content/uploads/2018/10/y-v-3-y-v-3-y-reshenie-300x22.png 300w" sizes="(max-width: 321px) 100vw, 321px" /></p>
+<hr />
+<p><strong>Пример 8</strong>. Выполнить умножение <span style="color: #000000;"><em>aa<sup>3</sup>a<sup>2</sup>a<sup>5</sup></em></span></p>
+<p>Показатель первого сомножителя равен единице. Для наглядности запишем его. Далее основание оставим без изменений, а показатели сложим:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9008 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/aa-v-3-a-v-2-a-v-5-reshenie.png" alt="aa v 3 a v 2 a v 5 решение" width="294" height="21" /></p>
+<hr />
+<p><strong>Пример 9</strong>. Представить степень <span style="color: #000000;">3<sup>8</sup></span> в виде произведения степеней с одинаковыми основаниями.</p>
+<p>В данной задаче нужно составить произведение степеней, основания которых будут равны <span style="color: #000000;">3</span>, и сумма показателей которых будет равна <span style="color: #000000;">8</span>. Можно использовать любые показатели. Представим степень <span style="color: #000000;">3<sup>8</sup></span> в виде произведения степеней <span style="color: #000000;">3<sup>5</sup></span> и <span style="color: #000000;">3<sup>3</sup></span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9049 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/3-v-8-ravno-3-v-5-na-3-v-3.png" alt="3 v 8 ravno 3 v 5 na 3 v 3" width="97" height="21" /></p>
+<p>В данном примере мы опять же опирались на основное свойство степени. Ведь выражение <span style="color: #000000;">3<sup>5</sup> × 3<sup>3</sup></span> можно записать как <span style="color: #000000;">3<sup>5 + 3</sup></span>, откуда <span style="color: #000000;">3<sup>8</sup></span>.</p>
+<p>Конечно можно было представить степень <span style="color: #000000;">3<sup>8</sup> </span>в виде произведения других степеней. Например, в виде <span style="color: #000000;">3<sup>7</sup> × 3<sup>1</sup></span>, поскольку это произведение тоже равно <span style="color: #000000;">3<sup>8</sup></span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9051 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/3-v-7-na-3-v-1-est-3-v-8.png" alt="3 в 7 на 3 в 1 есть 3 в 8" width="92" height="21" /></p>
+<p>Представление степени в виде произведения степеней с одинаковыми основаниями это по большей части творческая работа. Поэтому не нужно бояться экспериментировать.</p>
+<hr />
+<p><strong>Пример 10</strong>. Представить степень <span style="color: #000000;"><em>x</em><sup>12</sup></span> в виде различных произведений степеней с основаниями <span style="color: #000000;"><em>x</em></span>.</p>
+<p>Воспользуемся основным свойство степени. Представим <span style="color: #000000;"><em>x</em><sup>12</sup></span> в виде произведений с основаниями <span style="color: #000000;"><em>x</em></span>, и сумма показателей которых равна 12</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9054 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/x12-v-vide-raznyh-proizvedenij.png" alt="x12 в виде разных произведений" width="258" height="179" /></p>
+<p>Конструкции с суммами показателей были записаны для наглядности. Чаще всего их можно пропустить. Тогда получится компактное решение:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9055 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/x12-v-vide-raznyh-proizvedenij-2.png" alt="x12 в виде разных произведений 2" width="170" height="156" /></p>
+<hr />
+<h2 id="vozvedenie_v_stepen_proizvedeniya" style="text-align: center;">Возведение в степень произведения</h2>
+<p>Чтобы возвести в степень произведение, нужно возвести в указанную степень каждый множитель этого произведения и перемножить полученные результаты.</p>
+<p>Например, возведём во вторую степень произведение <span style="color: #000000;">2 × 3</span>. Возьмём в скобки данное произведение и в качестве показателя укажем <span style="color: #000000;">2</span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8962 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/2-na-3-v-2.png" alt="2 на 3 в 2" width="65" height="23" /></p>
+<p>Теперь возведём во вторую степень каждый множитель произведения 2 × 3 и перемножим полученные результаты:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-8964 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/2-na-3-v-2-reshenie.png" alt="2 на 3 в 2 решение" width="250" height="24" /></p>
+<p>Принцип работы данного правила основан на определении степени, которое было дано в самом начале.</p>
+<p>Возвести произведение <span style="color: #000000;">2 × 3</span> во вторую степень означает повторить данное произведение два раза. А если повторить его два раза, то можно получить следующее:</p>
+<p style="text-align: center;"><span style="color: #000000;">2 × 3 × 2 × 3</span></p>
+<p>От перестановки мест сомножителей произведение не меняется. Это позволяет сгруппировать одинаковые множители:</p>
+<p style="text-align: center;"><span style="color: #000000;">2 × 2 × 3 × 3</span></p>
+<p>Повторяющиеся множители можно заменить на короткие записи &#8212; основания с показателями. Произведение <span style="color: #000000;">2 × 2</span> можно заменить на <span style="color: #000000;">2<sup>2</sup></span>, а произведение <span style="color: #000000;">3 × 3 </span>можно заменить на<span style="color: #000000;"> 3<sup>2</sup>. </span>Тогда выражение <span style="color: #000000;">2 × 2 × 3 × 3 </span>обращается в выражение<span style="color: #000000;"> 2<sup>2</sup> × 3<sup>2</sup>.</span></p>
+<p>Пусть <span style="color: #000000;"><em>ab</em></span> исходное произведение. Чтобы возвести данное произведение в степень <span style="color: #000000;"><em>n</em></span>, нужно по отдельности возвести множители <span style="color: #000000;"><em>a</em></span> и <span style="color: #000000;"><em>b</em></span> в указанную степень <span style="color: #000000;"><em>n</em></span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8961 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/ab-v-n-formula.png" alt="ab в n формула" width="121" height="25" /></p>
+<p>Данное свойство справедливо для любого количества множителей. Следующие выражения также справедливы:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8965 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/abcd-v-n-formula.png" alt="abcd v n formula" width="197" height="66" /></p>
+<hr />
+<p><strong>Пример 2</strong>. Найти значение выражения <span style="color: #000000;">(2 × 3 × 4)<sup>2</sup></span></p>
+<p>В данном примере нужно возвести во вторую степень произведение <span style="color: #000000;">2 × 3 × 4</span>. Чтобы сделать это, нужно возвести во вторую степень каждый множитель этого произведения и перемножить полученные результаты:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8966 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/2-na-3-na-4-v-2.png" alt="2 na 3 na 4 v 2" width="368" height="25" srcset="https://spacemath.xyz/wp-content/uploads/2018/10/2-na-3-na-4-v-2.png 368w, https://spacemath.xyz/wp-content/uploads/2018/10/2-na-3-na-4-v-2-300x20.png 300w" sizes="(max-width: 368px) 100vw, 368px" /></p>
+<hr />
+<p><strong>Пример 3</strong>. Возвести в третью степень произведение <span style="color: #000000;"><em>a × b × c</em></span></p>
+<p>Заключим в скобки данное произведение, и в качестве показателя укажем число 3</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8967 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/abc-v-3.png" alt="abc v 3" width="89" height="25" /></p>
+<p>Далее возводим в третью степень каждый множитель данного произведения:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8968 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/abc-v-3-reshenie.png" alt="abc v 3 решение" width="201" height="25" /></p>
+<hr />
+<p><strong>Пример 4</strong>. Возвести в третью степень произведение <span style="color: #000000;">3<em>xyz</em></span></p>
+<p>Заключим в скобки данное произведение, и в качестве показателя укажем 3</p>
+<p style="text-align: center;"><span style="color: #000000;">(3<em>xyz</em>)<sup>3</sup></span></p>
+<p>Возведём в третью степень каждый множитель данного произведения:</p>
+<p style="text-align: center;"><span style="color: #000000;">(3<em>xyz</em>)<sup>3</sup> = 3<sup>3</sup><em>x</em><sup>3</sup><em>y</em><sup>3</sup><em>z</em><sup>3</sup></span></p>
+<p>Число <span style="color: #000000;">3</span> в третьей степени равно числу <span style="color: #000000;">27</span>. Остальное оставим без изменений:</p>
+<p style="text-align: center;"><span style="color: #000000;">(3<em>xyz</em>)<sup>3</sup> = 3<sup>3</sup><em>x</em><sup>3</sup><em>y</em><sup>3</sup><em>z</em><sup>3</sup> = 27<em>x</em><sup>3</sup><em>y</em><sup>3</sup><em>z</em><sup>3</sup></span></p>
+<p>В некоторых примерах умножение степеней с одинаковыми показателями можно заменять на произведение оснований с одним показателем.</p>
+<p>Например, вычислим значение выражения <span style="color: #000000;">5<sup>2</sup> × 3<sup>2</sup></span>. Возведем каждое число во вторую степень и перемножим полученные результаты:</p>
+<p style="text-align: center;"><span style="color: #000000;">5<sup>2</sup> × 3<sup>2</sup> = 25 × 9 = 225</span></p>
+<p>Но можно не вычислять по отдельности каждую степень. Вместо этого, данное произведение степеней можно заменить на произведение с одним показателем <span style="color: #000000;">(5 × 3)<sup>2</sup></span>. Далее вычислить значение в скобках и возвести полученный результат во вторую степень:</p>
+<p style="text-align: center;"><span style="color: #000000;">5<sup>2</sup> × 3<sup>2</sup> = (5 × 3)<sup>2</sup> = (15)<sup>2</sup> = 225</span></p>
+<p>В данном случае опять же было использовано правило возведения в степень произведения. Ведь, если <span style="color: #000000;">(<em>a × b</em>)<em><sup>n</sup></em> = <em>a<sup>n</sup> × b<sup>n</sup></em></span>, то <span style="color: #000000;"><em>a<sup>n</sup> × b<sup>n</sup></em></span><span style="color: #000000;"><em><sup> </sup>= (a × b)<sup>n</sup></em></span>. То есть левая и правая часть равенства поменялись местами.</p>
+<hr />
+<h2 id="vozvedenie_stepeni_v_stepen" style="text-align: center;">Возведение степени в степень</h2>
+<p>Это преобразование мы рассматривали в качестве примера, когда пытались понять суть тождественных преобразований степеней.</p>
+<p>При возведении степени в степень основание оставляют без изменений, а показатели перемножают:</p>
+<p style="text-align: center;"><span style="font-style: normal; font-variant: normal; font-stretch: normal; font-size: 26px; line-height: normal; font-family: times; color: #000000;">(<em>a<sup>n</sup></em>)<em><sup>m</sup> = a<sup>n × m</sup></em></span></p>
+<p>К примеру, выражение <span style="color: #000000;">(2<sup>3</sup>)<sup>2</sup></span> является возведением степени в степень &#8212; два в третьей степени возводится во вторую степень. Чтобы найти значение этого выражения, основание можно оставить без изменений, а показатели перемножить:</p>
+<p style="text-align: center;"><span style="color: #000000; font: 16pt times;">(2<sup>3</sup>)<sup>2</sup> = 2<sup>3 × 2</sup> = 2<sup>6</sup></span></p>
+<p>Далее вычислить степень <span style="color: #000000;">2<sup>6</sup></span>, которая равна <span style="color: #000000;">64</span></p>
+<p style="text-align: center;"><span style="color: #000000; font: 16pt times;">(2<sup>3</sup>)<sup>2</sup> = 2<sup>3 × 2</sup> = 2<sup>6</sup> = 64</span></p>
+<p>Данное правило основано на предыдущих правилах: возведении в степень произведения и основного свойства степени.</p>
+<p>Вернёмся к выражению <span style="color: #000000;">(2<sup>3</sup>)<sup>2</sup></span>. Выражение в скобках <span style="color: #000000;">2<sup>3</sup></span> представляет собой произведение из трёх одинаковых множителей, каждый из которых равен 2. Тогда в выражении <span style="color: #000000;">(2<sup>3</sup>)<sup>2</sup></span> степень, находящуюся внутри скобок можно заменить на произведение <span style="color: #000000;">2 × 2 × 2</span>.</p>
+<p style="text-align: center;"><span style="color: #000000;">(2 × 2 × 2)<sup>2</sup></span></p>
+<p>А это есть возведение в степень произведения, которое мы изучили ранее. Напомним, что для возведения в степень произведения, нужно возвести в указанную степень каждый множитель данного произведения и полученные результаты перемножить:</p>
+<p style="text-align: center;"><span style="color: #000000;">(2 × 2 × 2)<sup>2</sup> = 2<sup>2</sup> × 2<sup>2</sup> × 2<sup>2</sup></span></p>
+<p>Теперь имеем дело с основным свойством степени. Основание оставляем без изменений, а показатели складываем:</p>
+<p style="text-align: center;"><span style="color: #000000;">(2 × 2 × 2)<sup>2</sup> = 2<sup>2</sup> × 2<sup>2</sup> × 2<sup>2</sup> = 2<sup>2 + 2 + 2</sup> = 2<sup>6</sup></span></p>
+<p>Как и раньше получили <span style="color: #000000;">2<sup>6</sup></span>. Значение этой степени равно <span style="color: #000000;">64</span></p>
+<p style="text-align: center;"><span style="color: #000000;">(2 × 2 × 2)<sup>2</sup> = 2<sup>2</sup> × 2<sup>2</sup> × 2<sup>2</sup> = 2<sup>2 + 2 + 2</sup> = 2<sup>6</sup> = 64</span></p>
+<p>В степень также может возводиться произведение, сомножители которого тоже являются степенями.</p>
+<p>Например, найдём значение выражения <span style="color: #000000;">(2<sup>2</sup> × 3<sup>2</sup>)<sup>3</sup></span>. Здесь показатели каждого множителя нужно умножить на общий показатель <span style="color: #000000;">3</span>. Далее найти значение каждой степени и вычислить произведение:</p>
+<p style="text-align: center;"><span style="color: #000000;">(2<sup>2</sup> × 3<sup>2</sup>)<sup>3 </sup>= 2<sup>2×3 </sup> × 3<sup>2×3</sup> = 2<sup>6 </sup>× 3<sup>6</sup> = 64 × 729 = 46656</span></p>
+<p>Примерно тоже самое происходит при возведении в степени произведения. Мы говорили, что при возведении в степень произведения, в указанную степень возводится каждый множитель этого произведения.</p>
+<p>Например, чтобы возвести произведение <span style="color: #000000;">2 × 4</span> в третью степень, нужно записать следующее выражение:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8997 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/2-na-4-v-3.png" alt="2 на 4 в 3" width="142" height="23" /></p>
+<p>Но ранее было сказано, что если число дано без показателя, то показатель надо считать равным единице. Получается, что множители произведения <span style="color: #000000;">2 × 4</span> изначально имеют показатели равные 1. Значит в третью степень возводилось выражение <span style="color: #000000;">2<sup>1</sup> × 4<sup>1</sup></span>. А это есть возведение степени в степень.</p>
+<p>Перепишем решение с помощью правила возведения степени в степень. У нас должен получиться тот же результат:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8998 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/2-v-1-na-4-v-v-3-reshenie.png" alt="2 в 1 на 4 в в 3 решение" width="266" height="23" /></p>
+<hr />
+<p><strong>Пример 2</strong>. Найти значение выражения <span style="color: #000000;">(3<sup>3</sup>)<sup>2</sup></span></p>
+<p>Основание оставляем без изменений, а показатели перемножаем:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8993 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/3-v-3-v-2-shag-2.png" alt="3 в 3 в 2 шаг 2" width="142" height="23" /></p>
+<p>Получили <span style="color: #000000;">3<sup>6</sup></span>. Число 3 в шестой степени есть число <span style="color: #000000;">729</span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8995 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/3-v-3-v-2-reshenie.png" alt="3 в 3 в 2 решение" width="197" height="23" /></p>
+<hr />
+<p><strong>Пример 3</strong>. Выполнить возведение в степень в выражении <span style="color: #000000;">(<em>xy</em>)³</span></p>
+<p>Возведём в третью степень каждый множитель произведения:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8999 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/xy-v-3.png" alt="xy v 3" width="103" height="24" /></p>
+<hr />
+<p><strong>Пример 4</strong>. Выполнить возведение в степень в выражении <span style="color: #000000;">(<em>abc</em>)⁵</span></p>
+<p>Возведём в пятую степень каждый множитель произведения:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9000 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/abc-v-5.png" alt="abc v 5" width="129" height="24" /></p>
+<hr />
+<p><strong>Пример 5</strong>. Выполнить возведение в степень в выражении <span style="color: #000000;">(−2<em>ax</em>)<sup>3</sup></span></p>
+<p>Возведём в третью степень каждый множитель произведения:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-9015 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/2ax-v-3-shag-2.png" alt="-2ax v 3 шаг 2" width="179" height="23" /></p>
+<p>Поскольку в третью степень возводилось отрицательное число −2, оно было взято в скобки.</p>
+<p>Далее нужно вычислить то, что вычисляется. В данном случае можно вычислить <span style="color: #000000;">(−2)<sup>3</sup></span> &#8212; получится <span style="color: #000000;">−8</span>. Буквенная часть останется без изменений:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-9016 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/2ax-v-3-reshenie.png" alt="-2ax v 3 решение" width="260" height="23" /></p>
+<hr />
+<p><strong>Пример 6</strong>. Выполнить возведение в степень в выражении <span style="color: #000000;">(10<em>xy</em>)<sup>2</sup></span></p>
+<p><img loading="lazy" decoding="async" class="wp-image-9018 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/10xy-v-2-reshenie.png" alt="10xy v 2 решение" width="242" height="24" /></p>
+<hr />
+<p><strong>Пример 7</strong>. Выполнить возведение в степень в выражении <span style="color: #000000;">(−5<em>x</em>)<sup>3</sup></span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9019 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/5x-v-3-reshenie.png" alt="-5x v 3 решение" width="232" height="24" /></p>
+<hr />
+<p><strong>Пример 8</strong>. Выполнить возведение в степень в выражении <span style="color: #000000;">(−3<em>y</em>)<sup>4</sup></span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9022 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/3y-v-4-reshenie.png" alt="-3y v 4 решение" width="217" height="24" /></p>
+<hr />
+<p><strong>Пример 9</strong>. Выполнить возведение в степень в выражении <span style="color: #000000;">(−2<em>abx</em>)⁴</span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9024 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/2abx-v-4-reshenie.png" alt="-2abx v 4 решение" width="304" height="22" srcset="https://spacemath.xyz/wp-content/uploads/2018/10/2abx-v-4-reshenie.png 304w, https://spacemath.xyz/wp-content/uploads/2018/10/2abx-v-4-reshenie-300x22.png 300w" sizes="(max-width: 304px) 100vw, 304px" /></p>
+<hr />
+<p><strong>Пример 10</strong>. Упростите выражение <span style="color: #000000; font: 22px times;"><em>x</em><sup>5</sup> × (<em>x</em><sup>2</sup>)<sup>3</sup> </span></p>
+<p>Степень <span style="color: #000000; font: 16pt times;"><em>x</em><sup>5</sup></span> пока оставим без изменений, а в выражении <span style="color: #000000; font: 21px times;">(<em>x</em><sup>2</sup>)<sup>3</sup></span> выполним возведение степени в степени:</p>
+<p style="text-align: center;"><span style="color: #000000; font: 22px times;"><em>x</em><sup>5</sup><em> × </em>(<em>x</em><sup>2</sup>)<sup>3</sup><em> = x</em><sup>5</sup><em> × x</em><sup>2 × 3</sup><em> = x</em><sup>5</sup><em> × x</em><sup>6</sup></span></p>
+<p>Теперь выполним умножение <span style="color: #000000; font: 21px times;"><em>x</em><sup>5</sup><em>× x</em><sup>6</sup></span>. Для этого воспользуемся основным свойством степени &#8212; основание <span style="color: #000000; font: 21px times;"><em>x</em></span> оставим без изменений, а показатели сложим:</p>
+<p style="text-align: center;"><span style="color: #000000; font: 22px times;"><em>x</em><sup>5</sup><em> × </em>(<em>x</em><sup>2</sup>)<sup>3</sup><em> = x</em><sup>5</sup><em> × x</em><sup>2× 3</sup><em> = x</em><sup>5</sup><em> × x</em><sup>6</sup> = <em>x</em><sup>5 + 6</sup> = <em>x</em><sup>11</sup></span></p>
+<hr />
+<p><strong>Пример 9</strong>. Найти значение выражения <span style="color: #000000;">4<sup>3</sup> × 2<sup>2</sup></span>, используя основное свойство степени.</p>
+<p>Основное свойство степени можно использовать в случае, если основания  исходных степеней одинаковы. В данном примере основания разные, поэтому для начала исходное выражение нужно немного видоизменить, а именно сделать так, чтобы основания степеней стали одинаковыми.</p>
+<p>Посмотрим внимательно на степень 4<sup>3</sup>. Основание у этой степени есть число 4, которое можно представить в виде <span style="color: #000000;">2<sup>2</sup></span>. Тогда исходное выражение примет вид <span style="color: #000000;">(2<sup>2</sup>)<sup>3</sup> × 2<sup>2</sup></span>. Выполнив возведение степени в степень в выражении <span style="color: #000000;">(2<sup>2</sup>)<sup>3</sup></span>, мы получим <span style="color: #000000;">2<sup>6</sup></span>. Тогда исходное выражение примет вид <span style="color: #000000;">2<sup>6</sup></span><span style="color: #000000;"> × 2<sup>2</sup></span>, вычислить которое можно, используя основное свойство степени.</p>
+<p>Запишем решение данного примера:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9036 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/4-v-3-na-2-v-2.png" alt="4 v 3 na 2 v 2" width="362" height="23" srcset="https://spacemath.xyz/wp-content/uploads/2018/10/4-v-3-na-2-v-2.png 362w, https://spacemath.xyz/wp-content/uploads/2018/10/4-v-3-na-2-v-2-300x19.png 300w" sizes="(max-width: 362px) 100vw, 362px" /></p>
+<hr />
+<h2 id="delenie_stepenei" style="text-align: center;">Деление степеней</h2>
+<p>Чтобы выполнить деление степеней, нужно найти значение каждой степени, затем выполнить деление обыкновенных чисел.</p>
+<p>Например, разделим <span style="color: #000000;">4<sup>3</sup></span> на <span style="color: #000000;">2<sup>2</sup></span>.</p>
+<p>Вычислим <span style="color: #000000;">4<sup>3</sup></span>, получим <span style="color: #000000;">64</span>. Вычислим <span style="color: #000000;">2<sup>2</sup></span>, получим 4. Теперь разделим 64 на 4, получим 16</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9031 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/64-na-4-delenie-ugolkom.png" alt="64 na 4 деление уголком" width="121" height="171" /></p>
+<p>Если при делении степеней основания окажутся одинаковыми, то основание можно оставить без изменений, а из показателя степени делимого вычесть показатель степени делителя.</p>
+<p>Например, найдем значение выражения <span style="color: #000000;">2<sup>3</sup> : 2<sup>2</sup></span></p>
+<p>Основание 2 оставим без изменений, а из показателя степени делимого вычтем показатель степени делителя:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-9033 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/2-v-3-na-2-v-2-reshenie.png" alt="2 в 3 на 2 в 2 решение" width="193" height="21" /></p>
+<p>Значит, значение выражения <span style="color: #000000;">2<sup>3</sup> : 2<sup>2</sup></span> равно <span style="color: #000000;">2</span>.</p>
+<p>Данное свойство основано на умножении степеней с одинаковыми основаниями, или как мы привыкли говорить на основном свойстве степени.</p>
+<p>Вернемся к предыдущему примеру <span style="color: #000000;">2<sup>3</sup> : 2<sup>2</sup></span>. Здесь делимое это <span style="color: #000000;">2<sup>3</sup></span>, а делитель <span style="color: #000000;">2<sup>2</sup></span>.</p>
+<p>Разделить одно число на другое означает найти такое число, которое при умножении на делитель даст в результате делимое.</p>
+<p>В нашем случае, разделить 2<sup>3</sup> на 2<sup>2</sup> означает найти такую степень, которая при умножении на делитель 2<sup>2</sup> даст в результате 2<sup>3</sup>. А какую степень можно умножить на 2<sup>2</sup>, чтобы получить 2<sup>3</sup> ? Очевидно, что только степень 2<sup>1</sup>. Из основного свойства степени имеем:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9034 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/2-v-1-na-2-v-2-umnozhenie.png" alt="2 в 1 на 2 в 2 умножение" width="154" height="21" srcset="https://spacemath.xyz/wp-content/uploads/2018/10/2-v-1-na-2-v-2-umnozhenie.png 154w, https://spacemath.xyz/wp-content/uploads/2018/10/2-v-1-na-2-v-2-umnozhenie-150x21.png 150w" sizes="(max-width: 154px) 100vw, 154px" /></p>
+<p>Убедиться, что значение выражения <span style="color: #000000;">2<sup>3</sup> : 2<sup>2</sup> </span>равно <span style="color: #000000;">2<sup>1</sup></span> можно непосредственно вычислив само выражение <span style="color: #000000;">2<sup>3</sup> : 2<sup>2</sup></span>. Для этого сначала найдём значение степени <span style="color: #000000;">2<sup>3</sup></span>, получим <span style="color: #000000;">8</span>. Затем найдём значение степени <span style="color: #000000;">2<sup>2</sup></span>, получим <span style="color: #000000;">4</span>. Разделим <span style="color: #000000;">8</span> на 4, получим <span style="color: #000000;">2</span> или <span style="color: #000000;">2<sup>1</sup></span>, поскольку <span style="color: #000000;">2 = 2<sup>1</sup></span>.</p>
+<p style="text-align: center;"><span style="color: #000000;">2<sup>3</sup> : 2<sup>2</sup> = 8 : 4 = 2</span></p>
+<p>Таким образом, при делении степеней с одинаковыми основаниями выполняется следующее равенство:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9037 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/a-v-m-na-a-v-n-formula.png" alt="a v m na a v n formula" width="142" height="20" /></p>
+<p>Может случиться и так, что одинаковыми могут оказаться не только основания, но и показатели. В этом случае в ответе получится единица.</p>
+<p>Например, найдём значение выражения <span style="color: #000000;">2<sup>2</sup> : 2<sup>2</sup></span>. Вычислим значение каждой степени и выполним деление получившихся чисел:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9038 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/2-v-2-na-2-v-2.png" alt="2 v 2 na 2 v 2" width="150" height="21" /></p>
+<p>При решении примера <span style="color: #000000;">2<sup>2</sup> : 2<sup>2</sup></span> также можно применить правило деления степеней с одинаковыми основаниями. В результате получается число в нулевой степени, поскольку разность показателей степеней <span style="color: #000000;">2<sup>2</sup></span> и <span style="color: #000000;">2<sup>2</sup></span> равна нулю:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9039 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/2-v-2-na-2-v-2-reshenie-2.png" alt="2 v 2 na 2 v 2 решение 2" width="158" height="21" srcset="https://spacemath.xyz/wp-content/uploads/2018/10/2-v-2-na-2-v-2-reshenie-2.png 158w, https://spacemath.xyz/wp-content/uploads/2018/10/2-v-2-na-2-v-2-reshenie-2-150x21.png 150w" sizes="(max-width: 158px) 100vw, 158px" /></p>
+<p>В математике принято считать, что любое число в нулевой степени есть единица:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9040 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/2-v-2-na-2-v-2-reshenie-3.png" alt="2 v 2 na 2 v 2 решение 3" width="190" height="21" /></p>
+<p>Почему число 2 в нулевой степени равно единице мы выяснили выше. Если вычислить <span style="color: #000000;">2<sup>2</sup> : 2<sup>2</sup></span> обычным методом, не используя правило деления степеней, получится единица.</p>
+<hr />
+<p><strong>Пример 2</strong>. Найти значение выражения <span style="color: #000000;">4<sup>12</sup> : 4<sup>10</sup></span></p>
+<p>Воспользуемся правилом деления степеней. Основание 4 оставим без изменений, а из показателя степени делимого вычтем показатель степени делителя:</p>
+<p style="text-align: center;"><span style="color: #000000;">4<sup>12</sup> : 4<sup>10</sup> = 4<sup>12 − 10</sup> = 4<sup>2</sup> = 16</span></p>
+<hr />
+<p><strong>Пример 3</strong>. Представить частное <span style="color: #000000;"><em>x</em><sup>3</sup> : <em>x</em></span> в виде степени с основанием <span style="color: #000000;"><em>x</em></span></p>
+<p>Воспользуемся правилом деления степеней. Основание <span style="color: #000000;"><em>x</em></span> оставим без изменений, а из показателя степени делимого вычтем показатель степени делителя. Показатель делителя равен единице. Для наглядности запишем его:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9056 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/x-v-3-na-x-v-1.png" alt="x v 3 na x v 1" width="227" height="21" /></p>
+<hr />
+<p><strong>Пример 4</strong>. Представить частное <span style="color: #000000;"><em>x</em><sup>3</sup> : <em>x</em><sup>2</sup></span> в виде степени с основанием <span style="color: #000000;"><em>x</em></span></p>
+<p>Воспользуемся правилом деления степеней. Основание <span style="color: #000000;"><em>x</em></span> оставим без изменений, а из показателя степени делимого вычтем показатель степени делителя:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9057 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/x-v-3-na-x-v-2.png" alt="x v 3 na x v 2" width="197" height="21" /></p>
+<p>Деление степеней можно записывать в виде дроби. Так, предыдущий пример можно записать следующим образом:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9058 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/x-v-3-na-x-v-2-2.png" alt="x v 3 na x v 2 2" width="123" height="49" /></p>
+<p>Числитель и знаменатель дроби <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9059" src="https://spacemath.xyz/wp-content/uploads/2018/10/x-v-3-na-x-v-2-3.png" alt="x v 3 na x v 2 3" width="19" height="49" /> разрешается записывать в развёрнутом виде, а именно в виде произведений одинаковых множителей. Степень <span style="color: #000000;"><em>x</em><sup>3</sup></span> можно записать как <span style="color: #000000;"><em>x × x × x</em></span>, а степень <span style="color: #000000;"><em>x</em><sup>2</sup></span> как <span style="color: #000000;"><em>x × x</em></span>. Тогда конструкцию <span style="color: #000000;"><em>x</em><sup>3 − 2</sup></span> можно будет пропустить и воспользоваться сокращением дроби. В числителе и в знаменателе можно будет сократить по два множителя <span style="color: #000000;"><em>x</em></span>. В результате останется один множитель <span style="color: #000000;"><em>x</em></span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9061 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/x-v-3-na-x-v-2-4.png" alt="x v 3 na x v 2 4" width="313" height="70" srcset="https://spacemath.xyz/wp-content/uploads/2018/10/x-v-3-na-x-v-2-4.png 313w, https://spacemath.xyz/wp-content/uploads/2018/10/x-v-3-na-x-v-2-4-300x67.png 300w" sizes="(max-width: 313px) 100vw, 313px" /></p>
+<p>Или ещё короче:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9062 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/x-v-3-na-x-v-2-5.png" alt="x v 3 na x v 2 5" width="169" height="70" /></p>
+<p>Также, полезно уметь быстро сокращать дроби, состоящие из степеней. Например, дробь <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9059" src="https://spacemath.xyz/wp-content/uploads/2018/10/x-v-3-na-x-v-2-3.png" alt="x v 3 na x v 2 3" width="19" height="49" /> можно сократить на <span style="color: #000000;"><em>x</em><sup>2</sup></span>. Чтобы сократить дробь <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9059" src="https://spacemath.xyz/wp-content/uploads/2018/10/x-v-3-na-x-v-2-3.png" alt="x v 3 na x v 2 3" width="19" height="49" /> на <span style="color: #000000;"><em>x</em><sup>2</sup></span> нужно числитель и знаменатель дроби <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9059" src="https://spacemath.xyz/wp-content/uploads/2018/10/x-v-3-na-x-v-2-3.png" alt="x v 3 na x v 2 3" width="19" height="49" /> разделить на <span style="color: #000000;"><em>x</em><sup>2</sup></span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9063 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/x-v-3-na-x-v-2-6.png" alt="x v 3 na x v 2 6" width="317" height="50" srcset="https://spacemath.xyz/wp-content/uploads/2018/10/x-v-3-na-x-v-2-6.png 317w, https://spacemath.xyz/wp-content/uploads/2018/10/x-v-3-na-x-v-2-6-300x47.png 300w" sizes="(max-width: 317px) 100vw, 317px" /></p>
+<p>Деление степеней подробно можно не расписывать. Приведённое сокращение можно выполнить короче:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9064 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/x-v-3-na-x-v-2-7.png" alt="x v 3 na x v 2 7" width="199" height="50" /></p>
+<p>Или ещё короче:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9065 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/x-v-3-na-x-v-2-8.png" alt="x v 3 na x v 2 8" width="64" height="76" /></p>
+<hr />
+<p><strong>Пример 5</strong>. Выполнить деление <span style="color: #000000;"><em>x</em><sup>12</sup><em> : x</em><sup>3</sup></span></p>
+<p>Воспользуемся правилом деления степеней. Основание <span style="color: #000000;"><em>x</em></span> оставим без изменений, а из показателя степени делимого вычтем показатель степени делителя:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-9070 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/x-v-12-na-x-3.png" alt="x v 12 na x 3" width="166" height="20" /></p>
+<p>Запишем решение при помощи сокращения дроби. Деление степеней <span style="color: #000000;"><em>x</em><sup>12</sup><em> : x</em><sup>3</sup></span> запишем в виде <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9071" src="https://spacemath.xyz/wp-content/uploads/2018/10/x-v-12-na-x-v-3.png" alt="x v 12 na x v 3" width="22" height="50" /> . Далее сократим данную дробь на <span style="color: #000000;"><em>x</em><sup>3</sup></span>.</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9072 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/x-v-12-na-x-v-3-2.png" alt="x v 12 na x v 3 2" width="269" height="50" /></p>
+<hr />
+<p><strong>Пример 6</strong>. Найти значение выражения <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9080" src="https://spacemath.xyz/wp-content/uploads/2018/10/7-v-9-na-7-v-5-na-7-v-12.png" alt="7 v 9 na 7 v 5 na 7 v 12" width="58" height="49" /></p>
+<p>В числителе выполним умножение степеней с одинаковыми основаниями:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9081 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/7-v-9-na-7-v-5-na-7-v-12-shag-2.png" alt="7 v 9 na 7 v 5 na 7 v 12 шаг 2" width="334" height="49" srcset="https://spacemath.xyz/wp-content/uploads/2018/10/7-v-9-na-7-v-5-na-7-v-12-shag-2.png 334w, https://spacemath.xyz/wp-content/uploads/2018/10/7-v-9-na-7-v-5-na-7-v-12-shag-2-300x44.png 300w" sizes="(max-width: 334px) 100vw, 334px" /></p>
+<p>Теперь применяем правило деления степеней с одинаковыми основаниями. Основание 7 оставляем без изменений, а из показателя степени делимого вычтем показатель степени делителя:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9082 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/7-v-9-na-7-v-5-na-7-v-12-shag-3.png" alt="7 v 9 na 7 v 5 na 7 v 12 шаг 3" width="334" height="49" srcset="https://spacemath.xyz/wp-content/uploads/2018/10/7-v-9-na-7-v-5-na-7-v-12-shag-3.png 334w, https://spacemath.xyz/wp-content/uploads/2018/10/7-v-9-na-7-v-5-na-7-v-12-shag-3-300x44.png 300w" sizes="(max-width: 334px) 100vw, 334px" /></p>
+<p>Завершаем пример, вычислив степень <span style="color: #000000;">7<sup>2</sup></span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9083 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/7-v-9-na-7-v-5-na-7-v-12-reshenie.png" alt="7 v 9 na 7 v 5 na 7 v 12 решение" width="334" height="49" srcset="https://spacemath.xyz/wp-content/uploads/2018/10/7-v-9-na-7-v-5-na-7-v-12-reshenie.png 334w, https://spacemath.xyz/wp-content/uploads/2018/10/7-v-9-na-7-v-5-na-7-v-12-reshenie-300x44.png 300w" sizes="(max-width: 334px) 100vw, 334px" /></p>
+<hr />
+<p><strong>Пример 7</strong>. Найти значение выражения <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9074" src="https://spacemath.xyz/wp-content/uploads/2018/10/2-v-na-2-v-3-v-4-na-2-v-13.png" alt="2 v na 2 v 3 v 4 na 2 v 13" width="82" height="49" /></p>
+<p>Выполним в числителе возведение степени в степень. Сделать это нужно с выражением <span style="color: #000000;">(2<sup>3</sup>)<sup>4</sup></span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9077 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/2-v-na-2-v-3-v-4-na-2-v-13-shag-2-1.png" alt="2 v na 2 v 3 v 4 na 2 v 13 шаг 2" width="564" height="48" srcset="https://spacemath.xyz/wp-content/uploads/2018/10/2-v-na-2-v-3-v-4-na-2-v-13-shag-2-1.png 564w, https://spacemath.xyz/wp-content/uploads/2018/10/2-v-na-2-v-3-v-4-na-2-v-13-shag-2-1-300x26.png 300w" sizes="(max-width: 564px) 100vw, 564px" /></p>
+<p>Теперь выполним в числителе умножение степеней с одинаковыми основаниями:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9078 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/2-v-na-2-v-3-v-4-na-2-v-13-shag-3.png" alt="2 v na 2 v 3 v 4 na 2 v 13 шаг 3" width="564" height="48" srcset="https://spacemath.xyz/wp-content/uploads/2018/10/2-v-na-2-v-3-v-4-na-2-v-13-shag-3.png 564w, https://spacemath.xyz/wp-content/uploads/2018/10/2-v-na-2-v-3-v-4-na-2-v-13-shag-3-300x26.png 300w" sizes="(max-width: 564px) 100vw, 564px" /></p>
+<p>Теперь применяем правило деления степеней с одинаковыми основаниями:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9079 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/2-v-na-2-v-3-v-4-na-2-v-13-reshenie.png" alt="2 v na 2 v 3 v 4 na 2 v 13 решение" width="564" height="48" srcset="https://spacemath.xyz/wp-content/uploads/2018/10/2-v-na-2-v-3-v-4-na-2-v-13-reshenie.png 564w, https://spacemath.xyz/wp-content/uploads/2018/10/2-v-na-2-v-3-v-4-na-2-v-13-reshenie-300x26.png 300w" sizes="(max-width: 564px) 100vw, 564px" /></p>
+<p>Значит, значение выражения <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9074" src="https://spacemath.xyz/wp-content/uploads/2018/10/2-v-na-2-v-3-v-4-na-2-v-13.png" alt="2 v na 2 v 3 v 4 na 2 v 13" width="82" height="49" /> равно 16</p>
+<p>В некоторых примерах можно сокращать одинаковые множители в ходе решения. Это позволяет упростить выражение и само вычисление в целом.</p>
+<p>Например, найдём значение выражения <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9084" src="https://spacemath.xyz/wp-content/uploads/2018/10/4-v-3-na-3-v-2-na-2-v-6.png" alt="4 v 3 na 3 v 2 na 2 v 6" width="59" height="49" />. Степень <span style="color: #000000;">4<sup>3</sup></span> запишем в виде возведения степени в степень <span style="color: #000000;">(2<sup>2</sup>)<sup>3</sup></span>. Тогда получим следующее выражение:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9085 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/4-v-3-na-3-v-2-na-2-v-6-shag-2.png" alt="4 v 3 na 3 v 2 na 2 v 6 шаг 2" width="334" height="49" srcset="https://spacemath.xyz/wp-content/uploads/2018/10/4-v-3-na-3-v-2-na-2-v-6-shag-2.png 334w, https://spacemath.xyz/wp-content/uploads/2018/10/4-v-3-na-3-v-2-na-2-v-6-shag-2-300x44.png 300w" sizes="(max-width: 334px) 100vw, 334px" /></p>
+<p>В числителе выполним возведение степени в степень. Сделать это нужно с выражением <span style="color: #000000;">(2<sup>2</sup>)<sup>3</sup></span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9086 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/4-v-3-na-3-v-2-na-2-v-6-shag-3.png" alt="4 v 3 na 3 v 2 na 2 v 6 шаг 3" width="334" height="49" srcset="https://spacemath.xyz/wp-content/uploads/2018/10/4-v-3-na-3-v-2-na-2-v-6-shag-3.png 334w, https://spacemath.xyz/wp-content/uploads/2018/10/4-v-3-na-3-v-2-na-2-v-6-shag-3-300x44.png 300w" sizes="(max-width: 334px) 100vw, 334px" /></p>
+<p>В числителе и в знаменателе получившегося выражения содержится степень <span style="color: #000000;">2<sup>6</sup></span>, которую можно сократить на <span style="color: #000000;">2<sup>6</sup></span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9087 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/4-v-3-na-3-v-2-na-2-v-6-reshenie.png" alt="4 v 3 na 3 v 2 na 2 v 6 решение" width="334" height="77" srcset="https://spacemath.xyz/wp-content/uploads/2018/10/4-v-3-na-3-v-2-na-2-v-6-reshenie.png 334w, https://spacemath.xyz/wp-content/uploads/2018/10/4-v-3-na-3-v-2-na-2-v-6-reshenie-300x69.png 300w" sizes="(max-width: 334px) 100vw, 334px" /></p>
+<p>Видим, что в результате осталась единственная степень <span style="color: #000000;">3<sup>2</sup></span>, значение которой равно 9.</p>
+<hr />
+<p><strong>Пример 8</strong>. Найти значение выражения <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9201" src="https://spacemath.xyz/wp-content/uploads/2018/10/28-v-6-na-7-v-5-na-4-v-5-primer.png" alt="28 v 6 na 7 v 5 na 4 v 5 пример" width="54" height="57" /></p>
+<p>В знаменателе содержится произведение степеней с одинаковыми показателями. Согласно правилу возведения в степень произведения, конструкцию <span style="color: #000000;">7<sup>5</sup> × 4<sup>5</sup></span> можно представить в виде степени с одним показателем <span style="color: #000000;">(7 × 4)<sup>5</sup></span>. Далее перемножим выражение в скобках, получим <span style="color: #000000;">28<sup>5</sup></span>. В результате исходное выражение примет следующий вид:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9206 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/28-v-6-na-28-v-5.png" alt="28 v 6 na 28 v 5" width="29" height="50" /></p>
+<p>Теперь можно применить правило деления степеней:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9207 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/28-v-6-na-28-v-5-shag-2.png" alt="28 v 6 na 28 v 5 шаг 2" width="204" height="50" /></p>
+<p>Значит, значение выражения <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9201" src="https://spacemath.xyz/wp-content/uploads/2018/10/28-v-6-na-7-v-5-na-4-v-5-primer.png" alt="28 v 6 na 7 v 5 na 4 v 5 пример" width="54" height="57" /> равно <span style="color: #000000;">28</span>. Запишем решение полностью:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9208 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/28-v-6-na-28-v-5-reshenie.png" alt="28 v 6 na 28 v 5 решение" width="371" height="53" srcset="https://spacemath.xyz/wp-content/uploads/2018/10/28-v-6-na-28-v-5-reshenie.png 371w, https://spacemath.xyz/wp-content/uploads/2018/10/28-v-6-na-28-v-5-reshenie-300x43.png 300w" sizes="(max-width: 371px) 100vw, 371px" /></p>
+<hr />
+<h2 id="yak11" style="text-align: center;">Возведение в степень обыкновенных дробей</h2>
+<p>Чтобы возвести в степень обыкновенную дробь, нужно возвести в указанную степень числитель и знаменатель этой дроби.</p>
+<p>Например, возведём обыкновенную дробь <img loading="lazy" decoding="async" class="alignnone size-full wp-image-2804" src="https://spacemath.xyz/wp-content/uploads/2016/11/dve-tretih" alt="две третьих" width="13" height="43" /> во вторую степень. Возьмём в скобки данную дробь и в качестве показателя укажем 2</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9088 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/2-na-3-v-2-1.png" alt="2 на 3 v 2" width="46" height="57" /></p>
+<p>Если не брать в скобки всю дробь, то это равносильно возведению в степень только числителя данной дроби. Иными словами, если мы хотим возвести во вторую степень дробь <img loading="lazy" decoding="async" class="alignnone size-full wp-image-2804" src="https://spacemath.xyz/wp-content/uploads/2016/11/dve-tretih" alt="две третьих" width="13" height="43" />, мы не должны записывать это как <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9089" src="https://spacemath.xyz/wp-content/uploads/2018/10/2-na-3-v-2-2.png" alt="2 на 3 v 2 2" width="21" height="59" />.</p>
+<p>Итак, чтобы вычислить значение выражения <img loading="lazy" decoding="async" class="size-full wp-image-9088 alignnone" src="https://spacemath.xyz/wp-content/uploads/2018/10/2-na-3-v-2-1.png" alt="2 на 3 v 2" width="46" height="57" />, нужно возвести во вторую степень числитель и знаменатель данной дроби:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9091 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/2-na-3-v-2-shag-2.png" alt="2 на 3 v 2 шаг 2" width="129" height="57" /></p>
+<p>Получили дробь в числителе и в знаменателе которой содержатся степени. Вычислим каждую степень по отдельности</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9090 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/2-na-3-v-2-reshenie-1.png" alt="2 на 3 v 2 решение" width="129" height="57" /></p>
+<p>Значит обыкновенная дробь <img loading="lazy" decoding="async" class="alignnone size-full wp-image-2804" src="https://spacemath.xyz/wp-content/uploads/2016/11/dve-tretih" alt="две третьих" width="13" height="43" /> во второй степени равна дроби <img loading="lazy" decoding="async" class="alignnone size-full wp-image-8192" src="https://spacemath.xyz/wp-content/uploads/2016/07/4-na-9.png" alt="" width="13" height="45" />.</p>
+<p>Приведённое правило работает следующим образом. Дробь <img loading="lazy" decoding="async" class="alignnone size-full wp-image-2804" src="https://spacemath.xyz/wp-content/uploads/2016/11/dve-tretih" alt="две третьих" width="13" height="43" /> во второй степень это произведение двух дробей, каждая из которых равна <img loading="lazy" decoding="async" class="alignnone size-full wp-image-2804" src="https://spacemath.xyz/wp-content/uploads/2016/11/dve-tretih" alt="две третьих" width="13" height="43" /></p>
+<p><img loading="lazy" decoding="async" class="wp-image-9096 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/2-na-3-v-2-obyasnenie.png" alt="2 на 3 v 2 объяснение" width="247" height="57" /></p>
+<p>Мы помним, что для перемножения дробей необходимо перемножить их числители и знаменатели:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-9095 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/2-na-3-v-2-obyasnenie-2.png" alt="2 на 3 v 2 объяснение 2" width="247" height="57" /></p>
+<p>А поскольку в числителе и в знаменателе происходит перемножение одинаковых множителей, то выражения <span style="color: #000000;">2 × 2</span> и <span style="color: #000000;">3 × 3</span> можно заменить на <span style="color: #000000;">2<sup>2</sup></span> и <span style="color: #000000;">3<sup>2</sup></span> соответственно:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9094 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/2-na-3-v-2-shag-3.png" alt="2 на 3 v 2 шаг 3" width="247" height="57" /></p>
+<p>Откуда и получится ответ <img loading="lazy" decoding="async" class="alignnone size-full wp-image-8192" src="https://spacemath.xyz/wp-content/uploads/2016/07/4-na-9.png" alt="" width="13" height="45" />.</p>
+<p>Вообще, для любого <span style="color: #000000;">a</span> и <span style="color: #000000;"><em>b </em>≠ 0</span> выполняется следующее равенство:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9097 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/a-na-b-v-2-formula.png" alt="a na b v 2 формула" width="95" height="54" /></p>
+<p>Это тождественное преобразование называют <strong>возведением в степень обыкновенной дроби</strong>.</p>
+<hr />
+<p><strong>Пример 2</strong>. Возвести дробь <img loading="lazy" decoding="async" class="alignnone size-full wp-image-3751" src="https://spacemath.xyz/wp-content/uploads/2017/01/Tri-pyatyh.png" alt="Три пятых" width="12" height="43" /> в третью степень</p>
+<p>Заключим данную дробь в скобки и в качестве показателя укажем число 3. Далее возведём числитель и знаменатель данной дроби в третью степень и вычислим получившуюся дробь:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9098 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/3-na-5-v-3-reshenie.png" alt="3 на 5 v 3 решение" width="147" height="57" /></p>
+<p>Отрицательная дробь возводится в степень таким же образом, но перед вычислениями надо определиться какой знак будет иметь ответ. Если показатель четный, то ответ будет положительным. Если показатель нечетный, то ответ будет отрицательным.</p>
+<p>Например, возведём дробь <img loading="lazy" decoding="async" class="alignnone size-full wp-image-3071" src="https://spacemath.xyz/wp-content/uploads/2016/12/minus-odna-vtoraya.png" alt="минус одна вторая" width="28" height="43" /> во вторую степень:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9099 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/1-na-2-v-2.png" alt="- 1 na 2 v 2" width="61" height="57" /></p>
+<p>Показатель является чётным числом. Значит ответ будет положительным. Далее применяем правило возведения в степень дроби и вычисляем получившуюся дробь:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-9101 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/1-na-2-v-2-reshenie.png" alt="- 1 na 2 v 2 решение" width="153" height="57" srcset="https://spacemath.xyz/wp-content/uploads/2018/10/1-na-2-v-2-reshenie.png 153w, https://spacemath.xyz/wp-content/uploads/2018/10/1-na-2-v-2-reshenie-150x57.png 150w" sizes="(max-width: 153px) 100vw, 153px" /></p>
+<p>Ответ положителен по причине того, что выражение <img loading="lazy" decoding="async" class="size-full wp-image-9099 alignnone" src="https://spacemath.xyz/wp-content/uploads/2018/10/1-na-2-v-2.png" alt="- 1 na 2 v 2" width="61" height="57" /> представляет собой произведение двух сомножителей, каждый из которых равен дроби <img loading="lazy" decoding="async" class="alignnone size-full wp-image-3071" src="https://spacemath.xyz/wp-content/uploads/2016/12/minus-odna-vtoraya.png" alt="минус одна вторая" width="28" height="43" /></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9102 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/1-na-2-v-2-obyasnenie.png" alt="- 1 na 2 v 2 объяснение" width="192" height="57" /></p>
+<p>А произведение отрицательных чисел (в том числе и рациональных) есть положительное число:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9103 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/1-na-2-v-2-obyasnenie-2.png" alt="- 1 na 2 v 2 объяснение 2" width="236" height="57" /></p>
+<p>Если возводить дробь <img loading="lazy" decoding="async" class="alignnone size-full wp-image-3071" src="https://spacemath.xyz/wp-content/uploads/2016/12/minus-odna-vtoraya.png" alt="минус одна вторая" width="28" height="43" /> в третью степень, то ответ будет отрицательным, поскольку в данном случае показатель будет нечётным числом. Правило возведения в степень остаётся тем же, но перед выполнением этого возведения, нужно будет поставить минус:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9104 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/1-na-2-v-3-reshenie.png" alt="-1 на 2 v 3 решение" width="186" height="57" /></p>
+<p>Здесь ответ отрицателем по причине того, что выражение <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9105" src="https://spacemath.xyz/wp-content/uploads/2018/10/1-na-2-v-3.png" alt="-1 на 2 v 3" width="60" height="65" /> представляет собой произведение трёх множителей, каждый из которых равен дроби <img loading="lazy" decoding="async" class="alignnone size-full wp-image-3071" src="https://spacemath.xyz/wp-content/uploads/2016/12/minus-odna-vtoraya.png" alt="минус одна вторая" width="28" height="43" /></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9106 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/1-na-2-v-3-obyasnenie.png" alt="-1 на 2 v 3 объяснение" width="265" height="57" /></p>
+<p>Сначала перемножили <img loading="lazy" decoding="async" class="alignnone size-full wp-image-3071" src="https://spacemath.xyz/wp-content/uploads/2016/12/minus-odna-vtoraya.png" alt="минус одна вторая" width="28" height="43" /> и <img loading="lazy" decoding="async" class="alignnone size-full wp-image-3071" src="https://spacemath.xyz/wp-content/uploads/2016/12/minus-odna-vtoraya.png" alt="минус одна вторая" width="28" height="43" />, получили <img loading="lazy" decoding="async" class="alignnone size-full wp-image-5140" src="https://spacemath.xyz/wp-content/uploads/2017/07/odna-chetvertaya.png" alt="одна четвертая" width="12" height="43" />, но затем умножив <img loading="lazy" decoding="async" class="alignnone size-full wp-image-5140" src="https://spacemath.xyz/wp-content/uploads/2017/07/odna-chetvertaya.png" alt="одна четвертая" width="12" height="43" /> на <img loading="lazy" decoding="async" class="alignnone size-full wp-image-3071" src="https://spacemath.xyz/wp-content/uploads/2016/12/minus-odna-vtoraya.png" alt="минус одна вторая" width="28" height="43" /> мы получим отрицательный ответ <img loading="lazy" decoding="async" class="alignnone size-full wp-image-3520" src="https://spacemath.xyz/wp-content/uploads/2016/12/Minus-odna-vosmaya.png" alt="Минус одна восьмая" width="28" height="43" /></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9107 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/1-na-2-v-3-obyasnenie-2.png" alt="-1 на 2 v 3 объяснение 2" width="440" height="128" srcset="https://spacemath.xyz/wp-content/uploads/2018/10/1-na-2-v-3-obyasnenie-2.png 440w, https://spacemath.xyz/wp-content/uploads/2018/10/1-na-2-v-3-obyasnenie-2-300x87.png 300w" sizes="(max-width: 440px) 100vw, 440px" /></p>
+<hr />
+<p><strong>Пример 3</strong>. Найти значение выражения <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9108" src="https://spacemath.xyz/wp-content/uploads/2018/10/2-v-2-na-4-v-2-3-na-16.png" alt="2 в 2 на 4 в 2 - 3 на 16" width="87" height="65" /></p>
+<p>Выполним возведение в степень обыкновенной дроби:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9110 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/2-v-2-na-4-v-2-3-na-16-shag-2.png" alt="2 в 2 на 4 в 2 - 3 на 16 шаг 2" width="333" height="57" srcset="https://spacemath.xyz/wp-content/uploads/2018/10/2-v-2-na-4-v-2-3-na-16-shag-2.png 333w, https://spacemath.xyz/wp-content/uploads/2018/10/2-v-2-na-4-v-2-3-na-16-shag-2-300x51.png 300w" sizes="(max-width: 333px) 100vw, 333px" /></p>
+<p>Далее вычислим значение получившегося выражения:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9109 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/2-v-2-na-4-v-2-3-na-16-reshenie.png" alt="2 в 2 на 4 в 2 - 3 на 16 решение" width="333" height="57" srcset="https://spacemath.xyz/wp-content/uploads/2018/10/2-v-2-na-4-v-2-3-na-16-reshenie.png 333w, https://spacemath.xyz/wp-content/uploads/2018/10/2-v-2-na-4-v-2-3-na-16-reshenie-300x51.png 300w" sizes="(max-width: 333px) 100vw, 333px" /></p>
+<hr />
+<h2 id="yak12" style="text-align: center;">Возведение в степень десятичных дробей</h2>
+<p>При возведении в степень десятичной дроби её необходимо заключить в скобки. Например, возведём во вторую степень десятичную дробь <span style="color: #000000;">1,5</span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9115 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/15-v-2.png" alt="15 в 2 " width="195" height="23" /></p>
+<p>Допускается переводить десятичную дробь в обыкновенную и возводить в степень эту обыкновенную дробь. Решим предыдущий пример, переведя десятичную дробь в обыкновенную:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9116 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/15-v-2-reshenie-2.png" alt="15 в 2 решение 2" width="302" height="58" srcset="https://spacemath.xyz/wp-content/uploads/2018/10/15-v-2-reshenie-2.png 302w, https://spacemath.xyz/wp-content/uploads/2018/10/15-v-2-reshenie-2-300x58.png 300w" sizes="(max-width: 302px) 100vw, 302px" /></p>
+<hr />
+<p><strong>Пример 2</strong>. Найти значение степени <span style="color: #000000;">(−1,5)<sup>3</sup></span></p>
+<p>Показатель степени является нечётным числом. Значит ответ будет отрицательным</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9117 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/15-v-3-reshenie.png" alt="-15 в 3 решение" width="369" height="23" srcset="https://spacemath.xyz/wp-content/uploads/2018/10/15-v-3-reshenie.png 369w, https://spacemath.xyz/wp-content/uploads/2018/10/15-v-3-reshenie-300x19.png 300w" sizes="(max-width: 369px) 100vw, 369px" /></p>
+<hr />
+<p><strong>Пример 3</strong>. Найти значение степени <span style="color: #000000;">(−2,4)<sup>2</sup></span></p>
+<p>Показатель степени является чётным числом. Значит ответ будет положительным:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9118 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/24-v-2-reshenie.png" alt="-24 в 2 решение" width="291" height="23" /></p>
+    <h3>Хотите перейти на следующий урок?</h3>
+<a href="lection1.html" class="back">Вернуться ‹‹</a>
+<a href="lection3.html" class="next">Вперёд »</a>
+
+<script type="text/javascript">
+
+var menuItems = document.querySelectorAll('.skew-menu ul li');
+
+for (var i = 0; i < menuItems.length; i++) {
+   menuItems[i].addEventListener('click', function() {
+       // Действия при выборе определенной лекции
+   });
+}
+document.querySelectorAll('.skew-menu li').forEach(item => {
+    item.addEventListener('mouseover', () => {
+        item.style.transition = 'transform 0.3s';
+        item.style.transform = 'scale(1.2)';
+    });
+
+    item.addEventListener('mouseout', () => {
+        if (!item.classList.contains("clicked")) { // Проверяем, не была ли ячейка уже уменьшена при клике
+            item.style.transition = 'transform 0.3s';
+            item.style.transform = 'scale(1)';
+        }
+    });
+
+     document.addEventListener("click", function(event) { 
+         if (!event.target.closest(".skew-menu li")) return;
+
+         const clickedItem= event.target.closest(".skew-menu li");
+
+         document.querySelectorAll('.skew-menu li').forEach(otherItem => { 
+             otherItem.classList.remove("clicked");
+             otherItem.removeEventListener("transitionend", removeTransition);
+          });
+          
+          function removeTransition() { this.classList.remove("clicked"); }
+
+          const clickedClassList= clickedItem.classList;
+          clickedClassList.add("clicked");
+
+          setTimeout(() =>{
+              clickedClassList.remove("clicked")
+           },300)
+
+           function toggleTransform(){
+               let scaleValue= window.getComputedStyle(clickedItem).getPropertyValue('transform');
+
+               if(scaleValue==='none'){
+                   clickedItem.setAttribute(
+                       "style",
+                       "transition: all .5s ease-in-out; transform: scale(.8);"
+                     );
+                 }else{
+                     clickedItem.removeAttribute("style");
+                  }
+            }
+
+            toggleTransform();
+      });
+});
+let currentLesson = document.querySelector('.active a');
+currentLesson.style.color = '#007bff';
+
+menuItems[0].classList.add("active");
+
+document.querySelector('.back').setAttribute("href", "lection24.html");
+document.querySelector('.next').setAttribute("href", "lection26.html");
+
+</script>
+</body>
+</html>

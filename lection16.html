@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лекция 16: Задачи на движение</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: 200px auto;
+            gap: 20px;
+        }
+        
+        .skew-menu {
+            background-color: #f2f2f2; /* Цвет фона для меню */
+            padding: 10px;
+        }
+
+        .lecture-content {
+            background-color: #e6e6e6; /* Цвет фона для контента лекции */
+            padding: 20px;
+        }
+
+        h1, h2, p {
+          margin-bottom: 15px;  
+      }
+
+      a.back, a.next{
+         text-decoration:none; 
+         color:#333; 
+     }
+     body {
+            background-image: url(images/7.avif);
+            background-attachment: fixed;
+            -moz-background-size: 100%;
+            -webkit-background-size: 100%;
+            -o-background-size: 100%;
+            background-size: 100%;
+        }
+        h1{
+        color: rgb(0, 0, 0) !important; 
+        font-family: courier !important; 
+         text-align: center !important;
+  }
+        p {
+         color: rgb(0, 0, 0);
+         font-family: 'Times New Roman', Times, serif;
+         font-size: 150%;
+         text-align: right; 
+        }
+        h2{
+        color: dark !important; 
+        font-family: Georgia, 'Times New Roman', Times, serif !important; 
+         text-align: center !important;
+  }
+        p {
+         color: rgb(0, 0, 0); 
+         font-family: 'Times New Roman', Times, serif;
+         font-size: 150%; 
+         text-align: center;
+        }
+        a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.back {
+    background-color: #ddd;
+    color: rgb(0, 0, 0);
+}
+
+.next {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.round {
+    border-radius: 50%;
+}
+@radius: 7px;
+@skew: 25deg;
+@main-color: tomato;
+
+body{
+  font-family:Helvetica Neue, Helvetica, sans-serif;
+  background:@main-color;
+}
+
+.skew-menu{
+  text-align:center;
+  margin-top:3em;
+  padding: 10px;
+    max-height: 2000px; /* Устанавливаем максимальную высоту */
+    max-width: 700px;
+    width: 200px;
+    overflow-y: auto; /* Добавляем вертикальную прокрутку при необходимости */
+}
+
+.skew-menu ul{
+  display:inline-block;
+  margin:0;
+  padding:0;
+  list-style:none;
+  transform:skew(-@skew);
+  width: 250px;
+  border-radius: 10px;
+}
+
+.skew-menu ul li{
+  background:#fff;
+  float:left;
+  border-right:1px solid #eee;
+  box-shadow:0 1px 1px rgba(0,0,0,0.1);
+  text-transform:uppercase;
+  color:#555;
+  font-weight:bolder;
+  transition:all 0.3s linear;
+  display: block;
+  text-align: center;
+  width: 200px;
+  max-width: 200px;
+  &:first-child
+  {
+
+    border-radius:@radius 0 0 @radius;
+  }
+  
+  &:last-child{
+    border-right:none;
+    border-radius:0 @radius @radius 0;
+  }
+  
+  &:hover{
+    background:#eee;
+    color:@main-color;
+  }
+  
+  a{
+    display:block;
+    padding:1em 2em;
+    color:inherit;
+    text-decoration:none;
+    transform:skew(@skew);
+  }
+}
+.active a {
+  color: #007bff; /* Выделите цвет текста */
+}
+.navless{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: lighter;
+    font-size: 20px;
+}
+.nav menu{
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+      .menu b{
+        text-align: center;
+      }
+    </style>
+</head>
+
+<body>
+
+<nav class="skew-menu">
+    <ul>
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="lection1.html">Лекция 1</a></li>
+      <li><a href="lection2.html">Лекция 2</a></li>
+      <li><a href="lection3.html">Лекция 3</a></li>
+      <li><a href="lection4.html">Лекция 4</a></li>
+      <li><a href="lection5.html">Лекция 5</a></li>
+      <li><a href="lection6.html">Лекция 6</a></li>
+      <li><a href="lection7.html">Лекция 7</a></li>
+      <li><a href="lection8.html">Лекция 8</a></li>
+      <li><a href="lection9.html">Лекция 9</a></li>
+      <li><a href="lection10.html">Лекция 10</a></li>
+      <li><a href="lection11.html">Лекция 11</a></li>
+      <li><a href="lection12.html">Лекция 12</a></li>
+      <li><a href="lection13.html">Лекция 13</a></li>
+      <li><a href="lection14.html">Лекция 14</a></li>
+      <li><a href="lection15.html">Лекция 15</a></li>
+      <li class="active"><a href="lection16.html">Лекция 16</a></li>
+      <li><a href="lection17.html">Лекция 17</a></li>
+      <li><a href="lection18.html">Лекция 18</a></li>
+      <li><a href="lection19.html">Лекция 19</a></li>
+      <li><a href="lection20.html">Лекция 20</a></li>
+      <li><a href="lection21.html">Лекция 21</a></li>
+      <li><a href="lection22.html">Лекция 22</a></li>
+      <li><a href="lection23.html">Лекция 23</a></li>
+      <li><a href="lection24.html">Лекция 24</a></li>
+      <li><a href="lection25.html">Лекция 25</a></li>
+      <li><a href="lection26.html">Лекция 26</a></li>
+      <li><a href="lection27.html">Лекция 27</a></li>
+      <li><a href="lection28.html">Лекция 28</a></li>
+      <li><a href="lection29.html">Лекция 29</a></li>
+      <li><a href="lection30.html">Лекция 30</a></li>
+    </ul>
+</nav>
+
+<div class="lecture-content">
+		<h1 class="entry-title">Лекция 16: Задачи на движение</h1>      
+
+      
+	</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<p>Продолжаем изучать элементарные задачи по математике. Данный урок посвящен задачам на движение.</p>
+</nav>
+<nav id="menu"><b>Содержание урока</b></p>
+<ul class="navless">
+<li><a href="#yak1">Задача на нахождение расстояния/скорости/времени</a></li>
+<li><a href="#yak2">Скорость сближения</a></li>
+<li><a href="#yak3">Скорость удаления</a></li>
+<li><a href="#yak4">Задача на движение объектов в одном направлении</a></li>
+<li><a href="#yak5">Задача на движение по реке</a></li>
+</ul>
+</nav>
+<h2 id="yak1" style="text-align: center;">Задача на нахождение расстояния/скорости/времени</h2>
+<p><strong>Задача 1.</strong> Автомобиль двигается со скоростью 80 км/ч. Сколько километров он проедет за 3 часа?</p>
+<p><strong>Решение</strong></p>
+<p>Если за один час автомобиль проезжает 80 километров, то за 3 часа он проедет в три раза больше. Чтобы найти расстояние, нужно скорость автомобиля (80км/ч) умножить на время движения (3ч)</p>
+<p style="text-align: left;"><span style="color: #000000;">80 × 3 = 240 км</span></p>
+<p><img decoding="async" class="size-full wp-image-5343 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/240-km-kazhdyj-chas-po-80-km.png" alt="240 км каждый час по 80 км" width="654" height="213" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/240-km-kazhdyj-chas-po-80-km.png 654w, https://spacemath.xyz/wp-content/uploads/2017/08/240-km-kazhdyj-chas-po-80-km-300x98.png 300w" sizes="(max-width: 654px) 100vw, 654px" /></p>
+<p><strong>Ответ</strong>: за 3 часа автомобиль проедет 240 километров.</p>
+<hr />
+<p><strong>Задача 2.</strong> На автомобиле за 3 часа проехали 180 км с одной и той же скоростью. Чему равна скорость автомобиля?</p>
+<p><strong>Решение</strong></p>
+<p>Скорость &#8212; это расстояние, пройденное телом за единицу времени. Под единицей подразумевается 1 час, 1 минута или 1 секунда.</p>
+<p>Если за 3 часа автомобиль проехал 180 километров с одной и той же скоростью, то разделив 180 км на 3 часа мы определим расстояние, которое проезжал автомобиль за один час. А это есть скорость движения. Чтобы определить скорость, нужно пройденное расстояние разделить на время движения:</p>
+<p><span style="color: #000000;">180 : 3 = 60 км/ч</span></p>
+<p><img decoding="async" class="size-full wp-image-5295 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/180-km-kazhdyj-chas-po-60-km.png" alt="180 км каждый час по 60 км" width="654" height="216" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/180-km-kazhdyj-chas-po-60-km.png 654w, https://spacemath.xyz/wp-content/uploads/2017/08/180-km-kazhdyj-chas-po-60-km-300x99.png 300w" sizes="(max-width: 654px) 100vw, 654px" /></p>
+<p><strong>Ответ</strong>: скорость автомобиля составляет 60 км/ч</p>
+<hr />
+<p><strong>Задача 3.</strong> За 2 часа автомобиль проехал 96 км, а велосипедист за 6 часов проехал 72 км. Во сколько раз автомобиль двигался быстрее велосипедиста?</p>
+<p><strong>Решение</strong></p>
+<p>Определим скорость движения автомобиля. Для этого разделим пройденное им расстояние (96км) на время его движения (2ч)</p>
+<p><span style="color: #000000;">96 : 2 = 48 км/ч</span></p>
+<p>Определим скорость движения велосипедиста. Для этого разделим пройденное им расстояние (72км) на время его движения (6ч)</p>
+<p><span style="color: #000000;">72 : 6 = 12 км/ч</span></p>
+<p>Узнаем во сколько раз автомобиль двигался быстрее велосипедиста. Для этого найдем отношение 48 к 12</p>
+<p><img decoding="async" class="alignnone size-full wp-image-5344" src="https://spacemath.xyz/wp-content/uploads/2017/08/48-k-12-est-4.png" alt="48 к 12 есть 4" width="61" height="43" /></p>
+<p><strong>Ответ</strong>: автомобиль двигался быстрее велосипедиста в 4 раза.</p>
+<hr />
+<p><strong>Задача 4</strong>. Вертолет преодолел расстояние в 600 км со скоростью 120 км/ч. Сколько времени он был в полете?</p>
+<p><strong>Решение</strong></p>
+<p>Если за 1 час вертолет преодолевал 120 километров, то узнав сколько таких 120 километров в 600 километрах, мы определим сколько времени он был в полете. Чтобы найти время, нужно пройденное расстояние разделить на скорость движения</p>
+<p><span style="color: #000000;">600 : 120 = 5 часов</span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5297 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/600-km-kazhdyj-chas-po-120-km.png" alt="600 км каждый час по 120 км.png" width="654" height="239" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/600-km-kazhdyj-chas-po-120-km.png 654w, https://spacemath.xyz/wp-content/uploads/2017/08/600-km-kazhdyj-chas-po-120-km-300x110.png 300w" sizes="(max-width: 654px) 100vw, 654px" /></p>
+<p><strong>Ответ</strong>: вертолет был в пути 5 часов.</p>
+<hr />
+<p><strong>Задача 5</strong>. Вертолет летел 6 часов со скоростью 160 км/ч. Какое расстояние он преодолел за это время?</p>
+<p><strong>Решение</strong></p>
+<p>Если за 1 час вертолет преодолевал 160 км, то за 6 часов, он преодолел в шесть раз больше. Чтобы определить расстояние, нужно скорость движения умножить на время</p>
+<p><span style="color: #000000;">160 × 6 = 960 км</span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5298 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/960-km-kazhdyj-chas-po-160-km.png" alt="960 км каждый час по 160 км" width="651" height="238" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/960-km-kazhdyj-chas-po-160-km.png 651w, https://spacemath.xyz/wp-content/uploads/2017/08/960-km-kazhdyj-chas-po-160-km-300x110.png 300w" sizes="(max-width: 651px) 100vw, 651px" /></p>
+<p><strong>Ответ</strong>: за 6 часов вертолет преодолел 960 км.</p>
+<hr />
+<p><strong>Задача 6</strong>. Расстояние от Перми до Казани, равное 723 км, автомобиль проехал за 13 часов. Первые 9 часов он ехал со скоростью 55 км/ч. Определить скорость автомобиля в оставшееся время.</p>
+<p><strong>Решение</strong></p>
+<p>Определим сколько километров автомобиль проехал за первые 9 часов. Для этого умножим скорость с которой он ехал первые девять часов (55км/ч) на 9</p>
+<p><span style="color: #000000;">55 × 9 = 495 км</span></p>
+<p>Определим сколько осталось проехать. Для этого вычтем из общего расстояния (723км) расстояние, пройденное за первые 9 часов движения</p>
+<p><span style="color: #000000;">723 − 495 = 228 км</span></p>
+<p>Эти 228 километров автомобиль проехал за оставшиеся 4 часа. Чтобы определить скорость автомобиля в оставшееся время, нужно 228 километров разделить на 4 часа:</p>
+<p style="text-align: left;"><span style="color: #000000;">228 : 4 = 57 км/ч</span></p>
+<p><strong>Ответ</strong>: скорость автомобиля в оставшееся время составляла 57 км/ч</p>
+<hr />
+<h2 id="yak2" style="text-align: center;">Скорость сближения</h2>
+<p>Скорость сближения &#8212; это расстояние, пройденное двумя объектами навстречу друг другу за единицу времени.</p>
+<p>Например, если из двух пунктов навстречу друг другу отправятся два пешехода, причем скорость первого будет <span style="color: #000000;">100 м/м</span>, а второго &#8212; <span style="color: #000000;">105 м/м</span>, то скорость сближения будет составлять <span style="color: #000000;">100 + 105</span>, то есть <span style="color: #000000;">205 м/м</span>. Это значит, что каждую минуту расстояние между пешеходами будет уменьшáться на 205 метров</p>
+<p><img loading="lazy" decoding="async" class="wp-image-5300 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/dva-peshehoda-navstrechu-drug-drugu.png" alt="два пешехода навстречу друг другу" width="651" height="211" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/dva-peshehoda-navstrechu-drug-drugu.png 651w, https://spacemath.xyz/wp-content/uploads/2017/08/dva-peshehoda-navstrechu-drug-drugu-300x97.png 300w" sizes="(max-width: 651px) 100vw, 651px" /></p>
+<p class="regulations" style="text-align: center;"><span style="color: #333399;"><strong>Чтобы найти скорость сближения, нужно сложить скорости объектов.</strong></span></p>
+<p>Предположим, что пешеходы встретились через три минуты после начала движения. Зная, что они встретились через три минуты, мы можем узнать расстояние между двумя пунктами.</p>
+<p>Каждую минуту пешеходы преодолевали расстояние равное двухсот пяти метрам. Через 3 минуты они встретились. Значит умножив скорость сближения на время движения, можно определить расстояние между двумя пунктами:</p>
+<p><span style="color: #000000;">205 × 3 = 615 метров</span></p>
+<p><img loading="lazy" decoding="async" class="wp-image-5354 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/dva-peshehoda-vstretilis.png" alt="два пешехода встретились" width="649" height="465" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/dva-peshehoda-vstretilis.png 649w, https://spacemath.xyz/wp-content/uploads/2017/08/dva-peshehoda-vstretilis-300x215.png 300w" sizes="(max-width: 649px) 100vw, 649px" /></p>
+<p>Можно и по другому определить расстояние между пунктами. Для этого следует найти расстояние, которое прошел каждый пешеход до встречи.</p>
+<p>Так, первый пешеход шел со скоростью 100 метров в минуту. Встреча состоялась через три минуты, значит за 3 минуты он прошел <span style="color: #000000;">100 × 3</span> метров</p>
+<p style="text-align: left;"><span style="color: #000000;">100 × 3 = 300 метров</span></p>
+<p>А второй пешеход шел со скоростью 105 метров в минуту. За три минуты он прошел <span style="color: #000000;">105 × 3</span> метров</p>
+<p style="text-align: left;"><span style="color: #000000;">105 × 3 = 315 метров</span></p>
+<p>Теперь можно сложить полученные результаты и таким образом определить расстояние между двумя пунктами:</p>
+<p style="text-align: left;"><span style="color: #000000;">300 м + 315 м = 615 м</span></p>
+<hr />
+<p><strong>Задача 1.</strong> Из двух населенных пунктов навстречу друг другу выехали одновременно два велосипедиста. Скорость первого велосипедиста 10 км/ч, а скорость второго &#8212; 12 км/ч. Через 2 часа они встретились. Определите расстояние между населенными пунктами</p>
+<p><strong>Решение</strong></p>
+<p>Найдем скорость сближения велосипедистов</p>
+<p><span style="color: #000000;">10 км/ч + 12 км/ч = 22 км/ч</span></p>
+<p>Определим расстояние между населенными пунктами. Для этого скорость сближения умножим на время движения</p>
+<p><span style="color: #000000;">22 × 2 = 44 км</span></p>
+<p><img loading="lazy" decoding="async" class="wp-image-5355 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/dva-velosipedista-vstretilis-cherez-2-chasa.png" alt="два велосипедиста встретились через 2 часа" width="647" height="386" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/dva-velosipedista-vstretilis-cherez-2-chasa.png 647w, https://spacemath.xyz/wp-content/uploads/2017/08/dva-velosipedista-vstretilis-cherez-2-chasa-300x179.png 300w" sizes="(max-width: 647px) 100vw, 647px" /></p>
+<p>Решим эту задачу вторым способом. Для этого найдем расстояния, пройденные велосипедистами и сложим полученные результаты.</p>
+<p>Найдем расстояние, пройденное первым велосипедистом:</p>
+<p><span style="color: #000000;">10 × 2 = 20 км</span></p>
+<p>Найдем расстояние, пройденное вторым велосипедистом:</p>
+<p><span style="color: #000000;">12 × 2 = 24 км</span></p>
+<p>Сложим полученные расстояния:</p>
+<p><span style="color: #000000;">20 км + 24 км = 44 км</span></p>
+<p><strong>Ответ</strong>: расстояние между населенными пунктами составляет 44 км.</p>
+<hr />
+<p><strong>Задача 2</strong>. Из двух населенных пунктов, расстояние между которыми 60 км, навстречу друг другу выехали одновременно два велосипедиста. Скорость первого велосипедиста 14 км/ч, а скорость второго &#8212; 16 км/ч. Через сколько часов они встретились?</p>
+<p><strong>Решение</strong></p>
+<p>Найдем скорость сближения велосипедистов:</p>
+<p><span style="color: #000000;">14 км/ч + 16 км/ч = 30 км/ч</span></p>
+<p>За один час расстояние между велосипедистами уменьшается на 30 километров. Чтобы определить через сколько часов они встретятся, нужно расстояние между населенными пунктами разделить на скорость сближения:</p>
+<p><span style="color: #000000;">60 : 30 = 2 часа</span></p>
+<p>Значит велосипедисты встретились через два часа</p>
+<p><img loading="lazy" decoding="async" class="wp-image-5356 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/dva-velosipedista-vstretilis-cherez-2-ch-rasstoyanie-60-km.png" alt="два велосипедиста встретились через 2 ч расстояние 60 км" width="647" height="379" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/dva-velosipedista-vstretilis-cherez-2-ch-rasstoyanie-60-km.png 647w, https://spacemath.xyz/wp-content/uploads/2017/08/dva-velosipedista-vstretilis-cherez-2-ch-rasstoyanie-60-km-300x176.png 300w" sizes="(max-width: 647px) 100vw, 647px" /></p>
+<p><strong>Ответ</strong>: велосипедисты встретились через 2 часа.</p>
+<hr />
+<p><strong>Задача 3</strong>. Из двух населенных пунктов, расстояние между которыми 56 км, навстречу друг другу выехали одновременно два велосипедиста. Через два часа они встретились. Первый велосипедист ехал со скоростью 12 км/ч. Определить скорость второго велосипедиста.</p>
+<p><strong>Решение</strong></p>
+<p>Определим расстояние пройденное первым велосипедистом. Как и второй велосипедист в пути он провел 2 часа. Умножив скорость первого велосипедиста на 2 часа, мы сможем узнать сколько километров он прошел до встречи</p>
+<p><span style="color: #000000;">12 × 2 = 24 км</span></p>
+<p>За два часа первый велосипедист прошел 24 км. За один час он прошел 24:2, то есть 12 км. Изобразим это графически</p>
+<p><img loading="lazy" decoding="async" class="wp-image-5357 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/dva-velosipedista-vstretilis-cherez-2-ch-rasstoyanie-56.png" alt="два велосипедиста встретились через 2 ч расстояние 56" width="645" height="388" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/dva-velosipedista-vstretilis-cherez-2-ch-rasstoyanie-56.png 645w, https://spacemath.xyz/wp-content/uploads/2017/08/dva-velosipedista-vstretilis-cherez-2-ch-rasstoyanie-56-300x180.png 300w" sizes="(max-width: 645px) 100vw, 645px" /></p>
+<p>Вычтем из общего расстояния (56 км) расстояние, пройденное первым велосипедистом (24 км). Так мы определим сколько километров прошел второй велосипедист:</p>
+<p><span style="color: #000000;">56 км − 24 км = 32 км</span></p>
+<p>Второй велосипедист, как и первый провел в пути 2 часа. Если мы разделим пройденное им расстояние на 2 часа, то узнаем с какой скоростью он двигался:</p>
+<p><span style="color: #000000;">32 : 2 = 16 км/ч</span></p>
+<p>Значит скорость второго велосипедиста составляет 16 км/ч.</p>
+<p><strong>Ответ:</strong> скорость второго велосипедиста составляет 16 км/ч.</p>
+<hr />
+<h2 id="yak3" style="text-align: center;">Скорость удаления</h2>
+<p>Скорость удаления &#8212; это расстояние, которое увеличивается за единицу времени между двумя объектами, двигающимися в противоположных направлениях.</p>
+<p>Например, если два пешехода отправятся из одного и того же пункта в противоположных направлениях, причем скорость первого будет 4 км/ч, а скорость второго 6 км/ч, то скорость удаления будет составлять 4+6, то есть 10 км/ч. Каждый час расстояние между двумя пешеходами будет увеличиться на 10 километров.</p>
+<p class="regulations">Чтобы найти скорость удаления, нужно сложить скорости объектов.</p>
+<p>Так, за первый час расстояние между пешеходами будет составлять 10 километров. На следующем рисунке можно увидеть, как это происходит</p>
+<p><img loading="lazy" decoding="async" class="wp-image-5349 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/skorost-udaleniya-10-km-za-1-chas.png" alt="скорость удаления 10 км за 1 час" width="648" height="413" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/skorost-udaleniya-10-km-za-1-chas.png 648w, https://spacemath.xyz/wp-content/uploads/2017/08/skorost-udaleniya-10-km-za-1-chas-300x191.png 300w" sizes="(max-width: 648px) 100vw, 648px" /></p>
+<p>Видно, что первый пешеход прошел свои 4 километра за первый час. Второй пешеход также прошел свои 6 километров за первый час. Итого за первый час расстояние между ними стало 4+6, то есть 10 километров.</p>
+<p>Через два часа расстояние между пешеходами будет составлять 10×2, то есть 20 километров. На следующем рисунке можно увидеть, как это происходит:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-5350 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/skorost-udaleniya-10-km-za-2-chasa.png" alt="скорость удаления 10 км за 2 часа" width="649" height="401" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/skorost-udaleniya-10-km-za-2-chasa.png 649w, https://spacemath.xyz/wp-content/uploads/2017/08/skorost-udaleniya-10-km-za-2-chasa-300x185.png 300w" sizes="(max-width: 649px) 100vw, 649px" /></p>
+<hr />
+<p><strong>Задача 1.</strong> От одной станции отправились одновременно в противоположных направлениях товарный поезд и пассажирский экспресс. Скорость товарного поезда составляла 40 км/ч, скорость экспресса 180 км/ч. Какое расстояние будет между этими поездами через 2 часа?</p>
+<p><strong>Решение</strong></p>
+<p>Определим скорость удаления поездов. Для этого сложим их скорости:</p>
+<p><span style="color: #000000;">40 + 180 = 220 км/ч</span></p>
+<p>Получили скорость удаления поездов равную 220 км/ч. Данная скорость показывает, что за час расстояние между поездами будет увеличиваться на 220 километров. Чтобы узнать какое расстояние будет между поездами через два часа, нужно 220 умножить на 2</p>
+<p><span style="color: #000000;">220 × 2 = 440 км</span></p>
+<p><strong>Ответ</strong>: через 2 часа расстояние будет между поездами будет 440 километров.</p>
+<hr />
+<p><strong>Задача 2.</strong> Из пункта одновременно в противоположных направлениях отправились велосипедист и мотоциклист. Скорость велосипедиста 16 км/ч, а скорость мотоциклиста &#8212; 40 км/ч. Какое расстояние будет между велосипедистом и мотоциклистом через 2 часа?</p>
+<p><strong>Решение</strong></p>
+<p>Определим скорость удаления велосипедиста и мотоциклиста. Для этого сложим их скорости:</p>
+<p><span style="color: #000000;">16 км/ч + 40 км/ч = 56 км/ч</span></p>
+<p>Определим расстояние, которое будет между велосипедистом и мотоциклистом через 2 часа. Для этого скорость удаления (56км/ч) умножим на 2 часа</p>
+<p><span style="color: #000000;">56 × 2 = 112 км</span></p>
+<p><img loading="lazy" decoding="async" class="wp-image-5358 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/velosipedist-i-mototsiklist-v-protivopolozhnyh-napravleniyah.png" alt="велосипедист и мотоциклист в противоположных направлениях" width="650" height="347" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/velosipedist-i-mototsiklist-v-protivopolozhnyh-napravleniyah.png 650w, https://spacemath.xyz/wp-content/uploads/2017/08/velosipedist-i-mototsiklist-v-protivopolozhnyh-napravleniyah-300x160.png 300w" sizes="(max-width: 650px) 100vw, 650px" /></p>
+<p><strong>Ответ</strong>: через 2 часа расстояние между велосипедистом и мотоциклистом будет 112 км.</p>
+<hr />
+<p><strong>Задача 3</strong>. Из пункта одновременно в противоположных направлениях отправились велосипедист и мотоциклист. Скорость велосипедиста 10 км/ч, а скорость мотоциклиста &#8212; 30 км/ч. Через сколько часов расстояние между ними будет 80 км?</p>
+<p><strong>Решение</strong></p>
+<p>Определим скорость удаления велосипедиста и мотоциклиста. Для этого сложим их скорости:</p>
+<p><span style="color: #000000;">10 км/ч + 30 км/ч = 40 км/ч</span></p>
+<p>За один час расстояние между велосипедистом и мотоциклистом увеличивается на 40 километров. Чтобы узнать через сколько часов расстояние между ними будет 80 км, нужно определить сколько раз 80 км содержит по 40 км</p>
+<p><span style="color: #000000;">80 : 40 = 2</span></p>
+<p><img loading="lazy" decoding="async" class="wp-image-5351 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/velosipedist-i-mototsiklist-v-protivopolozhnyh-napravleniyah-s-80.png" alt="велосипедист и мотоциклист в противоположных направлениях s 80" width="650" height="359" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/velosipedist-i-mototsiklist-v-protivopolozhnyh-napravleniyah-s-80.png 650w, https://spacemath.xyz/wp-content/uploads/2017/08/velosipedist-i-mototsiklist-v-protivopolozhnyh-napravleniyah-s-80-300x166.png 300w" sizes="(max-width: 650px) 100vw, 650px" /></p>
+<p><strong>Ответ</strong>: через 2 часа после начала движения, между велосипедистом и мотоциклистом будет 80 километров.</p>
+<hr />
+<p><strong>Задача 4</strong>. Из пункта одновременно в противоположных направлениях отправились велосипедист и мотоциклист. Через 2 часа расстояние между ними было 90 км. Скорость велосипедиста составляла 15 км/ч. Определить скорость мотоциклиста</p>
+<p><strong>Решение</strong></p>
+<p>Определим расстояние, пройденное велосипедистом за 2 часа. Для этого умножим его скорость (15 км/ч) на 2 часа</p>
+<p style="text-align: center;"><span style="color: #000000;">15 × 2 = 30 км</span></p>
+<p><img loading="lazy" decoding="async" class="wp-image-5352 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/velosipedist-i-mototsiklist-v-protivopolozhnyh-napravleniyah-s-90.png" alt="велосипедист и мотоциклист в противоположных направлениях s 90" width="648" height="356" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/velosipedist-i-mototsiklist-v-protivopolozhnyh-napravleniyah-s-90.png 648w, https://spacemath.xyz/wp-content/uploads/2017/08/velosipedist-i-mototsiklist-v-protivopolozhnyh-napravleniyah-s-90-300x165.png 300w" sizes="(max-width: 648px) 100vw, 648px" /></p>
+<p>На рисунке видно, что велосипедист прошел по 15 километров в каждом часе. Итого за два часа он прошел 30 километров.</p>
+<p>Вычтем из общего расстояния (90 км) расстояние, пройденное велосипедистом (30 км). Так мы определим сколько километров прошел мотоциклист:</p>
+<p><span style="color: #000000;">90 км − 30 км = 60 км</span></p>
+<p>Мотоциклист за два часа прошел 60 километров. Если мы разделим пройденное им расстояние на 2 часа, то узнаем с какой скоростью он двигался:</p>
+<p><span style="color: #000000;">60 : 2 = 30 км/ч</span></p>
+<p>Значит скорость мотоциклиста составляла 30 км/ч.</p>
+<p><img loading="lazy" decoding="async" class="wp-image-5367 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/velosipedist-i-mototsiklist-v-protivopolozhnyh-napravleniyah-s-90-1.png" alt="велосипедист и мотоциклист в противоположных направлениях s 90" width="648" height="356" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/velosipedist-i-mototsiklist-v-protivopolozhnyh-napravleniyah-s-90-1.png 648w, https://spacemath.xyz/wp-content/uploads/2017/08/velosipedist-i-mototsiklist-v-protivopolozhnyh-napravleniyah-s-90-1-300x165.png 300w" sizes="(max-width: 648px) 100vw, 648px" /></p>
+<p><strong>Ответ</strong>: скорость мотоциклиста составляла 30 км/ч.</p>
+<hr />
+<h2 id="yak4" style="text-align: center;">Задача на движение объектов в одном направлении</h2>
+<p>В предыдущей теме мы рассматривали задачи в которых объекты (люди, машины, лодки) двигались либо навстречу другу другу либо в противоположных направлениях. При этом мы находили различные расстояния, которые изменялись между объектами в течении определенного времени. Эти расстояния были либо <em>скоростями сближения</em> либо <em>скоростями удаления</em>.</p>
+<p>В первом случае мы находили <em>скорость сближения</em> &#8212; в ситуации, когда два объекта двигались навстречу друг другу. За единицу времени расстояние между объектами уменьшалось на определенное расстояние</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5312 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/dva-peshehoda-navstrechu-drug-drugu-primer.png" alt="два пешехода навстречу друг другу пример" width="651" height="211" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/dva-peshehoda-navstrechu-drug-drugu-primer.png 651w, https://spacemath.xyz/wp-content/uploads/2017/08/dva-peshehoda-navstrechu-drug-drugu-primer-300x97.png 300w" sizes="(max-width: 651px) 100vw, 651px" /></p>
+<p>Во втором случае мы находили скорость удаления &#8212; в ситуации, когда два объекта двигались в противоположных направлениях. За единицу времени расстояние между объектами увеличивалось на определенное расстояние</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5313 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/dva-peshehoda-protivopolozhno-drug-drugu-primer.png" alt="два пешехода противоположно друг другу пример" width="651" height="211" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/dva-peshehoda-protivopolozhno-drug-drugu-primer.png 651w, https://spacemath.xyz/wp-content/uploads/2017/08/dva-peshehoda-protivopolozhno-drug-drugu-primer-300x97.png 300w" sizes="(max-width: 651px) 100vw, 651px" /></p>
+<p>Но объекты также могут двигаться в одном направлении, причем с различной скоростью. Например, из одного пункта одновременно могут выехать велосипедист и мотоциклист, причем скорость велосипедиста может составлять 20 километров в час, а скорость мотоциклиста &#8212; 40 километров в час</p>
+<p><img loading="lazy" decoding="async" class="wp-image-5316 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/velosipedist-i-mototsiklist-v-odnom-napravlenii-primer-1.png" alt="велосипедист и мотоциклист в одном направлении пример 1" width="656" height="306" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/velosipedist-i-mototsiklist-v-odnom-napravlenii-primer-1.png 656w, https://spacemath.xyz/wp-content/uploads/2017/08/velosipedist-i-mototsiklist-v-odnom-napravlenii-primer-1-300x140.png 300w" sizes="(max-width: 656px) 100vw, 656px" /></p>
+<p>На рисунке видно, что мотоциклист впереди велосипедиста на двадцать километров. Связано это с тем, что в час он преодолевает на 20 километров больше, чем велосипедист. Поэтому каждый час расстояние между велосипедистом и мотоциклистом будет увеличиваться на двадцать километров.</p>
+<p>В данном случае 20 км/ч являются скоростью удаления мотоциклиста от велосипедиста.</p>
+<p>Через два часа расстояние, пройденное велосипедистом будет составлять 40 км. Мотоциклист же проедет 80 км, отдалившись от велосипедиста еще на двадцать километров &#8212; итого расстояние между ними составит 40 километров</p>
+<p><img loading="lazy" decoding="async" class="alignnone size-full wp-image-5315" src="https://spacemath.xyz/wp-content/uploads/2017/08/velosipedist-i-mototsiklist-v-odnom-napravlenii-primer-2.png" alt="велосипедист и мотоциклист в одном направлении пример 2" width="659" height="309" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/velosipedist-i-mototsiklist-v-odnom-napravlenii-primer-2.png 659w, https://spacemath.xyz/wp-content/uploads/2017/08/velosipedist-i-mototsiklist-v-odnom-napravlenii-primer-2-300x141.png 300w" sizes="(max-width: 659px) 100vw, 659px" /></p>
+<p class="regulations">Чтобы найти скорость удаления при движении в одном направлении, нужно из большей скорости вычесть меньшую скорость.</p>
+<p>В приведенном выше примере, скорость удаления составляет 20 км/ч. Её можно найти путем вычитания скорости велосипедиста из скорости мотоциклиста. Скорость велосипедиста составляла 20 км/ч, а скорость мотоциклиста &#8212; 40 км/ч. Скорость мотоциклиста больше, поэтому из 40 вычитаем 20</p>
+<p><span style="color: #000000;">40 км/ч − 20 км/ч = 20 км/ч</span></p>
+<hr />
+<p><strong>Задача 1</strong>. Из города в одном и том же направлении выехали легковой автомобиль и автобус. Скорость автомобиля 120 км/ч, а скорость автобуса 80 км/ч. Какое расстояние будет между ними через 1 час? 2 часа?</p>
+<p><strong>Решение</strong></p>
+<p>Найдем скорость удаления. Для этого из большей скорости вычтем меньшую</p>
+<p><span style="color: #000000;">120 км/ч − 80 км/ч = 40 км/ч</span></p>
+<p>Каждый час легковой автомобиль отдаляется от автобуса на 40 километров. За один час расстояние между автомобилем и автобусом будет 40 км. За 2 часа в два раза больше:</p>
+<p><span style="color: #000000;">40 × 2 = 80 км</span></p>
+<p><strong>Ответ</strong>: через один час расстояние между автомобилем и автобусом будет 40 км, через два часа &#8212; 80 км.</p>
+<hr />
+<p>Рассмотрим ситуацию в которой объекты начали свое движение из разных пунктов, но в одном направлении.</p>
+<p>Пусть имеется дом, школа и аттракцион. От дома до школы 700 метров</p>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-5319 size-full" src="https://spacemath.xyz/wp-content/uploads/2017/08/dom-shkola-i-attraktsion-v-rasstoyaniyah-risunok-2.png" alt="дом школа и аттракцион в расстояниях рисунок 2" width="658" height="156" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/dom-shkola-i-attraktsion-v-rasstoyaniyah-risunok-2.png 658w, https://spacemath.xyz/wp-content/uploads/2017/08/dom-shkola-i-attraktsion-v-rasstoyaniyah-risunok-2-300x71.png 300w" sizes="(max-width: 658px) 100vw, 658px" /></p>
+<p>Два пешехода отправились в аттракцион в одно и то же время. Причем первый пешеход отправился в аттракцион <strong>от дома</strong> со скоростью 100 метров в минуту, а второй пешеход отправился в аттракцион <strong>от школы</strong> со скоростью 80 метров в минуту. Какое расстояние будет между пешеходами через 2 минуты? Через сколько минут после начала движения первый пешеход догонит второго?</p>
+<p>Ответим на первый вопрос задачи &#8212; какое расстояние будет между пешеходами через 2 минуты?</p>
+<p>Определим расстояние, пройденное первым пешеходом за 2 минуты. Он двигался со скоростью 100 метров в минуту. За две минуты он пройдет в два раза больше, то есть 200 метров</p>
+<p style="text-align: center;"><span style="color: #000000;">100 × 2 = 200 метров</span></p>
+<p><img loading="lazy" decoding="async" class="wp-image-5322 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/dom-shkola-i-attraktsion-v-rasstoyaniyah-risunok-3.png" alt="дом школа и аттракцион в расстояниях рисунок 3" width="659" height="213" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/dom-shkola-i-attraktsion-v-rasstoyaniyah-risunok-3.png 659w, https://spacemath.xyz/wp-content/uploads/2017/08/dom-shkola-i-attraktsion-v-rasstoyaniyah-risunok-3-300x97.png 300w" sizes="(max-width: 659px) 100vw, 659px" /></p>
+<p>Определим расстояние, пройденное вторым пешеходом за 2 минуты. Он двигался со скоростью 80 метров в минуту. За две минуты он пройдет в два раза больше, то есть 160 метров</p>
+<p style="text-align: center;"><span style="color: #000000;">80 × 2 = 160 метров</span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5321 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/dom-shkola-i-attraktsion-v-rasstoyaniyah-risunok-4.png" alt="дом школа и аттракцион в расстояниях рисунок 4" width="659" height="215" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/dom-shkola-i-attraktsion-v-rasstoyaniyah-risunok-4.png 659w, https://spacemath.xyz/wp-content/uploads/2017/08/dom-shkola-i-attraktsion-v-rasstoyaniyah-risunok-4-300x98.png 300w" sizes="(max-width: 659px) 100vw, 659px" /></p>
+<p>Теперь нужно найти расстояние между пешеходами</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5323 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/dom-shkola-i-attraktsion-v-rasstoyaniyah-risunok-5.png" alt="дом школа и аттракцион в расстояниях рисунок 5" width="657" height="358" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/dom-shkola-i-attraktsion-v-rasstoyaniyah-risunok-5.png 657w, https://spacemath.xyz/wp-content/uploads/2017/08/dom-shkola-i-attraktsion-v-rasstoyaniyah-risunok-5-300x163.png 300w" sizes="(max-width: 657px) 100vw, 657px" /></p>
+<p>Чтобы найти расстояние между пешеходами, можно к расстоянию от дома до школы (700м) прибавить расстояние, пройденное вторым пешеходом (160м) и из полученного результата вычесть расстояние, пройденное первым пешеходом (200м)</p>
+<p style="text-align: center;"><span style="color: #000000;">700 м + 160 м = 860 м</span></p>
+<p style="text-align: center;"><span style="color: #000000;">860 м − 200 м = 660 м</span></p>
+<p>Либо из расстояния от дома до школы (700м) вычесть расстояние, пройденное первым пешеходом (200м), и к полученному результату прибавить расстояние, пройденное вторым пешеходом (160м)</p>
+<p style="text-align: center;"><span style="color: #000000;">700 м − 200 м = 500 м</span></p>
+<p style="text-align: center;"><span style="color: #000000;">500 м + 160 м = 660 м</span></p>
+<p>Таким образом, через две минуты расстояние между пешеходами будет составлять 660 метров</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5324 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/dom-shkola-i-attraktsion-v-rasstoyaniyah-risunok-6.png" alt="дом школа и аттракцион в расстояниях рисунок 6" width="657" height="351" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/dom-shkola-i-attraktsion-v-rasstoyaniyah-risunok-6.png 657w, https://spacemath.xyz/wp-content/uploads/2017/08/dom-shkola-i-attraktsion-v-rasstoyaniyah-risunok-6-300x160.png 300w" sizes="(max-width: 657px) 100vw, 657px" /></p>
+<p>Попробуем ответить на следующий вопрос задачи: через сколько минут после начала движения первый пешеход догонит второго?</p>
+<p>Давайте посмотрим какой была ситуация в самом начале пути &#8212; когда пешеходы еще не начали своё движение</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5325 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/dom-shkola-i-attraktsion-v-rasstoyaniyah-risunok-7.png" alt="дом школа и аттракцион в расстояниях рисунок 7" width="657" height="351" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/dom-shkola-i-attraktsion-v-rasstoyaniyah-risunok-7.png 657w, https://spacemath.xyz/wp-content/uploads/2017/08/dom-shkola-i-attraktsion-v-rasstoyaniyah-risunok-7-300x160.png 300w" sizes="(max-width: 657px) 100vw, 657px" /></p>
+<p>Как видно на рисунке, расстояние между пешеходами в начале пути составляло 700 метров. Но уже через минуту после начала движения расстояние между ними будет составлять 680 метров, поскольку первый пешеход двигается на 20 метров быстрее второго:</p>
+<p style="text-align: center;"><span style="color: #000000;">100 м × 1 = 100 м </span></p>
+<p style="text-align: center;"><span style="color: #000000;">80 м × 1 = 80 м</span></p>
+<p style="text-align: center;"><span style="color: #000000;">700 м + 80 м − 100 м = 780 м − 100 м = 680 м</span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5326 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/dom-shkola-i-attraktsion-v-rasstoyaniyah-risunok-7-1.png" alt="дом школа и аттракцион в расстояниях рисунок 7" width="657" height="351" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/dom-shkola-i-attraktsion-v-rasstoyaniyah-risunok-7-1.png 657w, https://spacemath.xyz/wp-content/uploads/2017/08/dom-shkola-i-attraktsion-v-rasstoyaniyah-risunok-7-1-300x160.png 300w" sizes="(max-width: 657px) 100vw, 657px" /></p>
+<p>&nbsp;</p>
+<p>Через две минуты после начала движения, расстояние уменьшится еще на 20 метров и будет составлять 660 метров. Это был наш ответ на первый вопрос задачи:</p>
+<p style="text-align: center;"><span style="color: #000000;">100 м × 2 = 200 м </span></p>
+<p style="text-align: center;"><span style="color: #000000;">80 м × 2 = 160 м</span></p>
+<p style="text-align: center;"><span style="color: #000000;">700 м + 160 м − 200м = 860 м − 200 м = 660 м</span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5324 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/dom-shkola-i-attraktsion-v-rasstoyaniyah-risunok-6.png" alt="дом школа и аттракцион в расстояниях рисунок 6" width="657" height="351" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/dom-shkola-i-attraktsion-v-rasstoyaniyah-risunok-6.png 657w, https://spacemath.xyz/wp-content/uploads/2017/08/dom-shkola-i-attraktsion-v-rasstoyaniyah-risunok-6-300x160.png 300w" sizes="(max-width: 657px) 100vw, 657px" /></p>
+<p>Через три минуты расстояние уменьшится еще на 20 метров и будет уже составлять 640 метров:</p>
+<p style="text-align: center;"><span style="color: #000000;">100 м × 3 = 300 м </span></p>
+<p style="text-align: center;"><span style="color: #000000;">80 м × 3 = 240 м</span></p>
+<p style="text-align: center;"><span style="color: #000000;">700 м + 240 м − 300м = 940 м − 300 м = 640 м</span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5327 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/dom-shkola-i-attraktsion-v-rasstoyaniyah-risunok-8.png" alt="дом школа и аттракцион в расстояниях рисунок 8" width="657" height="351" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/dom-shkola-i-attraktsion-v-rasstoyaniyah-risunok-8.png 657w, https://spacemath.xyz/wp-content/uploads/2017/08/dom-shkola-i-attraktsion-v-rasstoyaniyah-risunok-8-300x160.png 300w" sizes="(max-width: 657px) 100vw, 657px" /></p>
+<p>Мы видим, что с каждой минутой первый пешеход будет приближáться ко второму на 20 метров, и в конце концов догонит его. Можно сказать, что скорость равная двадцати метрам в минуту является скоростью сближения пешеходов. Правила нахождения скорости сближения и удаления при движении в одном направлении идентичны.</p>
+<p class="regulations">Чтобы найти скорость сближения при движении в одном направлении, нужно из большей скорости вычесть меньшую.</p>
+<p>А раз изначальные 700 метров с каждой минутой уменьшаются на одинаковые 20 метров, то мы можем узнать сколько раз 700 метров содержат по 20 метров, тем самым определяя через сколько минут первый пешеход догонит второго</p>
+<p style="text-align: center;"><span style="color: #000000;">700 : 20 = 35</span></p>
+<p>Значит через 35 минут после начала движения первый пешеход догонит второго. Для интереса узнаем сколько метров прошел к этому времени каждый пешеход. Первый двигался со скоростью 100 метров в минуту. За 35 минут он прошел в 35 раз больше</p>
+<p style="text-align: center;"><span style="color: #000000;">100 × 35 = 3500 м</span></p>
+<p>Второй шел со скоростью 80 метров в минуту. За 35 минут он прошел в 35 раз больше</p>
+<p style="text-align: center;"><span style="color: #000000;">80 × 35 = 2800 м</span></p>
+<p>Первый прошел 3500 метров, а второй 2800 метров. Первый прошел на 700 метров больше, поскольку он шел от дома. Если вычесть эти 700 метров из 3500, то мы получим 2800 м</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5328 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/dom-shkola-i-attraktsion-v-rasstoyaniyah-risunok-9.png" alt="дом школа и аттракцион в расстояниях рисунок 9" width="657" height="301" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/dom-shkola-i-attraktsion-v-rasstoyaniyah-risunok-9.png 657w, https://spacemath.xyz/wp-content/uploads/2017/08/dom-shkola-i-attraktsion-v-rasstoyaniyah-risunok-9-300x137.png 300w" sizes="(max-width: 657px) 100vw, 657px" /></p>
+<hr />
+<p>Рассмотрим ситуацию в которой объекты движутся в одном направлении, но один из объектов начал своё движение раньше другого.</p>
+<p>Пусть имеется дом и школа. Первый пешеход отправился в школу со скоростью 80 метров в минуту. Через 5 минут вслед за ним в школу отправился второй пешеход со скоростью 100 метров в минуту. Через сколько минут второй пешеход догонит первого?</p>
+<p>Второй пешеход начал свое движение через 5 минут. К этому времени первый пешеход уже отдалился от него на какое-то расстояние. Найдём это расстояние. Для этого умножим его скорость (80 м/м) на 5 минут</p>
+<p style="text-align: center;"><span style="color: #000000;">80 × 5 = 400 метров</span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5329 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/dom-ishkola-risunok-1.png" alt="дом ишкола рисунок 1" width="659" height="214" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/dom-ishkola-risunok-1.png 659w, https://spacemath.xyz/wp-content/uploads/2017/08/dom-ishkola-risunok-1-300x97.png 300w" sizes="(max-width: 659px) 100vw, 659px" /></p>
+<p>Первый пешеход отдалился от второго на 400 метров. Поэтому в момент, когда второй пешеход начнет свое движение, между ними будут эти самые 400 метров.</p>
+<p>Но второй пешеход двигается со скоростью 100 метров в минуту. То есть двигается на 20 метров быстрее первого пешехода, а значит с каждой минутой расстояние между ними будет уменьшáться на 20 метров. Наша задача узнать через сколько минут это произойдет.</p>
+<p>Например, уже через минуту расстояние между пешеходами будет составлять 380 метров. Первый пешеход к своим 400 метрам пройдет еще 80 метров, а второй пройдет 100 метров</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5330 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/dom-ishkola-risunok-2.png" alt="дом ишкола рисунок 2" width="659" height="397" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/dom-ishkola-risunok-2.png 659w, https://spacemath.xyz/wp-content/uploads/2017/08/dom-ishkola-risunok-2-300x181.png 300w" sizes="(max-width: 659px) 100vw, 659px" /></p>
+<p>Принцип здесь такой-же, как и в предыдущей задаче. Расстояние между пешеходами в момент движения второго пешехода необходимо разделить на скорость сближения пешеходов. Скорость сближения в данном случае равна двадцати метрам. Поэтому, чтобы определить через сколько минут второй пешеход догонит первого, нужно 400 метров разделить на 20</p>
+<p><span style="color: #000000;">400 : 20 = 20</span></p>
+<p>Значит через 20 минут второй пешеход догонит первого.</p>
+<hr />
+<p><strong>Задача 2</strong>. Из двух сел, расстояние между которыми 40 км, одновременно в одном направлении выехали автобус и велосипедист. Скорость велосипедиста 15 км/ч, а скорость автобуса 35 км/ч. Через сколько часов автобус догонит велосипедиста?</p>
+<p><strong>Решение</strong></p>
+<p>Найдем скорость сближения</p>
+<p><span style="color: #000000;">35 км/ч − 15 км/ч = 20 км/ч</span></p>
+<p>Определим через часов автобус догонит велосипедиста</p>
+<p><span style="color: #000000;">40 : 20 = 2</span></p>
+<p><strong>Ответ</strong>: автобус догонит велосипедиста через 2 часа.</p>
+<hr />
+<h2 id="yak5" style="text-align: center;">Задача на движение по реке</h2>
+<p>Суда двигаются по реке с различной скоростью. При этом они могут двигаться, как по течению реки, так и против течения. В зависимости от того, как они двигаются (по или против течения), скорость будет меняться.</p>
+<p>Предположим, что скорость реки составляет 3 км/ч. Если спустить лодку на реку, то река унесет лодку со скоростью 3 км/ч.</p>
+<p>Если спустить лодку на стоячую воду, в которой отсутствует течение, то и лодка будет стоять. Скорость движения лодки в этом случае будет равна нулю.</p>
+<p>Если лодка плывет по стоячей воде, в которой отсутствует течение, то говорят, что лодка плывет с <strong>собственной скоростью</strong>.</p>
+<p>Например, если моторная лодка плывет по стоячей воде со скоростью 40 км/ч, то говорят что <strong>собственная скорость моторной лодки</strong> составляет 40 км/ч.</p>
+<h3 style="text-align: center;">Как определить скорость судна?</h3>
+<p><strong><span style="color: #333399;">Если судно плывет по течению реки, то к собственной скорости судна нужно прибавить скорость течения реки.</span></strong></p>
+<p>Например, если моторная лодка плывет со скоростью 30 км/ч <strong>по течению</strong> <strong>реки</strong>, и скорость течения реки составляет 2 км/ч, то к собственной скорости моторной лодки (30 км/ч) необходимо прибавить скорость течения реки (2 км/ч)</p>
+<p style="text-align: left;"><span style="color: #000000;">30 км/ч + 2 км/ч = 32 км/ч</span></p>
+<p>Течение реки можно сказать помогает моторной лодке дополнительной скоростью равной двум километрам в час.</p>
+<p><span style="color: #333399;"><strong>Если судно плывет против течения реки, то из собственной скорости судна нужно вычесть скорость течения реки.</strong></span></p>
+<p>Например, если моторная лодка плывет со скоростью 30 км/ч <strong>против течения</strong> <strong>реки</strong>, и скорость течения реки составляет 2 км/ч, то из собственной скорости моторной лодки (30 км/ч) необходимо вычесть скорость течения реки (2 км/ч)</p>
+<p><span style="color: #000000;">30 км/ч − 2 км/ч = 28 км/ч</span></p>
+<p>Течение реки в этом случае препятствует моторной лодке свободно двигаться вперед, снижая её скорость на два километра в час.</p>
+<hr />
+<p><strong>Задача 1</strong>. Скорость катера 40 км/ч, а скорость течения реки 3 км/ч. С какой скоростью катер будет двигаться по течению реки? Против течения реки?</p>
+<p><strong>Ответ:</strong></p>
+<p>Если катер будет двигаться по течения реки, то скорость его движения составит 40 + 3, то есть 43 км/ч.</p>
+<p>Если катер будет двигаться против течения реки, то скорость его движения составит 40 − 3, то есть 37 км/ч.</p>
+<hr />
+<p><strong>Задача 2</strong>. Скорость теплохода в стоячей воде &#8212; 23 км/ч. Скорость течения реки &#8212; 3 км/ч. Какой путь пройдет теплоход за 3 часа по течению реки? Против течения?</p>
+<p><strong>Решение</strong></p>
+<p>Собственная скорость теплохода составляет 23 км/ч. Если теплоход будет двигаться по течению реки, то скорость его движения составит 23 + 3, то есть 26 км/ч. За три часа он пройдет в три раза больше</p>
+<p><span style="color: #000000;">26 × 3 = 78 км</span></p>
+<p>Если теплоход будет двигаться против течения реки, то скорость его движения составит 23 − 3, то есть 20 км/ч. За три часа он пройдет в три раза больше</p>
+<p><span style="color: #000000;">20 × 3 = 60 км</span></p>
+<hr />
+<p><strong>Задача 3</strong>. Расстояние от пункта А до пункта B лодка преодолела за 3 часа 20 минут, а расстояние от пункта B до А &#8212; за 2 часа 50 минут. В каком направлении течет река: от А к В или от В к А, если известно, что скорость яхты не менялась?</p>
+<p><strong>Решение</strong></p>
+<p>Скорость яхты не менялась. Узнаем на какой путь она затратила больше времени: на путь от А до В или на путь от В до А. Тот путь, который затратил больше времени будет тем путем, течение реки которого шло против яхты</p>
+<p>3 часа 20 минут больше, чем 2 часа 50 минут. Это значит, что течение реки снизило скорость яхты и это отразилось на времени пути. 3 часа 20 минут это время, затраченное на путь от от А до В. Значит река течет от пункта B к пункту А</p>
+<hr />
+<p><strong>Задача 4</strong>. За какое время при движении против течения реки<br />
+теплоход пройдет 204 км, если его собственная скорость<br />
+15 км/ч, а скорость течения в 5 раз меньше собственной<br />
+скорости теплохода?</p>
+<p><strong>Решение</strong></p>
+<p>Требуется найти время за которое теплоход пройдет 204 километра против течения реки. Собственная скорость теплохода составляет 15 км/ч. Двигается он против течения реки, поэтому нужно определить его скорость при таком движении.</p>
+<p>Чтобы определить скорость против течения реки, нужно из собственной скорости теплохода (15 км/ч) вычесть скорость движения реки. В условии сказано, что скорость течения реки в 5 раз меньше собственной скорости теплохода, поэтому сначала определим скорость течения реки. Для этого уменьшим 15 км/ч в пять раз</p>
+<p><span style="color: #000000;">15 : 5 = 3 км/ч</span></p>
+<p>Скорость течения реки составляет 3 км/ч. Вычтем эту скорость из скорости движения теплохода</p>
+<p><span style="color: #000000;">15 км/ч − 3 км/ч = 12 км/ч</span></p>
+<p>Теперь определим время за которое теплоход пройдет 204 км при скорости 12 км/ч. В час теплоход проходит 12 километров. Чтобы узнать за сколько часов он пройдет 204 километра, нужно определить сколько раз 204 километра содержит по 12 километров</p>
+<p><span style="color: #000000;">204 : 12 = 17 ч</span></p>
+<p><strong>Ответ</strong>: теплоход пройдет 204 километра за 17 часов</p>
+<hr />
+<p><strong>Задача 5</strong>. Двигаясь по течению реки, за 6 часов лодка<br />
+прошла 102 км. Определите собственную скорость лодки,<br />
+если скорость течения – 4 км/ч.</p>
+<p><strong>Решение</strong></p>
+<p>Узнаем с какой скоростью лодка двигалась по реке. Для этого пройденное расстояние (102км) разделим на время движения (6ч)</p>
+<p><span style="color: #000000;">102 : 6 = 17 км/ч</span></p>
+<p>Определим собственную скорость лодки. Для этого из скорости по которой она двигалась по реке (17 км/ч) вычтем скорость течения реки (4 км/ч)</p>
+<p><span style="color: #000000;">17 − 4 = 13 км/ч</span></p>
+<hr />
+<p><strong>Задача 6</strong>. Двигаясь против течения реки, за 5 часов лодка<br />
+прошла 110 км. Определите собственную скорость лодки,<br />
+если скорость течения – 4 км/ч.</p>
+<p><strong>Решение</strong></p>
+<p>Узнаем с какой скоростью лодка двигалась по реке. Для этого пройденное расстояние (110км) разделим на время движения (5ч)</p>
+<p><span style="color: #000000;">110 : 5 = 22 км/ч</span></p>
+<p>Определим собственную скорость лодки. В условии сказано, что она двигалась против течения реки. Скорость течения реки составляла 4 км/ч. Это значит, что собственная скорость лодки была уменьшена на 4. Наша задача прибавить эти 4 км/ч и узнать собственную скорость лодки</p>
+<p><span style="color: #000000;">22 + 4 = 26 км/ч</span></p>
+<p><strong>Ответ</strong>: собственная скорость лодки составляет 26 км/ч</p>
+<hr />
+<p><strong>Задача 7</strong>. За какое время при движении против течения реки лодка<br />
+пройдет 56 км, если скорость течения – 2 км/ч, а её<br />
+собственная скорость на 8 км/ч больше скорости течения?</p>
+<p><strong>Решение</strong></p>
+<p>Найдем собственную скорость лодки. В условии сказано, что она на 8 км/ч больше скорости течения. Поэтому для определения собственной скорости лодки, к скорости течения (2 км/ч) прибавим еще 8 км/ч</p>
+<p><span style="color: #000000;">2 км/ч + 8 км/ч = 10 км/ч</span></p>
+<p>Лодка движется против течения реки, поэтому из собственной скорости лодки (10 км/ч) вычтем скорость движения реки (2 км/ч)</p>
+<p><span style="color: #000000;">10 км/ч − 2 км/ч = 8 км/ч</span></p>
+<p>Узнаем за какое время лодка пройдет 56 км. Для этого расстояние (56км) разделим на скорость движения лодки:</p>
+<p><span style="color: #000000;">56 : 8 = 7 ч</span></p>
+<p><strong>Ответ</strong>: при движении против течения реки лодка пройдет 56 км за 7 часов</p>
+    <h3>Хотите перейти на следующий урок?</h3>
+<a href="lection1.html" class="back">Вернуться ‹‹</a>
+<a href="lection3.html" class="next">Вперёд »</a>
+
+<script type="text/javascript">
+
+var menuItems = document.querySelectorAll('.skew-menu ul li');
+
+for (var i = 0; i < menuItems.length; i++) {
+   menuItems[i].addEventListener('click', function() {
+       // Действия при выборе определенной лекции
+   });
+}
+document.querySelectorAll('.skew-menu li').forEach(item => {
+    item.addEventListener('mouseover', () => {
+        item.style.transition = 'transform 0.3s';
+        item.style.transform = 'scale(1.2)';
+    });
+
+    item.addEventListener('mouseout', () => {
+        if (!item.classList.contains("clicked")) { // Проверяем, не была ли ячейка уже уменьшена при клике
+            item.style.transition = 'transform 0.3s';
+            item.style.transform = 'scale(1)';
+        }
+    });
+
+     document.addEventListener("click", function(event) { 
+         if (!event.target.closest(".skew-menu li")) return;
+
+         const clickedItem= event.target.closest(".skew-menu li");
+
+         document.querySelectorAll('.skew-menu li').forEach(otherItem => { 
+             otherItem.classList.remove("clicked");
+             otherItem.removeEventListener("transitionend", removeTransition);
+          });
+          
+          function removeTransition() { this.classList.remove("clicked"); }
+
+          const clickedClassList= clickedItem.classList;
+          clickedClassList.add("clicked");
+
+          setTimeout(() =>{
+              clickedClassList.remove("clicked")
+           },300)
+
+           function toggleTransform(){
+               let scaleValue= window.getComputedStyle(clickedItem).getPropertyValue('transform');
+
+               if(scaleValue==='none'){
+                   clickedItem.setAttribute(
+                       "style",
+                       "transition: all .5s ease-in-out; transform: scale(.8);"
+                     );
+                 }else{
+                     clickedItem.removeAttribute("style");
+                  }
+            }
+
+            toggleTransform();
+      });
+});
+let currentLesson = document.querySelector('.active a');
+currentLesson.style.color = '#007bff';
+
+menuItems[0].classList.add("active");
+
+document.querySelector('.back').setAttribute("href", "lection15.html");
+document.querySelector('.next').setAttribute("href", "lection17.html");
+
+</script>
+</body>
+</html>

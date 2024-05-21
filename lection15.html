@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лекция 15: Задачи на проценты</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: 200px auto;
+            gap: 20px;
+        }
+        
+        .skew-menu {
+            background-color: #f2f2f2; /* Цвет фона для меню */
+            padding: 10px;
+        }
+
+        .lecture-content {
+            background-color: #e6e6e6; /* Цвет фона для контента лекции */
+            padding: 20px;
+        }
+
+        h1, h2, p {
+          margin-bottom: 15px;  
+      }
+
+      a.back, a.next{
+         text-decoration:none; 
+         color:#333; 
+     }
+     body {
+            background-image: url(images/7.avif);
+            background-attachment: fixed;
+            -moz-background-size: 100%;
+            -webkit-background-size: 100%;
+            -o-background-size: 100%;
+            background-size: 100%;
+        }
+        h1{
+        color: rgb(0, 0, 0) !important; 
+        font-family: courier !important; 
+         text-align: center !important;
+  }
+        p {
+         color: rgb(0, 0, 0);
+         font-family: 'Times New Roman', Times, serif;
+         font-size: 150%;
+         text-align: right; 
+        }
+        h2{
+        color: dark !important; 
+        font-family: Georgia, 'Times New Roman', Times, serif !important; 
+         text-align: center !important;
+  }
+        p {
+         color: rgb(0, 0, 0); 
+         font-family: 'Times New Roman', Times, serif;
+         font-size: 150%; 
+         text-align: center;
+        }
+        a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.back {
+    background-color: #ddd;
+    color: rgb(0, 0, 0);
+}
+
+.next {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.round {
+    border-radius: 50%;
+}
+@radius: 7px;
+@skew: 25deg;
+@main-color: tomato;
+
+body{
+  font-family:Helvetica Neue, Helvetica, sans-serif;
+  background:@main-color;
+}
+
+.skew-menu{
+  text-align:center;
+  margin-top:3em;
+  padding: 10px;
+    max-height: 2000px; /* Устанавливаем максимальную высоту */
+    max-width: 700px;
+    width: 200px;
+    overflow-y: auto; /* Добавляем вертикальную прокрутку при необходимости */
+}
+
+.skew-menu ul{
+  display:inline-block;
+  margin:0;
+  padding:0;
+  list-style:none;
+  transform:skew(-@skew);
+  width: 250px;
+  border-radius: 10px;
+}
+
+.skew-menu ul li{
+  background:#fff;
+  float:left;
+  border-right:1px solid #eee;
+  box-shadow:0 1px 1px rgba(0,0,0,0.1);
+  text-transform:uppercase;
+  color:#555;
+  font-weight:bolder;
+  transition:all 0.3s linear;
+  display: block;
+  text-align: center;
+  width: 200px;
+  max-width: 200px;
+  &:first-child
+  {
+
+    border-radius:@radius 0 0 @radius;
+  }
+  
+  &:last-child{
+    border-right:none;
+    border-radius:0 @radius @radius 0;
+  }
+  
+  &:hover{
+    background:#eee;
+    color:@main-color;
+  }
+  
+  a{
+    display:block;
+    padding:1em 2em;
+    color:inherit;
+    text-decoration:none;
+    transform:skew(@skew);
+  }
+}
+.active a {
+  color: #007bff; /* Выделите цвет текста */
+}
+.navless{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: lighter;
+    font-size: 20px;
+}
+.nav menu{
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+      .menu b{
+        text-align: center;
+      }
+    </style>
+</head>
+
+<body>
+
+<nav class="skew-menu">
+    <ul>
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="lection1.html">Лекция 1</a></li>
+      <li><a href="lection2.html">Лекция 2</a></li>
+      <li><a href="lection3.html">Лекция 3</a></li>
+      <li><a href="lection4.html">Лекция 4</a></li>
+      <li><a href="lection5.html">Лекция 5</a></li>
+      <li><a href="lection6.html">Лекция 6</a></li>
+      <li><a href="lection7.html">Лекция 7</a></li>
+      <li><a href="lection8.html">Лекция 8</a></li>
+      <li><a href="lection9.html">Лекция 9</a></li>
+      <li><a href="lection10.html">Лекция 10</a></li>
+      <li><a href="lection11.html">Лекция 11</a></li>
+      <li><a href="lection12.html">Лекция 12</a></li>
+      <li><a href="lection13.html">Лекция 13</a></li>
+      <li><a href="lection14.html">Лекция 14</a></li>
+      <li class="active"><a href="lection15.html">Лекция 15</a></li>
+      <li><a href="lection16.html">Лекция 16</a></li>
+      <li><a href="lection17.html">Лекция 17</a></li>
+      <li><a href="lection18.html">Лекция 18</a></li>
+      <li><a href="lection19.html">Лекция 19</a></li>
+      <li><a href="lection20.html">Лекция 20</a></li>
+      <li><a href="lection21.html">Лекция 21</a></li>
+      <li><a href="lection22.html">Лекция 22</a></li>
+      <li><a href="lection23.html">Лекция 23</a></li>
+      <li><a href="lection24.html">Лекция 24</a></li>
+      <li><a href="lection25.html">Лекция 25</a></li>
+      <li><a href="lection26.html">Лекция 26</a></li>
+      <li><a href="lection27.html">Лекция 27</a></li>
+      <li><a href="lection28.html">Лекция 28</a></li>
+      <li><a href="lection29.html">Лекция 29</a></li>
+      <li><a href="lection30.html">Лекция 30</a></li>
+    </ul>
+</nav>
+
+<div class="lecture-content">
+  <h1 class="entry-title">Лекция 15: Задачи на проценты</h1>      
+
+      
+</header><!-- .entry-header -->
+
+<div class="entry-content">    
+
+      
+</header><!-- .entry-header -->
+
+<div class="entry-content">
+  <p>Продолжаем изучать элементарные задачи по математике. Данный урок посвящен задачам на проценты. Мы рассмотрим несколько задач, а также затронем те моменты, которые не упоминали ранее при изучении процентов, посчитав что на первых порах они создают трудности для обучения.</p>
+<p>Большинство задач на проценты сводятся к тому, чтобы найти процент от числá, найти число по проценту, выразить в процентах какую-либо часть, либо выразить в процентном соотношении взаимосвязь между несколькими объектами, числами, величинами.</p>
+</nav>
+<nav id="menu"><b>Содержание урока</b></p>
+<ul class="navless">
+<li><a href="#yak1">Способы нахождения процента</a></li>
+<li><a href="#yak2">Выражение числа в процентах</a></li>
+<li><a href="#yak3">Аналоги в виде дробей</a></li>
+<li><a href="#yak4">Уменьшение и увеличение процентов</a></li>
+<li><a href="#yak5">Задача на нахождение процентного соотношения</a></li>
+<li><a href="#yak6">Сравнение величин в процентах</a></li>
+<li><a href="#yak8">Задачи на концентрацию, сплавы и смеси</a></li>
+</ul>
+</nav>
+<h2 id="yak1" style="text-align: center;">Способы нахождения процента</h2>
+<p>Процент можно находить различными способами. Самый популярный способ &#8212; разделить число на 100 и умножить полученный результат на искомое количество процентов.</p>
+<p>Например, чтобы найти 60% от 200 рублей, нужно сначала эти 200 рублей разделить на сто равных частей:</p>
+<p style="text-align: center;"><span style="color: #000000;">200 руб : 100 = 2 руб.</span></p>
+<p>Когда мы делим число на 100, мы тем самым находим один процент от этого числа. Так, разделив 200 рублей на 100 частей, мы автоматически нашли 1% от двухсот рублей, то есть узнали сколько рублей прихóдится на одну часть. Как видно из примера, на одну часть (на один процент) приходится 2 рубля.</p>
+<p style="text-align: center;"><span style="color: #000000;">1% от 200 рублей &#8212; 2 рубля</span></p>
+<p>Зная сколько рублей приходится на одну часть (на 1%), можно узнать сколько рублей приходится на две части, на три, на четыре, на пять и т.д. То есть можно найти любое количество процентов. Для этого достаточно умножить эти 2 рубля на искомое количество частей (процентов). Давайте найдём шестьдесят частей (60%)</p>
+<p style="text-align: center;"><span style="color: #000000;">2 руб × 60 = 120 руб.</span></p>
+<p>Найдём 5%</p>
+<p><span style="color: #000000;">2 руб × 5 = 10 руб.</span></p>
+<p>Найдем 90%</p>
+<p><span style="color: #000000;">2 руб × 90 = 180 руб.</span></p>
+<p>Найдем 100%</p>
+<p><span style="color: #000000;">2 руб × 100 = 200 руб.</span></p>
+<p>100% это все сто частей и они составляют все 200 рублей.</p>
+<p>Второй способ заключается в том, чтобы представить проценты в виде обыкновенной дроби и найти эту дробь от того числа, откуда требуется найти процент.</p>
+<p>Например, найдем те же 60% от 200 рублей. Сначала предстáвим 60% в виде обыкновенной дроби. 60% это шестьдесят частей из ста, то есть шестьдесят сотых:</p>
+<p><img decoding="async" class="wp-image-5399 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/shestdesyat-sotyh.png" alt="шестьдесят сотых" width="31" height="43" /></p>
+<p>Теперь задание можно понимать как <span style="color: #000000;"><em>&#171;<span style="color: #000000;">найти <img decoding="async" class="wp-image-5399 size-full alignnone" src="https://spacemath.xyz/wp-content/uploads/2017/08/shestdesyat-sotyh.png" alt="шестьдесят сотых" width="31" height="43" /> от </span></em>200<em><span style="color: #000000;"> рублей</span>&#171;</em></span>. Это нахождение дроби от числа</a>, которое мы изучали ранее. Напомним, что для нахождения дроби от числа, нужно это число разделить на знаменатель дроби и полученный результат умножить на числитель дроби</p>
+<p style="text-align: center;"><span style="color: #000000;">200 : 100 = 2</span></p>
+<p style="text-align: center;"><span style="color: #000000;">2 × 60 = 120</span></p>
+<p>Либо умножить число на дробь (<a href="https://spacemath.xyz/dopolnitelnye-svedeniya-o-drobyah/" target="_blank" rel="noopener noreferrer">быстрый способ нахождения дроби от числа</a>):</p>
+<p><img decoding="async" class="size-full wp-image-5400 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/60-protsentov-ot-200-rub.png" alt="60 процентов от 200 руб" width="151" height="43" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/60-protsentov-ot-200-rub.png 151w, https://spacemath.xyz/wp-content/uploads/2017/08/60-protsentov-ot-200-rub-150x43.png 150w" sizes="(max-width: 151px) 100vw, 151px" /></p>
+<p>Третий способ заключается в том, чтобы представить процент в виде десятичной дроби и умножить число на эту десятичную дробь.</p>
+<p>Например, найдем те же 60% от 200 рублей. Для начала представляем 60% в виде дроби. 60% процентов это шестьдесят частей из ста</p>
+<p><img decoding="async" class="wp-image-5399 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/shestdesyat-sotyh.png" alt="шестьдесят сотых" width="31" height="43" /></p>
+<p>Выполним деление в этой дроби. Перенесем запятую в числе 60 на две цифры влево:</p>
+<p style="text-align: center;"><img loading="lazy" decoding="async" class="alignnone size-full wp-image-5401" src="https://spacemath.xyz/wp-content/uploads/2017/08/delenie-60-na-100.png" alt="деление 60 на 100" width="99" height="43" /></p>
+<p>Теперь находим 0,60 от 200 рублей. Для нахождения десятичной дроби от числа, нужно это число умножить на десятичную дробь:</p>
+<p style="text-align: center;"><span style="color: #000000;">200 × 0,60 = 120 руб.</span></p>
+<p>Приведенный способ нахождения процента является наиболее удобным, особенно если человек привык пользоваться калькулятором. Этот способ позволяет найти процент в одно действие.</p>
+<p>Как правило выразить процент в десятичной дроби не составляет особого труда. Достаточно приписать &#171;ноль целых&#187; перед процентной долей, если процентная доля представляет собой двузначное число, или приписать &#171;ноль целых&#187; и еще один ноль, если процентная доля представляет собой однозначное число. Примеры:</p>
+<p>60% = 0,60 &#8212; приписали ноль целых перед числом 60, поскольку число 60 является двузначным</p>
+<p>6% = 0,06 &#8212; приписали ноль целых и еще один ноль перед числом 6, поскольку число 6 является однозначным.</p>
+<p>При делении на 100 мы воспользовались методом передвижения запятой на две цифры влево. В ответе 0,60 ноль, стоящий после цифры 6, сохранился. Но если выполнить это деление уголком, ноль исчезает &#8212; получается ответ 0,6</p>
+<p><img loading="lazy" decoding="async" class="wp-image-5250 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/60razdelitna100vstolbik.png" alt="60разделитьна100встолбик" width="128" height="166" /></p>
+<p>Надо помнить, что десятичные дроби 0,60 и 0,6 равны одному и тому же значению:</p>
+<p style="text-align: center;"><span style="color: #000000;">0,60 = 0,6</span></p>
+<p>В том же &#171;уголке&#187; можно продолжать деление бесконечно, каждый раз приписывая к остатку ноль, но это будет бессмысленным действием:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5251 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/60razdelitna100vstolbikprodolzhenienulej.png" alt="" width="236" height="427" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/60razdelitna100vstolbikprodolzhenienulej.png 236w, https://spacemath.xyz/wp-content/uploads/2017/08/60razdelitna100vstolbikprodolzhenienulej-166x300.png 166w" sizes="(max-width: 236px) 100vw, 236px" /></p>
+<p>Выражать проценты в виде десятичной дроби можно не только делением на 100, но и умножением. Значок процента (%) сам по себе заменяет собой множитель 0,01. А если учитывать, что число процентов и значок процента записаны слитно, то между ними располагается &#171;невидимый&#187; знак умножения (×).</p>
+<p>Так, запись 45% на самом деле выглядит следующим образом:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5276 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/45-protsentov-vide-risunka.png" alt="45 процентов виде рисунка" width="141" height="28" /></p>
+<p>Заменим знак процента на множитель 0,01</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5277 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/45-umnozhit-na-odnu-sotuyu.png" alt="45 умножить на одну сотую" width="183" height="35" /></p>
+<p>Данное умножение на 0,01 выполнятся путем перемещения запятой на две цифры влево:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5278 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/45-umnozhit-na-odnu-sotuyu-ravno-sorok-pyat-sotyh.png" alt="45 умножить на одну сотую равно сорок пять сотых" width="323" height="35" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/45-umnozhit-na-odnu-sotuyu-ravno-sorok-pyat-sotyh.png 323w, https://spacemath.xyz/wp-content/uploads/2017/08/45-umnozhit-na-odnu-sotuyu-ravno-sorok-pyat-sotyh-300x33.png 300w" sizes="(max-width: 323px) 100vw, 323px" /></p>
+<hr />
+<p><strong>Задача 1</strong>. Бюджет семьи составляет 75 тыс. рублей в месяц. Из них 70% &#8212; деньги, заработанные папой. Какую часть заработала мама?</p>
+<p><strong>Решение</strong></p>
+<p>Всего процентов 100. Если папа заработал 70% денег, то остальные 30% денег заработала мама.</p>
+<hr />
+<p><strong>Задача 2</strong>. Бюджет семьи составляет 75 тыс. рублей в месяц. Из них 70% &#8212; деньги, заработанные папой, а 30% &#8212; деньги, заработанные мамой. Сколько денег заработал каждый?</p>
+<p><strong>Решение</strong></p>
+<p>Найдем 70 и 30 процентов от 75 тыс. рублей. Так мы определим сколько денег заработал каждый. Для удобства 70% и 30% запишем в виде десятичных дробей:</p>
+<p><span style="color: #000000;">75 × 0,70 = 52,5 (тыс. руб. заработал папа)</span></p>
+<p><span style="color: #000000;">75 × 0,30 = 22,5 (тыс. руб. заработала мама)</span></p>
+<p><strong>Проверка</strong></p>
+<p><span style="color: #000000;">52,5 + 22,5 = 75</span></p>
+<p><span style="color: #000000;">75 = 75</span></p>
+<p><strong>Ответ</strong>: 52,5 тыс. руб. заработал папа, 22,5 руб. заработала мама.</p>
+<hr />
+<p><strong>Задача 3</strong>. При остывании хлеб теряет до 4% своей массы в результате испарения воды. Сколько килограммов испарится при остывании 12 тонн хлеба.</p>
+<p><strong>Решение</strong></p>
+<p>Переведем 12 тонн в килограммы. В одной тонне тысяча килограмм, а в 12 тоннах в 12 раз больше:</p>
+<p><span style="color: #000000;">1000 × 12 = 12 000 кг</span></p>
+<p>Теперь найдем 4% от 12000. Полученный результат и будет ответом к задаче:</p>
+<p><span style="color: #000000;">12 000 × 0,04 = 480 кг</span></p>
+<p><strong>Ответ</strong>: при остывании 12 тонн хлеба испарится 480 килограмм.</p>
+<hr />
+<p><strong>Задача 4</strong>. Яблоки при сушке теряют 84% своей массы. Сколько получится сушенных яблок из 300 кг свежих?</p>
+<p>Найдем 84% от 300 кг</p>
+<p><span style="color: #000000;">300 : 100 × 84 = 252 кг</span></p>
+<p>300 кг свежих яблок в результате сушки потеряют 252 кг своей массы. Чтобы ответить на вопрос сколько получится сушенных яблок, нужно из 300 вычесть 252</p>
+<p><span style="color: #000000;">300 − 252 = 48 кг</span></p>
+<p><strong>Ответ</strong>: из 300 кг свежих яблок получится 48 кг сушенных.</p>
+<hr />
+<p><strong>Задача 5</strong>. В семенах сои содержится 20% масла. Сколько масла содержится в 700 кг сои?</p>
+<p><strong>Решение</strong></p>
+<p>Найдем 20% от 700 кг</p>
+<p><span style="color: #000000;">700 × 0,20 = 140 кг</span></p>
+<p><strong>Ответ</strong>: в 700 кг сои содержится 140 кг масла</p>
+<hr />
+<p><strong>Задача 6</strong>. Гречневая крупа содержит 10% белков, 2,5% жиров и 60% углеводов. Сколько этих продуктов содержится в 14,4 ц гречневой крупы?</p>
+<p><strong>Решение</strong></p>
+<p>Переведем 14,4 центнера в килограммы. В одном центнере 100 килограмм, в 14,4 центнерах в 14,4 раз больше</p>
+<p><span style="color: #000000;">100 × 14,4 = 1440 кг</span></p>
+<p>Найдем 10%, 2,5% и 60% от 1440 кг</p>
+<p><span style="color: #000000;">1440 × 0,10 = 144 (кг белков)</span></p>
+<p><span style="color: #000000;">1440 × 0,025 = 36 (кг жиров)</span></p>
+<p><span style="color: #000000;">1440 × 0,60 = 864 (кг углеводов)</span></p>
+<p><strong>Ответ</strong>: в 14,4 ц гречневой крупы содержится 144 кг белков, 36 кг жиров, 864 кг углеводов.</p>
+<hr />
+<p><strong>Задача 7</strong>. Для лесопитомника школьники собрали 60 кг семян дуба, акации, липы и клена. Желуди составляли 60%, семена клена 15%, семена липы 20% всех семян, а остальное составляли семена акации. Сколько килограммов семян акации было собрано школьниками?</p>
+<p><strong>Решение</strong></p>
+<p>Примем за 100% семена дуба, акации, липы и клена. Вычтем из этих 100% проценты, выражающие семена дуба, липы и клена. Так мы узнаем сколько процентов составляют семена акации:</p>
+<p><span style="color: #000000;">100% − (60% + 15% + 20%) = 100% − 95% = 5%</span></p>
+<p>Теперь находим семена акации:</p>
+<p><span style="color: #000000;">60 × 0,05 = 3 кг</span></p>
+<p><strong>Ответ</strong>: школьниками было собрано 3 кг семян акации.</p>
+<p><strong>Проверка</strong>:</p>
+<p><span style="color: #000000;">60 × 0,60 = 36</span></p>
+<p><span style="color: #000000;">60 × 0,15 = 9</span></p>
+<p><span style="color: #000000;">60 × 0,20 = 12</span></p>
+<p><span style="color: #000000;">60 × 0,05 = 3</span></p>
+<p><span style="color: #000000;">36 + 9 + 12 + 3 = 60</span></p>
+<p><span style="color: #000000;">60 = 60</span></p>
+<hr />
+<p><strong>Задача 8</strong>. Купил человек продукты. Молоко стоит 60 рублей, что составляет 48% от стоимости всех покупок. Определить общую сумму денег, потраченных на продукты.</p>
+<p><strong>Решение</strong></p>
+<p>Это задача на нахождение числа по его проценту, то есть по его известной части. Такую задачу можно решать двумя способами. Первый заключается в том, чтобы выразить известное число процентов в виде десятичной дроби и найти неизвестное число по этой дроби</p>
+<p>Выразим 48% в виде десятичной дроби</p>
+<p><span style="color: #000000;">48% : 100 = 0,48</span></p>
+<p>Зная, что 0,48 составляет 60 рублей, мы можем определить сумму всех покупок. Для этого нужно найти неизвестное число по десятичной дроби:</p>
+<p><span style="color: #000000;">60 : 0,48 = 125 рублей</span></p>
+<p>Значит, общая сумма денег, затраченных на продукты составляет 125 рублей.</p>
+<p>Второй способ заключается в том, чтобы сначала узнать сколько денег приходится на один процент, затем полученный результат умножить на 100</p>
+<p>48% это 60 рублей. Если мы разделим 60 рублей на 48, то узнаем сколько рублей приходится на 1%</p>
+<p><span style="color: #000000;">60 : 48% = 1,25 рублей</span></p>
+<p>На 1% приходится 1,25 рублей. Всего процентов 100. Если мы умножим 1,25 рублей на 100, получим общую сумму денег, затраченных на продукты</p>
+<p><span style="color: #000000;">1,25 × 100 = 125 рублей</span></p>
+<hr />
+<p><strong>Задача 9</strong>. Из свежих слив выходит 35% сушенных. Сколько надо взять свежих слив, чтобы получить 140 кг сушенных? Сколько получится сушенных слив из 600 кг свежих?</p>
+<p><strong>Решение</strong></p>
+<p>Выразим 35% в виде десятичной дроби и найдем неизвестное число по этой дроби:</p>
+<p><span style="color: #000000;">35% = 0,35</span></p>
+<p><span style="color: #000000;">140 : 0,35 = 400 кг</span></p>
+<p>Чтобы получить 140 кг сушенных слив, нужно взять 400 кг свежих.</p>
+<p>Ответим на второй вопрос задачи &#8212; сколько получится сушенных слив из 600 кг свежих? Если из свежих слив выходит 35% сушенных, то достаточно найти эти 35% от 600 кг свежих слив</p>
+<p><span style="color: #000000;">600 × 0,35 = 210 кг</span></p>
+<p><strong>Ответ</strong>: чтобы получить 140 кг сушенных слив, нужно взять 400 кг свежих. Из 600 кг свежих слив получится 210 кг сушенных.</p>
+<hr />
+<p><strong>Задача 10</strong>. Усвоение жиров организмом человека составляет 95%. За месяц ученик употребил 1,2 кг жиров. Сколько жиров может быть усвоено его организмом?</p>
+<p><strong>Решение</strong></p>
+<p>Переведем 1,2 кг в граммы</p>
+<p><span style="color: #000000;">1,2 × 1000 = 1200 г</span></p>
+<p>Найдем 95% от 1200 г</p>
+<p><span style="color: #000000;">1200 × 0,95 = 1140 г</span></p>
+<p><strong>Ответ</strong>: 1140 г жиров может быть усвоено организмом ученика.</p>
+<hr />
+<h2 id="yak2" style="text-align: center;">Выражение чисел в процентах</h2>
+<p>Процент, как было сказано ранее, можно представить в виде десятичной дроби. Для этого достаточно разделить число этих процентов на 100. Например, представим 12% в виде десятичной дроби:</p>
+<p style="text-align: center;"><img loading="lazy" decoding="async" class="alignnone size-full wp-image-5402" src="https://spacemath.xyz/wp-content/uploads/2017/08/12-protsentov-v-vide-desyatichnoj-drobi.png" alt="12 процентов в виде десятичной дроби" width="166" height="43" /></p>
+<p><strong>Замечание.</strong> <strong>Мы сейчас не находим процент от чего-то, а просто записываем его в виде десятичной дроби</strong>.</p>
+<p>Но возможен и обратный процесс. Десятичная дробь может быть представлена в виде процента. Для этого нужно умножить эту дробь на 100 и поставить знак процента (%)</p>
+<p>Представим десятичную дробь 0,12 в виде процентов</p>
+<p style="text-align: center;"><span style="color: #000000;">0,12 × 100 = 12%</span></p>
+<p>Это действие называют <strong>выражением числа в процентах</strong> или <strong>выражением чисел в сотых долях</strong>.</p>
+<p>Умножение и деление являются обратными операциями. К примеру, если 2 × 5 = 10, то 10 : 5 = 2</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5253 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/vzaimno-obratnye-operatsii-umnozhenie-i-delenie.png" alt="взаимно обратные операции умножение и деление" width="280" height="128" /></p>
+<p>Точно так же деление можно записать в обратном порядке. Если 10 : 5 = 2, то 2 × 5 = 10:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5404 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/vzaimno-obratnye-operatsii-delenie-i-umnozhenie.png" alt="взаимно обратные операции деление и умножение" width="280" height="125" /></p>
+<p>Тоже самое происходит, когда мы выражаем десятичную дробь в виде процентов. Так, 12% были выражены в виде десятичной дроби следующим образом: 12 : 100 = 0,12 но потом эти же 12% были &#171;возвращены&#187; с помощью умножения, записав выражение 0,12 × 100 = 12%.</p>
+<p>Аналогично можно выразить в процентах любые другие числа, в том числе и целые. Например, выразим в процентах число 3. Умножим данное число на 100 и к полученному результату добавим знак процента:</p>
+<p style="text-align: center;"><span style="color: #000000;">3 × 100 = 300%</span></p>
+<p>Большие проценты вида 300% поначалу могут сбивать с толку, поскольку человек привык считать 100% максимальной долей. Из дополнительных сведений о дробях мы знаем, что один целый объект можно обозначать через единицу. К примеру, если имеется целый не разрезанный торт, то его можно обозначить через 1</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5254 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/odin-tort-edinitsa.png" alt="один торт единица" width="190" height="174" /></p>
+<p>Этот же торт можно обозначить как 100% торта. В этом случае и единица и 100% будут обозначать один и тот же целый торт:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5255 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/odin-tort-edinitsa-sto-protsentov.png" alt="один торт единица сто процентов" width="189" height="168" /></p>
+<p>Разрежем торт пополам. В этом случае единица обратится в десятичное число 0,5 (поскольку это половина единицы), а 100% обратятся в 50% (поскольку 50 это половина от сотни)</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5256 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/polovina-torta-pyat-desyatyh-i-pyatdesyat-protsentov.png" alt="половина торта пять десятых и пятьдесят процентов" width="109" height="148" /></p>
+<p>Вернем обратно целый торт, единицу и 100%</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5255 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/odin-tort-edinitsa-sto-protsentov.png" alt="один торт единица сто процентов" width="189" height="168" /></p>
+<p>Изобразим ещё два таких торта с такими же обозначениями:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-5258 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/tri-torta-tri-edinitsy-i-300.png" alt="три торта три единицы и 300%" width="660" height="310" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/tri-torta-tri-edinitsy-i-300.png 660w, https://spacemath.xyz/wp-content/uploads/2017/08/tri-torta-tri-edinitsy-i-300-300x141.png 300w" sizes="(max-width: 660px) 100vw, 660px" /></p>
+<p>Если один торт является единицей, то три торта являются тремя единицами. Каждый торт является целым стопроцентным. Если сложить эти три сотни получится 300%.</p>
+<p>Поэтому при переводе целых чисел в проценты, мы умножаем эти числа на 100.</p>
+<p><strong>Задача 2</strong>. Выразить в процентах число 5</p>
+<p style="text-align: center;"><span style="color: #000000;">5 × 100 = 500%</span></p>
+<hr />
+<p><strong>Задача 3</strong>. Выразить в процентах число 7</p>
+<p style="text-align: center;"><span style="color: #000000;">7 × 100 = 700%</span></p>
+<hr />
+<p><strong>Задача 4</strong>. Выразить в процентах число 7,5</p>
+<p style="text-align: center;"><span style="color: #000000;">7,5 × 100 = 750%</span></p>
+<hr />
+<p><strong>Задача 5</strong>. Выразить в процентах число 0,5</p>
+<p style="text-align: center;"><span style="color: #000000;">0,5 × 100 = 50%</span></p>
+<hr />
+<p><strong>Задача 6</strong>. Выразить в процентах число 0,9</p>
+<p style="text-align: center;"><span style="color: #000000;">0,9 × 100 = 90%</span></p>
+<hr />
+<p><strong>Пример 7</strong>. Выразить в процентах число 1,5</p>
+<p style="text-align: center;"><span style="color: #000000;">1,5 × 100 = 150%</span></p>
+<hr />
+<p><strong>Пример 8</strong>. Выразить в процентах число 2,8</p>
+<p style="text-align: center;"><span style="color: #000000;">2,8 × 100 = 280%</span></p>
+<hr />
+<p><strong>Задача 9</strong>. Джордж идет со школы домой. Первые пятнадцать минут он прошел 0,75 пути. В остальное время он прошел оставшиеся 0,25 пути. Выразите в процентах части пути, пройденные Джорджом.</p>
+<p><strong>Решение</strong></p>
+<p><span style="color: #000000;">0,75 × 100 = 75%</span></p>
+<p><span style="color: #000000;">0,25 × 100 = 25%</span></p>
+<hr />
+<p><strong>Задача 10</strong>. Джона угостили половиной яблока. Выразите эту половину в процентах.</p>
+<p><strong>Решение</strong></p>
+<p>Половина яблока записывается в виде дроби 0,5. Чтобы выразить эту дробь в процентах, умножим её на 100 и к полученному результату добавим знак процента</p>
+<p><span style="color: #000000;">0,5 × 100 = 50%</span></p>
+<hr />
+<h2 id="yak3" style="text-align: center;">Аналоги в виде дробей</h2>
+<p>Величина, выраженная в процентах, имеет свой аналог в виде обычной дроби. Так, аналогом для 50% является дробь <img loading="lazy" decoding="async" class="alignnone size-full wp-image-2948" src="https://spacemath.xyz/wp-content/uploads/2016/11/odna-vtoraya.png" alt="одна вторая" width="12" height="43" />. Пятьдесят процентов также можно назвать словом &#171;половина&#187;.</p>
+<p>Аналогом для 25% является дробь <img loading="lazy" decoding="async" class="alignnone size-full wp-image-5140" src="https://spacemath.xyz/wp-content/uploads/2017/07/odna-chetvertaya.png" alt="одна четвертая" width="12" height="43" />. Двадцать пять процентов также можно назвать словом &#171;четверть&#187;.</p>
+<p>Аналогом для 20% является дробь <img loading="lazy" decoding="async" class="alignnone size-full wp-image-5154" src="https://spacemath.xyz/wp-content/uploads/2017/07/odna-pyataya.png" alt="одна пятая" width="9" height="43" />. Двадцать процентов также можно назвать словами &#171;пятая часть&#187;.</p>
+<p>Аналогом для 40% является дробь <img loading="lazy" decoding="async" class="alignnone size-full wp-image-4312" src="https://spacemath.xyz/wp-content/uploads/2017/02/dve-pyatyh.png" alt="две пятых" width="10" height="43" />.</p>
+<p>Аналогом для 60% является дробь <img loading="lazy" decoding="async" class="alignnone size-full wp-image-3751" src="https://spacemath.xyz/wp-content/uploads/2017/01/Tri-pyatyh.png" alt="Три пятых" width="12" height="43" /></p>
+<p><strong>Пример 1</strong>. Пять сантиметров это 50% от дециметра или <img loading="lazy" decoding="async" class="alignnone size-full wp-image-2948" src="https://spacemath.xyz/wp-content/uploads/2016/11/odna-vtoraya.png" alt="одна вторая" width="12" height="43" /> или же просто половина. Во всех случаях речь идет об одной и той же величине &#8212; пяти сантиметрах из десяти</p>
+<p><img loading="lazy" decoding="async" class="wp-image-5395 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/analog-50-protsentov-v-vide-drobi.png" alt="аналог 50 процентов в виде дроби" width="619" height="311" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/analog-50-protsentov-v-vide-drobi.png 619w, https://spacemath.xyz/wp-content/uploads/2017/08/analog-50-protsentov-v-vide-drobi-300x151.png 300w" sizes="(max-width: 619px) 100vw, 619px" /></p>
+<hr />
+<p><strong>Пример 2</strong>. Два с половиной сантиметра это 25% от дециметра или <img loading="lazy" decoding="async" class="alignnone size-full wp-image-5140" src="https://spacemath.xyz/wp-content/uploads/2017/07/odna-chetvertaya.png" alt="одна четвертая" width="12" height="43" /> или же просто четверть</p>
+<p><img loading="lazy" decoding="async" class="wp-image-5394 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/analog-25-protsentov-v-vide-drobi.png" alt="аналог 25 процентов в виде дроби" width="619" height="194" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/analog-25-protsentov-v-vide-drobi.png 619w, https://spacemath.xyz/wp-content/uploads/2017/08/analog-25-protsentov-v-vide-drobi-300x94.png 300w" sizes="(max-width: 619px) 100vw, 619px" /></p>
+<hr />
+<p><strong>Пример 3</strong>. Два сантиметра это 20% от дециметра или  <img loading="lazy" decoding="async" class="alignnone size-full wp-image-5154" src="https://spacemath.xyz/wp-content/uploads/2017/07/odna-pyataya.png" alt="одна пятая" width="9" height="43" /></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5396 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/analog-20-protsentov-v-vide-drobi.png" alt="аналог 20 процентов в виде дроби" width="619" height="193" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/analog-20-protsentov-v-vide-drobi.png 619w, https://spacemath.xyz/wp-content/uploads/2017/08/analog-20-protsentov-v-vide-drobi-300x94.png 300w" sizes="(max-width: 619px) 100vw, 619px" /></p>
+<hr />
+<p><strong>Пример 4</strong>. Четыре сантиметра это 40% от дециметра или  <img loading="lazy" decoding="async" class="alignnone size-full wp-image-4312" src="https://spacemath.xyz/wp-content/uploads/2017/02/dve-pyatyh.png" alt="две пятых" width="10" height="43" /></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5397 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/analog-40-protsentov-v-vide-drobi.png" alt="аналог 40 процентов в виде дроби" width="618" height="225" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/analog-40-protsentov-v-vide-drobi.png 618w, https://spacemath.xyz/wp-content/uploads/2017/08/analog-40-protsentov-v-vide-drobi-300x109.png 300w" sizes="(max-width: 618px) 100vw, 618px" /></p>
+<hr />
+<p><strong>Пример 5</strong>. Шесть сантиметров это 60% от дециметра или <img loading="lazy" decoding="async" class="alignnone size-full wp-image-3751" src="https://spacemath.xyz/wp-content/uploads/2017/01/Tri-pyatyh.png" alt="Три пятых" width="12" height="43" /></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5398 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/analog-60-protsentov-v-vide-drobi.png" alt="аналог 60 процентов в виде дроби" width="618" height="227" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/analog-60-protsentov-v-vide-drobi.png 618w, https://spacemath.xyz/wp-content/uploads/2017/08/analog-60-protsentov-v-vide-drobi-300x110.png 300w" sizes="(max-width: 618px) 100vw, 618px" /></p>
+<hr />
+<h2 id="yak4" style="text-align: center;">Уменьшение и увеличение процентов</h2>
+<p>При увеличении или уменьшении величины, выраженной в процентах употребляется предлог &#171;на&#187;.</p>
+<p><strong>Примеры</strong>:</p>
+<ul>
+<li>Увеличить на 50% &#8212; означает увеличить величину в 1,5 раза;</li>
+<li>Увеличить на 100% &#8212; означает увеличить величину в 2 раза;</li>
+<li>Увеличить на 200% &#8212; означает увеличить в 3 раза;</li>
+<li>Уменьшить на 50% &#8212; означает уменьшить величину в 2 раза;</li>
+<li>Уменьшить на 80% &#8212; означает уменьшить в 5 раз.</li>
+</ul>
+<p><strong>Пример 1</strong>. Десять сантиметров увеличили на 50%. Сколько сантиметров получилось?</p>
+<p>Чтобы решать подобные задачи, нужно исходную величину принимать за 100%. Исходная величина это 10 см. 50% от них составляют 5 см</p>
+<p>Изначальные 10 см увеличили на 50% (на 5 см), значит получилось 10+5 см, то есть 15 см</p>
+<p><img loading="lazy" decoding="async" class="wp-image-5406 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/10-sm-5-sm-100-i-50-protsentov.png" alt="10 см 5 см 100 и 50 процентов" width="616" height="197" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/10-sm-5-sm-100-i-50-protsentov.png 616w, https://spacemath.xyz/wp-content/uploads/2017/08/10-sm-5-sm-100-i-50-protsentov-300x96.png 300w" sizes="(max-width: 616px) 100vw, 616px" /></p>
+<p>Аналогом же увеличения десяти сантиметров на 50% является множитель 1,5. Если умножить на него 10 см получится 15 см</p>
+<p style="text-align: center;"><span style="color: #000000;">10 × 1,5 = 15 см</span></p>
+<p><img loading="lazy" decoding="async" class="aligncenter wp-image-5410 size-full" title="1,5 есть сумма целой единицы (1) и половины (0,5)" src="https://spacemath.xyz/wp-content/uploads/2017/08/10-sm-5-sm-1-i-05.png" alt="10 см 5 см 1 и 05" width="617" height="300" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/10-sm-5-sm-1-i-05.png 617w, https://spacemath.xyz/wp-content/uploads/2017/08/10-sm-5-sm-1-i-05-300x146.png 300w" sizes="(max-width: 617px) 100vw, 617px" /></p>
+<p>Поэтому выражения &#171;увеличить на 50%&#187; и &#171;увеличить в 1,5 раза&#187; говорят об одном и том же.</p>
+<hr />
+<p><strong>Пример 2</strong>. Пять сантиметров увеличили на 100%. Сколько сантиметров получилось?</p>
+<p>Примем исходные пять сантиметров за 100%. Сто процентов от этих пяти сантиметров будут сами 5 см. Если увеличить 5 см на эти же 5 см, то получится 10 см</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5408 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/5sm-i-5-sm-100-i-100.png" alt="5см и 5 см 100 и 100" width="417" height="197" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/5sm-i-5-sm-100-i-100.png 417w, https://spacemath.xyz/wp-content/uploads/2017/08/5sm-i-5-sm-100-i-100-300x142.png 300w" sizes="(max-width: 417px) 100vw, 417px" /></p>
+<p>Аналогом же увеличения пяти сантиметров на 100% является множитель 2. Если умножить на него 5 см получится 10 см</p>
+<p style="text-align: center;"><span style="color: #000000;">5 × 2 = 10 см</span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5409 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/5sm-i-5-sm-1-i-1.png" alt="5см и 5 см 1 и 1" width="417" height="271" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/5sm-i-5-sm-1-i-1.png 417w, https://spacemath.xyz/wp-content/uploads/2017/08/5sm-i-5-sm-1-i-1-300x195.png 300w" sizes="(max-width: 417px) 100vw, 417px" /></p>
+<p>Поэтому выражения &#171;увеличить на 100%&#187; и &#171;увеличить в 2 раза&#187; говорят об одном и том же.</p>
+<hr />
+<p><strong>Пример 3</strong>. Пять сантиметров увеличили на 200%. Сколько сантиметров получилось?</p>
+<p>Примем исходные пять сантиметров за 100%. Двести процентов это два раза по сто процентов. То есть 200% от 5 см будут составлять 10 см (по 5 см на каждые 100%). Если увеличить 5 см на эти 10 см, то получится 15 см</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5411 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/5-sm-5-sm-5-sm-100-i-100-i-100-protsentov.png" alt="5 см 5 см 5 см 100 и 100 и 100 процентов" width="616" height="277" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/5-sm-5-sm-5-sm-100-i-100-i-100-protsentov.png 616w, https://spacemath.xyz/wp-content/uploads/2017/08/5-sm-5-sm-5-sm-100-i-100-i-100-protsentov-300x135.png 300w" sizes="(max-width: 616px) 100vw, 616px" /></p>
+<p>Аналогом же увеличения пяти сантиметров на 200% является множитель 3. Если умножить на него 5 см получится 15 см</p>
+<p style="text-align: center;"><span style="color: #000000;">5 × 3 = 15 см</span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5412 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/5-sm-5-sm-5-sm-1-i-1-i-1-protsentov.png" alt="5 см 5 см 5 см 1 и 1 и 1 процентов" width="617" height="287" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/5-sm-5-sm-5-sm-1-i-1-i-1-protsentov.png 617w, https://spacemath.xyz/wp-content/uploads/2017/08/5-sm-5-sm-5-sm-1-i-1-i-1-protsentov-300x140.png 300w" sizes="(max-width: 617px) 100vw, 617px" /></p>
+<p>Поэтому выражения &#171;увеличить на 200%&#187; и &#171;увеличить в 3 раза&#187; говорят об одном и том же.</p>
+<hr />
+<p><strong>Пример 4</strong>. Десять сантиметров уменьшили на 50%. Сколько сантиметров осталось?</p>
+<p>Примем исходные 10 см за 100%. Пятьдесят процентов от 10 см составляют 5 см. Если уменьшить 10 см на эти 5 см, останется 5 см</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5413 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/10-sm-i-5-sm-umenshili-na-50-protsentov.png" alt="10 см и 5 см уменьшили на 50 процентов" width="417" height="196" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/10-sm-i-5-sm-umenshili-na-50-protsentov.png 417w, https://spacemath.xyz/wp-content/uploads/2017/08/10-sm-i-5-sm-umenshili-na-50-protsentov-300x141.png 300w" sizes="(max-width: 417px) 100vw, 417px" /></p>
+<p>Аналогом же уменьшения десяти сантиметров на 50% является делитель 2. Если разделить на него 10 см, то получится 5 см</p>
+<p style="text-align: center;"><span style="color: #000000;">10 : 2 = 5 см</span></p>
+<p><img loading="lazy" decoding="async" class="aligncenter wp-image-5414 size-full" title="При уменьшении 10 см в два раза остается 5 см или 0,5 от десяти сантиметров" src="https://spacemath.xyz/wp-content/uploads/2017/08/10-sm-i-5-sm-umenshili-v-2-raza.png" alt="10 см и 5 см уменьшили в 2 раза" width="417" height="200" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/10-sm-i-5-sm-umenshili-v-2-raza.png 417w, https://spacemath.xyz/wp-content/uploads/2017/08/10-sm-i-5-sm-umenshili-v-2-raza-300x144.png 300w" sizes="(max-width: 417px) 100vw, 417px" /></p>
+<p>Поэтому выражения &#171;уменьшить на 50%&#187; и &#171;уменьшить в 2 раза&#187; говорят об одном и том же.</p>
+<hr />
+<p><strong>Пример 5</strong>. Десять сантиметров уменьшили на 80%. Сколько сантиметров осталось?</p>
+<p>Примем исходные 10 см за 100%. Восемьдесят процентов от 10 см составляют 8 см. Если уменьшить 10 см на эти 8 см, останется 2 см</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5415 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/10-sm-i-5-sm-umenshili-na-80-protsentov.png" alt="10 см и 5 см уменьшили на 80 процентов" width="417" height="196" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/10-sm-i-5-sm-umenshili-na-80-protsentov.png 417w, https://spacemath.xyz/wp-content/uploads/2017/08/10-sm-i-5-sm-umenshili-na-80-protsentov-300x141.png 300w" sizes="(max-width: 417px) 100vw, 417px" /></p>
+<p>Аналогом же уменьшения десяти сантиметров на 80% является делитель 5. Если разделить на него 10 см, то получится 2 см</p>
+<p style="text-align: center;"><span style="color: #000000;">10 : 5 = 2 см</span></p>
+<p><img loading="lazy" decoding="async" class="aligncenter wp-image-5416 size-full" title="При уменьшении 10 см в пять раз остается 2 см или 0,2 от десяти сантиметров" src="https://spacemath.xyz/wp-content/uploads/2017/08/10-sm-i-5-sm-umenshili-v-5-raz.png" alt="10 см и 5 см уменьшили в 5 раз" width="417" height="198" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/10-sm-i-5-sm-umenshili-v-5-raz.png 417w, https://spacemath.xyz/wp-content/uploads/2017/08/10-sm-i-5-sm-umenshili-v-5-raz-300x142.png 300w" sizes="(max-width: 417px) 100vw, 417px" /></p>
+<p>Поэтому выражения &#171;уменьшить на 80%&#187; и &#171;уменьшить в 5 раз&#187; говорят об одном и том же.</p>
+<p>При решении задач на уменьшение и увеличение процентов, можно умножать/делить величину на указанный в задаче множитель.</p>
+<p><strong>Задача 1</strong>. Насколько процентов изменилась величина, если она увеличилась в 1,5 раза?</p>
+<p>Величину о которой говорится в задаче можно обозначить как 100%. Далее умножить эти 100% на множитель 1,5</p>
+<p>100% × 1,5 = 150%</p>
+<p>Теперь из полученных 150% вычтем изначальные 100% и получим ответ к задаче:</p>
+<p>150% − 100% = 50%</p>
+<hr />
+<p><strong>Задача 2</strong>. Насколько процентов изменилась величина, если она уменьшилась в 4 раза?</p>
+<p>В этот раз будет происходить уменьшение величины, поэтому будем выполнять деление. Величину о которой говорится в задаче обозначим как 100%. Далее разделим эти 100% на делитель 4</p>
+<p>100% : 4 = 25%</p>
+<p>Из изначальных 100% вычтем полученные 25% и получим ответ к задаче:</p>
+<p>100% − 25% = 75%</p>
+<p>Значит, при уменьшении величины в 4 раза она уменьшилась на 75%.</p>
+<hr />
+<p><strong>Задача 3</strong>. Насколько процентов изменилась величина, если она уменьшилась в 5 раз?</p>
+<p>Величину о которой говорится в задаче обозначим как 100%. Далее разделим эти 100% на делитель 5</p>
+<p>100% : 5 = 20%</p>
+<p>Из изначальных 100% вычтем полученные 20% и получим ответ к задаче:</p>
+<p>100% − 20% = 80%</p>
+<p>Значит, при уменьшении величины в 5 раз она уменьшилась на 80%.</p>
+<hr />
+<p><strong>Задача 4</strong>. Насколько процентов изменилась величина, если она уменьшилась в 10 раз?</p>
+<p>Величину о которой говорится в задаче обозначим как 100%. Далее разделим эти 100% на делитель 10</p>
+<p>100% : 10 = 10%</p>
+<p>Из изначальных 100% вычтем полученные 10% и получим ответ к задаче:</p>
+<p>100% − 10% = 90%</p>
+<p>Значит, при уменьшении величины в 10 раз она уменьшилась на 90%.</p>
+<hr />
+<h2 id="yak5" style="text-align: center;">Задача на нахождение процентного соотношения</h2>
+<p>Чтобы выразить что-либо в процентном соотношении, сначала нужно записать дробь, показывающую какую часть первое число составляет от второго, затем выполнить деление в этой дроби и полученный результат выразить в процентах.</p>
+<p>Например, пусть имеется пять яблок. При этом два яблока являются красными, три &#8212; зелеными. Выразим красные и зеленые яблоки в процентном соотношении.</p>
+<p>Сначала нужно узнать какую часть составляют красные яблоки. Всего яблок пять, а красных два. Значит, два из пяти или две пятых составляют красные яблоки:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-5291 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/dva-yabloka-iz-pyati.png" alt="два яблока из пяти" width="657" height="294" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/dva-yabloka-iz-pyati.png 657w, https://spacemath.xyz/wp-content/uploads/2017/08/dva-yabloka-iz-pyati-300x134.png 300w" sizes="(max-width: 657px) 100vw, 657px" /></p>
+<p>Зеленых же яблок три. Значит, три из пяти или три пятых составляют зеленые яблоки:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5264 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/tri-yabloka-iz-pyati.png" alt="три яблока из пяти" width="657" height="294" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/tri-yabloka-iz-pyati.png 657w, https://spacemath.xyz/wp-content/uploads/2017/08/tri-yabloka-iz-pyati-300x134.png 300w" sizes="(max-width: 657px) 100vw, 657px" /></p>
+<p>Имеем две дроби  <img loading="lazy" decoding="async" class="alignnone size-full wp-image-4312" src="https://spacemath.xyz/wp-content/uploads/2017/02/dve-pyatyh.png" alt="две пятых" width="10" height="43" />  и  <img loading="lazy" decoding="async" class="alignnone size-full wp-image-3751" src="https://spacemath.xyz/wp-content/uploads/2017/01/Tri-pyatyh.png" alt="Три пятых" width="12" height="43" /> . Выполним деление в этих дробях</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5266 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/delenie-ugolkom-dve-pyatyh-i-tri-pyatyh.png" alt="деление уголком две пятых и три пятых" width="345" height="168" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/delenie-ugolkom-dve-pyatyh-i-tri-pyatyh.png 345w, https://spacemath.xyz/wp-content/uploads/2017/08/delenie-ugolkom-dve-pyatyh-i-tri-pyatyh-300x146.png 300w" sizes="(max-width: 345px) 100vw, 345px" /></p>
+<p>Получили десятичные дроби 0,4 и 0,6. Теперь выразим в процентах эти десятичные дроби:</p>
+<p style="text-align: center;"><span style="color: #000000;">0,4 × 100 = 40%</span></p>
+<p style="text-align: center;"><span style="color: #000000;">0,6 × 100 = 60%</span></p>
+<p>Значит, 40% составляют красные яблоки, 60% &#8212; зеленые.</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5267 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/dva-i-pyat-yablok-v-protsentnom-sootnoshenii.png" alt="два и пять яблок в процентном соотношении" width="657" height="246" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/dva-i-pyat-yablok-v-protsentnom-sootnoshenii.png 657w, https://spacemath.xyz/wp-content/uploads/2017/08/dva-i-pyat-yablok-v-protsentnom-sootnoshenii-300x112.png 300w" sizes="(max-width: 657px) 100vw, 657px" /></p>
+<p style="text-align: left;">А все пять яблок составляют 40%+60%, то есть 100%</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5268 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/dva-i-pyat-yablok-sto-protsentov.png" alt="два и пять яблок сто процентов" width="658" height="385" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/dva-i-pyat-yablok-sto-protsentov.png 658w, https://spacemath.xyz/wp-content/uploads/2017/08/dva-i-pyat-yablok-sto-protsentov-300x176.png 300w" sizes="(max-width: 658px) 100vw, 658px" /></p>
+<hr />
+<p><strong>Задача 2</strong>. Двум сыновьям мама дала 200 рублей. Младшему брату мама дала 80 рублей, а старшему 120 рублей. Выразите в процентном соотношении деньги, данные каждому брату.</p>
+<p><strong>Решение</strong></p>
+<p>Младший брат получил 80 рублей из 200 рублей. Записываем дробь восемьдесят двухсотых:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5269 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/vosemdesyat-dvuhsotyh.png" alt="восемьдесят двухсотых" width="32" height="43" /></p>
+<p>Старший брат получил 120 рублей из 200 рублей. Записываем дробь сто двадцать двухсотых:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5270 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/sto-dvadtsat-dvuhsotyh.png" alt="сто двадцать двухсотых" width="32" height="43" /></p>
+<p>Имеем дроби  <img loading="lazy" decoding="async" class="alignnone size-full wp-image-5269" src="https://spacemath.xyz/wp-content/uploads/2017/08/vosemdesyat-dvuhsotyh.png" alt="восемьдесят двухсотых" width="32" height="43" />  и  <img loading="lazy" decoding="async" class="alignnone size-full wp-image-5270" src="https://spacemath.xyz/wp-content/uploads/2017/08/sto-dvadtsat-dvuhsotyh.png" alt="сто двадцать двухсотых" width="32" height="43" />. Выполним деление в этих дробях</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5271 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/delenie-ugolkom-80-i-120-na-200.png" alt="деление уголком 80 и 120 на 200" width="379" height="168" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/delenie-ugolkom-80-i-120-na-200.png 379w, https://spacemath.xyz/wp-content/uploads/2017/08/delenie-ugolkom-80-i-120-na-200-300x133.png 300w" sizes="(max-width: 379px) 100vw, 379px" /></p>
+<p>Выразим в процентах полученные результаты:</p>
+<p style="text-align: center;"><span style="color: #000000;">0,4 × 100 = 40%</span></p>
+<p style="text-align: center;"><span style="color: #000000;">0,6 × 100 = 60%</span></p>
+<p>Значит, 40% денег получил младший брат, а 60% &#8212; старший.</p>
+<p>Некоторые дроби, показывающие какую часть первое число составляет от второго, можно сокращать.</p>
+<p>Так дроби  <img loading="lazy" decoding="async" class="alignnone size-full wp-image-5269" src="https://spacemath.xyz/wp-content/uploads/2017/08/vosemdesyat-dvuhsotyh.png" alt="восемьдесят двухсотых" width="32" height="43" />  и  <img loading="lazy" decoding="async" class="alignnone size-full wp-image-5270" src="https://spacemath.xyz/wp-content/uploads/2017/08/sto-dvadtsat-dvuhsotyh.png" alt="сто двадцать двухсотых" width="32" height="43" />  можно было бы сократить. От этого ответ к задаче не изменился бы:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5272 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/delenie-80-i-120-s-predvaritelnym-sokrashheniem.png" alt="деление 80 и 120 с предварительным сокращением" width="244" height="129" /></p>
+<hr />
+<p><strong>Задача 3</strong>. Бюджет семьи составляет 75 тыс. рублей в месяц. Из них 52,5 тыс. руб. &#8212; деньги, заработанные папой. 22,5 тыс. руб. &#8212; деньги, заработанные мамой. Выразите в процентах деньги, заработанные папой и мамой.</p>
+<p><strong>Решение</strong></p>
+<p>Данная задача, как и предыдущая, является задачей на нахождение процентного соотношения.</p>
+<p>Выразим в процентах деньги, заработанные папой. Он заработал 52,5 тыс. рублей из 75 тыс. рублей</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5481 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/09/525-k-75.png" alt="525 к 75" width="36" height="46" /></p>
+<p>Выполним деление в этой дроби:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5482 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/09/525-k-75-est-07.png" alt="525 к 75 есть 07" width="93" height="46" /></p>
+<p>Выразим полученный результат в процентах:</p>
+<p style="text-align: center;"><span style="color: #000000;">0,7 × 100 = 70%</span></p>
+<p>Значит, папа заработал 70% денег. Далее нетрудно догадаться, что остальные 30% денег заработала мама. Ведь 75 тыс. рублей это все 100% денег. Для уверенности сделаем проверку. Мама заработала 22,5 тыс. руб. из 75 тыс. руб. Записываем дробь, выполняем деление и выражаем в процентах полученный результат:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-5483 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/09/225-k-75-i-perevod-rezultat-v-protsenty.png" alt="225 к 75 и перевод результат в проценты" width="137" height="100" /></p>
+<hr />
+<p><strong>Задача 4</strong>. Школьник тренируется делать подтягивания на перекладине. В прошлом месяце он мог делать 8 подтягиваний за подход. В этом месяце он может делать 10 подтягиваний за подход. На сколько процентов он увеличил количество подтягиваний?</p>
+<p><strong>Решение</strong></p>
+<p>Узнаем на сколько больше подтягиваний школьник делает в текущем месяце, чем в прошлом</p>
+<p>10 − 8 = 2</p>
+<p>Узнаем какую часть два подтягивания составляют от восьми подтягиваний. Для этого найдем отношение 2 к 8</p>
+<p><img loading="lazy" decoding="async" class="wp-image-5285 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/dve-vosmyh.png" alt="две восьмых" width="11" height="46" /></p>
+<p>Выполним деление в этой дроби</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5286 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/2-k-8-delenie-ugolkom.png" alt="" width="120" height="223" /></p>
+<p>Выразим полученный результат в процентах:</p>
+<p style="text-align: center;"><span style="color: #000000;">0,25 × 100 = 25%</span></p>
+<p>Значит, школьник увеличил количество подтягиваний на 25%.</p>
+<p>Эту задачу можно решить и вторым, более быстрым методом &#8212; узнать во сколько раз 10 подтягиваний больше, чем 8 подтягиваний и полученный результат выразить в процентах.</p>
+<p>Чтобы узнать во сколько раз десять подтягиваний больше восьми подтягиваний, нужно найти отношение 10 к 8</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5287 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/desyat-vosymyh.png" alt="десять восымых" width="20" height="46" /></p>
+<p>Выполним деление в получившейся дроби</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5288 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/10-k-8-delenie-ugolkom.png" alt="10 к 8 деление уголком" width="138" height="227" /></p>
+<p>Выразим полученный результат в процентах:</p>
+<p style="text-align: center;"><span style="color: #000000;">1,25 × 100 = 125%</span></p>
+<p>Показатель подтягиваний в текущем месяце составляет 125%. Данное высказывание нужно понимать именно как <strong>&#171;составляет 125%&#187;</strong>, а не как <strong>&#171;показатель увеличился на 125%&#187;</strong>. Это два разных высказывания, выражающих различные количества.</p>
+<p>Высказывание &#171;составляет 125%&#187; нужно понимать как &#171;восемь подтягиваний, которые составляют 100% плюс два подтягивания, которые составляют 25% от восьми подтягиваний&#187;. Графически это выглядит следующим образом:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5289 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/8-podtyagivanij-i-2-podtyagivaniya-risunok.png" alt="8 подтягиваний и 2 подтягивания рисунок" width="659" height="233" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/8-podtyagivanij-i-2-podtyagivaniya-risunok.png 659w, https://spacemath.xyz/wp-content/uploads/2017/08/8-podtyagivanij-i-2-podtyagivaniya-risunok-300x106.png 300w" sizes="(max-width: 659px) 100vw, 659px" /></p>
+<p>А высказывание &#171;увеличился на 125%&#187; нужно понимать как &#171;к текущим восьми подтягиваниях, которые составляли 100% добавились еще 100% (еще 8 подтягиваний) плюс еще 25% (2 подтягивания)&#187;. Итого получается 18 подтягиваний</p>
+<p style="text-align: center;"><span style="color: #000000;">100% + 100% + 25% = 8 + 8 + 2 = 18 подтягиваний</span></p>
+<p>Графически это высказывание выглядит следующим образом:</p>
+<p><img loading="lazy" decoding="async" class="alignnone size-full wp-image-5290" src="https://spacemath.xyz/wp-content/uploads/2017/08/8-podtyagivanij-eshhe-8-i-2-podtyagivaniya-risunok.png" alt="8+8 подтягиваний и 2 подтягивания" width="659" height="219" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/8-podtyagivanij-eshhe-8-i-2-podtyagivaniya-risunok.png 659w, https://spacemath.xyz/wp-content/uploads/2017/08/8-podtyagivanij-eshhe-8-i-2-podtyagivaniya-risunok-300x100.png 300w" sizes="(max-width: 659px) 100vw, 659px" /></p>
+<p>Всего же получается 225%. Если найти 225% от восьми подтягиваний, мы получим 18 подтягиваний</p>
+<p style="text-align: center;"><span style="color: #000000;">8 × 2,25 = 18</span></p>
+<hr />
+<p><strong>Задача 5</strong>. В прошлом месяце зарплата составляла 19,2 тыс. руб. В текущем месяце она составила 20,16 тыс. руб. На сколько процентов повысилась зарплата?</p>
+<p>Эту задачу как и предыдущую можно решать двумя способами. Первый заключается в том, чтобы сначала узнать на сколько рублей увеличилась зарплата. Далее узнать какую часть эта прибавка составляет от зарплаты прошлого месяца</p>
+<p>Узнаем на сколько рублей повысилась зарплата:</p>
+<p style="text-align: center;"><span style="color: #000000;">20,16 − 19,2 = 0,96 тыс. руб.</span></p>
+<p>Узнаем какую часть 0,96 тыс. руб. составляет от 19,2. Для этого найдем отношение 0,96 к 19,2</p>
+<p><img loading="lazy" decoding="async" class="wp-image-5484 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/09/096-k-192.png" alt="096 к 192" width="38" height="49" /></p>
+<p>Выполним деление в получившейся дроби. По пути вспомним, как выполняется деление десятичных дробей</a>:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-5485 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/09/96-k-192-delenie-005.png" alt="96 к 192 деление 005" width="150" height="226" /></p>
+<p>Выразим полученный результат в процентах:</p>
+<p style="text-align: center;"><span style="color: #000000;">0,05 × 100 = 5%</span></p>
+<p>Значит, зарплата повысилась на 5%.</p>
+<p>Решим задачу вторым способом. Узнаем во сколько раз 20,16 тыс. руб. больше, чем 19,2 тыс. руб. Для этого найдем отношение 20,16 к 19,2</p>
+<p><img loading="lazy" decoding="async" class="wp-image-5486 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/09/2016-k-192.png" alt="2016 к 192" width="48" height="49" /></p>
+<p>Выполним деление в получившейся дроби:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-5487 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/09/2016-192-est-105.png" alt="2016 192 есть 105" width="185" height="226" /></p>
+<p>Выразим полученный результат в процентах:</p>
+<p style="text-align: center;"><span style="color: #000000;">1,05 × 100 = 105%</span></p>
+<p>Зарплата составляет 105%. То есть сюда входят 100%, которые составляли 19,2 тыс. руб., плюс 5% которые составляют 0,96 тыс. руб.</p>
+<p style="text-align: center;"><span style="color: #000000;">100% + 5% = 19,2 + 0,96</span></p>
+<hr />
+<p><strong>Задача 6</strong>. Цена ноутбука в этом месяце повысилась на 5%. Какова его цена, если в прошлом месяце он стоил 18,3 тыс. рублей?</p>
+<p><strong>Решение</strong></p>
+<p>Найдем 5% от 18,3:</p>
+<p><span style="color: #000000;">18,3 × 0,05 = 0,915</span></p>
+<p>Прибавим эти 5% к 18,3:</p>
+<p><span style="color: #000000;">18,3 + 0,915 = 19,215 тыс. руб.</span></p>
+<p><strong>Ответ</strong>: цена ноутбука составляет 19,215 тыс. руб.</p>
+<hr />
+<p><strong>Задача 7</strong>. Цена ноутбука в этом месяце снизилась на 10%. Какова его цена, если в прошлом месяце он стоил 16,3 тыс. рублей?</p>
+<p><strong>Решение</strong></p>
+<p>Найдем 10% от 16,3:</p>
+<p style="text-align: left;"><span style="color: #000000;">16,3 × 0,10 = 1,63</span></p>
+<p>Вычтем эти 10% из 16,3:</p>
+<p><span style="color: #000000;">16,3 − 1,63 = 14,</span><span style="color: #000000;">67 (тыс. рублей)</span></p>
+<p>Подобные задачи можно записывать кратко:</p>
+<p><span style="color: #000000;">16,3 − (16,3 × 0,10) = 14,67 (тыс. рублей)</span></p>
+<p><strong>Ответ</strong>: цена ноутбука составляет 14,67 тыс. рублей.</p>
+<hr />
+<p><strong>Задача 8</strong>. В прошлом месяце цена ноутбука составляла 21 тыс. рублей. В этом месяце цена повысилась до 22,05 тыс. рублей. На сколько процентов повысилась цена?</p>
+<p><strong>Решение</strong></p>
+<p>Определим насколько рублей повысилась цена</p>
+<p><span style="color: #000000;">22,05 − 21 = 1,05 (тыс. руб)</span></p>
+<p>Узнаем какую часть 1,05 тыс. руб. составляет от 21 тыс. руб.</p>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-5488 size-full" src="https://spacemath.xyz/wp-content/uploads/2017/09/105-k-21-est-005.png" alt="105 к 21 есть 005" width="102" height="46" /></p>
+<p>Выразим полученный результат в процентах</p>
+<p><span style="color: #000000;">0,05 × 100 = 5%</span></p>
+<p><strong>Ответ</strong>: цена ноутбука повысилась на 5%</p>
+<hr />
+<p><strong>Задача 8</strong>. Рабочий должен был изготовить по плану 600 деталей, а он изготовил 900 деталей. На сколько процентов он выполнил план?</p>
+<p><strong>Решение</strong></p>
+<p>Узнаем во сколько раз 900 деталей больше, чем 600 деталей. Для этого найдем отношение 900 к 600</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5292 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/900-k-600.png" alt="отношение 900 к 600" width="33" height="46" /></p>
+<p>Значение данной дроби равно 1,5. Выразим это значение в процентах:</p>
+<p><span style="color: #000000;">1,5 × 100 = 150%</span></p>
+<p>Значит, рабочий выполнил план на 150%. То есть выполнил его на все 100%, изготовив 600 деталей. Затем изготовил еще 300 деталей, что составляет 50% от изначального плана.</p>
+<p><strong>Ответ</strong>: рабочий выполнил план на 150%.</p>
+<hr />
+<h2 id="yak6" style="text-align: center;">Сравнение величин в процентах</h2>
+<p>Мы уже много раз сравнивали величины различными способами. Первым нашим инструментом была разность. Так, к примеру чтобы сравнить 5 рублей и 3 рубля, мы записывали разность 5−3. Получив ответ 2, можно было сказать, что &#171;пять рублей больше трех рублей на два рубля&#187;.</p>
+<p>Получаемый в результате вычитания ответ в повседневной жизни называют не &#171;разностью&#187;, а &#171;разницей&#187;.</p>
+<p>Так, разница между пятью и тремя рубля составляет два рубля.</p>
+<p>Следующим инструментом, которым мы воспользовались для сравнения величин, было отношение. Отношение позволяло нам узнать во сколько раз первое число больше второго (или сколько раз первое число содержит второе).</p>
+<p>Так, к примеру десять яблок больше двух яблок в пять раз. Или по другому, десять яблок содержит два яблока пять раз. Данное сравнение можно записать с помощью отношения</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5444 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/desyat-vtoryh-eto-pyat.png" alt="десять вторых это пять" width="57" height="43" /></p>
+<p>Но величины можно сравнить и в процентах. Например, цену двух товаров сравнивать не в рублях, а оценивать, насколько цена одного товара больше или меньше цены другого в процентах.</p>
+<p>Для сравнения величин в процентах, одну из них нужно обозначить как 100%, а вторую исходя из условий задачи.</p>
+<p>Например, узнаем на сколько процентов десять яблок больше, чем восемь яблок.</p>
+<p>За 100% нужно обозначить ту величину с которой мы что-либо сравниваем. Мы сравниваем 10 яблок с 8 яблоками. Значит, за 100% обозначаем 8 яблок:</p>
+<p><img loading="lazy" decoding="async" class="alignnone size-full wp-image-5453" src="https://spacemath.xyz/wp-content/uploads/2017/08/vosem-yablok-100-protsentov.png" alt="восемь яблок 100 процентов" width="659" height="132" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/vosem-yablok-100-protsentov.png 659w, https://spacemath.xyz/wp-content/uploads/2017/08/vosem-yablok-100-protsentov-300x60.png 300w" sizes="(max-width: 659px) 100vw, 659px" /></p>
+<p>Теперь наша задача сравнить на сколько процентов 10 яблок больше, чем эти 8 яблок. 10 яблок это 8+2 яблока. Значит, добавив к восьми яблокам ещё два яблока, мы увеличим 100% еще на какое-то число процентов. Чтобы узнать на какое именно, определим сколько процентов от восьми яблок составляют два яблока</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5454 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/otnoshenie-2-k-8-v-protsentah.png" alt="отношение 2 к 8 в процентах" width="242" height="43" /></p>
+<p>Добавив эти 25% к восьми яблокам, мы получим 10 яблок. А 10 яблок это 8+2, то есть 100% и еще 25%. Итого получаем 125%</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5455 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/vosem-i-desyat-yablok.png" alt="восемь и десять яблок" width="659" height="250" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/vosem-i-desyat-yablok.png 659w, https://spacemath.xyz/wp-content/uploads/2017/08/vosem-i-desyat-yablok-300x114.png 300w" sizes="(max-width: 659px) 100vw, 659px" /></p>
+<p>Значит, десять яблок больше восьми яблок на 25%.</p>
+<p>Теперь решим обратную задачу. Узнаем насколько процентов восемь яблок меньше, чем десять яблок. Сразу напрашивается ответ, что восемь яблок меньше на 25%. Однако это не так.</p>
+<p>Мы сравниваем восемь яблок с десятью яблоками. Мы договорились, что за 100% будем брать то, с чем сравниваем. Поэтому в этот раз за 100% берем 10 яблок:</p>
+<p><img loading="lazy" decoding="async" class="alignnone size-full wp-image-5457" src="https://spacemath.xyz/wp-content/uploads/2017/08/desyat-i-vosem-yablok-risunok-1.png" alt="десять и восемь яблок рисунок 1" width="659" height="112" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/desyat-i-vosem-yablok-risunok-1.png 659w, https://spacemath.xyz/wp-content/uploads/2017/08/desyat-i-vosem-yablok-risunok-1-300x51.png 300w" sizes="(max-width: 659px) 100vw, 659px" /></p>
+<p>Восемь яблок это 10−2, то есть уменьшив 10 яблок на 2 яблока, мы уменьшим их на какое-то число процентов. Чтобы узнать на какое именно, определим сколько процентов от десяти яблок составляют два яблока</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5456 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/2-k-10-v-protsentah.png" alt="2 к 10 в процентах" width="237" height="43" /></p>
+<p>Отняв эти 20% от десяти яблок, мы получим 8 яблок. А 8 яблок это 10−2, то есть 100% и минус 20%. Итого получаем 80%</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5458 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/desyat-i-vosem-yablok-risunok-2.png" alt="десять и восемь яблок рисунок 2" width="659" height="242" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/desyat-i-vosem-yablok-risunok-2.png 659w, https://spacemath.xyz/wp-content/uploads/2017/08/desyat-i-vosem-yablok-risunok-2-300x110.png 300w" sizes="(max-width: 659px) 100vw, 659px" /></p>
+<p>Значит, восемь яблок меньше десяти яблок на 20%.</p>
+<hr />
+<p><strong>Задача 2</strong>. На сколько процентов 5000 рублей больше, чем 4000 рублей?</p>
+<p><strong>Решение</strong></p>
+<p>Примем 4000 рублей за 100%. 5 тысяч больше 4 тысяч на 1 тысячу. Значит, увеличив четыре тысячи на одну тысячу, мы увеличим четыре тысячи на какое-то количество процентов. Узнаем на какое именно. Для этого определим какую часть одна тысяча составляет от четырех тысяч:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5418 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/1000-k-4000-est-25-protsentov.png" alt="1000 к 4000 есть 25 процентов" width="111" height="43" /></p>
+<p>Выразим полученный результат в процентах:</p>
+<p style="text-align: center;"><span style="color: #000000;">0,25 × 100 = 25%</span></p>
+<p>1000 рублей от 4000 рублей составляют 25%. Если прибавить эти 25% к 4000, то получится 5000 рублей. Значит, 5000 рублей на 25% больше, чем 4000 рублей</p>
+<p><img loading="lazy" decoding="async" class="wp-image-5426 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/risunok-k-zadache-5-tys-bolshe-4-tys.png" alt="рисунок к задаче 5 тыс больше 4 тыс" width="519" height="296" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/risunok-k-zadache-5-tys-bolshe-4-tys.png 519w, https://spacemath.xyz/wp-content/uploads/2017/08/risunok-k-zadache-5-tys-bolshe-4-tys-300x171.png 300w" sizes="(max-width: 519px) 100vw, 519px" /></p>
+<hr />
+<p><strong>Задача 3</strong>. На сколько процентов 4000 рублей меньше, чем 5000 рублей?</p>
+<p>В этот раз сравниваем 4000 с 5000. Примем 5000 за 100%. Пять тысяч больше четырех тысяч на одну тысячу рублей. Узнаем какую часть одна тысяча составляет от пяти тысяч</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5459 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/1-k-5-v-protsentah.png" alt="1 к 5 в процентах" width="260" height="43" /></p>
+<p>Тысяча от пяти тысяч составляет 20%. Если вычесть эти 20% от 5000 рублей, то получим 4000 рублей.</p>
+<p>Значит, 4000 рублей меньше 5000 рублей на 20%</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5460 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/08/risunok-k-zadache-4-tys-menshe-5-tys.png" alt="рисунок к задаче 4 тыс меньше 5 тыс" width="375" height="146" srcset="https://spacemath.xyz/wp-content/uploads/2017/08/risunok-k-zadache-4-tys-menshe-5-tys.png 375w, https://spacemath.xyz/wp-content/uploads/2017/08/risunok-k-zadache-4-tys-menshe-5-tys-300x117.png 300w" sizes="(max-width: 375px) 100vw, 375px" /></p>
+<hr />
+<h2 id="yak8" style="text-align: center;">Задачи на концентрацию, сплавы и смеси</h2>
+<p>Допустим, возникло желание приготовить какой-нибудь сок. У нас в распоряжении имеется вода и малиновый сироп</p>
+<p><img loading="lazy" decoding="async" class="wp-image-7274 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/09/voda-pitevaya-i-sirop-malinovyj.png" alt="вода питьевая и сироп малиновый" width="535" height="340" srcset="https://spacemath.xyz/wp-content/uploads/2017/09/voda-pitevaya-i-sirop-malinovyj.png 535w, https://spacemath.xyz/wp-content/uploads/2017/09/voda-pitevaya-i-sirop-malinovyj-300x191.png 300w" sizes="(max-width: 535px) 100vw, 535px" /></p>
+<p>Нальем 200 мл воды в стакан:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-7248 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/200-ml-vody-stakan-risunok.png" alt="200 мл воды стакан рисунок" width="183" height="340" srcset="https://spacemath.xyz/wp-content/uploads/2018/03/200-ml-vody-stakan-risunok.png 183w, https://spacemath.xyz/wp-content/uploads/2018/03/200-ml-vody-stakan-risunok-161x300.png 161w" sizes="(max-width: 183px) 100vw, 183px" /></p>
+<p>Добавим 50 мл малинового сиропа и размешаем полученную жидкость. В результате у нас получится 250 мл малинового сока <em><span style="color: #000000;">(200 мл воды + 50 мл сиропа = 250 мл сока)</span></em></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7249 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/250-ml-soka-risunok.png" alt="250 мл сока рисунок" width="183" height="340" srcset="https://spacemath.xyz/wp-content/uploads/2018/03/250-ml-soka-risunok.png 183w, https://spacemath.xyz/wp-content/uploads/2018/03/250-ml-soka-risunok-161x300.png 161w" sizes="(max-width: 183px) 100vw, 183px" /></p>
+<p>Какую часть от получившегося сока составляет малиновый сироп?</p>
+<p>Малиновый сироп составляет <img loading="lazy" decoding="async" class="alignnone size-full wp-image-7252" src="https://spacemath.xyz/wp-content/uploads/2018/03/50-na-250.png" alt="50 на 250" width="33" height="45" /> сока. Вычислим это отношение, получим число <span style="color: #000000;">0,20</span>. Это число показывает количество растворённого сиропа в получившемся соке. Назовём это число <strong>концентрацией сиропа</strong>.</p>
+<p><span style="color: #333399;"><strong><em>Концентрацией растворённого вещества называют отношение количества растворённого вещества или его массы к объему раствора.</em></strong></span></p>
+<p>Концентрация обычно выражается в процентах. Давайте выразим концентрацию сиропа в процентах:</p>
+<p style="text-align: center;"><span style="color: #000000;">0,20 × 100 = 20%</span></p>
+<p>Таким образом, концентрация сиропа в малиновом соке составляет 20%.</p>
+<p>Вещества в растворе могут быть неоднородными. Например, смешаем 3 л воды и 200 г соли.</p>
+<p>Масса 1 л воды составляет 1 кг. Тогда масса 3 л воды будет составлять 3 кг. Переведем 3 кг в граммы, получим 3 кг = 3000 г.</p>
+<p>Теперь в 3000 г воды опустим 200 г соли и смешаем полученную жидкость. В результате получится соленный раствор, общая масса которого будет составлять 3000+200, то есть 3200 г. Найдем концентрацию соли в полученном растворе. Для этого найдём отношение массы растворенной соли к массе раствора</p>
+<p><img loading="lazy" decoding="async" class="wp-image-7254 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/200-na-3200-v-protsentah.png" alt="200 на 3200 в процентах" width="310" height="45" srcset="https://spacemath.xyz/wp-content/uploads/2018/03/200-na-3200-v-protsentah.png 310w, https://spacemath.xyz/wp-content/uploads/2018/03/200-na-3200-v-protsentah-300x44.png 300w" sizes="(max-width: 310px) 100vw, 310px" /></p>
+<p>Значит, при смешивании 3 л воды и 200 г соли получится 6,25%-й раствор соли.</p>
+<p>Аналогично может быть определено количество вещества в сплаве или в смеси. Например, сплав содержит олово массой 210 г, и серебро массой 90 г. Тогда масса сплава будет составлять 210+90, то есть 300 г. Олова в сплаве будет содержаться <img loading="lazy" decoding="async" class="alignnone size-full wp-image-7255" src="https://spacemath.xyz/wp-content/uploads/2018/03/210-na-300.png" alt="" width="33" height="45" />, а серебра <img loading="lazy" decoding="async" class="alignnone size-full wp-image-7256" src="https://spacemath.xyz/wp-content/uploads/2018/03/90-na-300.png" alt="90 на 300" width="33" height="45" />. В процентном соотношении олова будет <span style="color: #000000;">70%</span>, а серебра <span style="color: #000000;">30%</span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7257 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/210-na-300-i-90-na-300-v-protsentah.png" alt="210 на 300 и 90 на 300 в процентах" width="261" height="106" /></p>
+<p>При смешивании двух растворов получается новый раствор, состоящий из первого и второго растворов. У нового раствора концентрация вещества может быть другой. Полезным навыком является умение решать задачи на концентрацию, сплавы и смеси. В общем итоге смысл таких задач заключается в отслеживании изменений, которые происходят при смешивании растворов различной концентрации.</p>
+<p>Смешаем два малиновых сока. Первый сок объемом 250 мл содержит 12,8% малинового сиропа. А второй сок объемом 300 мл содержит 15% малинового сиропа. Сольем эти два сока в большой стакан и смешаем. В результате получим новый сок объемом 550 мл.</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7251 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/3-soka-250-300-i-550-ml.png" alt="3 сока 250 300 и 550 мл" width="659" height="380" srcset="https://spacemath.xyz/wp-content/uploads/2018/03/3-soka-250-300-i-550-ml.png 659w, https://spacemath.xyz/wp-content/uploads/2018/03/3-soka-250-300-i-550-ml-300x173.png 300w" sizes="(max-width: 659px) 100vw, 659px" /></p>
+<p>Теперь определим концентрацию сиропа в полученном соке. Первый слитый сок объемом 250 мл содержал 12,8% сиропа. А 12,8% от 250 мл это 32 мл. Значит, первый сок содержал 32 мл сиропа.</p>
+<p>Второй слитый сок объемом 300 мл содержал 15% сиропа. А 15% от 300 мл это 45 мл. Значит, второй сок содержал 45 мл сиропа.</p>
+<p>Сложим количества сиропов:</p>
+<p style="text-align: center;"><span style="color: #000000;">32 мл + 45 мл = 77 мл</span></p>
+<p>Эти 77 мл сиропа содержатся в новом соке, объем которого составляет 550 мл. Определим концентрацию сиропа в этом соке. Для этого найдём отношение 77 мл растворённого сиропа к объему сока 550 мл:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7258 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/77-na-550-v-protsentah.png" alt="77 на 550 в процентах" width="252" height="45" /></p>
+<p>Значит, при смешивании 12,8%-го малинового сока объемом 250 мл и 15%&#x200d;-го малинового сока объемом 300 мл, получается 14%-й малиновый сок объемом 550 мл.</p>
+<hr />
+<p><strong>Задача 1</strong>. Имеются 3 раствора морской соли в воде: первый раствор содержит 10% соли, второй содержит 15% соли и третий &#8212; 20% соли. Смешали 130 мл первого раствора, 200 мл второго раствора и 170 мл третьего раствора. Определите сколько процентов составляет морская соль в полученном растворе.</p>
+<p><strong>Решение</strong></p>
+<p>Определим объем полученного раствора:</p>
+<p style="text-align: center;"><span style="color: #000000;">130 мл + 200 мл + 170 мл = 500 мл</span></p>
+<p>Поскольку в первом растворе было <span style="color: #000000;">130 × 0,10 = 13 </span>мл морской соли, во втором растворе <span style="color: #000000;">200 × 0,15 = 30</span> мл морской соли, а в третьем &#8212; <span style="color: #000000;">170 × 0,20 = 34</span> мл морской соли, то в полученном растворе будет содержаться <span style="color: #000000;">13 + 30 + 34 = 77</span> мл морской соли.</p>
+<p>Определим концентрацию морской соли в полученном растворе. Для этого найдём отношение 77 мл морской соли к объему раствора 500 мл</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7259 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/77-na-500-v-protsentah.png" alt="77 на 500 в процентах" width="279" height="45" /></p>
+<p>Значит, в полученном растворе содержится 15,4% морской соли.</p>
+<hr />
+<p><strong>Задача 2</strong>. Сколько граммов воды надо добавить к 50 г раствора, содержащего 8% соли, чтобы получить 5%-й раствор?</p>
+<p><strong>Решение</strong></p>
+<p>Заметим, что если к имеющемуся раствору добавить воды, то количество соли в нём не изменится. Изменится только её процентное содержание, поскольку добавление воды в раствор приведёт к изменению его массы.</p>
+<p>Нам нужно добавить такое количество воды при котором восемь процентов соли стали бы пятью процентами.</p>
+<p>Определим сколько граммов соли содержится в 50 г раствора. Для этого найдем 8% от 50</p>
+<p style="text-align: center;"><span style="color: #000000;">50 г × 0,08 = 4 г</span></p>
+<p>8% от 50 г составляют 4 г. Другими словами, на восемь частей из ста приходятся 4 грамма соли. Давайте сделаем так, чтобы эти 4 грамма приходились не на восемь частей, а на пять частей, то есть на 5%</p>
+<p style="text-align: center;">4 грамма &#8212; 5%</p>
+<p>Теперь зная, что на 5% раствора приходятся 4 грамма, мы можем найти массу всего раствора. Для этого нужно <a href="https://spacemath.xyz/procenti/" target="_blank" rel="noopener noreferrer">найти число по его проценту</a>:</p>
+<p style="text-align: center;"><span style="color: #000000;">4 г : 5 = 0,8 г<br />
+0,8 г × 100 = 80 г</span></p>
+<p>80 граммов раствора это масса при которой 4 грамма соли будут приходиться на 5% раствора. А для получения этих 80 граммов, нужно к изначальным 50 граммам добавить 30 граммов воды.</p>
+<p>Значит, для получения 5%-го раствора соли, нужно к имеющемуся раствору добавить 30 г воды.</p>
+<hr />
+<p><strong>Задача 2</strong>. Виноград содержит 91% влаги, а изюм – 7%. Сколько килограммов винограда требуется для получения 21 килограмма изюма?</p>
+<p><strong>Решение</strong></p>
+<p>Виноград состоит из влаги и чистого вещества. Если в свежем винограде содержится 91% влаги, то на остальные 9% будет приходиться чистое вещество этого винограда:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7260 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/risunok-vinograd-shema-vlaga-i-chistoe-veshhestvo.png" alt="рисунок виноград схема влага и чистое вещество" width="657" height="119" srcset="https://spacemath.xyz/wp-content/uploads/2018/03/risunok-vinograd-shema-vlaga-i-chistoe-veshhestvo.png 657w, https://spacemath.xyz/wp-content/uploads/2018/03/risunok-vinograd-shema-vlaga-i-chistoe-veshhestvo-300x54.png 300w" sizes="(max-width: 657px) 100vw, 657px" /></p>
+<p>Изюм же содержит 93% чистого вещества и 7% влаги:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7261 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/risunok-yuzyum-shema-vlaga-i-chistoe-veshhestvo.png" alt="рисунок юзюм схема влага и чистое вещество" width="657" height="120" srcset="https://spacemath.xyz/wp-content/uploads/2018/03/risunok-yuzyum-shema-vlaga-i-chistoe-veshhestvo.png 657w, https://spacemath.xyz/wp-content/uploads/2018/03/risunok-yuzyum-shema-vlaga-i-chistoe-veshhestvo-300x55.png 300w" sizes="(max-width: 657px) 100vw, 657px" /></p>
+<p>Заметим, что в процессе превращения винограда в изюм, исчезает только влага этого винограда. Чистое вещество остаётся без изменения. После того, как виноград превратится в изюм, в получившемся изюме будет 7% влаги и 93% чистого вещества.</p>
+<p>Определим сколько чистого вещества содержится в 21 кг изюма. Для этого найдем 93% от 21 кг</p>
+<p style="text-align: center;"><span style="color: #000000;">21 кг × 0,93 = 19,53 кг</span></p>
+<p>Теперь вернемся к первому рисунку. Наша задача состояла в том, чтобы определить сколько винограда нужно взять для получения 21 кг изюма. Чистое вещество массой 19,53 кг будет приходиться на 9% винограда:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-7262 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/risunok-vinograd-shema-vlaga-i-chistoe-veshhestvo-v19.53kg.png" alt="рисунок виноград схема влага и чистое вещество в 19.53 кг" width="657" height="174" srcset="https://spacemath.xyz/wp-content/uploads/2018/03/risunok-vinograd-shema-vlaga-i-chistoe-veshhestvo-v19.53kg.png 657w, https://spacemath.xyz/wp-content/uploads/2018/03/risunok-vinograd-shema-vlaga-i-chistoe-veshhestvo-v19.53kg-300x79.png 300w" sizes="(max-width: 657px) 100vw, 657px" /></p>
+<p>Теперь зная, что 9% чистого вещества составляют 19,53 кг, мы можем определить сколько винограда требуется для получения 21 кг изюма. Для этого нужно найти число по его проценту:</p>
+<p style="text-align: center;"><span style="color: #000000;">19,53 кг : 9 = 2,17 кг</span><br />
+<span style="color: #000000;"> 2,17 кг × 100 = 217 кг</span></p>
+<p>Значит, для получения 21 кг изюма нужно взять 217 кг винограда.</p>
+<hr />
+<p><strong>Задача 3</strong>. В сплаве олова и меди медь составляет 85%. Сколько надо взять сплава, чтобы в нём содержалось 4,5 кг олова?</p>
+<p><strong>Решение</strong></p>
+<p>Если в сплаве медь составляет 85%, то на остальные 15% будет приходиться олово:</p>
+<p><img loading="lazy" decoding="async" class="alignnone size-full wp-image-7263" src="https://spacemath.xyz/wp-content/uploads/2018/03/risunok-85pr-medi-i-15pr-olova.png" alt="рисунок 85пр меди и 15пр олова" width="646" height="117" srcset="https://spacemath.xyz/wp-content/uploads/2018/03/risunok-85pr-medi-i-15pr-olova.png 646w, https://spacemath.xyz/wp-content/uploads/2018/03/risunok-85pr-medi-i-15pr-olova-300x54.png 300w" sizes="(max-width: 646px) 100vw, 646px" /></p>
+<p>Спрашивается сколько надо взять сплава, чтобы в нем содержалось 4,5 олова. Поскольку олова в сплаве содержится 15%, то 4,5 кг олова и будут приходиться на эти 15%.</p>
+<p>А зная, что 4,5 кг сплава составляют 15% мы можем определить массу всего сплава. Для этого нужно найти число по его проценту:</p>
+<p style="text-align: center;"><span style="color: #000000;">4,5 кг : 15 = 0,3 кг</span><br />
+<span style="color: #000000;"> 0,3 кг × 100 = 30 кг</span></p>
+<p>Значит, сплава нужно взять 30 кг, чтобы в нём содержалось 4,5 кг олова.</p>
+<hr />
+<p><strong>Задача 4</strong>. Смешали некоторое количество 12%-го раствора соляной кислоты с таким же количеством 20%-го раствора этой же кислоты. Найти концентрацию получившейся соляной кислоты.</p>
+<p><strong>Решение</strong></p>
+<p>Изобразим на рисунке первый раствор в виде прямой линии и выделим на нём 12%</p>
+<p><img loading="lazy" decoding="async" class="alignnone size-full wp-image-7268" src="https://spacemath.xyz/wp-content/uploads/2018/03/risunok-1-k-zadache-slozhenie-12pr-i-20pr-kisloty.png" alt="рисунок 1 к задаче сложение 12пр и 20пр кислоты" width="329" height="67" srcset="https://spacemath.xyz/wp-content/uploads/2018/03/risunok-1-k-zadache-slozhenie-12pr-i-20pr-kisloty.png 329w, https://spacemath.xyz/wp-content/uploads/2018/03/risunok-1-k-zadache-slozhenie-12pr-i-20pr-kisloty-300x61.png 300w" sizes="(max-width: 329px) 100vw, 329px" /></p>
+<p>Поскольку количество растворов одинаково, рядом можно изобразить такой же рисунок, иллюстрирующий второй раствор с содержанием соляной кислоты 20%</p>
+<p><img loading="lazy" decoding="async" class="alignnone size-full wp-image-7269" src="https://spacemath.xyz/wp-content/uploads/2018/03/risunok-2-k-zadache-slozhenie-12pr-i-20pr-kisloty-itog.png" alt="рисунок 2 к задаче сложение 12пр и 20пр кислоты итог" width="659" height="67" srcset="https://spacemath.xyz/wp-content/uploads/2018/03/risunok-2-k-zadache-slozhenie-12pr-i-20pr-kisloty-itog.png 659w, https://spacemath.xyz/wp-content/uploads/2018/03/risunok-2-k-zadache-slozhenie-12pr-i-20pr-kisloty-itog-300x31.png 300w" sizes="(max-width: 659px) 100vw, 659px" /></p>
+<p>У нас получилось двести частей раствора <span style="color: #000000;">(100% + 100%)</span>, тридцать две части из которых составляют соляную кислоту <span style="color: #000000;">(12% + 20%)</span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7276 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/09/risunok-k-zadache-slozhenie-12pr-i-20pr-kisloty-itog.png" alt="рисунок к задаче сложение 12пр и 20пр кислоты итог" width="659" height="186" srcset="https://spacemath.xyz/wp-content/uploads/2017/09/risunok-k-zadache-slozhenie-12pr-i-20pr-kisloty-itog.png 659w, https://spacemath.xyz/wp-content/uploads/2017/09/risunok-k-zadache-slozhenie-12pr-i-20pr-kisloty-itog-300x85.png 300w" sizes="(max-width: 659px) 100vw, 659px" /></p>
+<p>Определим какую часть 32 части составляют от 200 частей</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7270 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/32-na-200-v-protsentah.png" alt="32 на 200 в процентах" width="252" height="45" /></p>
+<p>Значит, при смешивании 12%-го раствора соляной кислоты с таким же количеством 20%-го раствора этой же кислоты получится 16%-й раствор соляной кислоты.</p>
+<p>Для проверки представим, что масса первого раствора была 2 кг. Масса второго раствора так же будет составлять 2 кг. Тогда при смешивании этих растворов получится 4 кг раствора. В первом растворе соляной кислоты было <span style="color: #000000;">2 × 0,12 = 0,24 кг,</span> а во втором &#8212; <span style="color: #000000;">2 × 0,20 = 0,40 кг</span>. Тогда в новом растворе соляной кислоты будет <span style="color: #000000;">0,24 + 0,40 = 0,64 кг</span>. Концентрация соляной кислоты составит 16%</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7271 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/064-na-4-v-protsentah.png" alt="064 на 4 в процентах" width="258" height="45" /></p>
+    <h3>Хотите перейти на следующий урок?</h3>
+<a href="lection1.html" class="back">Вернуться ‹‹</a>
+<a href="lection3.html" class="next">Вперёд »</a>
+
+<script type="text/javascript">
+
+var menuItems = document.querySelectorAll('.skew-menu ul li');
+
+for (var i = 0; i < menuItems.length; i++) {
+   menuItems[i].addEventListener('click', function() {
+       // Действия при выборе определенной лекции
+   });
+}
+document.querySelectorAll('.skew-menu li').forEach(item => {
+    item.addEventListener('mouseover', () => {
+        item.style.transition = 'transform 0.3s';
+        item.style.transform = 'scale(1.2)';
+    });
+
+    item.addEventListener('mouseout', () => {
+        if (!item.classList.contains("clicked")) { // Проверяем, не была ли ячейка уже уменьшена при клике
+            item.style.transition = 'transform 0.3s';
+            item.style.transform = 'scale(1)';
+        }
+    });
+
+     document.addEventListener("click", function(event) { 
+         if (!event.target.closest(".skew-menu li")) return;
+
+         const clickedItem= event.target.closest(".skew-menu li");
+
+         document.querySelectorAll('.skew-menu li').forEach(otherItem => { 
+             otherItem.classList.remove("clicked");
+             otherItem.removeEventListener("transitionend", removeTransition);
+          });
+          
+          function removeTransition() { this.classList.remove("clicked"); }
+
+          const clickedClassList= clickedItem.classList;
+          clickedClassList.add("clicked");
+
+          setTimeout(() =>{
+              clickedClassList.remove("clicked")
+           },300)
+
+           function toggleTransform(){
+               let scaleValue= window.getComputedStyle(clickedItem).getPropertyValue('transform');
+
+               if(scaleValue==='none'){
+                   clickedItem.setAttribute(
+                       "style",
+                       "transition: all .5s ease-in-out; transform: scale(.8);"
+                     );
+                 }else{
+                     clickedItem.removeAttribute("style");
+                  }
+            }
+
+            toggleTransform();
+      });
+});
+let currentLesson = document.querySelector('.active a');
+currentLesson.style.color = '#007bff';
+
+menuItems[0].classList.add("active");
+
+document.querySelector('.back').setAttribute("href", "lection14.html");
+document.querySelector('.next').setAttribute("href", "lection16.html");
+
+</script>
+</body>
+</html>

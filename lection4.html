@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лекция 1: Числа</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: 200px auto;
+            gap: 20px;
+        }
+        
+        .skew-menu {
+            background-color: #f2f2f2; /* Цвет фона для меню */
+            padding: 10px;
+        }
+
+        .lecture-content {
+            background-color: #e6e6e6; /* Цвет фона для контента лекции */
+            padding: 20px;
+        }
+
+        h1, h2, p {
+          margin-bottom: 15px;  
+      }
+
+      a.back, a.next{
+         text-decoration:none; 
+         color:#333; 
+     }
+     body {
+            background-image: url(images/7.avif);
+            background-attachment: fixed;
+            -moz-background-size: 100%;
+            -webkit-background-size: 100%;
+            -o-background-size: 100%;
+            background-size: 100%;
+        }
+        h1{
+        color: rgb(0, 0, 0) !important; 
+        font-family: courier !important; 
+         text-align: center !important;
+  }
+        p {
+         color: rgb(0, 0, 0);
+         font-family: 'Times New Roman', Times, serif;
+         font-size: 150%;
+         text-align: right; 
+        }
+        h2{
+        color: dark !important; 
+        font-family: Georgia, 'Times New Roman', Times, serif !important; 
+         text-align: center !important;
+  }
+        p {
+         color: rgb(0, 0, 0); 
+         font-family: 'Times New Roman', Times, serif;
+         font-size: 150%; 
+         text-align: center;
+        }
+        a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.back {
+    background-color: #ddd;
+    color: rgb(0, 0, 0);
+}
+
+.next {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.round {
+    border-radius: 50%;
+}
+@radius: 7px;
+@skew: 25deg;
+@main-color: tomato;
+
+body{
+  font-family:Helvetica Neue, Helvetica, sans-serif;
+  background:@main-color;
+}
+
+.skew-menu{
+  text-align:center;
+  margin-top:3em;
+  padding: 10px;
+    max-height: 1200px; /* Устанавливаем максимальную высоту */
+    max-width: 700px;
+    width: 200px;
+    overflow-y: auto; /* Добавляем вертикальную прокрутку при необходимости */
+}
+
+.skew-menu ul{
+  display:inline-block;
+  margin:0;
+  padding:0;
+  list-style:none;
+  transform:skew(-@skew);
+  width: 250px;
+}
+
+.skew-menu ul li{
+  background:#fff;
+  float:left;
+  border-right:1px solid #eee;
+  box-shadow:0 1px 1px rgba(0,0,0,0.1);
+  text-transform:uppercase;
+  color:#555;
+  font-weight:bolder;
+  transition:all 0.3s linear;
+  display: block;
+  text-align: center;
+  width: 200px;
+  max-width: 200px;
+  &:first-child
+  {
+
+    border-radius:@radius 0 0 @radius;
+  }
+  
+  &:last-child{
+    border-right:none;
+    border-radius:0 @radius @radius 0;
+  }
+  
+  &:hover{
+    background:#eee;
+    color:@main-color;
+  }
+  
+  a{
+    display:block;
+    padding:1em 2em;
+    color:inherit;
+    text-decoration:none;
+    transform:skew(@skew);
+  }
+}
+.navless{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: lighter;
+    font-size: 20px;
+}
+.menu{
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+.active a {
+  color: #007bff; /* Выделите цвет текста */
+}
+    </style>
+
+</head>
+
+<body>
+
+<nav class="skew-menu">
+    <ul>
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="lection1.html">Лекция 1</a></li>
+      <li><a href="lection2.html">Лекция 2</a></li>
+      <li><a href="lection3.html">Лекция 3</a></li>
+      <li class="active"><a href="lection4.html">Лекция 4</a></li>
+      <li><a href="lection5.html">Лекция 5</a></li>
+      <li><a href="lection6.html">Лекция 6</a></li>
+      <li><a href="lection7.html">Лекция 7</a></li>
+      <li><a href="lection8.html">Лекция 8</a></li>
+      <li><a href="lection9.html">Лекция 9</a></li>
+      <li><a href="lection10.html">Лекция 10</a></li>
+      <li><a href="lection11.html">Лекция 11</a></li>
+      <li><a href="lection12.html">Лекция 12</a></li>
+      <li><a href="lection13.html">Лекция 13</a></li>
+      <li><a href="lection14.html">Лекция 14</a></li>
+      <li><a href="lection15.html">Лекция 15</a></li>
+      <li><a href="lection16.html">Лекция 16</a></li>
+      <li><a href="lection17.html">Лекция 17</a></li>
+      <li><a href="lection18.html">Лекция 18</a></li>
+      <li><a href="lection19.html">Лекция 19</a></li>
+      <li><a href="lection20.html">Лекция 20</a></li>
+      <li><a href="lection21.html">Лекция 21</a></li>
+      <li><a href="lection22.html">Лекция 22</a></li>
+      <li><a href="lection23.html">Лекция 23</a></li>
+      <li><a href="lection24.html">Лекция 24</a></li>
+      <li><a href="lection25.html">Лекция 25</a></li>
+      <li><a href="lection26.html">Лекция 26</a></li>
+      <li><a href="lection27.html">Лекция 27</a></li>
+      <li><a href="lection28.html">Лекция 28</a></li>
+      <li><a href="lection29.html">Лекция 29</a></li>
+      <li><a href="lection30.html">Лекция 30</a></li>
+    </ul>
+</nav>
+
+<div class="lecture-content">
+    <h1>Лекция 4: Дроби</h1>
+    <h2 id="yak1" style="text-align: center;"><strong>Что такое дробь?</strong></h2>
+    <p>Если говорить простым языком, то дробь это часть чего-либо. Это &#171;чего-либо&#187; может быть чем угодно &#8212; едой, деньгами, числом. В народе дробь называют долей. Само слово &#171;дробь&#187; тоже говорит за себя &#8212; дробь означает дробление, деление, разделение.</p>
+    <p>Рассмотрим пример из жизни. Мы купили себе пиццу, чтобы съесть её в течении дня. Допустим мы решили разделить её на четыре части, чтобы съедать постепенно по одному кусочку.</p>
+    <p><img decoding="async" class="wp-image-8472 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/07/tselaya-pitstsa-razdelena-na-4-chasti.png" alt="целая пицца разделена на 4 части" width="280" height="280" srcset="https://spacemath.xyz/wp-content/uploads/2016/07/tselaya-pitstsa-razdelena-na-4-chasti.png 280w, https://spacemath.xyz/wp-content/uploads/2016/07/tselaya-pitstsa-razdelena-na-4-chasti-150x150.png 150w" sizes="(max-width: 280px) 100vw, 280px" /></p>
+    <p>Посмотрите на этот рисунок. Представьте, что это наша пицца, разделённая на четыре куска. Каждый кусок пиццы это и есть дробь, потому что каждый кусок по отдельности это часть пиццы.</p>
+    <p>Допустим мы съели один кусок. Как его записать? Очень просто. Сначала рисуется маленькая линия:</p>
+    <p><img decoding="async" class="size-full wp-image-8511 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/07/1-na-4-v-vide-risunka-shag-1.png" alt="1 на 4 в виде рисунка шаг 1" width="21" height="6" /></p>
+    <p>Внизу этой линии записывается на сколько кусков пицца была разделена. Пицца была разделена на четыре куска. Значит внизу линии записывается четвёрка:</p>
+    <p><img decoding="async" class="size-full wp-image-8510 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/07/1-na-4-v-vide-risunka-shag-2.png" alt="1 на 4 в виде рисунка шаг 2" width="21" height="40" /></p>
+    <p>А сверху этой линии записывается сколько кусков пиццы было съедено. Съеден был один кусок, значит сверху записываем единицу:</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-8509 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/07/1-na-4-v-vide-risunka.png" alt="1 на 4 в виде рисунка" width="21" height="74" /></p>
+    <p>Такие записи называют <strong>дробями</strong>. Дробь состоит из числителя и знаменателя.</p>
+    <p style="text-align: left;">Число, которое записывается сверху, называется <strong>числителем дроби</strong>.</p>
+    <p style="text-align: left;">Число, которое записывается снизу, называется <strong>знаменателем дроби</strong>.</p>
+    <p>В нашем примере числитель дроби это единица, а знаменатель дроби &#8212; четвёрка. Эту дробь можно прочитать так: <span style="color: #000000;"><em>&#171;одна четвёртая&#187; </em></span>либо <span style="color: #000000;"><em>&#171;один кусок из четырёх&#187;</em></span> либо <span style="color: #000000;"><em>&#171;одна четвёртая доля&#187;</em></span> либо <span style="color: #000000;"><em>&#171;четверть&#187; </em>&#8212; в</span>сё это синонимы.</p>
+    <p>Теперь представьте, что мы съели ещё один кусок той же самой пиццы, которая была разделена на четыре куска. Как записать такую дробь?</p>
+    <p>Очень просто. Сверху записываем 2 (поскольку уже съедено два куска), а внизу записываем 4 (поскольку всего кусков было 4):</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-8512 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/07/1-na-2-v-vide-risunka.png" alt="1 на 2 в виде рисунка" width="21" height="74" /></p>
+    <p>Эта дробь читается так: <span style="color: #000000;"><em>&#171;две четвёртых&#187;</em></span> либо <span style="color: #000000;"><em>&#171;два куска из четырёх&#187;</em></span> либо <span style="color: #000000;"><em>&#171;две четвёртые доли&#187;</em></span>.</p>
+    <p>Теперь представьте, что пиццу мы разделили не на четыре части, а на три.</p>
+    <p><img loading="lazy" decoding="async" class="wp-image-7120 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/07/pitstsa-razdelennaya-na-tri-chasti-risunok.png" alt="пицца разделенная на три части рисунок" width="305" height="304" srcset="https://spacemath.xyz/wp-content/uploads/2016/07/pitstsa-razdelennaya-na-tri-chasti-risunok.png 305w, https://spacemath.xyz/wp-content/uploads/2016/07/pitstsa-razdelennaya-na-tri-chasti-risunok-150x150.png 150w, https://spacemath.xyz/wp-content/uploads/2016/07/pitstsa-razdelennaya-na-tri-chasti-risunok-300x300.png 300w" sizes="(max-width: 305px) 100vw, 305px" /></p>
+    <p>Допустим мы съели один кусок этой пиццы. Как записать такую дробь?</p>
+    <p>Очень просто. Опять же рисуется маленькая линия. Внизу этой линии записывается число 3, поскольку пицца разделена на три части, а сверху этой линии записывается число 1, поскольку съеден один кусок:</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-8513 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/07/1-na-3-v-vide-risunka.png" alt="1 на 3 в виде рисунка" width="21" height="73" /></p>
+    <p>Эта дробь читается так: <span style="color: #000000;"><em>&#171;Одна третья&#187;</em></span> либо <span style="color: #ffffff;"><em>&#171;Один кусок из трёх&#187;</em></span> либо <span style="color: #f7f7f7;"><em>&#171;Одна третья доля&#187;</em></span> либо <span style="color: #ffffff;"><em>&#171;Треть&#187;</em></span>.</p>
+    <p>Если мы съедим два куска пиццы, то такая дробь будет называться <span style="color: #000000;"><em>&#171;две третьих&#187;</em></span> и записываться следующим образом:</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-8514 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/07/2-na-3-v-vide-risunka.png" alt="2 на 3 в виде рисунка" width="21" height="73" /></p>
+    <p>Теперь представьте, что пиццу мы разделили на две части, или как говорят в народе: <span style="color: #000000;"><em>&#171;Пополам&#187;</em></span>:</p>
+    <p><img loading="lazy" decoding="async" class="wp-image-8473 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/07/pitstsa-razdelennaya-popolam.png" alt="пицца разделенная пополам" width="296" height="286" /></p>
+    <p>Допустим, из этих двух кусков мы съели один кусок. Как записать такую дробь?</p>
+    <p>Опять же рисуем линию. Внизу этой линии записываем число 2, поскольку пицца разделена на две части, а вверху записываем число 1, поскольку съеден один кусок:</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-8515 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/07/1-na-2-v-vide-risunka-1.png" alt="" width="21" height="73" /></p>
+    <p>Эта дробь читается так: <span style="color: #ffffff;"><em>&#171;одна вторая&#187;</em></span> либо <span style="color: #ffffff;"><em>&#171;один кусок из двух&#187;</em></span> либо <span style="color: #ffffff;"><em>&#171;одна вторая доля&#187;</em></span> либо <span style="color: #ffffff;"><em>&#171;половина&#187;.</em></span></p>
+    <p style="text-align: left;">Дроби, которые мы сейчас рассмотрели, называют <strong>обыкновенными</strong>.</p>
+    <p style="text-align: left;">Вообще, дроби бывают двух видов: <strong>обыкновенные</strong> и <strong>десятичные</strong>. На данный момент мы рассматриваем <strong>обыкновенные</strong> <strong>дроби</strong>. Обыкновенная дробь это дробь, которая состоит из числителя и знаменателя. Десятичные дроби рассмотрим немного позже.</p>
+    <p style="text-align: left;">Знаменатель дроби &#8212; это число, которое показывает на сколько равных частей можно что-либо разделить. Вернёмся к нашей пицце. Поровну эта пицца может быть разделена и на 2 части и на 3, и на 4, и на 5, и на 6. В зависимости от того, на сколько частей мы будем делить пиццу, знаменатель будет меняться.</p>
+    <p style="text-align: left;">На следующем рисунке представлены три пиццы, которые разделены по разному. У первой пиццы знаменателем будет 2. У второй пиццы знаменателем будет 3. У третьей пиццы знаменателем будет 4.</p>
+    <p><img loading="lazy" decoding="async" class="wp-image-8474 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/07/znamenateli-dlya-razlichnyh-drobej.png" alt="знаменатели для различных дробей" width="658" height="296" srcset="https://spacemath.xyz/wp-content/uploads/2016/07/znamenateli-dlya-razlichnyh-drobej.png 658w, https://spacemath.xyz/wp-content/uploads/2016/07/znamenateli-dlya-razlichnyh-drobej-300x135.png 300w" sizes="(max-width: 658px) 100vw, 658px" /></p>
+    <p>Числитель же показывает сколько частей взято от чего-либо. К примеру, если разделить пиццу на две части, как на первом рисунке, и взять одну часть для трапезы, то получится что мы взяли <img loading="lazy" decoding="async" class="alignnone wp-image-2948 size-full" title="одна вторая" src="https://spacemath.xyz/wp-content/uploads/2016/11/odna-vtoraya.png" alt="одна вторая" width="12" height="43" /> (<span style="color: #000000;"><em>одну часть из двух</em></span>), или как говорят в народе <span style="color: #000000;"><em>&#171;половину&#187;</em></span> пиццы.</p>
+    <p style="text-align: center;">С помощью переменных дробь можно записать так:</p>
+    <p style="text-align: center;"><img loading="lazy" decoding="async" class="aligncenter wp-image-554 size-full" src="https://spacemath.xyz/wp-content/uploads/2016/06/drob.png" alt="drob" width="40" height="67" />где <em>a</em> &#8212; это числитель, <em>b</em> &#8212; знаменатель.</p>
+    <p>Следующая вещь, которую важно знать это то, что обыкновенные дроби бывают <strong>правильными</strong> и <strong>неправильными</strong>.</p>
+    <p><strong>Правильная</strong> дробь &#8212; это дробь, у которой числитель меньше знаменателя. Например, следующие дроби являются правильными:</p>
+    <p><img loading="lazy" decoding="async" class="aligncenter wp-image-559 size-full" src="https://spacemath.xyz/wp-content/uploads/2016/06/12131491.png" alt="12131491" width="162" height="48" /></p>
+    <p>Почему такие дроби называют правильными? Вспомним, что дробь это часть чего-либо. Ведь будет логичнее, если эта часть будет меньше того, откуда эта часть была взята. Например, если пицца разделена на четыре части, и мы возьмём <img loading="lazy" decoding="async" class="alignnone wp-image-2917 size-full" title="одна четвёртая" src="https://spacemath.xyz/wp-content/uploads/2016/07/odna-chetvyortaya.png" alt="одна четвёртая" width="12" height="43" /> (<span style="color: #000000;"><em>одну четвёртую</em></span>), то наш кусок будет меньше, чем все четыре куска вместе взятые (<span style="color: #000000;"><em>чем одна целая пицца</em></span>). Поэтому такие дроби называют правильными.</p>
+    <p style="text-align: left;">С неправильной дробью всё с точностью наоборот. Неправильная дробь &#8212; это дробь, у которой числитель больше знаменателя. Например, следующие дроби являются неправильными:</p>
+    <p style="text-align: left;"><a href="https://spacemath.xyz/wp-content/uploads/2016/06/nepravilnaya.png"><img loading="lazy" decoding="async" class="size-full wp-image-569 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/06/nepravilnaya.png" alt="nepravilnaya" width="169" height="51" /></a>Видно, что у этих дробей числитель больше знаменателя. Почему же такие дроби называют неправильными? Вспомним, что дробь это часть чего-либо. Знаменатель показывает на сколько частей это чего-либо разделено. А числитель показывает сколько этого чего-либо взяли.</p>
+    <p style="text-align: left;">Теперь возьмём к примеру неправильную дробь <img loading="lazy" decoding="async" class="alignnone size-full wp-image-570" src="https://spacemath.xyz/wp-content/uploads/2016/06/92.png" alt="92" width="15" height="51" /> и применим её к нашей пицце. В знаменателе стоит 2, значит пицца разделена на две части, а в числителе стоит 9. Получается, что взято девять кусков из двух. Но как можно взять девять кусков, если их всего два? Ответ &#8212; никак. Поэтому такие дроби называют неправильными.</p>
+    <p style="text-align: left;">Дробь, у которой числитель и знаменатель одинаковые, тоже называют неправильной. Например:</p>
+    <p style="text-align: left;"><img loading="lazy" decoding="async" class="aligncenter wp-image-575 size-full" src="https://spacemath.xyz/wp-content/uploads/2016/06/nepravilnaya2.png" alt="nepravilnaya2" width="158" height="51" /></p>
+    <p style="text-align: left;">Вообще, такие дроби даже не должны называться дробями. И вот почему. Рассмотрим к примеру дробь <img loading="lazy" decoding="async" class="alignnone wp-image-577 size-full" src="https://spacemath.xyz/wp-content/uploads/2016/06/22.png" alt="22" width="18" height="51" />. Применим её к нашей пицце.</p>
+    <p style="text-align: left;">Допустим, мы хотим съесть<img loading="lazy" decoding="async" class="alignnone wp-image-577 size-full" src="https://spacemath.xyz/wp-content/uploads/2016/06/22.png" alt="22" width="18" height="51" />пиццы.  В знаменателе стоит число 2, значит пицца разделена на две части. И в числителе стоит 2, значит взято две части. По сути, взята вся целая пицца, и если мы съедим эту<img loading="lazy" decoding="async" class="alignnone wp-image-577 size-full" src="https://spacemath.xyz/wp-content/uploads/2016/06/22.png" alt="22" width="18" height="51" />пиццы, то съедим не часть пиццы, а всю пиццу целиком. Иными словами, съедим не дробь, а целую часть пиццы. Поэтому дробь, у которой числитель и знаменатель одинаковые, называют неправильной.</p>
+    <hr />
+    <h2 id="yak2" style="text-align: center;"><strong>Дробь означает деление</strong></h2>
+    <p style="text-align: left;">Черта в дроби, которая отделяет числитель от знаменателя, означает деление. Она говорит, что числитель можно разделить на знаменатель.</p>
+    <p style="text-align: left;">Например, рассмотрим дробь <img loading="lazy" decoding="async" class="alignnone size-full wp-image-609" src="https://spacemath.xyz/wp-content/uploads/2016/06/42.png" alt="42" width="20" height="51" />. Дробная черта говорит, что четвёрку можно разделить на двойку. Мы знаем, что четыре разделить на два будет два. Ставим знак равенства (=) и записываем ответ:</p>
+    <p style="text-align: left;"><img loading="lazy" decoding="async" class="size-full wp-image-618 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/06/4222.png" alt="4222" width="215" height="117" /></p>
+    <p>Можно сделать вывод, что любое деление чисел можно записать с помощью дробей. Например:</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-620 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/06/drobi2.png" alt="drobi2" width="72" height="217" /></p>
+    <p>Это простейшие примеры. Видно, что у них отсутствует остаток. С остатком немного сложнее, зато интереснее. Поговорим об этом в следующей теме, которая называется &#171;выделение целой части дроби&#187;.</p>
+    <hr />
+    <h2 id="vydelenie_celoj_chasti_drobi" style="text-align: center;">Выделение целой части дроби</h2>
+    <p>Вычислим дробь <img loading="lazy" decoding="async" class="alignnone size-full wp-image-623" src="https://spacemath.xyz/wp-content/uploads/2016/06/52-2.png" alt="52" width="16" height="50" /> . Пять разделить на два будет два и один в остатке:</p>
+    <p style="text-align: center;">5 : 2 = 2 (1 в остатке)</p>
+    <p style="text-align: center;"><strong>Проверка: (2 × 2)</strong> + 1 = <strong>4</strong> + 1 = 5</p>
+    <p>Но сейчас мы имеем дело с дробями, значит и отвечать надо в дробном виде. Чтобы хорошо понять, как это делается, рассмотрим пример из жизни.</p>
+    <p>Представьте, что у вас есть 5 яблок и вы решили поделиться ими со своим другом. Причём поделиться по-честному, чтобы каждому досталось поровну. Как разделить эти 5 яблок?</p>
+    <p>Очевидно, что каждому из вас достанется по два яблока, а оставшееся одно яблоко вы разрежете ножом пополам и тоже разделите между собой:</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-624 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/06/apple1.png" alt="apple1" width="426" height="581" srcset="https://spacemath.xyz/wp-content/uploads/2016/06/apple1.png 426w, https://spacemath.xyz/wp-content/uploads/2016/06/apple1-220x300.png 220w" sizes="(max-width: 426px) 100vw, 426px" /></p>
+    <p style="text-align: left;">Посмотрите внимательно на этот рисунок. На нём показано, как пять яблок разделены между вами и вашим другом. Очевидно, что каждому досталось по два целых яблока и по половинке яблока.</p>
+    <p style="text-align: left;">Теперь возвращаемся к дроби <img loading="lazy" decoding="async" class="alignnone size-full wp-image-623" src="https://spacemath.xyz/wp-content/uploads/2016/06/52-2.png" alt="52" width="16" height="50" /> и отвечаем на её вопрос. Сколько будет пять разделить на два? Смотрим на наш рисунок и отвечаем: если пять яблок разделить на двоих, то каждому достанется два целых яблока и половинка яблока. Так и записываем:</p>
+    <p style="text-align: left;"><img loading="lazy" decoding="async" class="size-full wp-image-625 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/06/52212.png" alt="52212" width="80" height="57" /></p>
+    <p style="text-align: center;">Схематически это выглядит так:</p>
+    <p style="text-align: left;"><img loading="lazy" decoding="async" class="alignnone size-full wp-image-627" src="https://spacemath.xyz/wp-content/uploads/2016/06/apple2.png" alt="apple2" width="598" height="527" srcset="https://spacemath.xyz/wp-content/uploads/2016/06/apple2.png 598w, https://spacemath.xyz/wp-content/uploads/2016/06/apple2-300x264.png 300w" sizes="(max-width: 598px) 100vw, 598px" /></p>
+    <p style="text-align: left;">Процедуру, которую мы сейчас провели, называют <strong>выделением целой части дроби</strong>.</p>
+    <p style="text-align: left;">В нашем примере мы выделили целую часть дроби <img loading="lazy" decoding="async" class="alignnone wp-image-3025 size-full" title="пять вторых" src="https://spacemath.xyz/wp-content/uploads/2016/07/pyat-vtoryh.png" alt="пять вторых" width="12" height="43" /> и получили новую дробь <img loading="lazy" decoding="async" class="alignnone wp-image-2922 size-full" title="две целых одна вторая" src="https://spacemath.xyz/wp-content/uploads/2016/07/dve-tselyh-odna-vtoraya.png" alt="две целых одна вторая" width="33" height="40" />.  Такую дробь называют <strong>смешанной</strong>. Смешанная дробь &#8212; это дробь, у которой есть <strong>целая</strong> часть и <strong>дробная</strong>.</p>
+    <p style="text-align: left;">В нашем примере целая часть это 2, а дробная часть это <img loading="lazy" decoding="async" class="alignnone wp-image-2948 size-full" title="одна вторая" src="https://spacemath.xyz/wp-content/uploads/2016/11/odna-vtoraya.png" alt="одна вторая" width="12" height="43" /></p>
+    <p style="text-align: left;"><img loading="lazy" decoding="async" class="size-full wp-image-634 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/06/212poyasnenie.png" alt="212poyasnenie" width="316" height="115" srcset="https://spacemath.xyz/wp-content/uploads/2016/06/212poyasnenie.png 316w, https://spacemath.xyz/wp-content/uploads/2016/06/212poyasnenie-300x109.png 300w" sizes="(max-width: 316px) 100vw, 316px" /></p>
+    <p style="text-align: left;">Обязательно запомните эти понятия! А лучше запишите в свою рабочую тетрадь.</p>
+    <p style="text-align: left;">Выделить целую часть можно только у неправильных дробей. Напомним, что неправильная дробь это дробь, у которой числитель больше знаменателя. Например, следующие дроби являются неправильными, и у них выделена целая часть:</p>
+    <p style="text-align: left;"><img loading="lazy" decoding="async" class="size-full wp-image-632 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/06/vcxh.png" alt="vcxh" width="107" height="305" srcset="https://spacemath.xyz/wp-content/uploads/2016/06/vcxh.png 107w, https://spacemath.xyz/wp-content/uploads/2016/06/vcxh-105x300.png 105w" sizes="(max-width: 107px) 100vw, 107px" /></p>
+    <p style="text-align: left;">Чтобы выделить целую часть, достаточно знать, как делить числа уголком. Например, выделим целую часть у дроби <img loading="lazy" decoding="async" class="alignnone size-full wp-image-623" src="https://spacemath.xyz/wp-content/uploads/2016/06/52-2.png" alt="52" width="16" height="50" />. Записываем уголком данное выражение и решаем:</p>
+    <p style="text-align: left;"><img loading="lazy" decoding="async" class="size-full wp-image-635 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/06/5221.png" alt="5221" width="492" height="242" srcset="https://spacemath.xyz/wp-content/uploads/2016/06/5221.png 492w, https://spacemath.xyz/wp-content/uploads/2016/06/5221-300x148.png 300w" sizes="(max-width: 492px) 100vw, 492px" /></p>
+    <p style="text-align: left;">После того, как решение примера завершается, новую дробь собирают подобно детскому конструктору. Важно понимать, что куда относить. Частное относят к целой части, остаток относят в числитель дробной части, делитель относят в знаменатель дробной части.</p>
+    <p style="text-align: left;">В принципе, если вы хорошо знаете таблицу умножения, и можете быстро в уме выполнять элементарные вычисления, то можно обойтись без записей уголком. В школах кстати, именно этого и требуют &#8212; чтобы учащиеся не тратили время на простые операции, а сразу записывали ответы.</p>
+    <p style="text-align: left;">Но если вы только начинаете изучать математику, советуем записывать каждую мелочь.</p>
+    <p style="text-align: left;">Рассмотрим ещё один пример на выделение целой части. Пусть требуется выделить целую часть дроби <img loading="lazy" decoding="async" class="alignnone wp-image-640 size-full" src="https://spacemath.xyz/wp-content/uploads/2016/06/576.png" alt="576" width="29" height="49" /></p>
+    <p style="text-align: left;">Записываем уголком данное выражение и решаем. Потом собираем смешанную дробь:</p>
+    <p style="text-align: left;"><img loading="lazy" decoding="async" class="size-full wp-image-642 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/06/5769936.png" alt="5769936" width="488" height="120" srcset="https://spacemath.xyz/wp-content/uploads/2016/06/5769936.png 488w, https://spacemath.xyz/wp-content/uploads/2016/06/5769936-300x74.png 300w" sizes="(max-width: 488px) 100vw, 488px" /></p>
+    <p style="text-align: center;">Получили: <img loading="lazy" decoding="async" class="size-full wp-image-643 alignnone" src="https://spacemath.xyz/wp-content/uploads/2016/06/5769362.png" alt="5769362" width="104" height="52" /></p>
+    <hr />
+    <h2 id="perevod_smeshannogo_chisla_v_nepravilnuyu_drob" style="text-align: center;"><strong>Перевод смешанного числа в неправильную дробь</strong></h2>
+    <p>Любое смешанное число получается в результате выделения целой части в неправильной дроби. Например, рассмотрим неправильную дробь <img loading="lazy" decoding="async" class="alignnone size-full wp-image-1122" src="https://spacemath.xyz/wp-content/uploads/2016/07/15101.png" alt="15101" width="15" height="47" />. Если выделить в ней целую часть, то получается <img loading="lazy" decoding="async" class="alignnone size-full wp-image-1123" src="https://spacemath.xyz/wp-content/uploads/2016/07/15102.png" alt="15102" width="25" height="46" /></p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-1124 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/07/15103.png" alt="15103" width="67" height="46" /></p>
+    <p>Но возможен и обратный процесс &#8212; любое смешанное число можно перевести в неправильную дробь. Для этого целую часть надо умножить на знаменатель дробной части и полученный результат прибавить к числителю дробной части. Полученный результат будет числителем новой дроби, а знаменатель останется без изменений.</p>
+    <p>Например, переведём смешанное число <img loading="lazy" decoding="async" class="alignnone size-full wp-image-1123" src="https://spacemath.xyz/wp-content/uploads/2016/07/15102.png" alt="15102" width="25" height="46" /> в неправильную дробь. Умножаем целую часть 2 на знаменатель дробной части:</p>
+    <p style="text-align: center;"><span style="color: #000000;">2 × 3 = 6</span></p>
+    <p>Затем к 6 прибавляем числитель дробной части:</p>
+    <p style="text-align: center;"><span style="color: #000000;">6 + 1 = 7</span></p>
+    <p>Полученная семёрка будет числителем новой дроби, а знаменатель 3 останется без изменений:</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-1125 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/07/15104.png" alt="15104" width="15" height="46" /></p>
+    <p>Подробное решение выглядит так:</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-1127 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/07/15106.png" alt="15106" width="243" height="48" /></p>
+    <p>А с помощью переменных перевод смешанного числа в неправильную дробь можно записать так:</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-1126 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/07/15105.png" alt="15105" width="140" height="49" /></p>
+    <hr />
+    <p><strong>Пример 2.</strong> Перевести смешанное число <img loading="lazy" decoding="async" class="alignnone size-full wp-image-1128" src="https://spacemath.xyz/wp-content/uploads/2016/07/15111.png" alt="15111" width="28" height="46" /> в неправильную дробь.</p>
+    <p>Умножаем целую часть смешанного числа на знаменатель дробной части и прибавляем к числителю дробной части, а знаменатель оставляем без изменений:<br />
+    <img loading="lazy" decoding="async" class="size-full wp-image-1129 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/07/15112.png" alt="15112" width="267" height="46" /></p>
+    <hr />
+    <h2 id="yak5" style="text-align: center;"><strong>Основное свойство дроби</strong></h2>
+    <p style="text-align: left;">Основное свойство дроби говорит о том, что если числитель и знаменатель дроби умножить или разделить на одно и то же число, то получится равная ей дробь. Это означает, что значение дроби не изменится.</p>
+    <p style="text-align: left;">Например, рассмотрим дробь <img loading="lazy" decoding="async" class="alignnone wp-image-2948 size-full" title="одна вторая" src="https://spacemath.xyz/wp-content/uploads/2016/11/odna-vtoraya.png" alt="одна вторая" width="12" height="43" />.  Умножим её числитель и знаменатель на одно и то же число, например на число 2</p>
+    <p style="text-align: left;"><img loading="lazy" decoding="async" class="size-full wp-image-685 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/06/111224.png" alt="111224" width="160" height="50" /></p>
+    <p style="text-align: left;">Получили новую дробь <img loading="lazy" decoding="async" class="alignnone wp-image-5842 size-full" src="https://spacemath.xyz/wp-content/uploads/2017/10/dve-chetvertyh.png" alt="две четвертых" width="14" height="45" />.  Если верить основному свойству дроби, то дроби <img loading="lazy" decoding="async" class="alignnone wp-image-2948 size-full" title="одна вторая" src="https://spacemath.xyz/wp-content/uploads/2016/11/odna-vtoraya.png" alt="одна вторая" width="12" height="43" />  и <img loading="lazy" decoding="async" class="alignnone wp-image-5842 size-full" src="https://spacemath.xyz/wp-content/uploads/2017/10/dve-chetvertyh.png" alt="две четвертых" width="14" height="45" /> равны между собой. Так ли это? Давайте проверим, нарисовав эти дроби в виде кусочков пиццы:</p>
+    <p style="text-align: left;"><img loading="lazy" decoding="async" class="wp-image-8476 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/07/polovina-i-dve-chetverti-risunok.png" alt="половина и две четверти рисунок" width="413" height="402" srcset="https://spacemath.xyz/wp-content/uploads/2016/07/polovina-i-dve-chetverti-risunok.png 413w, https://spacemath.xyz/wp-content/uploads/2016/07/polovina-i-dve-chetverti-risunok-300x292.png 300w" sizes="(max-width: 413px) 100vw, 413px" /></p>
+    <p style="text-align: left;">Посмотрите внимательно на эти два рисунка. Первый рисунок иллюстрирует дробь <img loading="lazy" decoding="async" class="alignnone wp-image-2948 size-full" title="одна вторая" src="https://spacemath.xyz/wp-content/uploads/2016/11/odna-vtoraya.png" alt="одна вторая" width="12" height="43" /> <span style="color: #000000;"><em>(один кусок из двух)</em></span>, а второй иллюстрирует дробь <img loading="lazy" decoding="async" class="alignnone wp-image-5842 size-full" src="https://spacemath.xyz/wp-content/uploads/2017/10/dve-chetvertyh.png" alt="две четвертых" width="14" height="45" /><span style="color: #000000;"><em> (два куска из четырёх)</em></span>. Если хорошо присмотреться на эти куски, то можно убедиться, что у них одинаковые размеры. Различие лишь в том, что разделаны они по-разному. Первая пицца была разделана на два куска, и с неё взяли один кусок. А вторая пицца была разделана на четыре куска, и с неё взяли два куска.</p>
+    <p style="text-align: left;">Поэтому между дробями <img loading="lazy" decoding="async" class="alignnone wp-image-2948 size-full" title="одна вторая" src="https://spacemath.xyz/wp-content/uploads/2016/11/odna-vtoraya.png" alt="одна вторая" width="12" height="43" /> и <img loading="lazy" decoding="async" class="alignnone wp-image-5842 size-full" src="https://spacemath.xyz/wp-content/uploads/2017/10/dve-chetvertyh.png" alt="две четвертых" width="14" height="45" /> можно поставить знак равенства (=), поскольку они равны одному и тому же значению:</p>
+    <p style="text-align: left;"><img loading="lazy" decoding="async" class="size-full wp-image-691 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/06/1112243.png" alt="1112243" width="76" height="53" /></p>
+    <p style="text-align: left;">Теперь испытаем основное свойство дроби, разделив числитель и знаменатель на одно и то же число.</p>
+    <p style="text-align: left;">Рассмотрим дробь <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9771" src="https://spacemath.xyz/wp-content/uploads/2019/02/4-na-8.png" alt="4 на 8" width="12" height="45" />. Давайте разделим её числитель и знаменатель на одно и то же число, например на число 2</p>
+    <p style="text-align: left;"><img loading="lazy" decoding="async" class="size-full wp-image-694 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/06/1148242.png" alt="1148242" width="160" height="51" /></p>
+    <p style="text-align: left;">Получили новую дробь <img loading="lazy" decoding="async" class="alignnone wp-image-5842 size-full" src="https://spacemath.xyz/wp-content/uploads/2017/10/dve-chetvertyh.png" alt="две четвертых" width="14" height="45" />. Если верить основному свойству дроби, то дроби <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9771" src="https://spacemath.xyz/wp-content/uploads/2019/02/4-na-8.png" alt="4 на 8" width="12" height="45" /> и <img loading="lazy" decoding="async" class="alignnone wp-image-5842 size-full" src="https://spacemath.xyz/wp-content/uploads/2017/10/dve-chetvertyh.png" alt="две четвертых" width="14" height="45" /> равны между собой. Так ли это? Давайте проверим,  нарисовав эти дроби в виде кусочков пиццы:</p>
+    <p style="text-align: left;"><img loading="lazy" decoding="async" class="wp-image-8478 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/07/chetyre-vosmyh-i-dve-chetvertyh-risunok.png" alt="четыре восьмых и две четвертых рисунок" width="417" height="405" srcset="https://spacemath.xyz/wp-content/uploads/2016/07/chetyre-vosmyh-i-dve-chetvertyh-risunok.png 417w, https://spacemath.xyz/wp-content/uploads/2016/07/chetyre-vosmyh-i-dve-chetvertyh-risunok-300x291.png 300w" sizes="(max-width: 417px) 100vw, 417px" /></p>
+    <p style="text-align: left;">Посмотрите внимательно на эти два рисунка. Первый рисунок иллюстрирует дробь <img loading="lazy" decoding="async" class="alignnone size-full wp-image-693" src="https://spacemath.xyz/wp-content/uploads/2016/06/114824.png" alt="114824" width="20" height="50" /> <span style="color: #000000;"><em>(четыре куска из восьми)</em></span>, а второй иллюстрирует дробь <img loading="lazy" decoding="async" class="alignnone wp-image-5842 size-full" src="https://spacemath.xyz/wp-content/uploads/2017/10/dve-chetvertyh.png" alt="две четвертых" width="14" height="45" /> <span style="color: #000000;"><em>(два куска из четырёх)</em></span>. Если хорошо присмотреться на эти куски, то можно убедиться, что у них одинаковые размеры. Различие лишь в том, что разделаны они по-разному. Первая пицца была разделана на восемь кусков, и с неё взяли четыре куска. А вторая пицца была разделана на четыре куска, и с неё взяли два куска.</p>
+    <p style="text-align: left;">Поэтому между дробями <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9771" src="https://spacemath.xyz/wp-content/uploads/2019/02/4-na-8.png" alt="4 на 8" width="12" height="45" /> и <img loading="lazy" decoding="async" class="alignnone wp-image-5842 size-full" src="https://spacemath.xyz/wp-content/uploads/2017/10/dve-chetvertyh.png" alt="две четвертых" width="14" height="45" /> можно поставить знак равенства (=), поскольку они равны одному и тому же значению:</p>
+    <p style="text-align: left;"><img loading="lazy" decoding="async" class="size-full wp-image-696 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/06/1148243.png" alt="1148243" width="83" height="52" /></p>
+    <p style="text-align: left;">Теперь мы полностью проверили, как работает основное свойство дроби, и убедились, что работает оно замечательно.</p>
+    <p style="text-align: left;">Число, на которое умножается числитель и знаменатель, называется <strong>дополнительным множителем</strong>. Запомните это обязательно!</p>
+    <hr />
+    <h2 id="sokrashchenie_drobi" style="text-align: center;"><strong>Сокращение дробей</strong></h2>
+    <p style="text-align: left;">Дроби можно сокращать. Сократить &#8212; значит сделать дробь короче и проще для восприятия. Например, дробь <img loading="lazy" decoding="async" class="alignnone wp-image-2948 size-full" title="одна вторая" src="https://spacemath.xyz/wp-content/uploads/2016/11/odna-vtoraya.png" alt="одна вторая" width="12" height="43" /> выглядит намного проще и красивее, чем дробь <img loading="lazy" decoding="async" class="alignnone size-full wp-image-718" src="https://spacemath.xyz/wp-content/uploads/2016/06/112040.png" alt="112040" width="29" height="50" /> .</p>
+    <p style="text-align: left;">Если при решении примеров получается большая и некрасивая дробь, то нужно попытаться её сократить.</p>
+    <p style="text-align: left;">Сокращение дроби опирается на основное свойство дроби. Поэтому, прежде чем изучать сокращение дробей, обязательно изучите основное свойство дроби.</p>
+    <p style="text-align: left;">Деление числителя и знаменателя на их наибольший общий делитель называется <strong>сокращением дроби</strong>.</p>
+    <p style="text-align: left;"><strong>Пример 1.</strong> Сократить дробь <img loading="lazy" decoding="async" class="alignnone wp-image-5842 size-full" src="https://spacemath.xyz/wp-content/uploads/2017/10/dve-chetvertyh.png" alt="две четвертых" width="14" height="45" /></p>
+    <p style="text-align: left;">Итак, нужно разделить числитель и знаменатель дроби <img loading="lazy" decoding="async" class="alignnone wp-image-5842 size-full" src="https://spacemath.xyz/wp-content/uploads/2017/10/dve-chetvertyh.png" alt="две четвертых" width="14" height="45" /> на наибольший общий делитель чисел 2 и 4.</p>
+    <p style="text-align: left;">В данном случае дробь простая и для неё НОД ищется легко. НОД чисел 2 и 4 это число 2. Значит, числитель и знаменатель дроби <img loading="lazy" decoding="async" class="alignnone wp-image-5842 size-full" src="https://spacemath.xyz/wp-content/uploads/2017/10/dve-chetvertyh.png" alt="две четвертых" width="14" height="45" /> надо разделить на 2</p>
+    <p style="text-align: left;"><img loading="lazy" decoding="async" class="size-full wp-image-808 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/06/132412.png" alt="132412" width="165" height="57" /></p>
+    <p>В результате дробь <img loading="lazy" decoding="async" class="alignnone wp-image-5842 size-full" src="https://spacemath.xyz/wp-content/uploads/2017/10/dve-chetvertyh.png" alt="две четвертых" width="14" height="45" /> обратилась в более простую дробь <img loading="lazy" decoding="async" class="alignnone wp-image-2948 size-full" title="одна вторая" src="https://spacemath.xyz/wp-content/uploads/2016/11/odna-vtoraya.png" alt="одна вторая" width="12" height="43" />. Значение исходной дроби при этом не изменилось, поскольку сокращение подразумевает деление числителя и знаменателя на одно и то же число. А это действие, как было указано ранее, не меняет значение дроби.</p>
+    <p><img loading="lazy" decoding="async" class="size-full wp-image-10081 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/07/drobi-risunok-sd.png" alt="дроби рисунок сд" width="467" height="334" srcset="https://spacemath.xyz/wp-content/uploads/2016/07/drobi-risunok-sd.png 467w, https://spacemath.xyz/wp-content/uploads/2016/07/drobi-risunok-sd-300x215.png 300w" sizes="(max-width: 467px) 100vw, 467px" /></p>
+    <p>На рисунке представлены дроби <img loading="lazy" decoding="async" class="alignnone wp-image-5842 size-full" src="https://spacemath.xyz/wp-content/uploads/2017/10/dve-chetvertyh.png" alt="две четвертых" width="14" height="45" /> и <img loading="lazy" decoding="async" class="alignnone wp-image-2948 size-full" title="одна вторая" src="https://spacemath.xyz/wp-content/uploads/2016/11/odna-vtoraya.png" alt="одна вторая" width="12" height="43" /> в виде кусочков пиццы. До сокращения и после сокращения они имеют одинаковые размеры. Разница лишь в том, что раздéланы они по-разному.</p>
+    <hr />
+    <p style="text-align: left;"><strong>Пример 2.</strong> Сократим дробь <img loading="lazy" decoding="async" class="alignnone size-full wp-image-718" src="https://spacemath.xyz/wp-content/uploads/2016/06/112040.png" alt="112040" width="29" height="50" /></p>
+    <p style="text-align: left;">Чтобы сократить дробь <img loading="lazy" decoding="async" class="alignnone size-full wp-image-718" src="https://spacemath.xyz/wp-content/uploads/2016/06/112040.png" alt="112040" width="29" height="50" />, нужно числитель и знаменатель этой дроби разделить на наибольший общий делитель чисел 20 и 40.</p>
+    <p style="text-align: left;">НОД чисел 20 и 40 это число 20. Поэтому делим числитель и знаменатель дроби <img loading="lazy" decoding="async" class="alignnone size-full wp-image-718" src="https://spacemath.xyz/wp-content/uploads/2016/06/112040.png" alt="112040" width="29" height="50" /> на 20</p>
+    <p style="text-align: left;"><img loading="lazy" decoding="async" class="size-full wp-image-809 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/06/13204012.png" alt="13204012" width="189" height="55" /></p>
+    <hr />
+    <p style="text-align: left;"><strong>Пример 3</strong>. Сократим дробь <img loading="lazy" decoding="async" class="alignnone wp-image-3956 size-full" title="Тридцать два тридцать шестых" src="https://spacemath.xyz/wp-content/uploads/2016/07/Tridtsat-dva-tridtsat-shestyh.png" alt="Тридцать два тридцать шестых" width="22" height="43" /></p>
+    <p style="text-align: left;">Чтобы сократить дробь <img loading="lazy" decoding="async" class="alignnone wp-image-3956 size-full" title="Тридцать два тридцать шестых" src="https://spacemath.xyz/wp-content/uploads/2016/07/Tridtsat-dva-tridtsat-shestyh.png" alt="Тридцать два тридцать шестых" width="22" height="43" />, нужно числитель и знаменатель этой дроби разделить на наибольший общий делитель чисел 32 и 36.</p>
+    <p style="text-align: left;">НОД чисел 32 и 36 это число 4. Поэтому делим числитель и знаменатель дроби <img loading="lazy" decoding="async" class="alignnone wp-image-3956 size-full" title="Тридцать два тридцать шестых" src="https://spacemath.xyz/wp-content/uploads/2016/07/Tridtsat-dva-tridtsat-shestyh.png" alt="Тридцать два тридцать шестых" width="22" height="43" /> на 4</p>
+    <p style="text-align: left;"><img loading="lazy" decoding="async" class="size-full wp-image-811 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/06/13323689.png" alt="13323689" width="170" height="55" /></p>
+    <p style="text-align: left;">Если в числителе и знаменателе располагаются простые числа, то такую дробь сократить нельзя &#8212; она не сокращается. Такие дроби называют <strong>несократимыми</strong>. Например, следующие дроби являются несократимыми:</p>
+    <p style="text-align: left;"><img loading="lazy" decoding="async" class="size-full wp-image-813 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/06/1312343557.png" alt="1312343557" width="170" height="55" /></p>
+    <p style="text-align: left;">Напомним, что простыми называются числа, которые делятся только на единицу и самих себя.</p>
+    <hr />
+    <h2 id="yak7" style="text-align: center;">Второй способ сокращения дроби</h2>
+    <p style="text-align: left;">Второй способ является короткой версией первого способа. Суть его заключается в том, что пропускается подробное разъяснение того, на что был разделён числитель и знаменатель.</p>
+    <p style="text-align: left;">К примеру, вернёмся к дроби <img loading="lazy" decoding="async" class="alignnone wp-image-3956 size-full" title="Тридцать два тридцать шестых" src="https://spacemath.xyz/wp-content/uploads/2016/07/Tridtsat-dva-tridtsat-shestyh.png" alt="Тридцать два тридцать шестых" width="22" height="43" />. Эту дробь мы сократили на 4, то есть разделили числитель и знаменатель этой дроби на число 4</p>
+    <p style="text-align: left;"><img loading="lazy" decoding="async" class="size-full wp-image-811 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/06/13323689.png" alt="13323689" width="170" height="55" /></p>
+    <p style="text-align: left;">Теперь представьте, что в данном выражении отсутствует конструкция <img loading="lazy" decoding="async" class="alignnone size-full wp-image-3957" src="https://spacemath.xyz/wp-content/uploads/2016/07/Tridtsat-dva-tridtsat-shestyh-sokrashhenie-na-chetyre.png" alt="Тридцать два тридцать шестых сокращение на четыре" width="46" height="43" /> , и сразу записан ответ <img loading="lazy" decoding="async" class="alignnone size-full wp-image-3958" src="https://spacemath.xyz/wp-content/uploads/2016/07/Vosem-devyatyh.png" alt="Восемь девятых" width="12" height="43" /> . Получится следующее выражение:</p>
+    <p style="text-align: left;"><img loading="lazy" decoding="async" class="size-full wp-image-3959 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/07/Tridtsat-dva-tridtsat-shestyh-ravno-vosem-devyatyh.png" alt="Тридцать два тридцать шестых равно восемь девятых" width="74" height="43" /></p>
+    <p style="text-align: left;">Суть в том что число, на которое разделили числитель и знаменатель, хранят в уме. В нашем случае числитель и знаменатель делят на 4 &#8212; это число и будем хранить в уме.</p>
+    <p style="text-align: left;">Сначала делим числитель на число 4. Полученный ответ записываем рядом с числителем, предварительно зачеркнув его:</p>
+    <p style="text-align: left;"><img loading="lazy" decoding="async" class="size-full wp-image-3960 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/07/Tridtsat-dva-tridtsat-shestyh-razdelili-chislitel.png" alt="Тридцать два тридцать шестых разделили числитель" width="36" height="59" /></p>
+    <p style="text-align: left;">Затем таким же образом делим знаменатель на число 4. Полученный ответ записываем рядом со знаменателем, предварительно зачеркнув его:</p>
+    <p style="text-align: left;"><img loading="lazy" decoding="async" class="size-full wp-image-3961 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/07/Tridtsat-dva-tridtsat-shestyh-razdelili-znamenatel.png" alt="Тридцать два тридцать шестых разделили знаменатель" width="36" height="72" /></p>
+    <p style="text-align: left;">Затем собираем новую дробь. В числитель отправляем новое число 8 вместо 32, а в знаменатель отправляем новое число 9 вместо 36</p>
+    <p style="text-align: left;"><img loading="lazy" decoding="async" class="size-full wp-image-3962 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/07/Sokrashhenie-tridtsati-dvuh-na-tridtsat-shestyh-na-chetyre-vtorym-sposobom.png" alt="Сокращение тридцати двух на тридцать шестых на четыре вторым способом" width="272" height="251" /></p>
+    <p style="text-align: left;">Происходит своего рода замена одной дроби на другую. Значение новой дроби равно значению предыдущей дроби, поскольку срабатывает основное свойство дроби, которое говорит о том что если числитель и знаменатель дроби умножить или разделить на одно и то же число, то получится равная ей дробь.</p>
+    <p style="text-align: left;">Также, дроби можно сокращать, предварительно разложив на простые множители числитель и знаменатель.</p>
+    <p style="text-align: left;">Например, сократим дробь <img loading="lazy" decoding="async" class="alignnone size-full wp-image-3967" src="https://spacemath.xyz/wp-content/uploads/2016/07/Devyat-dvadtsat-sedmyh.png" alt="Девять двадцать седьмых" width="24" height="43" />, предварительно разложив на простые множители числитель и знаменатель:</p>
+    <p style="text-align: left;"><img loading="lazy" decoding="async" class="wp-image-3969 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/07/Devyat-dvadtsat-sedmyh-razlozheny-chislitel-i-znamenatel.png" alt="Девять двадцать седьмых разложены числитель и знаменатель" width="125" height="43" /></p>
+    <p style="text-align: left;">Итак, мы разложили числитель и знаменатель дроби <img loading="lazy" decoding="async" class="alignnone size-full wp-image-3967" src="https://spacemath.xyz/wp-content/uploads/2016/07/Devyat-dvadtsat-sedmyh.png" alt="Девять двадцать седьмых" width="24" height="43" /> на множители. Теперь применяем второй способ сокращения. В числителе и в знаменателе выбираем по множителю и делим выбранные множители на НОД этих множителей.</p>
+    <p style="text-align: left;">Давайте сократим по тройке в числителе и в знаменателе. Для этого разделим эти тройки на 3 (на их наибольший общий делитель). Получим следующее выражение: <img loading="lazy" decoding="async" class="size-full wp-image-3970 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/07/Devyat-dvadtsat-sedmyh-razlozheny-chislitel-i-znamenatel1.png" alt="Девять двадцать седьмых разложены числитель и знаменатель1" width="125" height="72" /></p>
+    <p style="text-align: left;">Сократить можно ещё по тройке в числителе и в знаменателе:</p>
+    <p style="text-align: left;"><img loading="lazy" decoding="async" class="size-full wp-image-3971 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/07/Devyat-dvadtsat-sedmyh-razlozheny-chislitel-i-znamenatel2.png" alt="Девять двадцать седьмых разложены числитель и знаменатель2" width="125" height="72" /></p>
+    <p style="text-align: left;">Дальше сокращать больше нéчего. Последнюю тройку в знаменателе просто так сократить нельзя, поскольку в числителе нет множителя, который можно было бы сократить вместе с этой тройкой.</p>
+    <p style="text-align: left;">Записываем новую дробь, в числителе и в знаменателе которой будут новые множители.</p>
+    <p style="text-align: left;"><img loading="lazy" decoding="async" class="size-full wp-image-3972 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/07/Devyat-dvadtsat-sedmyh-razlozheny-chislitel-i-znamenatel3.png" alt="Девять двадцать седьмых разложены числитель и знаменатель3" width="280" height="72" /></p>
+    <p style="text-align: left;"> Получили ответ <img loading="lazy" decoding="async" class="alignnone size-full wp-image-3018" src="https://spacemath.xyz/wp-content/uploads/2016/12/odna-tretya.png" alt="одна третья" width="12" height="43" />. Значит, при сокращении дроби <img loading="lazy" decoding="async" class="alignnone size-full wp-image-3967" src="https://spacemath.xyz/wp-content/uploads/2016/07/Devyat-dvadtsat-sedmyh.png" alt="Девять двадцать седьмых" width="24" height="43" /> получается новая дробь <img loading="lazy" decoding="async" class="alignnone size-full wp-image-3018" src="https://spacemath.xyz/wp-content/uploads/2016/12/odna-tretya.png" alt="одна третья" width="12" height="43" />.</p>
+    <p style="text-align: left;">Не рекомендуется пользоваться вторым способом сокращения дроби и способом разложения на простые множители числителя и знаменателя, если человек только нáчал изучать математику. Практика показывает, что это оказывается сложным на первых этапах.</p>
+    <p style="text-align: left;">Поэтому, если испытываете затруднения при использовании второго способа, то пользуйтесь старым добрым способом сокращения: делите числитель и знаменатель дроби на их наибольший общий делитель. Выражение в таком случае получается простым, понятным и красивым. Так, предыдущий пример может быть решён старым способом и будет выглядеть так:</p>
+    <p style="text-align: left;"><img loading="lazy" decoding="async" class="size-full wp-image-3974 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/07/Devyat-dvadtsat-sedmyh-sokrashhenie-starym-metodom.png" alt="Девять двадцать седьмых сокращение старым методом" width="154" height="43" srcset="https://spacemath.xyz/wp-content/uploads/2016/07/Devyat-dvadtsat-sedmyh-sokrashhenie-starym-metodom.png 154w, https://spacemath.xyz/wp-content/uploads/2016/07/Devyat-dvadtsat-sedmyh-sokrashhenie-starym-metodom-150x43.png 150w" sizes="(max-width: 154px) 100vw, 154px" /></p>
+    <p style="text-align: left;">Сравните это выражение с выражением, которое мы получили, когда пользовались вторым способом:</p>
+    <p style="text-align: left;"><img loading="lazy" decoding="async" class="size-full wp-image-3972 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/07/Devyat-dvadtsat-sedmyh-razlozheny-chislitel-i-znamenatel3.png" alt="Девять двадцать седьмых разложены числитель и знаменатель3" width="280" height="72" /></p>
+    <p style="text-align: left;">Первое выражение намного понятнее, аккуратнее и короче. Не правда ли?</p>
+
+    <h3>Хотите перейти на следующий урок?</h3>
+    <a href="lection1.html" class="back">Вернуться ‹‹</a>
+    <a href="lection3.html" class="next">Вперёд »</a>
+    
+    <script type="text/javascript">
+    
+    var menuItems = document.querySelectorAll('.skew-menu ul li');
+
+for (var i = 0; i < menuItems.length; i++) {
+   menuItems[i].addEventListener('click', function() {
+       // Действия при выборе определенной лекции
+   });
+}
+document.querySelectorAll('.skew-menu li').forEach(item => {
+    item.addEventListener('mouseover', () => {
+        item.style.transition = 'transform 0.3s';
+        item.style.transform = 'scale(1.2)';
+    });
+
+    item.addEventListener('mouseout', () => {
+        if (!item.classList.contains("clicked")) { // Проверяем, не была ли ячейка уже уменьшена при клике
+            item.style.transition = 'transform 0.3s';
+            item.style.transform = 'scale(1)';
+        }
+    });
+
+     document.addEventListener("click", function(event) { 
+         if (!event.target.closest(".skew-menu li")) return;
+
+         const clickedItem= event.target.closest(".skew-menu li");
+
+         document.querySelectorAll('.skew-menu li').forEach(otherItem => { 
+             otherItem.classList.remove("clicked");
+             otherItem.removeEventListener("transitionend", removeTransition);
+          });
+          
+          function removeTransition() { this.classList.remove("clicked"); }
+
+          const clickedClassList= clickedItem.classList;
+          clickedClassList.add("clicked");
+
+          setTimeout(() =>{
+              clickedClassList.remove("clicked")
+           },300)
+
+           function toggleTransform(){
+               let scaleValue= window.getComputedStyle(clickedItem).getPropertyValue('transform');
+
+               if(scaleValue==='none'){
+                   clickedItem.setAttribute(
+                       "style",
+                       "transition: all .5s ease-in-out; transform: scale(.8);"
+                     );
+                 }else{
+                     clickedItem.removeAttribute("style");
+                  }
+            }
+
+            toggleTransform();
+      });
+});
+let currentLesson = document.querySelector('.active a');
+currentLesson.style.color = '#007bff';
+    
+    menuItems[0].classList.add("active"); // Предположим, что первый пункт активен
+    
+    document.querySelector('.back').setAttribute("href", "lection3.html");
+    document.querySelector('.next').setAttribute("href", "lection5.html");
+    
+    </script>
+    </body>
+    </html>

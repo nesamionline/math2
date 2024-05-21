@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лекция 22: Общие сведения о неравенствах</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: 200px auto;
+            gap: 20px;
+        }
+        
+        .skew-menu {
+            background-color: #f2f2f2; /* Цвет фона для меню */
+            padding: 10px;
+        }
+
+        .lecture-content {
+            background-color: #e6e6e6; /* Цвет фона для контента лекции */
+            padding: 20px;
+        }
+
+        h1, h2, p {
+          margin-bottom: 15px;  
+      }
+
+      a.back, a.next{
+         text-decoration:none; 
+         color:#333; 
+     }
+     body {
+            background-image: url(images/7.avif);
+            background-attachment: fixed;
+            -moz-background-size: 100%;
+            -webkit-background-size: 100%;
+            -o-background-size: 100%;
+            background-size: 100%;
+        }
+        h1{
+        color: rgb(0, 0, 0) !important; 
+        font-family: courier !important; 
+         text-align: center !important;
+  }
+        p {
+         color: rgb(0, 0, 0);
+         font-family: 'Times New Roman', Times, serif;
+         font-size: 150%;
+         text-align: right; 
+        }
+        h2{
+        color: dark !important; 
+        font-family: Georgia, 'Times New Roman', Times, serif !important; 
+         text-align: center !important;
+  }
+        p {
+         color: rgb(0, 0, 0); 
+         font-family: 'Times New Roman', Times, serif;
+         font-size: 150%; 
+         text-align: center;
+        }
+        a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.back {
+    background-color: #ddd;
+    color: rgb(0, 0, 0);
+}
+
+.next {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.round {
+    border-radius: 50%;
+}
+@radius: 7px;
+@skew: 25deg;
+@main-color: tomato;
+
+body{
+  font-family:Helvetica Neue, Helvetica, sans-serif;
+  background:@main-color;
+}
+
+.skew-menu{
+  text-align:center;
+  margin-top:3em;
+  padding: 10px;
+    max-height: 2000px; /* Устанавливаем максимальную высоту */
+    max-width: 700px;
+    width: 200px;
+    overflow-y: auto; /* Добавляем вертикальную прокрутку при необходимости */
+}
+
+.skew-menu ul{
+  display:inline-block;
+  margin:0;
+  padding:0;
+  list-style:none;
+  transform:skew(-@skew);
+  width: 250px;
+  border-radius: 10px;
+}
+
+.skew-menu ul li{
+  background:#fff;
+  float:left;
+  border-right:1px solid #eee;
+  box-shadow:0 1px 1px rgba(0,0,0,0.1);
+  text-transform:uppercase;
+  color:#555;
+  font-weight:bolder;
+  transition:all 0.3s linear;
+  display: block;
+  text-align: center;
+  width: 200px;
+  max-width: 200px;
+  &:first-child
+  {
+
+    border-radius:@radius 0 0 @radius;
+  }
+  
+  &:last-child{
+    border-right:none;
+    border-radius:0 @radius @radius 0;
+  }
+  
+  &:hover{
+    background:#eee;
+    color:@main-color;
+  }
+  
+  a{
+    display:block;
+    padding:1em 2em;
+    color:inherit;
+    text-decoration:none;
+    transform:skew(@skew);
+  }
+}
+.active a {
+  color: #007bff; /* Выделите цвет текста */
+}
+.navless{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: lighter;
+    font-size: 20px;
+}
+.nav menu{
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+      .menu b{
+        text-align: center;
+      }
+    </style>
+</head>
+
+<body>
+
+<nav class="skew-menu">
+    <ul>
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="lection1.html">Лекция 1</a></li>
+      <li><a href="lection2.html">Лекция 2</a></li>
+      <li><a href="lection3.html">Лекция 3</a></li>
+      <li><a href="lection4.html">Лекция 4</a></li>
+      <li><a href="lection5.html">Лекция 5</a></li>
+      <li><a href="lection6.html">Лекция 6</a></li>
+      <li><a href="lection7.html">Лекция 7</a></li>
+      <li><a href="lection8.html">Лекция 8</a></li>
+      <li><a href="lection9.html">Лекция 9</a></li>
+      <li><a href="lection10.html">Лекция 10</a></li>
+      <li><a href="lection11.html">Лекция 11</a></li>
+      <li><a href="lection12.html">Лекция 12</a></li>
+      <li><a href="lection13.html">Лекция 13</a></li>
+      <li><a href="lection14.html">Лекция 14</a></li>
+      <li><a href="lection15.html">Лекция 15</a></li>
+      <li><a href="lection16.html">Лекция 16</a></li>
+      <li><a href="lection17.html">Лекция 17</a></li>
+      <li><a href="lection18.html">Лекция 18</a></li>
+      <li><a href="lection19.html">Лекция 19</a></li>
+      <li><a href="lection20.html">Лекция 20</a></li>
+      <li><a href="lection21.html">Лекция 21</a></li>
+      <li class="active"><a href="lection22.html">Лекция 22</a></li>
+      <li><a href="lection23.html">Лекция 23</a></li>
+      <li><a href="lection24.html">Лекция 24</a></li>
+      <li><a href="lection25.html">Лекция 25</a></li>
+      <li><a href="lection26.html">Лекция 26</a></li>
+      <li><a href="lection27.html">Лекция 27</a></li>
+      <li><a href="lection28.html">Лекция 28</a></li>
+      <li><a href="lection29.html">Лекция 29</a></li>
+      <li><a href="lection30.html">Лекция 30</a></li>
+    </ul>
+</nav>
+
+<div class="lecture-content">
+  <h1 class="entry-title">Лекция 22: Общие сведения о неравенствах</h1>      
+
+      
+</header><!-- .entry-header -->
+
+<div class="entry-content">
+  <p>Данный материал может показаться сложным для понимания. Рекомендуется изучать его маленькими частями.</p>
+</nav>
+<nav id="menu"><b>Содержание урока</b></p>
+<ul class="navless">
+<li><a href="#yak1">Определение и свойства</a></li>
+<li><a href="#yak2">Строгие и нестрогие неравенства</a></li>
+<li><a href="#yak3">Двойное неравенство</a></li>
+<li><a href="#yak4">Неравенство с переменной</a></li>
+<li><a href="#yak5">Как решать неравенства</a></li>
+<li><a href="#chislovye_promezhutki">Числовые промежутки</a>
+<ul>
+<li><a href="#yak7">Числовой луч</a></li>
+<li><a href="#yak8">Открытый числовой луч</a></li>
+<li><a href="#yak9">Отрезок</a></li>
+<li><a href="#interval">Интервал</a></li>
+<li><a href="#yak11">Полуинтервал</a></li>
+</ul>
+</li>
+<li><a href="#yak17">Изображение числовых промежутков на координатной прямой</a></li>
+<li><a href="#yak13">Примеры решения неравенств</a></li>
+<li><a href="#yak14">Когда решений нет</a></li>
+<li><a href="#yak15">Когда решений бесконечно много</a></li>
+</ul>
+</nav>
+<h2 id="yak1" style="text-align: center;">Определения и свойства</h2>
+<p>Неравенством мы будем называть два числовых или буквенных выражения, соединенных знаками &gt;, &lt;, ≥, ≤ или ≠.</p>
+<p>Пример: <span style="color: #000000;">5 &gt; 3</span></p>
+<p>Данное неравенство говорит о том, что число 5 больше, чем число 3. Острый угол знака неравенства должен быть направлен в сторону меньшего числа. Это неравенство является верным, поскольку 5 больше, чем 3.</p>
+<p>Если на левую чашу весов положить арбуз массой 5 кг, а на правую &#8212; арбуз массой 3 кг, то левая чаша перевесит правую, и экран весов покажет, что левая чаша тяжелее правой:</p>
+<p><img decoding="async" class="size-full wp-image-7772 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/05/vesy-arbuz-na-levoj-chashe-5-kg-a-na-pravoj-3-kg.png" alt="весы арбуз на левой чаше 5 кг а на правой 3 кг" width="606" height="324" srcset="https://spacemath.xyz/wp-content/uploads/2018/05/vesy-arbuz-na-levoj-chashe-5-kg-a-na-pravoj-3-kg.png 606w, https://spacemath.xyz/wp-content/uploads/2018/05/vesy-arbuz-na-levoj-chashe-5-kg-a-na-pravoj-3-kg-300x160.png 300w" sizes="(max-width: 606px) 100vw, 606px" /></p>
+<p>Если <span style="color: #000000;">5 &gt; 3</span>, то <span style="color: #000000;">3 &lt; 5</span>. То есть левую и правую часть неравенства можно поменять местами, изменив знак неравенства на противоположный. В ситуации с весами: большой арбуз можно положить на правую чашу, а маленький арбуз на левую. Тогда правая чаша перевесит левую, и экран покажет знак <span style="color: #000000;"><strong>&lt;</strong></span></p>
+<p><img decoding="async" class="size-full wp-image-7773 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/05/vesy-arbuz-na-levoj-chashe3-kg-a-na-pravoj-5-kg.png" alt="весы арбуз на левой чаше3 кг а на правой 5 кг" width="606" height="323" srcset="https://spacemath.xyz/wp-content/uploads/2018/05/vesy-arbuz-na-levoj-chashe3-kg-a-na-pravoj-5-kg.png 606w, https://spacemath.xyz/wp-content/uploads/2018/05/vesy-arbuz-na-levoj-chashe3-kg-a-na-pravoj-5-kg-300x160.png 300w" sizes="(max-width: 606px) 100vw, 606px" /></p>
+<p>Если в неравенстве <span style="color: #000000;">5 &gt; 3</span>, не трогая левую и правую часть, поменять знак на <span style="color: #000000;">&lt;</span>, то получится неравенство <span style="color: #000000;">5 &lt; 3</span>. Это неравенство не является верным, поскольку число 3 не может быть больше числа 5.</p>
+<p>Числа, которые располагаются в левой и правой части неравенства, будем называть <strong>членами</strong> этого неравенства. Например, в неравенстве <span style="color: #000000;">5 &gt; 3</span> членами являются числа 5 и 3.</p>
+<p>Рассмотрим некоторые важные свойства для неравенства <span style="color: #000000;">5 &gt; 3</span>.<br />
+В будущем эти свойства будут работать и для других неравенств.</p>
+<p><strong><span style="color: #333399;">Свойство 1.</span> </strong></p>
+<p><strong>Если к левой и правой части неравенства 5 &gt; 3 прибавить или вычесть одно и то же число, то знак неравенства не изменится. </strong></p>
+<p>Например, прибавим к обеим частям неравенства число 4. Тогда получим:</p>
+<p><img decoding="async" class="size-full wp-image-7775 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/05/5-bolshe-3-svojstvo-2.png" alt="5 больше 3 свойство 2" width="101" height="79" /></p>
+<p>Видим, что левая часть по-прежнему больше правой.</p>
+<p>Теперь попробуем вычесть из обеих частей неравенства <span style="color: #000000;">5 &gt; 3</span> какое-нибудь число, скажем число 2</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7831 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/06/5-bolshe-3-svojstvo-5.png" alt="5 больше 3 свойство 5" width="101" height="79" /></p>
+<p>Видим, что левая часть по-прежнему больше правой.</p>
+<p>Из данного свойства следует, что любой член неравенства можно перенести из одной части в другую часть, изменив знак этого члена. Знак неравенства при этом не изменится.</p>
+<p>Например, перенесём в неравенстве <span style="color: #000000;">5 &gt; 3</span>, член 5 из левой части в правую часть, изменив знак этого члена. После переноса члена 5 в правую часть, в левой части ничего не останется, поэтому запишем там 0</p>
+<p style="text-align: center;"><span style="color: #000000;">0 &gt; 3 − 5</span></p>
+<p style="text-align: center;"><span style="color: #000000;">0 &gt; −2</span></p>
+<p>Видим, что левая часть по-прежнему больше правой.</p>
+<hr />
+<p><strong><span style="color: #333399;">Свойство 2.</span></strong></p>
+<p><strong>Если обе части неравенства умножить или разделить на одно и то же положительное число, то знак неравенства не изменится. </strong></p>
+<p>Например, умножим обе части неравенства <span style="color: #000000;">5 &gt; 3</span> на какое-нибудь положительное число, скажем на число 2. Тогда получим:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7776 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/05/5-bolshe-3-svojstvo-3.png" alt="5 больше 3 свойство 3" width="98" height="79" /></p>
+<p>Видим, что левая часть по-прежнему больше правой.</p>
+<p>Теперь попробуем <strong>разделить</strong> обе части неравенства <span style="color: #000000;">5 &gt; 3</span> на какое-нибудь число. Разделим их на 2</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7832 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/06/5-bolshe-3-svojstvo-6.png" alt="5 больше 3 свойство 6" width="69" height="102" /></p>
+<p>Видим, что левая часть по-прежнему больше правой.</p>
+<p><strong><span style="color: #333399;">Свойство 3.</span></strong></p>
+<p><strong>Если обе части неравенства умножить или разделить на одно и то же <span style="color: #800000;">отрицательное число</span>, то знак неравенства <span style="color: #800000;">изменится</span> на противоположный. </strong></p>
+<p>Например, умножим обе части неравенства <span style="color: #000000;">5 &gt; 3</span> на какое-нибудь отрицательное число, скажем на число <span style="color: #000000;">−2</span>. Тогда получим:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-8291 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/5-bolshe-3-svojstvo-4.png" alt="5 больше 3 свойство 4" width="148" height="78" /></p>
+<p>Видим, что левая часть стала меньше правой. То есть знак неравенства изменился на противоположный.</p>
+<p>Теперь попробуем <strong>разделить</strong> обе части неравенства <span style="color: #000000;">5 &gt; 3</span> на какое-нибудь отрицательное число. Давайте разделим их на −1</p>
+<p><img loading="lazy" decoding="async" class="wp-image-8292 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/5-bolshe-3-svojstvo-7.png" alt="5 больше 3 свойство 7" width="78" height="101" /></p>
+<p>Видим, что левая часть стала меньше правой. То есть знак неравенства изменился на противоположный.</p>
+<p>Само по себе неравенство можно понимать, как некоторое условие. Если условие выполняется, то неравенство является верным. И наоборот, если условие не выполняется, то неравенство не верно.</p>
+<p>Например, чтобы ответить на вопрос является ли верным неравенство <span style="color: #000000;">7 &gt; 3</span>, нужно проверить выполняется ли условие <span style="color: #000000;"><em>&#171;больше ли 7, чем 3&#187;</em></span>. Мы знаем, что число 7 больше, чем число 3. То есть условие выполнено, а значит и неравенство <span style="color: #000000;">7 &gt; 3</span> верно.</p>
+<p>Неравенство <span style="color: #000000;">8 &lt; 6</span> не является верным, поскольку не выполняется условие <span style="color: #000000;"><em>&#171;8 меньше, чем 6&#187;.</em></span></p>
+<p>Другим способом определения верности неравенства является составление разности из левой и правой части данного неравенства. Если разность положительна, то левая часть больше правой части. И наоборот, если разность отрицательна, то левая часть меньше правой части. Более точно это правило выглядит следующим образом:</p>
+<p><strong>Число <em>a</em> больше числа <em>b</em>, если разность <em>a − b</em> положительна. Число <em>a</em> меньше числа <em>b</em>, если разность <em>a − b</em> отрицательна.</strong></p>
+<p>Например, мы выяснили, что неравенство <span style="color: #000000;">7 &gt; 3</span> является верным, поскольку число 7 больше, чем число 3. Докажем это с помощью правила, приведённого выше.</p>
+<p>Составим разность из членов 7 и 3. Тогда получим <span style="color: #000000;">7 − 3 = 4</span>. Согласно правилу, число 7 будет больше числа 3, если разность <span style="color: #000000;">7 − 3</span> окажется положительной. У нас она равна 4, то есть разность положительна. А значит число 7 больше числа 3.</p>
+<p>Проверим с помощью разности верно ли неравенство <span style="color: #000000;">3 &lt; 4</span>. Составим разность, получим <span style="color: #000000;">3 − 4 = −1</span>. Согласно правилу, число 3 будет меньше числа 4, если разность <span style="color: #000000;">3 − 4</span> окажется отрицательной. У нас она равна −1, то есть разность отрицательна. А значит число 3 меньше числа 4.</p>
+<p>Проверим верно ли неравенство <span style="color: #000000;">5 &gt; 8</span>. Составим разность, получим <span style="color: #000000;">5 − 8 = −3</span>. Согласно правилу, число 5 будет больше числа 8, если разность <span style="color: #000000;">5 − 8</span> окажется положительной. У нас разность равна −3, то есть она <strong>не является</strong> положительной. А значит число 5 <strong>не больше</strong> числа 8. Иными словами, неравенство <span style="color: #000000;">5 &gt; 8</span> не является верным.</p>
+<hr />
+<h2 id="yak2" style="text-align: center;">Строгие и нестрогие неравенства</h2>
+<p>Неравенства, содержащие знаки &gt;, &lt; называют <strong>строгими</strong>. А неравенства, содержащие знаки ≥, ≤  называют <strong>нестрогими</strong>.</p>
+<p>Примеры строгих неравенства мы рассматривали ранее. Таковыми являются неравенства <span style="color: #000000;">5 &gt; 3</span>, <span style="color: #000000;">7 &lt; 9</span>.</p>
+<p>Нестрогим, например, является неравенство <span style="color: #000000;">2 ≤ 5</span>. Данное неравенство читают следующим образом: <span style="color: #000000;"><em>&#171;2 меньше или равно 5&#187;</em></span>.</p>
+<p>Запись <span style="color: #000000;">2 ≤ 5</span> является неполной. Полная запись этого неравенства выглядит следующим образом:</p>
+<p style="text-align: center;"><span style="color: #000000;">2 &lt; 5 <em>или</em> 2 = 5</span></p>
+<p>Тогда становится очевидным, что неравенство <span style="color: #000000;">2 ≤ 5</span> состоит из двух условий: <span style="color: #000000;"><em>&#171;два меньше пять&#187;</em></span> и <span style="color: #000000;"><em>&#171;два равно пять&#187;</em></span>.</p>
+<p>Нестрогое неравенство верно в том случае, если выполняется хотя бы одно из его условий. В нашем примере верным является условие <em><span style="color: #000000;">&#171;2 меньше 5&#187;</span></em>. Значит и само неравенство <span style="color: #000000;">2 ≤ 5</span> верно.</p>
+<p><strong>Пример 2</strong>. Неравенство <span style="color: #000000;">2 ≤ 2</span> является верным, поскольку выполняется одно из его условий, а именно <span style="color: #000000;">2 = 2.</span></p>
+<p><strong>Пример 3</strong>. Неравенство <span style="color: #000000;">5 ≤ 2</span> не является верным, поскольку не выполняется ни одно из его условий: ни <span style="color: #000000;">5 &lt; 2</span> ни <span style="color: #000000;">5 = 2</span>.</p>
+<hr />
+<h2 id="yak3" style="text-align: center;">Двойное неравенство</h2>
+<p><span style="color: #000000;"><em>Число 3 больше, чем число 2 и меньше, чем число 4</em></span>. В виде неравенства это высказывание можно записать так: <span style="color: #000000;">2 &lt; 3 &lt; 4</span>. Такое неравенство называют двойным.</p>
+<p>Двойное неравенство может содержать знаки нестрогих неравенств. К примеру, если <span style="color: #000000;"><em>число 5 больше или равно, чем число 2, и меньше или равно, чем число 7</em></span>, то можно записать, что <span style="color: #000000;">2 ≤ 5 ≤ 7</span></p>
+<p>Чтобы правильно записать двойное неравенство, сначала записывают член находящийся в середине, затем член находящийся слева, затем член находящийся справа.</p>
+<p>Например, запишем, что число 6 больше, чем число 4, и меньше, чем число 9.</p>
+<p>Сначала записываем 6</p>
+<p><img loading="lazy" decoding="async" class="aligncenter wp-image-7974 size-full" src="https://spacemath.xyz/wp-content/uploads/2018/08/4-m-6-m-9-step-1.png" alt="4 m 6 m 9 step 1" width="142" height="24" /></p>
+<p>Слева записываем, что это число больше, чем число 4</p>
+<p><img loading="lazy" decoding="async" class="wp-image-7975 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/4-m-6-m-9-step-2.png" alt="4 m 6 m 9 step 2" width="142" height="24" /></p>
+<p>Справа записываем, что число 6 меньше, чем число 9</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7976 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/4-m-6-m-9-step-3.png" alt="" width="142" height="24" /></p>
+<hr />
+<h2 id="yak4" style="text-align: center;">Неравенство с переменной</h2>
+<p>Неравенство, как и равенство может содержать переменную.</p>
+<p>Например, неравенство <span style="color: #000000;"><em>x</em> &gt; 2</span> содержит переменную <span style="color: #000000;"><em>x</em></span>. Обычно такое неравенство нужно решить, то есть выяснить при каких значениях <span style="color: #000000;"><em>x</em></span> данное неравенство становится верным.</p>
+<p><strong>Решить неравенство означает найти такие значения переменной <em>x</em>, при которых данное неравенство становится верным.</strong></p>
+<p>Значение переменной, при котором неравенство становится верным, называется <strong>решением неравенства</strong>.</p>
+<p>Неравенство <span style="color: #000000;"><em>x </em>&gt; 2</span> становится верным при <span style="color: #000000;"><em>x = 3, x = 4, x = 5, x = 6</em></span> и так далее до бесконечности. Видим, что это неравенство имеет не одно решение, а множество решений.</p>
+<p>Другими словами, решением неравенства <span style="color: #000000;"><em>x</em> &gt; 2</span> является множество всех чисел, бóльших 2. При этих числах неравенство будет верным. Примеры:</p>
+<p style="text-align: center;"><span style="color: #000000;">3 &gt; 2</span></p>
+<p style="text-align: center;"><span style="color: #000000;">4 &gt; 2</span></p>
+<p style="text-align: center;"><span style="color: #000000;">5 &gt; 2</span></p>
+<p>Число 2, располагающееся в правой части неравенства <span style="color: #000000;"><em>x</em> &gt; 2</span>, будем называть <strong>границей</strong> данного неравенства. В зависимости от знака неравенства, граница может принадлежать множеству решений неравенства либо не принадлежать ему.</p>
+<p>В нашем примере граница неравенства не принадлежит множеству решений, поскольку при подстановке числа 2 в неравенство <span style="color: #000000;"><em>x</em> &gt; 2</span> получается <strong>не верное</strong> неравенство <span style="color: #000000;">2 &gt; 2</span>. Число 2 не может быть больше самого себя, поскольку оно равно самому себе <span style="color: #000000;">(2 = 2)</span>.</p>
+<p>Неравенство <span style="color: #000000;"><em>x</em> &gt; 2</span> является строгим. Его можно прочитать так: &#171;<span style="color: #000000;"><em>x строго больше 2&#8243;</em></span>. То есть все значения, принимаемые переменной <span style="color: #000000;"><em>x</em></span> должны быть строго больше 2. В противном случае, неравенство верным не будет.</p>
+<p>Если бы нам было дано нестрогое неравенство <span style="color: #000000;"><em>x </em>≥ 2</span>, то решениями данного неравенства были бы все числа, которые больше 2, в том числе и само число 2. В этом неравенстве граница 2 принадлежит множеству решений неравенства, поскольку при подстановке числа 2 в неравенство <span style="color: #000000;"><em>x</em> ≥ 2</span> получается верное неравенство <span style="color: #000000;">2 ≥ 2</span>. Ранее было сказано, что нестрогое неравенство является верным, если выполняется хотя бы одно из его условий. В неравенстве <span style="color: #000000;">2 ≥ 2</span> выполняется условие <span style="color: #000000;">2 = 2</span>, поэтому и само неравенство <span style="color: #000000;">2 ≥ 2</span> верно.</p>
+<hr />
+<h2 id="yak5" style="text-align: center;">Как решать неравенства</h2>
+<p>Процесс решения неравенств во многом схож с процессом решения уравнений. При решении неравенств мы будем применять свойства, которые изучили вначале данного урока, такие как: перенос слагаемых из одной части неравенства в другую часть, меняя знак; умножение (или деление) обеих частей неравенства на одно и то же число.</p>
+<p>Эти свойства позволяют получить неравенство, которое равносильно исходному. Равносильными называют неравенства, решения которых совпадают.</p>
+<p>Решая уравнения мы выполняли тождественные преобразования до тех пор, пока в левой части уравнения не оставалась переменная, а в правой части значение этой переменной (например: <span style="color: #000000;"><em>x = 2, x = 5</em></span>). Иными словами, заменяли исходное уравнение на равносильное ему уравнение до тех пор, пока не получалось уравнение вида <span style="color: #000000;"><em>x = a</em></span>, где <em><span style="color: #000000;">a</span></em> значение переменной<span style="color: #000000;"><em> x</em></span>. В зависимости от уравнения, корней могло быть один, два, бесконечное множество, либо не быть совсем.</p>
+<p>А при решении неравенств мы будем заменять исходное неравенство на равносильное ему неравенство до тех пор, пока в левой части не останется переменная этого неравенства, а в правой части его граница.</p>
+<p><strong>Пример 1</strong>. Решить неравенство <span style="color: #000000;">2<em>x </em>&gt; 6</span></p>
+<p>Итак, нужно найти такие значения <em><span style="color: #000000;">x</span>,</em> при подстановке которых в <span style="color: #000000;">2<em>x </em>&gt; 6</span> получится верное неравенство.</p>
+<p>Вначале данного урока было сказано, что если обе части неравенства разделить на какое-нибудь положительное число, то знак неравенства не изменится. Если применить это свойство к неравенству, содержащему переменную, то получится неравенство равносильное исходному.</p>
+<p>В нашем случае, если мы разделим обе части неравенства <span style="color: #000000;">2<em>x </em>&gt; 6</span> на какое-нибудь положительное число, то получится неравенство, которое равносильно исходному неравенству <span style="color: #000000;">2<em>x </em>&gt; 6. </span></p>
+<p>Итак, разделим обе части неравенства на 2.</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7977 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/2x-na-2-b-6-na-2-step-1.png" alt="2x na 2 b 6 na 2 step 1" width="83" height="97" /></p>
+<p>В левой части осталась переменная <span style="color: #000000;"><em>x</em></span>, а правая часть стала равна 3. Получилось равносильное неравенство <span style="color: #000000;"><em>x </em>&gt; 3.</span> На этом решение завершается, поскольку в левой части осталась переменная, а в правой части граница неравенства.</p>
+<p>Теперь можно сделать вывод, что решениями неравенства <span style="color: #000000;"><em>x </em>&gt; 3</span> являются все числа, которые больше 3. Это числа 4, 5, 6, 7 и так далее до бесконечности. При этих значениях неравенство <span style="color: #000000;"><em>x </em>&gt; 3</span> будет верным.</p>
+<p style="text-align: center;"><span style="color: #000000;">4 &gt; 3</span></p>
+<p style="text-align: center;"><span style="color: #000000;">5 &gt; 3</span></p>
+<p style="text-align: center;"><span style="color: #000000;">6 &gt; 3</span></p>
+<p style="text-align: center;"><span style="color: #000000;">7 &gt; 3</span></p>
+<p>Отметим, что неравенство <span style="color: #000000;"><em>x </em>&gt; 3 </span>является строгим. &#171;<span style="color: #000000;"><em>Переменная x строго больше трёх&#187;.</em></span></p>
+<p>А поскольку неравенство <span style="color: #000000;"><em>x </em>&gt; 3</span> равносильно исходному неравенству <span style="color: #000000;">2<em>x </em>&gt; 6</span>, то их решения будут совпадать. Иначе говоря, значения, которые подходят неравенству <span style="color: #000000;"><em>x </em>&gt; 3,</span> будут подходить и неравенству <span style="color: #000000;">2<em>x </em>&gt; 6. </span>Покажем это.</p>
+<p>Возьмём, например, число 5 и подставим его сначала в полученное нами равносильное неравенство <span style="color: #000000;"><em>x </em>&gt; 3</span>, а потом в исходное <span style="color: #000000;">2<em>x </em>&gt; 6</span>.</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8464 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/proverka-neravenstva-2x-b-6.png" alt="проверка неравенства 2x b 6" width="421" height="205" srcset="https://spacemath.xyz/wp-content/uploads/2018/08/proverka-neravenstva-2x-b-6.png 421w, https://spacemath.xyz/wp-content/uploads/2018/08/proverka-neravenstva-2x-b-6-300x146.png 300w" sizes="(max-width: 421px) 100vw, 421px" /></p>
+<p>Видим, что в обоих случаях получается верное неравенство.</p>
+<p>После того, как неравенство решено, ответ нужно записать в виде так называемого <strong>числового промежутка</strong> следующим образом:</p>
+<p style="text-align: center;"><img loading="lazy" decoding="async" class="alignnone wp-image-8465 size-full" src="https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-promezhutok-ot-treh-do-plyus-beskonechnosti.png" alt="числовой промежуток от трех до плюс бесконечности" width="127" height="24" /></p>
+<p>В этом выражении говорится, что значения, принимаемые переменной <span style="color: #000000;"><em>x</em></span>, принадлежат числовому промежутку от трёх до плюс бесконечности.</p>
+<p>Иначе говоря, все числа, начиная от трёх до плюс бесконечности являются решениями неравенства <span style="color: #000000;"><em>x </em>&gt; 3</span>. Знак <span style="color: #000000;"><strong>∞</strong></span> в математике означает бесконечность.</p>
+<p>Учитывая, что понятие числового промежутка очень важно, остановимся на нём подробнее.</p>
+<hr />
+<h2 id="chislovye_promezhutki" style="text-align: center;">Числовые промежутки</h2>
+<p><strong>Числовым промежутком</strong> называют множество чисел на координатной прямой, которое может быть описано с помощью неравенства.</p>
+<p>Допустим, мы хотим изобразить на координатной прямой множество чисел от 2 до 8. Для этого сначала на координатной прямой отмечаем точки с координатами 2 и 8, а затем выделяем штрихами ту область, которая располагается между координатами 2 и 8. Эти штрихи будут играть роль чисел, располагающихся между числами 2 и 8</p>
+<p><img loading="lazy" decoding="async" class="wp-image-8301 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-promezhutok-ot-2-do-8-interval.png" alt="числовой промежуток от 2 до 8 интервал" width="518" height="50" srcset="https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-promezhutok-ot-2-do-8-interval.png 518w, https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-promezhutok-ot-2-do-8-interval-300x29.png 300w" sizes="(max-width: 518px) 100vw, 518px" /></p>
+<p>Числа 2 и 8 назовём <strong>границами</strong> числового промежутка. Рисуя числовой промежуток, точки для его границ изображают не в виде точек как таковых, а в виде кружков, которые можно разглядеть.</p>
+<p>Границы могут принадлежать числовому промежутку либо не принадлежать ему.</p>
+<p>Если границы <strong>не принадлежат </strong>числовому промежутку, то они изображаются на координатной прямой в виде <strong>пустых кружков</strong>.</p>
+<p>Если границы <b>принадлежат </b>числовому промежутку, то кружки необходимо <strong>закрасить</strong>.</p>
+<p>На нашем рисунке кружки были оставлены пустыми. Это означало, что границы 2 и 8 не принадлежат числовому промежутку. Значит в наш числовой промежуток будут входить все числа от 2 до 8, кроме чисел 2 и 8.</p>
+<p>Если мы хотим включить границы 2 и 8 в числовой промежуток, то кружки необходимо закрасить:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-8295 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-promezhutok-ot-2-do-8-zakrytye-granitsy.png" alt="числовой промежуток от 2 до 8 закрытые границы" width="518" height="49" srcset="https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-promezhutok-ot-2-do-8-zakrytye-granitsy.png 518w, https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-promezhutok-ot-2-do-8-zakrytye-granitsy-300x28.png 300w" sizes="(max-width: 518px) 100vw, 518px" /></p>
+<p>В данном случае в числовой промежуток будут входить все числа от 2 до 8, включая числа 2 и 8.</p>
+<p>На письме числовой промежуток обозначается указанием его границ с помощью круглых или квадратных скобок.</p>
+<p>Если границы <strong>не принадлежат </strong>числовому промежутку, то границы обрамляются <strong>круглыми скобками</strong>.</p>
+<p>Если границы <b>принадлежат</b> числовому промежутку, то границы обрамляются <strong>квадратными скобками</strong>.</p>
+<p>На рисунке представлено два числовых промежутка от 2 до 8 с соответствующими обозначениями:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-8443 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-promezhutok-ot-2-do-6-risunok-3.png" alt="числовой промежуток от 2 до 6 рисунок 3" width="659" height="87" srcset="https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-promezhutok-ot-2-do-6-risunok-3.png 659w, https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-promezhutok-ot-2-do-6-risunok-3-300x40.png 300w" sizes="(max-width: 659px) 100vw, 659px" /></p>
+<p>На первом рисунке числовой промежуток обозначен с помощью <strong>круглых скобок</strong>, поскольку границы 2 и 8 <strong>не принадлежат </strong>этому числовому промежутку.</p>
+<p>На втором рисунке числовой промежуток обозначен с помощью <strong>квадратных скобок</strong>, поскольку границы 2 и 8 <b>принадлежат </b>этому числовому промежутку.</p>
+<p>С помощью числовых промежутков можно записывать ответы к неравенствам. Например, ответ к двойному неравенству <span style="color: #000000;">2 ≤ <em>x </em>≤ 8</span> записывается так:</p>
+<p style="text-align: center;"><span style="color: #000000;"><em>x</em> ∈ [ 2 ; 8 ]</span></p>
+<p>То есть сначала записывают переменную, входящую в неравенство, затем с помощью знака принадлежности <span style="color: #000000;">∈</span> указывают к какому числовому промежутку принадлежат значения этой переменной. В данном случае выражение <span style="color: #000000;"><em>x</em> ∈ [ 2 ; 8 ]</span> указывает на то, что переменная <span style="color: #000000;"><em>x,</em></span> входящая в неравенство <span style="color: #000000;">2 ≤ <em>x </em>≤ 8,</span> принимает все значения в промежутке от 2 до 8 включительно. При этих значениях неравенство будет верным.</p>
+<p>Обратим внимание на то, что ответ записан с помощью квадратных скобок, поскольку границы неравенства <span style="color: #000000;">2 ≤ <em>x </em>≤ 8</span>, а именно числа 2 и 8 принадлежат множеству решений этого неравенства.</p>
+<p>Множество решений неравенства <span style="color: #000000;">2 ≤ <em>x </em>≤ 8</span> также можно изобразить с помощью координатной прямой:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-8295 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-promezhutok-ot-2-do-8-zakrytye-granitsy.png" alt="числовой промежуток от 2 до 8 закрытые границы" width="518" height="49" srcset="https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-promezhutok-ot-2-do-8-zakrytye-granitsy.png 518w, https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-promezhutok-ot-2-do-8-zakrytye-granitsy-300x28.png 300w" sizes="(max-width: 518px) 100vw, 518px" /></p>
+<p>Здесь границы числового промежутка 2 и 8 соответствуют границам неравенства <span style="color: #000000;">2 ≤ <em>x </em>≤ 8</span>, а выделенная штрихами область соответствует множеству значений <span style="color: #000000;"><em>x</em></span>, которые являются решениями неравенства <span style="color: #000000;">2 ≤ <em>x </em>≤ 8</span>.</p>
+<p>В некоторых источниках границы, которые не принадлежат числовому промежутку, называют <em><strong>открытыми</strong></em>.</p>
+<p>Открытыми их называют по той причине, что числовой промежуток остаётся открытым из-за того, что его границы не принадлежат этому числовому промежутку. Пустой кружок на координатной прямой математики называют <span style="color: #000000;"><em>выколотой точкой</em></span>. Выколоть точку значит исключить её из числового промежутка или из множества решений неравенства.</p>
+<p>А в случае, когда границы принадлежат числовому промежутку, их называют <strong>закрытыми</strong> (или замкнутыми), поскольку такие границы закрывают (замыкают) собой числовой промежуток. Закрашенный кружок на координатной прямой также говорит о закрытости границ.</p>
+<p>Существуют разновидности числовых промежутков. Рассмотрим каждый из них.</p>
+<h3 id="yak7" style="text-align: center;"><strong>Числовой луч</strong></h3>
+<p><strong>Числовым лучом</strong> называют числовой промежуток, который задаётся неравенством <em><span style="color: #000000;">x ≥ a</span></em>, где <span style="color: #000000;"><em>a</em></span> &#8212; граница данного неравенства, <span style="color: #000000;"><em>x &#8212; </em></span>решение неравенства.</p>
+<p>Пусть <span style="color: #000000;"><em>a </em>= 3</span>. Тогда неравенство <span style="color: #000000;"><em>x ≥ a</em></span> примет вид <span style="color: #000000;"><em>x </em>≥ 3</span>. Решениями данного неравенства являются все числа, которые больше 3, включая само число 3.</p>
+<p>Изобразим числовой луч, заданный неравенством <span style="color: #000000;"><em>x </em>≥ 3,</span> на координатной прямой. Для этого отметим на ней точку с координатой 3, а всю оставшуюся <strong>справа от неё область</strong> выделим штрихами. Выделяется именно правая часть, поскольку решениями неравенства <span style="color: #000000;"><em>x </em>≥ 3</span> являются числа, бóльшие 3. А бóльшие числа на координатной прямой располагаются правее</p>
+<p><img loading="lazy" decoding="async" class="wp-image-8296 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-promezhutok-ot-2-do-beskonechnosti.png" alt="числовой промежуток от 2 до бесконечности" width="515" height="49" srcset="https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-promezhutok-ot-2-do-beskonechnosti.png 515w, https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-promezhutok-ot-2-do-beskonechnosti-300x29.png 300w" sizes="(max-width: 515px) 100vw, 515px" /></p>
+<p>Здесь точка 3 соответствует границе неравенства <span style="color: #000000;"><em>x </em>≥ 3</span>, а выделенная штрихами область соответствует множеству значений <span style="color: #000000;"><em>x</em></span>, которые являются решениями неравенства <span style="color: #000000;"><em>x </em>≥ 3</span>.</p>
+<p>Точка 3, являющаяся границей числового луча, изображена в виде закрашенного кружка, поскольку граница неравенства <span style="color: #000000;"><em>x </em>≥ 3</span> принадлежит множеству его решений.</p>
+<p>На письме числовой луч, заданный неравенством <span style="color: #000000;"><em>x ≥ a,</em></span> обозначается следующим образом:</p>
+<p style="text-align: center;"><span style="color: #000000;">[ <em>a </em>; +∞ )</span></p>
+<p>Видно, что с одной стороны граница обрамлена квадратной скобкой, а с другой круглой. Это связано с тем, что одна граница числового луча принадлежит ему, а другая нет, поскольку бесконечность сама по себе границ не имеет и подразумевается, что по ту сторону нет числа, замыкающего этот числовой луч.</p>
+<p>Учитывая то, что одна из границ числового луча закрыта, данный промежуток часто называют <strong>закрытым числовым лучом</strong>.</p>
+<p>Запишем ответ к неравенству <span style="color: #000000;"><em>x </em>≥ 3</span> с помощью обозначения числового луча. У нас переменная <span style="color: #000000;"><em>a</em></span> равна 3</p>
+<p style="text-align: center;"><span style="color: #000000;"><em>x</em> ∈  [ 3 ; +∞ )</span></p>
+<p>В этом выражении говорится, что переменная <span style="color: #000000;"><em>x</em></span>, входящая в неравенство <span style="color: #000000;"><em>x </em>≥ 3,</span> принимает все значения от 3 до плюс бесконечности.</p>
+<p>Иначе говоря, все числа от 3 до плюс бесконечности, являются решениями неравенства <span style="color: #000000;"><em>x </em>≥ 3</span><span style="color: #000000;">. </span>Граница 3 принадлежит множеству решений, поскольку неравенство <span style="color: #000000;"><em>x </em>≥ 3</span> является нестрогим.</p>
+<p>Закрытым числовым лучом также называют числовой промежуток, который задаётся неравенством <em><span style="color: #000000;">x ≤ a</span>. </em>Решениями неравенства <em><span style="color: #000000;">x ≤ a</span></em> являются все числа, которые меньше <em><span style="color: #000000;">a</span>, </em>включая само число<em><span style="color: #000000;"> a</span>. </em></p>
+<p>К примеру, если <span style="color: #000000;"><em>a </em>= 2</span>, то неравенство примет вид <span style="color: #000000;"><em>x </em>≤ 2</span>. На координатной прямой граница 2 будет изображаться закрашенным кружком, а вся область, находящаяся <strong>слева</strong>, будет выделена штрихами. В этот раз выделяется левая часть, поскольку решениями неравенства <span style="color: #000000;"><em>x </em>≤ 2</span> являются числа, меньшие 2. А меньшие числа на координатной прямой располагаются левее</p>
+<p><img loading="lazy" decoding="async" class="wp-image-8297 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-promezhutok-ot-minus-beskonechnosti-do-2.png" alt="числовой промежуток от минус бесконечности до 2" width="511" height="45" srcset="https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-promezhutok-ot-minus-beskonechnosti-do-2.png 511w, https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-promezhutok-ot-minus-beskonechnosti-do-2-300x26.png 300w" sizes="(max-width: 511px) 100vw, 511px" /></p>
+<p>Здесь точка 2 соответствует границе неравенства <span style="color: #000000;"><em>x </em>≤ 2</span>, а выделенная штрихами область соответствует множеству значений <span style="color: #000000;"><em>x</em></span>, которые являются решениями неравенства <span style="color: #000000;"><em>x </em>≤ 2</span>.</p>
+<p>Точка 2, являющаяся границей числового луча, изображена в виде закрашенного кружка, поскольку граница неравенства <span style="color: #000000;"><em>x </em>≤ 2</span> принадлежит множеству его решений.</p>
+<p>Запишем ответ к неравенству <span style="color: #000000;"><em>x </em>≤ 2</span> с помощью обозначения числового луча:</p>
+<p style="text-align: center;"><span style="color: #000000;"><em>x</em> ∈  ( −∞ ; 2 ]</span></p>
+<p>В этом выражении говорится, что все числа от минус бесконечности до 2, являются решениями неравенства <span style="color: #000000;"><em>x </em>≤ 2. </span>Граница 2 принадлежит множеству решений, поскольку неравенство <span style="color: #000000;"><em>x </em>≤ 2</span> является нестрогим.</p>
+<h3 id="yak8" style="text-align: center;">Открытый числовой луч</h3>
+<p><strong>Открытым числовым лучом</strong> называют числовой промежуток, который задаётся неравенством <span style="color: #000000;"><em>x &gt; a</em></span>, где <span style="color: #000000;"><em>a</em></span> &#8212; граница данного неравенства, <span style="color: #000000;"><em>x</em></span> &#8212; решение неравенства.</p>
+<p>Открытый числовой луч во многом похож на закрытый числовой луч. Различие в том, что граница <span style="color: #000000;"><em>a</em></span> не принадлежит промежутку, как и граница неравенства <em><span style="color: #000000;">x &gt; a</span></em> не принадлежит множеству его решений.</p>
+<p>Пусть <span style="color: #000000;"><em>a </em>= 3</span>. Тогда неравенство примет вид <span style="color: #000000;"><em>x </em>&gt; 3</span>. Решениями данного неравенства являются все числа, которые больше 3, за исключением числа 3</p>
+<p>На координатной прямой граница открытого числового луча, заданного неравенством <span style="color: #000000;"><em>x </em>&gt; 3,</span> будет изображаться в виде пустого кружка. Вся область, находящаяся справа, будет выделена штрихами:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-8298 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-luch-ot-3-do-beskonechnosti.png" alt="числовой луч от 3 до бесконечности" width="514" height="49" srcset="https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-luch-ot-3-do-beskonechnosti.png 514w, https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-luch-ot-3-do-beskonechnosti-300x29.png 300w" sizes="(max-width: 514px) 100vw, 514px" /></p>
+<p>Здесь точка 3 соответствует границе неравенства <span style="color: #000000;"><em>x &gt; </em>3</span>, а выделенная штрихами область соответствует множеству значений <span style="color: #000000;"><em>x</em></span>, которые являются решениями неравенства <span style="color: #000000;"><em>x &gt;</em> 3</span>. Точка 3, являющаяся границей открытого числового луча, изображена в виде пустого кружка, поскольку граница неравенства <span style="color: #000000;"><em>x &gt;</em> 3</span> не принадлежит множеству его решений.</p>
+<p>На письме открытый числовой луч, заданный неравенством <span style="color: #000000;"><em><span style="color: #000000;">x &gt; a</span>,</em></span> обозначается следующим образом:</p>
+<p style="text-align: center;"><span style="color: #000000;">( <em>a </em>; +∞ )</span></p>
+<p>Круглые скобки указывают на то, что границы открытого числового луча не принадлежат ему.</p>
+<p>Запишем ответ к неравенству <span style="color: #000000;"><em>x</em> &gt; 3</span> с помощью обозначения открытого числового луча:</p>
+<p style="text-align: center;"><span style="color: #000000;"><em>x</em> ∈  ( 3 ; +∞ )</span></p>
+<p>В этом выражении говорится, что все числа от 3 до плюс бесконечности, являются решениями неравенства <span style="color: #000000;"><em>x</em> &gt; 3</span><span style="color: #000000;">. </span>Граница 3 не принадлежит множеству решений, поскольку неравенство <em>x</em> &gt; 3 является строгим.</p>
+<p>Открытым числовым лучом также называют числовой промежуток, который задаётся неравенством <span style="color: #000000;"><em>x &lt; a</em></span>, где <span style="color: #000000;"><em>a</em></span> &#8212; граница данного неравенства, <span style="color: #000000;"><em>x</em></span> &#8212; решение неравенства<em>. </em>Решениями неравенства <em><span style="color: #000000;">x &lt; a</span></em> являются все числа, которые меньше <em><span style="color: #000000;">a</span>, </em>исключая число<em><span style="color: #000000;"> a</span>. </em></p>
+<p>К примеру, если <span style="color: #000000;"><em>a </em>= 2</span>, то неравенство примет вид <span style="color: #000000;"><em>x &lt; </em>2</span>. На координатной прямой граница 2 будет изображаться пустым кружком, а вся область, находящаяся слева, будет выделена штрихами:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-8299 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-promezhutok-ot-minus-beskonechnosti-do-2-otkrytyj-chislovoj-luch-1.png" alt="числовой промежуток от минус бесконечности до 2 открытый числовой луч" width="511" height="45" srcset="https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-promezhutok-ot-minus-beskonechnosti-do-2-otkrytyj-chislovoj-luch-1.png 511w, https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-promezhutok-ot-minus-beskonechnosti-do-2-otkrytyj-chislovoj-luch-1-300x26.png 300w" sizes="(max-width: 511px) 100vw, 511px" /></p>
+<p>Здесь точка 2 соответствует границе неравенства <span style="color: #000000;"><em>x &lt; </em>2</span>, а выделенная штрихами область соответствует множеству значений <span style="color: #000000;"><em>x</em></span>, которые являются решениями неравенства <span style="color: #000000;"><em>x &lt; </em>2</span>. Точка 2, являющаяся границей открытого числового луча, изображена в виде пустого кружка, поскольку граница неравенства <span style="color: #000000;"><em>x &lt; </em>2</span> не принадлежит множеству его решений.</p>
+<p>На письме открытый числовой луч, заданный неравенством <span style="color: #000000;"><em>x &lt; a</em></span><span style="color: #000000;"><em>,</em></span> обозначается следующим образом:</p>
+<p style="text-align: center;"><span style="color: #000000;">( −∞ ; <em>a</em> )</span></p>
+<p>Запишем ответ к неравенству <span style="color: #000000;"><em>x &lt; </em>2</span> с помощью обозначения открытого числового луча:</p>
+<p style="text-align: center;"><span style="color: #000000;"><em>x</em> ∈  ( −∞ ; 2 )</span></p>
+<p>В этом выражении говорится, что все числа от минус бесконечности до 2, являются решениями неравенства <span style="color: #000000;"><em>x &lt; </em>2. </span>Граница 2 не принадлежит множеству решений, поскольку неравенство <span style="color: #000000;"><em>x &lt; </em>2 </span>является строгим.</p>
+<h3 id="yak9" style="text-align: center;"><strong>Отрезок</strong></h3>
+<p><strong>Отрезком</strong> называют числовой промежуток, который задаётся двойным неравенством <span style="color: #000000;"><em>a ≤ x ≤ b</em></span>, где <span style="color: #000000;"><em>a</em></span> и <span style="color: #000000;"><em>b</em></span> &#8212; границы данного неравенства, <span style="color: #000000;"><em>x</em></span> &#8212; решение неравенства.</p>
+<p>Пусть <span style="color: #000000;"><em>a</em> = 2</span>, <span style="color: #000000;"><em>b</em> = 8</span>. Тогда неравенство <span style="color: #000000;"><em>a ≤ x ≤ b</em></span> примет вид <span style="color: #000000;">2 ≤ <em>x </em>≤ 8</span>. Решениями неравенства <span style="color: #000000;">2 ≤ <em>x </em>≤ 8</span> являются все числа, которые больше 2 и меньше 8. При этом границы неравенства 2 и 8 принадлежат множеству его решений, поскольку неравенство <span style="color: #000000;">2 ≤ <em>x </em>≤ 8</span> является нестрогим.</p>
+<p>Изобразим отрезок, заданный двойным неравенством <span style="color: #000000;">2 ≤ <em>x </em>≤ 8</span> на координатной прямой. Для этого отметим на ней точки с координатами 2 и 8, а располагающуюся между ними область выделим штрихами:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-8300 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-promezhutok-ot-2-do-8.png" alt="числовой промежуток от 2 до 8" width="518" height="50" srcset="https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-promezhutok-ot-2-do-8.png 518w, https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-promezhutok-ot-2-do-8-300x29.png 300w" sizes="(max-width: 518px) 100vw, 518px" /></p>
+<p>Здесь точки 2 и 8 соответствуют границам неравенства <span style="color: #000000;">2 ≤ <em>x </em>≤ 8</span>, а выделенная штрихами область соответствует множеству значений <span style="color: #000000;"><em>x</em></span>, которые являются решениями неравенства <span style="color: #000000;">2 ≤ <em>x </em>≤ 8</span>. Точки 2 и 8, являющиеся границами отрезка, изображены в виде закрашенных кружков, поскольку границы неравенства <span style="color: #000000;">2 ≤ <em>x </em>≤ 8</span> принадлежат множеству его решений.</p>
+<p>На письме отрезок, заданный неравенством <span style="color: #000000;"><em>a ≤ x ≤ b</em></span> обозначается следующим образом:</p>
+<p style="text-align: center;"><span style="color: #000000;">[ <em>a ; b</em> ]</span></p>
+<p>Квадратные скобки с обеих сторон указывают на то, что границы отрезка <strong>принадлежат</strong> ему. Запишем ответ к неравенству <span style="color: #000000;">2 ≤ <em>x </em>≤ 8</span> с помощью этого обозначения:</p>
+<p style="text-align: center;"><span style="color: #000000;"><em>x</em> ∈  [ 2 ; 8 ]</span></p>
+<p>В этом выражении говорится, что все числа от 2 до 8 включительно, являются решениями неравенства <span style="color: #000000;">2 ≤ <em>x </em>≤ 8</span><span style="color: #000000;">.</span></p>
+<h3 id="interval" style="text-align: center;">Интервал</h3>
+<p><strong>Интервалом</strong> называют числовой промежуток, который задаётся двойным неравенством <span style="color: #000000;"><em>a &lt; x &lt; b</em></span>, где <span style="color: #000000;"><em>a</em></span> и <span style="color: #000000;"><em>b</em></span> &#8212; границы данного неравенства, <span style="color: #000000;"><em>x</em></span> &#8212; решение неравенства.</p>
+<p>Пусть <span style="color: #000000;"><em>a = 2</em>, <em>b = 8</em></span>. Тогда неравенство <span style="color: #000000;"><em>a &lt; x &lt; b</em></span> примет вид <span style="color: #000000;">2 &lt; <em>x </em>&lt; 8</span>. Решениями этого двойного неравенства являются все числа, которые больше 2 и меньше 8, исключая числа 2 и 8.</p>
+<p>Изобразим интервал на координатной прямой:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-8301 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-promezhutok-ot-2-do-8-interval.png" alt="числовой промежуток от 2 до 8 интервал" width="518" height="50" srcset="https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-promezhutok-ot-2-do-8-interval.png 518w, https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-promezhutok-ot-2-do-8-interval-300x29.png 300w" sizes="(max-width: 518px) 100vw, 518px" /></p>
+<p>Здесь точки 2 и 8 соответствуют границам неравенства <span style="color: #000000;">2 &lt; <em>x </em>&lt; 8</span>, а выделенная штрихами область соответствует множеству значений <span style="color: #000000;"><em>x</em></span>, которые являются решениями неравенства <span style="color: #000000;">2 &lt; <em>x </em>&lt; 8</span>. Точки 2 и 8, являющиеся границами интервала, изображены в виде пустых кружков, поскольку границы неравенства <span style="color: #000000;">2 &lt; <em>x </em>&lt; 8</span> не принадлежат множеству его решений.</p>
+<p>На письме интервал, заданный неравенством <span style="color: #000000;"><em>a &lt; x &lt; b,</em></span> обозначается следующим образом:</p>
+<p style="text-align: center;"><span style="color: #000000;">( <em>a ; b</em> )</span></p>
+<p>Круглые скобки с обеих сторон указывают на то, что границы интервала <strong>не принадлежат</strong> ему. Запишем ответ к неравенству <span style="color: #000000;">2 &lt; <em>x </em>&lt; 8</span> с помощью этого обозначения:</p>
+<p style="text-align: center;"><span style="color: #000000;"><em>x</em> ∈  ( 2 ; 8 )</span></p>
+<p>В этом выражении говорится, что все числа от 2 до 8, исключая числа 2 и 8, являются решениями неравенства <span style="color: #000000;">2 &lt; <em>x </em>&lt; 8</span>.</p>
+<h3 id="yak11" style="text-align: center;">Полуинтервал</h3>
+<p><strong>Полуинтервалом</strong> называют числовой промежуток, который задаётся неравенством <span style="color: #000000;"><em>a ≤ x &lt; b</em></span>, где <span style="color: #000000;"><em>a</em></span> и <span style="color: #000000;"><em>b</em></span> &#8212; границы данного неравенства, <span style="color: #000000;"><em>x</em></span> &#8212; решение неравенства.</p>
+<p>Полуинтервалом также называют числовой промежуток, который задаётся неравенством <span style="color: #000000;"><em>a &lt; x ≤ b</em></span>.</p>
+<p>Одна из границ полуинтервала принадлежит ему. Отсюда и название этого числового промежутка.</p>
+<p>В ситуации с полуинтервалом <span style="color: #000000;"><em>a ≤ x &lt; b</em></span> ему (полуинтервалу) принадлежит левая граница.</p>
+<p>А в ситуации с полуинтервалом <span style="color: #000000;"><em>a &lt; x ≤ b</em></span> ему принадлежит правая граница.</p>
+<p>Пусть <span style="color: #000000;"><em>a </em>= 2</span>, <span style="color: #000000;"><em>b </em>= 8</span>. Тогда неравенство <span style="color: #000000;"><em>a ≤ x &lt; b</em></span> примет вид <span style="color: #000000;">2 ≤ <em>x</em> &lt; 8</span>. Решениями этого двойного неравенства являются все числа, которые больше 2 и меньше 8, включая число 2, но исключая число 8.</p>
+<p>Изобразим полуинтервал <span style="color: #000000;">2 ≤ <em>x</em> &lt; 8</span> на координатной прямой:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-8302 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-promezhutok-ot-2-do-8-poluinterval-1.png" alt="числовой промежуток от 2 до 8 полуинтервал 1" width="518" height="50" srcset="https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-promezhutok-ot-2-do-8-poluinterval-1.png 518w, https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-promezhutok-ot-2-do-8-poluinterval-1-300x29.png 300w" sizes="(max-width: 518px) 100vw, 518px" /></p>
+<p>Здесь точки 2 и 8 соответствуют границам неравенства <span style="color: #000000;">2 ≤ <em>x</em> &lt; 8</span>, а выделенная штрихами область соответствует множеству значений <span style="color: #000000;"><em>x</em></span>, которые являются решениями неравенства <span style="color: #000000;">2 ≤ <em>x</em> &lt; 8</span>.</p>
+<p>Точка 2, являющаяся <strong>левой границей</strong> полуинтервала, изображена в виде закрашенного кружка, поскольку левая граница неравенства <span style="color: #000000;">2 ≤ <em>x</em> &lt; 8</span> <b>принадлежит </b>множеству его решений.</p>
+<p>А точка 8, являющаяся <strong>правой границей</strong> полуинтервала, изображена в виде пустого кружка, поскольку правая граница неравенства <span style="color: #000000;">2 ≤ <em>x</em> &lt; 8</span> <strong>не <b>принадлежит</b></strong> множеству его решений.</p>
+<p>На письме полуинтервал, заданный неравенством <span style="color: #000000;"><em>a ≤ x &lt; b,</em></span> обозначается следующим образом:</p>
+<p style="text-align: center;"><span style="color: #000000;">[ <em>a ; b</em> )</span></p>
+<p>Видно, что с одной стороны граница обрамлена квадратной скобкой, а с другой круглой. Это связано с тем, что одна граница полуинтервала принадлежит ему, а другая нет. Запишем ответ к неравенству <span style="color: #000000;">2 ≤ <em>x</em> &lt; 8</span> с помощью этого обозначения:</p>
+<p style="text-align: center;"><span style="color: #000000;"><em>x</em> ∈  [ 2 ; 8 )</span></p>
+<p>В этом выражении говорится, что все числа от 2 до 8, включая число 2, но исключая число 8, являются решениями неравенства <span style="color: #000000;">2 ≤ <em>x</em> &lt; 8</span>.</p>
+<p>Аналогично на координатной прямой можно изобразить полуинтервал, заданный неравенством <span style="color: #000000;"><em>a &lt; x ≤ b</em></span>. Пусть <span style="color: #000000;"><em>a </em>= 2</span>, <span style="color: #000000;"><em>b </em>= 8</span>. Тогда неравенство <span style="color: #000000;"><em>a &lt; x ≤ b</em></span> примет вид <span style="color: #000000;">2 &lt; <em>x </em>≤ 8</span>. Решениями этого двойного неравенства являются все числа, которые больше 2 и меньше 8, исключая число 2, но включая число 8.</p>
+<p>Изобразим полуинтервал <span style="color: #000000;">2 &lt; <em>x </em>≤ 8</span> на координатной прямой:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-8303 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-promezhutok-ot-2-do-8-poluinterval-2.png" alt="числовой промежуток от 2 до 8 полуинтервал 2" width="518" height="50" srcset="https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-promezhutok-ot-2-do-8-poluinterval-2.png 518w, https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-promezhutok-ot-2-do-8-poluinterval-2-300x29.png 300w" sizes="(max-width: 518px) 100vw, 518px" /></p>
+<p>Здесь точки 2 и 8 соответствуют границам неравенства <span style="color: #000000;">2 &lt; <em>x </em>≤ 8</span>, а выделенная штрихами область соответствует множеству значений <span style="color: #000000;"><em>x</em></span>, которые являются решениями неравенства <span style="color: #000000;">2 &lt; <em>x </em>≤ 8</span>.</p>
+<p>Точка 2, являющаяся <strong>левой границей</strong> полуинтервала, изображена в виде пустого кружка, поскольку левая граница неравенства <span style="color: #000000;">2 &lt; <em>x </em>≤ 8</span> <strong>не принадлежит </strong>множеству его решений.</p>
+<p>А точка 8, являющаяся <strong>правой границей</strong> полуинтервала, изображена в виде закрашенного кружка, поскольку правая граница неравенства <span style="color: #000000;">2 &lt; <em>x </em>≤ 8</span> <b>принадлежит </b>множеству его решений.</p>
+<p>На письме полуинтервал, заданный неравенством <span style="color: #000000;"><em>a &lt; x ≤ b,</em></span> обозначается так: <span style="color: #000000;">( <em>a ; b</em> ]</span>. Запишем ответ к неравенству <span style="color: #000000;">2 &lt; <em>x </em>≤ 8</span> с помощью этого обозначения:</p>
+<p style="text-align: center;"><span style="color: #000000;"><em>x</em> ∈  ( 2 ; 8 ]</span></p>
+<p>В этом выражении говорится, что все числа от 2 до 8, исключая число 2, но включая число 8, являются решениями неравенства <span style="color: #000000;">2 &lt; <em>x </em>≤ 8</span>.</p>
+<hr />
+<h2 id="yak17" style="text-align: center;">Изображение числовых промежутков на координатной прямой</h2>
+<p>Числовой промежуток может быть задан с помощью неравенства или с помощью обозначения (круглых или квадратных скобок). В обоих случаях нужно суметь изобразить этот числовой промежуток на координатной прямой. Рассмотрим несколько примеров.</p>
+<p><strong>Пример 1</strong>. Изобразить числовой промежуток, заданный неравенством <span style="color: #000000;"><em>x </em>&gt; 5</span></p>
+<p>Вспоминаем, что неравенством вида <span style="color: #000000;"><em>x </em>&gt; <em>a</em></span> задаётся открытый числовой луч. В данном случае переменная <span style="color: #000000;"><em>a</em></span> равна 5. Неравенство <span style="color: #000000;"><em>x </em>&gt; 5</span> строгое, поэтому граница 5 будет изображаться в виде пустого кружкá. Нас интересуют все значения <span style="color: #000000;"><em>x,</em></span> которые больше 5, поэтому вся область справа будет выделена штрихами:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8754 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/09/chislovoj-luch-ot-5-do-beskonechnosti.png" alt="числовой луч от 5 до бесконечности" width="507" height="51" srcset="https://spacemath.xyz/wp-content/uploads/2018/09/chislovoj-luch-ot-5-do-beskonechnosti.png 507w, https://spacemath.xyz/wp-content/uploads/2018/09/chislovoj-luch-ot-5-do-beskonechnosti-300x30.png 300w" sizes="(max-width: 507px) 100vw, 507px" /></p>
+<hr />
+<p><strong>Пример 2</strong>. Изобразить числовой промежуток (5; +∞) на координатной прямой</p>
+<p>Это тот же числовой промежуток, который мы изобразили в предыдущем примере. Но в этот раз он задан не с помощью неравенства, а с помощью обозначения числового промежутка.</p>
+<p>Граница 5 обрамлена круглой скобкой, значит она не принадлежит промежутку. Соответственно, кружок остаётся пустым.</p>
+<p>Символ <span style="color: #000000;">+∞</span> указывает, что нас интересуют все числа, которые больше 5. Соответственно, вся область справа от границы 5 выделяется штрихами:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8755 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/09/chislovoj-luch-ot-5-do-beskonechnosti-2.png" alt="числовой луч от 5 до бесконечности 2" width="574" height="51" srcset="https://spacemath.xyz/wp-content/uploads/2018/09/chislovoj-luch-ot-5-do-beskonechnosti-2.png 574w, https://spacemath.xyz/wp-content/uploads/2018/09/chislovoj-luch-ot-5-do-beskonechnosti-2-300x27.png 300w" sizes="(max-width: 574px) 100vw, 574px" /></p>
+<hr />
+<p><strong>Пример 3</strong>. Изобразить числовой промежуток <span style="color: #000000;">(−5; 1)</span> на координатной прямой.</p>
+<p>Круглыми скобками с обеих сторон обозначаются интервалы. Границы интервала не принадлежат ему, поэтому границы −5 и 1 будут изображаться на координатной прямой в виде пустых кружков. Вся область между ними будет выделена штрихами:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8756 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/09/chislovoj-promezhutok-ot-5-do-1-risunok.png" alt="числовой промежуток от -5 до 1 рисунок" width="519" height="50" srcset="https://spacemath.xyz/wp-content/uploads/2018/09/chislovoj-promezhutok-ot-5-do-1-risunok.png 519w, https://spacemath.xyz/wp-content/uploads/2018/09/chislovoj-promezhutok-ot-5-do-1-risunok-300x29.png 300w" sizes="(max-width: 519px) 100vw, 519px" /></p>
+<hr />
+<p><strong>Пример 4</strong>. Изобразить числовой промежуток, заданный неравенством <span style="color: #000000;">−5 &lt; <em>x &lt; </em>1</span></p>
+<p>Это тот же числовой промежуток, который мы изобразили в предыдущем примере. Но в этот раз он задан не с помощью обозначения промежутка, а с помощью двойного неравенства.</p>
+<p>Неравенством вида <span style="color: #000000;"><em>a &lt; x &lt; b</em></span>, задаётся интервал. В данном случае переменная <span style="color: #000000;"><em>a</em></span> равна <span style="color: #000000;">−5</span>, а переменная <span style="color: #000000;"><em>b</em></span> равна единице. Неравенство <span style="color: #000000;">−5 &lt; <em>x &lt; </em>1</span> строгое, поэтому границы <span style="color: #000000;">−5</span> и <span style="color: #000000;">1</span> будут изображаться в виде пустых кружка. Нас интересуют все значения <span style="color: #000000;"><em>x,</em></span> которые больше <span style="color: #000000;">−5</span>, но меньше единицы, поэтому вся область между точками <span style="color: #000000;">−5</span> и <span style="color: #000000;">1</span> будет выделена штрихами:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8756 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/09/chislovoj-promezhutok-ot-5-do-1-risunok.png" alt="числовой промежуток от -5 до 1 рисунок" width="519" height="50" srcset="https://spacemath.xyz/wp-content/uploads/2018/09/chislovoj-promezhutok-ot-5-do-1-risunok.png 519w, https://spacemath.xyz/wp-content/uploads/2018/09/chislovoj-promezhutok-ot-5-do-1-risunok-300x29.png 300w" sizes="(max-width: 519px) 100vw, 519px" /></p>
+<hr />
+<p><strong>Пример 5</strong>. Изобразить на координатной прямой числовые промежутки <span style="color: #000000;">[−1; 2)</span> и <span style="color: #000000;">[2; 5]</span></p>
+<p>В этот раз изобразим на координатной прямой сразу два промежутка. Промежуток [−1; 2) является полуинтервалом, промежуток [2; 5] &#8212; отрезком.</p>
+<p>У полуинтервала [−1; 2) левая граница принадлежит ему, а правая нет.</p>
+<p>А у отрезка [2; 5] обе границы принадлежат ему.</p>
+<p>Чтобы хорошо увидеть промежутки <span style="color: #000000;">[−1; 2)</span> и <span style="color: #000000;">[2; 5]</span>, первый можно изобразить на верхней области, а второй на нижней. Так и поступим:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-12395 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/09/1-2-i-2-5-na-kp.png" alt="-1 2 i 2 5 на кп" width="519" height="192" srcset="https://spacemath.xyz/wp-content/uploads/2018/09/1-2-i-2-5-na-kp.png 519w, https://spacemath.xyz/wp-content/uploads/2018/09/1-2-i-2-5-na-kp-300x111.png 300w" sizes="(max-width: 519px) 100vw, 519px" /></p>
+<p>Граница 2 закрашена потому что она входит в промежуток <span style="color: #000000;">[2; 5]</span>.</p>
+<hr />
+<p><strong>Пример 6</strong>. Изобразить на координатной прямой числовые промежутки <span style="color: #000000;">[-1; 2)</span> и <span style="color: #000000;">(2; 5]</span></p>
+<p>Квадратной скобкой с одной стороны и круглой с другой обозначаются полуинтервалы. Одна из границ полуинтервала принадлежат ему, а другая нет.</p>
+<p>В случае с полуинтервалом <span style="color: #000000;">[-1; 2)</span> левая граница будет принадлежать ему, а правая нет. Значит левая граница будет изображаться в виде закрашенного кружка. Правая же граница будет изображаться в виде пустого кружка.</p>
+<p>А в случае с полуинтервалом <span style="color: #000000;">(2; 5]</span> ему будет принадлежать только правая граница, а левая нет. Значит левая граница будет изображаться в виде пустого кружка. Правая же граница будет изображаться в виде закрашенного кружка.</p>
+<p>Изобразим промежуток <span style="color: #000000;">[-1; 2)</span> на верхней области координатной прямой, а промежуток <span style="color: #000000;">(2; 5]</span> &#8212; на нижней:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8759 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/09/1-2-i-2-5-na-kp-odna-granitsa-otkryta.png" alt="-1 2 i 2 5 на кп одна граница открыта" width="519" height="191" srcset="https://spacemath.xyz/wp-content/uploads/2018/09/1-2-i-2-5-na-kp-odna-granitsa-otkryta.png 519w, https://spacemath.xyz/wp-content/uploads/2018/09/1-2-i-2-5-na-kp-odna-granitsa-otkryta-300x110.png 300w" sizes="(max-width: 519px) 100vw, 519px" /></p>
+<hr />
+<h2 id="yak13" style="text-align: center;">Примеры решения неравенств</h2>
+<p>Неравенство, которое путём тождественных преобразований можно привести к виду <span style="color: #000000;"><em>ax &gt; b</em></span> (или к виду <span style="color: #000000;"><em>ax &lt; b</em></span>), будем называть <strong>линейным неравенством с одной переменной</strong>.</p>
+<p>В линейном неравенстве <span style="color: #000000;"><em>ax &gt; b</em></span>, <span style="color: #000000;"><em>x</em></span> &#8212; это переменная, значения которой нужно найти, <span style="color: #000000;"><em>а</em></span> &#8212; коэффициент этой переменной, <span style="color: #000000;"><em>b</em></span> &#8212; граница неравенства, которая в зависимости от знака неравенства может принадлежать множеству его решений либо не принадлежать ему.</p>
+<p>Например, неравенство <span style="color: #000000;">2<em>x </em>&gt; 4</span> является неравенством вида <span style="color: #000000;"><em>ax &gt; b</em></span>. В нём роль переменной <span style="color: #000000;"><em>a</em></span> играет число 2, роль переменной <span style="color: #000000;"><em>b</em></span> (границы неравенства) играет число 4.</p>
+<p>Неравенство <span style="color: #000000;">2<em>x </em>&gt; 4</span> можно сделать ещё проще. Если мы разделим обе его части на 2, то получим неравенство <span style="color: #000000;"><em>x </em>&gt; 2</span></p>
+<p>Получившееся неравенство <span style="color: #000000;"><em>x </em>&gt; 2</span> также является неравенством вида <span style="color: #000000;"><em>ax &gt; b</em></span>, то есть линейным неравенством с одной переменной. В этом неравенстве роль переменной <em><span style="color: #000000;">a</span></em> играет единица. Ранее мы говорили, что коэффициент 1 не записывают. Роль переменной <span style="color: #000000;"><em>b</em></span> играет число 2.</p>
+<p>Отталкиваясь от этих сведений, попробуем решить несколько простых неравенств. В ходе решения мы будем выполнять элементарные тождественные преобразования с целью получить неравенство вида <span style="color: #000000;"><em>ax &gt; b</em></span></p>
+<p><strong>Пример 1</strong>. Решить неравенство <span style="color: #000000;"><em>x </em>− 7 &lt; 0</span></p>
+<p>Прибавим к обеим частям неравенства число 7</p>
+<p style="text-align: center;"><span style="color: #000000;"><em>x </em>− 7 + 7 &lt; 0 + 7</span></p>
+<p>В левой части останется <span style="color: #000000;"><em>x</em></span>, а правая часть станет равна 7</p>
+<p style="text-align: center;"><span style="color: #000000;"><em>x </em>&lt; 7</span></p>
+<p>Путём элементарных преобразований мы привели неравенство <span style="color: #000000;"><em>x </em>− 7 &lt; 0</span> к равносильному неравенству <span style="color: #000000;"><em>x </em>&lt; 7</span>. Решениями неравенства <span style="color: #000000;"><em>x </em>&lt; 7</span> являются все числа, которые меньше 7. Граница 7 не принадлежит множеству решений, поскольку неравенство строгое.</p>
+<p>Когда неравенство приведено к виду <span style="color: #000000;"><em>x &lt; a</em></span> (или <span style="color: #000000;"><em>x &gt; a</em></span>), его можно считать уже решённым. Наше неравенство <span style="color: #000000;"><em>x </em>− 7 &lt; 0</span> тоже приведено к такому виду, а именно к виду <span style="color: #000000;"><em>x </em>&lt; 7</span>. Но в большинстве школ требуют, чтобы ответ был записан с помощью числового промежутка и проиллюстрирован на координатной прямой.</p>
+<p>Запишем ответ с помощью числового промежутка. В данном случае ответом будет открытый числовой луч (вспоминаем, что числовой луч задаётся неравенством <span style="color: #000000;"><em>x &lt; a</em></span> и обозначается как <span style="color: #000000;">( −∞ ; <em>a</em>)</span></p>
+<p style="text-align: center;"><span style="color: #000000;"><em>x</em> ∈  ( −∞ ; 7 )</span></p>
+<p>На координатной прямой граница 7 будет изображаться в виде пустого кружка, а вся область, находящаяся слева от границы, будет выделена штрихами:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-8304 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-promezhutok-ot-minus-beskonechnosti-do-7-otkrytyj-chislovoj-luch.png" alt="числовой промежуток от минус бесконечности до 7 открытый числовой луч" width="511" height="47" srcset="https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-promezhutok-ot-minus-beskonechnosti-do-7-otkrytyj-chislovoj-luch.png 511w, https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-promezhutok-ot-minus-beskonechnosti-do-7-otkrytyj-chislovoj-luch-300x28.png 300w" sizes="(max-width: 511px) 100vw, 511px" /></p>
+<p>Для проверки возьмём любое число из промежутка <span style="color: #000000;">( −∞ ; 7 )</span> и подставим его в неравенство <span style="color: #000000;"><em>x </em>&lt; 7</span> вместо переменной <span style="color: #000000;"><em>x</em></span>. Возьмём, например, число 2</p>
+<p style="text-align: center;"><span style="color: #000000;">2 &lt; 7</span></p>
+<p>Получилось верное числовое неравенство, значит и решение верное. Возьмём ещё какое-нибудь число, например, число 4</p>
+<p style="text-align: center;"><span style="color: #000000;">4 &lt; 7</span></p>
+<p>Получилось верное числовое неравенство. Значит решение верное.</p>
+<p>А поскольку неравенство <span style="color: #000000;"><em>x </em>&lt; 7</span> равносильно исходному неравенству <span style="color: #000000;"><em>x − </em>7 &lt; 0</span>, то решения неравенства <span style="color: #000000;"><em>x </em>&lt; 7</span> будут совпадать с решениями неравенства <span style="color: #000000;"><em>x − </em>7 &lt; 0</span>. Подставим те же тестовые значения 2 и 4 в неравенство <span style="color: #000000;"><em>x − </em>7 &lt; 0</span></p>
+<p style="text-align: left;"><em><span style="color: #000000;">2 − 7 &lt; 0</span></em></p>
+<p style="text-align: left;"><em><span style="color: #000000;">−5 &lt; 0 &#8212; Верное неравенство</span></em></p>
+<p style="text-align: left;"><em><span style="color: #000000;">4 − 7 &lt; 0</span></em></p>
+<p style="text-align: left;"><em><span style="color: #000000;">−3 &lt; 0 Верное неравенство</span></em></p>
+<hr />
+<p><strong>Пример 2</strong>. Решить неравенство <span style="color: #000000;">−4<em>x</em> &lt; −16</span></p>
+<p>Разделим обе части неравенства на −4. Не забываем, что при делении обеих частей неравенства <strong>на отрицательное число</strong>, знак неравенства <strong>меняется на противоположный</strong>:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7875 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/07/4x-menge-16-shag-1.png" alt="-4x меньге -16 шаг 1" width="103" height="119" /></p>
+<p>Мы привели неравенство <span style="color: #000000;">−4<em>x</em> &lt; −16</span> к равносильному неравенству <span style="color: #000000;"><em>x </em>&gt; 4</span>. Решениями неравенства <span style="color: #000000;"><em>x </em>&gt; 4</span> будут все числа, которые больше 4. Граница 4 не принадлежит множеству решений, поскольку неравенство строгое.</p>
+<p>Изобразим множество решений неравенства <span style="color: #000000;"><em>x </em>&gt; 4</span> на координатной прямой и запишем ответ в виде числового промежутка:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-8305 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-luch-ot-4-do-beskonechnosti.png" alt="числовой луч от 4 до бесконечности" width="507" height="48" srcset="https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-luch-ot-4-do-beskonechnosti.png 507w, https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-luch-ot-4-do-beskonechnosti-300x28.png 300w" sizes="(max-width: 507px) 100vw, 507px" /></p>
+<p><img loading="lazy" decoding="async" class="wp-image-8306 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/promezhutok-ot-4-do-beskonechnosti.png" alt="промежуток от 4 до бесконечности" width="113" height="21" /></p>
+<hr />
+<p><strong>Пример 3</strong>. Решить неравенство <span style="color: #000000;">3<em>y +</em> 1 &gt; 1 + 6<em>y</em></span></p>
+<p>Перенесём <span style="color: #000000;">6<em>y</em></span> из правой части в левую часть, изменив знак. А <span style="color: #000000;">1</span> из левой части перенесем в правую часть, опять же изменив знак:</p>
+<p style="text-align: center;"><span style="color: #000000;">3<em>y </em>− 6<em>y</em>&gt; 1 − 1</span></p>
+<p>Приведём подобные слагаемые:</p>
+<p style="text-align: center;"><span style="color: #000000;">−3<em>y</em> &gt; 0</span></p>
+<p>Разделим обе части на −3. Не забываем, что при делении обеих частей неравенства на отрицательное число, знак неравенства меняется на противоположный:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-8307 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/3y-na-3-b-0.png" alt="3y na 3 b 0" width="94" height="88" /></p>
+<p>Решениями неравенства <span style="color: #000000;"><em>y </em>&lt; 0</span> являются все числа, меньшие нуля. Изобразим множество решений неравенства <span style="color: #000000;"><em>y </em>&lt; 0</span> на координатной прямой и запишем ответ в виде числового промежутка:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-8308 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-luch-ot-minus-beskonechnosti-do-nulya.png" alt="числовой луч от минус бесконечности до нуля" width="512" height="50" srcset="https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-luch-ot-minus-beskonechnosti-do-nulya.png 512w, https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-luch-ot-minus-beskonechnosti-do-nulya-300x29.png 300w" sizes="(max-width: 512px) 100vw, 512px" /></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7989 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/promezhutok-ot-beskonechnosti-do-0.png" alt="промежуток от бесконечности до 0" width="112" height="21" /></p>
+<hr />
+<p><strong>Пример 4</strong>. Решить неравенство <span style="color: #000000;">5(<em>x </em>− 1) + 7 ≤ 1 − 3(<em>x </em>+ 2)</span></p>
+<p>Раскроем скобки в обеих частях неравенства:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7880 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/07/ner-vo-5x-5-7-1-3x-6-shag-1.png" alt="нер-во 5x-5 -7 1-3x-6 шаг 1" width="203" height="48" /></p>
+<p>Перенесем <span style="color: #000000;">−3<em>x</em></span> из правой части в левую часть, изменив знак. Члены <span style="color: #000000;">−5</span> и <span style="color: #000000;">7</span> из левой части перенесем в правую часть, опять же изменив знаки:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7881 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/07/ner-vo-5x-5-7-1-3x-6-shag-2.png" alt="нер-во 5x-5 -7 1-3x-6 шаг 2" width="184" height="16" /></p>
+<p>Приведем подобные слагаемые:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7882 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/07/ner-vo-5x-5-7-1-3x-6-shag-3.png" alt="нер-во 5x-5 -7 1-3x-6 шаг 3" width="180" height="48" /></p>
+<p>Разделим обе части получившегося неравенства на 8</p>
+<p><img loading="lazy" decoding="async" class="wp-image-8309 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/ner-vo-5x-5-7-1-3x-6-shag-4.png" alt="нер-во 5x-5 -7 1-3x-6 шаг 4" width="88" height="113" /></p>
+<p>Решениями неравенства <img loading="lazy" decoding="async" class="alignnone wp-image-7887 size-full" src="https://spacemath.xyz/wp-content/uploads/2018/07/ner-vo-5x-5-7-1-3x-6-shag-5.png" alt="нер-во 5x-5 -7 1-3x-6 шаг 5" width="67" height="45" /> являются все числа, которые меньше <img loading="lazy" decoding="async" class="alignnone wp-image-7888 size-full" src="https://spacemath.xyz/wp-content/uploads/2018/07/minus-7-na-8-1.png" alt="минус 7 na 8" width="28" height="45" />. Граница <img loading="lazy" decoding="async" class="alignnone wp-image-7888 size-full" src="https://spacemath.xyz/wp-content/uploads/2018/07/minus-7-na-8-1.png" alt="минус 7 na 8" width="28" height="45" /> принадлежит множеству решений, поскольку неравенство <img loading="lazy" decoding="async" class="alignnone wp-image-7887 size-full" src="https://spacemath.xyz/wp-content/uploads/2018/07/ner-vo-5x-5-7-1-3x-6-shag-5.png" alt="нер-во 5x-5 -7 1-3x-6 шаг 5" width="67" height="45" /> является нестрогим.</p>
+<p>Изобразим множество решений неравенства <img loading="lazy" decoding="async" class="alignnone wp-image-7887 size-full" src="https://spacemath.xyz/wp-content/uploads/2018/07/ner-vo-5x-5-7-1-3x-6-shag-5.png" alt="нер-во 5x-5 -7 1-3x-6 шаг 5" width="67" height="45" /> на координатной прямой и запишем ответ в виде числового промежутка:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-8310 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-promezhutok-ot-minus-beskonechnosti-do-7-8-1.png" alt="числовой промежуток от минус бесконечности до 7 8" width="512" height="79" srcset="https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-promezhutok-ot-minus-beskonechnosti-do-7-8-1.png 512w, https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-promezhutok-ot-minus-beskonechnosti-do-7-8-1-300x46.png 300w" sizes="(max-width: 512px) 100vw, 512px" /></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9617 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/01/promezhutok-ot-beskonechnosti-do-7-8.png" alt="промежуток от бесконечности до 7 8" width="141" height="53" /></p>
+<p>&nbsp;</p>
+<hr />
+<p><strong>Пример 5</strong>. Решить неравенство <img loading="lazy" decoding="async" class="alignnone size-full wp-image-7891" src="https://spacemath.xyz/wp-content/uploads/2018/07/5-plus-6x-na-2-more-3.png" alt="5 plus 6x na 2 more 3" width="85" height="45" /></p>
+<p>Умножим обе части неравенства на 2. Это позволит избавиться от дроби в левой части:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7892 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/07/5-plus-6x-na-2-more-3-ste-2.png" alt="5 plus 6x na 2 more 3 ste 2" width="152" height="74" srcset="https://spacemath.xyz/wp-content/uploads/2018/07/5-plus-6x-na-2-more-3-ste-2.png 152w, https://spacemath.xyz/wp-content/uploads/2018/07/5-plus-6x-na-2-more-3-ste-2-150x74.png 150w" sizes="(max-width: 152px) 100vw, 152px" /></p>
+<p>Теперь перенесем 5 из левой части в правую часть, изменив знак:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7893 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/07/5-plus-6x-na-2-more-3-step-3.png" alt="5 plus 6x na 2 more 3 step 3" width="87" height="16" /></p>
+<p>После приведения подобных слагаемых, получим неравенство <span style="color: #000000;">6<em>x </em>&gt; 1</span>. Разделим обе части этого неравенства на 6. Тогда получим:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7894 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/07/5-plus-6x-na-2-more-3-step-4.png" alt="5 plus 6x na 2 more 3 step 4" width="69" height="106" /></p>
+<p>Решениями неравенства <img loading="lazy" decoding="async" class="alignnone size-full wp-image-7895" src="https://spacemath.xyz/wp-content/uploads/2018/07/x-more-1-na-6.png" alt="x more 1 na 6" width="47" height="45" /> являются все числа, которые больше <img loading="lazy" decoding="async" class="alignnone size-full wp-image-2836" src="https://spacemath.xyz/wp-content/uploads/2016/11/odna-shestaya" alt="одна шестая" width="12" height="43" />. Граница <img loading="lazy" decoding="async" class="alignnone size-full wp-image-2836" src="https://spacemath.xyz/wp-content/uploads/2016/11/odna-shestaya" alt="одна шестая" width="12" height="43" /> не принадлежит множеству решений, поскольку неравенство <img loading="lazy" decoding="async" class="alignnone size-full wp-image-7895" src="https://spacemath.xyz/wp-content/uploads/2018/07/x-more-1-na-6.png" alt="x more 1 na 6" width="47" height="45" /> является строгим.</p>
+<p>Изобразим множество решений неравенства <img loading="lazy" decoding="async" class="alignnone size-full wp-image-7895" src="https://spacemath.xyz/wp-content/uploads/2018/07/x-more-1-na-6.png" alt="x more 1 na 6" width="47" height="45" /> на координатной прямой и запишем ответ в виде числового промежутка:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-8466 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-luch-ot-minus-beskonechnosti-do-1-na-6.png" alt="числовой луч от минус бесконечности до 1 na 6" width="512" height="79" srcset="https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-luch-ot-minus-beskonechnosti-do-1-na-6.png 512w, https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-luch-ot-minus-beskonechnosti-do-1-na-6-300x46.png 300w" sizes="(max-width: 512px) 100vw, 512px" /></p>
+<p><img loading="lazy" decoding="async" class="wp-image-8467 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-luch-1-na-6-do-plyus-beskonechnosti.png" alt="числовой луч 1 na 6 до плюс бесконечности" width="127" height="53" /></p>
+<hr />
+<p><strong>Пример 6</strong>. Решить неравенство <img loading="lazy" decoding="async" class="alignnone size-full wp-image-7897" src="https://spacemath.xyz/wp-content/uploads/2018/07/x-na-2-plus-x-na-3-less-5.png" alt="x na 2 plus x na 3 less 5" width="85" height="41" /></p>
+<p>Умножим обе части на 6</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7898 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/07/x-na-2-plus-x-na-3-less-5-step-2.png" alt="x na 2 plus x na 3 less 5 step 2" width="170" height="145" /></p>
+<p>После приведения подобных слагаемых, получим неравенство <span style="color: #000000;">5<em>x </em>&lt; 30</span>. Разделим обе части этого неравенства на 5</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7899 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/07/x-na-2-plus-x-na-3-less-5-step-3.png" alt="x na 2 plus x na 3 less 5 step 3" width="85" height="91" /></p>
+<p>Решениями неравенства <span style="color: #000000;"><em>x </em>&lt; 6</span> являются все числа, которые меньше 6. Граница 6 не принадлежит множеству решений, поскольку неравенство является <span style="color: #000000;"><em>x </em>&lt; 6</span> строгим.</p>
+<p>Изобразим множество решений неравенства <span style="color: #000000;"><em>x </em>&lt; 6</span> на координатной прямой и запишем ответ в виде числового промежутка:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-8314 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-luch-ot-minus-beskonechnosti-do-6.png" alt="числовой луч от минус бесконечности до 6" width="512" height="50" srcset="https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-luch-ot-minus-beskonechnosti-do-6.png 512w, https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-luch-ot-minus-beskonechnosti-do-6-300x29.png 300w" sizes="(max-width: 512px) 100vw, 512px" /></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7996 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/promezhutok-ot-minus-beskonechnosti-do-6.png" alt="промежуток от минус бесконечности до 6" width="117" height="23" /></p>
+<hr />
+<p><strong>Пример 7</strong>. Решить неравенство <img loading="lazy" decoding="async" class="alignnone wp-image-7902 size-full" src="https://spacemath.xyz/wp-content/uploads/2018/07/x-minus-x-minus-3-na-5-plus-2x-minus-1-na-10-less-ravno-4.png" alt="x minus x minus 3 na 5 plus 2x minus 1 na 10 less ravno 4" width="179" height="48" /></p>
+<p>Умножим обе части неравенства на 10</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7903 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/07/x-minus-x-minus-3-na-5-plus-2x-minus-1-na-10-less-ravno-4-step-2.png" alt="x minus x minus 3 na 5 plus 2x minus 1 na 10 less ravno 4 step 2" width="308" height="154" srcset="https://spacemath.xyz/wp-content/uploads/2018/07/x-minus-x-minus-3-na-5-plus-2x-minus-1-na-10-less-ravno-4-step-2.png 308w, https://spacemath.xyz/wp-content/uploads/2018/07/x-minus-x-minus-3-na-5-plus-2x-minus-1-na-10-less-ravno-4-step-2-300x150.png 300w" sizes="(max-width: 308px) 100vw, 308px" /></p>
+<p>В получившемся неравенстве раскроем скобки в левой части:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7904 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/07/x-minus-x-minus-3-na-5-plus-2x-minus-1-na-10-less-ravno-4-step-3.png" alt="x minus x minus 3 na 5 plus 2x minus 1 na 10 less ravno 4 step 3" width="219" height="16" /></p>
+<p>Перенесем члены без <span style="color: #000000;"><em>x</em></span> в правую часть</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7905 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/07/x-minus-x-minus-3-na-5-plus-2x-minus-1-na-10-less-ravno-4-step-4.png" alt="x minus x minus 3 na 5 plus 2x minus 1 na 10 less ravno 4 step 4" width="219" height="16" /></p>
+<p>Приведем подобные слагаемые в обеих частях:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7906 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/07/x-minus-x-minus-3-na-5-plus-2x-minus-1-na-10-less-ravno-4-step-5.png" alt="x minus x minus 3 na 5 plus 2x minus 1 na 10 less ravno 4 step 5" width="214" height="52" /></p>
+<p>Разделим обе части получившегося неравенства на 10</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7907 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/07/x-minus-x-minus-3-na-5-plus-2x-minus-1-na-10-less-ravno-4-step-6.png" alt="x minus x minus 3 na 5 plus 2x minus 1 na 10 less ravno 4 step 6" width="93" height="147" /></p>
+<p>Решениями неравенства <span style="color: #000000;"><em>x </em>≤ 3,5</span> являются все числа, которые меньше 3,5. Граница 3,5 принадлежит множеству решений, поскольку неравенство является <span style="color: #000000;"><em>x </em>≤ 3,5</span> нестрогим.</p>
+<p>Изобразим множество решений неравенства <span style="color: #000000;"><em>x </em>≤ 3,5 </span>на координатной прямой и запишем ответ в виде числового промежутка:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-8315 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-luch-ot-minus-beskonechnosti-do-35-na-10.png" alt="числовой луч от минус бесконечности до 35 na 10" width="512" height="54" srcset="https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-luch-ot-minus-beskonechnosti-do-35-na-10.png 512w, https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-luch-ot-minus-beskonechnosti-do-35-na-10-300x32.png 300w" sizes="(max-width: 512px) 100vw, 512px" /></p>
+<p><img loading="lazy" decoding="async" class="aligncenter wp-image-7998 size-full" src="https://spacemath.xyz/wp-content/uploads/2018/08/promezhutok-ot-minus-beskonechnosti-do-35-na-10.png" alt="" width="137" height="28" /></p>
+<hr />
+<p><strong>Пример 8</strong>. Решить неравенство <span style="color: #000000;">4 &lt; 4<em>x </em>&lt; 20</span></p>
+<p>Чтобы решить такое неравенство, нужно переменную <span style="color: #000000;"><em>x</em></span> освободить от коэффициента 4. Тогда мы сможем сказать в каком промежутке находится решение данного неравенства.</p>
+<p>Чтобы освободить переменную <span style="color: #000000;"><em>x</em></span> от коэффициента, можно разделить член <span style="color: #000000;">4<em>x</em></span> на 4. Но правило в неравенствах таково, что если мы делим член неравенства на какое-нибудь число, то тоже самое надо сделать и с остальными членами, входящими в данное неравенство. В нашем случае на 4 нужно разделить все три члена неравенства <span style="color: #000000;">4 &lt; 4<em>x </em>&lt; 20</span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7921 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/4x-bolshe-4-i-menshe-20.png" alt="4x bolshe 4 i menshe 20" width="111" height="76" /></p>
+<p>Решениями неравенства <span style="color: #000000;">1 &lt; <em>x </em>&lt; 5</span> являются все числа, которые больше 1 и меньше 5. Границы 1 и 5 не принадлежат множеству решений, поскольку неравенство <span style="color: #000000;">1 &lt; <em>x </em>&lt; 5</span> является строгим.</p>
+<p>Изобразим множество решений неравенства <span style="color: #000000;">1 &lt; <em>x </em>&lt; 5</span> на координатной прямой и запишем ответ в виде числового промежутка:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-8316 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/interval-ot-1-do-5.png" alt="интервал от 1 до 5" width="518" height="50" srcset="https://spacemath.xyz/wp-content/uploads/2018/08/interval-ot-1-do-5.png 518w, https://spacemath.xyz/wp-content/uploads/2018/08/interval-ot-1-do-5-300x29.png 300w" sizes="(max-width: 518px) 100vw, 518px" /></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8000 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/promezhutok-ot-1-do-5.png" alt="промежуток от 1 до 5" width="95" height="28" /></p>
+<hr />
+<p><strong>Пример 9</strong>. Решить неравенство <span style="color: #000000;">−1 ≤ −2<em>x </em>≤ 0</span></p>
+<p>Разделим все члены неравенства на −2</p>
+<p><img loading="lazy" decoding="async" class="wp-image-7928 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/1-m-r-2x-m-r-0-step-1.png" alt="-1 m r -2x m r 0 step 1" width="142" height="82" /></p>
+<p>Получили неравенство <span style="color: #000000;">0,5 ≥ <em>x </em>≥ 0</span>. Двойное неравенство желательно записывать так, чтобы меньший член располагался слева, а больший справа. Поэтому перепишем наше неравенство следующим образом:</p>
+<p style="text-align: center;"><span style="color: #000000;">0 ≤ <em>x </em>≤ 0,5</span></p>
+<p>Решениями неравенства <span style="color: #000000;">0 ≤ <em>x </em>≤ 0,5</span> являются все числа, которые больше 0 и меньше 0,5. Границы 0 и 0,5 принадлежат множеству решений, поскольку неравенство <span style="color: #000000;">0 ≤ <em>x </em>≤ 0,5 </span>является нестрогим.</p>
+<p>Изобразим множество решений неравенства <span style="color: #000000;">0 ≤ <em>x </em>≤ 0,5</span> на координатной прямой и запишем ответ в виде числового промежутка:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-8317 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-promezhutok-ot-0-do-05.png" alt="числовой промежуток от 0 до 05" width="518" height="54" srcset="https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-promezhutok-ot-0-do-05.png 518w, https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-promezhutok-ot-0-do-05-300x31.png 300w" sizes="(max-width: 518px) 100vw, 518px" /></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8003 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/promezhutok-ot-0-do-05.png" alt="промежуток от 0 до 05" width="120" height="29" /></p>
+<hr />
+<p><strong>Пример 10</strong>. Решить неравенство <img loading="lazy" decoding="async" class="alignnone wp-image-7932 size-full" src="https://spacemath.xyz/wp-content/uploads/2018/08/x-minus-1-x-na-6-m-r-2x-plus-1-na-2-step-1.png" alt="x minus 1-x na 6 m r 2x plus 1 na 2 step 1" width="189" height="48" /></p>
+<p>Умножим обе неравенства на 12</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7933 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/x-minus-1-x-na-6-m-r-2x-plus-1-na-2-step-2.png" alt="x minus 1-x na 6 m r 2x plus 1 na 2 step 2" width="324" height="152" srcset="https://spacemath.xyz/wp-content/uploads/2018/08/x-minus-1-x-na-6-m-r-2x-plus-1-na-2-step-2.png 324w, https://spacemath.xyz/wp-content/uploads/2018/08/x-minus-1-x-na-6-m-r-2x-plus-1-na-2-step-2-300x141.png 300w" sizes="(max-width: 324px) 100vw, 324px" /></p>
+<p>Раскроем скобки в получившемся неравенстве и приведем подобные слагаемые:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7934 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/x-minus-1-x-na-6-m-r-2x-plus-1-na-2-step-3.png" alt="x minus 1-x na 6 m r 2x plus 1 na 2 step 3" width="239" height="78" /></p>
+<p>Разделим обе части получившегося неравенства на 2</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7935 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/x-minus-1-x-na-6-m-r-2x-plus-1-na-2-step-4.png" alt="x minus 1-x na 6 m r 2x plus 1 na 2 step 4" width="88" height="74" /></p>
+<p>Решениями неравенства <span style="color: #000000;"><em>x </em>≤ −0,5</span> являются все числа, которые меньше −0,5. Граница −0,5 принадлежит множеству решений, поскольку неравенство <span style="color: #000000;"><em>x </em>≤ −0,5</span> является нестрогим.</p>
+<p>Изобразим множество решений неравенства <span style="color: #000000;"><em>x </em>≤ −0,5</span> на координатной прямой и запишем ответ в виде числового промежутка:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-8318 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-luch-ot-minus-beskonechnosti-do-05.png" alt="числовой луч от минус бесконечности до -05" width="512" height="54" srcset="https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-luch-ot-minus-beskonechnosti-do-05.png 512w, https://spacemath.xyz/wp-content/uploads/2018/08/chislovoj-luch-ot-minus-beskonechnosti-do-05-300x32.png 300w" sizes="(max-width: 512px) 100vw, 512px" /></p>
+<p><img loading="lazy" decoding="async" class="wp-image-8331 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/promezhutok-ot-minus-beskonechnosti-do-05.png" alt="промежуток от минус бесконечности до -05" width="144" height="22" /></p>
+<hr />
+<p><strong>Пример 11</strong>. Решить неравенство <img loading="lazy" decoding="async" class="alignnone size-full wp-image-8330" src="https://spacemath.xyz/wp-content/uploads/2018/08/1-m-r-6-a-m-r-1-primer.png" alt="-1 m r 6 - a m r 1 пример" width="128" height="45" /></p>
+<p>Умножим все части неравенства на 3</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8332 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/1-m-r-6-a-m-r-1-shag-2.png" alt="" width="233" height="74" /></p>
+<p>Теперь из каждой части получившегося неравенства вычтем 6</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8333 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/1-m-r-6-a-m-r-1-shag-3.png" alt="-1 m r 6 - a m r 1 шаг 3" width="231" height="49" /></p>
+<p>Каждую часть получившегося неравенства разделим на −1. Не забываем, что при делении всех частей неравенства на отрицательное число, знак неравенства меняется на противоположный:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8334 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/1-m-r-6-a-m-r-1-shag-4.png" alt="-1 m r 6 - a m r 1 шаг 4" width="179" height="103" /></p>
+<p>Решениями неравенства <span style="color: #000000;">3 ≤ <em>a ≤ </em>9</span> являются все числа, которые больше 3 и меньше 9. Границы 3 и 9 принадлежат множеству решений, поскольку неравенство<span style="color: #000000;"> 3 ≤ <em>a ≤ </em>9</span> является нестрогим.</p>
+<p>Изобразим множество решений неравенства 3 <span style="color: #000000;">≤ <em>a ≤ </em>9</span> на координатной прямой и запишем ответ в виде числового промежутка:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8335 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/otrezok-ot-3-do-9.png" alt="отрезок от 3 до 9" width="517" height="50" srcset="https://spacemath.xyz/wp-content/uploads/2018/08/otrezok-ot-3-do-9.png 517w, https://spacemath.xyz/wp-content/uploads/2018/08/otrezok-ot-3-do-9-300x29.png 300w" sizes="(max-width: 517px) 100vw, 517px" /></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8336 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/promezhutok-ot-3-do-9.png" alt="промежуток от 3 до 9" width="93" height="21" /></p>
+<hr />
+<h2 id="yak14" style="text-align: center;">Когда решений нет</h2>
+<p>Существуют неравенства, которые не имеют решений. Таковым, например, является неравенство <span style="color: #000000;">6<em>x </em>&gt; 2(3<em>x </em>+ 1)</span>. В процессе решения этого неравенства мы придём к тому, что знак неравенства <span style="color: #000000;">&gt;</span> не оправдает своего местоположения. Давайте посмотрим, как это выглядит.</p>
+<p>Раскроем скобки в правой части данного неравенство, получим <span style="color: #000000;">6<em>x </em>&gt; 6<em>x </em>+ 2</span>. Перенесем <span style="color: #000000;">6<em>x</em></span> из правой части в левую часть, изменив знак, получим <span style="color: #000000;">6<em>x </em>− 6<em>x </em>&gt; 2</span>. Приводим подобные слагаемые и получаем неравенство <span style="color: #000000;">0 &gt; 2</span>, которое не является верным.</p>
+<p>Для наилучшего понимания, перепишем приведение подобных слагаемых в левой части следующим образом:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8044 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/0x-b-2.png" alt="0x b 2" width="104" height="48" /></p>
+<p>Получили неравенство <span style="color: #000000;">0<em>x </em>&gt; 2</span>. В левой части располагается произведение, которое будет равно нулю при любом <span style="color: #000000;"><em>x</em></span>. А ноль не может быть больше, чем число 2. Значит неравенство <span style="color: #000000;">0<em>x </em>&gt; 2</span> не имеет решений.</p>
+<p>А если не имеет решений приведённое равносильное неравенство <span style="color: #000000;">0<em>x </em>&gt; 2</span>, то не имеет решений и исходное неравенство <span style="color: #000000;">6<em>x </em>&gt; 2(3<em>x </em>+ 1)</span>.</p>
+<hr />
+<p><strong>Пример 2</strong>. Решить неравенство <img loading="lazy" decoding="async" class="alignnone size-full wp-image-8045" src="https://spacemath.xyz/wp-content/uploads/2018/08/12x-1-na-3-m-4x-3-step-1.png" alt="12x - 1 na 3 m 4x -3 step 1" width="133" height="45" /></p>
+<p>Умножим обе части неравенства на 3</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8046 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/12x-1-na-3-m-4x-3-step-2.png" alt="12x - 1 na 3 m 4x -3 step 2" width="207" height="74" /></p>
+<p>В получившемся неравенстве перенесем член <span style="color: #000000;">12<em>x</em></span> из правой части в левую часть, изменив знак. Затем приведём подобные слагаемые:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-8319 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/12x-1-na-3-m-4x-3-step-312x-1-na-3-m-4x-3-step-312x-1-na-3-m-4x-3-step-312x-1-na-3-m-4x-3-step-3.png" alt="12x - 1 na 3 m 4x -3 step 312x - 1 na 3 m 4x -3 step 312x - 1 na 3 m 4x -3 step 312x - 1 na 3 m 4x -3 step 3" width="155" height="80" /></p>
+<p>Правая часть получившегося неравенства при любом <span style="color: #000000;"><em>x</em></span> будет равна нулю. А ноль не меньше, чем −8. Значит неравенство <span style="color: #000000;">0<em>x </em>&lt; −8</span> не имеет решений.</p>
+<p>А если не имеет решений приведённое равносильное неравенство <span style="color: #000000;">0<em>x </em>&lt; −8</span>, то не имеет решений и исходное неравенство <img loading="lazy" decoding="async" class="alignnone size-full wp-image-8045" src="https://spacemath.xyz/wp-content/uploads/2018/08/12x-1-na-3-m-4x-3-step-1.png" alt="12x - 1 na 3 m 4x -3 step 1" width="133" height="45" />.</p>
+<p><strong>Ответ</strong>: решений нет.</p>
+<hr />
+<h2 id="yak15" style="text-align: center;">Когда решений бесконечно много</h2>
+<p>Существуют неравенства, имеющие бесчисленное множество решений. Такие неравенства становятся верными при любом <span style="color: #000000;"><em>x</em></span>.</p>
+<p><strong>Пример 1</strong>. Решить неравенство <span style="color: #000000;">5(3<em>x </em>− 9) &lt; 15<em>x</em></span></p>
+<p>Раскроем скобки в правой части неравенства:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8048 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/15x-45-m-15x-step-1.png" alt="15x - 45 m 15x step 1" width="123" height="16" /></p>
+<p>Перенесём <span style="color: #000000;">15<em>x</em></span> из правой части в левую часть, изменив знак:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8049 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/15x-45-m-15x-step-2.png" alt="15x - 45 m 15x step 2" width="124" height="16" /></p>
+<p>Приведем подобные слагаемые в левой части:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-8051 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/15x-45-m-15x-step-4.png" alt="15x - 45 m 15x step 4" width="127" height="48" /></p>
+<p>Получили неравенство <span style="color: #000000;">0<em>x &lt;</em> 45</span>. В левой части располагается произведение, которое будет равно нулю при любом <span style="color: #000000;"><em>x</em></span>. А ноль меньше, чем 45. Значит решением неравенства <span style="color: #000000;">0<em>x &lt;</em> 45</span> является любое число.</p>
+<p>А если приведённое равносильное неравенство <span style="color: #000000;">0<em>x &lt;</em> 45 </span>имеет бесчисленное множество решений, то и исходное неравенство <span style="color: #000000;">5(3<em>x </em>− 9) &lt; 15<em>x </em></span>имеет те же решения.</p>
+<p>Ответ можно записать в виде числового промежутка:</p>
+<p style="text-align: center;"><span style="color: #000000;"><em>x</em> ∈ ( −∞; +∞ )</span></p>
+<p>В этом выражении говорится, что решениями неравенства <span style="color: #000000;">5(3<em>x </em>− 9) &lt; 15<em>x </em></span>являются все числа от минус бесконечности до плюс бесконечности.</p>
+<hr />
+<p><strong>Пример 2</strong>. Решить неравенство: <span style="color: #000000;">31(2<em>x </em>+ 1) − 12<em>x </em>&gt; 50<em>x</em></span></p>
+<p>Раскроем скобки в левой части неравенства:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8052 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/62x-plus-31-12x-b-50x-step-1.png" alt="62x plus 31 - 12x b 50x step 1" width="173" height="16" /></p>
+<p>Перенесём <span style="color: #000000;">50<em>x</em></span> из правой части в левую часть, изменив знак. А член 31 из левой части перенесём в правую часть, опять же изменив знак:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8053 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/62x-plus-31-12x-b-50x-step-2.png" alt="62x plus 31 - 12x b 50x step 2" width="189" height="16" /></p>
+<p>Приведём подобные слагаемые:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8054 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/08/62x-plus-31-12x-b-50x-step-3.png" alt="62x plus 31 - 12x b 50x step 3" width="180" height="48" /></p>
+<p>Получили неравенство <span style="color: #000000;">0<em>x &gt;</em> −31</span>. В левой части располагается произведение, которое будет равно нулю при любом <span style="color: #000000;"><em>x</em></span>. А ноль больше, чем <span style="color: #000000;">−31</span>. Значит решением неравенства <span style="color: #000000;">0<em>x &lt;</em> −31</span> является любое число.</p>
+<p>А если приведённое равносильное неравенство <span style="color: #000000;">0<em>x &gt;</em> −31</span><span style="color: #000000;"> </span>имеет бесчисленное множество решений, то и исходное неравенство <span style="color: #000000;">31(2<em>x </em>+ 1) − 12<em>x </em>&gt; 50<em>x</em><em> </em></span>имеет те же решения.</p>
+<p>Запишем ответ в виде числового промежутка:</p>
+<p style="text-align: center;"><span style="color: #000000;"><em>x</em> ∈ ( −∞; +∞ )</span></p>
+    <h3>Хотите перейти на следующий урок?</h3>
+<a href="lection1.html" class="back">Вернуться ‹‹</a>
+<a href="lection3.html" class="next">Вперёд »</a>
+
+<script type="text/javascript">
+
+var menuItems = document.querySelectorAll('.skew-menu ul li');
+
+for (var i = 0; i < menuItems.length; i++) {
+   menuItems[i].addEventListener('click', function() {
+       // Действия при выборе определенной лекции
+   });
+}
+document.querySelectorAll('.skew-menu li').forEach(item => {
+    item.addEventListener('mouseover', () => {
+        item.style.transition = 'transform 0.3s';
+        item.style.transform = 'scale(1.2)';
+    });
+
+    item.addEventListener('mouseout', () => {
+        if (!item.classList.contains("clicked")) { // Проверяем, не была ли ячейка уже уменьшена при клике
+            item.style.transition = 'transform 0.3s';
+            item.style.transform = 'scale(1)';
+        }
+    });
+
+     document.addEventListener("click", function(event) { 
+         if (!event.target.closest(".skew-menu li")) return;
+
+         const clickedItem= event.target.closest(".skew-menu li");
+
+         document.querySelectorAll('.skew-menu li').forEach(otherItem => { 
+             otherItem.classList.remove("clicked");
+             otherItem.removeEventListener("transitionend", removeTransition);
+          });
+          
+          function removeTransition() { this.classList.remove("clicked"); }
+
+          const clickedClassList= clickedItem.classList;
+          clickedClassList.add("clicked");
+
+          setTimeout(() =>{
+              clickedClassList.remove("clicked")
+           },300)
+
+           function toggleTransform(){
+               let scaleValue= window.getComputedStyle(clickedItem).getPropertyValue('transform');
+
+               if(scaleValue==='none'){
+                   clickedItem.setAttribute(
+                       "style",
+                       "transition: all .5s ease-in-out; transform: scale(.8);"
+                     );
+                 }else{
+                     clickedItem.removeAttribute("style");
+                  }
+            }
+
+            toggleTransform();
+      });
+});
+let currentLesson = document.querySelector('.active a');
+currentLesson.style.color = '#007bff';
+
+menuItems[0].classList.add("active");
+
+document.querySelector('.back').setAttribute("href", "lection21.html");
+document.querySelector('.next').setAttribute("href", "lection23.html");
+
+</script>
+</body>
+</html>

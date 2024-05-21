@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лекция 29: ФСУ</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: 200px auto;
+            gap: 20px;
+        }
+        
+        .skew-menu {
+            background-color: #f2f2f2; /* Цвет фона для меню */
+            padding: 10px;
+        }
+
+        .lecture-content {
+            background-color: #e6e6e6; /* Цвет фона для контента лекции */
+            padding: 20px;
+        }
+
+        h1, h2, p {
+          margin-bottom: 15px;  
+      }
+
+      a.back, a.next{
+         text-decoration:none; 
+         color:#333; 
+     }
+     body {
+            background-image: url(images/7.avif);
+            background-attachment: fixed;
+            -moz-background-size: 100%;
+            -webkit-background-size: 100%;
+            -o-background-size: 100%;
+            background-size: 100%;
+        }
+        h1{
+        color: rgb(0, 0, 0) !important; 
+        font-family: courier !important; 
+         text-align: center !important;
+  }
+        p {
+         color: rgb(0, 0, 0);
+         font-family: 'Times New Roman', Times, serif;
+         font-size: 150%;
+         text-align: right; 
+        }
+        h2{
+        color: dark !important; 
+        font-family: Georgia, 'Times New Roman', Times, serif !important; 
+         text-align: center !important;
+  }
+        p {
+         color: rgb(0, 0, 0); 
+         font-family: 'Times New Roman', Times, serif;
+         font-size: 150%; 
+         text-align: center;
+        }
+        a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.back {
+    background-color: #ddd;
+    color: rgb(0, 0, 0);
+}
+
+.next {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.round {
+    border-radius: 50%;
+}
+@radius: 7px;
+@skew: 25deg;
+@main-color: tomato;
+
+body{
+  font-family:Helvetica Neue, Helvetica, sans-serif;
+  background:@main-color;
+}
+
+.skew-menu{
+  text-align:center;
+  margin-top:3em;
+  padding: 10px;
+    max-height: 2000px; /* Устанавливаем максимальную высоту */
+    max-width: 700px;
+    width: 200px;
+    overflow-y: auto; /* Добавляем вертикальную прокрутку при необходимости */
+}
+
+.skew-menu ul{
+  display:inline-block;
+  margin:0;
+  padding:0;
+  list-style:none;
+  transform:skew(-@skew);
+  width: 250px;
+  border-radius: 10px;
+}
+
+.skew-menu ul li{
+  background:#fff;
+  float:left;
+  border-right:1px solid #eee;
+  box-shadow:0 1px 1px rgba(0,0,0,0.1);
+  text-transform:uppercase;
+  color:#555;
+  font-weight:bolder;
+  transition:all 0.3s linear;
+  display: block;
+  text-align: center;
+  width: 200px;
+  max-width: 200px;
+  &:first-child
+  {
+
+    border-radius:@radius 0 0 @radius;
+  }
+  
+  &:last-child{
+    border-right:none;
+    border-radius:0 @radius @radius 0;
+  }
+  
+  &:hover{
+    background:#eee;
+    color:@main-color;
+  }
+  
+  a{
+    display:block;
+    padding:1em 2em;
+    color:inherit;
+    text-decoration:none;
+    transform:skew(@skew);
+  }
+}
+.active a {
+  color: #007bff; /* Выделите цвет текста */
+}
+.navless{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: lighter;
+    font-size: 20px;
+}
+.nav menu{
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+      .menu b{
+        text-align: center;
+      }
+    </style>
+</head>
+
+<body>
+
+<nav class="skew-menu">
+    <ul>
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="lection1.html">Лекция 1</a></li>
+      <li><a href="lection2.html">Лекция 2</a></li>
+      <li><a href="lection3.html">Лекция 3</a></li>
+      <li><a href="lection4.html">Лекция 4</a></li>
+      <li><a href="lection5.html">Лекция 5</a></li>
+      <li><a href="lection6.html">Лекция 6</a></li>
+      <li><a href="lection7.html">Лекция 7</a></li>
+      <li><a href="lection8.html">Лекция 8</a></li>
+      <li><a href="lection9.html">Лекция 9</a></li>
+      <li><a href="lection10.html">Лекция 10</a></li>
+      <li><a href="lection11.html">Лекция 11</a></li>
+      <li><a href="lection12.html">Лекция 12</a></li>
+      <li><a href="lection13.html">Лекция 13</a></li>
+      <li><a href="lection14.html">Лекция 14</a></li>
+      <li><a href="lection15.html">Лекция 15</a></li>
+      <li><a href="lection16.html">Лекция 16</a></li>
+      <li><a href="lection17.html">Лекция 17</a></li>
+      <li><a href="lection18.html">Лекция 18</a></li>
+      <li><a href="lection19.html">Лекция 19</a></li>
+      <li><a href="lection20.html">Лекция 20</a></li>
+      <li><a href="lection21.html">Лекция 21</a></li>
+      <li><a href="lection22.html">Лекция 22</a></li>
+      <li><a href="lection23.html">Лекция 23</a></li>
+      <li><a href="lection24.html">Лекция 24</a></li>
+      <li><a href="lection25.html">Лекция 25</a></li>
+      <li><a href="lection26.html">Лекция 26</a></li>
+      <li><a href="lection27.html">Лекция 27</a></li>
+      <li><a href="lection28.html">Лекция 28</a></li>
+      <li class="active"><a href="lection29.html">Лекция 29</a></li>
+      <li><a href="lection30.html">Лекция 30</a></li>
+    </ul>
+</nav>
+
+<div class="lecture-content">
+  <h1 class="entry-title">Лекция 29: Формулы сокращённого умножения</h1>      
+
+      
+</header><!-- .entry-header -->
+
+<div class="entry-content">
+  <p>Продолжаем изучать многочлены. В данном уроке мы научимся перемножать многочлены с помощью формул сокращённого умножения.</p>
+</nav>
+<nav id="menu"><b>Содержание урока</b></p>
+<ul class="navless">
+<li><a href="#yak1">Квадрат суммы двух выражений</a></li>
+<li><a href="#kvadrat_raznosti_dvuh_vyrazhenij">Квадрат разности двух выражений</a></li>
+<li><a href="#yak3">Куб суммы и куб разности</a></li>
+<li><a href="#umnozhenie_raznosti_dvuh_vyrazhenij_na_ih_summu">Умножение разности двух выражений на их сумму</a></li>
+<li><a href="#yak5">Умножение разности двух выражений на неполный квадрат их суммы</a></li>
+<li><a href="#yak6">Умножение суммы двух выражений на неполный квадрат их разности</a></li>
+</ul>
+</nav>
+<h2 id="yak1" style="text-align: center;">Квадрат суммы двух выражений</h2>
+<p>Существует ряд случаев, когда умножение многочлена на многочлен можно значительно упростить. Таковым к примеру является случай <span style="color: #000000;">(2<em>x </em>+ 3<em>y</em>)<sup>2</sup></span>.</p>
+<p>Выражение <span style="color: #000000;">(2<em>x </em>+ 3<em>y</em>)<sup>2</sup></span> это перемножение двух многочленов, каждый из которых равен <span style="color: #000000;">(2<em>x </em>+ 3<em>y</em>)</span></p>
+<p style="text-align: center;"><span style="color: #000000;">(2<em>x </em>+ 3<em>y</em>)<sup>2</sup> = (2<em>x </em>+ 3<em>y</em>)(2<em>x </em>+ 3<em>y</em>)</span></p>
+<p>Получили умножение многочлена на многочлен. Выполним его:</p>
+<p style="text-align: center;"><span style="color: #000000;">(2<em>x </em>+ 3<em>y</em>)<sup>2</sup> = (2<em>x </em>+ 3<em>y</em>)(2<em>x </em>+ 3<em>y</em>) = 4<em>x</em><sup>2 </sup>+ <span style="border-bottom: 2px solid #333399;">6<em>xy</em></span> + <span style="border-bottom: 2px solid #333399;">6<em>xy</em></span> + 9<em>y</em><sup>2 </sup>= 4<em>x</em><sup>2 </sup>+ 12<em>xy </em>+ 9<em>y</em><sup>2</sup></span></p>
+<p>То есть выражение <span style="color: #000000;">(2<em>x </em>+ 3<em>y</em>)<sup>2</sup></span> равно <span style="color: #000000;">4<em>x</em><sup>2</sup> + 12<em>xy</em> + 9<em>y</em><sup>2</sup></span></p>
+<p style="text-align: center;"><span style="color: #000000;">(2<em>x </em>+ 3<em>y</em>)<sup>2</sup> = 4<em>x</em><sup>2 </sup>+ 12<em>xy </em>+ 9<em>y</em><sup>2</sup></span></p>
+<p>Решим аналогичный пример, который попроще:</p>
+<p style="text-align: center;"><span style="color: #000000;">(<em>a + b</em>)<sup>2</sup> </span></p>
+<p>Выражение <span style="color: #000000;">(<em>a + b</em>)<sup>2</sup></span> это перемножение двух многочленов, каждый из которых равен <span style="color: #000000;">(<em>a + b</em>)</span></p>
+<p style="text-align: center;"><span style="color: #000000;">(<em>a + b</em>)<sup>2</sup> = (<em>a + b</em>)(<em>a + b</em>)</span></p>
+<p>Выполним это умножение:</p>
+<p style="text-align: center;"><span style="color: #000000;">(<em>a + b</em>)<sup>2</sup> = (<em>a + b</em>)(<em>a + b</em>) = <em>a</em><sup>2 </sup>+ <em><span style="border-bottom: 2px solid #333399;">ab</span></em> + <em><span style="border-bottom: 2px solid #333399;">ab</span></em> + <em>b</em><sup>2</sup> = <em>a</em><sup>2 </sup>+ 2<em>ab</em> + <em>b</em><sup>2</sup></span></p>
+<p>То есть выражение <span style="color: #000000;">(<em>a + b</em>)<sup>2</sup> равно <em>a</em><sup>2 </sup>+ 2<em>ab</em> + <em>b</em><sup>2</sup></span></p>
+<p style="text-align: center;"><strong><span style="color: #000000;">(<em>a + b</em>)<sup>2</sup> = <em>a</em><sup>2 </sup>+ 2<em>ab</em> + <em>b</em><sup>2</sup></span></strong></p>
+<p>Оказывается, что случай <span style="color: #000000;">(<em>a + b</em>)<sup>2 </sup></span>можно распространить для любых <span style="color: #000000;"><em>a</em></span> и <span style="color: #000000;"><em>b</em></span>. Первый пример, который мы решили, а именно <span style="color: #000000;">(2<em>x </em>+ 3<em>y</em>)<sup>2</sup></span> можно решить с помощью тождества <span style="color: #000000;">(<em>a + b</em>)<sup>2</sup> = <em>a</em><sup>2 </sup>+ 2<em>ab</em> + <em>b</em><sup>2</sup></span>. Для этого нужно подставить вместо переменных <span style="color: #000000;"><em>a</em></span> и <span style="color: #000000;"><em>b</em></span> соответствующие члены из выражение <span style="color: #000000;">(2<em>x </em>+ 3<em>y</em>)<sup>2</sup></span>. В данном случае переменной <span style="color: #000000;"><em>a</em></span> соответствует член <span style="color: #000000;">2<em>x</em></span>, а переменной <span style="color: #000000;"><em>b</em></span> соответствует член <span style="color: #000000;">3<em>y</em></span></p>
+<p style="text-align: center;"><span style="color: #000000;"><em>a</em> = 2<em>x</em></span></p>
+<p style="text-align: center;"><span style="color: #000000;"><em>b</em> = 3<em>y</em></span></p>
+<p>И далее можно воспользоваться тождеством <span style="color: #000000;">(<em>a + b</em>)<sup>2</sup> = <em>a</em><sup>2 </sup>+ 2<em>ab</em> + <em>b</em><sup>2</sup></span>, но вместо переменных <span style="color: #000000;"><em>a</em></span> и <span style="color: #000000;"><em>b</em></span> нужно подставлять выражения <span style="color: #000000;">2<em>x</em></span> и <span style="color: #000000;">3<em>y</em></span> соответственно:</p>
+<p style="text-align: center;"><span style="color: #000000;">(2<em>x </em>+ 3<em>y</em>)<sup>2</sup> = (2<em>x</em>)<sup>2</sup> + 2 × 2<em>x </em>× 3<em>y</em> + (3<em>y</em>)<sup>2</sup> = 4<em>x</em><sup>2 </sup>+ 12<em>xy </em>+ 9<em>y</em><sup>2</sup></span></p>
+<p>Как и в прошлый раз получили многочлен <span style="color: #000000;">4<em>x</em><sup>2 </sup>+ 12<em>xy </em>+ 9<em>y</em><sup>2</sup></span>. Решение обычно записывают покороче, выполняя в уме все элементарные преобразования:</p>
+<p style="text-align: center;"><span style="color: #000000;">(2<em>x </em>+ 3<em>y</em>)<sup>2</sup> = 4<em>x</em><sup>2 </sup>+ 12<em>xy </em>+ 9<em>y</em><sup>2</sup></span></p>
+<p>Тождество <span style="color: #000000;">(<em>a + b</em>)<sup>2</sup> = <em>a</em><sup>2 </sup>+ 2<em>ab</em> + <em>b</em><sup>2</sup></span> называют формулой квадрата суммы двух выражений. Эту формулу можно прочитать так:</p>
+<p><strong>Квадрат суммы двух выражений равен квадрату первого выражения плюс удвоенное произведение первого выражения на второе плюс квадрат второго выражения.</strong></p>
+<p>Рассмотрим выражение (2 + 3)<span style="color: #000000;"><sup>2</sup></span>. Его можно вычислить двумя способами: выполнить сложение в скобках и возвести полученный результат в квадрат, либо воспользоваться формулой квадрата суммы двух выражений.</p>
+<p><strong>Первый способ:</strong></p>
+<p><span style="color: #000000;">(2 + 3)<sup>2</sup> = 5<sup>2</sup> = 25</span></p>
+<p><strong>Второй способ:</strong></p>
+<p><span style="color: #000000;">(2 + 3)<sup>2</sup> = 2<sup>2</sup> + 2 × 2 × 3 + 3<sup>2</sup> = 4 + 12 + 9 = 25</span></p>
+<hr />
+<p><strong>Пример 2</strong>. Преобразовать выражение <span style="color: #000000;">(5<em>a </em>+ 3)<sup>2</sup></span> в многочлен.</p>
+<p>Воспользуемся формулой квадрата суммы двух выражений:</p>
+<p style="text-align: center;"><span style="color: #000000;">(<em>a + b</em>)<sup>2</sup> = <em>a</em><sup>2 </sup>+ 2<em>ab</em> + <em>b</em><sup>2</sup></span></p>
+<p style="text-align: center;"><span style="color: #000000;">(5<em>a + </em>3)<sup>2</sup> = (5<em>a</em>)<sup>2 </sup>+ 2 × 5<em>a × </em>3 + 3<sup>2</sup> = 25<em>a</em><sup>2</sup> + 30<em>a</em> + 9</span></p>
+<p>Значит, <span style="color: #000000;">(5<em>a + </em>3)<sup>2</sup> = 25<em>a</em><sup>2</sup> + 30<em>a</em> + 9.</span></p>
+<p>Попробуем решить данный пример, не пользуясь формулой квадрата суммы. У нас должен получиться тот же результат:</p>
+<p style="text-align: center;"><span style="color: #000000;">(5<em>a + </em>3)<sup>2</sup> = (5<em>a + </em>3)(5<em>a + </em>3) = 25<em>a</em><sup>2</sup> + <span style="border-bottom: 2px solid #333399;">15<em>a</em></span> + <span style="border-bottom: 2px solid #333399;">15<em>a</em></span> + 9 = 25<em>a</em><sup>2</sup> + 30<em>a</em> + 9</span></p>
+<p>Формула квадрата суммы двух выражений имеет геометрический смысл. Мы помним, что для вычисления площади квадрата нужно возвести во вторую степень его сторону.</p>
+<p>Например, площадь квадрата со стороной <span style="color: #000000;"><em>a</em></span> будет равна <span style="color: #000000;"><em>a</em><sup>2</sup></span>. Если увеличить сторону квадрата на <span style="color: #000000;"><em>b</em></span>, то площадь будет равна <span style="color: #000000;">(<em>a + b</em>)<sup>2</sup></span></p>
+<p>Рассмотрим следующий рисунок:</p>
+<p><img decoding="async" class="wp-image-10037 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/03/fsu-risunok-2.png" alt="фсу рисунок 2" width="343" height="177" srcset="https://spacemath.xyz/wp-content/uploads/2019/03/fsu-risunok-2.png 343w, https://spacemath.xyz/wp-content/uploads/2019/03/fsu-risunok-2-300x155.png 300w" sizes="(max-width: 343px) 100vw, 343px" /></p>
+<p>Представим, что сторону квадрата, изображённого на данном рисунке увеличили на <span style="color: #000000;"><em>b</em></span>. У квадрата все стороны равны. Если его сторону увеличить на <span style="color: #000000;"><em>b</em></span>, то остальные стороны тоже увеличатся на <span style="color: #000000;"><em>b</em></span></p>
+<p><img decoding="async" class="wp-image-10038 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/03/fsu-risunok-3.png" alt="фсу рисунок 3" width="343" height="298" srcset="https://spacemath.xyz/wp-content/uploads/2019/03/fsu-risunok-3.png 343w, https://spacemath.xyz/wp-content/uploads/2019/03/fsu-risunok-3-300x261.png 300w" sizes="(max-width: 343px) 100vw, 343px" /></p>
+<p>Получился новый квадрат, который больше предыдущего. Чтобы хорошо увидеть его, достроим отсутствующие стороны:</p>
+<p><img decoding="async" class="wp-image-10039 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/03/fsu-risunok-4.png" alt="фсу рисунок 4" width="343" height="287" srcset="https://spacemath.xyz/wp-content/uploads/2019/03/fsu-risunok-4.png 343w, https://spacemath.xyz/wp-content/uploads/2019/03/fsu-risunok-4-300x251.png 300w" sizes="(max-width: 343px) 100vw, 343px" /></p>
+<p>Чтобы вычислить площадь этого квадрата, можно по отдельности вычислить квадраты и прямоугольники, входящие в него, затем сложить полученные результаты.</p>
+<p>Сначала можно вычислить квадрат со стороной <span style="color: #000000;"><em>a</em></span> &#8212; его площадь будет равна <span style="color: #000000;"><em>a</em><sup>2</sup></span>. Затем можно вычислить прямоугольники со сторонами <span style="color: #000000;"><em>a</em></span> и <span style="color: #000000;"><em>b</em></span> &#8212; они будут равны <span style="color: #000000;"><em>ab</em></span>. Затем можно вычислить квадрат со стороной <span style="color: #000000;"><em>b</em></span></p>
+<p><img loading="lazy" decoding="async" class="wp-image-10040 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/03/fsu-risunok-6.png" alt="фсу рисунок 6" width="343" height="287" srcset="https://spacemath.xyz/wp-content/uploads/2019/03/fsu-risunok-6.png 343w, https://spacemath.xyz/wp-content/uploads/2019/03/fsu-risunok-6-300x251.png 300w" sizes="(max-width: 343px) 100vw, 343px" /></p>
+<p>В результате получается следующая сумма площадей:</p>
+<p style="text-align: center;"><span style="color: #000000;"><em>a</em><sup>2</sup> + <em>ab + ab</em> + <em>b</em><sup>2</sup></span></p>
+<p>Сумму площадей одинаковых прямоугольников можно заменить на умножение <span style="color: #000000;">2<em>ab</em></span>, которое буквально будет означать <span style="color: #000000;"><em>&#171;повторить два раза площадь прямоугольника ab&#187;</em></span>. Алгебраически это получается путём приведения подобных слагаемых <span style="color: #000000;"><em>ab</em></span> и <span style="color: #000000;"><em>ab</em></span>. В результате получается выражение <span style="color: #000000;"><em>a</em><sup>2 </sup>+ 2<em>ab </em>+ <em>b</em><sup>2</sup></span>, которое является правой частью формулы квадрата суммы двух выражений:</p>
+<p style="text-align: center;"><strong><span style="color: #000000;">(<em>a + b</em>)<sup>2</sup></span> = <span style="color: #000000;"><em>a</em><sup>2 </sup>+ 2<em>ab </em>+ <em>b</em><sup>2</sup></span></strong></p>
+<hr />
+<h2 id="kvadrat_raznosti_dvuh_vyrazhenij" style="text-align: center;">Квадрат разности двух выражений</h2>
+<p>Формула квадрата разности двух выражений выглядит следующим образом:</p>
+<p style="text-align: center;"><strong><span style="color: #000000;">(<em>a − b</em>)<sup>2</sup> = <em>a</em><sup>2 </sup><em>− </em>2<em>ab</em> + <em>b</em><sup>2</sup></span></strong></p>
+<p>Эту формулу можно прочитать так:</p>
+<p><strong>Квадрат разности двух выражений равен квадрату первого выражения минус удвоенное произведение первого выражения на второе плюс квадрат второго выражения.</strong></p>
+<p>Формула квадрата разности двух выражений выводится таким же образом, как и формула квадрата суммы двух выражений. Выражение <span style="color: #000000;">(<em>a − b</em>)<sup>2</sup></span> представляет собой произведение двух многочленов, каждый из которых равен <span style="color: #000000;">(<em>a − b</em>)</span></p>
+<p style="text-align: center;"><span style="color: #000000;">(<em>a − b</em>)<sup>2</sup> = (<em>a − b</em>)(<em>a − b</em>)</span></p>
+<p>Если выполнить это умножение, то получится многочлен <span style="color: #000000;"><em>a</em><sup>2 </sup><em>− </em>2<em>ab</em> + <em>b</em><sup>2</sup></span></p>
+<p style="text-align: center;"><span style="color: #000000;">(<em>a − b</em>)<sup>2</sup> = (<em>a − b</em>)(<em>a − b</em>) = <em>a</em><sup>2 </sup>− <em><span style="border-bottom: 2px solid #333399;">ab</span> </em>− <em><span style="border-bottom: 2px solid #333399;">ab</span> </em>+ <em>b</em><sup>2</sup> = <em>a</em><sup>2 </sup><em>− </em>2<em>ab</em> + <em>b</em><sup>2</sup></span></p>
+<p style="text-align: left;"><strong>Пример 1</strong>. Преобразовать выражение <span style="color: #000000;">(7<em>x </em>− 5)<sup>2</sup></span> в многочлен.</p>
+<p>Воспользуемся формулой квадрата разности двух выражений:</p>
+<p style="text-align: center;"><span style="color: #000000;">(<em>a − b</em>)<sup>2</sup> = <em>a</em><sup>2 </sup><em>− </em>2<em>ab</em> + <em>b</em><sup>2</sup></span></p>
+<p style="text-align: center;"><span style="color: #000000;">(7<em>x </em>− 5)<sup>2</sup> = (7<em>x</em>)<sup>2 </sup>− 2 × 7<em>x × </em>5 + 5<sup>2</sup> = 49<em>x</em><sup>2</sup> − 70<em>x</em> + 25</span></p>
+<p>Значит, <span style="color: #000000;">(7<em>x </em>− 5)<sup>2</sup> = 49<em>x</em><sup>2</sup> − 70<em>x</em> + 25.</span></p>
+<p>Попробуем решить данный пример, не пользуясь формулой квадрата разности. У нас должен получиться тот же результат:</p>
+<p style="text-align: center;"><span style="color: #000000;">(7<em>x </em>− 5)<sup>2</sup></span> = <span style="color: #000000;">(7<em>x </em>− 5)</span><span style="color: #000000;">(7<em>x </em>− 5) = 49<em>x</em><sup>2</sup> − <span style="border-bottom: 2px solid #333399;">35<em>x</em></span> − <span style="border-bottom: 2px solid #333399;">35<em>x</em></span> + 25 = 49<em>x</em><sup>2</sup> − 70<em>x </em>+ 25.</span></p>
+<p>Формула квадрата разности двух выражений тоже имеет геометрический смысл. Если площадь квадрата со стороной <span style="color: #000000;"><em>a</em></span> равна <span style="color: #000000;"><em>a</em><sup>2</sup></span>, то площадь квадрата, сторона которого уменьшена на <span style="color: #000000;"><em>b</em></span>, будет равна <span style="color: #000000;">(<em>a − b</em>)<sup>2</sup></span></p>
+<p>Рассмотрим следующий рисунок:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-10046 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/03/fsu-risunok-7.png" alt="фсу рисунок 7" width="370" height="308" srcset="https://spacemath.xyz/wp-content/uploads/2019/03/fsu-risunok-7.png 370w, https://spacemath.xyz/wp-content/uploads/2019/03/fsu-risunok-7-300x250.png 300w" sizes="(max-width: 370px) 100vw, 370px" /></p>
+<p>Представим, что сторону квадрата, изображённого на данном рисунке уменьшили на <span style="color: #000000;"><em>b</em></span>. У квадрата все стороны равны. Если одну сторону уменьшить на <em>b</em>, то остальные стороны тоже уменьшатся на <span style="color: #000000;"><em>b</em></span></p>
+<p><img loading="lazy" decoding="async" class="wp-image-10045 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/03/fsu-risunok-8.png" alt="фсу рисунок 8" width="370" height="308" srcset="https://spacemath.xyz/wp-content/uploads/2019/03/fsu-risunok-8.png 370w, https://spacemath.xyz/wp-content/uploads/2019/03/fsu-risunok-8-300x250.png 300w" sizes="(max-width: 370px) 100vw, 370px" /></p>
+<p>Получился новый квадрат, который меньше предыдущего. На рисунке он выделен жёлтым. Сторона его равна <span style="color: #000000;"><em>a </em>− <em>b</em></span>, поскольку старая сторона <span style="color: #000000;"><em>a</em></span> уменьшилась на <span style="color: #000000;"><em>b</em></span>. Чтобы вычислить площадь этого квадрата, можно из первоначальной площади квадрата <span style="color: #000000;"><em>a</em><sup>2</sup></span> вычесть площади прямоугольников, которые получились в процессе уменьшения сторон старого квадрата. Покажем эти прямоугольники:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-10047 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/03/fsu-risunok-9.png" alt="фсу рисунок 9" width="370" height="308" srcset="https://spacemath.xyz/wp-content/uploads/2019/03/fsu-risunok-9.png 370w, https://spacemath.xyz/wp-content/uploads/2019/03/fsu-risunok-9-300x250.png 300w" sizes="(max-width: 370px) 100vw, 370px" /></p>
+<p>Тогда можно написать следующее выражение: старая площадь <span style="color: #000000;"><em>a</em><sup>2</sup></span> минус площадь <em><span style="color: #000000;">ab</span></em> минус площадь <span style="color: #000000;">(<em>a − b</em>)<em>b</em></span></p>
+<p style="text-align: center;"><span style="color: #000000;"><em>a</em><sup>2</sup> − <em>ab</em> − (<em>a − b</em>)<em>b</em></span></p>
+<p>Раскроем скобки в выражении <span style="color: #000000;">(<em>a − b</em>)<em>b</em></span></p>
+<p style="text-align: center;"><span style="color: #000000;"><em>a</em><sup>2</sup> − <em>ab − ab</em> + <em>b</em><sup>2</sup></span></p>
+<p>Приведем подобные слагаемые:</p>
+<p style="text-align: center;"><span style="color: #000000;"><em>a</em><sup>2</sup> − 2<em>ab</em> + <em>b</em><sup>2</sup></span></p>
+<p>В результате получается выражение <span style="color: #000000;"><em>a</em><sup>2</sup> − 2<em>ab</em> + <em>b</em><sup>2</sup></span>, которое является правой частью формулы квадрата разности двух выражений:</p>
+<p style="text-align: center;"><strong><span style="color: #000000;">(<em>a − b</em>)<sup>2</sup> = <em>a</em><sup>2 </sup><em>− </em>2<em>ab</em> + <em>b</em><sup>2</sup></span></strong></p>
+<p>Формулы квадрата суммы и квадрата разности в общем называют <strong>формулами сокращённого умножения</strong>. Эти формулы позволяют значительно упростить и ускорить процесс перемножения многочленов.</p>
+<p>Ранее мы говорили, что рассматривая член многочлена по отдельности, его нужно рассматривать вместе со знаком, который перед ним располагается.</p>
+<p>Но применяя формулы сокращённого умножения, знак исходного многочлена не следует рассматривать в качестве знака самого этого члена.</p>
+<p>Например, если дано выражение <span style="color: #000000;">(5<em>x</em> − 2<em>y</em>)<sup>2</sup></span>, и мы хотим воспользоваться формулой <span style="color: #000000;">(<em>a − b</em>)<sup>2</sup> = <em>a</em><sup>2 </sup><em>− </em>2<em>ab</em> + <em>b</em><sup>2</sup></span>, то вместо <span style="color: #000000;"><em>b</em></span> нужно подставлять <span style="color: #000000;">2<em>y</em></span>, а не <span style="color: #000000;">−2<em>y</em></span>. Это особенность работы с формулами, которую не следует забывать.</p>
+<p style="text-align: center;"><span style="color: #000000;">(5<em>x</em> − 2<em>y</em>)<sup>2</sup></span><br />
+<span style="color: #000000;"><em>a</em> = 5<em>x</em></span><br />
+<span style="color: #000000;"><em>b</em> = 2<em>y</em></span><br />
+<span style="color: #000000;">(5<em>x</em> − 2<em>y</em>)<sup>2</sup> = (5<em>x</em>)<sup>2</sup> − 2 × 5<em>x</em> × 2<em>y</em> + (2<em>y</em>)<sup>2</sup> = 25<em>x</em><sup>2</sup> − 20<em>xy</em> + 4<em>y</em><sup>2</sup></span></p>
+<p>Если подставлять <span style="color: #000000;">−2<em>y</em></span>, то это будет означать, что разность в скобках исходного выражения была заменена на сумму:</p>
+<p style="text-align: center;"><span style="color: #000000;">(5<em>x</em> − 2<em>y</em>)<sup>2</sup> = (5<em>x</em> + (−2<em>y</em>))<sup>2</sup></span></p>
+<p>и в таком случае нужно применять не формулу квадрата разности, а формулу квадрата суммы:</p>
+<p style="text-align: center;"><span style="color: #000000;">(5<em>x</em> + (−2<em>y</em>)<sup>2</sup></span><br />
+<span style="color: #000000;"><em>a</em> = 5<em>x</em></span><br />
+<span style="color: #000000;"><em>b</em> = −2<em>y</em></span><br />
+<span style="color: #000000;">(5<em>x</em> + (−2<em>y</em>))<sup>2</sup> = (5<em>x</em>)<sup>2</sup> + 2 × 5<em>x</em> × (−2<em>y</em>) + (−2<em>y</em>)<sup>2</sup> = 25<em>x</em><sup>2</sup> − 20<em>xy</em> + 4<em>y</em><sup>2</sup></span></p>
+<p>Исключением могут быть выражения вида <span style="color: #000000;">(<em>x </em>− (−<em>y</em>))<sup>2</sup></span>. В данном случае, применяя формулу <span style="color: #000000;">(<em>a − b</em>)<sup>2</sup> = <em>a</em><sup>2 </sup><em>− </em>2<em>ab</em> + <em>b</em><sup>2</sup></span> вместо <span style="color: #000000;"><em>b</em></span> следует подставить <span style="color: #000000;">(−<em>y</em>)</span></p>
+<p style="text-align: center;"><span style="color: #000000;">(<em>x </em>− (−<em>y</em>))<sup>2</sup> = <em>x</em><sup>2</sup> − 2 × <em>x </em>× (−<em>y</em>) + (−<em>y</em>)<sup>2</sup> = <em>x</em><sup>2</sup> + 2<em>xy</em> + <em>y</em><sup>2</sup></span></p>
+<p>Но возводя в квадрат выражения вида <span style="color: #000000;"><em>x</em> − (−<em>y</em>)</span>, удобнее будет заменять вычитание на сложение <em><span style="color: #000000;">x + y</span></em>. Тогда первоначальное выражение примет вид <span style="color: #000000;">(<em>x + </em><em>y</em>)<sup>2</sup></span> и можно будет воспользоваться формулой квадрата суммы, а не разности:</p>
+<p style="text-align: center;"><span style="color: #000000;">(<em>x + </em><em>y</em>)<sup>2</sup> = <em>x</em><sup>2</sup> + 2<em>xy</em> + <em>y</em><sup>2</sup></span></p>
+<hr />
+<h2 id="yak3" style="text-align: center;">Куб суммы и куб разности</h2>
+<p>Формулы куба суммы двух выражений и куба разности двух выражений выглядят следующим образом:</p>
+<p style="text-align: center;"><strong><span style="color: #000000;">(<em>a</em> + <em>b</em>)<sup>3</sup> = <em>a</em><sup>3 </sup>+ 3<em>a</em><sup>2</sup><em>b</em> + 3<em>ab</em><sup>2 </sup>+ <em>b</em><sup>3</sup></span></strong></p>
+<p style="text-align: center;"><strong><span style="color: #000000;">(<em>a − b</em>)<sup>3</sup> = <em>a</em><sup>3 </sup>− 3<em>a</em><sup>2</sup><em>b</em> + 3<em>ab</em><sup>2 </sup>− <em>b</em><sup>3</sup></span></strong></p>
+<p>Формулу куба суммы двух выражений можно прочитать так:</p>
+<p><strong>Куб суммы двух выражений равен кубу первого выражения плюс утроенное произведение квадрата первого выражения на второе плюс утроенное произведение первого выражения на квадрат второго плюс куб второго выражения. </strong></p>
+<p>А формулу куба разности двух выражений можно прочитать так:</p>
+<p><strong>Куб разности двух выражений равен кубу первого выражения минус утроенное произведение квадрата первого выражения на второе плюс утроенное произведение первого выражения на квадрат второго минус куб второго выражения. </strong></p>
+<p>При решении задач желательно знать эти формулы наизусть. Если не запомнили &#8212; не беда! Их можно выводить самостоятельно. Мы это уже умеем.</p>
+<p>Выведем формулу куба суммы самостоятельно:</p>
+<p style="text-align: center;"><span style="color: #000000;">(<em>a + b</em>)<sup>3</sup></span></p>
+<p>Выражение <span style="color: #000000;">(<em>a + b</em>)<sup>3</sup></span> представляет собой произведение из трёх многочленов, каждый из которых равен <span style="color: #000000;">(<em>a </em>+ <em>b</em>)</span></p>
+<p style="text-align: center;"><span style="color: #000000;">(<em>a + b</em>)<sup>3</sup> = (<em>a </em>+ <em>b</em>)(<em>a </em>+ <em>b</em>)(<em>a </em>+ <em>b</em>)</span></p>
+<p>Но выражение <span style="color: #000000;">(<em>a + b</em>)<sup>3</sup></span> также может быть записано как <span style="color: #000000;">(<em>a </em>+ <em>b</em>)(<em>a </em>+ <em>b</em>)<sup>2</sup></span></p>
+<p style="text-align: center;"><span style="color: #000000;">(<em>a + b</em>)<sup>3</sup> = (<em>a </em>+ <em>b</em>)(<em>a </em>+ <em>b</em>)<sup>2</sup></span></p>
+<p>При этом сомножитель <span style="color: #000000;">(<em>a </em>+ <em>b</em>)<sup>2</sup></span> является квадратом суммы двух выражений. Этот квадрат суммы равен выражению <span style="color: #000000;"><em>a</em><sup>2 </sup>+ 2<em>ab</em> + <em>b</em><sup>2</sup></span>.</p>
+<p>Тогда <span style="color: #000000;">(<em>a + b</em>)<sup>3</sup></span> можно записать как <span style="color: #000000;">(<em>a </em>+ <em>b</em>)(<em>a</em><sup>2 </sup>+ 2<em>ab</em> + <em>b</em><sup>2</sup>)</span>.</p>
+<p style="text-align: center;"><span style="color: #000000;">(<em>a + b</em>)<sup>3</sup> = (<em>a </em>+ <em>b</em>)(<em>a</em><sup>2 </sup>+ 2<em>ab</em> + <em>b</em><sup>2</sup>)</span></p>
+<p>А это есть умножение многочлена на многочлен. Выполним его:</p>
+<p style="text-align: center;"><span style="color: #000000;">(<em>a + b</em>)<sup>3</sup> = (<em>a </em>+ <em>b</em>)(<em>a</em><sup>2 </sup>+ 2<em>ab</em> + <em>b</em><sup>2</sup>) = <em>a</em><sup>3</sup> + <span style="border-bottom: 2px solid #333399;">2<em>a</em><sup>2</sup><em>b</em></span> + <span style="border-bottom: 2px solid green;"><em>ab</em><sup>2</sup></span> + <span style="border-bottom: 2px solid #333399;"><em>a</em><sup>2</sup><em>b</em></span> + <span style="border-bottom: 2px solid green;">2<em>ab</em><sup>2</sup></span> + <em>b</em><sup>3</sup> = <em>a</em><sup>3 </sup>+ 3<em>a</em><sup>2</sup><em>b</em> + 3<em>ab</em><sup>2 </sup>+ <em>b</em><sup>3</sup></span></p>
+<p>Аналогично можно вывести формулу куба разности двух выражений:</p>
+<p style="text-align: center;"><span style="color: #000000;">(<em>a − b</em>)<sup>3</sup> = (<em>a −</em> <em>b</em>)(<em>a</em><sup>2</sup> − 2<em>ab</em> + <em>b</em><sup>2</sup>) = <em>a</em><sup>3</sup> − <span style="border-bottom: 2px solid #333399;">2<em>a</em><sup>2</sup><em>b</em></span> + <span style="border-bottom: 2px solid green;"><em>ab</em><sup>2</sup></span> − <span style="border-bottom: 2px solid #333399;"><em>a</em><sup>2</sup><em>b</em></span> + <span style="border-bottom: 2px solid green;">2<em>ab</em><sup>2</sup></span> − <em>b</em><sup>3</sup> = <em>a</em><sup>3 </sup>− 3<em>a</em><sup>2</sup><em>b </em>+ 3<em>ab</em><sup>2 </sup>− <em>b</em><sup>3</sup></span></p>
+<hr />
+<p><strong>Пример 1</strong>. Преобразуйте выражение <span style="color: #000000;">(<em>x </em>+ 1)<sup>3</sup></span> в многочлен.</p>
+<p>Воспользуемся формулой куба суммы двух выражений:</p>
+<p style="text-align: center;"><span style="color: #000000;">(<em>a</em> + <em>b</em>)<sup>3</sup> = <em>a</em><sup>3 </sup>+ 3<em>a</em><sup>2</sup><em>b</em> + 3<em>ab</em><sup>2 </sup>+ <em>b</em><sup>3</sup></span></p>
+<p style="text-align: center;"><span style="color: #000000;">(<em>x </em>+ 1)<sup>3</sup> = <em>x</em><sup>3</sup> + 3 × <em>x</em><sup>2</sup> × 1 + 3 × <em>x</em> × 1<sup>2</sup> + 1<sup>3</sup> = <em>x</em><sup>3</sup> + 3<em>x</em><sup>2</sup> + 3<em>x</em> + 1</span></p>
+<p>Попробуем решить данный пример, не используя формулу куба суммы двух выражений. У нас получится тот же результат, но решение станет длиннее:</p>
+<p style="text-align: center;"><span style="color: #000000;">(<em>x </em>+ 1)<sup>3</sup></span> = <span style="color: #000000;">(<em>x </em>+ 1)(<em>x </em>+ 1)(<em>x </em>+ 1) = (<em>x </em>+ 1)(<em>x</em><sup>2</sup> + 2<em>x</em> + 1) = <em>x</em><sup>3</sup> + <span style="border-bottom: 2px solid #333399;">2<em>x</em><sup>2</sup></span> + <span style="border-bottom: 2px solid green;"><em>x</em></span> + <span style="border-bottom: 2px solid #333399;"><em>x</em><sup>2</sup></span> + <span style="border-bottom: 2px solid green;">2<em>x</em></span> + 1 = <em>x</em><sup>3</sup> + 3<em>x</em><sup>2</sup> + 3<em>x</em> + 1</span></p>
+<hr />
+<p><strong>Пример 2</strong>. Преобразовать выражение <span style="color: #000000;">(6<em>a</em><sup>2 </sup>+ 3<em>b</em><sup>3</sup>)<sup>3</sup></span> в многочлен.</p>
+<p>Воспользуемся формулой куба суммы двух выражений:</p>
+<p style="text-align: center;"><span style="color: #000000; font: 21px times;">(<em>a</em> + <em>b</em>)<sup>3</sup> = <em>a</em><sup>3 </sup>+ 3<em>a</em><sup>2</sup><em>b</em> + 3<em>ab</em><sup>2 </sup>+ <em>b</em><sup>3</sup></span></p>
+<p style="text-align: center; font: 21px times; line-height: 35px;"><span style="color: #000000;">(6<em>a</em><sup>2</sup> + 3<em>b</em><sup>3</sup>)<sup>3</sup> <strong>=</strong> (6<em>a</em><sup>2</sup>)<sup>3 </sup>+ 3 × (6<em>a</em><sup>2</sup>)<sup>2</sup> × 3<em>b</em><sup>3</sup> + 3 × 6<em>a</em><sup>2 </sup><em>× </em>(3<em>b</em><sup>3</sup>)<sup>2</sup> + (3<em>b</em><sup>3</sup>)<sup>3</sup> = 216<em>a</em><sup>6</sup> + 3 × 36<em>a</em><sup>4</sup> × 3<em>b</em><sup>3 </sup>+ 3 × 6<em>a</em><sup>2 </sup>× 9<em>b</em><sup>6</sup> + 27<em>b</em><sup>9</sup></span></p>
+<hr />
+<p style="text-align: left;"><strong>Пример 3</strong>. Преобразовать выражение <span style="color: #000000;">(<em>n</em><sup>2</sup> − 3)<sup>3</sup></span> в многочлен.</p>
+<p>Воспользуемся формулой куба разности двух выражений:</p>
+<p style="text-align: center;"><span style="color: #000000;">(<em>a − b</em>) = <em>a</em><sup>3 </sup>− 3<em>a</em><sup>2</sup><em>b</em> + 3<em>ab</em><sup>2 </sup>− <em>b</em><sup>3</sup></span></p>
+<p style="text-align: center;"><span style="color: #000000;">(<em>n</em><sup>2</sup> − 3)<sup>3</sup> = (<em>n</em><sup>2</sup>)<sup>3</sup> − 3 × (<em>n</em><sup>2</sup>)<sup>2</sup> × 3 + 3 × <em>n</em><sup>2</sup> × 3<sup>2</sup> − 3<sup>3</sup> = <em>n</em><sup>6</sup> − 9<em>n</em><sup>4</sup>  + 27<em>n</em><sup>2</sup> − 27</span></p>
+<hr />
+<p style="text-align: left;"><strong>Пример 4</strong>. Преобразовать выражение <span style="color: #000000; font: 20px times;">(2<em>x</em><sup>2 </sup>− <em>x</em><sup>3</sup>)<sup>3</sup></span> в многочлен.</p>
+<p>Воспользуемся формулой куба разности двух выражений:</p>
+<p style="text-align: center; font: 21px times;"><span style="color: #000000;">(<em>a − b</em>) = <em>a</em><sup>3 </sup>− 3<em>a</em><sup>2</sup><em>b</em> + 3<em>ab</em><sup>2 </sup>− <em>b</em><sup>3</sup></span></p>
+<p style="text-align: center; font: 21px times; line-height: 35px;"><span style="color: #000000;">(2<em>x</em><sup>2 </sup>− <em>x</em><sup>3</sup>)<sup>3 </sup>= (2<em>x</em><sup>2</sup>)<sup>3 </sup>− 3 × (2<em>x</em><sup>2</sup>)<sup>2</sup> × <em>x</em><sup>3</sup> + 3 × 2<em>x</em><sup>2 </sup>× (<em>x</em><sup>3</sup>)<sup>2 </sup>− (<em>x</em><sup>3</sup>)<sup>3 </sup>=</span><br />
+<span style="color: #000000;">8<em>x</em><sup>6</sup> − 3 × 4<em>x</em><sup>4</sup> × <em>x</em><sup>3</sup> + 3 × 2<em>x</em><sup>2 </sup>× <em>x</em><sup>6</sup> − <em>x</em><sup>9</sup> =</span><br />
+<span style="color: #000000;">8<em>x</em><sup>6</sup> − 12<em>x</em><sup>7</sup> + 6<em>x</em><sup>8</sup> − <em>x</em><sup>9</sup></span></p>
+<hr />
+<h2 id="umnozhenie_raznosti_dvuh_vyrazhenij_na_ih_summu" style="text-align: center;">Умножение разности двух выражений на их сумму</h2>
+<p>Встречаются задачи, в которых требуется умножить разность двух выражений на их сумму. Например:</p>
+<p style="text-align: center;"><span style="color: #000000;">(<em>a − b</em>)(<em>a + b</em>)</span></p>
+<p>В этом выражении разность двух выражений <span style="color: #000000;"><em>a</em></span> и <span style="color: #000000;"><em>b</em></span> умножена на сумму этих же двух выражений. Выполним данное умножение:</p>
+<p style="text-align: center;"><span style="color: #000000;">(<em>a − b</em>)(<em>a + b</em>) = <em>a</em><sup>2</sup> + <em>ab</em> − <em>ab</em> − <em>b</em><sup>2</sup> = <em>a</em><sup>2</sup> − <em>b</em><sup>2</sup></span></p>
+<p>То есть выражение <span style="color: #000000;">(<em>a − b</em>)(<em>a + b</em>)</span> равно <span style="color: #000000;"><em>a</em><sup>2</sup> − <em>b</em><sup>2</sup></span></p>
+<p style="text-align: center;"><strong><span style="color: #000000;">(<em>a − b</em>)(<em>a + b</em>) = <em>a</em><sup>2</sup> − <em>b</em><sup>2</sup></span></strong></p>
+<p>Видим, что при умножении разности двух выражений на их сумму, получается разность квадратов этих выражений.</p>
+<p><strong>Произведение разности двух выражений и их суммы равно разности квадратов этих выражений.</strong></p>
+<p>Случай <span style="color: #000000;">(<em>a − b</em>)(<em>a + b</em>)</span> можно распространить для любых <span style="color: #000000;"><em>a</em></span> и <span style="color: #000000;"><em>b</em></span>. Проще говоря, если при решении задачи потребуется умножить разность двух выражений на их сумму, то это умножение можно заменить на разность квадратов этих выражений.</p>
+<p><strong>Пример 1</strong>. Выполнить умножение <span style="color: #000000;">(2<em>x</em> − 5)(2<em>x</em> + 5)</span></p>
+<p>В этом примере разность выражений <span style="color: #000000;">2<em>x</em></span> и <span style="color: #000000;">5</span> умножена на сумму этих же выражений. Тогда согласно формуле <span style="color: #000000;">(<em>a − b</em>)(<em>a + b</em>) = <em>a</em><sup>2</sup> − <em>b</em><sup>2</sup></span> имеем:</p>
+<p style="text-align: center;"><span style="color: #000000;">(2<em>x</em> − 5)(2<em>x</em> + 5) = (2<em>x</em>)<sup>2</sup> − 5<sup>2</sup></span></p>
+<p>Вычислим правую часть, получим <span style="color: #000000;">4<em>x</em><sup>2</sup> − 25</span></p>
+<p style="text-align: center;"><span style="color: #000000;">(2<em>x</em> − 5)(2<em>x</em> + 5) = (2<em>x</em>)<sup>2</sup> − 5<sup>2</sup> = 4<em>x</em><sup>2</sup> − 25</span></p>
+<p>Попробуем решить данный пример, не пользуясь формулой <span style="color: #000000;">(<em>a − b</em>)(<em>a + b</em>) = <em>a</em><sup>2 </sup>− <em>b</em><sup>2</sup></span>. У нас получится тот же результат <span style="color: #000000;">4<em>x</em><sup>2</sup> − 25</span></p>
+<p style="text-align: center;"><span style="color: #000000;">(2<em>x</em> − 5)(2<em>x</em> + 5) = 4<em>x</em><sup>2 </sup>− 10<em>x</em> + 10<em>x</em> − 25 = 4<em>x</em><sup>2</sup> − 25</span></p>
+<hr />
+<p><strong>Пример 2</strong>. Выполнить умножение <span style="color: #000000;">(4<em>x</em> − 5<em>y</em>)(4<em>x</em> + 5<em>y</em>)</span></p>
+<p>Воспользуемся формулой умножения разности двух выражений на их сумму:</p>
+<p style="text-align: center;"><span style="color: #000000;">(<em>a − b</em>)(<em>a + b</em>) = <em>a</em><sup>2</sup> − <em>b</em><sup>2</sup></span></p>
+<p style="text-align: center;"><span style="color: #000000;">(4<em>x</em> − 5<em>y</em>)(4<em>x</em> + 5<em>y</em>) = (4<em>x</em>)<sup>2</sup> − (5<em>y</em>)<sup>2</sup> = 16<em>x</em><sup>2</sup> − 25<em>y</em><sup>2</sup></span></p>
+<hr />
+<p><strong>Пример 3</strong>. Выполнить умножение <span style="color: #000000;">(2<em>a </em>+ 3<em>b</em>)(2<em>a </em>− 3<em>b</em>)</span></p>
+<p>Воспользуемся формулой умножения разности двух выражений на их сумму:</p>
+<p style="text-align: center;"><span style="color: #000000;">(<em>a − b</em>)(<em>a + b</em>) = <em>a</em><sup>2</sup> − <em>b</em><sup>2</sup></span></p>
+<p style="text-align: center;"><span style="color: #000000;">(2<em>a + </em>3<em>b</em>)(2<em>a − </em>3<em>b</em>) = (2<em>a</em>)<sup>2</sup> − (3<em>b</em>)<sup>2</sup> = 4<em>a</em><sup>2</sup> − 9<em>b</em><sup>2</sup></span></p>
+<p>В данном примере сумма членов <span style="color: #000000;">2<em>a</em></span> и <span style="color: #000000;">3<em>b</em></span> располагалась раньше, чем разность этих членов. А в формуле <span style="color: #000000;">(<em>a − b</em>)(<em>a + b</em>) = <em>a</em><sup>2</sup> − <em>b</em><sup>2</sup></span> разность располагается раньше.</p>
+<p>Нет никакой разницы как располагаются сомножители <span style="color: #000000;">(<em>a − b</em>)</span> в <span style="color: #000000;">(<em>a + b</em>)</span> в формуле. Они могут быть быть записаны как <span style="color: #000000;">(<em>a − b</em>)(<em>a + b</em>)</span>, так и <span style="color: #000000;">(<em>a + b</em>)(<em>a − b</em>)</span>. Результат по прежнему будет равен <span style="color: #000000;"><em>a</em><sup>2</sup> − <em>b</em><sup>2</sup></span>, поскольку от перестановки сомножителей произведение не меняется.</p>
+<p>Так и в данном примере сомножители <span style="color: #000000;">(2<em>a + </em>3<em>b</em>) </span>и<span style="color: #000000;"> (2<em>a − </em>3<em>b</em>)</span> можно записать как <span style="color: #000000;">(2<em>a + </em>3<em>b</em>)(2<em>a − </em>3<em>b</em>)</span>, так и <span style="color: #000000;">(2<em>a − </em>3<em>b</em>)(2<em>a + </em>3<em>b</em>)</span>. Результат всё так же будет равен <span style="color: #000000;">4<em>a</em><sup>2 </sup>− 9<em>b</em><sup>2</sup></span>.</p>
+<p><strong>Пример 3</strong>. Выполнить умножение <span style="color: #000000;">(7 + 3<em>x</em>)(3<em>x</em> − 7)</span></p>
+<p>Воспользуемся формулой умножения разности двух выражений на их сумму:</p>
+<p style="text-align: center;"><span style="color: #000000;">(<em>a − b</em>)(<em>a + b</em>) = <em>a</em><sup>2</sup> − <em>b</em><sup>2</sup></span></p>
+<p style="text-align: center;"><span style="color: #000000;">(7 + 3<em>x</em>)(3<em>x</em> − 7) = (3<em>x</em>)<sup>2</sup> − 7<sup>2</sup> = 9<em>x</em><sup>2</sup> − 49</span></p>
+<hr />
+<p><strong>Пример 4</strong>. Выполнить умножение <span style="color: #000000;">(<em>x</em><sup>2 </sup>− <em>y</em><sup>3</sup>)(<em>x</em><sup>2 </sup>+ <em>y</em><sup>3</sup>)</span></p>
+<p style="text-align: center;"><span style="color: #000000;">(<em>a − b</em>)(<em>a + b</em>) = <em>a</em><sup>2</sup> − <em>b</em><sup>2</sup></span></p>
+<p style="text-align: center;"><span style="color: #000000;">(<em>x</em><sup>2 </sup>− <em>y</em><sup>3</sup>)(<em>x</em><sup>2 </sup>+ <em>y</em><sup>3</sup>) = (<em>x</em><sup>2</sup>)<sup>2</sup> − (<em>y</em><sup>3</sup>)<sup>2</sup> = <em>x</em><sup>4</sup> − <em>y</em><sup>6</sup></span></p>
+<hr />
+<p><strong>Пример 5</strong>. Выполнить умножение <span style="color: #000000;">(−5<em>x </em>− 3<em>y</em>)(5<em>x </em>− 3<em>y</em>)</span></p>
+<p>В выражении <span style="color: #000000;">(−5<em>x </em>− 3<em>y</em>)</span> вынесем за скобки <span style="color: #000000;">−1</span>, тогда исходное выражение примет следующий вид:</p>
+<p style="text-align: center;"><span style="color: #000000;">(−5<em>x </em>− 3<em>y</em>)(5<em>x </em>− 3<em>y</em>) = −1(5<em>x</em> + 3<em>y</em>)(5<em>x</em> − 3<em>y</em>)</span></p>
+<p>Произведение <span style="color: #000000;">(5<em>x</em> + 3<em>y</em>)(5<em>x</em> − 3<em>y</em>)</span> заменим на разность квадратов:</p>
+<p style="text-align: center;"><span style="color: #000000;">(−5<em>x </em>− 3<em>y</em>)(5<em>x </em>− 3<em>y</em>) = −1(5<em>x</em> + 3<em>y</em>)(5<em>x</em> − 3<em>y</em>) = −1((5<em>x</em>)<sup>2</sup> − (3<em>y</em>)<sup>2</sup>)</span></p>
+<p>Разность квадратов была заключена в скобки. Если этого не сделать, то получится, что <span style="color: #000000;">−1</span> умножается только на <span style="color: #000000;">(5<em>x</em>)<sup>2</sup></span>. А это приведет к ошибке и изменению значения исходного выражения.</p>
+<p>Далее вычисляем выражение в скобках:</p>
+<p style="text-align: center;"><span style="color: #000000;">(−5<em>x </em>− 3<em>y</em>)(5<em>x </em>− 3<em>y</em>) = −1(5<em>x</em> + 3<em>y</em>)(5<em>x</em> − 3<em>y</em>) = −1((5<em>x</em>)<sup>2</sup> − (3<em>y</em>)<sup>2</sup>) = −1(25<em>x</em><sup>2 </sup>− 9<em>y</em><sup>2</sup>)</span></p>
+<p>Теперь умножим −1 на выражение в скобках и получим окончательный результат:</p>
+<p style="text-align: center;"><span style="color: #000000;">(−5<em>x </em>− 3<em>y</em>)(5<em>x </em>− 3<em>y</em>) = −1(5<em>x</em> + 3<em>y</em>)(5<em>x</em> − 3<em>y</em>) = −1((5<em>x</em>)<sup>2</sup> − (3<em>y</em>)<sup>2</sup>) = </span><br />
+<span style="color: #000000;">−1(25<em>x</em><sup>2 </sup>− 9<em>y</em><sup>2</sup>) = −25<em>x</em><sup>2 </sup>+ 9<em>y</em><sup>2</sup></span></p>
+<hr />
+<h2 id="yak5" style="text-align: center;">Умножение разности двух выражений на неполный квадрат их суммы</h2>
+<p>Встречаются задачи, в которых требуется умножить разность двух выражений на неполный квадрат их суммы. Выглядит это произведение следующим образом:</p>
+<p style="text-align: center;"><span style="color: #000000;">(<em>a − b</em>)(<em>a</em><sup>2</sup> + <em>ab</em> + <em>b</em><sup>2</sup>)</span></p>
+<p>Первый многочлен <span style="color: #000000;">(<em>a − b</em>)</span> является разностью двух выражений, а второй многочлен <span style="color: #000000;">(<em>a</em><sup>2</sup> + <em>ab</em> + <em>b</em><sup>2</sup>)</span> является неполным квадратом суммы этих двух выражений.</p>
+<p>Неполный квадрат суммы это многочлен вида <span style="color: #000000;"><em>a</em><sup>2</sup> + <em>ab</em> + <em>b</em><sup>2</sup></span>. Он похож на обычный квадрат суммы <span style="color: #000000;"><em>a</em><sup>2</sup> + 2<em>ab</em> + <em>b</em><sup>2</sup></span> за исключением того, что в нём произведение первого и второго выражений не удваивается.</p>
+<p>Например, выражение <span style="color: #000000;">4<em>x</em><sup>2</sup> + 6<em>xy</em> + 9<em>y</em><sup>2</sup></span> является неполным квадратом суммы выражений <span style="color: #000000;">2<em>x</em></span> и <span style="color: #000000;">3<em>y</em></span>.</p>
+<p>Действительно, первый член выражения <span style="color: #000000;">4<em>x</em><sup>2</sup> + 6<em>xy</em> + 9<em>y</em><sup>2</sup></span>, а именно <span style="color: #000000;">4<em>x</em><sup>2</sup></span> является квадратом выражения <span style="color: #000000;">2<em>x</em></span>, поскольку <span style="color: #000000;">(2<em>x</em>)<sup>2</sup> = 4<em>x</em><sup>2</sup></span>. Третий член выражения <span style="color: #000000;">4<em>x</em><sup>2</sup> + 6<em>xy</em> + 9<em>y</em><sup>2</sup></span>, а именно <span style="color: #000000;">9<em>y</em><sup>2</sup></span> является квадратом выражения <span style="color: #000000;">3<em>y</em></span>, поскольку <span style="color: #000000;">(3<em>y</em>)<sup>2</sup> = 9<em>y</em><sup>2</sup></span>. Член находящийся в середине <span style="color: #000000;">6<em>xy</em></span>, является произведением выражений <span style="color: #000000;">2<em>x</em></span> и <span style="color: #000000;">3<em>y.</em></span></p>
+<p>Итак, умножим разность <span style="color: #000000;">(<em>a − b</em>) </span>на неполный квадрат суммы <span style="color: #000000;"><em>a</em><sup>2</sup> + <em>ab</em> + <em>b</em><sup>2</sup></span></p>
+<p style="text-align: center;"><span style="color: #000000;">(<em>a − b</em>)(<em>a</em><sup>2</sup> + <em>ab</em> + <em>b</em><sup>2</sup>) = <em>a</em>(<em>a</em><sup>2</sup><em> + ab + b</em><sup>2</sup>) − <em>b</em>(<em>a</em><sup>2</sup> + <em>ab</em> + <em>b</em><sup>2</sup>) =</span><br />
+<span style="color: #000000;"><em>a</em><sup>3</sup> + <em>a</em><sup>2</sup><em>b</em> + <em>ab</em><sup>2</sup> − <em>a</em><sup>2</sup><em>b</em> − <em>ab</em><sup>2</sup> − <em>b</em><sup>3</sup> = <em>a</em><sup>3</sup> − <em>b</em><sup>3</sup></span></p>
+<p>То есть выражение <span style="color: #000000;">(<em>a − b</em>)(<em>a</em><sup>2</sup> + <em>ab</em> + <em>b</em><sup>2</sup>)</span> равно <span style="color: #000000;"><em>a</em><sup>3</sup> − <em>b</em><sup>3</sup></span></p>
+<p style="text-align: center;"><strong><span style="color: #000000;">(<em>a − b</em>)(<em>a</em><sup>2</sup> + <em>ab</em> + <em>b</em><sup>2</sup>) = <em>a</em><sup>3</sup> − <em>b</em><sup>3</sup></span></strong></p>
+<p>Это тождество называют формулой умножения разности двух выражений на неполный квадрат их суммы. Эту формулу можно прочитать так:</p>
+<p><strong>Произведение разности двух выражений и неполного квадрата их суммы равно разности кубов этих выражений.</strong></p>
+<p><strong>Пример 1</strong>. Выполнить умножение <span style="color: #000000;">(2<em>x</em> − 3<em>y</em>)(4<em>x</em><sup>2</sup> + 6<em>xy</em> + 9<em>y</em><sup>2</sup>)</span></p>
+<p>Первый многочлен <span style="color: #000000;">(2<em>x</em> − 3<em>y</em>)</span> это разность двух выражений <span style="color: #000000;">2<em>x</em></span> и <span style="color: #000000;">3<em>y</em></span>. Второй многочлен <span style="color: #000000;">4<em>x</em><sup>2</sup> + 6<em>xy</em> + 9<em>y</em><sup>2</sup></span> это неполный квадрат суммы двух выражений <span style="color: #000000;">2<em>x</em></span> и <span style="color: #000000;">3<em>y</em></span>. Это позволяет не приводя длинных вычислений, воспользоваться формулой <span style="color: #000000;">(<em>a − b</em>)(<em>a</em><sup>2</sup> + <em>ab</em> + <em>b</em><sup>2</sup>) = <em>a</em><sup>3</sup> − <em>b</em><sup>3</sup></span>. В нашем случае умножение <span style="color: #000000;">(2<em>x</em> − 3<em>y</em>)(4<em>x</em><sup>2</sup> + 6<em>xy</em> + 9<em>y</em><sup>2</sup>) </span>можно заменить на разность кубов<span style="color: #000000;"> 2<em>x </em></span>и<span style="color: #000000;"> 3<em>y</em></span></p>
+<p style="text-align: center;"><span style="color: #000000;">(2<em>x</em> − 3<em>y</em>)(4<em>x</em><sup>2</sup> + 6<em>xy</em> + 9<em>y</em><sup>2</sup>) = (2<em>x</em>)<sup>3</sup> − (3<em>y</em>)<sup>3</sup> = 8<em>x</em><sup>3 </sup>− 27<em>y</em><sup>3</sup></span></p>
+<p>Попробуем решить этот же пример, не пользуясь формулой <span style="color: #000000;">(<em>a − b</em>)(<em>a</em><sup>2 </sup>+ <em>ab </em>+ <em>b</em><sup>2</sup>) = <em>a</em><sup>3 </sup>− <em>b</em><sup>3</sup></span>. У нас получится тот же результат, но решение станет длиннее:</p>
+<p style="text-align: center;"><span style="color: #000000;">(2<em>x</em> − 3<em>y</em>)(4<em>x</em><sup>2</sup> + 6<em>xy</em> + 9<em>y</em><sup>2</sup>) = 2<em>x</em>(4<em>x</em><sup>2</sup> + 6<em>xy</em> + 9<em>y</em><sup>2</sup>) − 3<em>y</em>(4<em>x</em><sup>2</sup> + 6<em>xy</em> + 9<em>y</em><sup>2</sup>) =</span><br />
+<span style="color: #000000;">8<em>x<sup>3</sup></em> + 12<em>x</em><sup>2</sup><em>y</em> + 18<em>xy</em><sup>2</sup> − 12<em>x</em><sup>2</sup><em>y</em> − 18<em>xy</em><sup>2</sup> − 27<em>y</em><sup>3</sup> = 8<em>x</em><sup>3</sup> − 27<em>y</em><sup>3</sup></span></p>
+<hr />
+<p><strong>Пример 2</strong>. Выполнить умножение <span style="color: #000000;">(3 − <em>x</em>)(9 + 3<em>x</em> + <em>x</em><sup>2</sup>)</span></p>
+<p>Первый многочлен <span style="color: #000000;">(3 − <em>x</em>)</span> является разностью двух выражений, а второй многочлен является неполным квадратом суммы этих двух выражений. Это позволяет воспользоваться формулой <span style="color: #000000;">(<em>a − b</em>)(<em>a</em><sup>2</sup> + <em>ab</em> + <em>b</em><sup>2</sup>) = <em>a</em><sup>3</sup> − <em>b</em><sup>3</sup></span></p>
+<p style="text-align: center;"><span style="color: #000000;">(3 − <em>x</em>)(9 + 3<em>x</em> + <em>x</em><sup>2</sup>) = 3<sup>3</sup> − <em>x</em><sup>3</sup> = 27 − <em>x</em><sup>3</sup></span></p>
+<hr />
+<h2 id="yak6" style="text-align: center;">Умножение суммы двух выражений на неполный квадрат их разности</h2>
+<p>Встречаются задачи, в которых требуется умножить сумму двух выражений на неполный квадрат их разности. Выглядит это произведение следующим образом:</p>
+<p style="text-align: center;"><span style="color: #000000;">(<em>a + b</em>)(<em>a</em><sup>2</sup> − <em>ab</em> + <em>b</em><sup>2</sup>)</span></p>
+<p>Первый многочлен <span style="color: #000000;">(<em>a + b</em>)</span> является суммой двух выражений, а второй многочлен <span style="color: #000000;">(<em>a</em><sup>2</sup> − <em>ab</em> + <em>b</em><sup>2</sup>)</span> является неполным квадратом разности этих двух выражений.</p>
+<p>Неполный квадрат разности это многочлен вида <span style="color: #000000;"><em>a</em><sup>2</sup> − <em>ab</em> + <em>b</em><sup>2</sup></span>. Он похож на обычный квадрат разности <span style="color: #000000;"><em>a</em><sup>2</sup> − 2<em>ab</em> + <em>b</em><sup>2</sup></span> за исключением того, что в нём произведение первого и второго выражений не удваивается.</p>
+<p>Например, выражение <span style="color: #000000;">4<em>x</em><sup>2</sup> − 6<em>xy</em> + 9<em>y</em><sup>2</sup></span> является неполным квадратом разности выражений <span style="color: #000000;">2<em>x</em></span> и <span style="color: #000000;">3<em><span style="color: #000000;">y</span>. </em></span></p>
+<p style="text-align: center;"><span style="color: #000000;">(2<em>x</em>)<sup>2</sup> − 2<em>x</em> × 3<em>y</em> + (3<em>y</em>)<sup>2</sup> = 4<em>x</em><sup>2</sup> − 6<em>xy</em> + 9<em>y</em><sup>2</sup></span></p>
+<p>Вернёмся к изначальному примеру. Умножим сумму <em><span style="color: #000000;">a + b</span></em> на неполный квадрат разности <span style="color: #000000;"><em>a</em><sup>2</sup> − <em>ab</em> + <em>b</em><sup>2</sup></span></p>
+<p style="text-align: center;"><span style="color: #000000;">(<em>a + b</em>)(<em>a</em><sup>2</sup> − <em>ab</em> + <em>b</em><sup>2</sup>) = <em>a</em>(<em>a</em><sup>2</sup><em> − ab + b</em><sup>2</sup>) + <em>b</em>(<em>a</em><sup>2</sup> − <em>ab</em> + <em>b</em><sup>2</sup>) =</span><br />
+<span style="color: #000000;"><em>a</em><sup>3</sup> − <em>a</em><sup>2</sup><em>b</em> + <em>ab</em><sup>2</sup> + <em>a</em><sup>2</sup><em>b</em> − <em>ab</em><sup>2</sup> + <em>b</em><sup>3</sup> = <em>a</em><sup>3</sup> + <em>b</em><sup>3</sup></span></p>
+<p>То есть выражение <span style="color: #000000;">(<em>a + b</em>)(<em>a</em><sup>2</sup> − <em>ab</em> + <em>b</em><sup>2</sup>)</span> равно <span style="color: #000000;"><em>a</em><sup>3</sup> + <em>b</em><sup>3</sup></span></p>
+<p style="text-align: center;"><strong><span style="color: #000000;">(<em>a + b</em>)(<em>a</em><sup>2</sup> − <em>ab</em> + <em>b</em><sup>2</sup>) = <em>a</em><sup>3</sup> + <em>b</em><sup>3</sup></span></strong></p>
+<p>Это тождество называют формулой умножения суммы двух выражений на неполный квадрат их разности. Эту формулу можно прочитать так:</p>
+<p><strong>Произведение суммы двух выражений и неполного квадрата их разности равно сумме кубов этих выражений.</strong></p>
+<p><strong>Пример 1</strong>. Выполнить умножение <span style="color: #000000;">(2<em>x</em> + 3<em>y</em>)(4<em>x</em><sup>2 </sup>− 6<em>xy</em> + 9<em>y</em><sup>2</sup>)</span></p>
+<p>Первый многочлен <span style="color: #000000;">(2<em>x</em> + 3<em>y</em>)</span> это сумма двух выражений <span style="color: #000000;">2<em>x</em></span> и <span style="color: #000000;">3<em>y</em></span>, а второй многочлен <span style="color: #000000;">4<em>x</em><sup>2</sup> − 6<em>xy</em> + 9<em>y</em><sup>2</sup></span> это неполный квадрат разности этих выражений. Это позволяет не приводя длинных вычислений, воспользоваться формулой <span style="color: #000000;">(<em>a + b</em>)(<em>a</em><sup>2</sup> − <em>ab</em> + <em>b</em><sup>2</sup>) = <em>a</em><sup>3</sup> + <em>b</em><sup>3</sup></span>. В нашем случае умножение <span style="color: #000000;">(2<em>x</em> + 3<em>y</em>)(4<em>x</em><sup>2</sup> − 6<em>xy</em> + 9<em>y</em><sup>2</sup>) </span>можно заменить на сумму кубов<span style="color: #000000;"> 2<em>x </em></span>и<span style="color: #000000;"> 3<em>y</em></span></p>
+<p style="text-align: center;"><span style="color: #000000;">(2<em>x</em> + 3<em>y</em>)(4<em>x</em><sup>2</sup> − 6<em>xy</em> + 9<em>y</em><sup>2</sup>) = (2<em>x</em>)<sup>3</sup> + (3<em>y</em>)<sup>3</sup> = 8<em>x</em><sup>3 </sup>+ 27<em>y</em><sup>3</sup></span></p>
+<p>Попробуем решить этот же пример, не пользуясь формулой <span style="color: #000000;">(<em>a + b</em>)(<em>a</em><sup>2 </sup>− <em>ab </em>+ <em>b</em><sup>2</sup>) = <em>a</em><sup>3 </sup>+ <em>b</em><sup>3</sup></span>. У нас получится тот же результат, но решение станет длиннее:</p>
+<p style="text-align: center;"><span style="color: #000000;">(2<em>x</em> + 3<em>y</em>)(4<em>x</em><sup>2</sup> − 6<em>xy</em> + 9<em>y</em><sup>2</sup>) = 2<em>x</em>(4<em>x</em><sup>2</sup> − 6<em>xy</em> + 9<em>y</em><sup>2</sup>) + 3<em>y</em>(4<em>x</em><sup>2</sup> − 6<em>xy</em> + 9<em>y</em><sup>2</sup>) =</span><br />
+<span style="color: #000000;">8<em>x</em><sup>3</sup> − 12<em>x</em><sup>2</sup><em>y</em> + 18<em>xy</em><sup>2</sup> + 12<em>x</em><sup>2</sup><em>y</em> − 18<em>xy</em><sup>2</sup> + 27<em>y</em><sup>3</sup> = 8<em>x</em><sup>3</sup> + 27<em>y</em><sup>3</sup></span></p>
+<hr />
+<p><strong>Пример 2</strong>. Выполнить умножение <span style="color: #000000;">(2<em>x </em>+ <em>y</em>)(4<em>x</em><sup>2</sup> − 2<em>xy</em> + <em>y</em><sup>2</sup>)</span></p>
+<p>Первый многочлен <span style="color: #000000;">(2<em>x </em>+ <i>y</i>)</span> является суммой двух выражений, а второй многочлен <span style="color: #000000;">(4<em>x</em><sup>2</sup> − 2<em>xy</em> + <em>y</em><sup>2</sup>)</span> является неполным квадратом разности этих выражений. Это позволяет воспользоваться формулой <span style="color: #000000;">(<em>a + b</em>)(<em>a</em><sup>2 </sup>− <em>ab </em>+ <em>b</em><sup>2</sup>) = <em>a</em><sup>3 </sup>+ <em>b</em><sup>3</sup></span></p>
+<p style="text-align: center;"><span style="color: #000000;">(2<em>x </em>+ <em>y</em>)(4<em>x</em><sup>2</sup> − 2<em>xy</em> + <em>y</em><sup>2</sup>) = (2<em>x</em>)<sup>3</sup> + <em>y</em><sup>3</sup> = 8<em>x</em><sup>3</sup> + <em>y</em><sup>3</sup></span></p>
+<p>Попробуем решить этот же пример, не пользуясь формулой <span style="color: #000000;">(<em>a + b</em>)(<em>a</em><sup>2 </sup>− <em>ab </em>+ <em>b</em><sup>2</sup>) = <em>a</em><sup>3 </sup>+ <em>b</em><sup>3</sup></span>. У нас получится тот же результат, но решение станет длиннее:</p>
+<p style="text-align: center;"><span style="color: #000000;">(2<em>x </em>+ <em>y</em>)(4<em>x</em><sup>2</sup> − 2<em>xy</em> + <em>y</em><sup>2</sup>) = 2<em>x</em>(4<em>x</em><sup>2</sup> − 2<em>xy</em> + <em>y</em><sup>2</sup>) + <em>y</em>(4<em>x</em><sup>2</sup> − 2<em>xy</em> + <em>y</em><sup>2</sup>) = </span><br />
+<span style="color: #000000;">8<em>x</em><sup>3</sup> − 4<em>x</em><sup>2</sup><em>y</em> + 2<em>xy</em><sup>2</sup> + 4<em>x</em><sup>2</sup><em>y</em> − 2<em>xy</em><sup>2</sup> + <em>y</em><sup>3</sup> = 8<em>x</em><sup>3</sup> + <em>y</em><sup>3</sup></span></p>
+    <h3>Хотите перейти на следующий урок?</h3>
+<a href="lection1.html" class="back">Вернуться ‹‹</a>
+<a href="lection3.html" class="next">Вперёд »</a>
+
+<script type="text/javascript">
+
+var menuItems = document.querySelectorAll('.skew-menu ul li');
+
+for (var i = 0; i < menuItems.length; i++) {
+   menuItems[i].addEventListener('click', function() {
+       // Действия при выборе определенной лекции
+   });
+}
+document.querySelectorAll('.skew-menu li').forEach(item => {
+    item.addEventListener('mouseover', () => {
+        item.style.transition = 'transform 0.3s';
+        item.style.transform = 'scale(1.2)';
+    });
+
+    item.addEventListener('mouseout', () => {
+        if (!item.classList.contains("clicked")) { // Проверяем, не была ли ячейка уже уменьшена при клике
+            item.style.transition = 'transform 0.3s';
+            item.style.transform = 'scale(1)';
+        }
+    });
+
+     document.addEventListener("click", function(event) { 
+         if (!event.target.closest(".skew-menu li")) return;
+
+         const clickedItem= event.target.closest(".skew-menu li");
+
+         document.querySelectorAll('.skew-menu li').forEach(otherItem => { 
+             otherItem.classList.remove("clicked");
+             otherItem.removeEventListener("transitionend", removeTransition);
+          });
+          
+          function removeTransition() { this.classList.remove("clicked"); }
+
+          const clickedClassList= clickedItem.classList;
+          clickedClassList.add("clicked");
+
+          setTimeout(() =>{
+              clickedClassList.remove("clicked")
+           },300)
+
+           function toggleTransform(){
+               let scaleValue= window.getComputedStyle(clickedItem).getPropertyValue('transform');
+
+               if(scaleValue==='none'){
+                   clickedItem.setAttribute(
+                       "style",
+                       "transition: all .5s ease-in-out; transform: scale(.8);"
+                     );
+                 }else{
+                     clickedItem.removeAttribute("style");
+                  }
+            }
+
+            toggleTransform();
+      });
+});
+let currentLesson = document.querySelector('.active a');
+currentLesson.style.color = '#007bff';
+
+menuItems[0].classList.add("active");
+
+document.querySelector('.back').setAttribute("href", "lection28.html");
+document.querySelector('.next').setAttribute("href", "lection30.html");
+
+</script>
+</body>
+</html>

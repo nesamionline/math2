@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лекция 8: Порядок действий</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: 200px auto;
+            gap: 20px;
+        }
+        
+        .skew-menu {
+            background-color: #f2f2f2; /* Цвет фона для меню */
+            padding: 10px;
+        }
+
+        .lecture-content {
+            background-color: #e6e6e6; /* Цвет фона для контента лекции */
+            padding: 20px;
+        }
+
+        h1, h2, p {
+          margin-bottom: 15px;  
+      }
+
+      a.back, a.next{
+         text-decoration:none; 
+         color:#333; 
+     }
+     body {
+            background-image: url(images/7.avif);
+            background-attachment: fixed;
+            -moz-background-size: 100%;
+            -webkit-background-size: 100%;
+            -o-background-size: 100%;
+            background-size: 100%;
+        }
+        h1{
+        color: rgb(0, 0, 0) !important; 
+        font-family: courier !important; 
+         text-align: center !important;
+  }
+        p {
+         color: rgb(0, 0, 0);
+         font-family: 'Times New Roman', Times, serif;
+         font-size: 150%;
+         text-align: right; 
+        }
+        h2{
+        color: dark !important; 
+        font-family: Georgia, 'Times New Roman', Times, serif !important; 
+         text-align: center !important;
+  }
+        p {
+         color: rgb(0, 0, 0); 
+         font-family: 'Times New Roman', Times, serif;
+         font-size: 150%; 
+         text-align: center;
+        }
+        a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.back {
+    background-color: #ddd;
+    color: rgb(0, 0, 0);
+}
+
+.next {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.round {
+    border-radius: 50%;
+}
+@radius: 7px;
+@skew: 25deg;
+@main-color: tomato;
+
+body{
+  font-family:Helvetica Neue, Helvetica, sans-serif;
+  background:@main-color;
+}
+
+.skew-menu{
+  text-align:center;
+  margin-top:3em;
+  padding: 10px;
+    max-height: 1200px; /* Устанавливаем максимальную высоту */
+    max-width: 700px;
+    width: 200px;
+    overflow-y: auto; /* Добавляем вертикальную прокрутку при необходимости */
+}
+
+.skew-menu ul{
+  display:inline-block;
+  margin:0;
+  padding:0;
+  list-style:none;
+  transform:skew(-@skew);
+  width: 250px;
+}
+
+.skew-menu ul li{
+  background:#fff;
+  float:left;
+  border-right:1px solid #eee;
+  box-shadow:0 1px 1px rgba(0,0,0,0.1);
+  text-transform:uppercase;
+  color:#555;
+  font-weight:bolder;
+  transition:all 0.3s linear;
+  display: block;
+  text-align: center;
+  width: 200px;
+  max-width: 200px;
+  &:first-child
+  {
+
+    border-radius:@radius 0 0 @radius;
+  }
+  
+  &:last-child{
+    border-right:none;
+    border-radius:0 @radius @radius 0;
+  }
+  
+  &:hover{
+    background:#eee;
+    color:@main-color;
+  }
+  
+  a{
+    display:block;
+    padding:1em 2em;
+    color:inherit;
+    text-decoration:none;
+    transform:skew(@skew);
+  }
+}
+.navless{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: lighter;
+    font-size: 20px;
+}
+.menu{
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+.active a {
+  color: #007bff; /* Выделите цвет текста */
+}
+    </style>
+
+</head>
+
+<body>
+
+<nav class="skew-menu">
+    <ul>
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="lection1.html">Лекция 1</a></li>
+      <li><a href="lection2.html">Лекция 2</a></li>
+      <li><a href="lection3.html">Лекция 3</a></li>
+      <li><a href="lection4.html">Лекция 4</a></li>
+      <li><a href="lection5.html">Лекция 5</a></li>
+      <li><a href="lection6.html">Лекция 6</a></li>
+      <li><a href="lection7.html">Лекция 7</a></li>
+      <li class="active"><a href="lection8.html">Лекция 8</a></li>
+      <li><a href="lection9.html">Лекция 9</a></li>
+      <li><a href="lection10.html">Лекция 10</a></li>
+      <li><a href="lection11.html">Лекция 11</a></li>
+      <li><a href="lection12.html">Лекция 12</a></li>
+      <li><a href="lection13.html">Лекция 13</a></li>
+      <li><a href="lection14.html">Лекция 14</a></li>
+      <li><a href="lection15.html">Лекция 15</a></li>
+      <li><a href="lection16.html">Лекция 16</a></li>
+      <li><a href="lection17.html">Лекция 17</a></li>
+      <li><a href="lection18.html">Лекция 18</a></li>
+      <li><a href="lection19.html">Лекция 19</a></li>
+      <li><a href="lection20.html">Лекция 20</a></li>
+      <li><a href="lection21.html">Лекция 21</a></li>
+      <li><a href="lection22.html">Лекция 22</a></li>
+      <li><a href="lection23.html">Лекция 23</a></li>
+      <li><a href="lection24.html">Лекция 24</a></li>
+      <li><a href="lection25.html">Лекция 25</a></li>
+      <li><a href="lection26.html">Лекция 26</a></li>
+      <li><a href="lection27.html">Лекция 27</a></li>
+      <li><a href="lection28.html">Лекция 28</a></li>
+      <li><a href="lection29.html">Лекция 29</a></li>
+      <li><a href="lection30.html">Лекция 30</a></li>
+    </ul>
+</nav>
+
+<div class="lecture-content">
+
+      
+</header><!-- .entry-header -->
+
+<div class="entry-content">
+    <h1 class="entry-title">Лекция 8: Порядок действий</h1>      
+
+      
+</header><!-- .entry-header -->
+
+<div class="entry-content">
+    <p style="text-align: left;">В уроке выражения мы узнали, что они бывают числовые и буквенные. Мы рассмотрели несколько числовых и буквенных выражений. Это были самые простейшие выражения.</p>
+<p style="text-align: left;">Настало время сдвинуться с мёртвой точки и рассмотреть более сложные выражения. В данном уроке мы познакомимся с порядком выполнения действий.</p>
+<p>Выражения могут состоять из нескольких чисел. Таковыми к примеру являются следующие выражения:</p>
+<p style="text-align: center;"><span style="color: #000000;">10 − 1 + 2 + 3</span><br />
+<span style="color: #000000;"> (3 + 5) + 2 × 3</span><br />
+<span style="color: #000000;"> 5 × 2 + (5 − 3) : 2 + 1</span></p>
+<p>Такие выражения нельзя вычислить сразу, то есть поставить знак равенства и записать значение выражения. Да и выглядят они не так просто как <span style="color: #000000;">2 + 2</span> или <span style="color: #000000;">9 − 3</span>.</p>
+<p>Для подобных выражений принято соблюдать так называемый <strong>порядок действий</strong>. Суть в том, что выражение вычисляется кусочками по определённому порядку.</p>
+<p>Когда нам требуется решить подобные примеры, мы сразу должны мысленно прочитать следующее правило:</p>
+<p class="regulations">Сначала вычислить то, что находится в скобках!</p>
+<p>Посмотрим на выражение <span style="color: #000000;">10 − 1 + 2 + 3</span>. Видим, что в нём нет никаких скобок. Тогда переходим к следующему правилу, которое выглядит так:</p>
+<p class="regulations">Читаем выражение слева направо. Если встретится умножение или деление, то сразу же выполняем эту операцию!</p>
+<p style="text-align: left;">Читаем наше выражение <span style="color: #000000;">10 − 1 + 2 + 3</span> слева направо. Видим, что в нём нет никакого умножения или деления. Тогда переходим к следующему правилу:</p>
+<p class="regulations">Читаем выражение слева направо. Если встретится сложение или вычитание, то сразу же выполняем эту операцию!</p>
+<p style="text-align: left;">Читаем наше выражение <span style="color: #000000;">10 − 1 + 2 + 3</span> слева направо. Встречаем вычитание <span style="color: #000000;">10 − 1</span>. Сразу выполняем эту операцию: <span style="color: #000000;">10 − 1 = 9</span>. Полученную девятку запишем в главном выражении вместо <span style="color: #000000;">10 − 1</span></p>
+<p style="text-align: left;"><img decoding="async" class="size-full wp-image-1585 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2015/11/51111.png" alt="51111" width="237" height="347" srcset="https://spacemath.xyz/wp-content/uploads/2015/11/51111.png 237w, https://spacemath.xyz/wp-content/uploads/2015/11/51111-205x300.png 205w" sizes="(max-width: 237px) 100vw, 237px" /></p>
+<p>Затем снова читаем те, правила, которые мы прочитали выше. Читать их нужно в следующем порядке:</p>
+<p><span style="color: #333399;"><strong>1. Сначала вычислить то, что находится в скобках!</strong></span></p>
+<p style="text-align: left;"><span style="color: #333399;"><strong>2. Читаем выражение слева направо. Если встретится умножение или деление, то сразу же применяем эту операцию!</strong></span></p>
+<p style="text-align: left;"><strong><span style="color: #333399;">3. Читаем выражение слева направо. Если встретится сложение или вычитание, то сразу же применяем эту операцию!</span> </strong></p>
+<p style="text-align: left;">Сейчас у нас имеется выражение <span style="color: #000000;">9 + 2 + 3</span> Читаем его слева направо и встречаем сложение <span style="color: #000000;">9 + 2.</span> Выполняем эту операцию: <span style="color: #000000;">9 + 2 = 11</span>. Запишем число 11 в главном выражении вместо <span style="color: #000000;">9 + 2</span>:</p>
+<p style="text-align: left;"><img decoding="async" class="size-full wp-image-1586 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2015/11/51112.png" alt="51112" width="171" height="331" srcset="https://spacemath.xyz/wp-content/uploads/2015/11/51112.png 171w, https://spacemath.xyz/wp-content/uploads/2015/11/51112-155x300.png 155w" sizes="(max-width: 171px) 100vw, 171px" /></p>
+<p style="text-align: left;">Осталось простейшее выражение <span style="color: #000000;">11 + 3</span>, которое вычисляется легко:</p>
+<p style="text-align: center;"><span style="color: #000000;">11 + 3 = 14</span></p>
+<p style="text-align: left;">Таким образом, значение выражения <span style="color: #000000;">10 − 1 + 2 + 3</span> равно <span style="color: #000000;">14</span></p>
+<p style="text-align: center;"><strong>10 − 1 + 2 + 3 = 14</strong></p>
+<p style="text-align: left;">Иногда удобно расставить порядок действий над самим выражением. Для этого над операцией, которую необходимо выполнить, указывают её очередь. К примеру, в выражении <span style="color: #000000;">10 − 1 + 2 + 3</span> все действия выполняются последовательно слева направо, поэтому для него можно определить следующий порядок:</p>
+<p style="text-align: left;"><img decoding="async" class="size-full wp-image-3629 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2015/11/Poryadok-dlya-vyrazheni-10-123.png" alt="Порядок для выражени 10-1+2+3" width="553" height="146" srcset="https://spacemath.xyz/wp-content/uploads/2015/11/Poryadok-dlya-vyrazheni-10-123.png 553w, https://spacemath.xyz/wp-content/uploads/2015/11/Poryadok-dlya-vyrazheni-10-123-300x79.png 300w" sizes="(max-width: 553px) 100vw, 553px" /></p>
+<p style="text-align: left;">И далее можно выполнить действия по отдельности, что очень удобно:</p>
+<p style="text-align: left;"><span style="color: #0000ff;"><strong>1) </strong></span> 10 <strong>−</strong> 1 = 9</p>
+<p style="text-align: left;"><strong><span style="color: #0000ff;">2)</span></strong>   9 <strong>+ </strong>2 = 11</p>
+<p style="text-align: left;"><span style="color: #0000ff;"><strong>3)</strong></span>  11 <strong>+</strong> 3 = 14</p>
+<p style="text-align: left;">Также, можно поставить знак равенства и сразу начать вычислять выражение в порядке приоритета действий. Например, решение для выражения <span style="color: #000000;">10 − 1 + 2 + 3</span> можно записать следующим образом:</p>
+<p style="text-align: center;"><img loading="lazy" decoding="async" class="alignnone wp-image-3643 size-full" src="https://spacemath.xyz/wp-content/uploads/2015/11/Vychislenie-10-1-2-3-sleva-napravo-v-poryadke-sledovaniya.png" alt="Вычисление 10-1-2-3 слева направо в порядке следования" width="650" height="144" srcset="https://spacemath.xyz/wp-content/uploads/2015/11/Vychislenie-10-1-2-3-sleva-napravo-v-poryadke-sledovaniya.png 650w, https://spacemath.xyz/wp-content/uploads/2015/11/Vychislenie-10-1-2-3-sleva-napravo-v-poryadke-sledovaniya-300x66.png 300w" sizes="(max-width: 650px) 100vw, 650px" /></p>
+<p>Но если человек не научился быстро считать в уме, то не рекомендуется использовать такой способ.</p>
+<hr />
+<p><strong>Пример 2.</strong> Найти значение выражения <span style="color: #000000;">(3 + 5) + 2 × 3</span></p>
+<p>Применим правила порядка действий. Прочитаем правила в порядке их приоритета.</p>
+<p style="text-align: left;"><span style="color: #333399;"><strong>Сначала вычислить то, что находится в скобках!</strong></span></p>
+<p style="text-align: left;">Посмотрим на выражение <span style="color: #000000;">(3 + 5) + 2 × 3</span>. Видим, что в нём есть выражение в скобках <span style="color: #000000;">(3 + 5)</span>. Вычислим то, что в этих скобках: <span style="color: #000000;">3 + 5 = 8</span>. Запишем полученную восьмёрку в главном выражении вместо выражения в скобках:</p>
+<p style="text-align: center;"><span style="color: #000000;"><strong>8</strong> + 2 × 3</span></p>
+<p style="text-align: left;">Снова читаем первое правило:</p>
+<p style="text-align: left;"><span style="color: #333399;"><strong>Сначала вычислить то, что находится в скобках!</strong></span></p>
+<p style="text-align: left;">Видим, что в выражении <span style="color: #000000;">8 + 2 × 3</span> нет никаких скобок. Тогда читаем следующее правило:</p>
+<p style="text-align: left;"><span style="color: #333399;"><strong>Читаем выражение слева направо. Если встретится умножение или деление, то сразу же выполняем эту операцию!</strong></span></p>
+<p style="text-align: left;">Посмотрим на наше выражение <span style="color: #000000;">8 + 2 × 3</span>. Видим, что в нём есть умножение <span style="color: #000000;">2 × 3</span>. Выполним эту операцию: <span style="color: #000000;">2 × 3 = 6</span>. Запишем полученную шестёрку в главном выражении вместо <span style="color: #000000;">2 × 3</span></p>
+<p style="text-align: center;"><span style="color: #000000;">8 + <strong>6</strong></span></p>
+<p style="text-align: left;">Осталось простейшее выражение 8 + 6, которое вычисляется легко:</p>
+<p style="text-align: center;"><span style="color: #000000;">8 + 6 = 14</span></p>
+<p style="text-align: left;">Таким образом, значение выражения <span style="color: #000000;">(3 + 5) + 2 × 3</span> равно <span style="color: #000000;">14</span></p>
+<p style="text-align: center;"><strong><span style="color: #000000;">(3 + 5) + 2 × 3 = 14</span></strong></p>
+<p style="text-align: left;">Также, этот пример можно решить, расставив порядок действий над самим выражением. Действие в скобках будет первым действием, умножение &#8212; вторым действием, а сумма &#8212; третьим:</p>
+<p style="text-align: left;"><img loading="lazy" decoding="async" class="size-full wp-image-3636 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2015/11/Poryadok-dlya-vyrazheni-3-5-2-3.png" alt="Порядок для выражени (3 + 5) + 2 × 3" width="577" height="154" srcset="https://spacemath.xyz/wp-content/uploads/2015/11/Poryadok-dlya-vyrazheni-3-5-2-3.png 577w, https://spacemath.xyz/wp-content/uploads/2015/11/Poryadok-dlya-vyrazheni-3-5-2-3-300x80.png 300w" sizes="(max-width: 577px) 100vw, 577px" /></p>
+<p style="text-align: left;">И далее можно выполнить действия по отдельности, что очень удобно:</p>
+<p style="text-align: left;"><span style="color: #0000ff;"><strong>1) </strong></span> 3 + 5 = 8</p>
+<p style="text-align: left;"><strong><span style="color: #0000ff;">2)</span></strong>   2 <strong>× </strong>3 = 6</p>
+<p style="text-align: left;"><span style="color: #0000ff;"><strong>3)</strong></span>  8 <strong>+</strong> 6 = 14</p>
+<p style="text-align: left;">Также, можно поставить знак равенства и сразу начать вычислять выражение в порядке приоритета действий:</p>
+<p style="text-align: left;"><img loading="lazy" decoding="async" class="alignnone size-full wp-image-3639" src="https://spacemath.xyz/wp-content/uploads/2015/11/Vychislenie-352-umnozhit-na-tri.png" alt="Вычисление 3+5+2 умножить на три" width="632" height="102" srcset="https://spacemath.xyz/wp-content/uploads/2015/11/Vychislenie-352-umnozhit-na-tri.png 632w, https://spacemath.xyz/wp-content/uploads/2015/11/Vychislenie-352-umnozhit-na-tri-300x48.png 300w" sizes="(max-width: 632px) 100vw, 632px" /></p>
+<p>Но опять же, используя такой способ, нужно быть очень внимательным.</p>
+<hr />
+<p style="text-align: left;"><strong>Пример 3</strong>. Найти значение выражения <span style="color: #000000;">5 × 2 + (5 − 3) : 2 + 1</span></p>
+<p style="text-align: left;">Расставим порядок действий над выражением. Действие в скобках будет первым действием, умножение &#8212; вторым действием, деление &#8212; третьим действием,  четвёртое и пятое действие являются суммами и они будут выполнены в порядке их следования:</p>
+<p style="text-align: left;"><img loading="lazy" decoding="async" class="alignnone wp-image-3648 size-full" src="https://spacemath.xyz/wp-content/uploads/2015/11/Vyrazhenie-5-2-5-3-2-1.png" alt="Выражение 5 × 2 + 5 − 3 2 + 1" width="659" height="92" srcset="https://spacemath.xyz/wp-content/uploads/2015/11/Vyrazhenie-5-2-5-3-2-1.png 659w, https://spacemath.xyz/wp-content/uploads/2015/11/Vyrazhenie-5-2-5-3-2-1-300x42.png 300w" sizes="(max-width: 659px) 100vw, 659px" /></p>
+<p style="text-align: left;"><span style="color: #0000ff;"><strong>1)  </strong></span>5 − 3 = 2</p>
+<p style="text-align: left;"><strong><span style="color: #0000ff;">2)  </span></strong>5 <strong>× </strong>2 = 10</p>
+<p style="text-align: left;"><span style="color: #0000ff;"><strong>3)</strong></span>  2 <strong>: </strong>2 = 1</p>
+<p style="text-align: left;"><span style="color: #0000ff;"><strong>4)</strong></span>  10 <strong>+ </strong>1 = 11</p>
+<p style="text-align: left;"><span style="color: #0000ff;"><strong>5)</strong></span>  11 <strong>+ </strong>1 = 12</p>
+<p style="text-align: left;">Также, можно поставить знак равенства и сразу начать вычислять выражение в порядке приоритета действий:</p>
+<p style="text-align: left;"><img loading="lazy" decoding="async" class="alignnone size-full wp-image-3651" src="https://spacemath.xyz/wp-content/uploads/2015/11/5-2-5-3-razdelit-na-2-1.png" alt="5 × 2 + 5 − 3 разделить на 2 + 1" width="636" height="99" srcset="https://spacemath.xyz/wp-content/uploads/2015/11/5-2-5-3-razdelit-na-2-1.png 636w, https://spacemath.xyz/wp-content/uploads/2015/11/5-2-5-3-razdelit-na-2-1-300x47.png 300w" sizes="(max-width: 636px) 100vw, 636px" /></p>
+<p style="text-align: left;">Четвёртое и пятое действие заключалось в том, чтобы вычислить оставшееся простейшее выражение <span style="color: #000000;">10 + 1 + 1</span>. Мы не стали тратить время на выполнение каждого из этих действий, а поставили знак равенства и записали ответ 12.</p>
+<hr />
+<p><strong>Пример 4</strong>. Найти значение выражения <span style="color: #000000;">(3250 − 2905) : 5</span></p>
+<p>Расставим порядок действий над выражением. Действие в скобках будет первым действием, а деление &#8212; вторым</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7009 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2015/11/3250-minus-2905-na-5.png" alt="3250 минус 2905 на 5" width="550" height="104" srcset="https://spacemath.xyz/wp-content/uploads/2015/11/3250-minus-2905-na-5.png 550w, https://spacemath.xyz/wp-content/uploads/2015/11/3250-minus-2905-na-5-300x57.png 300w" sizes="(max-width: 550px) 100vw, 550px" /></p>
+<p style="text-align: left;"><span style="color: #0000ff;"><strong>1)  </strong></span><span style="color: #000000;">3250 − 2905 = 345</span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7010 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2015/11/3250-minus-2905-na-5-step-1.png" alt="3250 минус 2905 на 5 step 1" width="121" height="133" /></p>
+<p style="text-align: left;"><strong><span style="color: #0000ff;">2)  </span></strong><span style="color: #000000;">345 :<strong> </strong>5 = 69</span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7011 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2015/11/3250-minus-2905-na-5-step-2.png" alt="3250 минус 2905 на 5 step 2" width="162" height="225" /></p>
+<p>В скобках могут выполняться два и более действия. Бывает даже так, что в скобках встречаются другие скобки. В таких случаях нужно применять те же правила, которые мы изучили ранее.</p>
+<p style="text-align: left;"><strong>Пример 5</strong>. Найти значение выражения <span style="color: #000000;">(6 411 × 8 − 40799) × 6</span></p>
+<p>Расставим порядок действий над выражением. Действие в скобках будет первым действием. При этом в скобках выполняется умножение и вычитание. Согласно порядку действий, умножение выполняется раньше вычитания.</p>
+<p>В данном случае сначала нужно <span style="color: #000000;">6 411</span> умножить на 8, и из полученного результата вычесть <span style="color: #000000;">40 799</span>. Полученный результат будет значением выражения, содержащегося в скобках. Этот результат будет умножен на 6.</p>
+<p>В результате будем иметь следующий порядок:</p>
+<p><img loading="lazy" decoding="async" class="alignnone size-full wp-image-7014" src="https://spacemath.xyz/wp-content/uploads/2015/11/6411-umn-na-8-minus-40799-umn-6.png" alt="6411 умн на 8 минус 40799 умн 6" width="643" height="95" srcset="https://spacemath.xyz/wp-content/uploads/2015/11/6411-umn-na-8-minus-40799-umn-6.png 643w, https://spacemath.xyz/wp-content/uploads/2015/11/6411-umn-na-8-minus-40799-umn-6-300x44.png 300w" sizes="(max-width: 643px) 100vw, 643px" /></p>
+<p><span style="color: #0000ff;"><strong>1)  </strong></span><span style="color: #000000;">6 411 × 8 = 51 288</span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7015 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2015/11/6411-umn-na-8-minus-40799-umn-6-step-1.png" alt="6411 умн на 8 минус 40799 умн 6 step 1" width="114" height="137" /></p>
+<p><span style="color: #0000ff;"><strong>2)  </strong></span><span style="color: #000000;">51 288 − 40 799 = 10 489</span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7016 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2015/11/6411-umn-na-8-minus-40799-umn-6-step-2.png" alt="6411 умн на 8 минус 40799 умн 6 step 2" width="133" height="115" /></p>
+<p><span style="color: #0000ff;"><strong>3)  </strong></span><span style="color: #000000;">10 489 × 6 = 62 934</span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7017 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2015/11/6411-umn-na-8-minus-40799-umn-6-step-3.png" alt="6411 умн на 8 минус 40799 умн 6 step 3" width="131" height="137" /></p>
+<hr />
+<p><strong>Пример 6</strong>. Найти значение выражения: <span style="color: #000000;">1 657 974 : 822 × 106 − (50 377 + 20 338)</span></p>
+<p>Расставим порядок действий над выражением. Действие в скобках будет первым действием, деление будет вторым действием, умножение &#8212; третьим, вычитание &#8212; четвёртым.</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8356 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2015/11/1657974-na-82-na-106-shag-1.png" alt="1657974 na 82 na 106 шаг 1" width="643" height="61" srcset="https://spacemath.xyz/wp-content/uploads/2015/11/1657974-na-82-na-106-shag-1.png 643w, https://spacemath.xyz/wp-content/uploads/2015/11/1657974-na-82-na-106-shag-1-300x28.png 300w" sizes="(max-width: 643px) 100vw, 643px" /></p>
+<p><strong><span style="color: #0000ff;">1)</span></strong> <span style="color: #000000;">50 377 + 20 338 = 70 715</span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8357 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2015/11/1657974-na-82-na-106-shag-2.png" alt="1657974 na 82 na 106 шаг 2" width="128" height="141" /></p>
+<p><strong><span style="color: #0000ff;">2)</span></strong> 1 657 974 : 822 = 2 017</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8358 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2015/11/1657974-na-82-na-106-shag-3.png" alt="1657974 na 82 na 106 шаг 3" width="256" height="326" srcset="https://spacemath.xyz/wp-content/uploads/2015/11/1657974-na-82-na-106-shag-3.png 256w, https://spacemath.xyz/wp-content/uploads/2015/11/1657974-na-82-na-106-shag-3-236x300.png 236w" sizes="(max-width: 256px) 100vw, 256px" /></p>
+<p><span style="color: #0000ff;"><strong>3)</strong></span> 2 017 × 106 = 213 802</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8359 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2015/11/1657974-na-82-na-106-shag-4.png" alt="1657974 na 82 na 106 шаг 4" width="144" height="163" /></p>
+<p><strong><span style="color: #0000ff;">4)</span></strong> 213 802−70 715 = 143 087</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8360 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2015/11/1657974-na-82-na-106-shag-5.png" alt="1657974 na 82 na 106 шаг 5" width="140" height="105" /></p>
+<hr />
+<p><strong>Пример 7</strong>. Найти значение выражения: <span style="color: #000000;">14 026 − (96 : 4 + 3680)</span></p>
+<p>Расставим порядок действий над выражением. Действие в скобках будет первым действием. При этом в скобках выполняется деление и сложение. Согласно порядку действий деление выполняется раньше сложения.</p>
+<p>В данном случае сначала нужно 96 разделить на 4, и полученный результат сложить с 3 680. Полученный результат будет значением выражения, содержащегося в скобках. Этот результат нужно вычесть из 14 026. В результате будем иметь следующий порядок:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-8902 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2015/11/14026-na-960-na-4-na-3680-shag-1.png" alt="14026 - на 960 на 4 на 3680 шаг 1" width="417" height="64" srcset="https://spacemath.xyz/wp-content/uploads/2015/11/14026-na-960-na-4-na-3680-shag-1.png 417w, https://spacemath.xyz/wp-content/uploads/2015/11/14026-na-960-na-4-na-3680-shag-1-300x46.png 300w" sizes="(max-width: 417px) 100vw, 417px" /></p>
+<p><strong><span style="color: #0000ff;">1)</span></strong> <span style="color: #000000;">96 : 4 = 24</span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8899 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2015/11/14026-na-960-na-4-na-3680-shag-2.png" alt="14026 - на 960 на 4 на 3680 шаг 2" width="115" height="186" /></p>
+<p><strong><span style="color: #0000ff;">2)</span></strong> <span style="color: #000000;">24 + 3 680 = 3 704</span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8900 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2015/11/14026-na-960-na-4-na-3680-shag-3.png" alt="14026 - на 960 на 4 на 3680 шаг 3" width="109" height="125" /></p>
+<p><strong><span style="color: #0000ff;">3)</span></strong> 14026<span style="color: #000000;"> − 3 704 = 10 322</span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-8901 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2015/11/14026-na-960-na-4-na-3680-shag-4.png" alt="14026 - на 960 на 4 на 3680 шаг 4" width="125" height="106" /></p>
+
+    <h3>Хотите перейти на следующий урок?</h3>
+    <a href="lection1.html" class="back">Вернуться ‹‹</a>
+    <a href="lection3.html" class="next">Вперёд »</a>
+    
+    <script type="text/javascript">
+    
+    var menuItems = document.querySelectorAll('.skew-menu ul li');
+    
+    for (var i = 0; i < menuItems.length; i++) {
+       menuItems[i].addEventListener('click', function() {
+           // Действия при выборе определенной лекции
+       });
+    }
+    let currentLesson = document.querySelector('.active a');
+currentLesson.style.color = '#007bff';
+    
+    menuItems[0].classList.add("active"); // Предположим, что первый пункт активен
+    
+    document.querySelector('.back').setAttribute("href", "lection7.html");
+    document.querySelector('.next').setAttribute("href", "lection9.html");
+    
+    </script>
+    </body>
+    </html>

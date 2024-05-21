@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лекция 17: Производительность</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: 200px auto;
+            gap: 20px;
+        }
+        
+        .skew-menu {
+            background-color: #f2f2f2; /* Цвет фона для меню */
+            padding: 10px;
+        }
+
+        .lecture-content {
+            background-color: #e6e6e6; /* Цвет фона для контента лекции */
+            padding: 20px;
+        }
+
+        h1, h2, p {
+          margin-bottom: 15px;  
+      }
+
+      a.back, a.next{
+         text-decoration:none; 
+         color:#333; 
+     }
+     body {
+            background-image: url(images/7.avif);
+            background-attachment: fixed;
+            -moz-background-size: 100%;
+            -webkit-background-size: 100%;
+            -o-background-size: 100%;
+            background-size: 100%;
+        }
+        h1{
+        color: rgb(0, 0, 0) !important; 
+        font-family: courier !important; 
+         text-align: center !important;
+  }
+        p {
+         color: rgb(0, 0, 0);
+         font-family: 'Times New Roman', Times, serif;
+         font-size: 150%;
+         text-align: right; 
+        }
+        h2{
+        color: dark !important; 
+        font-family: Georgia, 'Times New Roman', Times, serif !important; 
+         text-align: center !important;
+  }
+        p {
+         color: rgb(0, 0, 0); 
+         font-family: 'Times New Roman', Times, serif;
+         font-size: 150%; 
+         text-align: center;
+        }
+        a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.back {
+    background-color: #ddd;
+    color: rgb(0, 0, 0);
+}
+
+.next {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.round {
+    border-radius: 50%;
+}
+@radius: 7px;
+@skew: 25deg;
+@main-color: tomato;
+
+body{
+  font-family:Helvetica Neue, Helvetica, sans-serif;
+  background:@main-color;
+}
+
+.skew-menu{
+  text-align:center;
+  margin-top:3em;
+  padding: 10px;
+    max-height: 2000px; /* Устанавливаем максимальную высоту */
+    max-width: 700px;
+    width: 200px;
+    overflow-y: auto; /* Добавляем вертикальную прокрутку при необходимости */
+}
+
+.skew-menu ul{
+  display:inline-block;
+  margin:0;
+  padding:0;
+  list-style:none;
+  transform:skew(-@skew);
+  width: 250px;
+  border-radius: 10px;
+}
+
+.skew-menu ul li{
+  background:#fff;
+  float:left;
+  border-right:1px solid #eee;
+  box-shadow:0 1px 1px rgba(0,0,0,0.1);
+  text-transform:uppercase;
+  color:#555;
+  font-weight:bolder;
+  transition:all 0.3s linear;
+  display: block;
+  text-align: center;
+  width: 200px;
+  max-width: 200px;
+  &:first-child
+  {
+
+    border-radius:@radius 0 0 @radius;
+  }
+  
+  &:last-child{
+    border-right:none;
+    border-radius:0 @radius @radius 0;
+  }
+  
+  &:hover{
+    background:#eee;
+    color:@main-color;
+  }
+  
+  a{
+    display:block;
+    padding:1em 2em;
+    color:inherit;
+    text-decoration:none;
+    transform:skew(@skew);
+  }
+}
+.active a {
+  color: #007bff; /* Выделите цвет текста */
+}
+.navless{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: lighter;
+    font-size: 20px;
+}
+.nav menu{
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+      .menu b{
+        text-align: center;
+      }
+    </style>
+</head>
+
+<body>
+
+<nav class="skew-menu">
+    <ul>
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="lection1.html">Лекция 1</a></li>
+      <li><a href="lection2.html">Лекция 2</a></li>
+      <li><a href="lection3.html">Лекция 3</a></li>
+      <li><a href="lection4.html">Лекция 4</a></li>
+      <li><a href="lection5.html">Лекция 5</a></li>
+      <li><a href="lection6.html">Лекция 6</a></li>
+      <li><a href="lection7.html">Лекция 7</a></li>
+      <li><a href="lection8.html">Лекция 8</a></li>
+      <li><a href="lection9.html">Лекция 9</a></li>
+      <li><a href="lection10.html">Лекция 10</a></li>
+      <li><a href="lection11.html">Лекция 11</a></li>
+      <li><a href="lection12.html">Лекция 12</a></li>
+      <li><a href="lection13.html">Лекция 13</a></li>
+      <li><a href="lection14.html">Лекция 14</a></li>
+      <li><a href="lection15.html">Лекция 15</a></li>
+      <li><a href="lection16.html">Лекция 16</a></li>
+      <li class="active"><a href="lection17.html">Лекция 17</a></li>
+      <li><a href="lection18.html">Лекция 18</a></li>
+      <li><a href="lection19.html">Лекция 19</a></li>
+      <li><a href="lection20.html">Лекция 20</a></li>
+      <li><a href="lection21.html">Лекция 21</a></li>
+      <li><a href="lection22.html">Лекция 22</a></li>
+      <li><a href="lection23.html">Лекция 23</a></li>
+      <li><a href="lection24.html">Лекция 24</a></li>
+      <li><a href="lection25.html">Лекция 25</a></li>
+      <li><a href="lection26.html">Лекция 26</a></li>
+      <li><a href="lection27.html">Лекция 27</a></li>
+      <li><a href="lection28.html">Лекция 28</a></li>
+      <li><a href="lection29.html">Лекция 29</a></li>
+      <li><a href="lection30.html">Лекция 30</a></li>
+    </ul>
+</nav>
+
+<div class="lecture-content">
+  <h1 class="entry-title">Лекция 17: Производительность</h1>      
+
+      
+</header><!-- .entry-header -->
+
+<div class="entry-content">
+  <p>Продолжаем изучать элементарные задачи по математике. Сегодня мы рассмотрим очень интересную физическую величину &#8212; производительность.</p>
+<nav id="menu"><b>Содержание урока</b></p>
+<ul class="navless">
+<li><a href="#yak1">Что такое сила?</a></li>
+<li><a href="#yak2">Что такое работа?</a></li>
+<li><a href="#yak3">Производительность</a></li>
+</ul>
+</nav>
+<h2 id="yak1" style="text-align: center;">Что такое сила?</h2>
+<p>Сила &#8212; это <span class="w">физическое </span><span class="w">явление, </span><span class="w">способное</span> <span class="w">изменять</span> <span class="w">форму</span> <span class="w">материальных</span> <span class="w">тел</span>, <span class="w">вызывать</span> <span class="w">их</span> <span class="w">движение</span>, <span class="w">менять</span> <span class="w">направление</span> <span class="w">и</span> <span class="w">скорость</span> <span class="w">движения этих тел</span> <span class="w">или</span> <span class="w">приводить</span> <span class="w">тело</span> <span class="w">в</span> <span class="w">состояние</span> <span class="w">покоя.</span></p>
+<p>Примеры сил:</p>
+<ul>
+<p>ребята слепили снеговика, а хулиганы его разрушили. Получается, что хулиганы <strong>приложили к снеговику свою силу</strong>, тем самым вызвали изменение формы снеговика;</p>
+</ul>
+<ul>
+<p>на дворе стояла тележка. Прохожий случайно задел её и тележка сдвинулась с места. Получается, что п<strong>рохожий применил силу</strong> к тележке и вызвал её движение;</p>
+</ul>
+<ul>
+<p>далее тот же прохожий остановил тележку, чтобы она далеко не уехала. Получается, что п<strong>рохожий применил силу</strong>, тем самым привел тележку в состояние покоя.</p>
+</ul>
+<p>Сила является физической величиной &#8212; мерой воздействия на тело других тел. Сила обозначается заглавной латинской буквой F.</p>
+<hr />
+<h2 id="yak2" style="text-align: center;">Что такое работа?</h2>
+<p>Работа &#8212; это количественная мера действия силы на тело. Работа зависит от количества силы, приложенной на тело и от направления этой силы, а также от перемещения данного тела.</p>
+<p>Например, если мы попробуем сдвинуть шкаф с места и он сдвинется, то можно сказать, что мы совершили работу, поскольку сила, которую мы приложили, привела к тому, что шкаф совершил перемещение на некоторое расстояние.</p>
+<p>Если же мы, к примеру, попробуем толкнуть стену, то стена с места не сдвинется, а значит и работа не будет совершена, поскольку сила была приложена, но эта сила не вызвала никакого перемещения стены.</p>
+<p>Работа обозначается заглавной латинской  буквой <em>A</em>.</p>
+<hr />
+<h2 id="yak3" style="text-align: center;"><strong>Производительность<br />
+</strong></h2>
+<p>Производительностью называют работу, выполненную за единицу времени. Под единицей подразумевается 1 час, 1 минута или 1 секунда. Производительность обозначается латинской буквой <em>v</em></p>
+<p>Рассмотрим следующий пример. Два пекаря пекли булочки. Первый пекарь испёк 40 булочек за 10 минут, а второй 15 булочек за 5 минут. Как узнать, кто из пекарей работал быстрее, первый или второй?</p>
+<p>Работал быстрее тот, кто за одну минуту выпекает больше булочек. Говорят, что у него производительность больше. Для нахождения производительности предусмотрено следующее правило:</p>
+<p><strong><span style="color: #333399;">Чтобы найти производительность, надо выполненную работу разделить на время работы. </span></strong></p>
+<p>Также, можно воспользоваться формулой:</p>
+<p><img decoding="async" class="size-full wp-image-5525 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/09/formula-nahozhdeniya-proizvoditelnosti.png" alt="формула нахождения производительности" width="64" height="52" /></p>
+<p>где v &#8212; производительность, A &#8212; выполненная работа, t &#8212; время работы.</p>
+<p>Вернемся к нашей задаче. Зная правило или формулу нахождения производительности, можно определить сколько булочек приходится на одну минуту.</p>
+<p>Найдём производительность первого пекаря. Разделим работу, которую он выполнил, на время которое он на нее затратил. Выполненная работа это количество испеченных им булочек, то есть 40, а время &#8212; 10 минут</p>
+<p style="text-align: center;"><span style="color: #000000;">40 : 10 = 4 булочки в минуту</span></p>
+<p>Аналогично найдём производительность второго пекаря. Разделим 15 на 5</p>
+<p style="text-align: center;"><span style="color: #000000;">15 : 5 = 3 булочки в минуту</span></p>
+<p style="text-align: center;"><span style="color: #000000;">4 &gt; 3</span></p>
+<p>Первый пекарь в минуту выпекает больше булочек чем второй, значит его производительность выше. Отсюда делаем вывод, что работает он быстрее второго пекаря.</p>
+<p>Также можно воспользоваться формулой нахождения производительности. В этом случае решение принимает следующий вид:</p>
+<p><img decoding="async" class="alignnone size-full wp-image-5526" src="https://spacemath.xyz/wp-content/uploads/2017/09/nahozhdeniya-proizvoditelnosti-primer-s-formuloj.png" alt="нахождения производительности пример с формулой" width="337" height="145" srcset="https://spacemath.xyz/wp-content/uploads/2017/09/nahozhdeniya-proizvoditelnosti-primer-s-formuloj.png 337w, https://spacemath.xyz/wp-content/uploads/2017/09/nahozhdeniya-proizvoditelnosti-primer-s-formuloj-300x129.png 300w" sizes="(max-width: 337px) 100vw, 337px" /></p>
+<p>Под буквой v можно делать метки, указывающие для кого/чего мы находим производительность.</p>
+<hr />
+<p><strong>Задача 2</strong>. Тому нужно за 2 дня прочитать книгу, в которой 100 страниц. В первый день он читал 4 часа со скоростью 12 страниц в час. С какой скоростью ему надо читать оставшуюся часть книги, если у него есть  на это 4 часа?</p>
+<p>Узнаем сколько страниц Том прочитал в первый день. Он читал 12 страниц в час. Чтению в первый день он посвятил 4 часа, поэтому для нахождения количества прочитанных страниц в первый день, нужно 12 умножить на 4</p>
+<p><span style="color: #000000;">12 × 4 = 48 страниц прочитано в первый день</span></p>
+<p>Узнаем сколько страниц осталось прочесть. Вычтем из общего количества страниц (<span style="color: #000000;">100</span>) количество прочитанных страниц (<span style="color: #000000;">48</span>)</p>
+<p><span style="color: #000000;">100 − 48 = 52 страницы осталось прочесть</span></p>
+<p>Осталось прочесть 52 страницы. Теперь найдем такую производительность, при которой Том сможет прочесть 52 страницы за 4 часа. Раскидаем 52 страницы на 4 часа поровну</p>
+<p><span style="color: #000000;">52 : 4 = 13 страниц в час</span></p>
+<p><strong>Ответ</strong>: чтобы прочитать оставшуюся часть книги за 4 часа, Том должен читать ее со скоростью 13 страниц в час.</p>
+<p><strong>Замечание</strong>. В некоторых источниках слово &#171;производительность&#187; может быть заменено на слова &#171;скорость&#187;, &#171;эффективность&#187;, &#171;продуктивность&#187;, &#171;плодотворность&#187;.</p>
+<hr />
+<p style="text-align: left;"><strong>Задача 3.</strong> Один насос работал 4 часа, выкачивая 158 вёдер воды в час, а другой &#8212; 3 часа, выкачивая 169 вёдер воды в час. Определить какой из насосов выкачал больше вёдер.</p>
+<p><strong>Решение</strong></p>
+<p style="text-align: left;">Определим сколько всего вёдер выкачал каждый насос по отдельности. Для этого умножим их производительность на время их работы:</p>
+<p style="text-align: left;"><span style="color: #000000;">158 в/ч × 4 = 632 вёдер выкачал первый насос</span></p>
+<p style="text-align: left;"><span style="color: #000000;">169 в/ч × 3 = 507 вёдер выкачал второй насос</span></p>
+<p style="text-align: left;"><span style="color: #000000;">632 &gt; 507</span></p>
+<p style="text-align: left;"><strong>Ответ</strong>: первый насос выкачала больше вёдер, чем второй.</p>
+<hr />
+<p style="text-align: left;"><strong>Задача 4</strong>. За 2 часа насос выкачал 80 литров воды. Определить сколько литров он выкачает за 5 часов.</p>
+<p><strong>Решение</strong></p>
+<p style="text-align: left;">Сначала нужно определить сколько литров воды насос выкачивает за час. Для этого 80 литров разделим на 2 часа &#8212; получим 40 литров</p>
+<p style="text-align: left;"><span style="color: #000000;">80 : 2 = 40 литров в час</span></p>
+<p style="text-align: left;">За один час насос выкачивает 40 литров воды. За 5 часов выкачает в пять раз больше</p>
+<p style="text-align: left;"><span style="color: #000000;">40 × 5 = 200 литров</span></p>
+<p><strong>Ответ</strong>: за 5 часов насос выкачает 200 литров воды.</p>
+<hr />
+<p>Если известны производительность и время работы, то можно найти выполненную работу. Выполненная работа равна производительности умноженной на время работы:</p>
+<p style="text-align: center;"><span style="color: #000000;"><strong>A = v × t</strong></span></p>
+<p>Например, если производительность пекаря составляет 50 булочек в час, и он проработал 4 часа, то можно найти всю выполненную работу за эти четыре часа. Для этого производительность (50 бул/ч) нужно умножить на время его работы (4ч)</p>
+<p style="text-align: center;"><span style="color: #000000;">50 × 4 = 200 булочек</span></p>
+<p><img decoding="async" class="size-full wp-image-5489 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/09/risunok-50-bulochek-v-chas.png" alt="рисунок 50 булочек в час" width="515" height="91" srcset="https://spacemath.xyz/wp-content/uploads/2017/09/risunok-50-bulochek-v-chas.png 515w, https://spacemath.xyz/wp-content/uploads/2017/09/risunok-50-bulochek-v-chas-300x53.png 300w" sizes="(max-width: 515px) 100vw, 515px" /></p>
+<hr />
+<p>Если известны работа и производительность, то можно найти время работы. Время работы равно отношению выполненной работы к производительности:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5490 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/09/vremya-ravno-rabote-delenoj-na-vremya.png" alt="время равно работе деленой на время" width="55" height="49" /></p>
+<p>Например, если в неделю бригада отстраивает 2 этажа, то можно узнать сколько недель потребуется для отстройки 8 этажей. Чтобы определить время отстройки восьми этажей, нужно выполненную работу (8 этажей) разделить на производительность (2 эт./нед):</p>
+<p style="text-align: center;"><span style="color: #000000;">8 : 2 = 4 нед.</span></p>
+<p>Либо с помощью формулы, приведенной выше:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5492 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/09/8-etazhej-za-4-nedeli.png" alt="8 этажей за 4 недели" width="186" height="49" /></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5491 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/09/risunok-2-etazha-v-nedelyu.png" alt="рисунок 2 этажа в неделю" width="515" height="92" srcset="https://spacemath.xyz/wp-content/uploads/2017/09/risunok-2-etazha-v-nedelyu.png 515w, https://spacemath.xyz/wp-content/uploads/2017/09/risunok-2-etazha-v-nedelyu-300x54.png 300w" sizes="(max-width: 515px) 100vw, 515px" /></p>
+<p>Если в неделю строится 2 этажа, то 8 этажей будет отстроено за четыре недели. В данном случае вся работа была равна восьми. Производительность была равна двум, поскольку по определению производительность есть работа, выполненная за единицу времени – в нашем случае два этажа за неделю.</p>
+<hr />
+<p><strong>Задача 6</strong>. Принтер работает с производительностью 70 стр./ч. Сколько страниц он напечатает за 5 часов?</p>
+<p><strong>Решение</strong></p>
+<p>Если в час принтер печатает 70 страниц, то за 5 часов он напечатает в 5 раз больше:</p>
+<p style="text-align: center;">70 × 5 = 350 страниц</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5493 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/09/risunok-70-stranits-v-chas.png" alt="рисунок 70 страниц в час" width="643" height="176" srcset="https://spacemath.xyz/wp-content/uploads/2017/09/risunok-70-stranits-v-chas.png 643w, https://spacemath.xyz/wp-content/uploads/2017/09/risunok-70-stranits-v-chas-300x82.png 300w" sizes="(max-width: 643px) 100vw, 643px" /></p>
+<p>Также, решение можно записать с помощью формулы нахождения работы. В данном случае, количество напечатанных страниц являются выполненной работой:</p>
+<p><span style="color: #000000;">A = v × t = 70 × 5 = 350 страниц</span></p>
+<p><span style="color: #000000;">A = 350 страниц</span></p>
+<hr />
+<p><strong>Задача 7</strong>. Принтер напечатал 350 страниц за 5 часов. С какой производительностью он работал?</p>
+<p><strong>Решение</strong></p>
+<p>Если в течении пяти часов принтер напечатал 350 страниц, то в течении часа он печатал  <img loading="lazy" decoding="async" class="alignnone size-full wp-image-5527" src="https://spacemath.xyz/wp-content/uploads/2017/09/350-na-5.png" alt="350 на 5" width="33" height="42" />. То есть работал с производительностью 70 страниц в час:</p>
+<p style="text-align: left;"><span style="color: #000000;">350 : 5 = 70 стр./ч.</span></p>
+<p>Либо с помощью формулы нахождения производительности:</p>
+<p><img loading="lazy" decoding="async" class="alignnone size-full wp-image-5528" src="https://spacemath.xyz/wp-content/uploads/2017/09/350-na-5-s-pomoshhyu-formuly.png" alt="350 на 5 с помощью формулы" width="241" height="48" /></p>
+<hr />
+<p><strong>Задача 8</strong>. Принтер работал с производительностью 70 страниц в час и напечатал 350 страниц. Определить время работы принтера.</p>
+<p><strong>Решение</strong></p>
+<p>Выражение &#171;работал с производительностью 70 страниц в час&#187; означает, что в каждом часе принтер печатал по 70 страниц. И это продолжалось до тех пор, пока он не напечатал 350 страниц. Очевидно, что разделив 350 страниц по 70, мы определим время работы принтера, то есть узнаем сколько часов он работал</p>
+<p><span style="color: #000000;">350 : 70 = 5 ч.</span></p>
+<p>Либо с помощью формулы нахождения времени:</p>
+<p><img loading="lazy" decoding="async" class="alignnone size-full wp-image-5529" src="https://spacemath.xyz/wp-content/uploads/2017/09/350-na-70-s-pomoshhyu-formuly.png" alt="350 на 70 с помощью формулы" width="185" height="48" /></p>
+<hr />
+<p><strong>Задача 9</strong>. Машинистка в первый день напечатала 48 страниц рукописи, а во второй день &#8212; на 12 страниц больше, чем в первый. На всю работу в эти 2 дня она затратила 9 часов. Сколько часов работала она в каждый из этих дней, если производительность её не менялась ?</p>
+<p><strong>Решение</strong></p>
+<p>Определим сколько страниц напечатала машинистка во второй день. В условии сказано, что напечатала она на 12 страниц больше, чем в первый:</p>
+<p><span style="color: #000000;">48 + 12 = 60 страниц во второй день.</span></p>
+<p>Определим сколько страниц машинистка напечатала за два дня:</p>
+<p><span style="color: #000000;">48 + 60 = 108 страниц за два дня.</span></p>
+<p>На эту работу машинистка затратила 9 часов. Также сказано, что производительность её не менялась. Если мы разделим выполненную работу (108) на время выполнения (9), то определим производительность машинистки:</p>
+<p>108 : 9 = 12 страниц в час.</p>
+<p>Теперь мы можем определить сколько часов работала машинистка в каждый из двух дней. Для этого поочередно разделим выполненные работы в каждом из двух дней на производительность:</p>
+<p>48 : 12 = 4 часа работала машинистка в первый день</p>
+<p>60 : 12 = 5 часов работала машинистка во второй день.</p>
+<hr />
+<p><strong>Задача 10</strong>. Джон решил 10 примеров за 5 минут. С какой производительностью он решал эти примеры?</p>
+<p>10 примеров это выполненная Джоном работа. 5 минут &#8212; время работы. Разделим выполненную работу на время работы и определим производительность Джона:</p>
+<p>10 : 5 = 2 примера в минуту.</p>
+<p>Производительность Джона равна двум примерам в минуту.</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5496 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/09/z-na-sovmestnuyu-rabotu-risunok-2.png" alt="з на совместную работу рисунок 2.png" width="643" height="156" srcset="https://spacemath.xyz/wp-content/uploads/2017/09/z-na-sovmestnuyu-rabotu-risunok-2.png 643w, https://spacemath.xyz/wp-content/uploads/2017/09/z-na-sovmestnuyu-rabotu-risunok-2-300x73.png 300w" sizes="(max-width: 643px) 100vw, 643px" /></p>
+<hr />
+<p><strong>Задача 11</strong>. Джон решил несколько примеров за 5 минут. С какой производительностью он решил эти примеры?</p>
+<p>Это та же самая задача, что и предыдущая, но в ней работа не выражена каким-либо числом. Сказано лишь то, что Джон выполнил эту работу за 5 минут. Поэтому, конкретную производительность в такой задаче узнать нельзя. Но можно воспользоваться дробями. Обозначим выполненную работу через единицу. Тогда производительность работы Джона будет выражаться дробью – частью примеров, решенных за единицу времени. Если вы изучили задачи на дроби, то должны понимать о чем идёт речь.</p>
+<p>Итак, обозначим выполненную работу через единицу:</p>
+<p style="text-align: center;"><span style="color: #000000;">A = 1</span></p>
+<p>Мы знаем, что для нахождения производительности, выполненную работу нужно разделить на время. Время работы у нас равно пяти минутам. Поэтому, единицу делим на пять минут:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5154 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/07/odna-pyataya.png" alt="одна пятая" width="9" height="43" /></p>
+<p>Дробь <img loading="lazy" decoding="async" class="alignnone size-full wp-image-5154" src="https://spacemath.xyz/wp-content/uploads/2017/07/odna-pyataya.png" alt="одна пятая" width="9" height="43" /> выражает  часть работы, выполненную Джоном за единицу времени. Если мы вернемся к предыдущей задаче, где выполненная работа была равна десяти примерам и найдем одну пятую от этой работы, то получим 2</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5530 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/09/z-na-sovmestnuyu-rabotu-risunok-8.png" alt="з на совместную работу рисунок 8" width="641" height="223" srcset="https://spacemath.xyz/wp-content/uploads/2017/09/z-na-sovmestnuyu-rabotu-risunok-8.png 641w, https://spacemath.xyz/wp-content/uploads/2017/09/z-na-sovmestnuyu-rabotu-risunok-8-300x104.png 300w" sizes="(max-width: 641px) 100vw, 641px" /></p>
+<p>Выражать выполненную работу через единицу часто приходится при решении задач на совместную работу.</p>
+<hr />
+<h2 id="yak4" style="text-align: center;">Задачи на совместную работу</h2>
+<p><strong>Задача 1</strong>. Первый мастер за 2 часа изготавливает 64 детали, а второй за 3 часа – 72 детали. За сколько часов они изготовят 336 деталей?</p>
+<p>В данной задаче речь идет о совместной работе. Необходимо определить производительность обоих мастеров и найти время за которое они изготовят 336 деталей.</p>
+<p>Для начала определим производительность первого мастера:</p>
+<p><span style="color: #000000;">64 : 2 = 32 дет./час</span></p>
+<p>Определим производительность второго мастера:</p>
+<p><span style="color: #000000;">72 : 3 = 24 дет./час</span></p>
+<p>Определим совместную производительность мастеров. Для этого сложим количество деталей, которые они изготавливают по отдельности за единицу времени. То есть сложим их производительности:</p>
+<p><span style="color: #000000;">32 дет./час  + 24 дет./час = 56 дет./час</span></p>
+<p>Вместе за один час мастера изготавливают 56 деталей. Чтобы узнать за сколько часов они изготовят 336 деталей, нужно определить сколько раз 336 содержит по 56</p>
+<p><span style="color: #000000;">336 : 56 = 6 часов</span></p>
+<p><img loading="lazy" decoding="async" class="wp-image-5495 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/09/z-na-sovmestnuyu-rabotu-risunok-1.png" alt="з на совместную работу рисунок 1" width="649" height="165" srcset="https://spacemath.xyz/wp-content/uploads/2017/09/z-na-sovmestnuyu-rabotu-risunok-1.png 649w, https://spacemath.xyz/wp-content/uploads/2017/09/z-na-sovmestnuyu-rabotu-risunok-1-300x76.png 300w" sizes="(max-width: 649px) 100vw, 649px" /></p>
+<hr />
+<p><strong>Задача 2</strong>. Первый мастер может покрасить забор за 20 минут, а второй мастер – за 30 минут. За сколько минут, работая вместе, они могут покрасить забор?</p>
+<p><strong>Решение</strong></p>
+<p>В данной задаче, в отличие от предыдущей, работа не выражена каким-либо числом. Сказано лишь то, что эту работу первый мастер может выполнить за 20 минут, а второй за 30 минут.</p>
+<p>В такой ситуации можно воспользоваться дробями. Мы можем обозначить всю работу (покраску забора) через единицу.</p>
+<p>Итак, обозначим работу (покраску забора) через единицу:</p>
+<p style="text-align: center;"><span style="color: #000000;">A = 1</span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5497 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/09/z-na-sovmestnuyu-rabotu-risunok-3.png" alt="з на совместную работу рисунок 3" width="643" height="169" srcset="https://spacemath.xyz/wp-content/uploads/2017/09/z-na-sovmestnuyu-rabotu-risunok-3.png 643w, https://spacemath.xyz/wp-content/uploads/2017/09/z-na-sovmestnuyu-rabotu-risunok-3-300x79.png 300w" sizes="(max-width: 643px) 100vw, 643px" /></p>
+<p>Производительность первого мастера будет выражáться дробью <img loading="lazy" decoding="async" class="alignnone size-full wp-image-5136" src="https://spacemath.xyz/wp-content/uploads/2017/07/odna-dvadtsataya.png" alt="одна двадцатая" width="22" height="43" />. То есть за одну минуту он покрасит одну двадцатую часть забора. Единица это вся работа, а двадцать минут это время работы. Запишем производительность первого мастера с помощью формулы нахождения производительности:</p>
+<p><img loading="lazy" decoding="async" class="alignnone size-full wp-image-5498" src="https://spacemath.xyz/wp-content/uploads/2017/09/z-na-sovmestnuyu-rabotu-risunok-4.png" alt="з на совместную работу рисунок 4.png" width="223" height="126" /></p>
+<p>А производительность второго мастера будет выражáться дробью <img loading="lazy" decoding="async" class="alignnone size-full wp-image-5206" src="https://spacemath.xyz/wp-content/uploads/2017/07/odna-tridtsataya.png" alt="" width="22" height="42" />. То есть за одну минуту он покрасит одну тридцатую часть забора:</p>
+<p><img loading="lazy" decoding="async" class="alignnone size-full wp-image-5499" src="https://spacemath.xyz/wp-content/uploads/2017/09/z-na-sovmestnuyu-rabotu-risunok-5.png" alt="з на совместную работу рисунок 5" width="217" height="119" /></p>
+<p>Определим общую производительность мастеров. Для этого сложим дроби, выражающие производительность первого и второго мастеров:</p>
+<p><img loading="lazy" decoding="async" class="alignnone size-full wp-image-5500" src="https://spacemath.xyz/wp-content/uploads/2017/09/z-na-sovmestnuyu-rabotu-risunok-6.png" alt="з на совместную работу рисунок 6" width="573" height="89" srcset="https://spacemath.xyz/wp-content/uploads/2017/09/z-na-sovmestnuyu-rabotu-risunok-6.png 573w, https://spacemath.xyz/wp-content/uploads/2017/09/z-na-sovmestnuyu-rabotu-risunok-6-300x47.png 300w" sizes="(max-width: 573px) 100vw, 573px" /></p>
+<p><img loading="lazy" decoding="async" class="alignnone size-full wp-image-5243" src="https://spacemath.xyz/wp-content/uploads/2017/07/odna-dvenadtsataya.png" alt="" width="19" height="43" /> это дробь, выражающая общую производительность обоих мастеров. То есть за одну минуту мастера вместе покрасят <img loading="lazy" decoding="async" class="alignnone size-full wp-image-5243" src="https://spacemath.xyz/wp-content/uploads/2017/07/odna-dvenadtsataya.png" alt="" width="19" height="43" /> часть забора.</p>
+<p>Определим время за которое мастера покрасят забор вместе. Для этого воспользуемся формулой нахождения времени: разделим выполненную работу на общую производительность мастеров. Выполненная работа у нас выражена единицей, а производительность &#8212; дробью <img loading="lazy" decoding="async" class="alignnone size-full wp-image-5243" src="https://spacemath.xyz/wp-content/uploads/2017/07/odna-dvenadtsataya.png" alt="" width="19" height="43" /></p>
+<p><img loading="lazy" decoding="async" class="alignnone size-full wp-image-5501" src="https://spacemath.xyz/wp-content/uploads/2017/09/z-na-sovmestnuyu-rabotu-risunok-7.png" alt="з на совместную работу рисунок 7" width="326" height="81" srcset="https://spacemath.xyz/wp-content/uploads/2017/09/z-na-sovmestnuyu-rabotu-risunok-7.png 326w, https://spacemath.xyz/wp-content/uploads/2017/09/z-na-sovmestnuyu-rabotu-risunok-7-300x75.png 300w" sizes="(max-width: 326px) 100vw, 326px" /></p>
+<p><strong>Ответ</strong>: работая вместе, мастера покрасят забор за 12 минут.</p>
+<hr />
+<p><strong>Задача 3</strong>. Первый рабочий может выполнить заказ за 8 часов, а второй за 6 часов. Два часа они работали вместе, а заканчивал работу один второй рабочий. Сколько времени потребовалось для выполнения этого заказа?</p>
+<p><strong>Решение</strong></p>
+<p>Обозначим всю работу через единицу</p>
+<p><span style="color: #000000;">A = 1</span></p>
+<p>Тогда первый рабочий за один час может выполнить <img loading="lazy" decoding="async" class="alignnone size-full wp-image-3529" src="https://spacemath.xyz/wp-content/uploads/2016/12/Odna-vosmaya.png" alt="Одна восьмая" width="12" height="43" /> часть работы, а второй рабочий <img loading="lazy" decoding="async" class="alignnone size-full wp-image-2836" src="https://spacemath.xyz/wp-content/uploads/2016/11/odna-shestaya" alt="одна шестая" width="12" height="43" /> часть работы. А вместе за один час они могут выполнить <img loading="lazy" decoding="async" class="alignnone size-full wp-image-5502" src="https://spacemath.xyz/wp-content/uploads/2017/09/odna-vosmaya-plyus-odna-shestaya.png" alt="одна восьмая плюс одна шестая" width="42" height="43" /> часть работы</p>
+<p><img loading="lazy" decoding="async" class="alignnone size-full wp-image-5503" src="https://spacemath.xyz/wp-content/uploads/2017/09/odna-vosmaya-plyus-odna-shestaya-ravno-sem-dvadtsat-chetvertyh.png" alt="одна восьмая плюс одна шестая равно семь двадцать четвертых" width="177" height="59" /></p>
+<p>Рабочие работали вместе два часа, поэтому умножим часть работы, выполняемую ими за один час на 2:</p>
+<p><img loading="lazy" decoding="async" class="alignnone size-full wp-image-5504" src="https://spacemath.xyz/wp-content/uploads/2017/09/sem-dvadtsat-chetvertyh-sokrashhenie.png" alt="семь двадцать четвертых сокращение" width="155" height="78" /></p>
+<p>Остальную часть работы, а именно <img loading="lazy" decoding="async" class="alignnone size-full wp-image-3286" src="https://spacemath.xyz/wp-content/uploads/2016/12/Pyat-dvenadtsatyh.png" alt="Пять двенадцатых" width="20" height="43" /> работы заканчивал один второй рабочий:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5505 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/09/shema-k-risunku-dvoe-rabochih-zadacha-3.png" alt="схема к рисунку двое рабочих задача 3" width="659" height="319" srcset="https://spacemath.xyz/wp-content/uploads/2017/09/shema-k-risunku-dvoe-rabochih-zadacha-3.png 659w, https://spacemath.xyz/wp-content/uploads/2017/09/shema-k-risunku-dvoe-rabochih-zadacha-3-300x145.png 300w" sizes="(max-width: 659px) 100vw, 659px" /></p>
+<p>Второй рабочий за один час мог выполнить <img loading="lazy" decoding="async" class="alignnone size-full wp-image-2836" src="https://spacemath.xyz/wp-content/uploads/2016/11/odna-shestaya" alt="одна шестая" width="12" height="43" /> часть работы. Чтобы определить время за которое он завершил оставшуюся <img loading="lazy" decoding="async" class="alignnone size-full wp-image-3286" src="https://spacemath.xyz/wp-content/uploads/2016/12/Pyat-dvenadtsatyh.png" alt="Пять двенадцатых" width="20" height="43" /> часть работы, воспользуемся формулой нахождения времени.</p>
+<p>Переменная A теперь равна <img loading="lazy" decoding="async" class="alignnone size-full wp-image-3286" src="https://spacemath.xyz/wp-content/uploads/2016/12/Pyat-dvenadtsatyh.png" alt="Пять двенадцатых" width="20" height="43" />, переменная v &#8212; <img loading="lazy" decoding="async" class="alignnone size-full wp-image-2836" src="https://spacemath.xyz/wp-content/uploads/2016/11/odna-shestaya" alt="одна шестая" width="12" height="43" /></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-5506 alignnone" src="https://spacemath.xyz/wp-content/uploads/2017/09/nahozhdenie-vremeni-dvoe-rabochih-zadacha-3.png" alt="нахождение времени двое рабочих задача 3" width="380" height="102" srcset="https://spacemath.xyz/wp-content/uploads/2017/09/nahozhdenie-vremeni-dvoe-rabochih-zadacha-3.png 380w, https://spacemath.xyz/wp-content/uploads/2017/09/nahozhdenie-vremeni-dvoe-rabochih-zadacha-3-300x81.png 300w" sizes="(max-width: 380px) 100vw, 380px" /></p>
+<p>Теперь определим общее время заказа. Первые два часа рабочие работали вместе, остальную часть работы второй рабочий выполнил за два с половиной часа, отсюда имеем 4,5 ч.</p>
+<p><span style="color: #000000;">2 + 2,5 = 4,5 ч.</span></p>
+<p><strong>Ответ</strong>: для выполнения заказа потребовалось 4,5 ч.</p>
+<hr />
+<p><strong>Задача 4</strong>. Одна труба наполняет бассейн за 6 ч, а другая – за 4 ч. За<br />
+сколько часов наполняют бассейн обе трубы, работая вместе?</p>
+<p><strong>Решение</strong></p>
+<p>Обозначим работу (наполнение бассейна) через единицу</p>
+<p><span style="color: #000000;">A = 1</span></p>
+<p>Тогда первая труба за один час выполнит <img loading="lazy" decoding="async" class="alignnone size-full wp-image-2836" src="https://spacemath.xyz/wp-content/uploads/2016/11/odna-shestaya" alt="одна шестая" width="12" height="43" /> часть работы, а вторая труба &#8212; <img loading="lazy" decoding="async" class="alignnone size-full wp-image-5140" src="https://spacemath.xyz/wp-content/uploads/2017/07/odna-chetvertaya.png" alt="одна четвертая" width="12" height="43" /> часть работы. Работая вместе за один час они выполнят <img loading="lazy" decoding="async" class="alignnone size-full wp-image-5507" src="https://spacemath.xyz/wp-content/uploads/2017/09/odna-shestaya-plyus-odna-chetvertaya.png" alt="одна шестая плюс одна четвертая" width="43" height="43" /> часть работы:</p>
+<p><img loading="lazy" decoding="async" class="alignnone size-full wp-image-5508" src="https://spacemath.xyz/wp-content/uploads/2017/09/odna-shestaya-plyus-odna-chetvertaya-pyat-dvenadtsatyh.png" alt="одна шестая плюс одна четвертая пять двенадцатых" width="181" height="61" /></p>
+<p>Определим время за которое обе трубы наполняют бассейн, работая вместе:</p>
+<p><img loading="lazy" decoding="async" class="alignnone size-full wp-image-5509" src="https://spacemath.xyz/wp-content/uploads/2017/09/nahozhdenie-vremeni-za-kotoroe-bassejny-napolnyayut-zadacha-4.png" alt="нахождение времени за которое бассейны наполняют задача 4" width="316" height="76" srcset="https://spacemath.xyz/wp-content/uploads/2017/09/nahozhdenie-vremeni-za-kotoroe-bassejny-napolnyayut-zadacha-4.png 316w, https://spacemath.xyz/wp-content/uploads/2017/09/nahozhdenie-vremeni-za-kotoroe-bassejny-napolnyayut-zadacha-4-300x72.png 300w" sizes="(max-width: 316px) 100vw, 316px" /></p>
+<p>2,4 это два целых часа и четыре десятых часа</p>
+<p><span style="color: #000000;">2,4 = 2 ч + 0,4 ч</span></p>
+<p>А четыре десятых часа это 24 минуты</p>
+<p><span style="color: #000000;">60 мин. × 0,4 = 24 мин.</span></p>
+<p><strong>Ответ</strong>: работая вместе обе трубы наполнят бассейн за 2 ч 24 мин.</p>
+    <h3>Хотите перейти на следующий урок?</h3>
+<a href="lection1.html" class="back">Вернуться ‹‹</a>
+<a href="lection3.html" class="next">Вперёд »</a>
+
+<script type="text/javascript">
+
+var menuItems = document.querySelectorAll('.skew-menu ul li');
+
+for (var i = 0; i < menuItems.length; i++) {
+   menuItems[i].addEventListener('click', function() {
+       // Действия при выборе определенной лекции
+   });
+}
+document.querySelectorAll('.skew-menu li').forEach(item => {
+    item.addEventListener('mouseover', () => {
+        item.style.transition = 'transform 0.3s';
+        item.style.transform = 'scale(1.2)';
+    });
+
+    item.addEventListener('mouseout', () => {
+        if (!item.classList.contains("clicked")) { // Проверяем, не была ли ячейка уже уменьшена при клике
+            item.style.transition = 'transform 0.3s';
+            item.style.transform = 'scale(1)';
+        }
+    });
+
+     document.addEventListener("click", function(event) { 
+         if (!event.target.closest(".skew-menu li")) return;
+
+         const clickedItem= event.target.closest(".skew-menu li");
+
+         document.querySelectorAll('.skew-menu li').forEach(otherItem => { 
+             otherItem.classList.remove("clicked");
+             otherItem.removeEventListener("transitionend", removeTransition);
+          });
+          
+          function removeTransition() { this.classList.remove("clicked"); }
+
+          const clickedClassList= clickedItem.classList;
+          clickedClassList.add("clicked");
+
+          setTimeout(() =>{
+              clickedClassList.remove("clicked")
+           },300)
+
+           function toggleTransform(){
+               let scaleValue= window.getComputedStyle(clickedItem).getPropertyValue('transform');
+
+               if(scaleValue==='none'){
+                   clickedItem.setAttribute(
+                       "style",
+                       "transition: all .5s ease-in-out; transform: scale(.8);"
+                     );
+                 }else{
+                     clickedItem.removeAttribute("style");
+                  }
+            }
+
+            toggleTransform();
+      });
+});
+let currentLesson = document.querySelector('.active a');
+currentLesson.style.color = '#007bff';
+
+menuItems[0].classList.add("active");
+
+document.querySelector('.back').setAttribute("href", "lection16.html");
+document.querySelector('.next').setAttribute("href", "lection18.html");
+
+</script>
+</body>
+</html>

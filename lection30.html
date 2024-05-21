@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лекция 30: Теорема Виета</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: 200px auto;
+            gap: 20px;
+        }
+        
+        .skew-menu {
+            background-color: #f2f2f2; /* Цвет фона для меню */
+            padding: 10px;
+        }
+
+        .lecture-content {
+            background-color: #e6e6e6; /* Цвет фона для контента лекции */
+            padding: 20px;
+        }
+
+        h1, h2, p {
+          margin-bottom: 15px;  
+      }
+
+      a.back, a.next{
+         text-decoration:none; 
+         color:#333; 
+     }
+     body {
+            background-image: url(images/7.avif);
+            background-attachment: fixed;
+            -moz-background-size: 100%;
+            -webkit-background-size: 100%;
+            -o-background-size: 100%;
+            background-size: 100%;
+        }
+        h1{
+        color: rgb(0, 0, 0) !important; 
+        font-family: courier !important; 
+         text-align: center !important;
+  }
+        p {
+         color: rgb(0, 0, 0);
+         font-family: 'Times New Roman', Times, serif;
+         font-size: 150%;
+         text-align: right; 
+        }
+        h2{
+        color: dark !important; 
+        font-family: Georgia, 'Times New Roman', Times, serif !important; 
+         text-align: center !important;
+  }
+        p {
+         color: rgb(0, 0, 0); 
+         font-family: 'Times New Roman', Times, serif;
+         font-size: 150%; 
+         text-align: center;
+        }
+        a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.back {
+    background-color: #ddd;
+    color: rgb(0, 0, 0);
+}
+
+.next {
+    background-color: #ff0000;
+    color: white;
+}
+
+.round {
+    border-radius: 50%;
+}
+@radius: 7px;
+@skew: 25deg;
+@main-color: tomato;
+
+body{
+  font-family:Helvetica Neue, Helvetica, sans-serif;
+  background:@main-color;
+}
+
+.skew-menu{
+  text-align:center;
+  margin-top:3em;
+  padding: 10px;
+    max-height: 2000px; /* Устанавливаем максимальную высоту */
+    max-width: 700px;
+    width: 200px;
+    overflow-y: auto; /* Добавляем вертикальную прокрутку при необходимости */
+}
+
+.skew-menu ul{
+  display:inline-block;
+  margin:0;
+  padding:0;
+  list-style:none;
+  transform:skew(-@skew);
+  width: 250px;
+  border-radius: 10px;
+}
+
+.skew-menu ul li{
+  background:#fff;
+  float:left;
+  border-right:1px solid #eee;
+  box-shadow:0 1px 1px rgba(0,0,0,0.1);
+  text-transform:uppercase;
+  color:#555;
+  font-weight:bolder;
+  transition:all 0.3s linear;
+  display: block;
+  text-align: center;
+  width: 200px;
+  max-width: 200px;
+  &:first-child
+  {
+
+    border-radius:@radius 0 0 @radius;
+  }
+  
+  &:last-child{
+    border-right:none;
+    border-radius:0 @radius @radius 0;
+  }
+  
+  &:hover{
+    background:#eee;
+    color:@main-color;
+  }
+  
+  a{
+    display:block;
+    padding:1em 2em;
+    color:inherit;
+    text-decoration:none;
+    transform:skew(@skew);
+  }
+}
+.active a {
+  color: #007bff; /* Выделите цвет текста */
+}
+.navless{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: lighter;
+    font-size: 20px;
+}
+.nav menu{
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+      .menu b{
+        text-align: center;
+      }
+    </style>
+</head>
+
+<body>
+
+<nav class="skew-menu">
+    <ul>
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="lection1.html">Лекция 1</a></li>
+      <li><a href="lection2.html">Лекция 2</a></li>
+      <li><a href="lection3.html">Лекция 3</a></li>
+      <li><a href="lection4.html">Лекция 4</a></li>
+      <li><a href="lection5.html">Лекция 5</a></li>
+      <li><a href="lection6.html">Лекция 6</a></li>
+      <li><a href="lection7.html">Лекция 7</a></li>
+      <li><a href="lection8.html">Лекция 8</a></li>
+      <li><a href="lection9.html">Лекция 9</a></li>
+      <li><a href="lection10.html">Лекция 10</a></li>
+      <li><a href="lection11.html">Лекция 11</a></li>
+      <li><a href="lection12.html">Лекция 12</a></li>
+      <li><a href="lection13.html">Лекция 13</a></li>
+      <li><a href="lection14.html">Лекция 14</a></li>
+      <li><a href="lection15.html">Лекция 15</a></li>
+      <li><a href="lection16.html">Лекция 16</a></li>
+      <li><a href="lection17.html">Лекция 17</a></li>
+      <li><a href="lection18.html">Лекция 18</a></li>
+      <li><a href="lection19.html">Лекция 19</a></li>
+      <li><a href="lection20.html">Лекция 20</a></li>
+      <li><a href="lection21.html">Лекция 21</a></li>
+      <li><a href="lection22.html">Лекция 22</a></li>
+      <li><a href="lection23.html">Лекция 23</a></li>
+      <li><a href="lection24.html">Лекция 24</a></li>
+      <li><a href="lection25.html">Лекция 25</a></li>
+      <li><a href="lection26.html">Лекция 26</a></li>
+      <li><a href="lection27.html">Лекция 27</a></li>
+      <li><a href="lection28.html">Лекция 28</a></li>
+      <li><a href="lection29.html">Лекция 29</a></li>
+      <li class="active"><a href="lection30.html">Лекция 30</a></li>
+    </ul>
+</nav>
+
+<div class="lecture-content">
+  <h1 class="entry-title">Лекция 30: Теорема Виета</h1>      
+
+      
+</header><!-- .entry-header -->
+
+<div class="entry-content">
+</nav>
+<nav id="menu"><b>Содержание урока</b></p>
+<ul class="navless">
+<li style="list-style-type: none;">
+<ul class="navless">
+<li><a href="#yak1">Что называют теоремой?</a></li>
+<li><a href="#yak2">Теорема Виета</a></li>
+<li><a href="#yak3">Доказательство теоремы Виета</a></li>
+<li><a href="#yak4">Теорема, обратная теореме Виета</a></li>
+<li><a href="#yak5">Примеры решения уравнений по теореме, обратной теореме Виета</a></li>
+<li><a href="#yak6">Когда квадратное уравнение неприведённое</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+<h2 id="yak1" style="text-align: center;">Что называют теоремой?</h2>
+<p>Если человек обнаружил в математике какую-нибудь закономерность, позволяющую быстро решить ту или иную задачу, то ему не следует говорить о том, что он сделал открытие. Потому что может случиться так, что эта закономерность работает только для определённых случаев, а для других не работает или вовсе решает задачу неправильно.</p>
+<p>Чтобы поделиться своим открытием с другими людьми, найденную закономерность следует сформулировать в виде утверждения, а затем доказать это утверждение, приводя неоспоримые факты.</p>
+<p>Сформулированное утверждение называют <strong>теоремой</strong>. А доказательство теоремы состоит из фактов, логических рассуждений и вычислений, которые не оспариваются.</p>
+<p>Например, теоремой можно назвать следующее утверждение:</p>
+<p style="text-align: left;"><strong>&#171;Если числитель и знаменатель обыкновенной дроби умнóжить на какое-нибудь число, то значение данной дроби не измéнится&#187;.</strong></p>
+<p>А затем привести такое доказательство:</p>
+<p>Пусть, имеется дробь <img decoding="async" class="alignnone size-full wp-image-11419" src="https://spacemath.xyz/wp-content/uploads/2019/11/a-na-b.png" alt="a na b" width="12" height="43" />. Умнóжим числитель и знаменатель этой дроби на число <span style="color: #000000;"><em>с</em></span>. Тогда полýчится дробь <img decoding="async" class="alignnone size-full wp-image-11414" src="https://spacemath.xyz/wp-content/uploads/2019/11/ac-na-bc.png" alt="ac na bc" width="21" height="41" />. Докáжем, что дроби <img decoding="async" class="alignnone size-full wp-image-11419" src="https://spacemath.xyz/wp-content/uploads/2019/11/a-na-b.png" alt="a na b" width="12" height="43" /> и <img decoding="async" class="alignnone size-full wp-image-11414" src="https://spacemath.xyz/wp-content/uploads/2019/11/ac-na-bc.png" alt="ac na bc" width="21" height="41" /> равны. То есть докажем, что равенство <img decoding="async" class="size-full wp-image-11415 alignnone" src="https://spacemath.xyz/wp-content/uploads/2019/11/a-na-b-ravno-ac-na-bc.png" alt="a na b ravno ac na bc" width="58" height="43" /> является верным.</p>
+<p>Для доказательства этого равенства воспользуемся основным свойством пропорции:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11417 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Osnovnoe-svojstvo-drobi-risunok-1.png" alt="Основное свойство дроби рисунок 1" width="86" height="68" /></p>
+<p>От перестановки мест сомножителей произведение не меняется. Поэтому в получившемся равенстве можно упорядочить правую часть по алфавиту:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11418 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Osnovnoe-svojstvo-drobi-risunok-2.png" alt="Основное свойство дроби рисунок 2" width="88" height="68" /></p>
+<p>Поскольку равенство <img decoding="async" class="size-full wp-image-11415 alignnone" src="https://spacemath.xyz/wp-content/uploads/2019/11/a-na-b-ravno-ac-na-bc.png" alt="a na b ravno ac na bc" width="58" height="43" /> является пропорцией, а пропорция это равенство двух отношений, то дроби <img decoding="async" class="alignnone size-full wp-image-11419" src="https://spacemath.xyz/wp-content/uploads/2019/11/a-na-b.png" alt="a na b" width="12" height="43" /> и <img loading="lazy" decoding="async" class="alignnone size-full wp-image-11420" src="https://spacemath.xyz/wp-content/uploads/2019/11/ac-na-bc-1.png" alt="ac na bc" width="20" height="43" /> равны. Теорема доказана.</p>
+<hr />
+<h2 id="yak2" style="text-align: center;">Теорема Виета</h2>
+<p>Французский математик Франсуа Виет выявил интересную взаимосвязь между коэффициентами приведённого квадратного уравнения и корнями этого же уравнения. Эта взаимосвязь представлена в виде теоремы и формулируется так:</p>
+<p><strong>Сумма корней приведённого квадратного уравнения <em>x</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0 равна второму коэффициенту, взятому с противоположным знáком, а произведение корней равно свободному члену.</strong></p>
+<p>То есть, если имеется приведённое квадратное уравнение <span style="color: #000000;"><em>x</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0</span>, а его корнями являются числа <span style="color: #000000;"><em>x</em><sub>1</sub></span> и <span style="color: #000000;"><em>x</em><sub>2</sub></span>, то справедливы следующие два равенства:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11446 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-23.png" alt="Теорема Виета рисунок 23" width="121" height="59" /></p>
+<p>Знак системы (фигурная скобка) говорит о том, что значения <span style="color: #000000;"><em>x</em><sub>1</sub></span> и <span style="color: #000000;"><em>x</em><sub>2 </sub></span>удовлетворяют обоим равенствам.</p>
+<p>Покажем теорему Виета на примере приведённого квадратного уравнения <span style="color: #000000;"><em>x</em><sup>2 </sup>+ 4<em>x </em>+ 3 = 0</span>.</p>
+<p>Мы пока не знаем какие корни имеет уравнение <span style="color: #000000;"><em>x</em><sup>2 </sup>+ 4<em>x </em>+ 3 = 0</span>. Но по теореме Виета можно записать, что сумма этих корней равна второму коэффициенту <span style="color: #000000;">4</span>, взятому с противоположным знáком. Если коэффициент 4 взять с противоположным знáком, то получим <span style="color: #000000;">−4</span>. Тогда:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-11492 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-55.png" alt="Теорема Виета рисунок 55" width="117" height="59" /></p>
+<p>А произведение корней по теореме Виета будет равно свободному члену. В уравнении <span style="color: #000000;"><em>x</em><sup>2 </sup>+ 4<em>x </em>+ 3 = 0</span> свободным членом является <span style="color: #000000;">3</span>. Тогда:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-11493 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-54.png" alt="Теорема Виета рисунок 54" width="117" height="59" /></p>
+<p>Теперь проверим действительно ли сумма корней равна <span style="color: #000000;">−4</span>, и равно ли произведение <span style="color: #000000;">3</span>. Для этого найдём корни уравнения <span style="color: #000000;"><em>x</em><sup>2 </sup>+ 4<em>x </em>+ 3 = 0</span>. А для удобства воспользуемся формулами для чётного второго коэффициента</a>:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-11678 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/12/Teorema-Vieta-risunok-58.png" alt="Теорема Виета рисунок 58" width="393" height="214" srcset="https://spacemath.xyz/wp-content/uploads/2019/12/Teorema-Vieta-risunok-58.png 393w, https://spacemath.xyz/wp-content/uploads/2019/12/Teorema-Vieta-risunok-58-300x163.png 300w" sizes="(max-width: 393px) 100vw, 393px" /></p>
+<p>Корнями уравнения являются числа <span style="color: #000000;">−1</span> и <span style="color: #000000;">−3</span>. По теореме Виета их сумма должна была равняться второму коэффициенту уравнения <span style="color: #000000;"><em>x</em><sup>2 </sup>+ 4<em>x </em>+ 3 = 0</span>, взятому с противоположным знаком. Действительно, так оно и есть. Вторым коэффициентов в уравнении <span style="color: #000000;"><em>x</em><sup>2 </sup>+ 4<em>x </em>+ 3 = 0</span> является <span style="color: #000000;">4</span>. Если взять его с противоположным знаком и приравнять сумму корней <span style="color: #000000;"><em>x</em><sub>1 </sub>+ <em>x</em><sub>2</sub></span> к этому коэффициенту, то получается верное равенство:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-11495 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-59.png" alt="Теорема Виета рисунок 59" width="125" height="52" /></p>
+<p>А произведение корней <span style="color: #000000;">−1</span> и <span style="color: #000000;">−3</span> по теореме Виета должно было равняться свободному члену уравнения <span style="color: #000000;"><em>x</em><sup>2 </sup>+ 4<em>x </em>+ 3 = 0</span>, то есть числу <span style="color: #000000;">3</span>. Видим, что это условие тоже выполняется:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-11496 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-60.png" alt="Теорема Виета рисунок 60" width="112" height="52" /></p>
+<p>Значит выражение <img loading="lazy" decoding="async" class="wp-image-11493 size-full alignnone" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-54.png" alt="Теорема Виета рисунок 54" width="117" height="59" /> является справедливым.</p>
+<hr />
+<p>Рассмотрим квадратное уравнение <span style="color: #000000;"><em>x</em><sup>2 </sup>− 8<em>x </em>+ 15 = 0</span>. По теореме Виета сумма корней этого уравнения равна второму коэффициенту, взятому с противоположным знаком. Второй коэффициент равен <span style="color: #000000;">−8</span>. Если взять его с противоположным знаком, то получим <span style="color: #000000;">8</span>. Тогда:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11491 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-57.png" alt="Теорема Виета рисунок 57" width="106" height="59" /></p>
+<p>А произведение корней равно свободному члену. В уравнении <span style="color: #000000;"><em>x</em><sup>2 </sup>− 8<em>x </em>+ 15 = 0</span> свободным членом является <span style="color: #000000;">15</span>. Тогда:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11490 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-56.png" alt="Теорема Виета рисунок 56" width="106" height="59" /></p>
+<p>Теперь проверим действительно ли сумма корней равна <span style="color: #000000;">8</span>, и равно ли произведение <span style="color: #000000;">15</span>. Для этого найдём корни данного уравнения. А для удобства воспользуемся формулами для чётного второго коэффициента. В этот раз пропустим нéкоторые подробные записи:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11497 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-61.png" alt="Теорема Виета рисунок 61" width="235" height="199" /></p>
+<p>Видим, что корнями уравнения <span style="color: #000000;"><em>x</em><sup>2 </sup>− 8<em>x </em>+ 15 = 0</span> являются числа <span style="color: #000000;">5</span> и <span style="color: #000000;">3</span>. Их сумма равна <span style="color: #000000;">8</span>. То есть сумма корней равна второму коэффициенту уравнения <span style="color: #000000;"><em>x</em><sup>2 </sup>− 8<em>x </em>+ 15 = 0</span>, взятому с противоположным знаком.</p>
+<p>А произведение чисел <span style="color: #000000;">5</span> и <span style="color: #000000;">3</span> равно <span style="color: #000000;">15</span>. То есть равно свободному члену уравнения <span style="color: #000000;"><em>x</em><sup>2 </sup>− 8<em>x </em>+ 15 = 0</span>.</p>
+<p>Значит выражение <img loading="lazy" decoding="async" class="size-full wp-image-11490 alignnone" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-56.png" alt="Теорема Виета рисунок 56" width="106" height="59" /> является справедливым.</p>
+<p><strong>Замечание</strong>. Чтобы теорема Виета выполнялась, квадратное уравнение обязательно должно быть приведённым и иметь корни.</p>
+<p>Например, рассмотрим квадратное уравнение <span style="color: #000000;"><em>x</em><sup>2 </sup>− 2<em>x </em>+ 4 = 0</span>. Напишем сумму и произведение корней этого уравнения:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11498 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-61-1.png" alt="Теорема Виета рисунок 61" width="98" height="59" /></p>
+<p>Но уравнение <span style="color: #000000;"><em>x</em><sup>2 </sup>− 2<em>x </em>+ 4 = 0</span> не имеет корней, сумма которых равна 2, а произведение которых равно <span style="color: #000000;">4</span>. Убедиться в этом можно, вычислив дискриминант:</p>
+<p style="text-align: center;"><span style="color: #000000;"><em>D</em><sub>1</sub> = <em>k</em><sup>2 </sup>− <em>ac </em>= (−1)<sup>2 </sup>− 1 × 4 = −3</span></p>
+<p>А значит записывать выражение <img loading="lazy" decoding="async" class="size-full wp-image-11498 alignnone" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-61-1.png" alt="Теорема Виета рисунок 61" width="98" height="59" /> не имеет смысла.</p>
+<p>Теорема Виета полезна тем, что позволяет до начала решения узнать знаки корней уравнения.</p>
+<p>Например, запишем для уравнения <span style="color: #000000;"><em>x</em><sup>2 </sup>− 5<em>x </em>+ 6 = 0</span> сумму и произведение его корней. Сумма корней равна второму коэффициенту, взятому с противоположным знаком, а произведение корней равно свободному члену:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11476 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-50.png" alt="Теорема Виета рисунок 50" width="97" height="59" /></p>
+<p>Посмотрев на эти два равенства можно сразу понять, что оба корня должны быть положительными. Потому что произведение <span style="color: #000000;"><em>x</em><sub>1 </sub>× <em>x</em><sub>2 </sub>= 6</span> будет выполняться только в двух случаях: если значения <span style="color: #000000;"><em>x</em><sub>1</sub></span> и <span style="color: #000000;"><em>x</em><sub>2</sub></span> положительны либо они оба отрицательны. Если эти значения будут отрицательными, то не будет выполняться равенство <span style="color: #000000;"><em>x</em><sub>1 </sub>+ <em>x</em><sub>2 </sub>= 5</span>, поскольку его правая часть равна положительному числу. А значения <span style="color: #000000;"><em>x</em><sub>1</sub></span> и <span style="color: #000000;"><em>x</em><sub>2</sub></span> должны удовлетворять как равенству <span style="color: #000000;"><em>x</em><sub>1 </sub>+ <em>x</em><sub>2 </sub>= 5</span>, так и равенству <span style="color: #000000;"><em>x</em><sub>1 </sub>× <em>x</em><sub>2 </sub>= 6.</span></p>
+<p>Ещё одна польза от теоремы Виета в том, что корни можно найти методом подбора. В данном примере корни должны быть такими, чтобы они удовлетворяли как равенству <span style="color: #000000;"><em>x</em><sub>1 </sub>+ <em>x</em><sub>2 </sub>= 5</span> так и равенству <span style="color: #000000;"><em>x</em><sub>1 </sub>× <em>x</em><sub>2 </sub>= 6</span>. Очевидно, что таковыми являются корни <span style="color: #000000;">3</span> и <span style="color: #000000;">2</span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11477 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-51.png" alt="Теорема Виета рисунок 51" width="95" height="142" /></p>
+<p>Значит, <span style="color: #000000;"><em>x</em><sub>1 </sub>= 3</span>, <span style="color: #000000;"><em>x</em><sub>2 </sub>= 2</span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11582 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-63.png" alt="Теорема Виета рисунок 63" width="61" height="59" /></p>
+<hr />
+<h3 id="yak3" style="text-align: center;">Доказательство теоремы Виета</h3>
+<p>Пусть дано приведённое квадратное уравнение <span style="color: #000000;"><em>x</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0</span>. Если его дискриминант больше нуля, то оно имеет два корня, сумма которых равна второму коэффициенту, взятому с противоположным знаком, а произведение корней равно свободному члену:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11446 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-23.png" alt="Теорема Виета рисунок 23" width="121" height="59" /></p>
+<p>Докажем, что равенства <span style="color: #000000;"><em>x</em><sub>1 </sub>+ <em>x</em><sub>2 </sub>= −<em>b</em></span> и <span style="color: #000000;"><em>x</em><sub>1 </sub>× <em>x</em><sub>2 </sub>= <em>c</em></span> имеют место быть.</p>
+<p>Вспомним формулы корней квадратного уравнения:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11301 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/10/kvadratnoe-uravnenie-risunok-90.png" alt="квадратное уравнение рисунок 90" width="315" height="51" srcset="https://spacemath.xyz/wp-content/uploads/2019/10/kvadratnoe-uravnenie-risunok-90.png 315w, https://spacemath.xyz/wp-content/uploads/2019/10/kvadratnoe-uravnenie-risunok-90-300x49.png 300w" sizes="(max-width: 315px) 100vw, 315px" /></p>
+<p>Найдём сумму корней <span style="color: #000000;"><em>x</em><sub>1</sub></span> и <span style="color: #000000;"><em>x</em><sub>2</sub></span>. Для этого подставим в выражение <span style="color: #000000;"><em>x</em><sub>1 </sub>+ <em>x</em><sub>2</sub></span> вместо <span style="color: #000000;"><em>x</em><sub>1</sub></span> и <span style="color: #000000;"><em>x</em><sub>2</sub></span> соответствующие выражения из правой части формул корней квадратного уравнения. Не забываем, что в приведённом квадратном уравнении <span style="color: #000000;"><em>x</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0</span> старший коэффициент <span style="color: #000000;"><em>a</em></span> равен единице. Тогда в процессе подстановки знаменатель станет равен просто <span style="color: #000000;">2</span></p>
+<p><img loading="lazy" decoding="async" class="wp-image-11422 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-3.png" alt="Теорема Виета рисунок 3" width="258" height="51" /></p>
+<p>Запишем правую часть в виде дроби с одним знаменателем:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11426 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-5.png" alt="Теорема Виета рисунок 5" width="467" height="51" srcset="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-5.png 467w, https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-5-300x33.png 300w" sizes="(max-width: 467px) 100vw, 467px" /></p>
+<p>Раскроем скобки в числителе и приведём подобные члены:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-11428 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-6.png" alt="Теорема Виета рисунок 6" width="501" height="111" srcset="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-6.png 501w, https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-6-300x66.png 300w" sizes="(max-width: 501px) 100vw, 501px" /></p>
+<p>Сократим дробь <img loading="lazy" decoding="async" class="alignnone size-full wp-image-11429" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-7.png" alt="Теорема Виета рисунок 7" width="36" height="47" /> на <span style="color: #000000;">2</span>, тогда получим <span style="color: #000000;">−<em>b</em></span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11430 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-8.png" alt="Теорема Виета рисунок 8" width="545" height="124" srcset="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-8.png 545w, https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-8-300x68.png 300w" sizes="(max-width: 545px) 100vw, 545px" /></p>
+<p>Значит <span style="color: #000000;"><em>x</em><sub>1 </sub>+ <em>x</em><sub>2</sub></span> действительно равно <span style="color: #000000;">−<em>b</em></span></p>
+<p style="text-align: center;"><span style="color: #000000;"><em>x</em><sub>1 </sub>+ <em>x</em><sub>2 </sub>= −<em>b</em></span></p>
+<p>Теперь аналогично докажем, что произведение <span style="color: #000000;"><em>x</em><sub>1 </sub>× <em>x</em><sub>2</sub></span> равно свободному члену <span style="color: #000000;"><em>c</em></span>.</p>
+<p>Подставим вместо <span style="color: #000000;"><em>x</em><sub>1</sub></span> и <span style="color: #000000;"><em>x</em><sub>2</sub></span> соответствующие выражения из формул корней квадратного уравнения. Не забываем, что коэффициент <span style="color: #000000;"><em>a</em></span> всё ещё равен единице:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11431 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-10.png" alt="Теорема Виета рисунок 10" width="256" height="51" /></p>
+<p>Чтобы перемнóжить дроби, нужно перемнóжить их числители и знаменатели:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11433 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-13.png" alt="Теорема Виета рисунок 13" width="457" height="51" srcset="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-13.png 457w, https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-13-300x33.png 300w" sizes="(max-width: 457px) 100vw, 457px" /></p>
+<p>В числителе теперь содержится произведение суммы двух выражений и разности этих же выражений. Воспользуемся тождеством <span style="color: #000000;">(<em>a + b</em>)(<em>a − b</em>) = <em>a</em><sup>2 </sup>− <em>b</em><sup>2</sup></span>. Тогда в числителе полýчится <img loading="lazy" decoding="async" class="alignnone wp-image-11435 size-full" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-14.png" alt="Теорема Виета рисунок 14" width="119" height="32" /> А знаменатель будет равен <span style="color: #000000;">4</span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11436 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-16.png" alt="Теорема Виета рисунок 16" width="599" height="51" srcset="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-16.png 599w, https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-16-300x26.png 300w" sizes="(max-width: 599px) 100vw, 599px" /></p>
+<p>Теперь в числителе выражение <span style="color: #000000;">(−<em>b</em>)<sup>2</sup></span> станет равно <span style="color: #000000;"><em>b</em><sup>2</sup></span>, а выражение <img loading="lazy" decoding="async" class="alignnone size-full wp-image-11437" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-17.png" alt="Теорема Виета рисунок 17" width="54" height="32" /> станет равно просто <span style="color: #000000;"><em>D</em></span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11438 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-15.png" alt="Теорема Виета рисунок 15" width="620" height="125" srcset="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-15.png 620w, https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-15-300x60.png 300w" sizes="(max-width: 620px) 100vw, 620px" /></p>
+<p>Но <span style="color: #000000;"><em>D</em></span> равно <span style="color: #000000;"><em>b</em><sup>2 </sup>− 4<em>ac</em></span>. Подстáвим это выражение вместо <span style="color: #000000;"><em>D</em></span>, не забывая что <span style="color: #000000;"><em>a </em>= 1</span>. То есть вместо <span style="color: #000000;"><em>b</em><sup>2 </sup>− 4<em>ac</em></span> надо подставить <span style="color: #000000;"><em>b</em><sup>2 </sup>− 4<em>c</em></span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11439 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-18.png" alt="Теорема Виета рисунок 18" width="620" height="134" srcset="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-18.png 620w, https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-18-300x65.png 300w" sizes="(max-width: 620px) 100vw, 620px" /></p>
+<p>В получившемся выражении раскроем скобки в числителе и приведём подобные члены:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-11441 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-20.png" alt="Теорема Виета рисунок 20" width="641" height="134" srcset="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-20.png 641w, https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-20-300x63.png 300w" sizes="(max-width: 641px) 100vw, 641px" /></p>
+<p>Сократим получившуюся дробь на <span style="color: #000000;">4</span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11442 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-21.png" alt="Теорема Виета рисунок 21" width="635" height="136" srcset="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-21.png 635w, https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-21-300x64.png 300w" sizes="(max-width: 635px) 100vw, 635px" /></p>
+<p>Значит <span style="color: #000000;"><em>x</em><sub>1 </sub>× <em>x</em><sub>2</sub></span> действительно равно <span style="color: #000000;"><em>c</em></span>.</p>
+<p style="text-align: center;"><span style="color: #000000;"><em>x</em><sub>1 </sub>× <em>x</em><sub>2 </sub>= <em>c</em></span></p>
+<p>Таким образом, сумма корней приведённого квадратного уравнения <span style="color: #000000;"><em>x</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0</span> равна второму коэффициенту, взятому с противоположным знáком (<span style="color: #000000;"><em>x</em><sub>1 </sub>+ <em>x</em><sub>2 </sub>= −<em>b</em></span>), а произведение корней равно свободному члену (<span style="color: #000000;"><em>x</em><sub>1 </sub>× <em>x</em><sub>2 </sub>= <em>c</em></span>). Теорема доказана.</p>
+<hr />
+<h2 id="yak4" style="text-align: center;">Теорема, обратная теореме Виета</h2>
+<p>Когда записана сумма и произведение корней приведённого квадратного уравнения, обычно начинается подбор подходящих корней к этому уравнению. В этот момент в работу включается так называемая <strong>теорема, обратная теореме Виета</strong>. Она формулируется так:</p>
+<p><strong>Если числа <em>x</em><sub>1</sub> и <em>x</em><sub>2</sub> таковы, что их сумма равна второму коэффициенту уравнения <em>x</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0, взятому с противоположным знáком, а произведение чисел <em>x</em><sub>1</sub> и <em>x</em><sub>2</sub> равно свободному члену уравнения <em>x</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0, то числа <em>x</em><sub>1</sub> и <em>x</em><sub>2</sub> являются корнями уравнения <em>x</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0.</strong></p>
+<p>Обратные теоремы бывают поставлены так, что их утверждением является заключение первой теоремы.</p>
+<p>Так, доказывая теорему Виета мы пришли к заключению, что сумма <span style="color: #000000;"><em>x</em><sub>1</sub></span> и <span style="color: #000000;"><em>x</em><sub>2</sub></span> равна <span style="color: #000000;">−<em>b</em></span>, а произведение <span style="color: #000000;"><em>x</em><sub>1</sub></span> и <span style="color: #000000;"><em>x</em><sub>2</sub></span> равно <span style="color: #000000;"><em>c</em></span>. В обратной же теореме это заключение служит утверждением.</p>
+<p>Ранее мы решили уравнение <span style="color: #000000;"><em>x</em><sup>2 </sup>− 5<em>x </em>+ 6 = 0</span> и написали для него такую сумму и произведение корней:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11476 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-50.png" alt="Теорема Виета рисунок 50" width="97" height="59" /></p>
+<p>А затем подобрали корни <span style="color: #000000;">3</span> и <span style="color: #000000;">2</span>. По сути мы применили теорему, обратную теореме Виета. Числа <span style="color: #000000;">3</span> и <span style="color: #000000;">2</span> таковы, что их сумма равна второму коэффициенту уравнения <span style="color: #000000;"><em>x</em><sup>2 </sup>− 5<em>x </em>+ 6 = 0</span>, взятому с противоположным знаком (числу <span style="color: #000000;">5</span>), а произведение чисел <span style="color: #000000;">3</span> и <span style="color: #000000;">2</span> равно свободному члену (числу <span style="color: #000000;">6</span>). Значит числа 3 и 2 являются корнями уравнения <span style="color: #000000;"><em>x</em><sup>2 </sup>− 5<em>x </em>+ 6 = 0</span>.</p>
+<hr />
+<p><strong>Пример 2</strong>. Решить квадратное уравнение <span style="color: #000000;"><em>x</em><sup>2 </sup>− 6<em>x </em>+ 8 = 0</span> по теореме, обратной теореме Виета.</p>
+<p>В данном уравнении <span style="color: #000000;"><em>a </em>= 1</span>. Значит квадратное уравнение является приведённым. Его можно решить по теореме, обратной теореме Виета.</p>
+<p>Сначала запишем сумму и произведение корней уравнения. Сумма корней будет равна <span style="color: #000000;">6</span>, поскольку второй коэффициент исходного уравнения равен <span style="color: #000000;">−6</span>. А произведение корней будет равно <span style="color: #000000;">8</span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11449 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-26.png" alt="Теорема Виета рисунок 26" width="99" height="59" /></p>
+<p>Теперь имея эти два равенства можно подобрать подходящие корни. Они должны удовлетворять как равенству <span style="color: #000000;"><em>x</em><sub>1 </sub>+ <em>x</em><sub>2 </sub>= 6</span>, так и равенству <span style="color: #000000;"><em>x</em><sub>1 </sub>× <em>x</em><sub>2 </sub>= 8</span></p>
+<p>Подбор корней удобнее выполнять с помощью их произведения. Используя равенство <span style="color: #000000;"><em>x</em><sub>1 </sub>× <em>x</em><sub>2 </sub>= 8</span> нужно найти такие <span style="color: #000000;"><em>x</em><sub>1</sub></span> и <span style="color: #000000;"><em>x</em><sub>2</sub></span>, произведение которых равно 8.</p>
+<p>Число 8 можно получить если перемножить числа 4 и 2 либо 1 и 8.</p>
+<p style="text-align: center;"><span style="color: #000000;">4 × 2 = 8</span><br />
+<span style="color: #000000;">1 × 8 = 8</span></p>
+<p>Но значения <span style="color: #000000;"><em>x</em><sub>1</sub></span> и <span style="color: #000000;"><em>x</em><sub>2</sub></span> надо подбирать так, чтобы они удовлетворяли не только равенству <span style="color: #000000;"><em>x</em><sub>1 </sub>× <em>x</em><sub>2 </sub>= 8</span>, но и равенству <span style="color: #000000;"><em>x</em><sub>1 </sub>+ <em>x</em><sub>2 </sub>= 6</span>.</p>
+<p>Сразу делаем вывод, что значения <span style="color: #000000;">1</span> и <span style="color: #000000;">8</span> не годятся, поскольку они хоть и удовлетворяют равенству <span style="color: #000000;"><em>x</em><sub>1 </sub>× <em>x</em><sub>2 </sub>= 8</span>, но не удовлетворяют равенству <span style="color: #000000;"><em>x</em><sub>1 </sub>+ <em>x</em><sub>2 </sub>= 6</span>.</p>
+<p>Зато значения <span style="color: #000000;">4</span> и <span style="color: #000000;">2</span> подходят как равенству <span style="color: #000000;"><em>x</em><sub>1 </sub>× <em>x</em><sub>2 </sub>= 8</span>, так и равенству <span style="color: #000000;"><em>x</em><sub>1 </sub>+ <em>x</em><sub>2 </sub>= 6</span>, поскольку эти значения удовлетворяют обоим равенствам:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-11452 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-28.png" alt="Теорема Виета рисунок 28" width="241" height="59" /></p>
+<p>Значит корнями уравнения <span style="color: #000000;"><em>x</em><sup>2 </sup>− 6<em>x </em>+ 8 = 0</span> являются числа <span style="color: #000000;">4</span> и <span style="color: #000000;">2</span>.</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11454 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-30.png" alt="Теорема Виета рисунок 30" width="64" height="57" /></p>
+<p>Обратная теорема, как и любая теорема нуждается в доказательстве. Докажем теорему, обратную теореме Виета. Для удобства корни <span style="color: #000000;"><em>x</em><sub>1</sub></span> и <span style="color: #000000;"><em>x</em><sub>2</sub></span> обозначим как <span style="color: #000000;"><em>m</em></span> и <span style="color: #000000;"><em>n</em></span>. Тогда утверждение теоремы, обратной теореме Виета примет следующий вид:</p>
+<p><strong>Если числа <em>m</em> и <em>n</em> таковы, что их сумма равна второму коэффициенту уравнения <em>x</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0, взятому с противоположным знáком, а произведение чисел</strong> <strong><em>m</em> и <em>n </em></strong><strong>равно свободному члену уравнения <em>x</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0, то числа <em>m</em> и <em>n</em> являются корнями уравнения <em>x</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0</strong></p>
+<p>Для начала запишем, что сумма <span style="color: #000000;"><em>m</em></span> и <span style="color: #000000;"><em>n</em></span> равна <span style="color: #000000;"><em>−b</em></span>, а произведение <span style="color: #000000;"><em>mn</em> </span>равно <span style="color: #000000;"><em>c</em></span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11472 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-46.png" alt="Теорема Виета рисунок 46" width="107" height="58" /></p>
+<p>Чтобы доказать, что числа <span style="color: #000000;"><em>m</em></span> и <span style="color: #000000;"><em>n</em></span> являются корнями уравнения <span style="color: #000000;"><em>x</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0</span>, нужно поочередно подстáвить буквы <span style="color: #000000;"><em>m</em></span> и <span style="color: #000000;"><em>n</em></span> в это уравнение вместо <span style="color: #000000;"><em>x</em></span>, затем выполнить возможные тождественные преобразования. Если в результате преобразований левая часть станет равна нулю, то это будет означать, что числа <span style="color: #000000;"><em>m</em></span> и <span style="color: #000000;"><em>n</em></span> являются корнями уравнения <span style="color: #000000;"><em>x</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0</span>.</p>
+<p>Помимо букв <span style="color: #000000;"><em>m</em></span> и <span style="color: #000000;"><em>n</em></span> нам нужно знать чему равен параметр <span style="color: #000000;"><em>b</em></span>. Выразим его из равенства <span style="color: #000000;"><em>m + n = −b</em></span>. Легче всего это сделать, умножив обе части этого равенства на <span style="color: #000000;">−1</span></p>
+<p><img loading="lazy" decoding="async" class="wp-image-11629 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/12/Teorema-Vieta-risunok-49.png" alt="Теорема Виета рисунок 49" width="187" height="85" /></p>
+<p>Теперь всё готово для подстановок. Подстáвим <span style="color: #000000;"><em>m</em></span> в уравнение <span style="color: #000000;"><em>x</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0</span> вместо <span style="color: #000000;"><em>x</em></span>, а выражение <span style="color: #000000;"><em>−m − n</em></span> подставим вместо <span style="color: #000000;"><em>b</em></span></p>
+<p><img loading="lazy" decoding="async" class="wp-image-11630 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/12/Teorema-Vieta-risunok-47.png" alt="Теорема Виета рисунок 47" width="221" height="153" /></p>
+<p>Видим, что при <span style="color: #000000;"><em>x = m</em></span> получается верное равенство. Значит число <span style="color: #000000;"><em>m</em></span> является корнем уравнения <span style="color: #000000;"><em>x</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0</span>.</p>
+<p>Аналогично докажем, что число <span style="color: #000000;"><em>n</em></span> является корнем уравнения <span style="color: #000000;"><em>x</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0</span>. Подставим вместо <span style="color: #000000;"><em>x</em></span> букву <span style="color: #000000;"><em>n</em></span>, а вместо <span style="color: #000000;"><em>c</em></span> подставим <span style="color: #000000;"><em>mn</em></span>, поскольку <span style="color: #000000;"><em>c = mn</em></span>.</p>
+<p><img loading="lazy" decoding="async" class="wp-image-11631 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/12/Teorema-Vieta-risunok-48.png" alt="Теорема Виета рисунок 48" width="207" height="120" /></p>
+<p>Видим, что при <span style="color: #000000;"><em>x = n</em></span> тоже получается верное равенство. Значит число <span style="color: #000000;"><em>n</em></span> является корнем уравнения.</p>
+<p>Следовательно, числа <span style="color: #000000;"><em>m</em></span> и <span style="color: #000000;"><em>n</em></span> являются корнями уравнения <span style="color: #000000;"><em>x</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0</span>.</p>
+<hr />
+<h2 id="yak5" style="text-align: center;">Примеры решения уравнений по теореме, обратной теореме Виета</h2>
+<p><strong>Пример 1</strong>. Решить квадратное уравнение <span style="color: #000000;"><em>x</em><sup>2 </sup>− 4<em>x </em>+ 4 = 0</span> по теореме, обратной теореме Виета.</p>
+<p>Запишем сумму корней <span style="color: #000000;"><em>x</em><sub>1</sub></span> и <span style="color: #000000;"><em>x</em><sub>2</sub></span> и приравняем её к второму коэффициенту, взятому с противоположным знаком. Также запишем произведение корней <span style="color: #000000;"><em>x</em><sub>1</sub></span> и <span style="color: #000000;"><em>x</em><sub>2</sub></span> и приравняем его к свободному члену<span style="color: #000000;"><i>:</i></span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11455 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-31.png" alt="Теорема Виета рисунок 31" width="100" height="59" /></p>
+<p>В данном примере очевидно, что корнями являются числа <span style="color: #000000;">2</span> и <span style="color: #000000;">2</span>. Потому что их сумма равна <span style="color: #000000;">4</span> и произведение равно <span style="color: #000000;">4</span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11456 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-32.png" alt="Теорема Виета рисунок 32" width="64" height="58" /></p>
+<p>Значение <span style="color: #000000;"><em>x</em><sub>1</sub></span> совпадает с <span style="color: #000000;"><em>x</em><sub>2</sub></span>. Это тот случай, когда квадратное уравнение имеет только один корень. Если мы попробуем решить данное уравнение с помощью формул корней квадратного уравнения, то обнаружим что дискриминант равен нулю, и корень вычисляется по формуле <img loading="lazy" decoding="async" class="alignnone size-full wp-image-11307" src="https://spacemath.xyz/wp-content/uploads/2019/10/kvadratnoe-uravnenie-risunok-96.png" alt="квадратное уравнение рисунок 96" width="73" height="49" /></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11457 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-33.png" alt="Теорема Виета рисунок 33" width="248" height="115" /></p>
+<p>Данный пример показывает, что теорема обратная теореме Виета, работает и для уравнений, имеющих только один корень. Признаком того, что квадратное уравнение имеет только один корень является то, что значения <span style="color: #000000;"><em>x</em><sub>1</sub></span> и <span style="color: #000000;"><em>x</em><sub>2</sub></span> совпадают.</p>
+<hr />
+<p><strong>Пример 2</strong>. Решить уравнение <span style="color: #000000;"><em>x</em><sup>2 </sup>+ 3<em>x </em>+ 2 = 0</span> по теореме, обратной теореме Виета.</p>
+<p>Запишем сумму и произведение корней данного уравнения:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11466 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-41.png" alt="Теорема Виета рисунок 41" width="111" height="59" /></p>
+<p>Теперь подберём значения <span style="color: #000000;"><em>x</em><sub>1</sub></span> и <span style="color: #000000;"><em>x</em><sub>2</sub></span>. Здесь начинается самое интересное. Произведение корней равно <span style="color: #000000;">2</span>. Число <span style="color: #000000;">2</span> можно получить перемножив <span style="color: #000000;">1</span> и <span style="color: #000000;">2</span>. Но сумма корней <span style="color: #000000;"><em>x</em><sub>1 </sub></span>+ <span style="color: #000000;"><em>x</em><sub>2</sub></span> равна отрицательному числу <span style="color: #000000;">−3</span>. Значит значения <span style="color: #000000;">1</span> и <span style="color: #000000;">2</span> не подходят.</p>
+<p>Сумма бывает отрицательной если оба слагаемых отрицательны либо отрицательным является одно слагаемое, модуль которого больше.</p>
+<p>Если подберём корни с разными знаками, то не будет выполняться равенство <span style="color: #000000;"><em>x</em><sub>1 </sub>× <em>x</em><sub>2 </sub>= 2</span>.</p>
+<p>Если подберем положительные корни, то будет выполняться равенство <span style="color: #000000;"><em>x</em><sub>1 </sub>× <em>x</em><sub>2 </sub>= 2</span>, но не будет выполняться равенство <span style="color: #000000;"><em>x</em><sub>1 </sub>+ <em>x</em><sub>2 </sub>= −3</span>.</p>
+<p>Очевидно, что корнями являются два отрицательных числа. Произведение отрицательных чисел есть положительное число. А сумма отрицательных чисел есть отрицательное число.</p>
+<p>Тогда равенствам будут удовлетворять числа <span style="color: #000000;">−1</span> и <span style="color: #000000;">−2</span>.</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11467 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-42.png" alt="Теорема Виета рисунок 42" width="296" height="59" /></p>
+<p>Итак, корнями являются числа <span style="color: #000000;">−1</span> и <span style="color: #000000;">−2</span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11468 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-43.png" alt="Теорема Виета рисунок 43" width="75" height="58" /></p>
+<hr />
+<p><strong>Пример 3</strong>. Решить уравнение <span style="color: #000000;"><em>x</em><sup>2 </sup>+ 16<em>x </em>+ 15 = 0</span> по теореме, обратной теореме Виета.</p>
+<p>Запишем сумму и произведение корней данного уравнения:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11469 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-44.png" alt="Теорема Виета рисунок 44" width="122" height="59" /></p>
+<p>Как и в прошлом примере сумма корней равна отрицательному числу, а произведение корней &#8212; положительному числу.</p>
+<p>Произведение бывает положительным если оба сомножителя положительны либо оба сомножителя отрицательны. Первый вариант отпадает сразу, поскольку сумма корней равна отрицательному числу. Тогда получается, что оба корня будут отрицательными. Попробуем подобрать их.</p>
+<p>Число <span style="color: #000000;">15</span> можно получить, если перемножить числа <span style="color: #000000;">−1</span> и <span style="color: #000000;">−15</span> или <span style="color: #000000;">(−3)</span> и <span style="color: #000000;">(−5)</span>. В данном случае подходит первый вариант, поскольку сумма чисел <span style="color: #000000;">−1</span> и <span style="color: #000000;">−15</span> равна <span style="color: #000000;">−16</span>, а их произведение равно <span style="color: #000000;">15</span>. Значит корнями уравнения <span style="color: #000000;"><em>x</em><sup>2 </sup>+ 16<em>x </em>+ 15 = 0</span> являются числа <span style="color: #000000;">−1</span> и <span style="color: #000000;">−15</span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11470 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-45.png" alt="Теорема Виета рисунок 45" width="81" height="58" /></p>
+<hr />
+<p><strong>Пример 4</strong>. Решить уравнение <span style="color: #000000;"><em>x</em><sup>2 </sup>− 10<em>x </em>− 39 = 0</span> по теореме, обратной теореме Виета.</p>
+<p>Запишем сумму и произведение корней данного уравнения:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-11486 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-52.png" alt="Теорема Виета рисунок 52" width="119" height="59" /></p>
+<p>Произведение корней равно отрицательному числу. Значит один из корней является отрицательным. Число <span style="color: #000000;">−39</span> можно получить если перемножить числа <span style="color: #000000;">−3</span> и <span style="color: #000000;">13</span> либо <span style="color: #000000;">−13</span> и <span style="color: #000000;">3</span>. Из этих комбинаций больше годится комбинация <span style="color: #000000;">−3</span> и <span style="color: #000000;">13</span>, поскольку при перемножении этих чисел получается <span style="color: #000000;">−39</span>, а при сложении <span style="color: #000000;">10</span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11487 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-53.png" alt="Теорема Виета рисунок 53" width="134" height="58" /></p>
+<p>Значит корнями уравнения <span style="color: #000000;"><em>x</em><sup>2 </sup>− 10<em>x </em>− 39 = 0</span> являются числа <span style="color: #000000;">−3</span> и <span style="color: #000000;">13</span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11634 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/12/Teorema-Vieta-risunok-73.png" alt="Теорема Виета рисунок 73" width="74" height="59" /></p>
+<hr />
+<p><strong>Пример 5</strong>. Первый корень уравнения <span style="color: #000000;"><em>x</em><sup>2 </sup>+ <em>bx </em>+ 45 = 0</span> равен <span style="color: #000000;">15</span>. Найти второй корень этого уравнения, а также значение коэффициента <span style="color: #000000;"><em>b</em></span>.</p>
+<p>По теореме Виета произведение корней приведённого квадратного уравнения равно свободному члену. В данном случае это произведение равно <span style="color: #000000;">45</span></p>
+<p style="text-align: center;"><span style="color: #000000;"><em>x</em><sub>1</sub> × <em>x</em><sub>2</sub> = 45</span></p>
+<p>При этом один из корней уже известен &#8212; это корень <span style="color: #000000;">15</span>.</p>
+<p style="text-align: center;"><span style="color: #000000;">15 × <em>x</em><sub>2</sub> = 45</span></p>
+<p>Тогда второй корень будет равен <span style="color: #000000;">3</span>, потому что число <span style="color: #000000;">45</span> получается, если <span style="color: #000000;">15</span> умножить на <span style="color: #000000;">3</span></p>
+<p style="text-align: center;"><span style="color: #000000;">15 × 3 = 45</span></p>
+<p>Значит <span style="color: #000000;"><em>x</em><sub>2</sub> = 3</span></p>
+<p>Этот второй корень также можно было бы получить, выразив из равенства <span style="color: #000000;">15 × <em>x</em><sub>2</sub> = 45 </span>переменную <span style="color: #000000;"><em>x</em><sub>2</sub></span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11635 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/12/Teorema-Vieta-risunok-74.png" alt="Теорема Виета рисунок 74" width="103" height="108" /></p>
+<p>Теперь определим значение коэффициента <span style="color: #000000;"><em>b</em></span>. Для этого напишем сумму корней уравнения:</p>
+<p style="text-align: center;"><span style="color: #000000;">15 + 3 = 18</span></p>
+<p>По теореме Виета сумма корней приведенного квадратного уравнения равна второму коэффициенту, взятому с противоположным знаком. Если сумма корней равна 18, а 18 это положительное число, то в самóм уравнении этот коэффициент будет отрицательным:</p>
+<p style="text-align: center;"><span style="color: #000000;"><em>x</em><sup>2 </sup>− 18<em>x </em>+ 45 = 0</span></p>
+<p>Значит <span style="color: #000000;"><em>b </em>= −18</span>.</p>
+<p>Обычно решение к такой задаче записывают так. Сначала записывают основную теорему Виета в виде суммы и произведения корней:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11446 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-23.png" alt="Теорема Виета рисунок 23" width="121" height="59" /></p>
+<p>Затем в это выражение подставляют имеющиеся известные значения. В нашем случае известно, что первый корень равен <span style="color: #000000;">15</span>, а свободный член уравнения <span style="color: #000000;"><em>x</em><sup>2 </sup>+ <em>bx </em>+ 45 = 0 </span>равен <span style="color: #000000;">45</span></p>
+<p><img loading="lazy" decoding="async" class="wp-image-11641 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/12/Teorema-Vieta-risunok-77.png" alt="Теорема Виета рисунок 77" width="116" height="59" /></p>
+<p>Из этой системы следует найти <span style="color: #000000;"><em>x</em><sub>2</sub></span> и <span style="color: #000000;"><em>b</em></span>. Выразим эти параметры:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11642 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/12/Teorema-Vieta-risunok-78.png" alt="Теорема Виета рисунок 78" width="121" height="83" /></p>
+<p>Из этой системы мы видим, что <span style="color: #000000;"><em>x</em><sub>2</sub></span> равно 3. Подставим его в первое равенство:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11643 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/12/Teorema-Vieta-risunok-79.png" alt="Теорема Виета рисунок 79" width="113" height="58" /></p>
+<p>Теперь из первого равенства мы видим, что <em><span style="color: #000000;">−b</span></em> равно <span style="color: #000000;">18</span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11644 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/12/Teorema-Vieta-risunok-80.png" alt="Теорема Виета рисунок 80" width="81" height="58" /></p>
+<p>Но нас интересует <span style="color: #000000;"><em>b</em></span>, а не <em><span style="color: #000000;">−b</span></em>. Следует помнить, что <span style="color: #000000;"><em>−b</em></span> это <span style="color: #000000;">−1<em>b</em></span>. Чтобы найти <span style="color: #000000;"><em>b</em></span> нужно <span style="color: #000000;">18</span> разделить на <span style="color: #000000;">−1</span>. Тогда <span style="color: #000000;"><em>b</em></span> станет равно <span style="color: #000000;">−18</span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11645 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/12/Teorema-Vieta-risunok-81.png" alt="Теорема Виета рисунок 81" width="85" height="167" /></p>
+<p>Этот же результат можно получить если в выражении <img loading="lazy" decoding="async" class="size-full wp-image-11644 alignnone" src="https://spacemath.xyz/wp-content/uploads/2019/12/Teorema-Vieta-risunok-80.png" alt="Теорема Виета рисунок 80" width="81" height="58" /> умножить первое равенство на <span style="color: #000000;">−1</span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11646 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/12/Teorema-Vieta-risunok-82.png" alt="Теорема Виета рисунок 82" width="149" height="143" /></p>
+<p>Теперь возвращаемся к исходному уравнению <span style="color: #000000;"><em>x</em><sup>2 </sup>+ <em>bx </em>+ 45 = 0 </span>и подставляем найденное значение <span style="color: #000000;"><em>b</em></span></p>
+<p><img loading="lazy" decoding="async" class="wp-image-11648 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/12/Teorema-Vieta-risunok-83.png" alt="Теорема Виета рисунок 83" width="176" height="23" /></p>
+<p>Выполним умножение <span style="color: #000000;">−18</span> на <span style="color: #000000;"><em>x</em></span>. Получим <span style="color: #000000;">−18<em>x</em></span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11649 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/12/Teorema-Vieta-risunok-84.png" alt="Теорема Виета рисунок 84" width="175" height="25" /></p>
+<p>Раскроем скобки:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11650 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/12/Teorema-Vieta-risunok-85.png" alt="Теорема Виета рисунок 85" width="144" height="21" /></p>
+<hr />
+<p><strong>Пример 6</strong>. Используя теорему Виета, написать приведённое квадратное уравнение, корнями которых являются числа <span style="color: #000000;">2</span> и <span style="color: #000000;">8</span>.</p>
+<p>В этом задании корни уже известны. То есть <span style="color: #000000;"><em>x</em><sub>1 </sub>= 2</span>, <span style="color: #000000;"><em>x</em><sub>2 </sub>= 8</span>. По ним надо составить квадратное уравнение вида <span style="color: #000000;"><em>x</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0</span>.</p>
+<p>Запишем сумму и произведение корней:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11585 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-64.png" alt="Теорема Виета рисунок 64" width="92" height="58" /></p>
+<p>По теореме Виета сумма корней приведённого квадратного уравнения равна второму коэффициенту, взятому с противоположным знаком. Если сумма корней <span style="color: #000000;">2</span> и <span style="color: #000000;">8</span> равна <span style="color: #000000;">10</span>, то в самóм уравнении число <span style="color: #000000;">10</span> должно быть с противоположным знаком. Значит <span style="color: #000000;"><em>b </em>= −10</span>.</p>
+<p>Произведение корней по теореме Виета равно свободному члену. У нас это произведение равно <span style="color: #000000;">16</span>.</p>
+<p>Значит <span style="color: #000000;"><em>b </em>= −10</span>, <span style="color: #000000;"><em>c </em>= 16</span>. Отсюда:</p>
+<p style="text-align: center;"><span style="color: #000000;"><em>x</em><sup>2 </sup>− 10<em>x </em>+ 16<em> </em>= 0</span></p>
+<hr />
+<p><strong>Пример 7</strong>. Используя теорему Виета, написать приведённое квадратное уравнение, корнями которых являются числа <img loading="lazy" decoding="async" class="alignnone wp-image-11638 size-full" src="https://spacemath.xyz/wp-content/uploads/2019/12/Teorema-Vieta-risunok-75.png" alt="Теорема Виета рисунок 75" width="53" height="31" /> и <img loading="lazy" decoding="async" class="alignnone size-full wp-image-11639" src="https://spacemath.xyz/wp-content/uploads/2019/12/Teorema-Vieta-risunok-76.png" alt="Теорема Виета рисунок 76" width="53" height="31" /><span style="color: #000000;">.</span></p>
+<p>Запишем сумму и произведение корней:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-11587 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-65.png" alt="Теорема Виета рисунок 65" width="339" height="74" srcset="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-65.png 339w, https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-65-300x65.png 300w" sizes="(max-width: 339px) 100vw, 339px" /></p>
+<p>Сумма корней равна 2. Тогда в уравнении второй коэффициент будет равен −2. А произведение корней равно −1. Значит свободный член будет равен −1. Тогда:</p>
+<p style="text-align: center;"><span style="color: #000000;"><em>x</em><sup>2 </sup>− 2<em>x </em>− 1<em> </em>= 0</span></p>
+<hr />
+<h2 id="yak6" style="text-align: center;">Когда квадратное уравнение неприведённое</h2>
+<p>Теорема Виета выполняется только тогда, когда квадратное уравнение является приведённым.</p>
+<p>Если квадратное уравнение не является приведённым, но всё равно возникла необходимость применить теорему Виета, то обе части неприведённого квадратного уравнения следует разделить на коэффициент, который располагается перед <span style="color: #000000;"><em>x</em><sup>2</sup></span>.</p>
+<p>Если к примеру в квадратном уравнении <span style="color: #000000;"><em>a</em></span><span style="color: #000000;"><em>x</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0</span> коэффициент <span style="color: #000000;"><em>a</em></span> не равен единице, то данное уравнение является неприведённым. Чтобы сделать его приведённым, надо разделить обе его части на коэффициент, который располагается перед <span style="color: #000000;"><em>x</em><sup>2</sup></span>, то есть на <span style="color: #000000;"><em>a</em></span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11594 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-67.png" alt="Теорема Виета рисунок 67" width="145" height="140" /></p>
+<p>Получилось уравнение <img loading="lazy" decoding="async" class="alignnone wp-image-11596 size-full" src="https://spacemath.xyz/wp-content/uploads/2019/11/privedennoe-kvadratnoe-uravnenie.png" alt="приведенное квадратное уравнение" width="133" height="48" />, которое является приведённым. В нём второй коэффициент равен <img loading="lazy" decoding="async" class="alignnone size-full wp-image-11592" src="https://spacemath.xyz/wp-content/uploads/2019/11/b-na-a.png" alt="b na a" width="13" height="49" />, а свободный член равен <img loading="lazy" decoding="async" class="alignnone size-full wp-image-11593" src="https://spacemath.xyz/wp-content/uploads/2019/11/c-na-a.png" alt="c na a" width="13" height="43" />. Тогда сумма и произведение корней будут выглядеть так:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11591 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-66.png" alt="Теорема Виета рисунок 66" width="120" height="108" /></p>
+<p>Например, решим квадратное уравнение <span style="color: #000000;">4<em>x</em><sup>2 </sup>+ 5<em>x </em>+ 1 = 0</span>. Это уравнение не является приведённым. Приведённым оно станет, если разделить обе его части на коэффициент, который располагается перед <span style="color: #000000;"><em>x</em><sup>2</sup></span>, то есть на 4</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11619 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/12/teorema-vieta-risunok-68.png" alt="теорема виета рисунок 68" width="199" height="215" /></p>
+<p>Получили приведённое квадратное уравнение. В нём второй коэффициент равен <img loading="lazy" decoding="async" class="alignnone size-full wp-image-11620" src="https://spacemath.xyz/wp-content/uploads/2019/12/5-na-4.png" alt="5 на 4" width="12" height="47" />, а свободный член <img loading="lazy" decoding="async" class="alignnone size-full wp-image-5140" src="https://spacemath.xyz/wp-content/uploads/2017/07/odna-chetvertaya.png" alt="одна четвертая" width="12" height="43" />. Тогда по теореме Виета имеем:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11597 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-66-1.png" alt="Теорема Виета рисунок 66" width="122" height="106" /></p>
+<p>Отсюда методом подбора находим корни −1 и <img loading="lazy" decoding="async" class="alignnone size-full wp-image-2795" src="https://spacemath.xyz/wp-content/uploads/2016/11/minus-odna-chetvertaya" alt="" width="27" height="43" /></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11598 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-67-1.png" alt="Теорема Виета рисунок 67" width="85" height="82" /></p>
+<p>Возможно этот метод вы редко будете использовать при решении квадратных уравнений. Но знать о нём не помешает.</p>
+<hr />
+<p>&nbsp;</p>
+<p><strong>Пример 2</strong>. Решить квадратное уравнение <span style="color: #000000;">3<em>x</em><sup>2 </sup>− 7<em>x </em>+ 2 = 0</span></p>
+<p>Данное уравнение не является приведённым, а значит его пока нельзя решить по теореме, обратной теореме Виета.</p>
+<p>Сделаем данное уравнение приведенным. Разделим обе части на коэффициент, который располагается перед <span style="color: #000000;"><em>x</em><sup>2</sup></span></p>
+<p><img loading="lazy" decoding="async" class="wp-image-11633 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/12/Teorema-Vieta-risunok-36.png" alt="Теорема Виета рисунок 36" width="157" height="203" /></p>
+<p>Получили уравнение <img loading="lazy" decoding="async" class="alignnone size-full wp-image-11460" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-36.png" alt="Теорема Виета рисунок 36" width="137" height="48" />. Запишем сумму и произведение корней этого уравнения:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11461 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-37.png" alt="Теорема Виета рисунок 37" width="105" height="107" /></p>
+<p>Отсюда методом подбора находим корни <span style="color: #000000;">2</span> и <img loading="lazy" decoding="async" class="alignnone size-full wp-image-3018" src="https://spacemath.xyz/wp-content/uploads/2016/12/odna-tretya.png" alt="одна третья" width="12" height="43" /></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11465 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/11/Teorema-Vieta-risunok-40.png" alt="Теорема Виета рисунок 40" width="66" height="83" /></p>
+<hr />
+<p><strong>Пример 3</strong>. Решить квадратное уравнение <span style="color: #000000;">2<em>x</em><sup>2 </sup>− 3<em>x </em>− 2 = 0</span></p>
+<p>Это неприведённое квадратное уравнение. Чтобы сделать его приведённым, нужно разделить обе его части на <span style="color: #000000;">2</span>. Сделать это можно в уме. Если <span style="color: #000000;">2<em>x</em><sup>2</sup></span> разделить на <span style="color: #000000;">2</span>, то полýчится <span style="color: #000000;"><em>x</em><sup>2</sup></span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11624 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/12/iks-v-kvadrate-strochnoe-vyrazhenie.png" alt="икс в квадрате строчное выражение" width="18" height="28" /></p>
+<p>Далее если <span style="color: #000000;">−3<em>x</em></span> разделить на <span style="color: #000000;">2</span>, то полýчится <img loading="lazy" decoding="async" class="alignnone size-full wp-image-11621" src="https://spacemath.xyz/wp-content/uploads/2019/12/minus-3x-na-2.png" alt="минус 3x на 2" width="38" height="45" />. Чтобы видеть где коэффициент, а где переменная, такое выражение записывают в виде <img loading="lazy" decoding="async" class="alignnone size-full wp-image-11622" src="https://spacemath.xyz/wp-content/uploads/2019/12/minus-3x-na-2-2.png" alt="минус 3x на 2 2" width="42" height="47" /></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11623 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/12/teorema-vieta-risunok-69.png" alt="теорема виета рисунок 69" width="69" height="45" /></p>
+<p>Далее если<span style="color: #000000;"> −2</span> разделить на <span style="color: #000000;">2</span>, то полýчится <span style="color: #000000;">−1</span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11626 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/12/teorema-vieta-risunok-71.png" alt="теорема виета рисунок 71" width="95" height="45" /></p>
+<p>Прирáвниваем получившееся выражение к нулю:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11625 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/12/teorema-vieta-risunok-70.png" alt="теорема виета рисунок 70" width="126" height="45" /></p>
+<p>Теперь применяем теорему Виета. Сумма корней будет равна второму коэффициенту, взятому с противоположным знáком, а произведение корней свободному члену:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-11627 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/12/teorema-vieta-risunok-72.png" alt="теорема виета рисунок 72" width="111" height="82" /></p>
+<p>Отсюда методом подбора находим корни <span style="color: #000000;">2</span> и <img loading="lazy" decoding="async" class="alignnone size-full wp-image-3071" src="https://spacemath.xyz/wp-content/uploads/2016/12/minus-odna-vtoraya.png" alt="минус одна вторая" width="28" height="43" /></p>
+    <h3>Хотите перейти на следующий урок?</h3>
+<a href="lection1.html" class="back">Вернуться ‹‹</a>
+<a href="lection3.html" class="next">Главная »</a>
+
+<script type="text/javascript">
+
+var menuItems = document.querySelectorAll('.skew-menu ul li');
+
+for (var i = 0; i < menuItems.length; i++) {
+   menuItems[i].addEventListener('click', function() {
+       // Действия при выборе определенной лекции
+   });
+}
+document.querySelectorAll('.skew-menu li').forEach(item => {
+    item.addEventListener('mouseover', () => {
+        item.style.transition = 'transform 0.3s';
+        item.style.transform = 'scale(1.2)';
+    });
+
+    item.addEventListener('mouseout', () => {
+        if (!item.classList.contains("clicked")) { // Проверяем, не была ли ячейка уже уменьшена при клике
+            item.style.transition = 'transform 0.3s';
+            item.style.transform = 'scale(1)';
+        }
+    });
+
+     document.addEventListener("click", function(event) { 
+         if (!event.target.closest(".skew-menu li")) return;
+
+         const clickedItem= event.target.closest(".skew-menu li");
+
+         document.querySelectorAll('.skew-menu li').forEach(otherItem => { 
+             otherItem.classList.remove("clicked");
+             otherItem.removeEventListener("transitionend", removeTransition);
+          });
+          
+          function removeTransition() { this.classList.remove("clicked"); }
+
+          const clickedClassList= clickedItem.classList;
+          clickedClassList.add("clicked");
+
+          setTimeout(() =>{
+              clickedClassList.remove("clicked")
+           },300)
+
+           function toggleTransform(){
+               let scaleValue= window.getComputedStyle(clickedItem).getPropertyValue('transform');
+
+               if(scaleValue==='none'){
+                   clickedItem.setAttribute(
+                       "style",
+                       "transition: all .5s ease-in-out; transform: scale(.8);"
+                     );
+                 }else{
+                     clickedItem.removeAttribute("style");
+                  }
+            }
+
+            toggleTransform();
+      });
+});
+let currentLesson = document.querySelector('.active a');
+currentLesson.style.color = '#007bff';
+
+menuItems[0].classList.add("active");
+
+document.querySelector('.back').setAttribute("href", "lection30.html");
+document.querySelector('.next').setAttribute("href", "index.html");
+
+</script>
+</body>
+</html>

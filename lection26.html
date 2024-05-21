@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лекция 26: Степень с целым показателем</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: 200px auto;
+            gap: 20px;
+        }
+        
+        .skew-menu {
+            background-color: #f2f2f2; /* Цвет фона для меню */
+            padding: 10px;
+        }
+
+        .lecture-content {
+            background-color: #e6e6e6; /* Цвет фона для контента лекции */
+            padding: 20px;
+        }
+
+        h1, h2, p {
+          margin-bottom: 15px;  
+      }
+
+      a.back, a.next{
+         text-decoration:none; 
+         color:#333; 
+     }
+     body {
+            background-image: url(images/7.avif);
+            background-attachment: fixed;
+            -moz-background-size: 100%;
+            -webkit-background-size: 100%;
+            -o-background-size: 100%;
+            background-size: 100%;
+        }
+        h1{
+        color: rgb(0, 0, 0) !important; 
+        font-family: courier !important; 
+         text-align: center !important;
+  }
+        p {
+         color: rgb(0, 0, 0);
+         font-family: 'Times New Roman', Times, serif;
+         font-size: 150%;
+         text-align: right; 
+        }
+        h2{
+        color: dark !important; 
+        font-family: Georgia, 'Times New Roman', Times, serif !important; 
+         text-align: center !important;
+  }
+        p {
+         color: rgb(0, 0, 0); 
+         font-family: 'Times New Roman', Times, serif;
+         font-size: 150%; 
+         text-align: center;
+        }
+        a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.back {
+    background-color: #ddd;
+    color: rgb(0, 0, 0);
+}
+
+.next {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.round {
+    border-radius: 50%;
+}
+@radius: 7px;
+@skew: 25deg;
+@main-color: tomato;
+
+body{
+  font-family:Helvetica Neue, Helvetica, sans-serif;
+  background:@main-color;
+}
+
+.skew-menu{
+  text-align:center;
+  margin-top:3em;
+  padding: 10px;
+    max-height: 2000px; /* Устанавливаем максимальную высоту */
+    max-width: 700px;
+    width: 200px;
+    overflow-y: auto; /* Добавляем вертикальную прокрутку при необходимости */
+}
+
+.skew-menu ul{
+  display:inline-block;
+  margin:0;
+  padding:0;
+  list-style:none;
+  transform:skew(-@skew);
+  width: 250px;
+  border-radius: 10px;
+}
+
+.skew-menu ul li{
+  background:#fff;
+  float:left;
+  border-right:1px solid #eee;
+  box-shadow:0 1px 1px rgba(0,0,0,0.1);
+  text-transform:uppercase;
+  color:#555;
+  font-weight:bolder;
+  transition:all 0.3s linear;
+  display: block;
+  text-align: center;
+  width: 200px;
+  max-width: 200px;
+  &:first-child
+  {
+
+    border-radius:@radius 0 0 @radius;
+  }
+  
+  &:last-child{
+    border-right:none;
+    border-radius:0 @radius @radius 0;
+  }
+  
+  &:hover{
+    background:#eee;
+    color:@main-color;
+  }
+  
+  a{
+    display:block;
+    padding:1em 2em;
+    color:inherit;
+    text-decoration:none;
+    transform:skew(@skew);
+  }
+}
+.active a {
+  color: #007bff; /* Выделите цвет текста */
+}
+.navless{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: lighter;
+    font-size: 20px;
+}
+.nav menu{
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+      .menu b{
+        text-align: center;
+      }
+    </style>
+</head>
+
+<body>
+
+<nav class="skew-menu">
+    <ul>
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="lection1.html">Лекция 1</a></li>
+      <li><a href="lection2.html">Лекция 2</a></li>
+      <li><a href="lection3.html">Лекция 3</a></li>
+      <li><a href="lection4.html">Лекция 4</a></li>
+      <li><a href="lection5.html">Лекция 5</a></li>
+      <li><a href="lection6.html">Лекция 6</a></li>
+      <li><a href="lection7.html">Лекция 7</a></li>
+      <li><a href="lection8.html">Лекция 8</a></li>
+      <li><a href="lection9.html">Лекция 9</a></li>
+      <li><a href="lection10.html">Лекция 10</a></li>
+      <li><a href="lection11.html">Лекция 11</a></li>
+      <li><a href="lection12.html">Лекция 12</a></li>
+      <li><a href="lection13.html">Лекция 13</a></li>
+      <li><a href="lection14.html">Лекция 14</a></li>
+      <li><a href="lection15.html">Лекция 15</a></li>
+      <li><a href="lection16.html">Лекция 16</a></li>
+      <li><a href="lection17.html">Лекция 17</a></li>
+      <li><a href="lection18.html">Лекция 18</a></li>
+      <li><a href="lection19.html">Лекция 19</a></li>
+      <li><a href="lection20.html">Лекция 20</a></li>
+      <li><a href="lection21.html">Лекция 21</a></li>
+      <li><a href="lection22.html">Лекция 22</a></li>
+      <li><a href="lection23.html">Лекция 23</a></li>
+      <li><a href="lection24.html">Лекция 24</a></li>
+      <li><a href="lection25.html">Лекция 25</a></li>
+      <li class="active"><a href="lection26.html">Лекция 26</a></li>
+      <li><a href="lection27.html">Лекция 27</a></li>
+      <li><a href="lection28.html">Лекция 28</a></li>
+      <li><a href="lection29.html">Лекция 29</a></li>
+      <li><a href="lection30.html">Лекция 30</a></li>
+    </ul>
+</nav>
+
+<div class="lecture-content">
+  <h1 class="entry-title">Лекция 26: Степень с целым показателем</h1>      
+
+      
+</header><!-- .entry-header -->
+
+<div class="entry-content">
+  <p>Степень с целым показателем &#8212; это степень, показателем которой является любое целое число.</p>
+<p>В прошлом уроке мы изучили степень с натуральным показателем. Этот вид степени тоже является степенью с целым показателем, поскольку натуральные числа относятся к целым числам.</p>
+<p>Также, мы рассмотрели степень, показателем которой является 0. Этот вид степени тоже является степенью с целым показателем, поскольку 0 относится к целым числам.</p>
+<p>Рассмотрим ещё один вид степени с целым показателем, а именно показателем которой является целое отрицательное число. Выглядят эти степени так:</p>
+<p style="text-align: center;"><span style="color: #000000;">2<sup>−2</sup>, 10<sup>−7</sup>, <em>a</em><sup>−8</sup></span></p>
+<p>В дальнейшем любую степень с натуральным, нулевым или целым отрицательным показателем, мы будем называть <strong>степенью с целым показателем</strong>.</p>
+</nav>
+<nav id="menu"><b>Содержание урока</b></p>
+<ul class="navless">
+<li><a href="#yak1">Правило вычисления</a></li>
+<li><a href="#yak2">Тождественные преобразования</a></li>
+<li><a href="#yak3">Поднятие степени из знаменателя в числитель и наоборот</a></li>
+<li><a href="#yak4">Возведение числа 10 в целую отрицательную степень</a></li>
+<li><a href="#yak5">Представление чисел 0,1, 0,01, 0,001 в виде степени с основанием 10</a></li>
+<li><a href="#yak6">Стандартный вид числа</a></li>
+</ul>
+</nav>
+<h2 id="yak1" style="text-align: center;">Правило вычисления</h2>
+<p>Рассмотрим следующую последовательность степеней:</p>
+<p style="text-align: center;"><span style="color: #000000;">2<sup>0</sup>, 2<sup>1</sup>, 2<sup>2</sup>, 2<sup>3</sup>, 2<sup>4</sup>, 2<sup>5</sup></span></p>
+<p>Первая степень в этой последовательности это степень <span style="color: #000000;">2<sup>0</sup></span>. Предыдущая степень с целым показателем будет уже с отрицательным показателем и выглядеть как <span style="color: #000000;">2<sup>−1</sup></span>.</p>
+<p style="text-align: center;"><span style="color: #000000;">2<sup>−1</sup>, 2<sup>0</sup>, 2<sup>1</sup>, 2<sup>2</sup>, 2<sup>3</sup>, 2<sup>4</sup>, 2<sup>5</sup></span></p>
+<p>А предыдущая степень с целым показателем, которая располагается до <span style="color: #000000;">2<sup>−1</sup></span>, будет степень <span style="color: #000000;">2<sup>−2</sup></span></p>
+<p style="text-align: center;"><span style="color: #000000;">2<sup>−2</sup>, 2<sup>−1</sup>, 2<sup>0</sup>, 2<sup>1</sup>, 2<sup>2</sup>, 2<sup>3</sup>, 2<sup>4</sup>, 2<sup>5</sup></span></p>
+<p>Продолжим эту последовательность в сторону степеней с целыми отрицательными показателями:</p>
+<p style="text-align: center;"><span style="color: #000000;">2<sup>−5</sup>, 2<sup>−4</sup>, 2<sup>−3</sup>, 2<sup>−2</sup>, 2<sup>−1</sup>, 2<sup>0</sup>, 2<sup>1</sup>, 2<sup>2</sup>, 2<sup>3</sup>, 2<sup>4</sup>, 2<sup>5</sup></span></p>
+<p>Теперь попробуем вычислить эти степени. Степени с натуральными показателями и степень, показателем которой является 0, вычисляются легко:</p>
+<p><img decoding="async" class="wp-image-9760 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/02/stepen-s-ts.p.-risunok-1.png" alt="степень с ц.п. рисунок 1" width="580" height="107" srcset="https://spacemath.xyz/wp-content/uploads/2019/02/stepen-s-ts.p.-risunok-1.png 580w, https://spacemath.xyz/wp-content/uploads/2019/02/stepen-s-ts.p.-risunok-1-300x55.png 300w" sizes="(max-width: 580px) 100vw, 580px" /></p>
+<p>А как вычислить степени с отрицательными показателями? Для начала немного отойдём от темы и затронем несколько закономерностей.</p>
+<p>В отрицательную степень число возводится немного иначе. Следует понимать, что если при возведении в положительную степень число увеличивается, то при возведении в отрицательную степень это число наоборот уменьшается.</p>
+<p>Если мы возьмём какое-нибудь число <span style="color: #000000;"><em>n</em></span>, и начнём последовательно увеличивать его степень, то получим последовательность чисел, в которой каждое число меньше следующего в <em><span style="color: #000000;">n</span></em> раз.</p>
+<p>Например, возьмём число 2. Начиная с нуля будем последовательно увеличивать его показатель:</p>
+<p style="text-align: center;"><span style="color: #000000;">2<sup>0</sup>, 2<sup>1</sup>, 2<sup>2</sup>, 2<sup>3</sup>, 2<sup>4</sup>, 2<sup>5</sup></span></p>
+<p>Вычислим эти степени:</p>
+<p style="text-align: center;"><span style="color: #000000;">1, 2, 4, 8, 16, 32</span></p>
+<p>Получили последовательность чисел, в которой каждое число меньше следующего числа в 2 раза. Тогда логично предположить, что число, располагающееся до единицы, будет в два раза меньше единицы. Его можно получить, если 1 разделить на 2</p>
+<p><img decoding="async" class="size-full wp-image-9769 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/02/1-na-2-1-2-4-8-16-32.png" alt="1 на 2 1 2 4 8 16 32" width="162" height="45" /></p>
+<p>Вернёмся к нашей исходной последовательности, где мы вычисляли степени. Получается, что степень <span style="color: #000000;">2<sup>−1</sup></span> мы вычислили. Она равна рациональному числу <img decoding="async" class="alignnone size-full wp-image-2948" src="https://spacemath.xyz/wp-content/uploads/2016/11/odna-vtoraya.png" alt="одна вторая" width="12" height="43" /></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9761 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/02/stepen-s-ts.p.-risunok-2.png" alt="степень с ц.п. рисунок 2" width="580" height="143" srcset="https://spacemath.xyz/wp-content/uploads/2019/02/stepen-s-ts.p.-risunok-2.png 580w, https://spacemath.xyz/wp-content/uploads/2019/02/stepen-s-ts.p.-risunok-2-300x74.png 300w" sizes="(max-width: 580px) 100vw, 580px" /></p>
+<p>Предыдущее за числом <img decoding="async" class="alignnone size-full wp-image-2948" src="https://spacemath.xyz/wp-content/uploads/2016/11/odna-vtoraya.png" alt="одна вторая" width="12" height="43" /> должно быть в два раза меньше, чем <img decoding="async" class="alignnone size-full wp-image-2948" src="https://spacemath.xyz/wp-content/uploads/2016/11/odna-vtoraya.png" alt="одна вторая" width="12" height="43" />. Чтобы его получить разделим <img decoding="async" class="alignnone size-full wp-image-2948" src="https://spacemath.xyz/wp-content/uploads/2016/11/odna-vtoraya.png" alt="одна вторая" width="12" height="43" /> на <span style="color: #000000;">2</span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7126 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/02/1-na-2-na-2-reshenie.png" alt="1 на 2 на 2 решение" width="164" height="45" /></p>
+<p>Получили <img loading="lazy" decoding="async" class="alignnone size-full wp-image-5140" src="https://spacemath.xyz/wp-content/uploads/2017/07/odna-chetvertaya.png" alt="одна четвертая" width="12" height="43" />. Это значение степени <span style="color: #000000;">2<sup>−2</sup></span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9762 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/02/stepen-s-ts.p.-risunok-3.png" alt="степень с ц.п. рисунок 3" width="580" height="143" srcset="https://spacemath.xyz/wp-content/uploads/2019/02/stepen-s-ts.p.-risunok-3.png 580w, https://spacemath.xyz/wp-content/uploads/2019/02/stepen-s-ts.p.-risunok-3-300x74.png 300w" sizes="(max-width: 580px) 100vw, 580px" /></p>
+<p>Продолжая деление на 2 можно получить значения остальных степеней с целыми отрицательными показателями:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-9764 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/02/stepen-s-ts.p.-risunok-4.png" alt="степень с ц.п. рисунок 4" width="650" height="143" srcset="https://spacemath.xyz/wp-content/uploads/2019/02/stepen-s-ts.p.-risunok-4.png 650w, https://spacemath.xyz/wp-content/uploads/2019/02/stepen-s-ts.p.-risunok-4-300x66.png 300w" sizes="(max-width: 650px) 100vw, 650px" /></p>
+<p>Заметим, что в данной последовательности значения степеней с отрицательными показателями являются обратными числами</a> к значениям степеней с натуральными показателями:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9765 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/02/stepen-s-ts.p.-risunok-5.png" alt="степень с ц.п. рисунок 5" width="659" height="312" srcset="https://spacemath.xyz/wp-content/uploads/2019/02/stepen-s-ts.p.-risunok-5.png 659w, https://spacemath.xyz/wp-content/uploads/2019/02/stepen-s-ts.p.-risunok-5-300x142.png 300w" sizes="(max-width: 659px) 100vw, 659px" /></p>
+<p>К примеру, значение степени в <span style="color: #000000;">2<sup>2</sup></span> есть число <span style="color: #000000;">4</span>. А значение степени <span style="color: #000000;">2<sup>−2</sup></span> есть число <img loading="lazy" decoding="async" class="alignnone size-full wp-image-5140" src="https://spacemath.xyz/wp-content/uploads/2017/07/odna-chetvertaya.png" alt="одна четвертая" width="12" height="43" />. Числа <span style="color: #000000;">4</span> и <img loading="lazy" decoding="async" class="alignnone size-full wp-image-5140" src="https://spacemath.xyz/wp-content/uploads/2017/07/odna-chetvertaya.png" alt="одна четвертая" width="12" height="43" /> являются обратными друг другу. А степени <span style="color: #000000;">2<sup>2</sup></span> и <span style="color: #000000;">2<sup>−2</sup></span> отличаются только тем, что у них противоположные показатели.</p>
+<p>Можно сделать вывод, что для вычисления степени с отрицательным показателем, нужно записать дробь, в числителе которой единица, а в знаменателе та же самая степень, но с противоположным показателем. Покажем это на примере степени <span style="color: #000000;">2<sup>−2</sup></span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9222 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/2-v-2-ravno-1-na-2-v-2.png" alt="2 v - 2 ravno 1 na 2 v 2" width="79" height="45" /></p>
+<p>Вычислим степень, находящуюся в знаменателе:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9223 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/2-v-2-ravno-1-na-2-v-2-shag-2.png" alt="2 v - 2 ravno 1 na 2 v 2 шаг 2" width="127" height="45" /></p>
+<p>Таким образом, чтобы вычислить степень вида <span style="color: #000000;"><em>a</em><sup>−<em>n</em></sup></span> можно воспользоваться следующим правилом:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9220 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/vozvedenie-v-stepen-otr-chisla-formula.png" alt="возведение в степень отр числа формула" width="88" height="52" /></p>
+<p>Данное правило можно доказать, используя правило деления степеней с одинаковыми основаниями. Допустим, потребовалось вычислить выражение <span style="color: #000000;">2<sup>3 </sup>: 2<sup>5</sup></span>. Запишем это деление в виде дроби</p>
+<p><img loading="lazy" decoding="async" class="wp-image-9768 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/02/2-v-2-na-2-v-3-ratio.png" alt="2 в 2 на 2 в 3 ratio" width="18" height="49" /></p>
+<p>Воспользуемся правилом деления степеней с одинаковыми основаниями:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9767 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/02/2-v-2-na-2-v-3-ratio-2.png" alt="2 в 2 на 2 в 3 ratio 2" width="127" height="49" /></p>
+<p>Получили степень с отрицательным показателем <span style="color: #000000;">2<sup>−2</sup></span>. Ранее мы выяснили, что её значение равно <img loading="lazy" decoding="async" class="alignnone size-full wp-image-5140" src="https://spacemath.xyz/wp-content/uploads/2017/07/odna-chetvertaya.png" alt="одна четвертая" width="12" height="43" />. Чтобы убедиться в этом, попробуем вычислить выражение <img loading="lazy" decoding="async" class="wp-image-9768 size-full alignnone" src="https://spacemath.xyz/wp-content/uploads/2019/02/2-v-2-na-2-v-3-ratio.png" alt="2 в 2 на 2 в 3 ratio" width="18" height="49" />  как обычно, не используя правило деления степеней:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9773 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/02/2-v-3-na-2-v-5-reshenie-1.png" alt="2 в 3 на 2 в 5 решение 1" width="221" height="49" /></p>
+<p>Получили рациональное число <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9774" src="https://spacemath.xyz/wp-content/uploads/2019/02/8-na-32.png" alt="8 на 32" width="22" height="45" />. Сократим его на 8. Тогда получим <img loading="lazy" decoding="async" class="alignnone size-full wp-image-5140" src="https://spacemath.xyz/wp-content/uploads/2017/07/odna-chetvertaya.png" alt="одна четвертая" width="12" height="43" /></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9772 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/02/2-v-3-na-2-v-5-reshenie.png" alt="2 в 3 на 2 в 5 решение" width="332" height="49" srcset="https://spacemath.xyz/wp-content/uploads/2019/02/2-v-3-na-2-v-5-reshenie.png 332w, https://spacemath.xyz/wp-content/uploads/2019/02/2-v-3-na-2-v-5-reshenie-300x44.png 300w" sizes="(max-width: 332px) 100vw, 332px" /></p>
+<hr />
+<p><strong>Пример 2</strong>. Найти значение выражения <span style="color: #000000;">9<sup>−2</sup></span></p>
+<p>Воспользуемся правилом вычисления степени с целым отрицательным показателем:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9239 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/9-v-2-reshenie.png" alt="9 v - 2 решение" width="124" height="45" /></p>
+<hr />
+<p><strong>Пример 3</strong>. Найти значение выражения <span style="color: #000000;">3<sup>−3</sup></span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9243 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/3-v-3-reshenie.png" alt="3 в -3 решение" width="124" height="45" /></p>
+<p>Следует упомянуть, что правило <img loading="lazy" decoding="async" class="alignnone wp-image-9786 size-full" src="https://spacemath.xyz/wp-content/uploads/2019/02/a-v-1-formula-130px" alt="а в -1 формула 130px" width="73" height="49" /> работает только тогда, когда <span style="color: #000000;"><em>a ≠ 0</em></span>.</p>
+<p>Действительно, если <em>a</em> будет равным нулю, то в знаменателе получим 0, а на нуль делить нельзя.</p>
+<hr />
+<p><strong>Пример 4</strong>. Найти значение выражения <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9833" src="https://spacemath.xyz/wp-content/uploads/2019/02/1-na-2-v-2-primer.png" alt="1 na 2 v -2 пример" width="47" height="61" /></p>
+<p><a href="https://spacemath.xyz/umnozhenie-i-delenie-ratsionalnyh-chisel/#multistage_fractions" target="_blank" rel="noopener noreferrer"><img loading="lazy" decoding="async" class="aligncenter wp-image-9832 size-full" title="Многоэтажные дроби. Щелкните, чтобы перейти к уроку, где рассказывается об этом." src="https://spacemath.xyz/wp-content/uploads/2019/02/1-na-2-v-2-1.png" alt="1 na 2 v -2" width="268" height="89" /></a></p>
+<hr />
+<p><strong>Пример 5</strong>. Найти значение выражения <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9245" src="https://spacemath.xyz/wp-content/uploads/2018/10/2-na-3-v-3.png" alt="-2 на 3 в -3 " width="64" height="64" /></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9244 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/2-na-3-v-3-reshenie.png" alt="-2 на 3 в -3 решение" width="457" height="90" srcset="https://spacemath.xyz/wp-content/uploads/2018/10/2-na-3-v-3-reshenie.png 457w, https://spacemath.xyz/wp-content/uploads/2018/10/2-na-3-v-3-reshenie-300x59.png 300w" sizes="(max-width: 457px) 100vw, 457px" /></p>
+<p>При возведении обыкновенных дробей в отрицательную степень, можно пользоваться формулой <img loading="lazy" decoding="async" class="alignnone wp-image-9834 size-full" src="https://spacemath.xyz/wp-content/uploads/2019/02/a-na-b-v-n-formula.png" alt="a na b v n formula" width="104" height="54" />. Решим предыдущие два примера с помощью этой формулы:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9835 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/02/a-na-b-v-n-formula-primer.png" alt="a na b v n formula пример" width="320" height="130" srcset="https://spacemath.xyz/wp-content/uploads/2019/02/a-na-b-v-n-formula-primer.png 320w, https://spacemath.xyz/wp-content/uploads/2019/02/a-na-b-v-n-formula-primer-300x122.png 300w" sizes="(max-width: 320px) 100vw, 320px" /></p>
+<p>Желательно уметь возводить обыкновенную дробь в отрицательную степень как с помощью формулы, так и без неё.</p>
+<hr />
+<h2 id="yak2" style="text-align: center;">Тождественные преобразования</h2>
+<p>Все тождественные преобразования, которые мы рассматривали при изучении степени с натуральным показателем, сохраняются и для степеней с целыми отрицательными показателями.</p>
+<p>Например, чтобы представить выражение <span style="color: #000000;">2<sup>−1 </sup>× 2<sup>−3</sup></span> в виде степени, можно воспользоваться основным свойством степени:</p>
+<p style="text-align: center;"><span style="color: #000000;">2<sup>−1</sup> × 2<sup>−3</sup> = 2<sup>−1 + (−3)</sup> = 2<sup>−4</sup></span></p>
+<hr />
+<p><strong>Пример 2</strong>. Найти значение выражения <span style="color: #000000;">5<sup>−15 </sup>× 5<sup>16</sup></span></p>
+<p>Воспользуемся основным свойством степени:</p>
+<p style="text-align: center;"><span style="color: #000000;">5<sup>−15 </sup>× 5<sup>16 </sup>= 5<sup>−15 + 16 </sup>= 5<sup>1 </sup>= 5</span></p>
+<p>или:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-9924 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/02/5-16-na-5-v-16-reshenie-2.png" alt="5-16 на 5 в 16 решение 2" width="345" height="49" srcset="https://spacemath.xyz/wp-content/uploads/2019/02/5-16-na-5-v-16-reshenie-2.png 345w, https://spacemath.xyz/wp-content/uploads/2019/02/5-16-na-5-v-16-reshenie-2-300x43.png 300w" sizes="(max-width: 345px) 100vw, 345px" /></p>
+<p>Видим, что первый вариант решения намного проще и удобнее.</p>
+<hr />
+<p style="text-align: left;"><strong>Пример 3</strong>. Найти значение выражения <span style="color: #000000;">(10<sup>−4</sup>)<sup>−1</sup></span></p>
+<p>Воспользуемся правилом возведения степени в степень:</p>
+<p style="text-align: center;"><span style="color: #000000;">(10<sup>−4</sup>)<sup>−1</sup> = 10<sup>−4 × (−1)</sup> = 10<sup>4</sup> = 10000</span></p>
+<hr />
+<p><strong>Пример 4</strong>. Найти значение выражения <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9781" src="https://spacemath.xyz/wp-content/uploads/2019/02/10-v-6-na-5-v-6.png" alt="10 в -6 на 5 в -6" width="33" height="54" /></p>
+<p>Представим число основание <span style="color: #000000;">10</span> в виде произведения <span style="color: #000000;">2 × 5</span>. Тогда числитель примет вид <span style="color: #000000;">(2 × 5)<sup>−6</sup></span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9782 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/02/10-v-6-na-5-v-6-shag-1.png" alt="10 в -6 на 5 в -6 шаг 1" width="129" height="61" /></p>
+<p>В числителе применим правило возведения в степень произведения:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9783 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/02/10-v-6-na-5-v-6-shag-2.png" alt="10 в -6 на 5 в -6 шаг 2" width="224" height="49" /></p>
+<p>Сократим получившуюся дробь на <span style="color: #000000;">5<sup>−6</sup></span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9784 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/02/10-v-6-na-5-v-6-shag-3.png" alt="10 в -6 на 5 в -6 шаг 3" width="275" height="61" /></p>
+<p>Вычислим степень <span style="color: #000000;">2<sup>−6</sup></span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9785 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/02/10-v-6-na-5-v-6-shag-4.png" alt="10 в -6 на 5 в -6 шаг 4" width="371" height="61" srcset="https://spacemath.xyz/wp-content/uploads/2019/02/10-v-6-na-5-v-6-shag-4.png 371w, https://spacemath.xyz/wp-content/uploads/2019/02/10-v-6-na-5-v-6-shag-4-300x49.png 300w" sizes="(max-width: 371px) 100vw, 371px" /></p>
+<hr />
+<h2 id="yak3" style="text-align: center;">Поднятие степени из знаменателя в числитель и наоборот</h2>
+<p>Если знаменатель дробного выражения содержит степень, то данную степень можно поднять в числитель, изменив знак показателя этой степени на противоположный. Значение выражения при этом не меняется. Данное преобразование иногда используется при упрощении выражений.</p>
+<p>Рассмотрим следующее равенство:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9789 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/02/2-v-2-na-2-v-2-ravno-1.png" alt="2 в 2 на 2 в 2 равно 1" width="52" height="49" /></p>
+<p>Данное равенство является верным, поскольку выражение <img loading="lazy" decoding="async" class="alignnone wp-image-9791 size-full" src="https://spacemath.xyz/wp-content/uploads/2019/02/2-v-2-na-2-v-2.png" alt="2 в 2 на 2 в 2" width="19" height="53" /> равно <span style="color: #000000;">2<sup>0</sup></span>, а любое число в нулевой степени есть единица.</p>
+<p>Попробуем поднять степень <span style="color: #000000;">2<sup>2</sup></span> из знаменателя в числитель, изменив знак показателя этой степени на противоположный. При этом, поднятую степень и ту степень, которая располагалась в числителе, соединим знаком умножения:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9798 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/02/1-na-2-v-2-risunok-1.png" alt="1 на 2 в 2 рисунок 1" width="408" height="150" srcset="https://spacemath.xyz/wp-content/uploads/2019/02/1-na-2-v-2-risunok-1.png 408w, https://spacemath.xyz/wp-content/uploads/2019/02/1-na-2-v-2-risunok-1-300x110.png 300w" sizes="(max-width: 408px) 100vw, 408px" /></p>
+<p>Получили выражение <span style="color: #000000;">2<sup>2</sup> × 2<sup>−2</sup></span>. Чтобы его вычислить, воспользуемся основным свойством степени:</p>
+<p style="text-align: center;"><span style="color: #000000;">2<sup>2</sup> × 2<sup>−2</sup> = 2<sup>2 + (−2)</sup> = 2<sup>0</sup> = 1</span></p>
+<p>Получился тот же результат, что и раньше. Значит значение выражения не изменилось. Как это работает?</p>
+<p>Если в равенстве <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9786" src="https://spacemath.xyz/wp-content/uploads/2019/02/a-v-1-formula-130px" alt="а в -1 формула 130px" width="73" height="49" /> поменять местами левую и правую часть, то получим равенство <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9787" src="https://spacemath.xyz/wp-content/uploads/2019/02/a-v-1-formula-130px-2.png" alt="а в -1 формула 130px 2" width="72" height="49" />. Это позволяет заменять в выражениях дробь вида <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9788" src="https://spacemath.xyz/wp-content/uploads/2019/02/1-na-a-v-n.png" alt="1 на a v n" width="19" height="45" /> на тождественно равное ей выражение <span style="color: #000000;"><em>a<sup>−n</sup></em></span>.</p>
+<p>Теперь представим выражение <img loading="lazy" decoding="async" class="alignnone wp-image-9791 size-full" src="https://spacemath.xyz/wp-content/uploads/2019/02/2-v-2-na-2-v-2.png" alt="2 в 2 на 2 в 2" width="19" height="53" /> в виде произведения <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9793" src="https://spacemath.xyz/wp-content/uploads/2019/02/2-v-2-na-1-na-2-v-2.png" alt="2 в 2 на 1 на 2 в 2" width="62" height="45" />. То есть заменим деление умножением</a>. Напомним, что при замене деления умножением, делимое умножают на число, обратное делителю. А обратное делителю число в данном случае это дробь <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9792" src="https://spacemath.xyz/wp-content/uploads/2019/02/1-na-2-v-2.png" alt="" width="22" height="45" /></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9794 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/02/1-na-2-v-2-shag-2.png" alt="1 на 2 в 2 шаг 2" width="107" height="50" /></p>
+<p>Теперь воспользуемся правилом <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9787" src="https://spacemath.xyz/wp-content/uploads/2019/02/a-v-1-formula-130px-2.png" alt="а в -1 формула 130px 2" width="72" height="49" />. В произведении <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9793" src="https://spacemath.xyz/wp-content/uploads/2019/02/2-v-2-na-1-na-2-v-2.png" alt="2 в 2 на 1 на 2 в 2" width="62" height="45" /> заменим дробь <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9792" src="https://spacemath.xyz/wp-content/uploads/2019/02/1-na-2-v-2.png" alt="" width="22" height="45" /> на тождественно равное ей выражение <span style="color: #000000;">2<sup>−2</sup></span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9795 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/02/1-na-2-v-2-shag-3.png" alt="1 на 2 в 2 шаг 3" width="198" height="50" /></p>
+<p>Далее, как и раньше применяем основное свойство степени:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9796 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/02/1-na-2-v-2-shag-4.png" alt="1 на 2 в 2 шаг 4" width="347" height="50" srcset="https://spacemath.xyz/wp-content/uploads/2019/02/1-na-2-v-2-shag-4.png 347w, https://spacemath.xyz/wp-content/uploads/2019/02/1-na-2-v-2-shag-4-300x43.png 300w" sizes="(max-width: 347px) 100vw, 347px" /></p>
+<p>Получился тот же результат 1.</p>
+<p>Таким же образом можно опустить степень из числителя в знаменатель, изменив знак показателя этой степени на противоположный.</p>
+<p>Рассмотрим выражение <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9799" src="https://spacemath.xyz/wp-content/uploads/2019/02/2-v-2-na-2-v-2-1.png" alt="2 в -2 на 2 в 2" width="24" height="55" />. Чтобы найти его значение, воспользуемся правилом деления степеней с одинаковыми основаниями. В результате получим <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9803" src="https://spacemath.xyz/wp-content/uploads/2019/02/1-na-16.png" alt="1 на 16" width="20" height="45" /></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9802 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/02/2-v-2-na-2-v-2-reshenie.png" alt="2 в -2 на 2 в 2 решение" width="236" height="50" /></p>
+<p>Теперь попробуем решить этот пример, опустив степень <span style="color: #000000;">2<sup>−2</sup></span> из числителя в знаменатель, изменив знак показателя этой степени на противоположный. При этом, опущенную степень <span style="color: #000000;">2<sup>−2</sup></span> и ту степень, которая располагалась в знаменателе, соединим знаком умножения. А в числителе останется единица:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-9801 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/02/2-v-2-na-2-v-2-risunok-1.png" alt="2 в -2 на 2 в 2 рисунок 1" width="397" height="139" srcset="https://spacemath.xyz/wp-content/uploads/2019/02/2-v-2-na-2-v-2-risunok-1.png 397w, https://spacemath.xyz/wp-content/uploads/2019/02/2-v-2-na-2-v-2-risunok-1-300x105.png 300w" sizes="(max-width: 397px) 100vw, 397px" /></p>
+<p>Дальнейшее вычисление не составит особого труда:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9804 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/02/2-v-2-na-2-v-2-reshenie-2.png" alt="2 в -2 на 2 в 2 решение 2" width="272" height="50" /></p>
+<p>Как и в прошлом примере выражение <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9799" src="https://spacemath.xyz/wp-content/uploads/2019/02/2-v-2-na-2-v-2-1.png" alt="2 в -2 на 2 в 2" width="24" height="55" /> представимо в виде произведения <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9806" src="https://spacemath.xyz/wp-content/uploads/2019/02/2-v-2-na-2-v-2-shag-2.png" alt="2 в -2 на 2 в 2 шаг 2" width="70" height="46" /></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9805 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/02/2-v-2-na-2-v-2-shag-1.png" alt="2 в -2 на 2 в 2 шаг 1" width="123" height="50" /></p>
+<p>Этим и объясняется появление единицы в числителе, после того как степень <span style="color: #000000;">2<sup>−2</sup></span> была опущена в знаменатель.</p>
+<p>Переносимых в знаменатель либо в числитель степеней может быть несколько. Например, знаменатель дроби <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9807" src="https://spacemath.xyz/wp-content/uploads/2019/02/1-na-3-v-2-na-a-v-3-na-b-na-4.png" alt="1 на 3 в 2 на а в 3 на б на 4" width="55" height="45" /> содержит степени <span style="color: #000000;">3<sup>2</sup>, <em>a</em><sup>3</sup>, <em>b</em><sup>4</sup></span>. Перенесём эти степени в числитель, изменив знаки их показателей на противоположные. В результате получим выражение <span style="color: #000000;">3<sup>−</sup><sup>2</sup><em>a<sup>−</sup></em><sup>3</sup><em>b<sup>−</sup></em><sup>4</sup></span>.</p>
+<p><strong>Пример 2</strong>. Поднять степени из знаменателя дроби <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9809" src="https://spacemath.xyz/wp-content/uploads/2019/02/1-na-x2y-primer.png" alt="1 на x2y пример" width="32" height="49" /> в числитель</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9808 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/02/1-na-x2y.png" alt="1 на x2y" width="107" height="49" /></p>
+<hr />
+<p><strong>Пример 3</strong>. Поднять степени из знаменателя дроби <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9810" src="https://spacemath.xyz/wp-content/uploads/2019/02/2-na-x3-b4-primer.png" alt="2 на x3 b4 пример" width="35" height="45" /> в числитель</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9811 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/02/2-na-x3-b4-reshenie.png" alt="2 на x3 b4 решение" width="209" height="45" /></p>
+<hr />
+<p><strong>Пример 4</strong>. Поднять степень из знаменателя дроби <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9812" src="https://spacemath.xyz/wp-content/uploads/2019/02/3a-na-b-primer.png" alt="3a na b пример" width="23" height="45" /> в числитель</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9813 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/02/3a-na-b-reshenie.png" alt="3a na b решение" width="168" height="45" /></p>
+<hr />
+<p><strong>Пример 5</strong>. Опустить степень из числителя дроби <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9814" src="https://spacemath.xyz/wp-content/uploads/2019/02/a-5-na-x-na-2.png" alt="a -5 na x na 2" width="25" height="49" /> в знаменатель</p>
+<p><img loading="lazy" decoding="async" class="wp-image-9861 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/02/a-5-na-x-na-2-reshenie.png" alt="a -5 na x na 2 решение" width="201" height="49" /></p>
+<hr />
+<p><strong>Пример 6</strong>. Степень из числителя дроби <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9816" src="https://spacemath.xyz/wp-content/uploads/2019/02/a-5-na-x-2-primer.png" alt="a-5 na x-2 пример" width="27" height="49" /> опустить в знаменатель, а степень из знаменателя поднять в числитель</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9817 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/02/a-5-na-x-2-reshenie.png" alt="a-5 na x-2 решение" width="182" height="49" /></p>
+<p>Представлять дробь <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9816" src="https://spacemath.xyz/wp-content/uploads/2019/02/a-5-na-x-2-primer.png" alt="a-5 na x-2 пример" width="27" height="49" /> в виде произведения <img loading="lazy" decoding="async" class="alignnone wp-image-9883 size-full" src="https://spacemath.xyz/wp-content/uploads/2019/02/a-5-na-x-2-shag-2.png" alt="a-5 na x-2 шаг 2" width="79" height="49" /> вовсе не обязательно. Если пропустить эту запись, то данный пример можно решить короче:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9821 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/02/a-5-na-x-2-reshenie-2.png" alt="a-5 na x-2 решение 2" width="77" height="49" /></p>
+<hr />
+<p><strong>Пример 7</strong>. В дроби <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9819" src="https://spacemath.xyz/wp-content/uploads/2019/02/3ax-na-5bcy-primer.png" alt="3ax na 5bcy пример" width="69" height="54" /> перенести из знаменателя в числитель только те степени, которые имеют отрицательные показатели:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9818 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/02/3ax-na-5bcy-reshenie.png" alt="3ax na 5bcy решение" width="172" height="54" /></p>
+<hr />
+<p><strong>Пример 8</strong>. Представить произведение <span style="color: #000000;">3<em>x</em><sup>−5</sup></span> в виде дроби, не содержащей степени с отрицательным показателем.</p>
+<p>Перепишем произведение <span style="color: #000000;">3<em>x</em><sup>−5</sup></span> с помощью знака умножения:</p>
+<p style="text-align: center;">3 × <em>x</em><sup>−5</sup></p>
+<p>Сомножитель 3 оставим без изменений, а сомножитель <em>x</em><sup>−5</sup> заменим на тождественно равную ему дробь <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9845" src="https://spacemath.xyz/wp-content/uploads/2019/02/1-na-x-v-5.png" alt="1 на x v 5" width="22" height="45" /></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9847 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/02/3-na-x-5-reshenie-shag-1.png" alt="3 na x-5 решение шаг 1" width="126" height="45" /></p>
+<p>Теперь согласно правилу умножения целого числа на дробь</a>, умножим множитель 3 на числитель дроби <img loading="lazy" decoding="async" width="22" height="45" class="alignnone size-full wp-image-9845" src="https://spacemath.xyz/wp-content/uploads/2019/02/1-na-x-v-5.png" alt="1 на x v 5" />. В результате образуется дробь <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9848" src="https://spacemath.xyz/wp-content/uploads/2019/02/3-na-x-5.png" alt="3 на x-5" width="22" height="45" /></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9846 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/02/3-na-x-5-reshenie.png" alt="3 na x-5 решение" width="174" height="45" /></p>
+<hr />
+<p><strong>Пример 9</strong>. Представить произведение <span style="color: #000000;">3(<em>x + y</em>)<sup>−4</sup></span> в виде дроби, не содержащей степени с отрицательным показателем.</p>
+<p>Выражение состоит из сомножителей 3 и <span style="color: #000000;">(<em>x + y</em>)<sup>−4</sup></span>. Сомножитель 3 оставим без изменений, а сомножитель <span style="color: #000000;">(<em>x + y</em>)<sup>−4 </sup></span>заменим на тождественно равную ему дробь <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9850" src="https://spacemath.xyz/wp-content/uploads/2019/02/3-na-x-5-shag-1.png" alt="3 на x-5 шаг 1" width="64" height="49" /></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9849 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/02/3-na-x-5-shag-2.png" alt="3 на x-5 шаг 2" width="202" height="49" /></p>
+<p>Теперь умножим множитель 3 на числитель дроби <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9850" src="https://spacemath.xyz/wp-content/uploads/2019/02/3-na-x-5-shag-1.png" alt="3 на x-5 шаг 1" width="64" height="49" />. В результате образуется дробь <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9851" src="https://spacemath.xyz/wp-content/uploads/2019/02/3-na-x-5-shag-3.png" alt="3 на x-5 шаг 3" width="64" height="49" /></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9852 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/02/3-na-x-5-reshenie-1.png" alt="3 на x-5 решение" width="294" height="49" /></p>
+<hr />
+<p><strong>Пример 10</strong>. Представить дробь <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9859" src="https://spacemath.xyz/wp-content/uploads/2019/02/3-na-x-v-2.png" alt="3 на x v 2" width="23" height="45" /> в виде произведения.</p>
+<p>Чтобы решить этот пример, достаточно поднять степень <span style="color: #000000;"><em>x</em><sup>2</sup></span> в числитель, изменив знак показателя этой степени на противоположный:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9860 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/02/3-na-x-v-2-shag-1.png" alt="3 на x v 2 шаг 1" width="83" height="45" /></p>
+<p>Как и в прошлых примерах дробь <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9859" src="https://spacemath.xyz/wp-content/uploads/2019/02/3-na-x-v-2.png" alt="3 на x v 2" width="23" height="45" /> можно было представить в виде произведения <img loading="lazy" decoding="async" class="alignnone wp-image-9863 size-full" src="https://spacemath.xyz/wp-content/uploads/2019/02/3-na-x-v-2-shag-2.png" alt="3 на x v 2 шаг 2" width="55" height="47" />. Затем воспользовавшись правилом <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9787" src="https://spacemath.xyz/wp-content/uploads/2019/02/a-v-1-formula-130px-2.png" alt="а в -1 формула 130px 2" width="72" height="49" />, заменить сомножитель <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9864" src="https://spacemath.xyz/wp-content/uploads/2019/02/1-na-x-v-2.png" alt="1 на x v 2" width="23" height="45" /> на тождественно равный ему сомножитель <span style="color: #000000;"><em>x</em><sup>−2</sup></span>.</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9865 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/02/3-na-x-v-2-reshenie.png" alt="3 на x v 2 решение" width="163" height="45" /></p>
+<hr />
+<p><strong>Пример 11</strong>. Представить дробь <img loading="lazy" decoding="async" class="alignnone wp-image-9868 size-full" src="https://spacemath.xyz/wp-content/uploads/2019/02/x-na-y-v-2-na-x-v-4-na-y-na-4-primer.png" alt="x na y v 2 na x v 4 na y na 4 пример" width="65" height="56" /> в виде произведения.</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9866 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/02/x-na-y-v-2-na-x-v-4-na-y-na-4-reshenie.png" alt="x na y v 2 na x v 4 na y na 4 решение" width="210" height="57" /></p>
+<hr />
+<p><strong>Пример 12</strong>. Найти значение выражения <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9901" src="https://spacemath.xyz/wp-content/uploads/2019/02/5-v-2-na-10-2-na-2-3.png" alt="5 в 2 на 10 -2 на 2 -3" width="69" height="54" /></p>
+<p>Поднимем степень <span style="color: #000000;">2<sup>−3</sup></span> из знаменателя в числитель, а степень 10<span style="color: #000000;"><sup>−2</sup></span> из числителя опустим в знаменатель:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9908 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/02/5-v-2-na-10-2-na-2-3-shag-1.png" alt="5 в 2 на 10 -2 на 2 -3 шаг 1" width="153" height="71" srcset="https://spacemath.xyz/wp-content/uploads/2019/02/5-v-2-na-10-2-na-2-3-shag-1.png 153w, https://spacemath.xyz/wp-content/uploads/2019/02/5-v-2-na-10-2-na-2-3-shag-1-150x71.png 150w" sizes="(max-width: 153px) 100vw, 153px" /></p>
+<p>Вычислим значения степеней, содержащихся в числителе и в знаменателе:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9909 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/02/5-v-2-na-10-2-na-2-3-shag-3.png" alt="5 в 2 на 10 -2 на 2 -3 шаг 3" width="230" height="50" /></p>
+<p>Сократим полученную дробь на 25. Тогда останется дробь <img loading="lazy" decoding="async" class="alignnone size-full wp-image-2275" src="https://spacemath.xyz/wp-content/uploads/2016/10/vosem-chetvertyh" alt="Восемь четвертых" width="12" height="43" />, значение которой равно 2.</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9910 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/02/5-v-2-na-10-2-na-2-3-reshenie.png" alt="5 в 2 на 10 -2 на 2 -3 решение" width="305" height="71" srcset="https://spacemath.xyz/wp-content/uploads/2019/02/5-v-2-na-10-2-na-2-3-reshenie.png 305w, https://spacemath.xyz/wp-content/uploads/2019/02/5-v-2-na-10-2-na-2-3-reshenie-300x70.png 300w" sizes="(max-width: 305px) 100vw, 305px" /></p>
+<p>А если бы мы не подняли степень <span style="color: #000000;">2<sup>−3</sup></span> в числитель, и степень 10<span style="color: #000000;"><sup>−2</sup></span> не опустили в знаменатель, а стали вычислять каждую степень по отдельности, то получили бы не очень компактное решение:</p>
+<p><a href="https://spacemath.xyz/umnozhenie-i-delenie-ratsionalnyh-chisel/#multistage_fractions" target="_blank" rel="noopener noreferrer"><img loading="lazy" decoding="async" class="aligncenter wp-image-9925 size-full" title="Многоэтажные дроби. Перейти к уроку, где рассказывается об этом." src="https://spacemath.xyz/wp-content/uploads/2019/02/5-v-2-na-10-2-na-2-3-reshenie-2.png" alt="5 в 2 на 10 -2 на 2 -3 решение 2" width="378" height="96" srcset="https://spacemath.xyz/wp-content/uploads/2019/02/5-v-2-na-10-2-na-2-3-reshenie-2.png 378w, https://spacemath.xyz/wp-content/uploads/2019/02/5-v-2-na-10-2-na-2-3-reshenie-2-300x76.png 300w" sizes="(max-width: 378px) 100vw, 378px" /></a></p>
+<hr />
+<h2 id="yak4" style="text-align: center;">Возведение числа 10 в целую отрицательную степень</h2>
+<p>Число 10 в отрицательную степень возводится таким же образом, как и другие числа. Например:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9246 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/10/10-v-1-v-2-v-3-primery.png" alt="10 в -1 в -2 в -3 примеры" width="235" height="157" /></p>
+<p>Замечаем, что количество нулей, которые получаются в ответе равны модулю</a> показателя исходной степени. Например, в степени <span style="color: #000000;">10<sup>−2</sup> </span>модуль показателя равен <span style="color: #000000;">2</span>. Это значит, что в ответе будет содержаться два нуля. Так оно и есть:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9756 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/02/10-v-2.png" alt="10 в -2" width="212" height="45" /></p>
+<p><strong>Чтобы возвести число 10 в отрицательную степень, нужно перед единицей записать количество нулей, равное модулю показателя исходной степени.</strong></p>
+<p>При этом после первого нуля следует поставить запятую. Примеры:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9757 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/02/10-v-4-5-6.png" alt="10 в -4 -5 -6" width="141" height="91" /></p>
+<hr />
+<h2 id="yak5" style="text-align: center;">Представление чисел 0,1, 0,01, 0,001 в виде степени с основанием 10</h2>
+<p>Чтобы представить числа 0,1, 0,01, 0,001 в виде степени с основанием 10, нужно записать основание 10, и в качестве показателя указать отрицательный показатель, модуль которого равен количеству нулей исходного числа.</p>
+<p>Представим число 0,1 в виде степени с основанием 10. Видим, что в числе 0,1 один нуль. Значит, число 0,1 в виде степени с основанием 10 будет представлено как 10<sup>−</sup><sup>1</sup>. Показатель степени 10<sup>−</sup><sup>1</sup> равен −1. Модуль этого показателя равен количеству нулей в числе 0,1</p>
+<p style="text-align: center;"><span style="color: #000000;">0,1 = 10<sup>−</sup><sup>1</sup></span></p>
+<p>Число 0,1 это результат деления <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9896" src="https://spacemath.xyz/wp-content/uploads/2019/02/1-na-10.png" alt="1 на 10" width="20" height="45" />, а эта дробь есть значение степени 10<sup>−</sup><sup>1</sup>.</p>
+<hr />
+<p><strong>Пример 2</strong>. Представить число 0,01 в виде степени с основанием 10.</p>
+<p>В числе 0,01 два нуля. Значит, число 0,01 в виде степени с основанием 10 будет представлено как 10<sup>−2</sup>. Показатель степени 10<sup>−2</sup> равен −2. Модуль этого показателя равен количеству нулей в числе 0,01</p>
+<p style="text-align: center;"><span style="color: #000000;">0,01 = 10<sup>−2</sup></span></p>
+<p>Число 0,01 это результат деления <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9899" src="https://spacemath.xyz/wp-content/uploads/2019/02/1-na-100.png" alt="1 на 100" width="31" height="45" />, то есть <img loading="lazy" decoding="async" class="alignnone size-full wp-image-9900" src="https://spacemath.xyz/wp-content/uploads/2019/02/1-na-10-v-2.png" alt="1 на 10 в 2" width="26" height="45" />, а эта дробь есть значение степени 10<sup>−2</sup>.</p>
+<hr />
+<p><strong>Пример 3</strong>. Представить число 0,001 в виде степени с основанием 10.</p>
+<p style="text-align: center;"><span style="color: #000000;">0,001 = 10<sup>−3</sup></span></p>
+<hr />
+<p><strong>Пример 4</strong>. Представить число 0,0001 в виде степени с основанием 10.</p>
+<p style="text-align: center;"><span style="color: #000000;">0,0001 = 10<sup>−4</sup></span></p>
+<hr />
+<p><strong>Пример 5</strong>. Представить число 0,00001 в виде степени с основанием 10.</p>
+<p style="text-align: center;"><span style="color: #000000;">0,00001 = 10<sup>−5</sup></span></p>
+<hr />
+<h2 id="yak6" style="text-align: center;">Стандартный вид числа</h2>
+<p>Запишем число <span style="color: #000000;">2 000 000</span> в виде произведения числа <span style="color: #000000;">2</span> и <span style="color: #000000;">1 000 000</span></p>
+<p style="text-align: center;"><span style="color: #000000;">2 × 1 000 000</span></p>
+<p>Сомножитель <span style="color: #000000;">1 000 000</span> можно заменить на степень <span style="color: #000000;">10<sup>6</sup></span></p>
+<p style="text-align: center;"><span style="color: #000000;">2 × 10<sup>6</sup></span></p>
+<p>Такой вид записи называют стандартным видом числа. Стандартный вид числа позволяет записывать в компактном виде как большие, так и маленькие числа.</p>
+<p>Например, маленькое число <span style="color: #000000;">0,005</span> можно записать в виде произведения числа <span style="color: #000000;">5</span> и десятичной дроби <span style="color: #000000;">0,001</span>.</p>
+<p style="text-align: center;"><span style="color: #000000;">5 × 0,001</span></p>
+<p>Десятичную дробь <span style="color: #000000;">0,001</span> можно заменить на степень с <span style="color: #000000;">10<sup>−3</sup></span></p>
+<p style="text-align: center;"><span style="color: #000000;">5 × 10<sup>−3</sup></span></p>
+<p>Значит, число <span style="color: #000000;">0,005 </span>в стандартном виде будет выглядеть как <span style="color: #000000;">5 × 10<sup>−3</sup></span></p>
+<p style="text-align: center;"><span style="color: #000000;">0,005 = 5 × 10<sup>−3</sup></span></p>
+<p>По стандартному виду числа можно вычислить изначальное число. Так, при записи числа <span style="color: #000000;">2 000 000</span> в стандартном виде, мы получили произведение <span style="color: #000000;">2 × 10<sup>6</sup></span>. Если вычислить это произведение, то снова получим <span style="color: #000000;">2 000 000</span></p>
+<p style="text-align: center;"><span style="color: #000000;">2 × 10<sup>6</sup> = 2 × 1 000 000 = 2 000 000</span></p>
+<p>А при записи числа <span style="color: #000000;">0,005</span> в стандартном виде мы получили произведение <span style="color: #000000;">5 × 10<sup>−3</sup></span>. Если вычислить это произведение, то получим <span style="color: #000000;">0,005</span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-9895 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2019/02/5-na-10-v-3-reshenie.png" alt="5 на 10 в - 3 решение" width="398" height="45" srcset="https://spacemath.xyz/wp-content/uploads/2019/02/5-na-10-v-3-reshenie.png 398w, https://spacemath.xyz/wp-content/uploads/2019/02/5-na-10-v-3-reshenie-300x34.png 300w" sizes="(max-width: 398px) 100vw, 398px" /></p>
+<p>То есть записывая число в стандартном виде нужно записывать его так, чтобы сохранить его изначальное значение.</p>
+<p><strong>Стандартным видом числа называют запись вида <em>a </em>× 10<em><sup>n</sup></em>, где 1 ≤ <em>a </em>&lt; 10 и <em>n</em> &#8212; целое число.</strong></p>
+<p>Число <em>а</em> это исходное число, которое надо записать в стандартном виде. Оно должно удовлетворять <a title="Перейти к уроку, где рассказывается об этом" href="https://spacemath.xyz/obshhie-svedeniya-o-neravenstvah/" target="_blank" rel="noopener noreferrer">неравенству</a> <span style="color: #000000;">1 ≤ <em>a </em>&lt; 10</span>. Чаще всего исходное число надо приводить к виду, при котором неравенство <span style="color: #000000;">1 ≤ <em>a </em>&lt; 10</span> становится верным.</p>
+<p>Например, представим число 12 в стандартном виде. Для начала проверим становится ли верным неравенство <span style="color: #000000;">1 ≤ <em>a </em>&lt; 10</span> при подстановке числа 12 вместо <span style="color: #000000;"><em>а</em></span></p>
+<p style="text-align: center;"><span style="color: #000000;">1 ≤ 12 &lt; 10</span></p>
+<p style="text-align: left;">Неравенство верным не становится. Чтобы сделать неравенство верным, приведём число 12 к виду, при котором оно удовлетворяло бы данному неравенству. Для этого передвинем в числе 12 запятую влево на одну цифру:</p>
+<p style="text-align: center;">1,2</p>
+<p>Число 12 обратилось в число 1,2. Это число будет удовлетворять неравенству <span style="color: #000000;">1 ≤ <em>a </em>&lt; 10</span></p>
+<p style="text-align: center;"><span style="color: #000000;">1 ≤ 1,2<em> </em>&lt; 10</span></p>
+<p>Теперь наша задача состоит в том, чтобы записать произведение <span style="color: #000000;"><em>a </em>× 10<em><sup>n</sup></em></span>. С числом <span style="color: #000000;"><em>а</em></span> мы разобрались &#8212; этим числом у нас будет 1,2. А как подобрать степень с основанием 10?</p>
+<p>После переноса запятой на одну цифру влево, число <span style="color: #000000;">12</span> утратило своё изначальное значение. Запятая на одну цифру влево двигается тогда, когда число делят на <span style="color: #000000;">10</span>. А чтобы восстановить изначальное значение числа запятую нужно передвинуть обратно в правую сторону на одну цифру, то есть умножить число <span style="color: #000000;">1,2</span> на <span style="color: #000000;">10</span>.</p>
+<p>Значит, чтобы записать число 12 в стандартном виде, нужно представить его в виде произведения <span style="color: #000000;">1,2 × 10¹</span></p>
+<p style="text-align: center;"><span style="color: #000000;">12 = 1,2 × 10¹</span></p>
+<hr />
+<p><strong>Пример 2</strong>. Записать число 0,5 в стандартном виде.</p>
+<p>Число 0,5 не удовлетворяет неравенству 1 ≤ <em>a</em>&lt; 10, поэтому передвинем запятую в этом числе на одну цифру вправо. В результате получим число 5, которое удовлетворяет неравенству 1 ≤ <em>a</em>&lt; 10.</p>
+<p>Теперь запишем произведение вида <span style="color: #000000;"><em>a </em>× 10<em><sup>n</sup></em></span>. Число <em>a</em> в данном случае это 5. А степень с основанием 10 надо выбрать так, чтобы произведение <span style="color: #000000;"><em>a </em>× 10<em><sup>n</sup></em></span> стало равным числу 0,5. Число 0,5 получится если умножить число 5 на множитель 0,1, который представим в виде степени 10<sup>−1</sup>. В результате получим следующую запись:</p>
+<p style="text-align: center;"><span style="color: #000000;">0,5 = 5 × 10<sup>−1</sup></span></p>
+<hr />
+<p><strong>Пример 3</strong>. Записать число 652 000 в стандартном виде.</p>
+<p>Число 652 000 не удовлетворяет неравенству <span style="color: #000000;">1 ≤ <em>a</em>&lt; 10</span>, поэтому передвинем запятую в этом числе на пять цифр влево. В результате получим число 6,52000 которое удовлетворяет неравенству <span style="color: #000000;">1 ≤ <em>a</em>&lt; 10</span>.</p>
+<p>Теперь запишем произведение вида <span style="color: #000000;"><em>a </em>× 10<em><sup>n</sup></em></span>. Число <em>a</em> в данном случае это 6,52000. А степень с основанием 10 надо выбрать так, чтобы произведение <span style="color: #000000;"><em>a </em>× 10<em><sup>n</sup></em></span> стало равным числу 652 000. Число 652 000 получится если число 6,52000 умножить на 100 000, а это есть степень 10<sup>5</sup>. В результате получим следующую запись:</p>
+<p style="text-align: center;"><span style="color: #000000;">652 000 = 6,52000 × 10<sup>5</sup></span></p>
+<p>Нули в конце десятичной дроби <span style="color: #000000;">6,52000</span> можно отбросить. Тогда получим более компактную запись:</p>
+<p style="text-align: center;"><span style="color: #000000;">652 000 = 6,52 × 10<sup>5</sup></span></p>
+<hr />
+<p><strong>Пример 5</strong>. Записать число <span style="color: #000000;">1 024 000</span> в стандартном виде.</p>
+<p>Число 1 024 000 не удовлетворяет неравенству <span style="color: #000000;">1 ≤ <em>a</em>&lt; 10</span>, поэтому передвинем запятую в этом числе на шесть цифр влево. В результате получим число 1,024000 которое удовлетворяет неравенству <span style="color: #000000;">1 ≤ <em>a</em>&lt; 10</span>.</p>
+<p>Теперь запишем произведение вида <span style="color: #000000;"><em>a </em>× 10<em><sup>n</sup></em></span>. Число <span style="color: #000000;"><em>a</em></span> в данном случае это 1,024000 . А степень с основанием 10 надо выбрать так, чтобы произведение <span style="color: #000000;"><em>a </em>× 10<em><sup>n</sup></em></span> было равно изначальному числу 1 024 000. Число 1 024 000 получится если число 1,024000 умножить на 1 000 000, а это есть степень 10<sup>6</sup>. В результате получим следующую запись:</p>
+<p style="text-align: center;">1 024 000 = 1,024000 × 10<sup>6</sup></p>
+<p>Нули в конце десятичной дроби 1,024000 можно отбросить:</p>
+<p style="text-align: center;">1 024 000 = 1,024 × 10<sup>6</sup></p>
+<p>Отбрасывать можно только те нули, которые располагаются в конце, и после которых нет других цифр, бóльших нуля. В приведённом примере были отброшены только три нуля, а нуль располагавшийся между запятой и цифрой 2 был сохранен, несмотря на то, что он тоже располагался после запятой.</p>
+<hr />
+<p><strong>Пример 6</strong>. Записать число 0,000325 в стандартном виде.</p>
+<p>Передвинем в данном числе запятую так, чтобы оно удовлетворяло неравенству 1 ≤ <em>a</em>&lt; 10. В результате получим число 3,25</p>
+<p>Теперь запишем произведение вида <span style="color: #000000;"><em>a </em>× 10<em><sup>n</sup></em></span>. Число <em>a</em> в данном случае это 3,25. А степень с основанием 10 надо выбрать так, чтобы произведение <span style="color: #000000;"><em>a </em>× 10<em><sup>n</sup></em></span> было равно изначальному числу 0,000325. Число 0,000325 получится если число 3,25 умножить на множитель 0,0001 который представим в виде степени 10<sup>−4</sup>. В результате получим следующую запись:</p>
+<p style="text-align: center;">0,000325 = 3,25 × 10<sup>−4</sup></p>
+    <h3>Хотите перейти на следующий урок?</h3>
+<a href="lection1.html" class="back">Вернуться ‹‹</a>
+<a href="lection3.html" class="next">Вперёд »</a>
+
+<script type="text/javascript">
+
+var menuItems = document.querySelectorAll('.skew-menu ul li');
+
+for (var i = 0; i < menuItems.length; i++) {
+   menuItems[i].addEventListener('click', function() {
+       // Действия при выборе определенной лекции
+   });
+}
+document.querySelectorAll('.skew-menu li').forEach(item => {
+    item.addEventListener('mouseover', () => {
+        item.style.transition = 'transform 0.3s';
+        item.style.transform = 'scale(1.2)';
+    });
+
+    item.addEventListener('mouseout', () => {
+        if (!item.classList.contains("clicked")) { // Проверяем, не была ли ячейка уже уменьшена при клике
+            item.style.transition = 'transform 0.3s';
+            item.style.transform = 'scale(1)';
+        }
+    });
+
+     document.addEventListener("click", function(event) { 
+         if (!event.target.closest(".skew-menu li")) return;
+
+         const clickedItem= event.target.closest(".skew-menu li");
+
+         document.querySelectorAll('.skew-menu li').forEach(otherItem => { 
+             otherItem.classList.remove("clicked");
+             otherItem.removeEventListener("transitionend", removeTransition);
+          });
+          
+          function removeTransition() { this.classList.remove("clicked"); }
+
+          const clickedClassList= clickedItem.classList;
+          clickedClassList.add("clicked");
+
+          setTimeout(() =>{
+              clickedClassList.remove("clicked")
+           },300)
+
+           function toggleTransform(){
+               let scaleValue= window.getComputedStyle(clickedItem).getPropertyValue('transform');
+
+               if(scaleValue==='none'){
+                   clickedItem.setAttribute(
+                       "style",
+                       "transition: all .5s ease-in-out; transform: scale(.8);"
+                     );
+                 }else{
+                     clickedItem.removeAttribute("style");
+                  }
+            }
+
+            toggleTransform();
+      });
+});
+let currentLesson = document.querySelector('.active a');
+currentLesson.style.color = '#007bff';
+
+menuItems[0].classList.add("active");
+
+document.querySelector('.back').setAttribute("href", "lection25.html");
+document.querySelector('.next').setAttribute("href", "lection27.html");
+
+</script>
+</body>
+</html>

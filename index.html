@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выбор лекции</title>
+    <style>
+        .lecture-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(10, 1fr);
+            gap: 5px;
+        }
+        .lecture-item {
+            background-color: #f2f2f2;
+            padding: 20px;
+            text-align: center;
+        }
+        .lecture-item a {
+          font-weight: bold;
+          font-size: 18px;
+          text-decoration: none;
+          color: #333;
+          transition:.3s ease-in-out;
+        }
+        .lecture-item:hover{
+         background-color:#d9d9d9; /* Изменяем фоновый цвет при наведении курсора*/
+     }
+        @radius: 7px;
+        @skew: 25deg;
+        @main-color: tomato;
+
+body{
+  font-family:Helvetica Neue, Helvetica, sans-serif;
+  background:@main-color;
+}
+
+.skew-menu{
+  text-align:center;
+  margin-top:3em;
+}
+
+.skew-menu ul{
+  display:inline-block;
+  margin:0;
+  padding:0;
+  list-style:none;
+  transform:skew(-@skew);
+}
+
+.skew-menu ul li{
+  background:#fff;
+  float:left;
+  border-right:1px solid #eee;
+  box-shadow:0 1px 1px rgba(0,0,0,0.1);
+  text-transform:uppercase;
+  color:#555;
+  font-weight:bolder;
+  transition:all 0.3s linear;
+  
+  &:first-child{
+    border-radius:@radius 0 0 @radius;
+  }
+  
+  &:last-child{
+    border-right:none;
+    border-radius:0 @radius @radius 0;
+  }
+  
+  &:hover{
+    background:#eee;
+    color:@main-color;
+  }
+  
+  a{
+    display:block;
+    padding:1em 2em;
+    color:inherit;
+    text-decoration:none;
+    transform:skew(@skew);
+  }
+}
+        body {
+            font-family: arial, sans-serif;
+            margin: 20px;
+            background-image: url(images/7.jpg);
+            background-attachment: fixed;
+            -moz-background-size: 100%; /* Firefox 3.6+ */
+            -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+            -o-background-size: 100%; /* Opera 9.6+ */
+            background-size: 50%; /* Современные браузеры */
+        }
+        h1{
+        color: DarkCyan !important; 
+        font-family: courier !important; 
+         text-align: center !important;
+        }
+        .vertical-menu {
+            width: 200px;
+            height: 150px;
+            overflow-y: auto;
+            position: absolute;
+        }
+ 
+        .vertical-menu a {
+            background-color: #eee;
+            color: black;
+            display: block;
+            padding: 12px;
+            text-decoration: none;
+            text-align: center;
+
+        }
+ 
+        .vertical-menu a:hover {
+            background-color: #ccc;
+        }
+ 
+        .vertical-menu a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+.lecture {
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    width: 300px; /*ширина */
+    height: 70px; /*высота */
+    border: 3px solid #ccc;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    float: left;
+}
+#lecturescontainer {
+    grid-template-columns: repeat(0, 1fr);
+    gap: 20px;
+    float: center
+    display: flex;
+    flex-wrap: wrap;;
+}
+.lecture-item {
+    transition: transform 0.1s;
+    border-radius: 10px;
+}
+        .lecture:hover {
+            background-color: #f5f5f5;
+            cursor: pointer;
+            transform: scale(1.9);
+        }
+
+        .lecture h2 {
+            margin-top: 0;
+            color: #777;
+        }
+
+        .lecture p {
+            margin-top: 10px;
+            color: #999;
+        }
+        #lecturescontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+    </style>
+</head>
+<body>
+      </nav>
+    <h1>Доступные на данный момент лекции:</h1>
+<div class="lecture-grid">
+    <div class="lecture-item"><a href="lection1.html" onclick="showLecture('Лекция 1')">Лекция 1</a></div>
+    <div class="lecture-item" onclick="showLecture('Лекция 2')"><a href="lection2.html">Лекция 2</a></div>
+    <div class="lecture-item"><a href="lection3.html" onclick="showLecture('Лекция 3')">Лекция 3</a></div>
+    <div class="lecture-item"><a href="lection4.html" onclick="showLecture('Лекция 4')">Лекция 4</a></div>
+    <div class="lecture-item"><a href="lection5.html" onclick="showLecture('Лекция 5')">Лекция 5</a></div>
+    <div class="lecture-item"><a href="lection6.html" onclick="showLecture('Лекция 6')">Лекция 6</a></div>
+    <div class="lecture-item"><a href="lection7.html" onclick="showLecture('Лекция 7')">Лекция 7</a></div>
+    <div class="lecture-item"><a href="lection8.html" onclick="showLecture('Лекция 8')">Лекция 8</a></div>
+    <div class="lecture-item"><a href="lection9.html" onclick="showLecture('Лекция 9')">Лекция 9</a></div>
+    <div class="lecture-item"><a href="lection10.html" onclick="showLecture('Лекция 10')">Лекция 10</a></div>
+    <div class="lecture-item"><a href="lection11.html" onclick="showLecture('Лекция 11')">Лекция 11</a></div>
+    <div class="lecture-item"><a href="lection12.html" onclick="showLecture('Лекция 12')">Лекция 12</a></div>
+    <div class="lecture-item"><a href="lection13.html" onclick="showLecture('Лекция 13')">Лекция 13</a></div>
+    <div class="lecture-item"><a href="lection14.html" onclick="showLecture('Лекция 14')">Лекция 14</a></div>
+    <div class="lecture-item"><a href="lection15.html" onclick="showLecture('Лекция 15')">Лекция 15</a></div>
+    <div class="lecture-item"><a href="lection16.html" onclick="showLecture('Лекция 16')">Лекция 16</a></div>
+    <div class="lecture-item"><a href="lection17.html" onclick="showLecture('Лекция 17')">Лекция 17</a></div>
+    <div class="lecture-item"><a href="lection18.html" onclick="showLecture('Лекция 18')">Лекция 18</a></div>
+    <div class="lecture-item"><a href="lection19.html" onclick="showLecture('Лекция 19')">Лекция 19</a></div>
+    <div class="lecture-item"><a href="lection20.html" onclick="showLecture('Лекция 20')">Лекция 20</a></div>
+    <div class="lecture-item"><a href="lection21.html" onclick="showLecture('Лекция 21')">Лекция 21</a></div>
+    <div class="lecture-item"><a href="lection22.html" onclick="showLecture('Лекция 22')">Лекция 22</a></div>
+    <div class="lecture-item"><a href="lection23.html" onclick="showLecture('Лекция 23')">Лекция 23</a></div>
+    <div class="lecture-item"><a href="lection24.html" onclick="showLecture('Лекция 24')">Лекция 24</a></div>
+    <div class="lecture-item"><a href="lection25.html" onclick="showLecture('Лекция 25')">Лекция 25</a></div>
+    <div class="lecture-item"><a href="lection26.html" onclick="showLecture('Лекция 26')">Лекция 26</a></div>
+    <div class="lecture-item"><a href="lection27.html" onclick="showLecture('Лекция 27')">Лекция 27</a></div>
+    <div class="lecture-item"><a href="lection28.html" onclick="showLecture('Лекция 28')">Лекция 28</a></div>
+    <div class="lecture-item"><a href="lection29.html" onclick="showLecture('Лекция 29')">Лекция 29</a></div>
+    <div class="lecture-item"><a href="lection30.html" onclick="showLecture('Лекция 30')">Лекция 30</a></div>
+</div>
+
+<script type="text/javascript">
+
+var lectureItems = document.querySelectorAll('.lecture-item');
+
+for (var i = 0; i < lectureItems.length; i++) {
+   lectureItems[i].addEventListener('click', function() {
+       var link = this.querySelector('a').getAttribute("href");
+       window.location.href = link;
+   });
+
+   lectureItems[i].addEventListener('mouseover', function() {
+       this.style.backgroundColor = "lightblue";
+   });
+
+   lectureItems[i].addEventListener('mouseout', function() {
+       this.style.backgroundColor = "#f2f2f2";
+   });
+   document.querySelectorAll('.lecture-item').forEach(item => {
+    item.addEventListener('mouseover', () => {
+        item.style.transition = 'transform 0.3s';
+        item.style.transform = 'scale(1.2)';
+    });
+
+    item.addEventListener('mouseout', () => {
+        item.style.transition = 'transform 0.3s';
+        item.style.transform = 'scale(1)';
+    });
+
+    let isClicked = false;
+
+     document.addEventListener("click", function(event) { 
+         if (!event.target.classList.contains("lecture-item")) return;
+         
+         const clickedItem= event.target;
+         
+         if(isClicked){
+             clickedItem.removeAttribute("style");
+          }else{
+              clickedItem.setAttribute(
+                  "style",
+                  "transition: all .5s ease-in-out; transform: scale(.8);"
+                );
+           }
+           
+           isClicked=!isClicked;
+      });
+});
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лекция 20: Решение задач с помощью пропорций</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: 200px auto;
+            gap: 20px;
+        }
+        
+        .skew-menu {
+            background-color: #f2f2f2; /* Цвет фона для меню */
+            padding: 10px;
+        }
+
+        .lecture-content {
+            background-color: #e6e6e6; /* Цвет фона для контента лекции */
+            padding: 20px;
+        }
+
+        h1, h2, p {
+          margin-bottom: 15px;  
+      }
+
+      a.back, a.next{
+         text-decoration:none; 
+         color:#333; 
+     }
+     body {
+            background-image: url(images/7.avif);
+            background-attachment: fixed;
+            -moz-background-size: 100%;
+            -webkit-background-size: 100%;
+            -o-background-size: 100%;
+            background-size: 100%;
+        }
+        h1{
+        color: rgb(0, 0, 0) !important; 
+        font-family: courier !important; 
+         text-align: center !important;
+  }
+        p {
+         color: rgb(0, 0, 0);
+         font-family: 'Times New Roman', Times, serif;
+         font-size: 150%;
+         text-align: right; 
+        }
+        h2{
+        color: dark !important; 
+        font-family: Georgia, 'Times New Roman', Times, serif !important; 
+         text-align: center !important;
+  }
+        p {
+         color: rgb(0, 0, 0); 
+         font-family: 'Times New Roman', Times, serif;
+         font-size: 150%; 
+         text-align: center;
+        }
+        a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.back {
+    background-color: #ddd;
+    color: rgb(0, 0, 0);
+}
+
+.next {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.round {
+    border-radius: 50%;
+}
+@radius: 7px;
+@skew: 25deg;
+@main-color: tomato;
+
+body{
+  font-family:Helvetica Neue, Helvetica, sans-serif;
+  background:@main-color;
+}
+
+.skew-menu{
+  text-align:center;
+  margin-top:3em;
+  padding: 10px;
+    max-height: 2000px; /* Устанавливаем максимальную высоту */
+    max-width: 700px;
+    width: 200px;
+    overflow-y: auto; /* Добавляем вертикальную прокрутку при необходимости */
+}
+
+.skew-menu ul{
+  display:inline-block;
+  margin:0;
+  padding:0;
+  list-style:none;
+  transform:skew(-@skew);
+  width: 250px;
+  border-radius: 10px;
+}
+
+.skew-menu ul li{
+  background:#fff;
+  float:left;
+  border-right:1px solid #eee;
+  box-shadow:0 1px 1px rgba(0,0,0,0.1);
+  text-transform:uppercase;
+  color:#555;
+  font-weight:bolder;
+  transition:all 0.3s linear;
+  display: block;
+  text-align: center;
+  width: 200px;
+  max-width: 200px;
+  &:first-child
+  {
+
+    border-radius:@radius 0 0 @radius;
+  }
+  
+  &:last-child{
+    border-right:none;
+    border-radius:0 @radius @radius 0;
+  }
+  
+  &:hover{
+    background:#eee;
+    color:@main-color;
+  }
+  
+  a{
+    display:block;
+    padding:1em 2em;
+    color:inherit;
+    text-decoration:none;
+    transform:skew(@skew);
+  }
+}
+.active a {
+  color: #007bff; /* Выделите цвет текста */
+}
+.navless{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: lighter;
+    font-size: 20px;
+}
+.nav menu{
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+      .menu b{
+        text-align: center;
+      }
+    </style>
+</head>
+
+<body>
+
+<nav class="skew-menu">
+    <ul>
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="lection1.html">Лекция 1</a></li>
+      <li><a href="lection2.html">Лекция 2</a></li>
+      <li><a href="lection3.html">Лекция 3</a></li>
+      <li><a href="lection4.html">Лекция 4</a></li>
+      <li><a href="lection5.html">Лекция 5</a></li>
+      <li><a href="lection6.html">Лекция 6</a></li>
+      <li><a href="lection7.html">Лекция 7</a></li>
+      <li><a href="lection8.html">Лекция 8</a></li>
+      <li><a href="lection9.html">Лекция 9</a></li>
+      <li><a href="lection10.html">Лекция 10</a></li>
+      <li><a href="lection11.html">Лекция 11</a></li>
+      <li><a href="lection12.html">Лекция 12</a></li>
+      <li><a href="lection13.html">Лекция 13</a></li>
+      <li><a href="lection14.html">Лекция 14</a></li>
+      <li><a href="lection15.html">Лекция 15</a></li>
+      <li><a href="lection16.html">Лекция 16</a></li>
+      <li><a href="lection17.html">Лекция 17</a></li>
+      <li><a href="lection18.html">Лекция 18</a></li>
+      <li><a href="lection19.html">Лекция 19</a></li>
+      <li class="active"><a href="lection20.html">Лекция 20</a></li>
+      <li><a href="lection21.html">Лекция 21</a></li>
+      <li><a href="lection22.html">Лекция 22</a></li>
+      <li><a href="lection23.html">Лекция 23</a></li>
+      <li><a href="lection24.html">Лекция 24</a></li>
+      <li><a href="lection25.html">Лекция 25</a></li>
+      <li><a href="lection26.html">Лекция 26</a></li>
+      <li><a href="lection27.html">Лекция 27</a></li>
+      <li><a href="lection28.html">Лекция 28</a></li>
+      <li><a href="lection29.html">Лекция 29</a></li>
+      <li><a href="lection30.html">Лекция 30</a></li>
+    </ul>
+</nav>
+
+<div class="lecture-content">
+  <h1 class="entry-title">Лекция 20: Решение задач с помощью пропорции</h1>      
+
+      
+</header><!-- .entry-header -->
+
+<div class="entry-content">
+  <p>Решение задачи с помощью пропорции сводится к тому, чтобы сделать неизвестное значение <span style="color: #000000;"><em>x</em></span> членом этой пропорции. Затем используя основное свойство пропорции получить линейное уравнение и решить его.</p>
+</nav>
+<nav id="menu"><b>Содержание урока</b></p>
+<ul class="navless">
+<li><a href="#yak1">Как решить задачу с помощью пропорции</a></li>
+<li><a href="#yak2">Отношение одноименных величин</a></li>
+<li><a href="#yak3">Задачи на прямую пропорциональность</a></li>
+<li><a href="#yak4">Задачи на обратную пропорциональность</a></li>
+<li><a href="#yak5">Масштаб</a></li>
+</ul>
+</nav>
+<h2 id="yak1" style="text-align: center;">Как решить задачу с помощью пропорции</h2>
+<p>Рассмотрим простейший пример. Трем группам нужно выплатить стипендию по 1600 рублей каждому. В первой группе 20 студентов. Значит первой группе будет выплачено 1600 × 20, то есть 32 тыс. рублей.</p>
+<p>Во второй группе 17 человек. Значит второй группе будет выплачено 1600 × 17, то есть 27,200 тыс. руб.</p>
+<p>Ну и выплатим стипендию третьей группе. В ней 15 человек. На них нужно затратить 1600 × 15, то есть 24 тыс. руб.</p>
+<p>В результате имеем следующее решение:</p>
+<p><img decoding="async" class="size-full wp-image-6360 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/12/reshenie-zadachi-vydacha-stipendii-pervym-sposobom.png" alt="решение задачи выдача стипендии первым способом" width="212" height="89" /></p>
+<p>Для подобных задач решение можно записывать с помощью пропорции.</p>
+<p>Пропорция по определению есть равенство двух отношений. К примеру, равенство <img decoding="async" class="alignnone size-full wp-image-6361" src="https://spacemath.xyz/wp-content/uploads/2017/12/proportsiya-a-k-b-kak-c-k-d.png" alt="пропорция a к b как c к d" width="54" height="41" /> является пропорцией. Эту пропорцию можно прочесть следующим образом:</p>
+<p style="text-align: center;"><strong><em>a</em> так относится к <em>b</em>, как <em>c</em> относится <em>d</em></strong></p>
+<p>Аналогично можно соотнести стипендию и студентов, так чтобы каждому досталось по 1600 рублей.</p>
+<p>Итак, запишем первое отношение, а именно отношение тысячи шестисот рублей на одного человека:</p>
+<p><img decoding="async" class="size-full wp-image-6362 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/12/1600-na-1.png" alt="1600 на 1" width="46" height="48" /></p>
+<p>Мы выяснили, что для выплаты 20 студентам по 1600 рублей, нам потребуется 32 тыс. рублей. Значит второе отношение будет отношением тридцати двух тысяч к двадцати студентам:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-6363 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/12/32000-na-20.png" alt="32000 на 20" width="59" height="48" /></p>
+<p>Теперь соединим полученные отношения знаком равенства:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-6364 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/12/1600-na-1-kak-32000-na-20.png" alt="1600 на 1 как 32000 на 20" width="133" height="48" /></p>
+<p>Мы получили пропорцию. Её можно прочесть следующим образом:</p>
+<p style="text-align: center;"><strong><em>Тысяча шестьсот рублей так относятся к одному студенту, как тридцать две тысячи рублей относятся к двадцати студентам</em>. </strong></p>
+<p>То есть по 1600 рублей каждому. Если выполнить деление в обеих частях равенства <img loading="lazy" decoding="async" class="alignnone size-full wp-image-6365" src="https://spacemath.xyz/wp-content/uploads/2017/12/1600-na-1-kak-32000-na-20-masshtab-dlya-strok.png" alt="1600 на 1 как 32000 на 20 масштаб для строк" width="125" height="45" />, то обнаружим, что одному студенту, как и двадцати студентам достанется по 1600 рублей.</p>
+<p>Теперь представим, что сумма денег, необходимых для выплаты стипендии двадцати студентам, была бы неизвестной. Скажем, если бы вопрос стоял так: <span style="color: #000000;"><em>в</em> <em>группе 20 студентов и каждому нужно выплатить по 1600 рублей. Сколько всего рублей требуется для выплаты стипендии?</em></span></p>
+<p>В таком случае пропорция <img loading="lazy" decoding="async" class="alignnone size-full wp-image-6365" src="https://spacemath.xyz/wp-content/uploads/2017/12/1600-na-1-kak-32000-na-20-masshtab-dlya-strok.png" alt="1600 на 1 как 32000 на 20 масштаб для строк" width="125" height="45" /> приняла бы вид <img loading="lazy" decoding="async" class="alignnone size-full wp-image-6366" src="https://spacemath.xyz/wp-content/uploads/2017/12/1600-na-1-kak-x-na-20.png" alt="1600 на 1 как x на 20" width="88" height="45" />. То есть сумма денег, необходимая для выплаты стипендии, стала неизвестным членом пропорции. Эту пропорцию можно прочесть так:</p>
+<p style="text-align: center;"><strong><em>Тысяча шестьсот рублей так относятся к одному студенту, как <span style="color: #333399;">неизвестное число рублей</span> относится к двадцати студентам</em></strong></p>
+<p>Теперь воспользуемся основным свойством пропорции. Оно гласит, что произведение крайних членов пропорции равно произведению средних:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-6367 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/12/1600-na-1-kak-x-na-20-proportsiya-risunok.png" alt="1600 на 1 как x на 20 пропорция рисунок" width="238" height="90" /></p>
+<p>Перемножив члены пропорции &#171;крест-накрест&#187;, получим равенство <span style="color: #000000;">1600 × 20 = 1 × <em>x</em></span>. Вычислив обе части равенства, получим <span style="color: #000000;">32000 = <em>x</em></span> или <span style="color: #000000;"><em>x</em> = 32000</span>. Иными словами, мы найдём значение неизвестной величины, которое искали.</p>
+<p>Аналогично можно было определить общую сумму и для остального количества студентов &#8212; для 17 и 15. Эти пропорции выглядели как <img loading="lazy" decoding="async" class="alignnone size-full wp-image-6372" src="https://spacemath.xyz/wp-content/uploads/2017/12/1600-na-1-ravno-x-na-17.png" alt="1600 на 1 равно x на 17" width="88" height="45" />  и  <img loading="lazy" decoding="async" class="alignnone size-full wp-image-6373" src="https://spacemath.xyz/wp-content/uploads/2017/12/1600-na-1-ravno-x-na-15.png" alt="1600 на 1 равно x на 15" width="85" height="45" />. Воспользовавшись основным свойством пропорции, можно найти значение <span style="color: #000000;"><em>x</em></span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-6374 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/12/1600-na-1-ravno-x-na-15-i-x-na-17-reshenie.png" alt="1600 на 1 равно x на 15 и x na 17 решение" width="438" height="144" srcset="https://spacemath.xyz/wp-content/uploads/2017/12/1600-na-1-ravno-x-na-15-i-x-na-17-reshenie.png 438w, https://spacemath.xyz/wp-content/uploads/2017/12/1600-na-1-ravno-x-na-15-i-x-na-17-reshenie-300x99.png 300w" sizes="(max-width: 438px) 100vw, 438px" /></p>
+<hr />
+<p><strong>Задача 2</strong>. Расстояние равное 100 км автобус проехал за 2 часа. Сколько времени потребуется автобусу, чтобы проехать 300 км, если будет ехать с той же скоростью?</p>
+<p>Можно сначала определить расстояние, которое автобус проезжает за один час. Затем определить сколько раз это расстояние содержится в 300 километрах:</p>
+<p><em><span style="color: #000000;">100 : 2 = 50 км на каждый час движения</span></em></p>
+<p><em><span style="color: #000000;">300 км : 50 = 6 часов</span></em></p>
+<p>Либо можно составить пропорцию &#171;сто километров так относятся к двум часам, как триста километров к неизвестному числу часов&#187;:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7334 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/proportsiya-100na2-kak-300nat-reshenie.png" alt="пропорция 100на2 как 300наt решение" width="141" height="196" /></p>
+<hr />
+<h2 id="yak2" style="text-align: center;">Отношение одноименных величин</h2>
+<p>Если крайние или средние члены пропорции поменять местами, то пропорция не нарушится.</p>
+<p>Так, в пропорции <img loading="lazy" decoding="async" class="alignnone size-full wp-image-6365" src="https://spacemath.xyz/wp-content/uploads/2017/12/1600-na-1-kak-32000-na-20-masshtab-dlya-strok.png" alt="1600 на 1 как 32000 на 20 масштаб для строк" width="125" height="45" /> можно поменять местами крайние члены. Тогда получится пропорция <img loading="lazy" decoding="async" class="size-full wp-image-6681 alignnone" src="https://spacemath.xyz/wp-content/uploads/2018/01/proportsiya-20-k-1-kak-32000-k-1600.png" alt="пропорция 20 к 1 как 32000 к 1600" width="108" height="45" />.</p>
+<p>Пропорция также не нарушится, если её перевернуть, то есть использовать обратные отношения в обеих частях.</p>
+<p>Перевернем пропорцию <img loading="lazy" decoding="async" class="size-full wp-image-6681 alignnone" src="https://spacemath.xyz/wp-content/uploads/2018/01/proportsiya-20-k-1-kak-32000-k-1600.png" alt="пропорция 20 к 1 как 32000 к 1600" width="108" height="45" />. Тогда получим пропорцию <img loading="lazy" decoding="async" class="alignnone size-full wp-image-6682" src="https://spacemath.xyz/wp-content/uploads/2018/01/proportsiya-1-k-20-kak-1600-k-32000.png" alt="пропорция 1 к 20 как 1600 к 32000" width="108" height="45" />. Взаимосвязь при этом не нарушается. Отношение между студентами равно отношению между суммами денег, предназначенных для этих студентов. Такую пропорцию часто составляют в школе, когда для решения задачи составляются таблицы</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-6683 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/01/tablitsa-k-proportsii-1-k-20-kak-1600-k-32000.png" alt="таблица к пропорции 1 к 20 как 1600 к 32000" width="315" height="118" srcset="https://spacemath.xyz/wp-content/uploads/2018/01/tablitsa-k-proportsii-1-k-20-kak-1600-k-32000.png 315w, https://spacemath.xyz/wp-content/uploads/2018/01/tablitsa-k-proportsii-1-k-20-kak-1600-k-32000-300x112.png 300w" sizes="(max-width: 315px) 100vw, 315px" /></p>
+<p>Этот способ записи очень удобен, поскольку позволяет перевести условие задачи в более понятный вид. Решим задачу в которой требовалось определить сколько рублей нужно для выплаты стипендии двадцати студентам.</p>
+<p>Условие задачи запишем следующим образом:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-6685 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/01/uslovie-zadachi-1-k-20-kak-1600-k-32000.png" alt="условие задачи 1 к 20 как 1600 к 32000" width="326" height="49" srcset="https://spacemath.xyz/wp-content/uploads/2018/01/uslovie-zadachi-1-k-20-kak-1600-k-32000.png 326w, https://spacemath.xyz/wp-content/uploads/2018/01/uslovie-zadachi-1-k-20-kak-1600-k-32000-300x45.png 300w" sizes="(max-width: 326px) 100vw, 326px" /></p>
+<p>Составим таблицу на основе этого условия:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-6684 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/01/tablitsa-k-proportsii-1-k-20-kak-1600-k-x.png" alt="таблица к пропорции 1 к 20 как 1600 к x" width="315" height="118" srcset="https://spacemath.xyz/wp-content/uploads/2018/01/tablitsa-k-proportsii-1-k-20-kak-1600-k-x.png 315w, https://spacemath.xyz/wp-content/uploads/2018/01/tablitsa-k-proportsii-1-k-20-kak-1600-k-x-300x112.png 300w" sizes="(max-width: 315px) 100vw, 315px" /></p>
+<p>Составим пропорцию, используя данные таблицы:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-6686 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/01/proportsiya-1-k-20-kak-1600-k-x.png" alt="пропорция 1 к 20 как 1600 к x" width="93" height="45" /></p>
+<p>Используя основное свойство пропорции, получим линейное уравнение и найдем его корень:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-6687 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/01/proportsiya-1-k-20-kak-1600-k-x-reshenie.png" alt="пропорция 1 к 20 как 1600 к x решение" width="148" height="103" /></p>
+<p>Изначально, мы имели дело с пропорцией <img loading="lazy" decoding="async" class="alignnone size-full wp-image-6365" src="https://spacemath.xyz/wp-content/uploads/2017/12/1600-na-1-kak-32000-na-20-masshtab-dlya-strok.png" alt="1600 на 1 как 32000 на 20 масштаб для строк" width="125" height="45" />, которая составлена из отношений величин разной природы. В числителях отношений располагались суммы денег, а в знаменателях количество студентов:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-6695 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/01/risunok-2-proportsiya-1600-k-1-kak-32000-k-20.png" alt="рисунок 2 пропорция 1600 к 1 как 32000 к 20" width="260" height="159" /></p>
+<p>Поменяв местами крайние члены, мы получили пропорцию <img loading="lazy" decoding="async" class="size-full wp-image-6681 alignnone" src="https://spacemath.xyz/wp-content/uploads/2018/01/proportsiya-20-k-1-kak-32000-k-1600.png" alt="пропорция 20 к 1 как 32000 к 1600" width="108" height="45" />. Эта пропорция составлена из отношений величин одной природы. В первом отношении содержатся количества студентов, а во втором &#8212; суммы денег:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-6696 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/01/risunok-2-proportsiya-20-k-1-kak-32000-k-1600.png" alt="рисунок 2 пропорция 20 к 1 как 32000 к 1600" width="231" height="159" /></p>
+<p>Если отношение составлено из величин одной природы, то мы будем называть его <strong>отношением одноименных величин</strong>. Например, отношения между фруктами, деньгами, физическими величинами, явлениями, действиями.</p>
+<p>Отношение может быть составлено, как из одноименных величин, так и из величин разной природы. Примерами последних являются отношение расстояния ко времени, отношения стоимости товара к его количеству, отношение общей суммы стипендии к количеству студентов.</p>
+<hr />
+<p><strong>Пример 2</strong>. В школьном саду посажены сосны и березы, причём на каждую сосну приходится 2 березы. Сколько посадили сосен в саду, если берез посадили 240?</p>
+<p>Определим сколько сосен было посажено в саду. Для этого составим пропорцию. В условии сказано, что на каждую сосну приходится 2 березы. Напишем отношение, показывающее что на одну сосну приходится две березы:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-2919 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/07/dve-pervyh.png" alt="две первых" width="12" height="43" /></p>
+<p>Теперь напишем второе отношение, показывающее что на <span style="color: #000000;"><em>x</em></span> сосен приходится 240 берез</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7754 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/04/240-na-x.png" alt="240 na x" width="35" height="45" /></p>
+<p>Соединим эти отношения знаком равенства, получим следующую пропорцию:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-6688 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/01/proportsiya-2-k-1-kak-240-k-x.png" alt="пропорция 2 к 1 как 240 к x " width="226" height="155" /></p>
+<p style="text-align: center;"><strong><em>&#171;2 березы так относятся к одной сосне,<br />
+как 240 берез относятся к x соснам&#187;</em></strong></p>
+<p>Используя основное свойство пропорции, находим значение <em>x</em></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-6691 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/01/proportsiya-k-zadache-1-k-20-kak-1600-k-32000-reshenie-1.png" alt="пропорция к задаче 1 к 20 как 1600 к 32000 решение 1" width="84" height="47" /></p>
+<p>Либо пропорцию можно составить, предварительно записав условие, как в прошлом примере:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-6689 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/01/uslovie-zadachi-1-k-20-kak-1600-k-32000-uslovie-2.png" alt="условие задачи 1 к 20 как 1600 к 32000 условие 2" width="265" height="44" /></p>
+<p>Получится та же пропорция, но в этот раз она будет составлена из отношений одноименных величин:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-6690 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/01/proportsiya-k-zadache-1-k-20-kak-1600-k-32000-uslovie-2.png" alt="пропорция к задаче 1 к 20 как 1600 к 32000 условие 2" width="94" height="103" /></p>
+<p>Значит в саду посадили 120 сосен.</p>
+<hr />
+<p><strong>Пример 3</strong>. Из 225 кг руды получили 34,2 кг меди. Каково процентное содержание меди в руде?</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-6692 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/01/kartinka-k-zadache-nahozhdenie-protsentnogo-sootnosheniya-medi.png" alt="картинка к задаче нахождение процентного соотношения меди" width="614" height="233" srcset="https://spacemath.xyz/wp-content/uploads/2018/01/kartinka-k-zadache-nahozhdenie-protsentnogo-sootnosheniya-medi.png 614w, https://spacemath.xyz/wp-content/uploads/2018/01/kartinka-k-zadache-nahozhdenie-protsentnogo-sootnosheniya-medi-300x114.png 300w" sizes="(max-width: 614px) 100vw, 614px" /></p>
+<p>Можно разделить 34,2 на 225 и полученный результат выразить в процентах:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-6693 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/01/reshenie-1-k-zadache-nahozhdenie-protsentnogo-sootnosheniya-medi.png" alt="решение 1 к задаче нахождение процентного соотношения меди" width="293" height="45" /></p>
+<p>Либо составить пропорцию 225 килограммам руды так приходятся на 100%, как 34,2 кг меди приходятся на неизвестное число процентов:</p>
+<p><img loading="lazy" decoding="async" class="wp-image-7335 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/225na100-ravno-342na-x-reshenie.png" alt="225на100 равно 342на x решение" width="126" height="162" /></p>
+<p>Либо составить пропорцию в которой отношения составлены из одноименных величин:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-6697 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/01/uslovie-zadachi-225-k-34-2-kak-100-k-x.png" alt="условие задачи 225 к 34 2 как 100 к x" width="254" height="47" /></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-6698 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/01/reshenie-2-zadachi-225-k-34-2-kak-100-k-x.png" alt="решение 2 задачи 225 к 34 2 как 100 к x" width="177" height="197" /></p>
+<hr />
+<h2 id="yak3" style="text-align: center;">Задачи на прямую пропорциональность</h2>
+<p>Понимание отношений одноименных величин приводит к пониманию решения задач на прямую и обратную пропорциональность. Начнем с задач на прямую пропорциональность.</p>
+<p>Для начала вспомним, что такое прямая пропорциональность. Это взаимосвязь между двумя величинами при которой увеличение одной из них влечет за собой увеличение другой во столько же раз.</p>
+<p>Если расстояние в 50 км автобус прошел за 1 час, то для прохождения расстояния в 100 км (при той же скорости) автобусу потребуется 2 часа. Во сколько раз увеличилось расстояние, во столько же раз увеличилось время движения. Как показать это с помощью пропорции?</p>
+<p>Одно из предназначений отношения заключается в том, чтобы показать во сколько раз первая величина больше второй. А значит и мы c помощью пропорции можем показать, что расстояние и время увеличились в два раза. Для этого воспользуемся отношением одноименных величин.</p>
+<p>Покажем, что расстояние увеличилось в два раза:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-6699 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/01/100-na-50.png" alt="100 на 50" width="31" height="45" /></p>
+<p>Аналогично покажем, что время увеличилось во столько же раз</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-6700 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/01/2-na-1.png" alt="2 на 1" width="11" height="45" /></p>
+<p>Соединим эти отношения знаком равенства, получим пропорцию:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-6701 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/01/proportsiya-100-k-50-kak-2-k-1.png" alt="пропорция 100 к 50 как 2 к 1" width="71" height="45" /></p>
+<p style="text-align: center;"><em><strong>&#171;100 километров так относятся к 50 километрам, как 2 часа относятся к 1 часу&#187;</strong></em></p>
+<p>Если выполнить деление в обеих частях равенства <img loading="lazy" decoding="async" class="size-full wp-image-6701 alignnone" src="https://spacemath.xyz/wp-content/uploads/2018/01/proportsiya-100-k-50-kak-2-k-1.png" alt="пропорция 100 к 50 как 2 к 1" width="71" height="45" />, то обнаружим что расстояние и время были увеличены в одинаковое число раз.</p>
+<p style="text-align: center;"><span style="color: #000000;">2 = 2</span></p>
+<hr />
+<p><strong>Задача 2</strong>. За 3 ч на мельнице смололи 27 т пшеничной муки. Сколько тонн пшеничной муки можно смолоть за 9 ч, если темп работы не изменится?</p>
+<p><strong>Решение</strong></p>
+<p>Время работы мельницы и масса перемолотой муки &#8212; прямо пропорциональные величины. При увеличении времени работы в несколько раз, количество перемолотой муки увеличится во столько же раз. Покажем это с помощью пропорции.</p>
+<p>В задаче дано 3 ч. Эти 3 ч увеличились до 9 ч. Запишем отношение 9 ч к 3 ч. Это отношение будет показывать во сколько раз увеличилось время работы мельницы:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7340 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/9-na-3.png" alt="9 na 3" width="11" height="45" /></p>
+<p>Теперь запишем второе отношение. Это будет отношение <span style="color: #000000;"><em>x</em></span> тонн пшеничной муки к 27 тоннам. Данное отношение будет показывать, что количество перемолотой муки увеличилось во столько же раз, сколько и время работы мельницы</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7337 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/x-na-27.png" alt="x на 27" width="22" height="41" /></p>
+<p>Соединим эти отношения знаком равенства, получим пропорцию <img loading="lazy" decoding="async" class="alignnone wp-image-7341 size-full" src="https://spacemath.xyz/wp-content/uploads/2018/03/proportsiya-9na3-ravno-xna27.png" alt="пропорция 9на3 равно xна27" width="61" height="45" />.</p>
+<p>Воспользуемся основным свойством пропорции и найдем <span style="color: #000000;"><em>x</em></span></p>
+<p><img loading="lazy" decoding="async" class="wp-image-7342 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/proportsiya-9na3-ravno-xna27-reshenie.png" alt="пропорция 9на3 равно xна27 решение" width="116" height="190" /></p>
+<p>Значит за 9 ч можно смолоть 81 т пшеничной муки.</p>
+<p>Вообще, если взять две прямо пропорциональные величины и увеличить их в одинаковое число раз, то отношение нового значения к старому значению первой величины будет равно отношению нового значения к старому значению второй величины.</p>
+<p>Так и в предыдущей задаче старые значения были 3 ч и 27 т. Эти значения были увеличены в одинаковое число раз (в три раза). Новыми значениями стали 9 ч и 81 т. Тогда отношение нового значения времени работы мельницы к старому значению  <img loading="lazy" decoding="async" class="alignnone size-full wp-image-7340" src="https://spacemath.xyz/wp-content/uploads/2018/03/9-na-3.png" alt="9 na 3" width="11" height="45" />  равно отношению нового значения массы перемолотой муки к старому значению  <img loading="lazy" decoding="async" class="alignnone size-full wp-image-7343" src="https://spacemath.xyz/wp-content/uploads/2018/03/81-na-27.png" alt="81 na 27" width="22" height="45" /></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7344 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/proportsiya-9-na-3-ravno-81-na-27.png" alt="пропорция 9 na 3 ravno 81 na 27 " width="65" height="45" /></p>
+<p>Если выполнить деление в обеих частях равенства, то обнаружим, что время работы мельницы и количество смолотой муки увеличилось в одинаковое число раз:</p>
+<p style="text-align: center;"><span style="color: #000000;">3 = 3</span></p>
+<p>Пропорцию, которую составляют к задачам на прямую пропорциональность, можно описать с помощью выражения:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7345 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/proportsiya-n2-na-n1-ravno-m2-na-m1.png" alt="пропорция n2 na n1 равно m2 na m1" width="160" height="99" /></p>
+<table border="0">
+<tbody>
+<tr>
+<td rowspan="4" width="50">Где</td>
+<td><img loading="lazy" decoding="async" class="alignnone wp-image-7349 size-full" src="https://spacemath.xyz/wp-content/uploads/2018/03/n2.png" alt="n2" width="22" height="23" /> − новое значение <strong>первой</strong> величины</td>
+</tr>
+<tr>
+<td><img loading="lazy" decoding="async" class="alignnone size-full wp-image-7370" src="https://spacemath.xyz/wp-content/uploads/2018/03/n1.png" alt="n1" width="20" height="24" /> − старое значение <strong>первой</strong> величины</td>
+</tr>
+<tr>
+<td><img loading="lazy" decoding="async" class="alignnone wp-image-7351 size-full" src="https://spacemath.xyz/wp-content/uploads/2018/03/m2" alt="m2" width="28" height="24" /> − новое значение <strong>второй</strong> величины</td>
+</tr>
+<tr>
+<td><img loading="lazy" decoding="async" class="alignnone wp-image-7352 size-full" src="https://spacemath.xyz/wp-content/uploads/2018/03/m1-1.png" alt="m1" width="24" height="24" /> − старое значение <strong>второй</strong> величины</td>
+</tr>
+</tbody>
+</table>
+<p>Применительно к нашей задаче значения переменных <img loading="lazy" decoding="async" class="alignnone wp-image-7350" src="https://spacemath.xyz/wp-content/uploads/2018/03/n1.png" alt="n1" width="20" height="24" /> <img loading="lazy" decoding="async" class="alignnone wp-image-7349 size-full" src="https://spacemath.xyz/wp-content/uploads/2018/03/n2.png" alt="n2" width="22" height="23" /> <img loading="lazy" decoding="async" class="alignnone wp-image-7352 size-full" src="https://spacemath.xyz/wp-content/uploads/2018/03/m1-1.png" alt="m1" width="24" height="24" /> <img loading="lazy" decoding="async" class="alignnone wp-image-7351 size-full" src="https://spacemath.xyz/wp-content/uploads/2018/03/m2" alt="m2" width="28" height="24" /> будут следующими:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7353 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/znacheniya-peremennyh-m-i-n-k-pervoj-zadache-na-proportsii.png" alt="значения переменных m и n к первой задаче на пропорции" width="73" height="116" /></p>
+<p>Где <img loading="lazy" decoding="async" class="alignnone size-full wp-image-7351" src="https://spacemath.xyz/wp-content/uploads/2018/03/m2" alt="m2" width="28" height="24" /> впоследствии стало равно 81.</p>
+<hr />
+<p><strong>Задача 2</strong>. Для 8 коров в зимнее время доярка ежедневно заготовляет 80 кг сена, 96 кг корнеплодов, 120 кг силоса и 12 кг концентратов. Определить ежедневный расход этих кормов для 18 коров.</p>
+<p><strong>Решение</strong></p>
+<p>Количество коров и масса каждого из кормов &#8212; прямо пропорциональные величины. При увеличении количества коров в несколько раз, масса каждого из кормов увеличится во столько же раз.</p>
+<p>Составим несколько пропорций, вычисляющих массу каждого из кормов для 18 коров.</p>
+<p>Начнем с сена. Ежедневно для 8 коров его заготовляют 80 кг. Тогда для 18 коров будет заготовлено <span style="color: #000000;"><em>x</em></span> кг сена.</p>
+<p>Запишем отношение, показывающее во сколько раз увеличилось количество коров:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7372 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/18-na-8.png" alt="18 на 8" width="19" height="45" /></p>
+<p>Теперь запишем отношение, показывающее во сколько раз увеличилась масса сена:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7373 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/x-na-80.png" alt="x na 80" width="21" height="41" /></p>
+<p>Соединим эти отношения знаком равенства, получим пропорцию:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7377 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/18-na-8-ravno-x-na-80.png" alt="18 на 8 равно x на 80" width="68" height="45" /></p>
+<p>Отсюда находим <span style="color: #000000;"><em>x</em></span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7374 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/18-na-8-ravno-x-na-80-reshenie.png" alt="18 на 8 равно x на 80 решение" width="131" height="190" /></p>
+<p>Значит для 18 коров нужно заготовить 180 кг сена. Аналогично определяем массу корнеплодов, силоса и концентратов.</p>
+<p>Для 8 коров ежедневно заготовляют 96 кг корнеплодов. Тогда для 18 коров будет заготовлено <span style="color: #000000;"><em>x</em></span> кг корнеплодов. Составим пропорцию из отношений  <img loading="lazy" decoding="async" class="alignnone size-full wp-image-7372" src="https://spacemath.xyz/wp-content/uploads/2018/03/18-na-8.png" alt="18 на 8" width="19" height="45" />  и  <img loading="lazy" decoding="async" class="alignnone size-full wp-image-7375" src="https://spacemath.xyz/wp-content/uploads/2018/03/x-na-96.png" alt="x na 96" width="22" height="41" /> , затем вычислим значение <em>x</em></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7376 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/18-na-8-ravno-x-na-9-reshenie.png" alt="18 na 8 ravno x na 9 решение" width="129" height="190" /></p>
+<p>Определим сколько силоса и концентратов нужно заготовить для 18 коров:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7378 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/18-na-8-ravno-x-na-120-i-x-na-12-reshenie.png" alt="18 на 8 равно x на 120 и x na 12 решение" width="432" height="190" srcset="https://spacemath.xyz/wp-content/uploads/2018/03/18-na-8-ravno-x-na-120-i-x-na-12-reshenie.png 432w, https://spacemath.xyz/wp-content/uploads/2018/03/18-na-8-ravno-x-na-120-i-x-na-12-reshenie-300x132.png 300w" sizes="(max-width: 432px) 100vw, 432px" /></p>
+<p>Значит для 18 коров ежедневно нужно заготавливать 180 кг сена, 216 кг корнеплодов, 270 кг силоса и 27 кг концентратов.</p>
+<hr />
+<p><strong>Задача 3</strong>. Хозяйка варит вишнёвое варенье, причём на 3 стакана вишни кладёт 2 стакана сахара. Сколько сахара нужно положить на 12 стаканов вишни? на 10 стаканов вишни? на <img loading="lazy" decoding="async" class="alignnone size-full wp-image-6292" src="https://spacemath.xyz/wp-content/uploads/2017/11/sem-tselyh-odna-vtoraya.png" alt="семь целых одна вторая" width="26" height="45" /> стакана вишни?</p>
+<p><strong>Решение</strong></p>
+<p>Количество стаканов вишни и количество стаканов сахарного песка &#8212; прямо пропорциональные величины. При увеличении количества стаканов вишни в несколько раз, количество стаканов сахара увеличится во столько же раз.</p>
+<p>Запишем отношение, показывающее во сколько раз увеличилось количество стаканов вишни:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-6082 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2017/10/12-na-3.png" alt="12 на 3" width="21" height="45" /></p>
+<p>Теперь запишем отношение, показывающее во сколько раз увеличилось количество стаканов сахара:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7379 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/x-na-2.png" alt="x na 2" width="10" height="41" /></p>
+<p>Соединим эти отношения знаком равенства, получим пропорцию и найдем значение <span style="color: #000000;"><em>x</em></span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7380 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/12-na-3-ravno-x-na-2-reshenie.png" alt="12 на 3 равно x на 2 решение" width="73" height="159" /></p>
+<p>Значит на 12 стаканов вишни нужно положить 8 стаканов сахара.</p>
+<p>Определим количество стаканов сахара для 10 стаканов вишни и <img loading="lazy" decoding="async" class="alignnone size-full wp-image-6292" src="https://spacemath.xyz/wp-content/uploads/2017/11/sem-tselyh-odna-vtoraya.png" alt="семь целых одна вторая" width="26" height="45" /> стакана вишни</p>
+<p><img loading="lazy" decoding="async" class="wp-image-7383 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/proportsiya-dlya-10-stakanov-i-7-tselyh-i-poloviny-stakana.png" alt="пропорция для 10 стаканов и 7 целых и половины стакана" width="659" height="262" srcset="https://spacemath.xyz/wp-content/uploads/2018/03/proportsiya-dlya-10-stakanov-i-7-tselyh-i-poloviny-stakana.png 659w, https://spacemath.xyz/wp-content/uploads/2018/03/proportsiya-dlya-10-stakanov-i-7-tselyh-i-poloviny-stakana-300x119.png 300w" sizes="(max-width: 659px) 100vw, 659px" /></p>
+<hr />
+<h2 id="yak4" style="text-align: center;">Задачи на обратную пропорциональность</h2>
+<p>Для решения задач на обратную пропорциональность опять же можно использовать пропорцию, составленную из отношений одноименных величин.</p>
+<p>В отличие от прямой пропорциональности, где величины увеличиваются или уменьшаются в одну и ту же сторону, в обратной пропорциональности величины изменяются обратно друг другу.</p>
+<p>Если одна величина увеличивается в несколько раз, то другая уменьшается во столько же раз. И наоборот, если одна величина уменьшается в несколько раз, то другая увеличивается во столько же раз.</p>
+<p>Допустим, что нужно покрасить забор, состоящий из 8 листов</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7354 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/zabor-iz-vosmi-listov.png" alt="забор из восьми листов" width="659" height="150" srcset="https://spacemath.xyz/wp-content/uploads/2018/03/zabor-iz-vosmi-listov.png 659w, https://spacemath.xyz/wp-content/uploads/2018/03/zabor-iz-vosmi-listov-300x68.png 300w" sizes="(max-width: 659px) 100vw, 659px" /></p>
+<p>Один маляр будет красить все 8 листов сам</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7355 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/zabor-iz-vosmi-listov-risunok-2.png" alt="забор из восьми листов рисунок 2" width="659" height="221" srcset="https://spacemath.xyz/wp-content/uploads/2018/03/zabor-iz-vosmi-listov-risunok-2.png 659w, https://spacemath.xyz/wp-content/uploads/2018/03/zabor-iz-vosmi-listov-risunok-2-300x101.png 300w" sizes="(max-width: 659px) 100vw, 659px" /></p>
+<p>Если маляров будет 2, то каждый покрасит по 4 листа.</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7356 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/zabor-iz-vosmi-listov-risunok-3.png" alt="забор из восьми листов рисунок 3" width="659" height="236" srcset="https://spacemath.xyz/wp-content/uploads/2018/03/zabor-iz-vosmi-listov-risunok-3.png 659w, https://spacemath.xyz/wp-content/uploads/2018/03/zabor-iz-vosmi-listov-risunok-3-300x107.png 300w" sizes="(max-width: 659px) 100vw, 659px" /></p>
+<p>Это конечно же при условии, что маляры будут честными между собой и справедливо разделят эту работу поровну на двоих.</p>
+<p>Если маляров будет 4, то каждый покрасит по 2 листа</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7357 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/zabor-iz-vosmi-listov-risunok-4.png" alt="забор из восьми листов рисунок 4" width="659" height="225" srcset="https://spacemath.xyz/wp-content/uploads/2018/03/zabor-iz-vosmi-listov-risunok-4.png 659w, https://spacemath.xyz/wp-content/uploads/2018/03/zabor-iz-vosmi-listov-risunok-4-300x102.png 300w" sizes="(max-width: 659px) 100vw, 659px" /></p>
+<p>Замечаем, что при увеличении количества маляров в несколько раз, количество листов которые приходятся на одного маляра уменьшаются во столько же раз.</p>
+<p>Итак, мы увеличили количество маляров с 1 до 4. Другими словами, увеличили количество маляров в четыре раза. Запишем это с помощью отношения:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7160 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2016/07/4-na-1.png" alt="4 на 1" width="11" height="45" /></p>
+<p>В результате количество листов забора, которые приходятся на одного маляра уменьшилось в четыре раза. Запишем это с помощью отношения:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7358 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/8-na-2.png" alt="8 на 2" width="11" height="45" /></p>
+<p>Соединим эти отношения знаком равенства, получим пропорцию</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7359 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/proportsiya-4-na-1-ravno-8-na-2.png" alt="пропорция 4 на 1 равно 8 на 2" width="50" height="45" /></p>
+<p style="text-align: center;"><em><strong>&#171;4 маляра так относятся к 1 маляру, как 8 листов относятся к 2 листам&#187;</strong></em></p>
+<hr />
+<p><strong>Задача 2</strong>. 15 рабочих закончили отделку квартир в новом доме за 24 дня. За сколько дней выполнили бы эту работу 18 рабочих?</p>
+<p><strong>Решение</strong></p>
+<p>Количество рабочих и количество дней, затраченных на работу &#8212; обратно пропорциональные величины. При увеличении количества рабочих в несколько раз, количество дней, необходимых для выполнения этой работы, уменьшится во столько же раз.</p>
+<p>Запишем отношение 18 рабочих к 15 рабочим. Это отношение будет показывать во сколько раз увеличилось количество рабочих</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7363 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/18-na-15.png" alt="18 на 15" width="19" height="45" /></p>
+<p>Теперь запишем второе отношение, показывающее во сколько раз уменьшилось количество дней. Поскольку количество дней уменьшится с 24 дней до <span style="color: #000000;"><em>x</em></span> дней, то второе отношение будет отношением старого количества дней (24 дня) к новому количеству дней (<em>x</em> дней)</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7364 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/24-na-x.png" alt="24 на x" width="22" height="45" /></p>
+<p>Соединим полученные отношения знаком равенства, получим пропорцию:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7365 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/proportsiya-18-na-15-ravno-24-na-x.png" alt="пропорция 18 на 15 равно 24 на x" width="69" height="45" /></p>
+<p>Отсюда находим <span style="color: #000000;"><em>x</em></span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7366 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/proportsiya-18-na-15-ravno-24-na-x-reshenie.png" alt="пропорция 18 на 15 равно 24 на x решение" width="119" height="190" /></p>
+<p>Значит 18 рабочих выполнят необходимую работу за 20 дней.</p>
+<p>Вообще, если взять две обратно пропорциональные величины и увеличить одну из них в определенное число раз, то другая уменьшится во столько же раз. Тогда отношение нового значения к старому значению первой величины будет равно отношению старого значения к новому значению второй величины.</p>
+<p>Так и в предыдущей задаче старые значения были 15 рабочих и 24 дня. Количество рабочих было увеличено с 15 до 18 (т.е. было увеличено в <img loading="lazy" decoding="async" class="alignnone wp-image-7369 size-full" src="https://spacemath.xyz/wp-content/uploads/2018/03/18-na-15-znachenie.png" alt="18 на 15 значение" width="64" height="46" /> раза). В результате количество дней, необходимых для выполнения работы, уменьшилось во столько же раз. Новыми значениями стали 18 рабочих и 20 дней. Тогда отношение нового количества рабочих к старому количеству  <img loading="lazy" decoding="async" class="size-full wp-image-7363 alignnone" src="https://spacemath.xyz/wp-content/uploads/2018/03/18-na-15.png" alt="18 на 15" width="19" height="45" />  равно отношению старого количества дней к новому количеству <img loading="lazy" decoding="async" class="alignnone size-full wp-image-7364" src="https://spacemath.xyz/wp-content/uploads/2018/03/24-na-x.png" alt="24 на x" width="22" height="45" /></p>
+<p>Для составления пропорции к задачам на обратную пропорциональность можно пользоваться формулой:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7361 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/proportsiya-n2-na-n1-ravno-m1-na-m2.png" alt="пропорция n2 na n1 равно m1 na m2" width="161" height="98" /></p>
+<table border="0">
+<tbody>
+<tr>
+<td rowspan="4" width="50">Где</td>
+<td><img loading="lazy" decoding="async" class="alignnone wp-image-7349 size-full" src="https://spacemath.xyz/wp-content/uploads/2018/03/n2.png" alt="n2" width="22" height="23" /> − новое значение <strong>первой</strong> величины</td>
+</tr>
+<tr>
+<td><img loading="lazy" decoding="async" class="alignnone size-full wp-image-7370" src="https://spacemath.xyz/wp-content/uploads/2018/03/n1.png" alt="n1" width="20" height="24" /> − старое значение <strong>первой</strong> величины</td>
+</tr>
+<tr>
+<td><img loading="lazy" decoding="async" class="alignnone wp-image-7352 size-full" src="https://spacemath.xyz/wp-content/uploads/2018/03/m1-1.png" alt="m1" width="24" height="24" /> − старое значение <strong>второй</strong> величины</td>
+</tr>
+<tr>
+<td><img loading="lazy" decoding="async" class="alignnone wp-image-7351 size-full" src="https://spacemath.xyz/wp-content/uploads/2018/03/m2" alt="m2" width="28" height="24" /> − новое значение <strong>второй</strong> величины</td>
+</tr>
+</tbody>
+</table>
+<p>Применительно к нашей задаче значения переменных <img loading="lazy" decoding="async" class="alignnone size-full wp-image-7370" src="https://spacemath.xyz/wp-content/uploads/2018/03/n1.png" alt="n1" width="20" height="24" /> <img loading="lazy" decoding="async" class="alignnone wp-image-7349 size-full" src="https://spacemath.xyz/wp-content/uploads/2018/03/n2.png" alt="n2" width="22" height="23" /> <img loading="lazy" decoding="async" class="alignnone wp-image-7352 size-full" src="https://spacemath.xyz/wp-content/uploads/2018/03/m1-1.png" alt="m1" width="24" height="24" /> <img loading="lazy" decoding="async" class="alignnone wp-image-7351 size-full" src="https://spacemath.xyz/wp-content/uploads/2018/03/m2" alt="m2" width="28" height="24" /> будут следующими:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7371 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/znacheniya-peremennyh-m-i-n-k-zadache-gde-15-rabochih.png" alt="значения переменных m и n к задаче где 15 рабочих" width="75" height="115" /></p>
+<p>Где <img loading="lazy" decoding="async" class="alignnone size-full wp-image-7351" src="https://spacemath.xyz/wp-content/uploads/2018/03/m2" alt="m2" width="28" height="24" /> впоследствии стало равно 20.</p>
+<hr />
+<p><strong>Задача 2</strong>. Скорость парохода относится к скорости течения реки, как 36 : 5. Пароход двигался вниз по течению 5 ч 10 мин. Сколько времени потребуется ему, чтобы вернуться обратно?</p>
+<p><strong>Решение</strong></p>
+<p>Собственная скорость парохода составляет 36 км/ч. Скорость течения реки реки 5 км/ч. Поскольку пароход двигался по течению реки, то скорость его движения составила 36 + 5 = 41 км/ч. Время пути составила 5 ч 10 мин. Для удобства выразим время в минутах:</p>
+<p style="text-align: center;"><em><span style="color: #000000;">5 ч 10 мин = 300 мин + 10 мин = 310 мин</span></em></p>
+<p>Поскольку на обратном пути пароход двигался против течения реки, то его скорость составила 36 − 5 = 31 км/ч.</p>
+<p>Скорость парохода и время его движения &#8212; обратно пропорциональные величины. При уменьшении скорости в несколько раз, время его движения увеличится во столько же раз.</p>
+<p>Запишем отношение, показывающее во сколько раз уменьшилась скорость движения:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7384 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/41-na-31.png" alt="41 на 31" width="20" height="45" /></p>
+<p>Теперь запишем второе отношение, показывающее во сколько раз увеличилось время движения. Поскольку новое время <span style="color: #000000;"><em>x</em></span> будет больше старого времени, в числителе отношения запишем время <span style="color: #000000;"><em>x</em></span>, а в знаменателе старое время, равное трёхсот десяти минутам</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7385 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/x-na-310.png" alt="x na 310" width="33" height="41" /></p>
+<p>Соединим полученные отношения знаком равенства, получим пропорцию <img loading="lazy" decoding="async" class="alignnone size-full wp-image-7391" src="https://spacemath.xyz/wp-content/uploads/2018/03/41-na-31-ravno-410-na-310.png" alt="41 na 31 ravno 410 na 310" width="81" height="45" />. Отсюда найдём значение <span style="color: #000000;"><em>x</em></span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7386 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/41-na-31-ravno-410-na-310-reshenie.png" alt="41 na 31 ravno 410 na 310 решение" width="135" height="159" /></p>
+<p>410 минут это 6 часов и 50 минут. Значит пароходу потребуется 6 часов и 50 минут, чтобы вернуться обратно.</p>
+<hr />
+<p><strong>Задача 3</strong>. На ремонте дороги работало 15 человек, и они должны были закончить работу за 12 дней. На пятый день утром подошли еще несколько рабочих, и оставшаяся работа была выполнена за 6 дней. Сколько рабочих прибыло дополнительно?</p>
+<p><strong>Решение</strong></p>
+<p>Вычтем из 12 дней 4 отработанных дня. Так мы определим сколько ещё дней осталось работать пятнадцати рабочим</p>
+<p style="text-align: center;"><em><span style="color: #000000;">12 дней − 4 дня = 8 дней</span></em></p>
+<p>На пятый день дополнительно прибыло <span style="color: #000000;"><em>x</em></span> рабочих. Тогда всего рабочих стало <span style="color: #000000;">15 + <em>x</em></span>.</p>
+<p>Количество рабочих и количество дней, необходимых для выполнения работы &#8212; обратно пропорциональные величины. При увеличении количества рабочих в несколько раз, количество дней уменьшится во столько же раз.</p>
+<p>Запишем отношение, показывающее во сколько раз увеличилось количество рабочих:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7387 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/15-plus-x-na-15.png" alt="15 plus x na 15" width="49" height="45" /></p>
+<p>Теперь запишем во сколько раз уменьшилось количество дней, необходимых для выполнения работы:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7388 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/8-na-6.png" alt="8 na 6" width="11" height="45" /></p>
+<p>Соединим эти отношения знаком равенства, получим пропорцию <img loading="lazy" decoding="async" class="alignnone size-full wp-image-7390" src="https://spacemath.xyz/wp-content/uploads/2018/03/15-plus-x-na-15-na-8-na-6.png" alt="15 plus x na 15 na 8 na 6" width="88" height="45" />. Отсюда можно вычислить значение <span style="color: #000000;"><em>x</em></span></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7389 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/15-plus-x-na-15-na-8-na-reshenie.png" alt="15 plus x na 15 na 8 na решение" width="171" height="252" /></p>
+<p>Значит 5 рабочих прибыло дополнительно.</p>
+<hr />
+<h2 id="yak5" style="text-align: center;">Масштаб</h2>
+<p>Масштабом называют отношение длины отрезка на изображении к длине соответствующего отрезка на местности.</p>
+<p>Допустим, что расстояние от дома до школы составляет 8 км. Попробуем нарисовать план местности, где будут указаны дом, школа и расстояние между ними. Но изобразить на бумаге расстояние, равное 8 км мы не можем, поскольку оно довольно велико. Но зато мы можем уменьшить это расстояние в несколько раз так, чтобы оно уместилось на бумаге.</p>
+<p>Пусть километры на местности на нашем плане будут выражаться в сантиметрах. Переведем 8 километров в сантиметры, получим 800 000 сантиметров.</p>
+<p>Уменьшим 800 000 см в сто тысяч раз:</p>
+<p style="text-align: center;"><span style="color: #000000;">800 000 см : 100 000 см = 8 см</span></p>
+<p>8 см это расстояние от дома до школы, уменьшенное в сто тысяч раз. Теперь без труда можно нарисовать на бумаге дом и школу, расстояние между которыми будет 8 см.</p>
+<p><img loading="lazy" decoding="async" class="wp-image-7400 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/dom-i-shkola-rasstoyanie-mezhdu-kotorymi-kak-by-8-sm.png" alt="дом и школа расстояние между которыми как бы 8 см" width="658" height="375" srcset="https://spacemath.xyz/wp-content/uploads/2018/03/dom-i-shkola-rasstoyanie-mezhdu-kotorymi-kak-by-8-sm.png 658w, https://spacemath.xyz/wp-content/uploads/2018/03/dom-i-shkola-rasstoyanie-mezhdu-kotorymi-kak-by-8-sm-300x171.png 300w" sizes="(max-width: 658px) 100vw, 658px" /></p>
+<p>Эти 8 см относятся к реальным 800 000 см. Так и запишем с помощью отношения:</p>
+<p style="text-align: center;"><span style="color: #000000;">8 : 800 000</span></p>
+<p>Одно из свойств отношения гласит, что отношение не меняется если его члены умножить или разделить на одно и то же число.</p>
+<p>В целях упрощения отношения 8 : 800 000 оба его члена можно разделить на 8. Тогда получим отношение 1 : 100 000. Это отношение и назовём масштабом. Данное отношение показывает, что один сантиметр на плане относится (или соответствует) ста тысячам сантиметров на местности.</p>
+<p>Поэтому на нашем рисунке необходимо указать, что план составлен в масштабе 1 : 100 000</p>
+<p><img loading="lazy" decoding="async" class="wp-image-7402 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/dom-i-shkola-rasstoyanie-mezhdu-kotorymi-kak-by-8-sm-1.png" alt="дом и школа расстояние между которыми как бы 8 см" width="658" height="375" srcset="https://spacemath.xyz/wp-content/uploads/2018/03/dom-i-shkola-rasstoyanie-mezhdu-kotorymi-kak-by-8-sm-1.png 658w, https://spacemath.xyz/wp-content/uploads/2018/03/dom-i-shkola-rasstoyanie-mezhdu-kotorymi-kak-by-8-sm-1-300x171.png 300w" sizes="(max-width: 658px) 100vw, 658px" /></p>
+<p>Примеры:</p>
+<p>1 см на плане относится к 100 000 см на местности;<br />
+2 см на плане относится к 200000 см на местности;<br />
+3 см на плане относится к 300000 на местности и т.д.</p>
+<p>К любой карте или плану указывается в каком масштабе они сделаны. Этот масштаб позволяет определять реальное расстояние между объектами.</p>
+<p>Так, наш план составлен в масштабе 1 : 100 000. На этом плане расстояние между домом и школой составляет 8 см. Чтобы вычислить реальное расстояние между домом и школой, нужно 8 см увеличить в 100 000 раз. Иными словами, умножить 8 см на 100 000</p>
+<p style="text-align: center;"><span style="color: #000000;">8 см × 100 000 = 800 000 см</span></p>
+<p>Получаем 800 000 см или 8 км, если перевести сантиметры в километры.</p>
+<p>Допустим, что между домом и школой располагается дерево. На плане расстояние между школой и этим деревом составляет 4 см.</p>
+<p><img loading="lazy" decoding="async" class="alignnone size-full wp-image-7404" src="https://spacemath.xyz/wp-content/uploads/2018/03/dom-i-derevo-4-km.png" alt="дом и дерево 4 км" width="659" height="375" srcset="https://spacemath.xyz/wp-content/uploads/2018/03/dom-i-derevo-4-km.png 659w, https://spacemath.xyz/wp-content/uploads/2018/03/dom-i-derevo-4-km-300x171.png 300w" sizes="(max-width: 659px) 100vw, 659px" /></p>
+<p>Тогда реальное расстояние между домом и деревом будет 4 см × 100 000 = 400 000 см или 4 км.</p>
+<p>Расстояние на местности можно определять с помощью пропорции. В нашем примере расстояние между домом и школой будет вычисляться с помощью следующей пропорции:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7403 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/1-na-100000-kak-8-na-x.png" alt="1 на 100000 как 8 на x" width="100" height="45" /></p>
+<p>Эту пропорцию можно прочитать так:</p>
+<p style="text-align: center;"><strong><em>1 см на плане так относится к 100000 см на местности, как 8 см на плане относятся к <span style="color: #333399;">x</span> см на местности.</em></strong></p>
+<p>Из этой пропорции узнаём, что значение <em>x</em> равно 800000 см.</p>
+<hr />
+<p><strong>Пример 2</strong>. На карте расстояние между двумя городами составляет 8,5 см. Определить реальное расстояние между городами, если карта составлена в масштабе 1 : 1 000 000.</p>
+<p><strong>Решение</strong></p>
+<p>Масштаб 1 : 1 000 000 указывает, что 1 см на карте соответствует 1 000 000 см на местности. Тогда 8,5 см будут соответствовать <span style="color: #000000;"><em>x</em></span> см на местности. Составим пропорцию 1 к 1000000 как 8,5 к <span style="color: #000000;"><em>x</em></span></p>
+<p><img loading="lazy" decoding="async" class="aligncenter size-full wp-image-13068" src="https://spacemath.xyz/wp-content/uploads/2024/05/1-na-1000000-ravno-85-na-x-reshenie.png" alt="1-na-1000000-ravno-85-na-x-reshenie.png" width="179" height="104" /></p>
+<p>В 1 км содержится 100000 см. Тогда в 8 500 000 см будет <img loading="lazy" decoding="async" class="alignnone size-full wp-image-7410" src="https://spacemath.xyz/wp-content/uploads/2018/03/8500000-k-100000-ravno-85.png" alt="" width="182" height="45" /></p>
+<p>Либо можно рассуждать так. Расстояние на карте и расстояние на местности &#8212; прямо пропорциональные величины. При увеличении расстояния на карте в несколько раз, расстояние на местности увеличится во столько же раз. Тогда пропорция примет следующий вид. Первое отношение будет показывать во сколько раз расстояние на местности больше расстояния на карте:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7406 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/1000000-k-1.png" alt="1000000 к 1" width="75" height="45" /></p>
+<p>Второе отношение покажет, что расстояние на местности во столько же раз больше, чем 8,5 см на карте:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7407 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/x-na-85.png" alt="x на 85" width="24" height="43" /></p>
+<p>Отсюда <em>x</em> равен 8 500 000 см или 85 км.</p>
+<p><img loading="lazy" decoding="async" class="wp-image-7411 size-full aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/1000000-k-1-kak-x-k-85-reshenie.png" alt="1000000 к 1 как x к 85 решение" width="281" height="75" /></p>
+<hr />
+<p><strong>Задача 3</strong>. Длина реки Невы 74 км. Чему равняется ее длина на карте, масштаб которой 1 : 2 000 000</p>
+<p><strong>Решение</strong></p>
+<p>Масштаб 1 : 2000000 говорит о том, что 1 см на карте соответствует 2 000 000 см на местности.</p>
+<p>А 74 км на это 74 × 100 000 = 7 400 000 см на местности. Уменьшив 7 400 000 в 2 000 000, мы определим длину реки Невы на карте</p>
+<p style="text-align: center;"><span style="color: #000000;">7 400 000 : 2 000 000 = 3,7 см</span></p>
+<p>Значит на карте, масштаб которой 1 : 2 000 000 длина реки Невы составляет 3,7 см.</p>
+<p>Запишем решение с помощью пропорции. Первое отношение будет показывать сколько раз длина на карте меньше длины на местности:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7413 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/2000000-k-1.png" alt="2000000 к 1" width="85" height="45" /></p>
+<p>Второе отношение будет показывать, что 74 км (7 400 000 см) уменьшились во столько же раз:</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7414 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/7400000-k-x.png" alt="7400000 к x" width="85" height="45" /></p>
+<p>Отсюда находим <span style="color: #000000;"><em>x</em></span> равный 3,7 см</p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-7412 aligncenter" src="https://spacemath.xyz/wp-content/uploads/2018/03/2000000-k-1-ravno-7400000-na-x-reshenie.png" alt="2000000 к 1 равно 7400000 на x решение" width="307" height="166" srcset="https://spacemath.xyz/wp-content/uploads/2018/03/2000000-k-1-ravno-7400000-na-x-reshenie.png 307w, https://spacemath.xyz/wp-content/uploads/2018/03/2000000-k-1-ravno-7400000-na-x-reshenie-300x162.png 300w" sizes="(max-width: 307px) 100vw, 307px" /></p>
+    <h3>Хотите перейти на следующий урок?</h3>
+<a href="lection1.html" class="back">Вернуться ‹‹</a>
+<a href="lection3.html" class="next">Вперёд »</a>
+
+<script type="text/javascript">
+
+var menuItems = document.querySelectorAll('.skew-menu ul li');
+
+for (var i = 0; i < menuItems.length; i++) {
+   menuItems[i].addEventListener('click', function() {
+       // Действия при выборе определенной лекции
+   });
+}
+document.querySelectorAll('.skew-menu li').forEach(item => {
+    item.addEventListener('mouseover', () => {
+        item.style.transition = 'transform 0.3s';
+        item.style.transform = 'scale(1.2)';
+    });
+
+    item.addEventListener('mouseout', () => {
+        if (!item.classList.contains("clicked")) { // Проверяем, не была ли ячейка уже уменьшена при клике
+            item.style.transition = 'transform 0.3s';
+            item.style.transform = 'scale(1)';
+        }
+    });
+
+     document.addEventListener("click", function(event) { 
+         if (!event.target.closest(".skew-menu li")) return;
+
+         const clickedItem= event.target.closest(".skew-menu li");
+
+         document.querySelectorAll('.skew-menu li').forEach(otherItem => { 
+             otherItem.classList.remove("clicked");
+             otherItem.removeEventListener("transitionend", removeTransition);
+          });
+          
+          function removeTransition() { this.classList.remove("clicked"); }
+
+          const clickedClassList= clickedItem.classList;
+          clickedClassList.add("clicked");
+
+          setTimeout(() =>{
+              clickedClassList.remove("clicked")
+           },300)
+
+           function toggleTransform(){
+               let scaleValue= window.getComputedStyle(clickedItem).getPropertyValue('transform');
+
+               if(scaleValue==='none'){
+                   clickedItem.setAttribute(
+                       "style",
+                       "transition: all .5s ease-in-out; transform: scale(.8);"
+                     );
+                 }else{
+                     clickedItem.removeAttribute("style");
+                  }
+            }
+
+            toggleTransform();
+      });
+});
+let currentLesson = document.querySelector('.active a');
+currentLesson.style.color = '#007bff';
+
+menuItems[0].classList.add("active");
+
+document.querySelector('.back').setAttribute("href", "lection19.html");
+document.querySelector('.next').setAttribute("href", "lection21.html");
+
+</script>
+</body>
+</html>
